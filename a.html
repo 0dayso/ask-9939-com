@@ -1,0 +1,28 @@
+<script src="/images_ask/js/jquery.js" type="text/javascript"></script>
+<input type="text" id="startnum"/><button value="start" onclick="begin()">kaishi</button>
+<div id="as"></div> 
+<script>
+	var num = 0; 
+	function ajaxR(id){ 
+			$.get("http://ask.9939.com/askt/tt/?begin="+id, function(data){ 
+				$("#as").html($("#as").html()+data+","); 
+				if(data == "更新完成"){
+					return true;
+				}
+				if(data%10000==0){
+					$("#as").html(" ");
+				}
+				if(!isNaN(data)){
+					//alert(data);
+					num = data; 
+					ajaxR(data);
+				}else{
+					ajaxR(num);
+				}
+			});
+	}
+	function begin(){
+		var id = $("#startnum").val(); 
+		ajaxR(id);
+	}
+</script>

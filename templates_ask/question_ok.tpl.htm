@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="http://ask.9939.com/" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员提问中转页</title>
+<link href="/templates/9939/skins/default/tiwen.css" rel="stylesheet" type="text/css" />
+{literal}
+<style type="text/css">
+body{background:none;}
+#con{height:100%; width:100%; position:fixed; top:0; left:0; z-index:1;background:#fff; filter:alpha(opacity=60); -moz-opacity: 0.6; opacity: 0.6; }
+* html #con{/* ie6 hack */position:absolute;  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');}
+#box{position:fixed;top:50%; left:50%; margin-left:-250px; margin-top:-150px;  background:#fff; z-index:2;}
+* html #box {/* ie6 hack */position: absolute; margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');}
+.ytr{ width:645px; height:402px;}
+#onekey_login{ background:url(/templates/9939/skins/default/images_ask/todesk_bg.gif) no-repeat; width:350px; height:135px; font-size:12px; overflow:hidden; zoom:1;}
+.shut_it{ margin-top:6px; padding-right:8px; text-align:right;}
+#onekey_login p{ padding-left:23px; margin-bottom:10px;}
+#onekey_login input{ width:89px; height:17px; border:1px solid #9C9C9C; margin-right:10px;}
+#onekey_login .generate_it a{ background:url(/templates/9939/skins/default/images_ask/to_desk.gif) no-repeat; display:block; width:125px; height:17px; text-align:center; text-decoration:none;}
+#onekey_login img{ vertical-align:middle;}
+</style>
+</head>
+
+<script type="text/javascript">
+function boxbtn() {
+  var theObj = document.getElementById('con').style;
+  if (  theObj.display == "none" ) theObj.display = "block";
+  else theObj.display = "none";
+  var the1bj = document.getElementById('box').style;
+  if (  the1bj.display == "none" ) the1bj.display = "block";
+  else the1bj.display = "none";
+}
+</script>
+{/literal}
+<body>
+<div style="display:none"><object id=minimize type="application/x-oleobject" classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"><param name="Command" value="Minimize"></object></div>
+	<div class="tiask">
+            <div class="boxwrap">
+            	<div class="boxbd tishi">
+                	<p>您的问题已提交成功，久久健康专家将快速为您解答，请点击：<strong><a href="{$ask_url}" target="_blank">我的提问</a></strong></p>
+                    <p><a href="javascript:void(null);" class="boxbtn" onclick="boxbtn()">设置一键登录</a>：无需输入会员和密码</p>
+                    <p>在您等待答案同时，可前往：</p>
+                    <p class="list"><strong><a href="/ask/question.php" target='_blank'><span>>></span>继续提问</a><a href="http://home.9939.com/space.php" target="_blank"><span>>></span>我的健康家园</a><a href="http://home.9939.com/cp.php?ac=detail" target="_blank"><span>>></span>完善个人资料</a></strong></p>
+                    <p><strong>现在立即填写<a href="http://home.9939.com/cp.php?ac=detail&menu=2" target="_blank">健康档案</a>将获得50积分 <a href="http://home.9939.com/network.php?ac=jf" target='_blank'>查看积分规则</a></strong></p>
+                </div>
+            </div>
+           <iframe src="/ask/question_ok_iframe.php?url=/{$_COOKIE[ask_url]}" class="ytr" scrolling="no" frameborder="0" id="ytr"></iframe>
+
+{literal}
+           <script type="text/javascript">
+
+function reinitIframe(){
+
+var iframe = document.getElementById("ytr");
+
+try{
+
+var bHeight = iframe.contentWindow.document.body.scrollHeight;
+
+var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+
+var height = Math.max(bHeight, dHeight);
+
+iframe.height =  height;
+
+}catch (ex){}
+
+}
+
+window.setInterval("reinitIframe()", 200);
+
+</script>
+{/literal}
+
+        </div>
+<div id="con">
+</div>
+<div id="box" style="display:block;">
+	<div id="onekey_login" >
+       <div class="shut_it"><a href="javascript:void(0)"  onclick="boxbtn()"><img src="/templates/9939/skins/default/images_ask/close.png"/></a>
+       </div>
+       <p><label>用户名：</label><input type="text" id="username_login"/><label>密码：</label><input type="password" id="password_login"/></p>
+       <p>桌面图标:<img src="/templates/9939/skins/default/images_ask/ico_onekey.jpg" alt="桌面图标" /></p>
+       <p class="generate_it"><a href="" target="_blank" onclick="return go_to_one_key(this);">提交生成桌面按钮</a></p>
+	</div>
+</div>
+
+</body>
+</html>
+<script>
+	boxbtn();
+{literal}
+function go_to_one_key(obj)
+{
+	obj.href="/one_key_login.php?username=" + document.getElementById('username_login').value + '&password=' + document.getElementById('password_login').value;
+	return true;
+}
+{/literal}
+</script>

@@ -1,0 +1,110 @@
+﻿{include file=admin/header.tpl.htm}
+
+
+{literal}
+<script language="javascript">
+function checkInput() 
+{		
+	if($('name').value == "")
+	{
+		alert("请填写名称！");		
+		$('name').focus();
+		return false;
+	}
+}
+</script>
+
+{/literal}
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+		<tr class="header">
+			<td colspan="2">{$PAGE_FUNC_SMALL_NAME}</td>
+		</tr>
+		
+		<form name="add" method="POST" onsubmit="return checkInput();" action="?act=editSave&tbl={$sTbl}&id={$id}">		
+		<tr>
+          <td width="100" class="altbg1">上级分类</td>
+          <!--<td class="altbg2">         
+          <select name="category[pID]">
+          	<option value="0">新增</option>                     	
+           {$section}
+          </select>&nbsp;&nbsp;*
+		  </td>-->
+		  
+		  <td class="altbg2">
+		  	<input name="" size="50" value="{$pName.name}" readonly >
+			<!--<select name="" id="menu"  size="1" onchange="go_go(this,'menu','{$menu_name}')" >
+      		<option  value="0">请选择</option>
+      		{$buwei}
+      		</select>
+      		<span id="menuother"></span><a href="javascript:area_reload2('{$menu_name}');">重选</a>
+      		<input  name="category[pId]" id="menulast" value="{$pID}"/>-->
+		</td>
+		{literal}
+<script LANGUAGE="javascript">
+<!--
+function go_go(obj,name,menu_name)
+	{
+		id = jQuery("#"+obj.id).val();
+		//alert("#"+obj.id);
+		jQuery("#"+name+"last").val(id);
+		jQuery.get("../include_dzjb/cat_"+menu_name+"_"+id+".js", function(data){
+		  jQuery("#"+name+"other").append('<select id="'+id+'" onchange="go_go(this,\''+name+'\',\''+menu_name+'\')"><option>请选择</option>'+data+'</select>');
+		});
+		jQuery("#"+obj.id).attr("disabled","disabled");
+	}
+	function area_reload2(menu_name)
+	{
+		jQuery("#menuother").empty();
+		jQuery("#menu").attr("disabled","");
+		jQuery("#menulast").val('0');
+		jQuery.get("../include_dzjb/cat_"+menu_name+"_0.js",function(data){
+			data = '<option  value="0">请选择</option>'+data;
+			jQuery("#menu").html(data);
+		});
+	}
+//-->
+</script>
+{/literal}
+        </tr>
+        <tr>
+          <td class="altbg1">名称</td>
+          <td class="altbg2"><input type="text" name="category[name]" size="50" class="input_text" value='{$aField.name}'/>&nbsp;&nbsp;*</td>
+        </tr>
+		 <tr>
+          <td class="altbg1">栏目目录</td>
+          <td class="altbg2"><input type="text" name="category[url]" size="50" class="input_text" value="{$aField.url}" {if $sTbl=='phpcms_category'}readonly{/if}/>&nbsp;&nbsp;*</td>
+        </tr>
+         <tr>
+          <td class="altbg1">简介</td>
+          <td class="altbg2">          	
+          	<textarea name="category[description]" rows="5" cols="60">{$aField.description}</textarea>
+          </td>
+        </tr>
+       <!-- <tr>
+          <td class="altbg1">工作方案</td>
+          <td class="altbg2">          	
+          	<select id="type" name="category[type]">
+				<option value="0" {if $aField.type eq "0"}selected{/if}>一级审核</option>
+				<option value="1" {if $aField.type eq "1"}selected{/if}>二级审核</option>
+				<option value="2" {if $aField.type eq "2"}selected{/if}>三级审核</option>
+			</select>
+          </td>
+        </tr> -->
+		
+		<tr>
+          <td class="altbg1">在导航栏显示</td>
+          <td class="altbg2">          	
+          	<input name="category[ismenu]" type="radio" value="1" {if $aField.ismenu eq "1"}selected{/if}/>是
+			<input name="category[ismenu]" type="radio" value="0" {if $aField.ismenu eq "0"}selected{/if}/>否
+          </td>
+        </tr>
+		<tr>
+			<td align="left" class="altbg1"><input type="button" onclick="history.go(-1);" value="返回"></td>
+			<td align="right" class="altbg2"><input type="submit" name="submit" value=" 提 交 "></td>
+		</tr>
+		</form>
+		</table>
+
+{include file=admin/footer.tpl.htm}                                                                                              
+  

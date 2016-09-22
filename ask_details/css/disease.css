@@ -1,0 +1,292 @@
+@charset "utf-8";
+/* CSS Document */
+.informa .mark h3,.w689 ,.w689 .select span,.meau .fill{font-size:18px;font-family:"microsoft YaHei";}
+.informa .mark {height:39px; color:#fff;margin-top:0;}
+.content-one{ width:1200px; margin:0 auto;}
+.hT2{ margin-top:2px;}
+.hT7{margin-top:5px;}
+.informa .mark h3{ background:url(../images/inspic.png) no-repeat; width:176px;height:39px;}
+.informa .mark  span{margin-top:9px; background: url(../images/ins_con.png) no-repeat right 0;width: 163px;height:30px;}
+.personal{ border:2px solid #49c066;}  
+.cobox{background:url(../images/insbg.png) no-repeat  right 363px; height:817px;}
+.w689{ margin:80px auto 0; width: 870px;}
+.w689 .meau{width:432px; margin-top:80px;}
+.month{ width:148px; height:28px; border:1p solid #cdcdcd; font-size:14px;}
+.month option,.clific,.meau .clific a,.meau .onhid2,.mals a{color:#888;}
+.meau li{ float:left; margin-bottom:50px;}
+.meau b{float:left;color:#49c066; font-weight:normal; width:66px; font-size:20px;}
+.w14{ width:20px; height:20px;}
+.select{margin-top:6px;cursor:pointer;}
+.meau .select a{ color:#49c066; font-size:16px; display: block;width:53px;font-family:"宋体"; margin-top: -2px;text-decoration:none;}
+.select .man{ background:url(../images/ins_conm0.png) no-repeat 0 -106px; padding-left:25px; margin-right:27px;}
+.select .women{background:url(../images/ins_conm0.png) no-repeat 0 -106px; padding-left:25px;}
+.meau .select .move{ background:url(../images/ins_conm0.png) no-repeat -67px 0px; padding-left:25px;}
+.meau .select .man a{background: url(../images/ins_conm0.png) no-repeat 20px 3px;}
+.women a{background:url(../images/ins_conm0.png) no-repeat 20px -25px;}
+.age{ width:208px; height:27px; border:1px solid #cdcdcd; position:relative;
+ cursor:pointer;}
+.age p{height:27px;padding-left:10px; font-size:14px; line-height:27px; background: url(../images/insdul.gif) no-repeat 180px 0px;}
+.onhid{ position:absolute; z-index:300;top: 28px; left: -1px;  background:#fff; border:1px solid #cdcdcd;  width:208px; display:none; border-top: 0;}
+.onhid li{color:#888; font-size:14px;font-family:"microsoft YaHei";display:block; width: 198px;  line-height:24px; height:24px; margin-bottom:0;padding-left: 10px; }
+.onhid li:hover,.onlsex li:hover{background:#fbd7bf; color:#ff6600;}
+.profess{ width:208px; border:1px solid #cdcdcd;height:27px;cursor:pointer; position:relative;}
+.profess .currmd{width: 195px;  height:27px;font-size:14px; line-height:27px; padding-left:10px;font-family:"宋体";background: url(../images/insdul.gif) no-repeat 180px 0px;}
+.lmos{width:327px;position:absolute; z-index:1;top:27px; left: -1px; color:#888; font-family:"宋体";  font-size:12px; background:#fff; border:1px solid #cdcdcd; display:none; padding:10px 9px 0 9px;}
+.lmos h5{ border-bottom:1px dashed #e5e5e5; padding-bottom:5px;font-size: 12px;}
+.lmos h5 i{float:right;  margin-top: 4px;}
+.clific{ margin:8px 0 0 0;}
+.clific li{float:left; margin-bottom:10px; color:#888; }
+.clific span{margin: 0 6px 0 5px;float:left;}
+.annot{margin:6px 0 0 12px; font-size:12px;font-family:"宋体";}
+/*选择症状*/
+.currt,.set,.currmd{color:#333;}
+.two-smtoms{ margin:42px auto 0;  width: 754px;}
+.two-smtoms h4{ color:#49c066;font-size:16px;font-family:"microsoft YaHei";}
+.sympt-search{margin-top:42px;}
+.sympt_man ,.smko{ margin:23px 0 23px 0;  padding-left:22px;}
+.pTsm{margin:23px 0 36px 0}
+.sympt_man li{ float:left;}
+.sympt_man li:hover,.clific li:hover{ color:#f60; text-decoration:underline;}
+.sympt_man b,.smko .demand,.query-log a{font-family:"宋体"; font-size:14px;}
+.sympt_man b{color:#666;  font-weight:bold; float:left;  margin-top: 5px;}
+.sympt_man .sexdul{ width:75px; height:27px; border:1px solid #cdcdcd; position:relative;
+ cursor:pointer;}
+ .mT44{ margin:0 44px;}
+.sympt_man .sexdul p{height:27px;padding-left:16px; font-size:14px; line-height:27px; background: url(../images/insdul.gif) no-repeat 47px 0; font-family:"宋体"; }
+.onlsex{ position:absolute; z-index:2;top: 28px; left: -1px; width:75px; font-family: "宋体";background:#fff; border:1px solid #cdcdcd;display:none; border-top: 0;}
+.onlsex li{color:#888; font-size:14px;font-family:"microsoft YaHei";display:block;width:68px;font-family:"宋体"; padding-left:7px; height: 24px;line-height: 24px;}
+.sympt-person h4{background: url(../images/ins_conm0.png) no-repeat -73px -25px; padding-left:22px;}
+.sympt-search h4{background: url(../images/ins_conm0.png) no-repeat -67px -50px; padding-left:26px;height: 22px;}
+.sympt-chose h4{background: url(../images/ins_conm0.png) no-repeat 0 -143px; padding-left: 24px;height: 22px;}
+.smko{  width: 527px;position:relative;  margin: 23px auto 0;}
+.smko .demand{ width: 375px; height:34px; border:3px solid #bdbdbe;  font-size:14px; font-family:"宋体";color:#999; background: url(../images/ins_conm0.png) no-repeat -60px -72px;padding-left:30px;}
+.msech{background:url(../images/ins_shech.gif) no-repeat; width:78px; height:39px; margin-left:9px; text-indent:-9999em;}
+.query-log{ position:absolute; top:40px ;left:22px; border:3px solid #dadada; background:#fff;/*height:100px;*/ width: 405px; border-top:0;  z-index: 100;}
+.query-log a{ display:block; padding:4px 0 4px 12px; background: url(../images/insjt.png) no-repeat 377px 10px; cursor:pointer;}
+.query-log a:hover{ text-decoration:none; color:#ff6600; background:#f7f7f7 url(../images/insjt.png) no-repeat 377px 10px;}
+/*人体部位*/
+.hauman{ margin-top:44px;}
+.retur-body{ height:37px; line-height:37px; background:#f2f2f2; border:1px solid #e7e8e9; text-align:center; position:relative;}
+.retur-body a{ position:absolute; top:3px;  left:15px; background:url(../images/ins_arow.png) no-repeat -1px 10px; padding-left:30px;}
+.retur-body span{ height:100px; color:#49c066; font-size:16px; font-weight:bold;}
+.letter-sw{overflow:hidden; height: 58px; line-height:58px; border-bottom:1px solid #f3f3f3; padding-left:24px;}
+.letter-sw b{ float:left;  color:#666; font-size:14px;}
+.letter-sw a{ display:inline; margin: 0px 7px; line-height: 20px; color:#666; width:22px; height:22px; font-size:16px;font-family:"microsoft YaHei"; float: left; text-align: center; margin-top: 20px;}
+.letter-sw .move { background:#fea265;color: #fff;display: block;width:22px; height:22px; float: left;} 
+.letter-sw a:hover{background:#fea265; color:#fff;text-decoration:none; width:22px; height:22px;}
+.lett-tab-c{ height:388px;position: relative;overflow-y: auto;width: auto; }
+.hotwor a{ float:left; margin: 0 0 12px 0;font-size:14px;font-family:"宋体"; display:block;width:16%; padding:5px 0;  overflow:hidden; white-space:nowrap; text-overflow:ellipsis; line-height:50px; overflow:hidden;height: 50px; text-align:center; color:#5f5f5f;  margin-bottom: 10px;}
+.hotwor{ margin-top:18px; overflow:hidden;   padding-left: 3px;}
+.hotwor a:hover{color:#fff; width:16%; background:#ffa366; text-align:center;}
+.curro{ display:none;}
+/*部位鼠标滑动*/
+.sympt-chose{ margin-top:43px;}
+.boside {margin-top:30px;}
+.male-posit{background: url(../images/ins_menz.png) no-repeat 99px 2px; width:337px; height:355px;position:relative;  margin-right:64px;}
+.six-parts{ background: url(../images/menz_m0.png) no-repeat 32px 8px; height: 251px; }
+.six-parts i{background: url(../images/menz_hovr.png) no-repeat 0px; position:absolute; width:414px;  height:350px;display:none;}
+
+/*头部*/
+.mals{width: 139px; height:52px; background:#e5e5e5;position: absolute;top: 6px;left: 244px;z-index: 10; display:none;}
+.mals a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px}
+.mals .sect,.mals a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nz-hov1 .mals,.mz-hov1 .mals{ display:block;}
+/*胸部*/
+.ches{width: 139px; height:52px; background:#e5e5e5;position: absolute;top: 66px;left: 260px;z-index: 10; display:none;}
+.ches a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.ches .sect,.ches a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nz-hov2 .ches,.mz-hov2 .ches{ display:block;}
+/*腹部*/
+.adbo{width: 185px; height:52px; background:#e5e5e5;position: absolute;top:103px;left: 264px;z-index: 10; display:none;}
+.adbo a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.adbo .sect,.adbo a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nz-hov3 .adbo,.mz-hov3 .adbo{ display:block;}
+/*男性生殖*/
+.repro{width: 150px; height:52px; background:#e5e5e5;position: absolute;top:153px;left: 264px;z-index: 10; display:none;}
+.repro a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.repro .sect,.repro a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nz-hov4 .repro,.mz-hov4  .repro{ display:block;}
+/*上肢*/
+.uplim{width: 140px; height:52px; background:#e5e5e5;position: absolute;top:85px;left: -40px;z-index: 10; display:none;}
+.uplim a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.uplim .sect,.uplim a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nz-hov5 .uplim,.mz-hov5 .uplim{ display:block;}
+/*下肢*/
+.lolim{width: 140px; height:52px; background:#e5e5e5;position: absolute;top:215px;left: -30px;z-index: 10; display:none;}
+.lolim a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.lolim .sect,.lolim a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nz-hov6 .lolim,.mz-hov6  .lolim{ display:block;}
+
+.nz-hov1 i{ background-position: -254px -10px; position:absolute;  display:block;top:1px; right:40px; width:156px; height:80px; z-index:2;}
+.nz-hov2 i{background-position: -239px -117px; position:absolute; top: 72px; right: 45px; width: 144px; height:56px;display:block;z-index:2;}
+.nz-hov3 i{background-position: -247px -208px; position:absolute; top: 129px; right: 44px; width:141px; height:32px;display:block;z-index:2;}
+.nz-hov4 i{background-position: -227px -291px; position:absolute; top: 155px; right: 4px; width: 187px; height:36px;display:block;z-index:2;}
+.nz-hov5 i{ background-position: 0 0; position:absolute; top: 73px; left: 31px; width:220px; height:141px;display:block;z-index:1;}
+.nz-hov6 i{background-position: 0 -178px; position:absolute; top: 185px; left: 31px; width:181px; height:171px;display:block;z-index:2;}
+.six-parts .head{ background-position:-211px 3px; position:absolute; top: 1px; right: 95px;  width:109px; height:63px; z-index:3;}
+.six-parts .upper-limbs{background-position: 0 3px; position:absolute; top: 55px; left:59px; width:174px; height:129px;z-index: 1;}
+.six-parts .chest{background-position: -211px -112px; position:absolute; top: 63px; right:80px; width:115px; height:50px;z-index: 2;}
+.six-parts .abdomin{background-position: -214px -206px; position:absolute; top: 113px; right: 82px; width:112px; height:26px;z-index:300;}
+.six-parts .reprodu{background-position: -196px -288px; position:absolute; top: 137px; right: 41px; width: 161px; height:32px;z-index:3;}
+.six-parts .lower-limbs{background-position: 0 -190px; position:absolute; top: 165px; left: 56px; width: 142px; height:150px;z-index:3;}
+.male-oppos{background: url(../images/ins_menf.jpg) no-repeat 105px 2px; width:337px; height:353px;position:relative;}
+.seven-parts{background: url(../images/menf_m0.png) no-repeat 51px 57px; height: 203px; }
+.seven-parts i{background: url(../images/menf_hovr.png) no-repeat; position:absolute; width:690px;  height:357px;display:none;}
+.nf_hov1 i {background-position: -31px -53px; position:absolute; top:57px; left: 96px; width:98px;height:20px;display:block; }
+.nf_hov2 i {background-position: -481px -13px; position:absolute; top:2px; left:51px; width:259px; height:355px;display:block;z-index:1; }
+.nf_hov3 i {background-position: -145px 0; position:absolute; top:70px; left: 150px; width:160px; height:60px;z-index:2;display:block;}
+.nf_hov4 i {background-position: -172px -74px; position:absolute; top:76px; left: 173px; width:120px; height:51px;z-index:2;display:block;}
+.nf_hov5 i{background-position: 0 -190px; position:absolute; top: 149px; left: 50px; width:160px; height:24px;z-index:3;display:block;}
+.nf_hov6 i {background-position: -167px -164px; position:absolute; top: 130px; left: 153px; width: 140px; height: 21px;z-index:2; display:block;}
+.nf_hov7 i {background-position:-153px -216px; position:absolute; top:161px; left: 148px; width:145px; height: 22px; z-index:2;display:block;}
+.wmb_b8 i{background-position: -481px -13px; position:absolute; top:2px; left:51px; width:259px; height:355px;display:block;}
+.seven-parts .neck {background-position: -15px -52px; position:absolute; top: 50px; left: 96px; width:90px; height:18px;z-index:3;}
+.seven-parts .back {background-position: -128px 0; position:absolute; top: 63px; left: 146px; width:126px; height:46px;z-index:4;}
+.seven-parts .bone {background-position: -172px -74px; position:absolute; top: 66px; left: 165px; width:105px; height:46px;z-index:3;}
+.seven-parts .pelvic {background-position: 0 -190px; position:absolute; top: 149px; left: 50px; width:160px; height:24px;z-index:3;}
+.seven-parts .waist{background-position: -139px -163px; position:absolute; top: 116px; left: 147px; width: 128px; height: 22px;z-index:3;}
+.seven-parts .hip {bbackground-position:-153px -216px; position:absolute; top:161px; left: 148px; width:145px; height: 22px;z-index:3;}
+.seven-parts .whole {background-position: -505px -30px; position:absolute; top: 142px; left: 144px;  width:259px; height:355px;z-index:3;}
+.seven-parts .me71{background-position: -505px -30px; position:absolute; top:0px; left:65px; width:211px; height:330px;}
+/*颈部*/
+.m_nec{width: 110px; height:30px; background:#e5e5e5;position: absolute;top:50px;left:20px;z-index: 10; display:none;}
+.m_nec a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.m_nec .sect,.m_nec a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nf_hov1 .m_nec,.mf_hov1 .m_nec{ display:block;}
+/*全身*/
+.m_bod{width: 175px; height:75px; background:#e5e5e5;position: absolute;top:74px;left:-58px;z-index: 10; display:none;}
+.m_bod a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.m_bod .sect,.m_bod a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nf_hov2 .m_bod,.mf_hov2 .m_bod{ display:block;}
+/*骨*/
+.m_bne{width: 253px; height:52px; background:#e5e5e5;position: absolute;top:99px;left:258px;z-index: 10; display:none;}
+.m_bne a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.m_bne .sect,.m_bne a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nf_hov4 .m_bne,.mf_hov4 .m_bne{ display:block;}
+/*盆腔*/
+.m_pelv{width: 90px; height:30px; background:#e5e5e5;position: absolute;top:140px;left:8px;z-index: 10; display:none;}
+.m_pelv a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.m_pelv .sect,.m_pelv a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nf_hov5 .m_pelv,.mf_hov5 .m_pelv{ display:block;}
+/*腰*/
+.m_wais{width: 150px; height:30px; background:#e5e5e5;position: absolute;top:123px;left:258px;z-index: 10; display:none;}
+.m_wais a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.m_wais .sect,.m_wais a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nf_hov6 .m_wais,.mf_hov6 .m_wais{ display:block;}
+/*臀部*/
+.m_hip{width: 45px; height:30px; background:#e5e5e5;position: absolute;top:152px;left:258px;z-index: 10; display:none;}
+.m_hip a{ font-size:14px; display:block; float:left;   padding: 0 5px; text-align:center;  margin: 4px 3px -1px 3px; color:#888;}
+.m_hip .sect,.m_hip a:hover{   padding: 0 5px; background: #fe6600; color:#fff;}
+.nf_hov7 .m_hip,.mf_hov7 .m_hip{ display:block;}
+
+
+
+
+
+
+
+
+
+.climok{ padding-bottom:35px; width:180px; margin:20px auto 0; position:relative;}
+.climok a{ color:#fff; font-size:16px; display:block; float:left; text-decoration:none;}
+.climok i{background: url(../images/ins_conm1.png) no-repeat -72px -150px; width:16px; height: 17px; position:absolute; top: 9px; left: 151px;}
+.climok .allmot{background: url(../images/ins-bok.png) no-repeat 0 0; width:82px; height:33px; text-align:center; line-height:33px; margin-right:15px;}
+.climok .nanmot{background: url(../images/ins-bok.png) no-repeat 0 -84px; width: 66px; height:33px;line-height:33px;padding-left: 16px;}
+.climok .mok{background: url(../images/ins-bok.png) no-repeat 0 -84px; width: 66px; height:33px;line-height:33px;padding-left: 16px;}
+/*女正反面*/
+.female-posit{background: url(../images/ins_womez.jpg) no-repeat 124px 2px; width:337px; height:351px;position:relative; margin-right:64px;}
+.female-posit .msix-parts{background: url(../images/womez_m0.png) no-repeat 33px 0; height: 262px; }
+.female-posit .mals{width: 139px; height:52px; background:#e5e5e5;position: absolute;top: 6px;left: 244px;z-index: 10; display:none;}
+.mz-hov1 .mals{ display:block;}
+.female-posit .msix-parts i{background: url(../images/womez_hovr.png) no-repeat; position:absolute; width:364px; height:319px; display:none;}
+.female-posit  .mz-hov1 i{ background-position: -208px -20px; position:absolute; top: 0px; left: 149px; width:120px; height:65px; display:block;}
+.female-posit  .mz-hov5 i{background-position: 0 -12px; position:absolute; top: 69px; left: 34px; width:204px; height:133px;display:block; z-index:1;}
+.female-posit  .mz-hov2 i{background-position: -239px -105px; position:absolute; top: 65px; right: 41px; width: 139px; height:54px;display:block;}
+.female-posit  .mz-hov3 i{background-position: -247px -205px; position:absolute; top: 130px; right: 47px; width:135px; height:27px;display:block;}
+.female-posit  .mz-hov4 i{background-position: -247px -253px; position:absolute; top: 148px; right: 0px; width: 184px; height:36px;display:block;}
+.female-posit  .mz-hov6 i{background-position: -12px -150px; position:absolute; top: 179px; left: 34px; width: 187px; height:175px;display:block;  z-index: 1;}
+.female-posit .msix-parts .head{background-position:-174px -10px; position:absolute; top: 1px; left:122px; width:104px; height: 57px; z-index:3;}
+.female-posit .msix-parts .upper-limbs{background-position: 0 -11px; position:absolute; top: 62px; left: 46px; width:152px; height:120px; z-index:3;}
+.female-posit .msix-parts .chest{background-position: -205px -100px; position:absolute; top: 62px; right: 100px; width:110px; height:48px; z-index:36;}
+.female-posit .msix-parts .abdomin{background-position: -208px -192px; position:absolute; top: 113px; right: 100px; width:112px; height:24px; z-index:399;}
+.female-posit .msix-parts .reprodu{background-position: -214px -250px; position:absolute; top: 134px; right: 61px; width: 152px; height:32px; z-index:300;}
+.female-posit .msix-parts .lower-limbs{background-position: -16px -155px; position:absolute; top: 160px; left: 46px; width:135px; height:154px; z-index:3;}
+.female-oppos{background: url(../images/ins_womef.jpg) no-repeat 122px 0; width:337px; height:351px;position:relative;}
+.female-oppos .mseven-parts{background: url(../images/womef_m0.png) no-repeat 44px 55px; height: 203px;}
+.female-oppos .mseven-parts i{background: url(../images/womef_hovr.png) no-repeat; position:absolute; width:609px; height:369px; display:none;}
+.female-oppos .mf_hov1 i{background-position: -151px 0px; position:absolute; top: 55px; left: 95px; width: 95px; height: 20px; display:block;}
+.female-oppos .mf_hov2 i{background-position: -506px -22px; position:absolute; top: 0px; left: 44px; width: 265px; height: 359px;display:block;}
+.female-oppos .mf_hov3 i{background-position: -170px -35px; position:absolute; top: 68px; left: 157px; width:153px; height:48px;display:block;z-index:2;}
+.female-oppos .mf_hov4 i{background-position: -193px -104px; position:absolute; top: 78px; left: 171px; width:116px; height:47px;display:block;z-index:2;}
+.female-oppos .mf_hov5 i{background-position: 0 -93px; position:absolute; top:144px; left: 44px; width:165px; height:24px ; display:block;z-index:2;}
+.female-oppos .mf_hov6 i{background-position: -172px -184px; position:absolute; top: 128px; left: 155px; width:132px; height:20px;display:block;z-index:2;}
+.female-oppos .mf_hov7 i{background-position: -158px -237px; position:absolute; top: 154px; left: 147px; width: 140px; height:22px;display:block;z-index:2;}
+.female-oppos .wmb_b7 i{background-position: -506px -22px; position:absolute; top: 0px; left:44px; width: 265px; height: 359px;display:block;}
+.female-oppos  .neck{background-position: -119px 0px; position:absolute; top:51px; left: 97px; width: 94px; height: 18px;z-index:3;}
+.female-oppos  .back{background-position: -136px -36px; position:absolute; top: 62px; left: 152px; width:115px; height:50px;z-index:3;}
+.female-oppos  .bone{background-position: -153px -111px; position:absolute; top: 69px; left: 167px; width:88px; height:44px;z-index:3;}
+.female-oppos  .pelvic{background-position: 0 -93px; position:absolute; top:136px; left: 72px; width:130px; height:16px ;z-index:3;}
+.female-oppos  .waist{background-position: -128px -185px; position:absolute; top: 122px; left: 151px; width: 115px; height:16px;z-index:3;}
+.female-oppos  .hip{background-position: -125px -237px; position:absolute; top: 143px; left: 145px; width: 122px; height:18px;z-index:3;}
+.female-oppos  .whole{background-position: -505px -30px; position:absolute; top: 142px; left: 144px; width:205px; height:334px; z-index:3;}
+.female-oppos  .wmb71{background-position: -407px -30px; position:absolute; top:0; left: 62px; width:205px; height:334px; z-index:2;}
+/*全部症状*/
+.six-parts .hov{ display:block;}
+.allparts{ position:relative;}
+.allparts a{ color:#666; font-family:"宋体"; font-size:14px;display:block;}
+.one-level{width:170px;height:413px;}
+.one-level .up-arrow,.one-level .down-arrow{ height:28px; line-height:28px; /* width: 163px; */ margin: 0 5px;}
+.smain-parts li{height:32px; overflow:hidden;}
+.smain-parts{paddding:6px 0;}
+.smain-parts li  a{  text-align:center; height:32px; line-height:32px;}
+.smain-parts li.on{border:1px solid #a3f3b6;   border-right: 1px solid #fafcf9; background:#fdfdfd;}
+.smain-parts li a:hover{font-weight:bold; color:#333; text-decoration:none;}
+.second-level{ background:#fdfdfd;  width: 142px; height:413px; border:1px solid #a3f3b6; border-width:0 1px 0 1px;}
+.small-parts {text-align:center;}
+.small-parts a{ height:29px; line-height:29px; color:#333;}
+.third-level{ height:413px;position: relative;overflow-y: auto;width: auto;overflow-x: hidden}
+.third-parts{ width:882px;}
+.third-parts li{ height:32px; line-height:32px;  margin-bottom: 2px;}
+.third-parts li a{padding-left:40px;}
+.small-parts li a:hover{ background:#feede2;font-weight:bold; clor:#333;text-decoration:none;}
+.third-parts li a:hover{ background:#feede2;font-weight:bold; clor:#fff;text-decoration:none;}
+.h442{ height:442px; overflow:hidden;}
+#down-arrow{background: url(../images/ins_com4.png) no-repeat  73px 11px;border-bottom:1px solid #f0f1f2; height:30px;}
+#up-arrow{background:url(../images/ins_com3.png) no-repeat 70px -35px; border-top:1px solid #f0f1f2;height:30px;}
+#up-arrow.addmov{background:url(../images/ins_com4.png) no-repeat 70px -35px;}
+#down-arrow.addmov{ background: url(../images/ins_com3.png) no-repeat 73px 11px;}
+.oksu{height:344px;overflow:hidden; position:relative; top:-1px; z-index:2;width:171px;}
+/*疾病查询*/
+.refres i{ color:#49c066; font-size:14px; background: url(../images/ins_conm1.png) no-repeat 0 -133px; padding-left:22px; display: block; cursor:pointer; }
+.refres i:hover{background: url(../images/ins_conm1.png) no-repeat -71px -199px; color:#ff6600;}
+.meptoms{ height:668px;}
+.w220{ border:1px solid #a3f3b6; borer-left:0;width:220px; border-bottom:0;}
+.w220 .addtoms{height:179px;position: relative;overflow-y: auto;width: auto;}
+.w220 .addhmo span{ border-bottom:1px solid #a3f3b6; font-size:16px; color:#49c066; font-weight:bold; display:block; padding: 0 11px 0 36px;height:36px; line-height:36px; background:#f7f7f7 url(../images/ins_conm1.png) no-repeat  14px 11px;}
+.w220 .addhmo span .adchos{background:#fdfdfd url(../images/ins_conm1.png) no-repeat 38px -40px; padding-left:10px; margin-top:6px; border:1px solid #6ccb83; font-size:12px; color:#49c066; height:21px; width:51px; display: inline; float: right; line-height: 21px;font-family:"宋体"; font-weight:normal;}
+.w220 .addtoms dd{background: url(../images/ins_conm1.png) no-repeat -62px -9px;  border-bottom:1px  dashed #e5e5e5; color:#666; font-size:14px;padding: 0 11px 0 35px; height:36px; line-height:36px; }
+.addnum a{ float:right; background: url(../images/ins_conm1.png) no-repeat -2px -180px; width: 14px; height: 14px; margin-top: 12px;}
+.w220  .relatom{ height:415px;position: relative;overflow-y: auto;width: auto;}
+.addnum a:hover{background: url(../images/ins_conm1.png) no-repeat -2px -218px;}
+.w220  .addrelat  span{ border-bottom:1px solid #a3f3b6;border-top:1px solid #a3f3b6;  display:block; font-size:16px; color:#49c066; font-weight:bold; padding: 0 11px 0 36px;height:36px; line-height:36px; background: url(../images/ins_conm1.png) no-repeat  12px -81px;}
+.w220  .relatom dd{ background:none; padding: 0 11px 0 8px;}
+.w220  .relatom{ height:412px;}
+.w220  .relatom dd i{ float:left;}
+.w220  .relatom dd  i{display:inline;float:left;width:13px;height:13px; line-height:13px;border:1px solid  #e5e5e5; background:#fff;margin: 10px 0 0 4px;}
+.w220  .relatom dd a{width:153px;height:32px; float:right; color:#666; display:block; text-decoration:none; }
+.w220  .relatom dd.hover i{background: url(../images/ins_conm1.png) no-repeat -78px -65px;}
+.w220  .relatom dd:hover{ background:#feede2;}
+.w974{width:974px;}
+.w974 h4{ height:37px;width:974px;  background:#f2f2f2; line-height:37px; text-align:center; font-size:16px; color:#49c066;}
+.w974 .inspect { padding:0 16px;position: relative;overflow-y: auto;width: auto; height:630px;}
+.w974 .inspect li{ padding:20px 0 15px 15px; border-bottom:1px solid #dcdcdc;}
+.w974 .inspect .spetit{ overflow:hidden;}
+.w974 .inspect .spetit h5{ float:left;font-size:16px; color:#333; font-weight:bold;}
+.w974 .inspect .spetit .compre{ float:right;color:#999; } 
+.w974 .inspect .detatxt{ line-height:23px; margin-top:10px;}
+.w974 .inspect .detatxt a{color:#ff6600;}
+.w974 .possib{ margin-top:10px;  overflow: hidden;}
+.w974 .possib b{color:#999999; font-weight:normal; float:left;}
+.mres{background:#feede2;float:left;height:9px; line-height:9px; font-size:1px;width:107px;margin-top:6px;*margin-top:4px;}
+.w974 .lbar{background:#ff6600;display:block;height:9px;line-height:9px; font-size:1px; width:15%;}
+.hotwor li{ height:50px; overflow:hidden;}

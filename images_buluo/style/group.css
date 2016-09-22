@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+
+.col-s{ color:#5F5F5F;}
+.col-s a{ color:#5F5F5F;}
+
+.g-m0s8 .m-wrap{ margin-right:320px;}
+.g-m0s8 .col-s{ width:310px; margin-left:-310px;}
+.g-m0s7 .m-wrap{ margin-right:280px;}
+.g-m0s7 .col-s{ width:270px; margin-left:-270px;}
+
+/* inherit from mod, zh*/
+.zhmod-01{ background:#FFF; border:1px solid #DFDFDF; zoom:1;}
+.zhmod-01 .top,.zhmod-01 .tl{ background:url(../images/zhmod-group.png) no-repeat; width:auto; height:3px;}
+.zhmod-01 .top{ background-position:right -13px; margin:-1px -1px 0 0;}
+.zhmod-01 .tl{ background-position:0 0; width:3px; margin-left:-1px;}
+.zhmod-01 .hd{ padding:11px; border-bottom:1px solid #DFDFDF;}
+.zhmod-01 h3{ background:url(../images/zhgroup.png) no-repeat; width:130px; line-height:19px; text-indent:-9999px;}
+.zhmod-01 .bd{ padding:6px 0px;}
+
+
+.zhmod-02{ background:#FFF; border:1px solid #E6E6E6; zoom:1;}
+.zhmod-02 .top,.zhmod-02 .tl,.zhmod-02 .bottom,.zhmod-02 .bl{ background:url(../images/zhmod-group.png) no-repeat; width:auto; height:3px;}
+.zhmod-02 .top{ background-position:right -42px; margin:-1px -1px 0 0;}
+.zhmod-02 .tl{ background-position:0 -26px; width:3px; margin-left:-1px;}
+.zhmod-02 .bottom{ background-position:right -45px; margin:0 -1px -1px 0;}
+.zhmod-02 .bl{ background-position:0 -29px; width:3px; margin:0; margin-left:-1px;}
+.zhmod-02 .inner{ padding:4px 6px;}
+.zhmod-02 img{ display:block;}
+.zhmod-02 em{ display:block; background:#B3DB92; padding:2px 0 3px 3px; text-decoration:none; font-size:12px;}
+
+/*推荐部落*/
+.zhmod-01 .group-recommend h3{ background-position:0 0;}
+.zhmod-01 .group-recommend .hd span{ float:right;}
+.zhmod-01 .pre,.zhmod-01 .next,.zhmod-01 .page-zh{ display:block; float:left; display:inline; background:url(../images/zhgroup.png) no-repeat;}
+.zhmod-01 .pre,.zhmod-01 .next{ margin:0 10px; width:26px; height:19px;}
+.zhmod-01 .page-zh{ margin:8px 2px 0; width:5px; height:5px; overflow:hidden;}
+.zhmod-01 .pre{ background-position:0 -242px; cursor:default;}
+.zhmod-01 .next{ background-position:-26px -281px;}
+.zhmod-01 .page-zh{ background-position:0 -320px;}
+.zhmod-01 .page-on{ background-position:0 -345px;}
+.zhmod-01 .group-recommend .bd{ background:#F2F2F2;}
+.zhmod-01 .group-rec-outerwrap{ position:relative; width:100%; height:105px; overflow:hidden;}
+.zhmod-01 .group-rec-innerwrap{ position:absolute; width:4000px; left:0;}
+.zhmod-01 .group-recommend ul{ overflow:hidden; zoom:1;}
+.zhmod-01 .group-recommend li{ float:left; display:inline; margin-left:9px; width:101px;}
+
+/*热门话题*/
+.zhmod-01 .group-topic{ margin-bottom:12px; line-height:18px; font-size:12px; color:#949494;}
+.zhmod-01 .group-topic .hd{ padding:0; border-bottom:1px dashed #949494;}
+.zhmod-01 .group-topic h4{ font-size:16px; font-weight:700;}
+.zhmod-01 .hot-topic .bd,.zhmod-01 .hot-topic-rank .bd{ padding:10px 0;}
+.zhmod-01 .group-topic .bd{ padding:10px 0 0;}
+
+.zhmod-01 .hot-topic{ width:343px;}
+.zhmod-01 .hot-topic h3{ background-position:0 -37px;}
+.zhmod-01 .text-list li{ background:url(../images/zhgroup.png) no-repeat -197px -380px; margin-top:6px; padding-left:9px; font-size:14px;}
+
+.zhmod-01 .hot-topic-rank{ font-size:14px;}
+.zhmod-01 .hot-topic-rank h3{ background-position:0 -111px;}
+.zhmod-01 .hot-topic-rank li{ background:url(../images/zhgroup.png) no-repeat -187px 0; margin-bottom:8px; padding-left:21px;}
+.zhmod-01 .hot-topic-rank li.first{ background:none; padding:0; overflow:hidden; zoom:1;}
+.zhmod-01 .hot-topic-rank li.first h4{ background:url(../images/zhgroup.png) no-repeat -183px 2px; text-indent:16px;}
+.zhmod-01 .hot-topic-rank li.second{ background-position:-183px -112px;}
+.zhmod-01 .hot-topic-rank li.third{ background-position:-183px -140px;}
+.zhmod-01 .hot-topic-rank li.forth{ background-position:-183px -168px;}
+.zhmod-01 .hot-topic-rank li.fifth{ background-position:-183px -197px;}
+.zhmod-01 .hot-topic-rank li.sixth{ background-position:-183px -224px;}
+.zhmod-01 .hot-topic-rank li.seventh{ background-position:-183px -252px;}
+.zhmod-01 .hot-topic-rank li.eighth{ background-position:-183px -280px;}
+.zhmod-01 .hot-topic-rank li.ninth{ background-position:-183px -308px;}
+.zhmod-01 .hot-topic-rank li.tenth{ background-position:-183px -336px;}
+.zhmod-01 .hot-topic-rank .group-topic{ margin-left:4px; margin-bottom:0; width:199px;}
+.zhmod-01 .fl{ float:left; display:inline;}
+.zhmod-01 .header-left{ float:left; width:101px;}
+.zhmod-01 .hot-topic-rank .zhmod-02 em{ background:#F96900; color:#FFF;}
+
+/*部落地图*/
+.zhmod-01 .group-map{ font-size:14px;}
+.zhmod-01 .group-map h3{ background-position:0 -74px;}
+.zhmod-01 .group-map .hd{ padding-bottom:0;}
+.zhmod-01 .group-map .hd ul{ float:right;}
+.zhmod-01 .group-map .hd li{ float:left; display:inline; background:url(../images/zhgroup.png) no-repeat 0 -195px;; padding:8px 0 5px; margin-right:8px; width:99px; line-height:14px; text-align:center; font-weight:700; color:#5F5F5F; cursor:pointer;}
+.zhmod-01 .group-map .hd .on-zh{ background-position:0 -148px; color:#FFF;}
+.zhmod-01 .group-map .bd{ padding:0 10px 6px;}
+.zhmod-01 .group-map dl{ margin-top:15px; width:255px; overflow:hidden; zoom:1;}
+.zhmod-01 .group-map dt{ white-space:nowrap; color:#408F00;}
+.zhmod-01 .group-map dt span{ background:url(../images/zhgroup.png) no-repeat right -359px; padding-right:14px;}
+.zhmod-01 .group-map dd{ float:left; display:inline; margin:6px 0 0 15px; white-space:nowrap;}

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>提交成功_健康问答_久久健康网</title>
+<link rel="stylesheet" type="text/css" href="/images_ask/css2/r.css"></link>
+<link rel="stylesheet" type="text/css" href="/images_ask/css2/b.css"></link>
+<link rel="stylesheet" type="text/css" href="/images_ask/css2/g.css"></link>
+<link rel="stylesheet" type="text/css" href="/images_ask/css2/m.css"></link>
+<link href="/images_ask/css2/twzz.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_index.css"/>
+
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript">
+
+<?php /*退出时跳转到首页 LinYuan 2010-4-21*/ ?>
+	function __logout() {
+		location.href="<?=ASK_URL?>";
+	}
+
+	<?php /*修改密码 */ ?>
+	function changePwd(){
+		var name = $("#uname").val();
+		var pwd = $('#upwd').val();
+		if( pwd == '' || pwd.length<6)
+		{
+			alert("密码应该大于6位！请认真填写!");
+			$('#upwd').focus();
+			return false;
+		}
+		$.get('/Ajaxsearch/updatepwd/email/'+name+'/pwd/'+pwd,
+		function(data){
+			if(data=='ok'){
+				alert('修改成功!');
+				$('#showpwd').html('密码：'+pwd);
+			}else{
+				alert('修改失败!');
+			}
+		});
+		return false;
+	}
+</script>
+</head>
+<body>
+<?php require(APP_ROOT."/header_new.shtml");?>
+	<div id="doc" class="w950">
+  		<div id="hd"></div>
+		<div id="bd">
+			<div class="g-m0s8 l-fix tMarginLg">
+				<div class="col-m">
+					<div class="m-wrap">
+						<div class="boxl">
+							<div class="lw-modzz01">
+								<div class="hd l-fix">
+									您的回答已经提交成功，感谢您对网友的热情回复！
+									<a href="<?=ASK_URL?>id/<?=$this->askid?>"><img src="/images_ask/images/twicon.png" /></a>
+								</div>
+								<div class="bd">
+									<span class="title">您好，为了方便下次登陆网站，系统自动为您匹配的密码不易记忆，请重新设置密码</span>
+									<div>
+										<p class="box">
+											<span class="ltitle">请保管自己的帐号密码</span>
+											<span class="rtitle">用户名：<?=$this->username?></span>
+											<span class="rtitle" id="showpwd">密码：<?=$this->pwd?></span>
+										</p>
+										<p class="box">
+											<span class="ltitle">或修改为您的密码</span>
+											<span class="rtitle">帐号：<input class="inp" type="text" readonly value="<?=$this->username?>" id="uname"/></span>
+											<span class="rtitle">新密码：<input class="inp" type="text" value="<?=$this->pwd?>"  id="upwd"/><input class="subBtn" value="" type="submit" onclick="return changePwd()" /></span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="lw-modzz02 l-fix">
+								<span>等待期间您可以做：</span>
+								<a href="<?=HOME_9939_URL?>ask/">查看我提问过的问题</a>
+								<a href="<?=HOME_9939_URL?>user">我的健康家园</a>
+								<a href="<?=HOME_9939_URL?>user/do/do/edit">完善个人资料</a>
+							</div>
+							<div class="lw-modzz03 l-fix">
+								
+								<div class="bd">
+									<h2>以下内容可能对您有帮助</h2>
+									<div class="g-line">
+										<div class="g-u s1of2 ">
+											<?php for($i=0;$i<count($this->ask);$i += 2){ ?>
+											<a href="<?=$this->ask[$i]['url'] ?>" target="_blank"><?=mb_substr($this->ask[$i]['TITLE'],0,18,'utf-8') ?></a>
+											<?php } ?>
+										</div>
+										<div class="g-u g-lastu s1of2">
+											<?php for($i=1;$i<count($this->ask);$i += 2){ ?>
+											<a href="<?=$this->ask[$i]['url'] ?>" target="_blank"><?=mb_substr($this->ask[$i]['TITLE'],0,18,'utf-8') ?></a>
+											<?php } ?>	
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-s">
+					<div class="boxr lw-modzz04 l-fix">
+						<div class="ttitle">
+							<h2>新手帮助：</h2>
+							熟悉一下流畅，您将获得医生最佳的服务!
+						</div>
+						<div class="box n1 tMarginLg">
+							<div class="hd">第1步：提问</div>
+						</div>
+						<div class="box n2 tMarginLg">
+							<div class="hd">第2步：查看问题</div>
+							<div class="bd">确认问题细节无误，等待医生解答</div>
+						</div>
+						<div class="box n3 tMarginLg">
+							<div class="hd">第3步：补充问题</div>
+							<div class="bd">补充病情细节，以便医生深入了解做出更准确的诊断</div>
+						</div>
+						<div class="box n4 tMarginLg">
+							<div class="hd">第4步：评选最佳问题</div>
+							<div class="bd">选出最佳答案，感谢并肯定为您提供服务的好医生</div>
+						</div>
+						<div class="box n5 tMarginLg">
+							<div class="hd">第5步：其他</div>
+							<div class="bd">
+								<strong>积分换礼：</strong>将心比心，您可以帮助回答一沓网友的问题获得积分，参与有奖积分活动。<br />
+								<strong>投诉：</strong>如您发现错误，广告等略知回复，您可点此进行投诉。<br />
+								<strong>短信通知：</strong>您的问题得到医生的解答后，会受到站内短信通知。
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php require(APP_ROOT."/footer.html");?>
+</body>
+</html>

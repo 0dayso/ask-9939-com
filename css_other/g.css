@@ -1,0 +1,74 @@
+/*  grid 源于taobao、yui */
+#doc {
+    padding: 0 10px;
+    text-align:left;
+}
+#hd, #bd, #ft {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* 页面宽度为 750px */
+.w750 #hd, .w750 #bd, .w750 #ft,
+#bd.w750 {
+    width: 750px;
+}
+/* 页面宽度为 950px */
+.w950 #hd, .w950 #bd, .w950 #ft,
+#bd.w950 {
+    width: 950px;
+}
+/** 布局基础样式 **/
+.col-m {
+    float: left;
+    width: 100%;
+    min-height: 1px;
+}
+.m-wrap {
+    position: relative;
+}
+.col-s, .col-e {
+    float: left;
+    position: relative;
+}
+
+#hd,#bd,#ft,.m-wrap,.l-fix,.col-s, .col-e {
+    *zoom: 1;
+}
+#hd:after,#bd:after,#ft:after,.l-fix:after,.m-wrap:after, .col-s:after, .col-e:after {
+	content: "";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+.l-fix{
+	*position:relative;
+}
+.g-s5m0 .m-wrap { margin-left: 200px; }
+.g-s5m0 .col-s { width: 190px; margin-left: -100%; }
+.g-m0s5 .m-wrap { margin-right: 200px; }
+.g-m0s5 .col-s { width: 190px; margin-left: -190px; }
+.g-s5m0e6 .m-wrap { margin: 0 240px 0 200px; }
+.g-s5m0e6 .col-s { width: 190px; margin-left: -100%; }
+.g-s5m0e6 .col-e { width: 230px; margin-left: -230px; }
+.g-e6m0s5 .m-wrap { margin: 0 200px 0 240px; }
+.g-e6m0s5 .col-s { width: 190px; margin-left: -190px; }
+.g-e6m0s5 .col-e { width: 230px; margin-left: -100%; }
+.g-m0e6s5 .m-wrap { margin-right: 440px; }
+.g-m0e6s5 .col-s { width: 190px; margin-left: -190px; }
+.g-m0e6s5 .col-e { width: 230px; margin-left: -430px; }
+
+/* g-line */
+.g-line, .g-lastu {overflow: auto;_overflow:visible;_zoom:1; }
+.g-u{float:left;_zoom:1;}
+.s1of1{float:none;}
+.s1of2{width:50%;}
+.s1of3{width:33.33333%;}
+.s2of3{width:66.66666%;}
+.s1of4{width:25%;}
+.s3of4{width:75%;}
+.s1of5{width:20%;}
+.s2of5{width:40%;}
+.s3of5{width:60%;}
+.s4of5{width:80%;}
+.g-lastu {float:none;_position:relative; _left:-3px; _margin-right: -3px;width:auto;}

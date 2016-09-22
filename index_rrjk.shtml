@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<base target="_blank">
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<meta name="google-site-verification" content="6VayB7rBv7mdsOuyT9G76geFrjR_4p6NgZSHbXWU24Y" />
+<title>久久问答 找健康 问久久</title>
+<link target="_blank" href="/images_ask/css/r.css" type="text/css" rel="stylesheet" />
+<link target="_blank" href="/images_ask/css/b.css" type="text/css" rel="stylesheet" />
+<link target="_blank" href="/images_ask/css/g.css" type="text/css" rel="stylesheet" />
+<link target="_blank" href="/images_ask/css/m.css" type="text/css" rel="stylesheet" />
+<link target="_blank" href="/images_ask/css/ask_index.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.slide3.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.slide2.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.textSlider.js"></script>
+
+<script type="text/javascript">
+$(function(){
+$(document).jTab({
+  menutag:".hd li",
+  action:"mouseover",
+  activeClassName:"on"
+  });
+$(".zhtag-more").hide();
+$(".zhsidebar .zhmod01 h4").bind("mouseover", function(){
+  $(this).find(".zhtag-more").show();
+});
+$(".zhsidebar .zhmod01 h4").bind("mouseout", function(){
+  $(this).find(".zhtag-more").hide();
+});
+
+$(".ques-broad .bd").textSlider({
+ line:1,
+ speed:500,
+ timer:3000
+ });
+});
+
+
+//搜索用
+function mksearch(id,i)
+{
+	var kw = $("#"+id).val();
+	var type = 10;
+	if(i==1){
+		window.location.href="http://so.9939.com/index/index/kw/"+kw+"/type/"+type;
+	}else if(i==2){
+		window.location.href="http://ask.9939.com/asking/index/kw/"+kw;
+	}
+	return false;
+}
+
+</script>
+</head>
+<body>
+<div id="doc" class="w950">
+    <div id="bd">
+    <div class="g-s5m0 tMarginLg l-fix">
+      <div class="col-m">
+        <div class="m-wrap">
+          <div class="g-line">
+          <div class="zhmain">
+            <div class="g-line">
+              <div class="g-u s1of2">
+                <div class="zhslide-box">
+                  <div class="zhslide-thumb-wrap">
+		    	                			     <div class="zhslide-thumb">
+			      <a target="_blank" href="http://tongji.9939.com/count/goto.php?url=aHR0cDovL3d3dy5rc2RueC5jb20vbGFuc2kvbGFuNF8xL2p1YnVqaWFuZmVpLzIwMTEwNzI5LzQyNDYuaHRtbA=="><img src="http://home.9939.com//upload/pic/201108/1313137010.jpg" /></a>
+			      <div class="zhslide-thumb-text">
+				<h4><a target="_blank" href="http://tongji.9939.com/count/goto.php?url=aHR0cDovL3d3dy5rc2RueC5jb20vbGFuc2kvbGFuNF8xL2p1YnVqaWFuZmVpLzIwMTEwNzI5LzQyNDYuaHRtbA==">惊爆！我瘦30J的秘密！！</a></h4>
+				<p>惊爆！我瘦30J的秘密！！<a target="_blank" href="http://tongji.9939.com/count/goto.php?url=aHR0cDovL3d3dy5rc2RueC5jb20vbGFuc2kvbGFuNF8xL2p1YnVqaWFuZmVpLzIwMTEwNzI5LzQyNDYuaHRtbA==">[详细]</a></p>
+			      </div>
+			    </div>
+		       			     <div class="zhslide-thumb">
+			      <a target="_blank" href="http://ask.9939.com/id/3609423"><img src="http://home.9939.com//upload/pic/201108/1313115282.jpg" /></a>
+			      <div class="zhslide-thumb-text">
+				<h4><a target="_blank" href="http://ask.9939.com/id/3609423">婴儿应该睡什么床健康</a></h4>
+				<p>婴儿应该睡什么床<a target="_blank" href="http://ask.9939.com/id/3609423">[详细]</a></p>
+			      </div>
+			    </div>
+		       			     <div class="zhslide-thumb">
+			      <a target="_blank" href="http://ask.9939.com/id/3609422"><img src="http://home.9939.com//upload/pic/201108/1313115333.jpg" /></a>
+			      <div class="zhslide-thumb-text">
+				<h4><a target="_blank" href="http://ask.9939.com/id/3609422">多喝脱脂牛奶预防高血压</a></h4>
+				<p>脱脂牛奶预防高血压?<a target="_blank" href="http://ask.9939.com/id/3609422">[详细]</a></p>
+			      </div>
+			    </div>
+		       		                        </div>
+                  <div class="zhsilde-num">
+                    <ul>
+                      <li class="on">1</li>
+                      <li>2</li>
+                      <li>3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="g-u s1of2 g-lastu">
+                <div class="zhmod02">
+                  <div class="hd">
+                    <h3>热点推荐</h3>
+                  </div>
+                  <div class="bd zhrec-daily">
+                    <ul class="zhtext-list">
+                      		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606401">哪些症状可以看出女人的妇科病？</a></li>
+		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606414">男人经常下厨会增加患阳痿的机率</a></li>
+		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606413">令产妇告别恐惧放松分娩的技巧？</a></li>
+		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606416">女性痛经时不可乱吃药应即使检查</a></li>
+		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606417">人体缺乏哪些营养容易导致癌变？</a></li>
+		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606379">经常水肿是何原因怎么样消除水肿</a></li>
+		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606460">被狗抓伤表皮需要打狂犬疫苗吗？</a></li>
+		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606449">便秘严重时刷牙恶心干呕怎么回事</a></li>
+		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606471">四岁宝宝经常尿床白天午睡也尿？</a></li>
+		                		                  <li><a target="_blank" href="http://ask.9939.com/id/3606482">合理的膳食有助于头发的浓密生长</a></li>
+		                		                                   </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="g-line tMarginLg">
+              <div class="g-u s1of2">
+                <div class="zhmod04">
+                  <div class="hd">
+                    <h3><strong>最新</strong>提问</h3>
+                  </div>
+                  <div class="bd">
+                    <ul class="zhtext-list">
+                      <!--#include virtual="/public/zuixinask.shtml"-->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="g-u s1of2 g-lastu">
+                <div class="zhmod04 lMarginZh">
+                  <div class="hd">
+                    <h3><strong>悬赏</strong>提问</h3>
+                  </div>
+                  <div class="bd">
+                    <ul class="zhtext-list">
+                      <!--#include virtual="/public/xsask.shtml"-->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="zhmod02 tMarginLg">
+              <div class="hd">
+                <h3>健康精彩话题</h3>
+              </div>
+              <div class="bd zhtopic-ex">
+                	                	                	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://www.9939.com/"><img src="http://home.9939.com//upload/pic/201007/1279691900.jpg" /></a>
+		                  </div>
+		                  <span><关爱癫痫</span>
+		              </div>
+	                	               	                	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://tongji.9939.com/count/goto.php?url=IGh0dHA6Ly9zd3Quem9vc25ldC5uZXQvTFIvQ2hhdHByZS5hc3B4P2lkPVNXVDg2NDU4NTQx"><img src="http://home.9939.com//upload/pic/201107/1309830698.jpg" /></a>
+		                  </div>
+		                  <span><三期疗法治红疮</span>
+		              </div>
+	                	               	                	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://home.9939.com/buluo/index/bid/84"><img src="http://home.9939.com//upload/pic/201102/1297307231.jpg" /></a>
+		                  </div>
+		                  <span><做合格妈妈</span>
+		              </div>
+	                	               	                	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://home.9939.com/buluo/index/bid/279"><img src="http://home.9939.com//upload/pic/201004/1272424573.jpg" /></a>
+		                  </div>
+		                  <span><娱乐八卦</span>
+		              </div>
+	                	               	                            </div>
+            </div>
+            <div class="zhmod05 tMarginLg">
+              <ul class="zhtext-list">
+                                                  <li><a target="_blank" href="http://www.9939.com/">癫痫女性能生育吗</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/6373">药膳美容护肤祛斑养颜</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/19872">方便面与蔬菜合理搭配</a></li>
+                                  <li><a target="_blank" href="http://www.9939.com/">癫痫专家集体开微薄了</a></li>
+                                  <li><a target="_blank" href="http://tongji.9939.com/count/goto.php?url=aHR0cDovL3d3dy5zZWhiLm5ldC9odG0veWluc2hpLw==">红斑狼疮患者合理饮食</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/5468">一名女大学生的贞操观</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/6017">补气血红润又美丽</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/4516">家中必备的十种中药</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/2994">男性成人小笑话</a></li>
+                                             </ul>
+            </div>
+            <div class="zhmod02 tMarginLg">
+              <div class="hd">
+                <h3>推荐专家</h3>
+              </div>
+              <div class="bd zhexpert-rec">
+			    <div class="zhexpert-wrap">
+              	  	                	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://tongji.9939.com/count/click.php?id=28068"><img src="http://home.9939.com//upload/pic/201006/1275369150.JPG" /></a>
+		                  </div>
+		                  <p>董学才</p>
+		                  <p></p>
+		              </div>
+	               	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://tongji.9939.com/count/click.php?id=28075"><img src="http://home.9939.com//upload/pic/201006/1275369245.JPG" /></a>
+		                  </div>
+		                  <p><A href='\\"http://www.npx110.com/\\"' target='\\"_blank\\"'>张永斌</A></p>
+		                  <p></p>
+		              </div>
+	               	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://home.9939.com/user/?uid=200270"><img src="http://home.9939.com//upload/pic/201004/1272425112.jpg" /></a>
+		                  </div>
+		                  <p>心血管胡大一</p>
+		                  <p></p>
+		              </div>
+	               	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://home.9939.com/user/?uid=200332"><img src="http://home.9939.com//upload/pic/201004/1272425125.jpg" /></a>
+		                  </div>
+		                  <p>儿科王永午</p>
+		                  <p></p>
+		              </div>
+	               	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://home.9939.com/user/?uid=1785"><img src="http://home.9939.com//upload/pic/201004/1272425139.jpg" /></a>
+		                  </div>
+		                  <p>中医任立存</p>
+		                  <p></p>
+		              </div>
+	               	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://home.9939.com/user/?uid=200276"><img src="http://home.9939.com//upload/pic/201009/1285750440.jpg" /></a>
+		                  </div>
+		                  <p>全科医师张树遵</p>
+		                  <p></p>
+		              </div>
+	               	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://home.9939.com/user/?uid=200269"><img src="http://home.9939.com//upload/pic/201106/1308808256.jpg" /></a>
+		                  </div>
+		                  <p>肖明第</p>
+		                  <p></p>
+		              </div>
+	               	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://home.9939.com/doctor/?uid=369704"><img src="http://home.9939.com//upload/pic/201106/1308880979.jpg" /></a>
+		                  </div>
+		                  <p>崔光浩</p>
+		                  <p></p>
+		              </div>
+	               	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://tongji.9939.com/count/goto.php?url=aHR0cDovL3d3dy55b2Rhay5uZXQvenh6eC96aXh1bi5zaHRtbD91dG1fc291cmNlPTk5MzkmYW1wO3V0bV9tZWRpdW09Y3BtJmFtcDt1dG1fY29udGVudD14emJfcGlhb2Z1Jg=="><img src="http://home.9939.com//upload/pic/201106/1308881008.jpg" /></a>
+		                  </div>
+		                  <p>顾菊康</p>
+		                  <p></p>
+		              </div>
+	               	                  <div class="zhpic-text">
+		                  <div class="zhpic">
+		                    <a target="_blank" href="http://home.9939.com/user/?uid=369564"><img src="http://home.9939.com//upload/pic/201106/1308880630.jpg" /></a>
+		                  </div>
+		                  <p>方正</p>
+		                  <p></p>
+		              </div>
+	               	              				</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="zhextra">
+            <div class="zhtag-block">
+              <div class="hd">
+                <ul>
+                  <li class="on">常见病</li>
+                  <li>亚健康</li>
+                  <li>生活类</li>
+                </ul>
+              </div>
+              <div class="bd">
+                <div class="zhtag-block-show">
+                  <ul class="zhtag-list">
+                                                      <li><a target="_blank" href="http://ask.9939.com/classid/71">癫痫</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/289">中耳炎</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/198">盆腔炎</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/347">脚气</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/35">心脏病</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/343">过敏</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/80">哮喘</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/132">中风</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/34">高血压</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/43">糖尿病</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/61">胃炎</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/39">动脉硬化</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/96">尿道炎</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/197">宫颈糜烂</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/60">腹泻</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/292">口腔溃疡</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/206">阴道炎</a></li>
+                                                 </ul>
+                </div>
+                <div class="zhtag-block-show">
+                  <ul class="zhtag-list">
+                                                      <li><a target="_blank" href="http://ask.9939.com/classid/337">黄褐斑</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/109">肩周炎</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/164">肝损伤</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/119">肾结石</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/249">多动症</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/82">支气管炎</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/144">乳腺增生</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/285">鼻炎</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/400">恋物癖</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/471">鼻出血</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/415">磨牙</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/451">口臭</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/104">颈椎病</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/28">四肢肿</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/23">腰痛</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/29">抽筋</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/24">易怒</a></li>
+                                                 </ul>
+                </div>
+                <div class="zhtag-block-show">
+                  <ul class="zhtag-list">
+                                                      <li><a target="_blank" href="http://ask.9939.com/classid/13">美容塑身</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/21">减肥瘦体</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/20">环境与健康</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/10">保健养生</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/18">手机与健康</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/17">电脑与健康</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/16">生活百科</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/6">休闲健身</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/11">育儿</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/8">营养饮食</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/424">办公室综合症</a></li>
+                                                 </ul>
+                </div>
+              </div>
+            </div>
+            <div class="zhquick-ask tMarginLg">
+	            <form action="" method="post">
+	                <fieldset>
+	                  <legend>快速提问</legend>
+	                  <textarea class="zhinput-textarea" id="searchtext1"  id="searchtext" onblur="if(this.value=='') this.value='输入提问内容，点击“快速提问”';"
+onfocus="if(this.value=='输入提问内容，点击“快速提问”') this.value='';">输入提问内容，点击“快速提问”</textarea>
+	                  <a class="zhinput-submit zhinput-submit03" target="_blank" href="###" onclick="return mksearch('searchtext1',2)"></a>
+	                </fieldset>
+	              </form>
+            </div>
+            <div class="zhanswer tMarginLg">
+              <a target="_blank" href="http://ask.9939.com/classid/0"><img src="/images_ask/images/zhanswer.gif" /></a>
+            </div>
+
+            <div class="zhmod02 ques-broad tMarginLg">
+              <div class="hd">
+                <h3>问题广播</h3>
+              </div>
+              <div class="bd">
+                <ul class="zhtext-list">
+                <!--#include virtual="/public/broadcast.shtml"-->
+                </ul>
+              </div>
+            </div>
+            <div class="zhmod02 tMarginLg">
+              <div class="hd">
+                <h3>公告</h3>
+              </div>
+              <div class="bd">
+                <ul class="zhtext-list">
+                                                    <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/19862">如何全方面防暑</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/236">儿童夏季病专题</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/6557">怎么注册,如何提问</a></li>
+                                  <li><a target="_blank" href="http://tongji.9939.com/count/click.php?id=28098">前列腺患者有话要说</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3577359">吃哪些食物能抵抗炎炎夏日</a></li>
+                                               </ul>
+              </div>
+            </div>
+            <div class="zhmod03 tMarginLg">
+		    <div class="hd">
+			<ul>
+			  <li>医生排行</li>
+			  <li>大众会员排行</li>
+			</ul>
+		      </div>
+		      <div class="bd">
+			<div class="zhtab-wrap">
+			<table>
+			  <tbody>
+			  				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=200276" target="_blank">张树遵</a></td>
+				      <td>积分：124800</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=1785" target="_blank">任立存</a></td>
+				      <td>积分：93309</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=216234" target="_blank">周凹</a></td>
+				      <td>积分：62102</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=350989" target="_blank">张宝清</a></td>
+				      <td>积分：58820</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=285740" target="_blank">徐清芝</a></td>
+				      <td>积分：41020</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=249291" target="_blank">刘业生</a></td>
+				      <td>积分：35639</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=297504" target="_blank">高俊中</a></td>
+				      <td>积分：34805</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=241846" target="_blank">史秀磊</a></td>
+				      <td>积分：32920</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=2836" target="_blank">叶菁菁</a></td>
+				      <td>积分：32393</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=348264" target="_blank">林洁港</a></td>
+				      <td>积分：28330</td>
+				    </tr>
+				     				   			  </tbody>
+			</table>
+			</div>
+			<div class="zhtab-wrap">
+			<table>
+			  <tbody>
+			    				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=3433" target="_blank">茶叶蛋</a></td>
+				      <td>积分：28626</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=207832" target="_blank">佳人庄园</a></td>
+				      <td>积分：24100</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=1757" target="_blank">teardrop  </a></td>
+				      <td>积分：22643</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=784" target="_blank">梦妮卡</a></td>
+				      <td>积分：21229</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=209741" target="_blank">Angel.Night</a></td>
+				      <td>积分：19845</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=352694" target="_blank">zhongyi523</a></td>
+				      <td>积分：18920</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=299810" target="_blank">事实</a></td>
+				      <td>积分：12215</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=328693" target="_blank">千年沙棘娃</a></td>
+				      <td>积分：11460</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=368824" target="_blank">huntuang</a></td>
+				      <td>积分：8650</td>
+				    </tr>
+				      
+					<tr>
+				      <td width="130px"><a target="_blank" href="http://home.9939.com/user/?uid=227696" target="_blank">xrmlfe</a></td>
+				      <td>积分：6334</td>
+				    </tr>
+				     				    
+			  </tbody>
+			</table>
+			</div>
+		      </div>
+            </div>
+          </div>
+          </div>
+          <div class="zhmod02 tMarginLg">
+            <div class="hd">
+              <h3>热点问答</h3>
+            </div>
+            <div class="bd">
+              <div class="g-line">
+                <div class="g-u s1of2">
+                  <div class="zhmod06 zhmod06-extra01">
+                    <h4>内科常见问题</h4>
+                    <ul class="zhtext-list">
+                                                        <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600264">可以快速解酒令头不疼的小办法</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600240">腹泻好了以后两天没大便怎么办</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600162">脚指头发麻走路时间长了脚很痛</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600124">半夜胃疼疼的睡不着是怎么回事</a></li>
+                                  <li><span></span><a target="_blank" href="http://tongji.9939.com/count/goto.php?url=aHR0cDovL2h0LmhvbWUuY29tL21hbmFnZS9hZG1pbg==">整天昏昏沉沉的无精打采是病吗</a></li>
+                                  <li><span>2011-08-08</span><a target="_blank" href="http://ask.9939.com/id/3598301">胡须是不是刮了以后会长的快呢</a></li>
+                                  <li><span>2011-08-08</span><a target="_blank" href="http://ask.9939.com/id/3596880">高血脂在饮食上应该注意些什么</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600344">害怕被白癜风患者传染不敢接触</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600348">食道白斑是什么病应该如何治疗</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600323">心绞痛是怎么引起的应如何护理</a></li>
+                                                   </ul>
+                  </div>
+                </div>
+                <div class="g-u s1of2 g-lastu">
+                  <div class="zhmod06 zhmod06-extra02">
+                    <h4>外科常见问题</h4>
+                    <ul class="zhtext-list">
+                                                        <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3599800">左手臂骨裂一月后可不可以跑步</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3599157">膝盖经常感觉不舒服是关节炎吗</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3598907">体检出肺上有小结节需要手术吗</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3598879">龟头处突然长了个洞是什么症状</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3598814">晚上睡觉被不知名虫子叮咬发痒</a></li>
+                                  <li><span>2011-08-08</span><a target="_blank" href="http://ask.9939.com/id/3598516">被猫咬了不打针自己治疗的办法</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600376">男性肚脐左边5厘米处疼怎么办</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3599776">非哺乳期妇女乳房有奶是正常吗</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600009">屁股上大腿内侧起疙瘩什么原因</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3599557">十九个月小孩睾丸一个大一个小</a></li>
+                                                   </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="g-line">
+                <div class="g-u s1of2">
+                  <div class="zhmod06 zhmod06-extra03">
+                    <h4>儿科常见问题</h4>
+                    <ul class="zhtext-list">
+                                                        <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600485">宝宝十个月了不会吃东西怎么办</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600380">在出水痘的时候可以吃奶制品吗</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600501">宝宝出虚汗白天坐那不动也出汗</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3599911">新生儿眼皮长红疙瘩了怎么回事</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3599527">昨天肚脐痛并高烧在家怎么治疗</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3598835">孩子脸上白一块黑一块怎么回事</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3599050">面部颈部后背出现明显红斑红点</a></li>
+                                  <li><span>2011-08-09</span><a target="_blank" href="http://ask.9939.com/id/3600279">小孩感冒了流鼻涕打喷嚏怎么办</a></li>
+                                  <li><span>2011-08-03</span><a target="_blank" href="http://ask.9939.com/id/3579503">宝宝便秘的时候应怎样吃胡萝卜</a></li>
+                                  <li><span>2011-08-03</span><a target="_blank" href="http://ask.9939.com/id/3579499">宝宝出生50天经常吐奶体重下降</a></li>
+                                                   </ul>
+                  </div>
+                </div>
+                <div class="g-u s1of2 g-lastu">
+                  <div class="zhmod06 zhmod06-extra04">
+                    <h4>中医科常见问题</h4>
+                    <ul class="zhtext-list">
+                                                        <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3603772">容易出汗运动则会加重伴有头晕</a></li>
+                                  <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3603783">鼻子正中间长痘痘应该怎么调节</a></li>
+                                  <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3603818">孩子正常吃三餐却很瘦什么原因</a></li>
+                                  <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3603806">手心总湿湿的不热的时候也出汗</a></li>
+                                  <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3603820">喉咙被鱼刺卡住了应该如何处理</a></li>
+                                  <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3603802">如何消除多年前留下的痤疮印记</a></li>
+                                  <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3601665">昨天拉肚子今天开始便秘怎么办</a></li>
+                                  <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3603832">胳膊上有一粒粒小的肉怎么回事</a></li>
+                                  <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3603821">脸色泛暗红颜色不是热的怎么办</a></li>
+                                  <li><span>2011-08-10</span><a target="_blank" href="http://ask.9939.com/id/3603857">血压一天内的变化较大有危险吗</a></li>
+                                                   </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="zhbanner tMarginLg">
+		  <a href="http://tongji.9939.com/count/click.php?id=28090"><img height="90" width="950" src ="http://home.9939.com//upload/pic/201108/1313050380.jpg"></a>					                	                 <!--<object height="90" width="950">
+	                   <param value="http://tongji.9939.com/count/click.php?id=28090" name="movie"/>
+	                   <embed wmode="transparent" height="90" width="950" src="http://home.9939.com//upload/pic/201108/1313050380.jpg"/>
+	                 </object>-->
+	               	                        </div>
+          <div class="zhmod02 tMarginLg">
+            <div class="hd">
+              <h3>健康知识</h3>
+            </div>
+            <div class="bd zhnews-temp">
+              <div class="g-u s1of3">
+                <div class="zhpic-text">
+                	                		              <div class="zhpic">
+                    <a target="_blank" href="http://pic.9939.com"><img src="http://home.9939.com//upload/pic/201004/1272425370.jpg" width="221" height="85"  /></a>
+                  </div>
+                  <span>健康美图库,帅哥靓女集散地</span>
+	               	                              </div>
+                <ul class="zhtext-list">
+                                                    <li><a target="_blank" href="http://ask.9939.com/id/3458907">发现怀孕吃啥药才能更好的打胎</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3458891">怀孕一个月未见胎心也未见胚芽</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3458889">晚上老是做怪梦醒来后不敢睡觉</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3458879">引起盆腔炎的主要病因是什么呢</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3458875">怀孕了吃什么都吐胃都饿得酸痛</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3458865">磷酸肌酸激酶偏低是怎么回事呢</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3458845">晚上睡觉翻身头晕白天怎头也晕</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3458775">献血亏元气的真相竟是过马浮云</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3458756">一岁幼儿连续发烧需注意些什么</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3458770">花季少女为何是长睡二十年不醒</a></li>
+                                               </ul>
+              </div>
+              <div class="g-u s1of3">
+                <div class="zhpic-text">
+                  	                		              <div class="zhpic">
+                    <a target="_blank" href="http://ask.9939.com/"><img src="http://home.9939.com//upload/pic/201104/1303970326.jpg" width="221" height="85"  /></a>
+                  </div>
+                  <span>汗多是什么原因</span>
+	               	                              </div>
+                <ul class="zhtext-list">
+                                                    <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17278">女性治疗阴道炎酸奶大蒜能帮忙</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17277">日常如何缓解女人乳房的衰老性</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17276">错误睡姿会让你的子宫“受伤”</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17275">女人易长斑五个重时期不可大意</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17274">小心经期须保健的八个错误传言</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17273">女性产后要休息好预防住尿失禁</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17272">春季吃肉女人最适合吃几种瘦身</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17279">爱护好你子宫远离三大子宫杀手</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17280">“乖乖女”偷尝禁果葡萄胎死亡</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17281">月经改变或是女性卵巢早衰先兆</a></li>
+                                               </ul>
+              </div>
+              <div class="g-u s1of3 g-lastu">
+                <div class="zhpic-text">
+                  	                		              <div class="zhpic">
+                    <a target="_blank" href="http://home.9939.com/"><img src="http://home.9939.com//upload/pic/201004/1272425412.jpg" width="221" height="85"  /></a>
+                  </div>
+                  <span>我的健康我的家</span>
+	               	                              </div>
+                <ul class="zhtext-list">
+                                                    <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17382">前列腺炎患者都进来看看不后悔</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17381">男子为省钱自割包皮且不幸失败</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17380">慎！这些食物最易导致男性不育</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17379">莫忘了协助命根脱身上“皮衣”</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17378">奇！古代男人竟然是这样治早泄</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17373">男性可以自行判断精液是否正常</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17383">小心警惕抽筋背后隐藏骨科疾病</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17377">养生：切忌房事过度引起腰腿痛</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/index/bid/91">吃蔬菜对宝宝有四大非凡的作用</a></li>
+                                  <li><a target="_blank" href="http://home.9939.com/buluo/view/tid/17369">月经不调四个小妙招让你经期顺</a></li>
+                                               </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+	
+      </div>
+      <div class="col-s">
+        <div class="zhsidebar">
+          <div class="hd">
+            <h2><a target="_blank" href="/cat.shtml">问题分类</a></h2>
+          </div>
+          <div class="bd">
+            <div class="zhmod01 zhmod01_extra tMarginLg">
+              <div class="hd">
+                <h3><a target="_blank" href="javascript:void(0)">常见疾病</a></h3>
+              </div>
+              <div class="bd">
+                <ul class="zhtag-list">
+                                                    <li><a target="_blank" href="http://ask.9939.com/classid/523">皮肤性病</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/id/3462437">五倍子和白芷治疗早泄有作用吗</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/538">食道癌</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/196">阴道炎</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/203">外阴瘙痒</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/345">牛皮癣</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/44">甲亢</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/50">痛风</a></li>
+                                  <li><a target="_blank" href="http://ask.9939.com/classid/341">白癜风</a></li>
+                                               </ul>
+              </div>
+            </div>
+            <!--#include virtual="/public/catleft.shtml"-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div style=" display:none; overflow:hidden; height:0;">
+<script src='http://w.cnzz.com/c.php?id=30033500&l=3' language='JavaScript' charset='gb2312'></script>
+<script type="text/javascript" src="http://js.tongji.linezing.com/1310077/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1310077/tongji.gif"/></a></noscript>
+
+<!-- 2010-07-15 -->
+<script src='http://w.cnzz.com/c.php?id=30033558&l=3' language='JavaScript' charset='gb2312'></script>
+</div>
+
+</body>
+</html>

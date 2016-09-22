@@ -1,0 +1,88 @@
+﻿{include file=admin/header.tpl.htm}
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+		<tr class="header">
+			<td colspan="2">{$PAGE_FUNC_SMALL_NAME}</td>
+		</tr>
+		
+		<form name="add" method="POST" action="power.php?act=editSave" onsubmit="return checkInput();">
+		<input type="hidden" name="powerID" value="{$aInfo.id}">
+		<tr>
+			<td width="100" class="altbg1">模块中文名：</td>
+			<td class="altbg2"><input type="text" id="text_fileNameCn" name="text_fileNameCn" value="{$aInfo.fileNameCn}"> <span class="starHit">*</span></td>
+		</tr>
+		<tr>
+			<td width="100" class="altbg1">模块英文名：</td>
+			<td class="altbg2"><input type="text" id="text_fileNameEn" name="text_fileNameEn" class="input_text" value="{$aInfo.fileNameEn}"> <span class="starHit">*</span></td>
+		</tr>
+		<tr>
+			<td width="100" class="altbg1">权限中文名：</td>
+			<td class="altbg2"><input type="text" id="text_powerNameCn" name="text_powerNameCn" class="input_text" value="{$aInfo.powerNameCn}"> <span class="starHit">*</span></td>
+		</tr>
+		<tr>
+			<td width="100" class="altbg1">权限英文名：</td>
+			<td class="altbg2"><input type="text" id="text_powerNameEn" name="text_powerNameEn" class="input_text" value="{$aInfo.powerNameEn}"> <span class="starHit">*</span></td>
+		</tr>		
+		<tr>
+			<td class="altbg1">权限状态</td>
+			<td class="altbg2">
+			{html_radios name="radio_status" values=$aStatusValue checked=$aInfo.status output=$aStatusName separator="&nbsp;"}
+		</td>
+		</tr>		
+		<tr>
+			<td align="left" class="altbg1"><input type="button" onclick="history.go(-1);" value="返回"></td>
+			<td align="right" class="altbg2"><input type="submit" name="submit" value=" 提 交 "></td>
+		</tr>
+		</form>
+ </td>
+ </tr>
+</table>
+
+{literal}
+<script language="javascript">
+function checkInput()
+{
+	if($('text_fileNameCn').value == "")
+	{
+		alert("请输入模块中文名");
+		$('text_fileNameCn').focus();
+		return false;
+	}
+	//判断是否是中文
+	if(!isChineseSrting($('text_fileNameCn').value))
+	{
+		alert("模块中文名只能输入中文字符");
+		$('text_fileNameCn').focus();
+		return false;
+	}
+	if($('text_fileNameEn').value == "")
+	{
+		alert("请输入模块英文名");
+		$('text_fileNameEn').focus();
+		return false;
+	}
+	if($('text_powerNameCn').value == "")
+	{
+		alert("请输入权限中文名");
+		$('text_powerNameCn').focus();
+		return false;
+	}
+	//判断是否是中文
+	if(!isChineseSrting($('text_powerNameCn').value))
+	{
+		alert("权限中文名只能输入中文字符");
+		$('text_powerNameCn').focus();
+		return false;
+	}
+	if($('text_powerNameEn').value == "")
+	{
+		alert("请输入权限中文名");
+		$('text_powerNameEn').focus();
+		return false;
+	}
+	return true;
+}
+</script>
+{/literal}
+{include file=admin/footer.tpl.htm}                                                                                              
+  

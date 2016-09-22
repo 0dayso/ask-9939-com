@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+body {font-size: 12px; color:#6F6F6F; margin:0 auto;}
+p, ul, li, h1, h2, h3, h4, h5, h6, span,form,input,label{margin:0px;padding:0px;list-style-type: none; font-size:12px;}
+a{color:#7B7B7B; text-decoration:none;}
+a:hover{color:#009933; text-decoration:underline;}
+img{border:none;}
+.jubao{ width:392px; height:249px; background:url(../images/confirmbei.gif) -201px -41px no-repeat; opacity:0.2;filter:alpha(opacity=20); -moz-opacity:0.2; position:absolute; z-index:1; text-indent:-999px; display:block;}
+.jubao_doc{ width:378px; height:234px; background:url(../images/confirm02.gif) -437px -262px no-repeat; position:relative; z-index:9; left:7px; top:7px; }
+#basic-modal-content {display:none;}
+#simplemodal-overlay {background-color:#ffffff; cursor:wait;}
+#simplemodal-container {height:249px; width:392px;  background-color:#ffffff;}
+#simplemodal-container a {color:#ffffff;}
+#simplemodal-container a:hover { text-decoration:none;}
+#simplemodal-container a.modalCloseImg {background:url(close.gif) -790px -271px no-repeat; width:16px; height:16px;  z-index:3200; position:absolute; top:16px; right:16px; cursor:pointer;}
+#simplemodal-container #basic-modal-content {}
+.jubao_tit{ color:#104297; font-weight:bold; line-height:34px; padding-left:11px; font-size:14px; }
+#define{ background:url(../images/confirm01.gif) -556px -715px no-repeat; width:70px; height:24px; text-align:center; color:#ffffff; line-height:24px; float:left; margin-right:15px; padding-top:1px;}
+#define_a{ background:none;}
+.jubao_con1{ padding:40px 0 0 60px;}
+.jubao_con1 p.cont{color:#2050a5; font-size:14px; background:url(../images/cont-p.gif) no-repeat; padding-left:50px; height:41px; line-height:41px; margin-bottom:10px;}
+label.txt{ color:#454545; vertical-align:middle;}
+.inp-txt{ width:170px; height:20px; padding:2px;*height:16px; line-height:20px;border:1px solid #a5caf7; background:#f4f7fc; color:#1d52a2;}
+.jubao_con1 .p-btn{ padding-left:85px; padding-top:8px;}
+.btn-sub{ width:91px; height:27px; line-height:27px; color:#fff; cursor:pointer; font-size:14px; font-weight:bold; border:0; background:url(../images/sub-bg.gif) no-repeat;}
+.button{ width:70px; text-align:center; margin:0 auto;}
+.simplemodal-close{ outline:none;}
+.wrap{position:relative;}
+.button{ text-align:center; margin:0 auto; zoom:1; }
+.button1{ text-align:center; zoom:1; }
+.button1 *{outline:0;zoom:1; background:#ffffff;}
+
+.jubao_con2{ padding:28px 0 0 27px;}
+.jubao_con2 p.cont{color:#2050a5; font-size:14px; background:url(../images/cont-p2.gif) no-repeat; padding-left:50px; height:41px; line-height:22px; margin-bottom:20px;}
+.jubao_con2 .btn-sub{*margin-left:5px; *margin-top:2px;}
+
+.jubao_con3{ padding:95px 0 0 78px;}
+.jubao_con3 p{ color:#2050a5; font-size:14px; margin-bottom:10px;}
+.jubao_con3 a{ margin:0px 0 0 60px;}

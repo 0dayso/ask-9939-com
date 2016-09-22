@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="http://ask.9939.com/images_ask/css/login/style/r.css" type="text/css" rel="stylesheet">
+        <link href="http://ask.9939.com/images_ask/css/login/style/m.css" type="text/css" rel="stylesheet">
+        <link href="http://ask.9939.com/images_ask/css/login/style/b.css" type="text/css" rel="stylesheet">
+        <link href="http://ask.9939.com/images_ask/css/login/style/g.css" type="text/css" rel="stylesheet">
+        <link href="http://ask.9939.com/images_ask/css/ask_index.css" type="text/css" rel="stylesheet">
+        <link href="http://ask.9939.com/images_ask/css/login/style/index1.css" type="text/css" rel="stylesheet">
+        <style>
+        .d-login-pw { border: 1px solid #dfe6ec; background:#FFFFFF; width:600px; padding-left:48px; margin-top:38px; margin:auto; }
+.d-login-pw h3 { height:52px; padding-top:26px;  font-size:24px; font-weight:bold; color:#1F376D; }
+.d-login-pw .info { color:#FF0000; text-align:center; }
+.d-login-pw .top { font-size:14px; padding:10px 10px 25px 10px; text-align:center; }
+.d-login-pw .userInfo { margin:auto; background:#f1f6fa; border:1px solid #dae2e8; width:280px; height:27px; }
+.d-login-pw input { border:0; width:180px; float:left; background:#f1f6fa; height:22px; padding-top:5px; }
+.d-login-pw .userInfo { font-size:14px; line-height:27px; color:#333333; }
+.d-login-pw .wInfo { width:80px; text-align:right; float:left; }
+.d-login-pw .dlan { height:58px; text-align:center; }
+.d-login-pw .name { margin-bottom:15px; }
+.d-login-pw .ps { margin-bottom:26px; }
+.d-login-fgmm { font-size:12px; line-height:20px; color:#c20c00; padding:5px 0 36px 68px; }
+        </style>
+        <script type="text/javascript" src="http://ask.9939.com/ask/js/jquery.js"></script>
+        <script>
+         function huiche(event){
+    		if (event.keyCode == 13)    {
+            	tijiao();
+        	}
+    	}
+        function tijiao(){
+            if($("#pwd").val()==""){
+                $("#error").html("请填写重置密码");
+                $("#pwd").focus();
+                return false;
+            }
+            if($('#pwd').val().length < 6){
+                $("#error").html("密码长度不小于6个字符");
+                $('#pwd').focus();
+                return false;
+            }
+            if($("#pwd2").val()==""){
+                $("#error").html("请填写确认密码");
+                $("#pwd2").focus();
+                return false;
+            }
+            if($("#pwd2").val()!=$("#pwd").val()){
+                $("#error").html("俩次输入密码不一致");
+                $("#pwd2").focus();
+                return false;
+            }
+            var button=$("#button").html();
+        	$("#button").html("正在提交...");
+        	$.ajax({
+        	type: "POST",
+        	url:  "/login/getpwd3?act=update",
+        	data: "r=<?=$this->r?>&uid=<?=$this->uid?>&pwd="+$('#pwd').val()+"&pwd2="+$('#pwd2').val()+"&rank="+(new Date()).getTime(),
+        	dataType:'json',
+        	success: function(msg){
+        		if(msg.error==1){
+        		    alert("密码更改成功请重新登陆");
+      		        window.location.href="/login";
+        		}else if(msg.error==2){
+      		        alert("重置链接地址不对或已过期,请重新申请");
+      		        window.location.href="/login/getpwd";
+        		}else{
+                   
+      		        $("#error").html(msg.error);
+        		$("#button").html(button);
+        		}
+        	}});
+            return false;
+        }
+        </script>
+        <title>找回密码-第三步</title>
+    </head>
+    <body>
+        <div id="doc" class="w970">
+            <div id="hd"> <?php include(APP_ROOT."/header195.shtml"); ?> </div>
+            <div id="bd" class="d-mod">
+                <div class="d-box1-hd"></div>
+                <div class="d-box1-bd">
+                    <div class="hd"></div>
+                    <div class="bd">
+                        <div class="d-grid l-fix" style="overflow:hidden; zoom:1;">
+                            <div class="col-m">
+                                <div class="d-box2">
+                                  <div class="d-login-pw">
+                                          <h3>找回密码</h3>
+                                            
+                                                <p class="top name l-fix">1.填写绑定邮箱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.接受密码找回邮件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.重置密码</strong></p>
+                                                <p class=" info name l-fix" id="error"></p>
+                                                <p class="userInfo name l-fix">
+                                                    <label class="wInfo">重置密码：</label>
+                                                    <input id="pwd" name="info[username]" class="userPassword" type="password">
+                                                </p>
+                                                <p class="userInfo ps l-fix">
+                                                    <label class="wInfo">确认密码：</label>
+                                                    <input id="pwd2" name="info[password]" class="userPassword" onkeydown="huiche(event);" type="password">
+                                                </p>
+                                                 <input id="backurl" name="info[backurl]" value="" type="hidden">
+                                         
+                                    <p class="dlan" id="button"><a href="javascript:;" onclick="tijiao();"><img class="imgInfo" src="/ask/images/but-tj.gif"></a></p>
+                                        </div>
+                                        </div>
+                            </div>
+                            </div>
+                    </div>
+                    <div class="ft"></div>
+                </div>
+               <div class="d-box1-ft"><a style="color: #1F376D;" href="<?=HOME_9939_URL?>">家园</a> | <a  style="color: #1F376D;" href="<?=HOME_9939_URL?>buluo/">部落</a> | <a  style="color: #1F376D;"  href="<?=ASK_URL?>">问答</a></div>
+             </div>
+             <?php include(APP_ROOT."/footer.html"); ?>
+        </div>
+    </body>
+</html>

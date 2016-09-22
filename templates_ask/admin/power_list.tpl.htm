@@ -1,0 +1,47 @@
+﻿{include file=admin/header.tpl.htm}
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+		<tr bgcolor="#FFFFFF">
+		<form method="POST" action="?act=listAll">
+		<td colspan="12" align="center">		
+ 		<input type="radio" onclick="location.href='?status=1'" name="status" value="1" {if $iStatus == 1}checked{/if}>开启状态
+ 		<input type="radio" onclick="location.href='?status=0'" name="status" value="0" {if $iStatus == 0}checked{/if}>关闭状态
+ 		<input type="radio" onclick="location.href='?status=-1'" name="status" value="-1" {if $iStatus == -1}checked{/if}>全部
+        	<input type="text" name="q" value="{$q}">
+        	<input type="submit" value="提交">&nbsp;&nbsp;(输入“模块中文名”或“权限中文名”进行模糊搜索)       
+		</td>
+		 </form>
+		</tr>	
+		
+		<tr class="header" align="center">
+			<td width="5">ID</td>
+			<td width="30">状态</td>
+			<td>模块中文名</td>
+			<td>模块英文名</td>
+			<td>权限中文名</td>
+			<td>权限英文名</td>
+			<td colspan="2" align="center">动作</td>
+		</tr>
+		
+		{section name=a_list loop=$aList}
+		<tr bgcolor="#FFFFFF">
+			<td height="20">{$aList[a_list].id}</td>
+			<td>{if ($aList[a_list].status == '1')}<a href="?status=1">开启</a>{else}<a href="?status=0"><span class="grayLink">关闭</span></a>{/if}</td>
+			<td>{$aList[a_list].fileNameCn}</td>
+			<td><a href="?fileNameEn={$aList[a_list].fileNameEn}&q={$q}&status={$iStatus}">{$aList[a_list].fileNameEn}</a></td>			
+			<td>{$aList[a_list].powerNameCn}</td>
+			<td>{$aList[a_list].powerNameEn}</td>
+			<td><a href="?act=modify&id={$aList[a_list].id}">编辑</a></td>
+			<td>
+			{if ($aList[a_list].status == '1')}
+			<a href="?act=close&id={$aList[a_list].id}" onclick="return confirm('确认关闭此权限？');" class="grayLink">关闭</a>
+			{else}
+			<a href="?act=open&id={$aList[a_list].id}" onclick="return confirm('确认开启此权限？');">开启</a>
+			{/if}
+			</td>			
+		</tr>
+		{/section}	
+		</table>
+		<br />
+{include file=admin/pager_bar.tpl.htm}	
+{include file=admin/footer.tpl.htm}

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>9939</title>  
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(document).jTab({
+		menutag:".hd li"
+	});
+});
+function mksearch(i)
+{
+	var kw = $("#searchtext").val();
+	if(i==1){
+		window.location.href="/Searchindex/index/kw/"+kw;
+	}else if(i==2){
+		window.location.href="/Asking/index/kw/"+kw;
+	}
+	return false;
+}
+</script>
+</head>
+<body>
+<div id="doc" class="w950">
+	<div id="hd">
+		<div class="menu">
+			<script src="/user.php"></script>
+			<div class="top-line">
+				<ul class="top-fav">
+					<li class="addFav"><a href="javascript:addFavorite();">加入收藏</a></li>
+					<li class="setHomePage"><a href="javascript:setHomePage(this);">设为主页</a></li>
+				</ul>
+				<ul class="top-nav">
+					<li><a href="<?=WEB_URL?>" target="_blank">网站首页</a></li>
+					<li><a href="<?=ASK_URL?>">健康问答</a></li>
+					<li><a href="<?=HOME_9939_URL?>">健康家园</a></li>
+					<li><a href="<?=HOME_9939_URL?>buluo">健康群组</a></li>
+					<li><a href="<?=DOCTOR_URL?>" target="_blank">聚医堂</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="title fix">
+			<div class="logo tMargin">
+				<a href="#"><img src="/images_ask/images/mlogo.png" /></a>
+			</div>	
+			<div class="custom">
+				<div class="search">
+					<div class="m-search">
+						<form name="fname" action="" method="get" onsubmit="return mksearch(1)">
+						<div class="s1">
+							<span class="l"></span><span class="r"></span>
+							<input type="text" name="kw" value="输入您的问题" id="searchtext"  onfocus="if(this.value=='输入您的问题') this.value='';" onblur="if(this.value=='') this.value='输入您的问题';" />	
+						</div><button type="submit"><span>答案搜索</span></button><a href="#" target="_blank" class="btn" onclick="return mksearch(2)">发起提问</a>
+						</form>
+					</div>
+				</div>
+				<div class="aw-nav">
+					<p><a href="/">问答首页</a>|<a href="/list/">全部问题列表</a>|<a href="cat.shtml">问题分类</a>|<a href="/doctorTeam.shtml">问答医师团</a>|<a href="/rank.shtml">问答排行榜</a>|<a href="/rule.shtml">积分规则</a></p>
+				</div>
+			</div>
+		</div>
+	</div>

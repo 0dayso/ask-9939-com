@@ -1,0 +1,47 @@
+<div class="col-s">
+				<div class="ad-zh ad-zh01">
+		            <div class="fix">
+		             <?php 
+require_once(APP_INCLUDE_PATH."ip_right.php");
+ ?>		            </div>
+		            <div class="text-list fix">
+		              <ul>
+		                <li><a href="http://ask.9939.com/web/huodong/index.php" target="_blank">健康知识闯关,抽大奖</a></li><li><a href="http://ask.9939.com/id/2217083" target="_blank">请问糖尿病能喝牛奶吗</a></li><li><a href="http://ask.9939.com/id/2217084" target="_blank">骨质增生是怎么回事</a></li><li><a href="http://tongji.9939.com/count/goto.php?url=aHR0cDovL3d3dy5jaGluYWJkZi5jb20=" target="_blank">白癜风消失的地方</a></li><li><a href="http://ask.9939.com/id/2217085" target="_blank">宝宝出生一天没有小便</a></li><li><a href="http://tongji.9939.com/count/goto.php?url=aHR0cDovL3d3dy5qaW5nZHVob3NwaXRhbC5jbg==" target="_blank">四联疗法治疗白癜风</a></li>		              </ul>
+		            </div>
+		        </div>
+		        <div class="mod zhmod-01 tMarginLg">
+<script type="text/javascript"> /*300*250，创建于2010-9-14*/ var cpro_id = 'u199836';</script>
+<script type="text/javascript" src="  http://cpro.baidu.com/cpro/ui/c.js"></script> 
+				</div>
+		        <div class="mod zhmod-01 tMarginLg">
+		          <span class="top">
+		            <span class="tl"></span>
+		          </span>
+		          <div class="inner text-list-sub">
+		            <div class="hd">
+		              <h4>相关问答</h4>
+		            </div>
+		            <div class="bd">
+		              <ul>
+		                <?php 
+require_once(APP_ROOT."/include/ask_new.php");
+ ?>		              </ul>
+		            </div>
+		          </div>
+		        </div>
+		        
+		        <div class="mod zhmod-01 tMarginLg">
+		          <span class="top">
+		            <span class="tl"></span>
+		          </span>
+		          <div class="inner">
+		            <div class="hd">
+		              <h4>专家推荐</h4>
+		            </div>
+		            <div class="bd">
+		             
+<?php 
+require_once(APP_ROOT."/include/zhuanjiatuijian.php");
+ ?>		            </div>
+		          </div>
+		        </div>

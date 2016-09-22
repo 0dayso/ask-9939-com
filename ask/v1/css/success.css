@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+/*提问注册页*/
+::-ms-clear, ::-ms-reveal{display: none;}
+.mT20{margin-top:20px;}
+.asbn{ margin:0 auto; width:960px;}
+.wqce4{border:1px solid #e6e6e6;}
+.pt58{ padding:62px 0 58px 0;}
+.w538{width:538px; margin:0 auto;}
+.succes{ background:url(../images/askm0.jpg) no-repeat left 1px; padding-left:46px; height:40px;}
+.md34{ margin-bottom:28px;}
+.w538 .succes p,.w538 .psame p{ display:inline-block;}
+.w538 .succes p{margin-top:5px;}
+.w538 .succes p.Seeque{ width:86px; height:29px; background:#ff6600; text-align:center; line-height:29px; margin-left:14px;}
+.w538 .succes .Seeque a{  color:#fff;}
+.w538 .psame{ background:url(../images/askmbg.jpg) no-repeat left 14px; height:37px; padding-left:16px;}
+.md18{ margin-bottom:18px;}
+.w538 .psame p{ font-size:14px; font-family:"宋体"; } 
+.w538 .psame .ssrt{width:258px;border:1px solid #e2e2e2;height:35px;}
+.w538 .psame .lin37{ line-height:37px;margin-right:20px;}
+.w538 .psame .ssrt input{ width:170px;height:35px; color:#b4b4ac; padding-left:5px; line-height:35px;}
+.w538 .psame .ssrt  span{ width:83px; height:35px; background:#e2e2e2; line-height:35px; text-align:center;}
+.website{ overflow:hidden;}
+.mT50{ margin-top:50px;}
+.md20{margin-top:18px;}
+.bore5{ border:1px solid #e5e5e5; padding:1px;}
+.website .mobile .fiz22,.website .weChat .fiz22 {font-size:22px; color:#000;font-family:"microsoft YaHei";}
+.website .mobile .fiz14,.website .weChat .fiz14{font-size:14px; color:#666;font-family:"microsoft YaHei";}
+.mTwz{ margin:20px 0 20px 5px;}
+.mr70{ margin-right:70px;}
+.ainfor .news{border:1px solid #e6e6e6; overflow:hidden; width:450px; padding:17px 20px 16px 17px;}
+.ainfor .newtit{ position:relative;}
+.ainfor .newtit i{ position:absolute; right:5px; top:3px;color:#666;font-size:12px; }  
+.newtit .lw5{background:url(../images/asico.png) no-repeat 0 1px; padding-left:15px;}
+.ainfor .news i{ font-style:normal; }
+.mT26{ margin-top:26px;}
+.mT22{ margin-top:22px;}
+.mr20{ margin-right:20px;}
+.ainfor .lie{ overflow:hidden;font-family:"宋体"; position:relative; }
+.ainfor .doc_writ{ width:338px;}
+.mr10{ margin-right:10px;}
+.ainfor .expert .doc_pic{margin-right:14px;}
+.ainfor .expert .doc_pic a img{ width:80px; height:80px;}
+.ainfor .pagename{ margin-bottom:10px; font-size:14px; margin-top:6px;}
+.ainfor .pagename b{margin-right:10px;  color:#000;}
+.ainfor .cl999{margin-bottom:5px;font-size:12px;}
+.ainfor .ruser_ques{background:url(../images/asyua.jpg) no-repeat; width:87px; height:21px; text-align:center; line-height:19px; position:absolute; top:10px; right:24px; padding:7px 0 0 10px;}
+.ainfor .axline{border-bottom:1px  dashed #e4e3e3; padding: 0 0 15px 0; margin: 0 0 15px 0;}
+.ainfor .ruser_ques img{ margin-left:10px;}
+.ainfor .division{font-size:12px; }
+.ainfor .division i{font-family:"microsoft YaHei";ont-style:normal;}
+.ainfor .division a{color:#000; margin-left:4px;}
+.ainfor .ruser_ques a{background:url(../images/asico.png) no-repeat -259px -408px; display:block;}
+/*提问成功页*/
+.suuser p{display:inline; float:left; }
+.suuser p b{font-family:"宋体"; font-weight:normal;}
+.suuser .usw180{ width:180px;font-weight:bold;}
+.suuser .usw140{ width:140px;font-weight:bold;}
+.suuser .cord4 a{color:#00d4dd; text-decoration:underline;}
+.suln37 p{ line-height:37px;}
+.suln37 .sucsame{ margin-left:8px;}
+.mT24 { margin-top:17px;}
+/*通用滚动slider*/
+.lc_focus{width:450px;position:relative;}
+.lc_focus .nomkl{position:relative;height:292px; overflow:hidden;}
+.lc_focus .nomkl ul{width:100%;height:292px;overflow:hidden;position:absolute;top:0;left:0}
+.lc_focus .nomkl li{hheight:292px;width:100%; float:left;}
+.lc_focus .nomkl .axlin{font-size:14px;font-family:"宋体"; border-bottom:1px  dashed #e4e3e3; padding-bottom:11px;margin-bottom:12px; position:relative; background:url(../images/asico.png) no-repeat  6px -162px; padding-left:17px; overflow:hidden; }
+.lc_focus .nomkl .axlin a{white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:inline-block; width:370px;}
+.lc_focus .nomkl .axlin  i{ position:absolute; right:5px; top:3px;color:#999;}
+.lc_focus .nomkl li.on{z-index:105;}
+#btn_prev,#btn_prev1{cursor:pointer;width:19px;height:19px;display:block; background:url(../images/aslb.png) no-repeat -29px 0;z-index:500;position:absolute;right: 39%;bottom:0;}
+#btn_next,#btn_next1{cursor:pointer;width:19px;height:19px; display:block;background:url(../images/aslb.png) no-repeat 0 0;z-index: 500;position:absolute;right: 55%;bottom:0;}
+.lc_focus .control i{display:inline-block; width:5px; height:5px; background:url(../images/asdt.png) no-repeat 0 -14px; margin:0 6px; _background:#fff; overflow:hidden;}
+div.oks{position: absolute;bottom: -9px;left: 48%;z-index: 100;width: 100px;height: 21px;}
+div.oks a{float:left;width:10px;height:10px; background:#d3d3d3;text-indent:-1000px; margin-right:5px;  width:5px; height:5px;}
+div.oks a.on{ background:#00d3de;}
+
+/*5.19*/
+.mcte{ position:relative;}
+.bacon{ background:#f7fefe; border:1px dashed #b2f2f5; padding:28px 14px 28px 24px;}
+.w538{ width:638px;}
+.sumar{ margin-bottom:20px;}
+.suuser .cord4 a.bac_01{background:url(../images/writ.png) no-repeat left center;padding-left:15px;}
+.suuser .cord4 a.bac_02{background:url(../images/bibg.png) no-repeat left center;padding-left:12px; margin-left:10px;}
+.suuser .usw180,.suuser .usw140{color:#f60;}
+.suuser .usw180 b,.suuser .usw140 b{color:#333;}
+.infde .reci{ display:block; background:url(../images/blug.gif) no-repeat left 7px; padding-left:15px; overflow:hidden; margin-bottom:15px;}
+.subal{ width:587px;}
+.sumar,.ago{ position:relative;}
+
+.sumar:after{ content:""; position:absolute; left:535px; top:-18px;border-color:transparent transparent  #dcf6f7 transparent; border-width:10px; border-style:solid; width:0; height:0; line-height:0;}
+.ago:after{ content:""; position:absolute; left:275px; top:-18px;border-color:transparent transparent  #dcf6f7 transparent; border-width:10px; border-style:solid; width:0; height:0; line-height:0;}
+
+.celin{background:#dcf6f7;}
+.subal div.baqu{ margin-bottom:-10px; background:url(../images/blbg.png) repeat-x left bottom; height:10px;}
+.celin{ position:relative;}
+.celin div{padding:18px 0 0 115px; overflow:hidden;}
+.celin .subs{ font-family:"microsoft YaHei"; background:#00d4dd; width:86px; height:30px; line-height:30px; text-align:center; color:#fff; font-size:16px; letter-spacing:4px;}
+.celin .txt{ width:162px; height:30px; line-height:30px; background:#fff; border:1px solid #beeef0; margin-right:5px; text-indent:2px;}
+.checo a{ display:block; width:78px; height:30px; line-height:30px; color:#77cdd1; background:#fff; border:1px solid #beeef0; font-size:12px;}
+.celin a.cloer{ position:absolute; border:none; display:block; width:10px; height:10px; background:url(../images/erro.png) no-repeat; right:10px; top:10px;}
+.checo p{ overflow:hidden; margin-bottom:5px;}
+.checo p label{ float:left; width:87px; text-align:right;height:30px; line-height:30px; font-size:12px; color:#666;}
+.checo p a,.checo p input{ float:left;}
+.checo p a{ text-align:center; cursor:pointer;}
+.checo p.tips{ color:#F60; padding:2px 0 4px 88px; font-size:12px;}
+.celin .confir{border-top:1px solid #beeef0; margin:15px 14px 0 14px; padding:18px 0 20px 225px;}
+.disn{ display:none;}
+.shac{ display:block;}
+.sust{ width:80px; height:32px; line-height:32px; text-align:center; background:#fff; border:1px solid #beeef0; color:#666;}
+.shado{ position:fixed; left:0; top:0; width:100%; height:100%; background:#000; opacity:.5; z-index:500;}
+.talay{ width:421px; height:196px; position:absolute;left:287px; top:190px; z-index:1000; border:1px solid #00d4dd; text-align:center; background:#fff; font-family:"microsoft YaHei";}
+.talay h3{ background:#f4fcfe;height:40px; line-height:40px; color:#00d4dd; font-weight:normal; text-indent:15px; text-align:left;}
+.talay  p{ font-size:22px; color:#00d4dd;  background:url(../images/corre.png) no-repeat 35px center; height:34px; line-height:34px; margin:45px 0 30px 0;}
+.talay span{ color:#999; font-size:16px;}
+.talay a.clowi{ position:absolute; display:block; width:26px; height:26px; background:url(../images/error.png) no-repeat; right:-10px; top:-10px;}
+.talay span b{ font-weight:normal; margin-right:2px;}
+p.infx{ background:url(../images/ioc.gif) no-repeat left center; padding-left:20px;}

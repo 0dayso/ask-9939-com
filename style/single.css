@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/*float*/
+.left,.l01 ul li,.p01 dl dt,.p01 dl dd,.emod-02,.p02,.l04,.h-list ul li{float:left; display:inline;}
+.right,.emod-02 .hd samp{float:right; display:inline;}
+
+/*add grid*/
+.g-m0e6 .m-wrap{margin-right:240px;}
+.g-m0e6 .col-e{width:230px; margin-left:-230px;}
+.g-e6m0 .m-wrap{margin-left:240px;}
+.g-e6m0 .col-e{width:230px; margin-left:-100%;}
+
+/*single class*/
+.single{margin:10px 0;}
+.red{background:#f00;}
+.flashbox{background:#ddd; padding:4px;}
+.photobox img{width:260px; height:320px; display:block;}
+
+.cells-01{width:440px;}
+.cells-01 .h-news{height:105px; padding:30px 10px 0 10px; background:url(../images/hot_bg.png) no-repeat;}
+.cells-01 .h-news h1{font:24px "\9ed1\4f53"; font-weight:normal;}
+.cells-01 .h-news p{width:230px; padding-top:5px; line-height:20px;}
+.cells-01 .h-list ul{height:180px; background:url(../images/list_bg.png) no-repeat 0 5px;}
+.cells-01 .h-list ul li{width:45%; padding:8px 0 1px 20px; font-size:14px;}
+
+.emod{border:1px solid #ddd; border-top:none;}
+.emod-01 .hd{height:35px; background:url(../images/emod-01-bg.png) no-repeat;}
+.emod-01 .hd h3{line-height:35px; padding-left:20px;}
+
+.emod-02{width:348px; margin-top:10px; border:1px solid #ddd; }
+.emod-02 .hd{height:30px; background:url(../images/emod-03-bg.png) repeat-x;}
+.emod-02 .hd span{display:inline-block; padding:4px 10px 2px 10px; margin:5px; background:#fff; font-size:14px; font-weight:bold; border:1px solid #D9D7D8; border-bottom:1px solid #fff;}
+.emod-02 .hd samp{padding:12px 10px 0 0;}
+.emod-02 .bd{padding:5px;}
+
+.l01{padding:5px 0; background:#f1f1f1;}
+.l01 ul li{width:45%; padding:4px 0 4px 10px;}
+.l01 ul li a,.l01 ul li a:hover{color:#1A5EA5}
+.l02{padding:5px 0;}
+.l02 ul li{padding:4px 0 4px 20px; background:url(../images/emod-01-arrow.png) no-repeat 8px 9px;}
+.l03{background:url(../images/emod-02-arrow.png) no-repeat 8px 9px;}
+.l03 ul{padding:5px 0 5px 0;}
+.l03 ul li{padding-left:30px; line-height:22px;}
+.l04{width:155px;}
+.l04 ul li img{width:153px; height:83px; border:1px solid #ddd;}
+.l04 ul li p{text-align:center;}
+
+.p01 dl{height:88px; padding:10px; border-bottom:1px dashed #ddd;}
+.p01 dl dt{width:85px;}
+.p01 dl dt img{width:80px; height:80px; padding:2px; border:1px solid #ddd;}
+.p01 dl dd{width:110px; padding-left:10px;}
+.p01 dl dd p{padding-top:5px; line-height:22px;}
+.p02{width:170px; margin-left:10px;}
+.p02 ul li{padding:6px 0 2px 15px; background:url(../images/emod-01-arrow.png) no-repeat 2px 12px; font-size:14px;}

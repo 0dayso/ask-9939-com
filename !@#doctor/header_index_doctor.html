@@ -1,0 +1,147 @@
+<style type="text/css">
+
+.top_header{ background:url(http://doctor.9939.com/images/head.png) repeat-x; height:32px; color:#534E54;}
+.top_header a{ color:#534E54}
+.top_header ul{ float:left; display:inline;}
+
+.navigation { margin-left:30px;}
+	  .navigation li{ float:left; width:79px; position:relative; }
+	    .navigation li a{ background:url(http://doctor.9939.com/images/head.png) no-repeat 66px -170px; display:block; height:24px; padding-top:8px; text-align:center; color:#534E54;}
+		.navigation li a:hover{ background:#4F4F4F url(http://doctor.9939.com/images/nav_li_on.gif) no-repeat 66px 15px; color:#FFF; text-decoration:none;}
+		  .navigation .nav_jyt a{ background:url(http://doctor.9939.com/images/head.png) no-repeat 62px -170px;}
+		  .navigation .nav_jyt a:hover{ background:#4F4F4F url(http://doctor.9939.com/images/nav_li_on.gif) no-repeat 62px 15px;}
+		  .navigation .home_index a{ background:none;}
+		  .navigation .home_index a:hover{background:#4F4F4F;}
+	    .navigation li ul{ display:none; background:#FFF; position:absolute; top:31px; left:0; padding:0; margin:0; border:1px solid #4F4F4F; z-index:199; zoom:1;}
+		  .navigation li ul li{ padding:0; width:90px;}
+		  .navigation li ul li a{ background:url(http://doctor.9939.com/images/head.png) no-repeat 6px -244px;display:block; padding:4px 0 0 13px; height:20px; text-align:left;}
+		  .navigation .nav_jyt ul li a{ background:url(.http://doctor.9939.com/images/head.png) no-repeat 6px -244px;}
+		  .navigation li ul li a:hover,.navigation .nav_jyt ul li a:hover{ background:#A6E003 url(http://doctor.9939.com/images/head.png) no-repeat 6px -244px; text-decoration:none; color:#000;}		  	  
+
+  .quick_tool{ margin-left:50px; padding-top:8px;}
+    .quick_tool li{ float:left; display:inline; margin-right:8px;}
+    .myhome{ background:url(http://doctor.9939.com/images/head.png) no-repeat left -52px; width:54px; padding-left:6px;}
+	.myexit{ background:url(http://doctor.9939.com/images/head.png) no-repeat left -90px; width:31px; padding-left:6px; font-weight:700;}
+  .quick_tool input{ width:85px; height:14px; vertical-align:middle;}
+  .quick_tool .submit_new{ background:url(http://doctor.9939.com/images/head.png) no-repeat left -90px; width:37px; height:18px; border:none; *padding-top:2px; font-weight:700; vertical-align:middle; color:#534E54;}
+  
+  .my_nav{ margin-top:14px;}
+  .note{ background:#F2F2F2; float:left; width:190px; height:26px; line-height:26px; display:inline; border-bottom:1px solid #AFAFAF;  text-align:center; color:#666;}
+  .new_content_nav{ background:url(http://doctor.9939.com/images/head.png) repeat-x left -289px; float:left; padding-right:4px;}
+    .new_content_nav ul{}
+    .new_content_nav li{ background:url(http://doctor.9939.com/images/head.png) repeat-x left -128px; float:left; display:inline; margin-right:5px; width:70px; height:22px; padding-top:4px; border:1px solid #AFAFAF; border-bottom:none; font-size:14px; text-align:center;}
+	.new_content_nav li.on { background:#FFFFFF none repeat scroll 0 0;}
+	
+  .search_friends{ float:left; display:inline; _margin-top:-2px;}
+	.input_text{ width:242px; height:25px; border:1px solid #7D7D7D; font-size:14px; vertical-align:middle; line-height:25px!important; line-height:25px;}
+	.input_submit{ background:url(http://doctor.9939.com/images/head.png) no-repeat left -336px; width:70px; height:27px; border:none; font-size:14px; margin-left:-4px; vertical-align:middle;}
+	
+.myexit{ margin-left:15px;}
+
+
+#top_show { position:absolute; left:600px; _left:500px; top:40px; background-color:#ccc; color:#333;}
+
+#append_parent,#ajaxwaitid { display:none;}
+
+#header .nav { padding-top:18px;}
+.hd_top{ padding-top:20px;}
+#header{ zoom:1;} /*==for IE==*/
+#layout:after{display: block;clear: both; content: "";visibility:hidden; height: 0;}
+#content,#content-c2{ padding-top:0; margin-top:10px;}
+
+
+</style>
+	  <div class="top_header">
+        <ul class="navigation">
+          <li class="home_index"><a href="http://www.9939.com" target="_blank">网站首页</a></li>
+          <li>
+            <a href="http://ask.9939.com/" target="_blank" id="nav_jkwd_a">健康问答</a>
+            <ul id="nav_jkwd_ul">
+              <li><a href="http://ask.9939.com/cat.shtml" target="_blank">科室分类</a></li>
+              <li><a href="http://ask.9939.com/label.shtml" target="_blank">健康标签</a></li>
+              <li><a href="http://ask.9939.com/unReply.php" target="_blank">全部问题列表</a></li>
+              <li><a href="http://ask.9939.com/doctorTeam.shtml" target="_blank">问答医师团</a></li>
+              <li><a href="http://home.9939.com/network.php?ac=jf" target="_blank">积分规则</a></li>
+              <li><a href="http://ask.9939.com/ask/question.php" target="_blank">我要提问</a></li>
+            </ul>
+          </li>
+          <li class="nav_jyt"><a href="http://doctor.9939.com/" target="_blank" id="nav_jyt_a">聚医堂</a>
+            <ul id="nav_jyt_ul">
+              <li><a href="http://doctor.9939.com/rank.php?f=1" target="_blank">找专家</a></li>
+              <li><a href="http://doctor.9939.com/rank.php?f=2" target="_blank">医学资源</a></li>
+              <li><a href="http://doctor.9939.com/rank.php?f=4" target="_blank">经验值排行</a></li>
+              <li><a href="###">医学交流群</a></li>
+            </ul>
+          </li>
+          <li><a href="http://home.9939.com/network.php?ac=mtag" target="_blank" id="nav_jkqz_a">健康群组</a>
+            <ul id="nav_jkqz_ul">
+              <li><a href="http://home.9939.com/space.php?do=mtag">我的群组</a></li>
+              <li><a href="http://home.9939.com/space.php?do=mtagmore&subop=friend_mtag">好友的群组</a></li>
+              <li><a href="http://home.9939.com/space.php?do=mtagmore&subop=all_mtag">全部群组</a></li>
+              <li><a href="http://home.9939.com/cp.php?ac=mtag">创建群组</a></li>
+            </ul>
+          </li>
+          <li><a href="http://home.9939.com" target="_blank" id="nav_jkjy_a">健康家园</a>
+           <ul id="nav_jkjy_ul">
+            <li><a href="http://home.9939.com/space.php">个人主页</a></li>
+            <li><a href="http://home.9939.com/space.php?do=friend">我的好友</a></li>
+            <li><a href="http://home.9939.com/space.php?do=mtag">我的群组</a></li>
+            <li><a href="http://home.9939.com/space.php?do=ask1">我的问答</a></li>
+            <li><a href="http://home.9939.com/space.php?do=album&view=me">我的相册</a></li>
+            <li><a href="http://home.9939.com/space.php?do=blog&view=me">我的日志</a></li>
+          </ul>
+        </li>
+        </ul>
+
+        <script type="text/javascript">
+		var aId= document.getElementById("nav_jkwd_a");
+		var aId2=document.getElementById("nav_jyt_a");
+		var aId3=document.getElementById("nav_jkqz_a");
+		var aId4=document.getElementById("nav_jkjy_a");
+		
+		  function showUl(){
+		    
+			var ulId= document.getElementById("nav_jkwd_ul");
+			aId.onmouseover=function(){ ulId.style.display="block";};
+			ulId.onmouseover=function(){ ulId.style.display="block";};
+			ulId.onmouseout=function(){ ulId.style.display="none";};
+			aId.onmouseout=function(){ ulId.style.display="none";};
+			
+			var ulId2= document.getElementById("nav_jyt_ul");
+			aId2.onmouseover=function(){ ulId2.style.display="block";};
+			ulId2.onmouseover=function(){ ulId2.style.display="block";};
+			ulId2.onmouseout=function(){ ulId2.style.display="none";};
+			aId2.onmouseout=function(){ ulId2.style.display="none";};
+			
+			var ulId3= document.getElementById("nav_jkqz_ul");
+			aId3.onmouseover=function(){ ulId3.style.display="block";};
+			ulId3.onmouseover=function(){ ulId3.style.display="block";};
+			ulId3.onmouseout=function(){ ulId3.style.display="none";};
+			aId3.onmouseout=function(){ ulId3.style.display="none";};
+			
+			var ulId4= document.getElementById("nav_jkjy_ul");
+			aId4.onmouseover=function(){ ulId4.style.display="block";};
+			ulId4.onmouseover=function(){ ulId4.style.display="block";};
+			ulId4.onmouseout=function(){ ulId4.style.display="none";};
+			aId4.onmouseout=function(){ ulId4.style.display="none";};
+		  }
+		  window.onload=showUl;
+		</script>
+
+
+<!--<iframe src="http://ask.9939.com/user.php" width='200' height="35" frameborder="no" scrolling="no"></iframe>-->
+<script src="http://ask.9939.com/user.php"></script>
+            <p style="display:none"><span><img src="/templates/9939/skins/default/images_doctor/icon002.jpg" align="absmiddle" />在线当前用户：<script src="http://ask.9939.com/online.php"></script>人</span><span><img src="/templates/9939/skins/default/images_doctor/icon003.jpg" align="absmiddle" />在线医生：<script src="http://ask.9939.com/online.php?uType=2"></script>人</span><span><img src="/templates/9939/skins/default/images_doctor/icon004.jpg" align="absmiddle" />问答贴：<script src="/ask.js"></script></span></p>
+
+      </div>
+
+
+		<div id="header">
+			<div class="logo"><img src="/templates/9939/skins/default/images_doctor/logo.jpg" /></div>
+			<div class="question">
+			<form action="/ask/question.php" method="GET">			
+			<p class="mt5">			  <textarea name="newTitle" id="newTitle" rows="5" class="text02" value="在此输入您的问题，专家帮您解答。" onfocus="judgeQue(0);" onblur="judgeQue(1);">请在此输入您的问题内容比如“头痛该怎么办”，点击“我要提问”，提问成功后即有医生为你一一解答！</textarea>
+			  <input type="image" src="/templates/9939/skins/default/images_doctor/btn001.jpg" class="btn01" onclick="this.form.submit()"/> 
+			  <input type="image" src="/templates/9939/skins/default/images_doctor/btn002.jpg" onclick="document.getElementById('newTitle').name='keywords';this.form.action='http://ask.9939.com/ask/search.php?status=3';this.form.submit();" class="btn01"/>　</p>
+			  </form>
+			</div>		

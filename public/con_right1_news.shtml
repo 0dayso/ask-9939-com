@@ -1,0 +1,6 @@
+       <h3 class="moTit">相关问答</h3>
+        <ul class="ulFd grUl">
+            <?php 
+require_once(APP_ROOT."/include/ask_new.php");
+ ?>       </ul>
+

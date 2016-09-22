@@ -1,0 +1,29 @@
+<?php
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+require("../config.php");
+
+DBconnect(1);
+
+$result=mysql_query("SHOW PROCESSLIST",$connect);
+$i = 1;
+while($proc=mysql_fetch_assoc($result)){
+
+	//print_r($proc);
+    //if($proc["Command"]=="Sleep"  && $proc["Time"]>120){
+      if($proc["User"]<>"system user" && $proc["User"]<>"xzx"){
+         echo $i;
+         $i++;
+          if(mysql_query("kill ".$proc["Id"],$connect)){
+              echo "ok<br>";
+          }
+          else{
+              echo "<font color=red>not ok</font><br>";
+          }
+    }
+}
+
+?>

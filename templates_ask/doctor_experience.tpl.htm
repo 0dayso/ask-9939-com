@@ -1,0 +1,90 @@
+{include file="header_doctor.tpl.htm"}
+        <div id="main_container" class="experience_rank">
+          <div class="content_zh">
+            <div class="content_title">
+              <h2>久久健康聚医堂经验值排行</h2>
+            </div>
+            <div class="content_main">
+              <table id="table_zh">
+               <!-- <tbody id="rank_by_0">
+               <tr>
+               <td>
+                <table>
+                <tbody> -->
+                  <tr class="table_head_zh">
+                    <td  width="58">排名</td>
+                    <td  width="111">医生名称</td>
+                    <td  width="146">所在医院</td>
+                    <td  width="157">职称</td>
+                    <td  width="118">积分</td>
+                    <td  width="119">经验值</td>
+                  </tr>
+                <!--从这循环tr次-->
+
+                  {foreach item=item key=key from=$jyzph}
+                  <tr>
+                	<td class="rank_num">{$key+1}</td>
+                    <td><a href="{$item.url}">{if $item.truename} {$item.truename} {else} {$item.username} {/if}</a></td>
+                    <td>{$item.doc_hos}</td>
+                    <td>{$item.zhicheng}</td>
+                    <td>{$item.credit}分</td>
+                    <td>{$item.credit}分</td>
+                  </tr>				  
+				  {/foreach}
+               <!--  </tbody>
+                </table>
+                </td>
+                </tr>
+                </tbody>  -->
+              </table>
+              {literal}
+              <script type="text/javascript">
+				function altTab(m,n){
+				 var tab1=document.getElementById("ex_rank_first");
+				 var tab2=document.getElementById("ex_rank_second");
+				 var tBody=document.getElementById("rank_by"+n);
+				 
+				 for(i=0;i<m;i++){
+					 document.getElementById("rank_by_"+i).style.display="none";
+					 }
+				 if(0==n){
+				   tab1.className="on_1";
+				   tab2.className="";
+				   document.getElementById("rank_by_0").style.display="";
+				   }
+				 else{
+				   tab1.className="down_1";
+				   tab2.className="on_2";
+				   document.getElementById("rank_by_1").style.display="";
+				   }
+				  }
+			</script>
+			{/literal}
+            </div>
+          </div>
+            <script language="javascript" src="/images/js/tdColor.js"></script>			
+			<div class="sidebar_zh">{include file="include/right.html"}</div>				
+          </div>
+        </div>
+</div>
+<div class="clear"></div>
+{literal}
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+		counter = 0;
+		function show()
+		{
+			for(i=0; i<3; i++)
+			{
+				document.getElementById('hotimg'+i).style.display="none";
+			}
+			document.getElementById('hotimg'+counter).style.display="";
+			counter++;
+			if(counter == 3) counter = 0;
+			window.setTimeout("show('hotimg'+counter)",1500);
+		}
+		show()
+//-->
+</SCRIPT>		
+{/literal}
+{include file="include/footer.html"}

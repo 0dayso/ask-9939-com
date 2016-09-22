@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="{$__URL}"/>
+<title>{$sPageTitle}</title>
+<meta name="keywords" content="{$sKeywords}" />
+<meta name="description" content="{$sDescription}" />
+<link href="/templates/9939/skins/default/doctor_global.css" rel="stylesheet" type="text/css" />
+<link href="/templates/9939/skins/default/doctor.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="/images/js/common.js"></script>
+{literal}
+<script>
+function setTab(m,n){
+ var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+ var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+ for(i=0;i<tli.length;i++){
+  tli[i].className=i==n?"hover":"";
+  mli[i].style.display=i==n?"block":"none";
+ }
+}
+</script>
+{/literal}
+</head>
+
+<body>
+	<div id="wrapper" class="doctor_9939">
+			{include file="../doctor/header.html}			
+			<div class="clear"></div>
+			<div class="nav">
+				<ul>					
+					<li {if $sFlag == "index"}class="on"{/if}><a href="{$__URL_DOCTOR}">聚医堂首页</a></li>
+					<li {if $sFlag == "article"}class="on"{/if}><a href="{$__URL_DOCTOR}rank.php?f=0">博文排行</a></li>
+					<li {if $sFlag == "expert"}class="on"{/if}><a href="{$__URL_DOCTOR}rank.php?f=1">找专家</a></li>
+					<li {if $sFlag == "resource"}class="on"{/if}><a href="{$__URL_DOCTOR}rank.php?f=2">医学资源</a></li>
+					<li {if $sFlag == "flower"}class="on"{/if}><a href="{$__URL_DOCTOR}rank.php?f=3">鲜花排行</a></li>
+					<li {if $sFlag == "experience"}class="on"{/if}><a href="{$__URL_DOCTOR}rank.php?f=4">经验值排行</a></li>
+					<li {if $sFlag == "visit"}class="on"{/if}><a href="{$__URL_DOCTOR}rank.php?f=5">访问量排行</a></li>
+					<li {if $sFlag == "reply"}class="on"{/if}><a href="{$__URL_DOCTOR}rank.php?f=6">问题回复排行</a></li>
+				</ul>
+			</div>
+		</div><!-- header end -->

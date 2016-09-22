@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/*Add grids*/
+.g-m0s7 .m-wrap { margin-right: 280px; }
+.g-m0s7 .col-s { width: 270px; margin-left: -270px; }
+
+/*Link*/
+.j-blue,.j-blue:hover{color:#1941a5;}
+
+/*Class*/
+
+.col-s a{color:#666;}
+
+.j-mod{border:1px solid #dfdfdf; text-align:left;}
+.j-mod img{display:block;}
+.j-mod .hd{height:32px; background:url(../images/j-line-01.gif) repeat-x;}
+.j-mod .hd h3{padding:8px 0 0 10px; color:#f60; font-weight:normal;}
+.j-mod .hd span{float:right; padding:10px 10px 0 0;}
+.j-mod .hd .tabs{float:right;}
+.j-mod .hd .tabs li{float:left; margin-right:5px; padding:2px; line-height:32px; cursor:pointer;}
+.j-mod .hd .tabs li.on-zh{background:#fff; color:#090;}
+
+.j-col .bd{padding:5px 0; background:url(../images/j-line-03.gif) repeat-x;}
+
+.j-l01{zoom:1; padding:5px 10px;}
+.j-l01 ul li,.j-l01 ol li{padding:3px 0 3px 12px; background:url(../images/j-ico.gif) no-repeat 0 7px;}
+.j-l01 ul li span{float:right; width:35px;}
+.j-l01 ol li{list-style:decimal inside;}
+.j-l02{background:url(../images/j-line-03.gif);}
+.j-l02 ul li{float:left; padding:5px 0 5px 10px;}
+.j-l03{padding:5px 0; *padding:5px 0 10px 0; _padding:5px 0;}
+.j-l03 ul li{display:inline; float:left; margin:5px 14px; padding:1px; background:#ddd; text-align:center;}
+.j-l03 ul li img{padding:2px; background:#fff;}
+.j-line ul li{background:url(../images/j-ico-01.gif) no-repeat 0 7px;}
+.j-line ul li a{background:#fff;}
+
+.j-logo{text-align:left;}
+
+.j-box{position:relative;}
+.j-box .tl,.j-box .tr,.j-box .bl,.j-box .br{position:absolute; width:6px; height:5px; background:url(../images/j-box.gif) no-repeat; overflow:hidden;}
+.j-box .tl{top:0; left:0; background-position: -6px 0;}	
+.j-box .tr{top:0; right:0;}	
+.j-box .bl{bottom:0; *bottom:-1px; left:0; background-position: -6px -5px;}	
+.j-box .br{bottom:0; *bottom:-1px; right:0; background-position: 0 -5px;}
+.j-box .inner{background:#fbfbfb; border:1px solid #d7d7d7;}
+
+.j-create{font-size:14px; text-align:left;}
+.j-create .inner{padding:10px;}
+.j-create .hd{margin-bottom:20px; border-bottom:1px dashed #ccc;}
+.j-create .hd h3{padding:12px 30px; background:url(../images/j-ico-03.gif) no-repeat 0 9px;}
+.j-create .j-table tr td{padding:5px 0;}
+.j-create .j-text{width:260px; padding:2px;}
+.j-create .j-tarea{width:380px; height:100px;}
+.j-create .j-pic{float:left; width:103px; height:101px;background:url(../images/j-pic.gif) no-repeat;}
+.j-create .j-pic img{widht:83px; height:83px; margin:9px;}
+.j-create .j-btn{width:41px; height:22px; margin-left:10px; border:0; background:url(../images/j-btn.gif) no-repeat; cursor:pointer;}
+.j-create span{color:#999; font-size:12px;}
+
+.btn-01,.btn-02,.btn-03,.btn-04{width:119px; height:37px; border:0; background:url(../images/j-ico-02.gif) no-repeat; cursor:pointer;}
+.btn-02{background-position:0 -37px;}
+.btn-03{background-position:0 -74px;}
+.btn-04{background-position:0 -111px;}

@@ -1,0 +1,8 @@
+{foreach item=child from=$cats}
+	<dl class="clfix">
+		<dt><span>{$child.catname}</span></a></dt>
+		{foreach item=item from=$child.child}
+		<dd><a href="{$item.url}" target="_blank">{$item.catname}<span></span></a></dd>
+		{/foreach}
+	</dl>
+{/foreach}

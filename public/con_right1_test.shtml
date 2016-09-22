@@ -1,0 +1,42 @@
+<div class="col-s">
+				<div class="ad-zh ad-zh01">
+		            <div class="fix">
+		             <?php 
+require_once(APP_INCLUDE_PATH."ip_right.php");
+ ?>		            </div>
+		            <div class="text-list fix">
+		              <ul>
+		                <li><a href="http://ask.9939.com/web/huodong/index.php" target="_blank">健康知识闯关,抽大奖</a></li><li><a href="http://ask.9939.com/id/2217083" target="_blank">请问糖尿病能喝牛奶吗</a></li><li><a href="http://ask.9939.com/id/2217084" target="_blank">骨质增生是怎么回事</a></li><li><a href="http://ask.9939.com/id/2217079" target="_blank">药流后4天做爱了什么</a></li><li><a href="http://ask.9939.com/id/2217085" target="_blank">宝宝出生一天没有小便</a></li><li><a href="http://ask.9939.com/id/2217094" target="_blank">秋天脚蜕皮疼痛怎么办</a></li>		              </ul>
+		            </div>
+		        </div>
+		        <div class="mod zhmod-01 tMarginLg">
+		          <span class="top">
+		            <span class="tl"></span>
+		          </span>
+		          <div class="inner text-list-sub">
+		            <div class="hd">
+		              <h4>相关问答</h4>
+		            </div>
+		            <div class="bd">
+		              <ul>
+		                <?php 
+require_once(APP_ROOT."/include/ask_new_test.php");
+ ?>		              </ul>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="mod zhmod-01 tMarginLg">
+		          <span class="top">
+		            <span class="tl"></span>
+		          </span>
+		          <div class="inner">
+		            <div class="hd">
+		              <h4>专家推荐</h4>
+		            </div>
+		            <div class="bd">
+		             
+<?php 
+require_once(APP_ROOT."/include/zhuanjiatuijian_test.php");
+ ?>		            </div>
+		          </div>
+		        </div>

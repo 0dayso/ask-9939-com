@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background:url(../images/r-body.png) repeat-x;}
+
+.zhbox{ background:url(../images/zhbox-header.png) no-repeat; padding-bottom:50px; width:1030px; margin:0 auto;}
+.zhtitle{ text-indent:-9999px;}
+.zhtitle h1{ background:url(../images/zhtitle.png) no-repeat center center; height:229px;}
+
+.zhcontent{ background:#F8FAF4 url(../images/zhcontent.png) no-repeat left bottom; margin:0 auto; padding-top:14px; padding-bottom:25px; width:956px; border:solid #C8CBC7; border-width:0 1px;}
+.zhmodu{ margin:20px 118px 0 40px; text-align:left; font-size:14px; color:#444;}
+.zhmodu h2{ font-size:18px;}
+.zhmodu .bd{ border:1px solid #D0C9BA; margin-top:12px; line-height:49px;}
+.zhmodu table{ width:100%;}
+.zhmodu tr{ background:#EDE7E5;}
+.zhmodu tr.tr-ex{ background:#FFF3D8;}
+.ru-tag{ background:url(../images/ddt.png) no-repeat 20px 50%; padding-left:40px;}
+.ru-count{ color:#E45B00; font-weight:700;}
+.ru-per{ padding-left:20px; font-weight:700;}
+.ru-graph{ display:block; background:url(../images/zh-bg.png) repeat-x; border:1px solid #AC9E95; width:239px; height:12px; overflow:hidden;}
+.ru-graph span{ display:block; background:url(../images/zh-hah.png) repeat-x; border:1px solid #CD5200; height:10px; overflow:hidden;}

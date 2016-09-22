@@ -1,0 +1,1895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<title>优秀医生_医生排行榜_久久问答_久久健康网_9939.com</title>  
+<meta name="Keywords" content="优秀医生,医生排行榜,久久健康问答" />
+<meta name="Description" content="优秀医生,医生排行榜,久久问答(ask.9939.com),中国权威的医疗健康在线问答平台." />
+
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+$(document).jTab({
+ menutag:".hd li"
+});
+});
+
+function getPages(url){
+		var html = '';
+		jQuery.ajax({
+			url : url+'&src=JQ',
+			dataType:"json",
+			cache:false,
+			success:function(data){
+				jQuery('#page_'+data.status+'a').html(data.pagehtml);
+				jQuery('#page_'+data.status+'b').html(data.pagehtml);
+				jQuery.each(data.aList,function(i){
+					if(data.aList[i].content==null)data.aList[i].content='';
+					html+='<dl><dt><span>'+data.aList[i].ctime+'<a href=\"#\">'+data.aList[i].username+'</a></span><strong class=\"false\"><a href=\"/ask/show/?id='+data.aList[i].id+'\">'+data.aList[i].title+'</a></strong></dt><dd><p class=\"info\"><em>悬赏分：'+data.aList[i].point+'</em> - 离问题结束还有 '+data.aList[i].endtime+'</p><p class=\"des\">'+data.aList[i].content+'</p></dd></dl>';
+				});
+				jQuery('#list'+data.status).html(html);
+			}
+		});
+	}
+	
+</script>
+<style>
+.content_main{padding:5px;}
+.content_main table td{ padding:6px 0; border:1px solid #EAEAEA; text-align:center;}
+.table_head_zh{ font-weight:700; text-align:center;}
+.content_main table td img{ vertical-align:middle;}
+.content_main table .headship a{ color:#00ADA9; text-decoration:underline;}
+.content_main table .disease a{ color:#00ADA9; text-decoration:underline;}
+.right_table{ margin-left:8px;}
+.content_main table .no_lborder{ border-left:none;  valign:top}
+.content_main table .no_rborder{ border-right:none;}
+.left{float:left;}
+.right{float:right;}
+</style>
+</head>
+<body>
+<!--#include virtual="/header.shtml"-->
+	<div id="bd">
+		<div class="g-m0s8 l-fix tMarginLg">
+			<div class="col-m">
+				<div class="m-wrap">
+					<div class="tmod-08">
+						<h3>您的位置：<a href="/">问答首页</a>－问答排行榜</h3>
+					</div>
+					<div class="j-mod tMarginLg">
+						<div id="menu0" class="hd fix">
+							<ul>
+								<li>积分榜</li>
+								<li>回答榜</li>
+								<li>上周积分上榜</li>
+							</ul>
+						</div>
+						<div id="main0" class="bd content_main fix">
+							<ol class="block">
+							<!--<tr>
+				                  <td class="no_rborder">-->
+				                      <table width="49%" class="left">
+				                        <tbody>
+										<tr align="center"><td colspan="5"><strong>医生会员排行榜</strong></td></tr>
+				                          <tr class="table_head_zh">
+				                            <td width="40">排名</td>
+				                            <td width="103">用户名</td>
+				                            <td width="103">等级</td>
+				                            <td width="103">等级名称</td>
+				                            <td width="103">经验积分</td>
+				                          </tr>
+				                        <!--从这循环tr50次-->
+				                        <tr>
+				                            <td>1</td>
+				                            <td><a href="http://home.9939.com/user/?uid=478027">贺常见</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>406851</td>
+				                          </tr><tr>
+				                            <td>2</td>
+				                            <td><a href="http://home.9939.com/user/?uid=396295">贺嫦洁</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>325310</td>
+				                          </tr><tr>
+				                            <td>3</td>
+				                            <td><a href="http://home.9939.com/user/?uid=745532">史艺红</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>232720</td>
+				                          </tr><tr>
+				                            <td>4</td>
+				                            <td><a href="http://home.9939.com/user/?uid=385420">王宁</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>217305</td>
+				                          </tr><tr>
+				                            <td>5</td>
+				                            <td><a href="http://home.9939.com/user/?uid=386761">yinshufang</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>133785</td>
+				                          </tr><tr>
+				                            <td>6</td>
+				                            <td><a href="http://home.9939.com/user/?uid=200276">张树遵</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>124800</td>
+				                          </tr><tr>
+				                            <td>7</td>
+				                            <td><a href="http://home.9939.com/user/?uid=297504">高俊中</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>108275</td>
+				                          </tr><tr>
+				                            <td>8</td>
+				                            <td><a href="http://home.9939.com/user/?uid=731077">颜小皙</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>105035</td>
+				                          </tr><tr>
+				                            <td>9</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1785">任立存</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>93409</td>
+				                          </tr><tr>
+				                            <td>10</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830834">李秀兰</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>84145</td>
+				                          </tr><tr>
+				                            <td>11</td>
+				                            <td><a href="http://home.9939.com/user/?uid=384153">梁佑怡</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>74070</td>
+				                          </tr><tr>
+				                            <td>12</td>
+				                            <td><a href="http://home.9939.com/user/?uid=350989">张宝清</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>64295</td>
+				                          </tr><tr>
+				                            <td>13</td>
+				                            <td><a href="http://home.9939.com/user/?uid=216234">周凹</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>62102</td>
+				                          </tr><tr>
+				                            <td>14</td>
+				                            <td><a href="http://home.9939.com/user/?uid=361723">刘巧花</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>61940</td>
+				                          </tr><tr>
+				                            <td>15</td>
+				                            <td><a href="http://home.9939.com/user/?uid=763458">nnnn</a></td>
+				                            <td class="headship">八级</td>
+				                            <td>钻石级医师1级</td>
+				                            <td>60043</td>
+				                          </tr><tr>
+				                            <td>16</td>
+				                            <td><a href="http://home.9939.com/user/?uid=348264">林洁港</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>53385</td>
+				                          </tr><tr>
+				                            <td>17</td>
+				                            <td><a href="http://home.9939.com/user/?uid=358098">梧桐雨</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>47590</td>
+				                          </tr><tr>
+				                            <td>18</td>
+				                            <td><a href="http://home.9939.com/user/?uid=285740">徐清芝</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>44425</td>
+				                          </tr><tr>
+				                            <td>19</td>
+				                            <td><a href="http://home.9939.com/user/?uid=368820">刘玉强</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>44005</td>
+				                          </tr><tr>
+				                            <td>20</td>
+				                            <td><a href="http://home.9939.com/user/?uid=328806">刘志生</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>43855</td>
+				                          </tr><tr>
+				                            <td>21</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830923">王英宾</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>43540</td>
+				                          </tr><tr>
+				                            <td>22</td>
+				                            <td><a href="http://home.9939.com/user/?uid=381563">村口一蹲</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>42115</td>
+				                          </tr><tr>
+				                            <td>23</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830763">赖海红</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>40905</td>
+				                          </tr><tr>
+				                            <td>24</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830237">郭艳娟</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>39755</td>
+				                          </tr><tr>
+				                            <td>25</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830244">王俊敏</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>36480</td>
+				                          </tr><tr>
+				                            <td>26</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831257">尹海波</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>35970</td>
+				                          </tr><tr>
+				                            <td>27</td>
+				                            <td><a href="http://home.9939.com/user/?uid=249291">刘业生</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>35779</td>
+				                          </tr><tr>
+				                            <td>28</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831649">钟伦力</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>33695</td>
+				                          </tr><tr>
+				                            <td>29</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831441">陈艳红</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>32980</td>
+				                          </tr><tr>
+				                            <td>30</td>
+				                            <td><a href="http://home.9939.com/user/?uid=241846">史秀磊</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>32955</td>
+				                          </tr><tr>
+				                            <td>31</td>
+				                            <td><a href="http://home.9939.com/user/?uid=2836">叶菁菁</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>32393</td>
+				                          </tr><tr>
+				                            <td>32</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830794">许学明</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>32375</td>
+				                          </tr><tr>
+				                            <td>33</td>
+				                            <td><a href="http://home.9939.com/user/?uid=486326">尹书方</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>28810</td>
+				                          </tr><tr>
+				                            <td>34</td>
+				                            <td><a href="http://home.9939.com/user/?uid=384076">刘秀秀</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>27321</td>
+				                          </tr><tr>
+				                            <td>35</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1798">于喜胜</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>24730</td>
+				                          </tr><tr>
+				                            <td>36</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831096">任立存</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>24470</td>
+				                          </tr><tr>
+				                            <td>37</td>
+				                            <td><a href="http://home.9939.com/user/?uid=773725">宋鹂</a></td>
+				                            <td class="headship">七级</td>
+				                            <td>医师会员1级</td>
+				                            <td>23221</td>
+				                          </tr><tr>
+				                            <td>38</td>
+				                            <td><a href="http://home.9939.com/user/?uid=2845">张丽医生</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>21215</td>
+				                          </tr><tr>
+				                            <td>39</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830781">靳宗新</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>20385</td>
+				                          </tr><tr>
+				                            <td>40</td>
+				                            <td><a href="http://home.9939.com/user/?uid=356690">张吟飞</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>19440</td>
+				                          </tr><tr>
+				                            <td>41</td>
+				                            <td><a href="http://home.9939.com/user/?uid=832031">刘生根</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>17105</td>
+				                          </tr><tr>
+				                            <td>42</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1797">吴珊珊</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>17035</td>
+				                          </tr><tr>
+				                            <td>43</td>
+				                            <td><a href="http://home.9939.com/user/?uid=384152">健康小久久</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>16970</td>
+				                          </tr><tr>
+				                            <td>44</td>
+				                            <td><a href="http://home.9939.com/user/?uid=249369">陈耀恒</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>16585</td>
+				                          </tr><tr>
+				                            <td>45</td>
+				                            <td><a href="http://home.9939.com/user/?uid=249288">儿科赵锋</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>16450</td>
+				                          </tr><tr>
+				                            <td>46</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830950">首医生</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>16185</td>
+				                          </tr><tr>
+				                            <td>47</td>
+				                            <td><a href="http://home.9939.com/user/?uid=2333">鱼影素魄</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>16110</td>
+				                          </tr><tr>
+				                            <td>48</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831381">袁医生</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>16045</td>
+				                          </tr><tr>
+				                            <td>49</td>
+				                            <td><a href="http://home.9939.com/user/?uid=381993">君君</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>15905</td>
+				                          </tr><tr>
+				                            <td>50</td>
+				                            <td><a href="http://home.9939.com/user/?uid=406844">哎</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>15460</td>
+				                          </tr>										 
+										</tbody>
+				                      </table>
+				                  <!--</td>
+				                  <td class="no_lborder" valign="top">-->
+				                      <table width="50%" class="right">
+				                        <tbody>
+										<tr align="center"><td colspan="5"><strong>大众会员排行榜</strong></td></tr>
+				                          <tr class="table_head_zh">
+				                            <td width="40">排名</td>
+				                            <td width="103">用户名</td>
+				                            <td width="103">等级</td>
+				                            <td width="103">等级名称</td>
+				                            <td width="103">经验积分</td>
+				                          </tr>
+				                        <!--从这循环tr50次-->
+				                        <tr>
+				                            <td>1</td>
+				                            <td><a href="http://home.9939.com/user/?uid=503393">sdfnuig</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>362025</td>
+				                          </tr><tr>
+				                            <td>2</td>
+				                            <td><a href="http://home.9939.com/user/?uid=368157">李珊嘉</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>61620</td>
+				                          </tr><tr>
+				                            <td>3</td>
+				                            <td><a href="http://home.9939.com/user/?uid=474108">中意8858</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>59560</td>
+				                          </tr><tr>
+				                            <td>4</td>
+				                            <td><a href="http://home.9939.com/user/?uid=503426">f1ds4</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>52450</td>
+				                          </tr><tr>
+				                            <td>5</td>
+				                            <td><a href="http://home.9939.com/user/?uid=503451">贺军科</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>45175</td>
+				                          </tr><tr>
+				                            <td>6</td>
+				                            <td><a href="http://home.9939.com/user/?uid=471533">雨帆</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>43555</td>
+				                          </tr><tr>
+				                            <td>7</td>
+				                            <td><a href="http://home.9939.com/user/?uid=463744">禹经理</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>40170</td>
+				                          </tr><tr>
+				                            <td>8</td>
+				                            <td><a href="http://home.9939.com/user/?uid=352694">zhongyi523</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>37320</td>
+				                          </tr><tr>
+				                            <td>9</td>
+				                            <td><a href="http://home.9939.com/user/?uid=325543">神的女人</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>35955</td>
+				                          </tr><tr>
+				                            <td>10</td>
+				                            <td><a href="http://home.9939.com/user/?uid=352165">刺客</a></td>
+				                            <td class="headship">八级</td>
+				                            <td></td>
+				                            <td>32890</td>
+				                          </tr><tr>
+				                            <td>11</td>
+				                            <td><a href="http://home.9939.com/user/?uid=373645">321277</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>28995</td>
+				                          </tr><tr>
+				                            <td>12</td>
+				                            <td><a href="http://home.9939.com/user/?uid=816355">盐城新东仁</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>28880</td>
+				                          </tr><tr>
+				                            <td>13</td>
+				                            <td><a href="http://home.9939.com/user/?uid=3433">茶叶蛋</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>28626</td>
+				                          </tr><tr>
+				                            <td>14</td>
+				                            <td><a href="http://home.9939.com/user/?uid=355876">xiaoyi</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>25570</td>
+				                          </tr><tr>
+				                            <td>15</td>
+				                            <td><a href="http://home.9939.com/user/?uid=207832">佳人庄园</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>24100</td>
+				                          </tr><tr>
+				                            <td>16</td>
+				                            <td><a href="http://home.9939.com/user/?uid=492174">zykj001</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>23980</td>
+				                          </tr><tr>
+				                            <td>17</td>
+				                            <td><a href="http://home.9939.com/user/?uid=522105">刷q币工作室</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>23705</td>
+				                          </tr><tr>
+				                            <td>18</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1757">teardrop  </a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>22643</td>
+				                          </tr><tr>
+				                            <td>19</td>
+				                            <td><a href="http://home.9939.com/user/?uid=784">梦妮卡</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>21229</td>
+				                          </tr><tr>
+				                            <td>20</td>
+				                            <td><a href="http://home.9939.com/user/?uid=209741">Angel.Night</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>19845</td>
+				                          </tr><tr>
+				                            <td>21</td>
+				                            <td><a href="http://home.9939.com/user/?uid=495404">hsdadjfk</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>13290</td>
+				                          </tr><tr>
+				                            <td>22</td>
+				                            <td><a href="http://home.9939.com/user/?uid=496144">mrhs7060</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>12235</td>
+				                          </tr><tr>
+				                            <td>23</td>
+				                            <td><a href="http://home.9939.com/user/?uid=299810">事实</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>12215</td>
+				                          </tr><tr>
+				                            <td>24</td>
+				                            <td><a href="http://home.9939.com/user/?uid=451520">北京百川恒益印刷公司</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>11545</td>
+				                          </tr><tr>
+				                            <td>25</td>
+				                            <td><a href="http://home.9939.com/user/?uid=328693">千年沙棘娃</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>11460</td>
+				                          </tr><tr>
+				                            <td>26</td>
+				                            <td><a href="http://home.9939.com/user/?uid=827249">nnjsb</a></td>
+				                            <td class="headship">七级</td>
+				                            <td>普通会员1级</td>
+				                            <td>10675</td>
+				                          </tr><tr>
+				                            <td>27</td>
+				                            <td><a href="http://home.9939.com/user/?uid=327147">中意矿机</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>10535</td>
+				                          </tr><tr>
+				                            <td>28</td>
+				                            <td><a href="http://home.9939.com/user/?uid=427505">ukagr</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>10465</td>
+				                          </tr><tr>
+				                            <td>29</td>
+				                            <td><a href="http://home.9939.com/user/?uid=495397">吊带34</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>10380</td>
+				                          </tr><tr>
+				                            <td>30</td>
+				                            <td><a href="http://home.9939.com/user/?uid=827295">贵阳结石病医院</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>10360</td>
+				                          </tr><tr>
+				                            <td>31</td>
+				                            <td><a href="http://home.9939.com/user/?uid=496316">qaz1113</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>10355</td>
+				                          </tr><tr>
+				                            <td>32</td>
+				                            <td><a href="http://home.9939.com/user/?uid=373833">小心心</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>10208</td>
+				                          </tr><tr>
+				                            <td>33</td>
+				                            <td><a href="http://home.9939.com/user/?uid=358084">yangzhongy</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>10180</td>
+				                          </tr><tr>
+				                            <td>34</td>
+				                            <td><a href="http://home.9939.com/user/?uid=358056">xiaozhongyi</a></td>
+				                            <td class="headship">七级</td>
+				                            <td></td>
+				                            <td>10160</td>
+				                          </tr><tr>
+				                            <td>35</td>
+				                            <td><a href="http://home.9939.com/user/?uid=764625">审判帝王</a></td>
+				                            <td class="headship">七级</td>
+				                            <td>普通会员1级</td>
+				                            <td>10005</td>
+				                          </tr><tr>
+				                            <td>36</td>
+				                            <td><a href="http://home.9939.com/user/?uid=374538">尚秋军</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>9210</td>
+				                          </tr><tr>
+				                            <td>37</td>
+				                            <td><a href="http://home.9939.com/user/?uid=756653">成都芯软</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>8685</td>
+				                          </tr><tr>
+				                            <td>38</td>
+				                            <td><a href="http://home.9939.com/user/?uid=405528">白癜风</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>8665</td>
+				                          </tr><tr>
+				                            <td>39</td>
+				                            <td><a href="http://home.9939.com/user/?uid=368824">huntuang</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>8650</td>
+				                          </tr><tr>
+				                            <td>40</td>
+				                            <td><a href="http://home.9939.com/user/?uid=310224">广州挂图大师</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>8475</td>
+				                          </tr><tr>
+				                            <td>41</td>
+				                            <td><a href="http://home.9939.com/user/?uid=332724">格子铺</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>8295</td>
+				                          </tr><tr>
+				                            <td>42</td>
+				                            <td><a href="http://home.9939.com/user/?uid=827268">ynjsb22</a></td>
+				                            <td class="headship">六级</td>
+				                            <td>普通会员1级</td>
+				                            <td>8020</td>
+				                          </tr><tr>
+				                            <td>43</td>
+				                            <td><a href="http://home.9939.com/user/?uid=495411">liufanp</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>7995</td>
+				                          </tr><tr>
+				                            <td>44</td>
+				                            <td><a href="http://home.9939.com/user/?uid=349848">董子维</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>7820</td>
+				                          </tr><tr>
+				                            <td>45</td>
+				                            <td><a href="http://home.9939.com/user/?uid=351566">牛子筱</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>7695</td>
+				                          </tr><tr>
+				                            <td>46</td>
+				                            <td><a href="http://home.9939.com/user/?uid=351070">苑子筱</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>7680</td>
+				                          </tr><tr>
+				                            <td>47</td>
+				                            <td><a href="http://home.9939.com/user/?uid=350459">潘子筱</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>7640</td>
+				                          </tr><tr>
+				                            <td>48</td>
+				                            <td><a href="http://home.9939.com/user/?uid=352470">郑子筱</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>7635</td>
+				                          </tr><tr>
+				                            <td>49</td>
+				                            <td><a href="http://home.9939.com/user/?uid=356637">一杯酒品人生</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>7570</td>
+				                          </tr><tr>
+				                            <td>50</td>
+				                            <td><a href="http://home.9939.com/user/?uid=499503">nana</a></td>
+				                            <td class="headship">六级</td>
+				                            <td></td>
+				                            <td>7470</td>
+				                          </tr>										</tbody>
+				                      </table>
+				                 <!-- </td>
+				                </tr>-->							
+							</ol>
+							
+							<ol>
+			  				<!--<tr>
+			                  <td class="no_rborder">-->
+			                      <table width="49%" class="left">
+			                        <tbody>
+									<tr align="center"><td colspan="5"><strong>医生会员排行榜</strong></td></tr>
+			                          <tr class="table_head_zh">
+			                            <td width="40">排名</td>
+			                            <td width="103">用户名</td>
+			                            <td width="103">经验积分</td>
+			                            <td width="103">回答数</td>
+			                            <td width="103">采纳率</td>
+			                          </tr>
+			                        </tbody>
+			                        <tbody>
+			                        <!--从这循环tr50次-->
+				                        <tr>
+				                            <td>1</td>
+				                            <td><a href="http://home.9939.com/user/?uid=478027">贺常见</a></td>
+				                            <td class="headship">406851</td>
+				                            <td>79541</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>2</td>
+				                            <td><a href="http://home.9939.com/user/?uid=396295">贺嫦洁</a></td>
+				                            <td class="headship">325310</td>
+				                            <td>64084</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>3</td>
+				                            <td><a href="http://home.9939.com/user/?uid=745532">史艺红</a></td>
+				                            <td class="headship">232720</td>
+				                            <td>46283</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>4</td>
+				                            <td><a href="http://home.9939.com/user/?uid=385420">王宁</a></td>
+				                            <td class="headship">217305</td>
+				                            <td>43046</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>5</td>
+				                            <td><a href="http://home.9939.com/user/?uid=386761">yinshufang</a></td>
+				                            <td class="headship">133785</td>
+				                            <td>26691</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>6</td>
+				                            <td><a href="http://home.9939.com/user/?uid=200276">张树遵</a></td>
+				                            <td class="headship">124800</td>
+				                            <td>14949</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>7</td>
+				                            <td><a href="http://home.9939.com/user/?uid=297504">高俊中</a></td>
+				                            <td class="headship">108275</td>
+				                            <td>21064</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>8</td>
+				                            <td><a href="http://home.9939.com/user/?uid=731077">颜小皙</a></td>
+				                            <td class="headship">105035</td>
+				                            <td>21701</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>9</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1785">任立存</a></td>
+				                            <td class="headship">93409</td>
+				                            <td>9513</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>10</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830834">李秀兰</a></td>
+				                            <td class="headship">84145</td>
+				                            <td>16767</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>11</td>
+				                            <td><a href="http://home.9939.com/user/?uid=384153">梁佑怡</a></td>
+				                            <td class="headship">74070</td>
+				                            <td>24786</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>12</td>
+				                            <td><a href="http://home.9939.com/user/?uid=350989">张宝清</a></td>
+				                            <td class="headship">64295</td>
+				                            <td>10543</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>13</td>
+				                            <td><a href="http://home.9939.com/user/?uid=216234">周凹</a></td>
+				                            <td class="headship">62102</td>
+				                            <td>4352</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>14</td>
+				                            <td><a href="http://home.9939.com/user/?uid=361723">刘巧花</a></td>
+				                            <td class="headship">61940</td>
+				                            <td>11873</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>15</td>
+				                            <td><a href="http://home.9939.com/user/?uid=763458">nnnn</a></td>
+				                            <td class="headship">60043</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>16</td>
+				                            <td><a href="http://home.9939.com/user/?uid=348264">林洁港</a></td>
+				                            <td class="headship">53385</td>
+				                            <td>10321</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>17</td>
+				                            <td><a href="http://home.9939.com/user/?uid=358098">梧桐雨</a></td>
+				                            <td class="headship">47590</td>
+				                            <td>9245</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>18</td>
+				                            <td><a href="http://home.9939.com/user/?uid=285740">徐清芝</a></td>
+				                            <td class="headship">44425</td>
+				                            <td>8414</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>19</td>
+				                            <td><a href="http://home.9939.com/user/?uid=368820">刘玉强</a></td>
+				                            <td class="headship">44005</td>
+				                            <td>8625</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>20</td>
+				                            <td><a href="http://home.9939.com/user/?uid=328806">刘志生</a></td>
+				                            <td class="headship">43855</td>
+				                            <td>8521</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>21</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830923">王英宾</a></td>
+				                            <td class="headship">43540</td>
+				                            <td>8452</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>22</td>
+				                            <td><a href="http://home.9939.com/user/?uid=381563">村口一蹲</a></td>
+				                            <td class="headship">42115</td>
+				                            <td>8291</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>23</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830763">赖海红</a></td>
+				                            <td class="headship">40905</td>
+				                            <td>8161</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>24</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830237">郭艳娟</a></td>
+				                            <td class="headship">39755</td>
+				                            <td>7906</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>25</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830244">王俊敏</a></td>
+				                            <td class="headship">36480</td>
+				                            <td>7276</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>26</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831257">尹海波</a></td>
+				                            <td class="headship">35970</td>
+				                            <td>7048</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>27</td>
+				                            <td><a href="http://home.9939.com/user/?uid=249291">刘业生</a></td>
+				                            <td class="headship">35779</td>
+				                            <td>4450</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>28</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831649">钟伦力</a></td>
+				                            <td class="headship">33695</td>
+				                            <td>6705</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>29</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831441">陈艳红</a></td>
+				                            <td class="headship">32980</td>
+				                            <td>6584</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>30</td>
+				                            <td><a href="http://home.9939.com/user/?uid=241846">史秀磊</a></td>
+				                            <td class="headship">32955</td>
+				                            <td>4970</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>31</td>
+				                            <td><a href="http://home.9939.com/user/?uid=2836">叶菁菁</a></td>
+				                            <td class="headship">32393</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>32</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830794">许学明</a></td>
+				                            <td class="headship">32375</td>
+				                            <td>6370</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>33</td>
+				                            <td><a href="http://home.9939.com/user/?uid=486326">尹书方</a></td>
+				                            <td class="headship">28810</td>
+				                            <td>5835</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>34</td>
+				                            <td><a href="http://home.9939.com/user/?uid=384076">刘秀秀</a></td>
+				                            <td class="headship">27321</td>
+				                            <td>6821</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>35</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1798">于喜胜</a></td>
+				                            <td class="headship">24730</td>
+				                            <td>44</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>36</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831096">任立存</a></td>
+				                            <td class="headship">24470</td>
+				                            <td>4888</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>37</td>
+				                            <td><a href="http://home.9939.com/user/?uid=773725">宋鹂</a></td>
+				                            <td class="headship">23221</td>
+				                            <td>4719</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>38</td>
+				                            <td><a href="http://home.9939.com/user/?uid=2845">张丽医生</a></td>
+				                            <td class="headship">21215</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>39</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830781">靳宗新</a></td>
+				                            <td class="headship">20385</td>
+				                            <td>4071</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>40</td>
+				                            <td><a href="http://home.9939.com/user/?uid=356690">张吟飞</a></td>
+				                            <td class="headship">19440</td>
+				                            <td>3548</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>41</td>
+				                            <td><a href="http://home.9939.com/user/?uid=832031">刘生根</a></td>
+				                            <td class="headship">17105</td>
+				                            <td>3368</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>42</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1797">吴珊珊</a></td>
+				                            <td class="headship">17035</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>43</td>
+				                            <td><a href="http://home.9939.com/user/?uid=384152">健康小久久</a></td>
+				                            <td class="headship">16970</td>
+				                            <td>3913</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>44</td>
+				                            <td><a href="http://home.9939.com/user/?uid=249369">陈耀恒</a></td>
+				                            <td class="headship">16585</td>
+				                            <td>2057</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>45</td>
+				                            <td><a href="http://home.9939.com/user/?uid=249288">儿科赵锋</a></td>
+				                            <td class="headship">16450</td>
+				                            <td>1368</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>46</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830950">首医生</a></td>
+				                            <td class="headship">16185</td>
+				                            <td>3233</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>47</td>
+				                            <td><a href="http://home.9939.com/user/?uid=2333">鱼影素魄</a></td>
+				                            <td class="headship">16110</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>48</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831381">袁医生</a></td>
+				                            <td class="headship">16045</td>
+				                            <td>3206</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>49</td>
+				                            <td><a href="http://home.9939.com/user/?uid=381993">君君</a></td>
+				                            <td class="headship">15905</td>
+				                            <td>2665</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>50</td>
+				                            <td><a href="http://home.9939.com/user/?uid=406844">哎</a></td>
+				                            <td class="headship">15460</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr>			                          
+									</tbody>
+			                      </table>
+			                 <!-- </td>
+			                  <td class="no_lborder" valign="top">-->
+			                      <table width="50%" class="right">
+			                        <tbody>
+									<tr align="center"><td colspan="5"><strong>大众会员排行榜</strong></td></tr>
+			                          <tr class="table_head_zh">
+			                            <td width="40">排名</td>
+			                            <td width="103">用户名</td>
+			                            <td width="103">经验积分</td>
+			                            <td width="103">回答数</td>
+			                            <td width="103">采纳率</td>
+			                          </tr>
+			                        </tbody>
+			                        <tbody>
+			                        <!--从这循环tr50次-->
+				                        <tr>
+				                            <td>1</td>
+				                            <td><a href="http://home.9939.com/user/?uid=503393">sdfnuig</a></td>
+				                            <td class="headship">362025</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>2</td>
+				                            <td><a href="http://home.9939.com/user/?uid=368157">李珊嘉</a></td>
+				                            <td class="headship">61620</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>3</td>
+				                            <td><a href="http://home.9939.com/user/?uid=474108">中意8858</a></td>
+				                            <td class="headship">59560</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>4</td>
+				                            <td><a href="http://home.9939.com/user/?uid=503426">f1ds4</a></td>
+				                            <td class="headship">52450</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>5</td>
+				                            <td><a href="http://home.9939.com/user/?uid=503451">贺军科</a></td>
+				                            <td class="headship">45175</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>6</td>
+				                            <td><a href="http://home.9939.com/user/?uid=471533">雨帆</a></td>
+				                            <td class="headship">43555</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>7</td>
+				                            <td><a href="http://home.9939.com/user/?uid=463744">禹经理</a></td>
+				                            <td class="headship">40170</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>8</td>
+				                            <td><a href="http://home.9939.com/user/?uid=352694">zhongyi523</a></td>
+				                            <td class="headship">37320</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>9</td>
+				                            <td><a href="http://home.9939.com/user/?uid=325543">神的女人</a></td>
+				                            <td class="headship">35955</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>10</td>
+				                            <td><a href="http://home.9939.com/user/?uid=352165">刺客</a></td>
+				                            <td class="headship">32890</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>11</td>
+				                            <td><a href="http://home.9939.com/user/?uid=373645">321277</a></td>
+				                            <td class="headship">28995</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>12</td>
+				                            <td><a href="http://home.9939.com/user/?uid=816355">盐城新东仁</a></td>
+				                            <td class="headship">28880</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>13</td>
+				                            <td><a href="http://home.9939.com/user/?uid=3433">茶叶蛋</a></td>
+				                            <td class="headship">28626</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>14</td>
+				                            <td><a href="http://home.9939.com/user/?uid=355876">xiaoyi</a></td>
+				                            <td class="headship">25570</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>15</td>
+				                            <td><a href="http://home.9939.com/user/?uid=207832">佳人庄园</a></td>
+				                            <td class="headship">24100</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>16</td>
+				                            <td><a href="http://home.9939.com/user/?uid=492174">zykj001</a></td>
+				                            <td class="headship">23980</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>17</td>
+				                            <td><a href="http://home.9939.com/user/?uid=522105">刷q币工作室</a></td>
+				                            <td class="headship">23705</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>18</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1757">teardrop  </a></td>
+				                            <td class="headship">22643</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>19</td>
+				                            <td><a href="http://home.9939.com/user/?uid=784">梦妮卡</a></td>
+				                            <td class="headship">21229</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>20</td>
+				                            <td><a href="http://home.9939.com/user/?uid=209741">Angel.Night</a></td>
+				                            <td class="headship">19845</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>21</td>
+				                            <td><a href="http://home.9939.com/user/?uid=495404">hsdadjfk</a></td>
+				                            <td class="headship">13290</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>22</td>
+				                            <td><a href="http://home.9939.com/user/?uid=496144">mrhs7060</a></td>
+				                            <td class="headship">12235</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>23</td>
+				                            <td><a href="http://home.9939.com/user/?uid=299810">事实</a></td>
+				                            <td class="headship">12215</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>24</td>
+				                            <td><a href="http://home.9939.com/user/?uid=451520">北京百川恒益印刷公司</a></td>
+				                            <td class="headship">11545</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>25</td>
+				                            <td><a href="http://home.9939.com/user/?uid=328693">千年沙棘娃</a></td>
+				                            <td class="headship">11460</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>26</td>
+				                            <td><a href="http://home.9939.com/user/?uid=827249">nnjsb</a></td>
+				                            <td class="headship">10675</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>27</td>
+				                            <td><a href="http://home.9939.com/user/?uid=327147">中意矿机</a></td>
+				                            <td class="headship">10535</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>28</td>
+				                            <td><a href="http://home.9939.com/user/?uid=427505">ukagr</a></td>
+				                            <td class="headship">10465</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>29</td>
+				                            <td><a href="http://home.9939.com/user/?uid=495397">吊带34</a></td>
+				                            <td class="headship">10380</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>30</td>
+				                            <td><a href="http://home.9939.com/user/?uid=827295">贵阳结石病医院</a></td>
+				                            <td class="headship">10360</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>31</td>
+				                            <td><a href="http://home.9939.com/user/?uid=496316">qaz1113</a></td>
+				                            <td class="headship">10355</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>32</td>
+				                            <td><a href="http://home.9939.com/user/?uid=373833">小心心</a></td>
+				                            <td class="headship">10208</td>
+				                            <td>3689</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>33</td>
+				                            <td><a href="http://home.9939.com/user/?uid=358084">yangzhongy</a></td>
+				                            <td class="headship">10180</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>34</td>
+				                            <td><a href="http://home.9939.com/user/?uid=358056">xiaozhongyi</a></td>
+				                            <td class="headship">10160</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>35</td>
+				                            <td><a href="http://home.9939.com/user/?uid=764625">审判帝王</a></td>
+				                            <td class="headship">10005</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>36</td>
+				                            <td><a href="http://home.9939.com/user/?uid=374538">尚秋军</a></td>
+				                            <td class="headship">9210</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>37</td>
+				                            <td><a href="http://home.9939.com/user/?uid=756653">成都芯软</a></td>
+				                            <td class="headship">8685</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>38</td>
+				                            <td><a href="http://home.9939.com/user/?uid=405528">白癜风</a></td>
+				                            <td class="headship">8665</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>39</td>
+				                            <td><a href="http://home.9939.com/user/?uid=368824">huntuang</a></td>
+				                            <td class="headship">8650</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>40</td>
+				                            <td><a href="http://home.9939.com/user/?uid=310224">广州挂图大师</a></td>
+				                            <td class="headship">8475</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>41</td>
+				                            <td><a href="http://home.9939.com/user/?uid=332724">格子铺</a></td>
+				                            <td class="headship">8295</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>42</td>
+				                            <td><a href="http://home.9939.com/user/?uid=827268">ynjsb22</a></td>
+				                            <td class="headship">8020</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>43</td>
+				                            <td><a href="http://home.9939.com/user/?uid=495411">liufanp</a></td>
+				                            <td class="headship">7995</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>44</td>
+				                            <td><a href="http://home.9939.com/user/?uid=349848">董子维</a></td>
+				                            <td class="headship">7820</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>45</td>
+				                            <td><a href="http://home.9939.com/user/?uid=351566">牛子筱</a></td>
+				                            <td class="headship">7695</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>46</td>
+				                            <td><a href="http://home.9939.com/user/?uid=351070">苑子筱</a></td>
+				                            <td class="headship">7680</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>47</td>
+				                            <td><a href="http://home.9939.com/user/?uid=350459">潘子筱</a></td>
+				                            <td class="headship">7640</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>48</td>
+				                            <td><a href="http://home.9939.com/user/?uid=352470">郑子筱</a></td>
+				                            <td class="headship">7635</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>49</td>
+				                            <td><a href="http://home.9939.com/user/?uid=356637">一杯酒品人生</a></td>
+				                            <td class="headship">7570</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr><tr>
+				                            <td>50</td>
+				                            <td><a href="http://home.9939.com/user/?uid=499503">nana</a></td>
+				                            <td class="headship">7470</td>
+				                            <td>0</td>
+				                            <td>0%</td>
+				                          </tr>	
+									</tbody>
+			                      </table>
+			                 <!-- </td>
+			                </tr>-->							
+						</ol>							
+						<ol>
+			 				<!-- <tr>
+			                  <td class="no_rborder">-->
+			                      <table class="left">
+			                        <tbody>
+									<tr align="center"><td colspan="4"><strong>医生会员排行榜</strong></td></tr>
+			                          <tr class="table_head_zh">
+			                            <td width="40">排名</td>
+			                            <td width="103">用户名</td>
+			                            <td width="103">上周积分</td>
+			                            <td width="103">总积分</td>
+			                          </tr>
+			                        <!--从这循环tr50次-->
+				                        <tr>
+				                            <td>1</td>
+				                            <td><a href="http://home.9939.com/user/?uid=478027">贺常见</a></td>
+				                            <td>2975</td>
+				                            <td>406851</td>
+				                          </tr><tr>
+				                            <td>2</td>
+				                            <td><a href="http://home.9939.com/user/?uid=396295">贺嫦洁</a></td>
+				                            <td>3480</td>
+				                            <td>325310</td>
+				                          </tr><tr>
+				                            <td>3</td>
+				                            <td><a href="http://home.9939.com/user/?uid=745532">史艺红</a></td>
+				                            <td>6035</td>
+				                            <td>232720</td>
+				                          </tr><tr>
+				                            <td>4</td>
+				                            <td><a href="http://home.9939.com/user/?uid=385420">王宁</a></td>
+				                            <td>0</td>
+				                            <td>217305</td>
+				                          </tr><tr>
+				                            <td>5</td>
+				                            <td><a href="http://home.9939.com/user/?uid=386761">yinshufang</a></td>
+				                            <td>0</td>
+				                            <td>133785</td>
+				                          </tr><tr>
+				                            <td>6</td>
+				                            <td><a href="http://home.9939.com/user/?uid=200276">张树遵</a></td>
+				                            <td>0</td>
+				                            <td>124800</td>
+				                          </tr><tr>
+				                            <td>7</td>
+				                            <td><a href="http://home.9939.com/user/?uid=297504">高俊中</a></td>
+				                            <td>8305</td>
+				                            <td>108275</td>
+				                          </tr><tr>
+				                            <td>8</td>
+				                            <td><a href="http://home.9939.com/user/?uid=731077">颜小皙</a></td>
+				                            <td>0</td>
+				                            <td>105035</td>
+				                          </tr><tr>
+				                            <td>9</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1785">任立存</a></td>
+				                            <td>0</td>
+				                            <td>93409</td>
+				                          </tr><tr>
+				                            <td>10</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830834">李秀兰</a></td>
+				                            <td>12585</td>
+				                            <td>84145</td>
+				                          </tr><tr>
+				                            <td>11</td>
+				                            <td><a href="http://home.9939.com/user/?uid=384153">梁佑怡</a></td>
+				                            <td>0</td>
+				                            <td>74070</td>
+				                          </tr><tr>
+				                            <td>12</td>
+				                            <td><a href="http://home.9939.com/user/?uid=350989">张宝清</a></td>
+				                            <td>0</td>
+				                            <td>64295</td>
+				                          </tr><tr>
+				                            <td>13</td>
+				                            <td><a href="http://home.9939.com/user/?uid=216234">周凹</a></td>
+				                            <td>0</td>
+				                            <td>62102</td>
+				                          </tr><tr>
+				                            <td>14</td>
+				                            <td><a href="http://home.9939.com/user/?uid=361723">刘巧花</a></td>
+				                            <td>0</td>
+				                            <td>61940</td>
+				                          </tr><tr>
+				                            <td>15</td>
+				                            <td><a href="http://home.9939.com/user/?uid=763458">nnnn</a></td>
+				                            <td>0</td>
+				                            <td>60043</td>
+				                          </tr><tr>
+				                            <td>16</td>
+				                            <td><a href="http://home.9939.com/user/?uid=348264">林洁港</a></td>
+				                            <td>0</td>
+				                            <td>53385</td>
+				                          </tr><tr>
+				                            <td>17</td>
+				                            <td><a href="http://home.9939.com/user/?uid=358098">梧桐雨</a></td>
+				                            <td>0</td>
+				                            <td>47590</td>
+				                          </tr><tr>
+				                            <td>18</td>
+				                            <td><a href="http://home.9939.com/user/?uid=285740">徐清芝</a></td>
+				                            <td>0</td>
+				                            <td>44425</td>
+				                          </tr><tr>
+				                            <td>19</td>
+				                            <td><a href="http://home.9939.com/user/?uid=368820">刘玉强</a></td>
+				                            <td>0</td>
+				                            <td>44005</td>
+				                          </tr><tr>
+				                            <td>20</td>
+				                            <td><a href="http://home.9939.com/user/?uid=328806">刘志生</a></td>
+				                            <td>13265</td>
+				                            <td>43855</td>
+				                          </tr><tr>
+				                            <td>21</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830923">王英宾</a></td>
+				                            <td>14405</td>
+				                            <td>43540</td>
+				                          </tr><tr>
+				                            <td>22</td>
+				                            <td><a href="http://home.9939.com/user/?uid=381563">村口一蹲</a></td>
+				                            <td>0</td>
+				                            <td>42115</td>
+				                          </tr><tr>
+				                            <td>23</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830763">赖海红</a></td>
+				                            <td>0</td>
+				                            <td>40905</td>
+				                          </tr><tr>
+				                            <td>24</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830237">郭艳娟</a></td>
+				                            <td>0</td>
+				                            <td>39755</td>
+				                          </tr><tr>
+				                            <td>25</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830244">王俊敏</a></td>
+				                            <td>0</td>
+				                            <td>36480</td>
+				                          </tr><tr>
+				                            <td>26</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831257">尹海波</a></td>
+				                            <td>0</td>
+				                            <td>35970</td>
+				                          </tr><tr>
+				                            <td>27</td>
+				                            <td><a href="http://home.9939.com/user/?uid=249291">刘业生</a></td>
+				                            <td>0</td>
+				                            <td>35779</td>
+				                          </tr><tr>
+				                            <td>28</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831649">钟伦力</a></td>
+				                            <td>0</td>
+				                            <td>33695</td>
+				                          </tr><tr>
+				                            <td>29</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831441">陈艳红</a></td>
+				                            <td>0</td>
+				                            <td>32980</td>
+				                          </tr><tr>
+				                            <td>30</td>
+				                            <td><a href="http://home.9939.com/user/?uid=241846">史秀磊</a></td>
+				                            <td>0</td>
+				                            <td>32955</td>
+				                          </tr><tr>
+				                            <td>31</td>
+				                            <td><a href="http://home.9939.com/user/?uid=2836">叶菁菁</a></td>
+				                            <td>0</td>
+				                            <td>32393</td>
+				                          </tr><tr>
+				                            <td>32</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830794">许学明</a></td>
+				                            <td>14435</td>
+				                            <td>32375</td>
+				                          </tr><tr>
+				                            <td>33</td>
+				                            <td><a href="http://home.9939.com/user/?uid=486326">尹书方</a></td>
+				                            <td>0</td>
+				                            <td>28810</td>
+				                          </tr><tr>
+				                            <td>34</td>
+				                            <td><a href="http://home.9939.com/user/?uid=384076">刘秀秀</a></td>
+				                            <td>0</td>
+				                            <td>27321</td>
+				                          </tr><tr>
+				                            <td>35</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1798">于喜胜</a></td>
+				                            <td>0</td>
+				                            <td>24730</td>
+				                          </tr><tr>
+				                            <td>36</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831096">任立存</a></td>
+				                            <td>14440</td>
+				                            <td>24470</td>
+				                          </tr><tr>
+				                            <td>37</td>
+				                            <td><a href="http://home.9939.com/user/?uid=773725">宋鹂</a></td>
+				                            <td>14445</td>
+				                            <td>23221</td>
+				                          </tr><tr>
+				                            <td>38</td>
+				                            <td><a href="http://home.9939.com/user/?uid=2845">张丽医生</a></td>
+				                            <td>0</td>
+				                            <td>21215</td>
+				                          </tr><tr>
+				                            <td>39</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830781">靳宗新</a></td>
+				                            <td>0</td>
+				                            <td>20385</td>
+				                          </tr><tr>
+				                            <td>40</td>
+				                            <td><a href="http://home.9939.com/user/?uid=356690">张吟飞</a></td>
+				                            <td>0</td>
+				                            <td>19440</td>
+				                          </tr><tr>
+				                            <td>41</td>
+				                            <td><a href="http://home.9939.com/user/?uid=832031">刘生根</a></td>
+				                            <td>14910</td>
+				                            <td>17105</td>
+				                          </tr><tr>
+				                            <td>42</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1797">吴珊珊</a></td>
+				                            <td>0</td>
+				                            <td>17035</td>
+				                          </tr><tr>
+				                            <td>43</td>
+				                            <td><a href="http://home.9939.com/user/?uid=384152">健康小久久</a></td>
+				                            <td>0</td>
+				                            <td>16970</td>
+				                          </tr><tr>
+				                            <td>44</td>
+				                            <td><a href="http://home.9939.com/user/?uid=249369">陈耀恒</a></td>
+				                            <td>0</td>
+				                            <td>16585</td>
+				                          </tr><tr>
+				                            <td>45</td>
+				                            <td><a href="http://home.9939.com/user/?uid=249288">儿科赵锋</a></td>
+				                            <td>0</td>
+				                            <td>16450</td>
+				                          </tr><tr>
+				                            <td>46</td>
+				                            <td><a href="http://home.9939.com/user/?uid=830950">首医生</a></td>
+				                            <td>0</td>
+				                            <td>16185</td>
+				                          </tr><tr>
+				                            <td>47</td>
+				                            <td><a href="http://home.9939.com/user/?uid=2333">鱼影素魄</a></td>
+				                            <td>0</td>
+				                            <td>16110</td>
+				                          </tr><tr>
+				                            <td>48</td>
+				                            <td><a href="http://home.9939.com/user/?uid=831381">袁医生</a></td>
+				                            <td>0</td>
+				                            <td>16045</td>
+				                          </tr><tr>
+				                            <td>49</td>
+				                            <td><a href="http://home.9939.com/user/?uid=381993">君君</a></td>
+				                            <td>0</td>
+				                            <td>15905</td>
+				                          </tr><tr>
+				                            <td>50</td>
+				                            <td><a href="http://home.9939.com/user/?uid=406844">哎</a></td>
+				                            <td>0</td>
+				                            <td>15460</td>
+				                          </tr>			                          
+									</tbody>
+			                      </table>
+			                  <!--</td>
+			                  <td class="no_lborder" valign="top">-->                      
+			                      <table class="right" width="42%">
+			                        <tbody>
+									<tr align="center"><td colspan="4"><strong>大众会员排行榜</strong></td></tr>
+			                          <tr class="table_head_zh">
+			                            <td width="40">排名</td>
+			                            <td width="103">用户名</td>
+			                            <td width="103">上周积分</td>
+			                            <td width="103">总积分</td>
+			                          </tr>
+			                        <!--从这循环tr50次-->
+				                        <tr>
+				                            <td>1</td>
+				                            <td><a href="http://home.9939.com/user/?uid=503393">sdfnuig</a></td>
+				                            <td>0</td>
+				                            <td>362025</td>
+				                          </tr><tr>
+				                            <td>2</td>
+				                            <td><a href="http://home.9939.com/user/?uid=368157">李珊嘉</a></td>
+				                            <td>0</td>
+				                            <td>61620</td>
+				                          </tr><tr>
+				                            <td>3</td>
+				                            <td><a href="http://home.9939.com/user/?uid=474108">中意8858</a></td>
+				                            <td>0</td>
+				                            <td>59560</td>
+				                          </tr><tr>
+				                            <td>4</td>
+				                            <td><a href="http://home.9939.com/user/?uid=503426">f1ds4</a></td>
+				                            <td>0</td>
+				                            <td>52450</td>
+				                          </tr><tr>
+				                            <td>5</td>
+				                            <td><a href="http://home.9939.com/user/?uid=503451">贺军科</a></td>
+				                            <td>0</td>
+				                            <td>45175</td>
+				                          </tr><tr>
+				                            <td>6</td>
+				                            <td><a href="http://home.9939.com/user/?uid=471533">雨帆</a></td>
+				                            <td>0</td>
+				                            <td>43555</td>
+				                          </tr><tr>
+				                            <td>7</td>
+				                            <td><a href="http://home.9939.com/user/?uid=463744">禹经理</a></td>
+				                            <td>0</td>
+				                            <td>40170</td>
+				                          </tr><tr>
+				                            <td>8</td>
+				                            <td><a href="http://home.9939.com/user/?uid=352694">zhongyi523</a></td>
+				                            <td>0</td>
+				                            <td>37320</td>
+				                          </tr><tr>
+				                            <td>9</td>
+				                            <td><a href="http://home.9939.com/user/?uid=325543">神的女人</a></td>
+				                            <td>0</td>
+				                            <td>35955</td>
+				                          </tr><tr>
+				                            <td>10</td>
+				                            <td><a href="http://home.9939.com/user/?uid=352165">刺客</a></td>
+				                            <td>0</td>
+				                            <td>32890</td>
+				                          </tr><tr>
+				                            <td>11</td>
+				                            <td><a href="http://home.9939.com/user/?uid=373645">321277</a></td>
+				                            <td>0</td>
+				                            <td>28995</td>
+				                          </tr><tr>
+				                            <td>12</td>
+				                            <td><a href="http://home.9939.com/user/?uid=816355">盐城新东仁</a></td>
+				                            <td>0</td>
+				                            <td>28880</td>
+				                          </tr><tr>
+				                            <td>13</td>
+				                            <td><a href="http://home.9939.com/user/?uid=3433">茶叶蛋</a></td>
+				                            <td>0</td>
+				                            <td>28626</td>
+				                          </tr><tr>
+				                            <td>14</td>
+				                            <td><a href="http://home.9939.com/user/?uid=355876">xiaoyi</a></td>
+				                            <td>0</td>
+				                            <td>25570</td>
+				                          </tr><tr>
+				                            <td>15</td>
+				                            <td><a href="http://home.9939.com/user/?uid=207832">佳人庄园</a></td>
+				                            <td>0</td>
+				                            <td>24100</td>
+				                          </tr><tr>
+				                            <td>16</td>
+				                            <td><a href="http://home.9939.com/user/?uid=492174">zykj001</a></td>
+				                            <td>0</td>
+				                            <td>23980</td>
+				                          </tr><tr>
+				                            <td>17</td>
+				                            <td><a href="http://home.9939.com/user/?uid=522105">刷q币工作室</a></td>
+				                            <td>0</td>
+				                            <td>23705</td>
+				                          </tr><tr>
+				                            <td>18</td>
+				                            <td><a href="http://home.9939.com/user/?uid=1757">teardrop  </a></td>
+				                            <td>0</td>
+				                            <td>22643</td>
+				                          </tr><tr>
+				                            <td>19</td>
+				                            <td><a href="http://home.9939.com/user/?uid=784">梦妮卡</a></td>
+				                            <td>0</td>
+				                            <td>21229</td>
+				                          </tr><tr>
+				                            <td>20</td>
+				                            <td><a href="http://home.9939.com/user/?uid=209741">Angel.Night</a></td>
+				                            <td>0</td>
+				                            <td>19845</td>
+				                          </tr><tr>
+				                            <td>21</td>
+				                            <td><a href="http://home.9939.com/user/?uid=495404">hsdadjfk</a></td>
+				                            <td>0</td>
+				                            <td>13290</td>
+				                          </tr><tr>
+				                            <td>22</td>
+				                            <td><a href="http://home.9939.com/user/?uid=496144">mrhs7060</a></td>
+				                            <td>0</td>
+				                            <td>12235</td>
+				                          </tr><tr>
+				                            <td>23</td>
+				                            <td><a href="http://home.9939.com/user/?uid=299810">事实</a></td>
+				                            <td>0</td>
+				                            <td>12215</td>
+				                          </tr><tr>
+				                            <td>24</td>
+				                            <td><a href="http://home.9939.com/user/?uid=451520">北京百川恒益印刷公司</a></td>
+				                            <td>0</td>
+				                            <td>11545</td>
+				                          </tr><tr>
+				                            <td>25</td>
+				                            <td><a href="http://home.9939.com/user/?uid=328693">千年沙棘娃</a></td>
+				                            <td>0</td>
+				                            <td>11460</td>
+				                          </tr><tr>
+				                            <td>26</td>
+				                            <td><a href="http://home.9939.com/user/?uid=827249">nnjsb</a></td>
+				                            <td>0</td>
+				                            <td>10675</td>
+				                          </tr><tr>
+				                            <td>27</td>
+				                            <td><a href="http://home.9939.com/user/?uid=327147">中意矿机</a></td>
+				                            <td>0</td>
+				                            <td>10535</td>
+				                          </tr><tr>
+				                            <td>28</td>
+				                            <td><a href="http://home.9939.com/user/?uid=427505">ukagr</a></td>
+				                            <td>0</td>
+				                            <td>10465</td>
+				                          </tr><tr>
+				                            <td>29</td>
+				                            <td><a href="http://home.9939.com/user/?uid=495397">吊带34</a></td>
+				                            <td>0</td>
+				                            <td>10380</td>
+				                          </tr><tr>
+				                            <td>30</td>
+				                            <td><a href="http://home.9939.com/user/?uid=827295">贵阳结石病医院</a></td>
+				                            <td>0</td>
+				                            <td>10360</td>
+				                          </tr><tr>
+				                            <td>31</td>
+				                            <td><a href="http://home.9939.com/user/?uid=496316">qaz1113</a></td>
+				                            <td>0</td>
+				                            <td>10355</td>
+				                          </tr><tr>
+				                            <td>32</td>
+				                            <td><a href="http://home.9939.com/user/?uid=373833">小心心</a></td>
+				                            <td>0</td>
+				                            <td>10208</td>
+				                          </tr><tr>
+				                            <td>33</td>
+				                            <td><a href="http://home.9939.com/user/?uid=358084">yangzhongy</a></td>
+				                            <td>0</td>
+				                            <td>10180</td>
+				                          </tr><tr>
+				                            <td>34</td>
+				                            <td><a href="http://home.9939.com/user/?uid=358056">xiaozhongyi</a></td>
+				                            <td>0</td>
+				                            <td>10160</td>
+				                          </tr><tr>
+				                            <td>35</td>
+				                            <td><a href="http://home.9939.com/user/?uid=764625">审判帝王</a></td>
+				                            <td>0</td>
+				                            <td>10005</td>
+				                          </tr><tr>
+				                            <td>36</td>
+				                            <td><a href="http://home.9939.com/user/?uid=374538">尚秋军</a></td>
+				                            <td>0</td>
+				                            <td>9210</td>
+				                          </tr><tr>
+				                            <td>37</td>
+				                            <td><a href="http://home.9939.com/user/?uid=756653">成都芯软</a></td>
+				                            <td>0</td>
+				                            <td>8685</td>
+				                          </tr><tr>
+				                            <td>38</td>
+				                            <td><a href="http://home.9939.com/user/?uid=405528">白癜风</a></td>
+				                            <td>0</td>
+				                            <td>8665</td>
+				                          </tr><tr>
+				                            <td>39</td>
+				                            <td><a href="http://home.9939.com/user/?uid=368824">huntuang</a></td>
+				                            <td>0</td>
+				                            <td>8650</td>
+				                          </tr><tr>
+				                            <td>40</td>
+				                            <td><a href="http://home.9939.com/user/?uid=310224">广州挂图大师</a></td>
+				                            <td>0</td>
+				                            <td>8475</td>
+				                          </tr><tr>
+				                            <td>41</td>
+				                            <td><a href="http://home.9939.com/user/?uid=332724">格子铺</a></td>
+				                            <td>0</td>
+				                            <td>8295</td>
+				                          </tr><tr>
+				                            <td>42</td>
+				                            <td><a href="http://home.9939.com/user/?uid=827268">ynjsb22</a></td>
+				                            <td>0</td>
+				                            <td>8020</td>
+				                          </tr><tr>
+				                            <td>43</td>
+				                            <td><a href="http://home.9939.com/user/?uid=495411">liufanp</a></td>
+				                            <td>0</td>
+				                            <td>7995</td>
+				                          </tr><tr>
+				                            <td>44</td>
+				                            <td><a href="http://home.9939.com/user/?uid=349848">董子维</a></td>
+				                            <td>0</td>
+				                            <td>7820</td>
+				                          </tr><tr>
+				                            <td>45</td>
+				                            <td><a href="http://home.9939.com/user/?uid=351566">牛子筱</a></td>
+				                            <td>0</td>
+				                            <td>7695</td>
+				                          </tr><tr>
+				                            <td>46</td>
+				                            <td><a href="http://home.9939.com/user/?uid=351070">苑子筱</a></td>
+				                            <td>0</td>
+				                            <td>7680</td>
+				                          </tr><tr>
+				                            <td>47</td>
+				                            <td><a href="http://home.9939.com/user/?uid=350459">潘子筱</a></td>
+				                            <td>0</td>
+				                            <td>7640</td>
+				                          </tr><tr>
+				                            <td>48</td>
+				                            <td><a href="http://home.9939.com/user/?uid=352470">郑子筱</a></td>
+				                            <td>0</td>
+				                            <td>7635</td>
+				                          </tr><tr>
+				                            <td>49</td>
+				                            <td><a href="http://home.9939.com/user/?uid=356637">一杯酒品人生</a></td>
+				                            <td>0</td>
+				                            <td>7570</td>
+				                          </tr><tr>
+				                            <td>50</td>
+				                            <td><a href="http://home.9939.com/user/?uid=499503">nana</a></td>
+				                            <td>0</td>
+				                            <td>7470</td>
+				                          </tr>	
+									</tbody>
+			                      </table>
+			                  <!--</td>
+			                </tr>-->							
+							</ol>
+					    </div>
+				</div>					
+					
+					
+				
+			</div>
+			</div>
+			<!--#include virtual="/list_right.shtml"-->			
+		</div>
+	</div>
+<!--#include virtual="/footer.html"-->

@@ -1,0 +1,96 @@
+<div class="col-s">
+				<div class="ad-zh ad-zh01">
+		            <a href="http://home.9939.com/buluo" target="_blank"><img src="http://home.9939.com//upload/pic/201010/1286605160.jpg" width="308" height="136"/></a>		        </div>
+		        <div class="ad-zh ad-zh01 tMarginLg">
+		               <!-- pubsage: ask_list_right (300 x 250) -->
+<script type="text/javascript"><!--
+var pubsage_site_id = 289;
+var pubsage_slot = "ask_list_right";
+//--></script>
+<script type="text/javascript" language="javascript" src=" http://res.adsage.cn/web/pubsage.js?sid=330">
+</script>
+
+
+		        </div>
+		        <div class="mod zhmod-02 tMarginLg">
+		          <div class="hd">
+		            <ul>
+		              <li>最新问答</li>
+		              <li>相关问答</li>
+		            </ul>
+		          </div>
+		      <div class="bd">
+		                <ul>
+<?php 
+require_once(APP_ROOT."/include/ask_new.php");
+ ?>
+		                </ul>
+		                <ul>
+<?php 
+require_once(APP_ROOT."/include/ask_xiangguan.php");
+ ?>
+		                </ul>
+		          </div>
+		        </div>
+
+		        <div class="mod zhmod-01 tMarginLg">
+		          <span class="top">
+		            <span class="tl"></span>
+		          </span>
+		          <div class="inner consult">
+		            <div class="hd">
+		              <h4>专科咨询</h4>
+		            </div>
+		            <div class="bd">
+		               <ul>
+		                 <li><a href="http://tongji.9939.com/count/click.php?id=28077" target="_blank">心脏病</a></li><li><a href="http://tongji.9939.com/count/click.php?id=28078" target="_blank">白癜风</a></li><li><a href="http://tongji.9939.com/count/goto.php?url=aHR0cDovL3N3dC56b29zbmV0Lm5ldC9MUi9DaGF0cHJlLmFzcHg/aWQ9U1dUODY0NTg1NDE=" target="_blank">红斑狼疮</a></li><li><a href="http://ask.9939.com/classid/236" target="_blank">儿科咨询</a></li><li><a href="http://ask.9939.com/classid/193" target="_blank">妇科咨询</a></li><li><a href="http://ask.9939.com/classid/220" target="_blank">男科咨询</a></li>		               </ul>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="mod zhmod-01 tMarginLg">
+		          <span class="top">
+		            <span class="tl"></span>
+		          </span>
+		          <div class="inner">
+		            <div class="hd">
+		              <h4>专家推荐</h4>
+		            </div>
+		            <div class="bd">
+
+<?php 
+require_once(APP_ROOT."/include/zhuanjiatuijian.php");
+ ?>		            </div>
+		          </div>
+		        </div>
+
+		        <div class="mod zhmod-01 tMarginLg">
+		          <span class="top">
+		            <span class="tl"></span>
+		          </span>
+		          <div class="inner zhmod-05 group-recommend">
+		            <div class="hd">
+		              <h4>群组推荐</h4>
+		            </div>
+		            <div class="bd">
+		              <ul>
+		                <!--<li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>
+		                <li><a href="###"><img src="/images_ask/temp/photo3.jpg" /></a><em>话费条作证</em></li>-->
+		                 <li><a href="http://home.9939.com//buluo/index/bid/133"><img src="http://home.9939.com//attachment/qz_pic/mtag_133_杯子.jpg" /></a><em>健康生活</em></li><li><a href="http://home.9939.com//buluo/index/bid/185"><img src="http://home.9939.com//attachment/qz_pic/buluo_185_2009-10-30_345a85.jpg" /></a><em>单身联盟</em></li><li><a href="http://home.9939.com//buluo/index/bid/215"><img src="http://home.9939.com//attachment/qz_pic/mtag_215_药补.jpg" /></a><em>药补不如食</em></li><li><a href="http://home.9939.com//buluo/index/bid/272"><img src="http://home.9939.com//attachment/qz_pic/buluo_272_2009-11-04_244dc9.jpg" /></a><em>疯狂贴图</em></li><li><a href="http://home.9939.com//buluo/index/bid/273"><img src="http://home.9939.com//attachment/qz_pic/buluo_273_2009-11-04_a1fc42.jpg" /></a><em>冷性笑话</em></li><li><a href="http://home.9939.com//buluo/index/bid/279"><img src="http://home.9939.com//attachment/qz_pic/buluo_279_2009-11-22_1de8f8.jpg" /></a><em>今昔娱乐圈</em></li><li><a href="http://home.9939.com//buluo/index/bid/290"><img src="http://home.9939.com//attachment/qz_pic/buluo_290_2009-11-19_ed18d7.jpg" /></a><em>美女写真</em></li><li><a href="http://home.9939.com//buluo/index/bid/296"><img src="http://home.9939.com//attachment/qz_pic/buluo_296_2009-12-03_dc66c7.jpg" /></a><em>久久问答</em></li>		              </ul>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="tMarginLg" id="ljf">
+		            <!--<a href="###"><img src="/images_ask/temp/ad4.png" /></a>-->
+		            <a href="http://xinli.9939.com" target="_blank"><img src="http://home.9939.com//upload/pic/201004/1272425953.jpg" width="310" height="232"/></a>		        </div>
+			</div>

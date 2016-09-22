@@ -1,0 +1,83 @@
+﻿{include file=admin/header.tpl.htm}
+{literal}
+<script language="javascript">
+function checkInput()
+{
+	if($('text_roleName').value == "")
+	{
+		alert("请输入角色名称");
+		$('text_roleName').focus();
+		return false;
+	}
+	if($('text_description').value == "")
+	{
+		alert("请输入角色说明");
+		$('text_description').focus();
+		return false;
+	}
+	return true;
+}
+</script>
+{/literal}
+
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+		<tr class="header">
+			<td colspan="2">添加角色</td>
+		</tr>	
+		<form name="add" method="POST" action="role.php?act=addSave" onsubmit="return checkInput();">
+		<tr>
+			<td width="100" class="altbg1">角色名：</td>
+			<td class="altbg2"><input type="text" id="text_roleName" name="text_roleName" class="input_text"> <span class="starHit">*</span></td>
+		</tr>
+		<tr>
+			<td class="altbg1">角色说明：</td>
+			<td class="altbg2"><textarea id="text_description" name="text_description" rows="5" cols="40"></textarea></td>
+		</tr>
+		<tr>
+			<td class="altbg1">账号状态</td>
+			<td class="altbg2">{html_radios name="radio_status" values=$aStatusValue checked=1 output=$aStatusName separator="&nbsp;"}</td>
+		</tr>
+		<tr>
+			<td class="altbg1">功能</td>
+			<td class="altbg2">
+			{*
+				{section name=a_power loop=$aPowerList}
+				<input type="checkbox" name="powerID[]" value="{$aPowerList[a_power].id}">&nbsp;{$aPowerList[a_power].fileNameCn}-{$aPowerList[a_power].powerNameCn}
+				{/section}
+				*}		
+			
+			<table width="98%" cellspacing="1" cellpadding="2" class="tableborder">
+			
+          	{section name=powerList loop=$aPowerList}
+          	{if ($smarty.section.powerList.index)% 3 == 0}
+			<tr>
+			{/if}
+			<td {if $aPowerList[powerList].id <> $aInfo.powerID} class="altbg2" {else} class="header" {/if} >
+				<input type="checkbox" name="powerID[]" value="{$aPowerList[powerList].id}" >&nbsp;{$aPowerList[powerList].fileNameCn}-{$aPowerList[powerList].powerNameCn}
+			</td>
+			{if ($smarty.section.powerList.index + 1) % 3 == 0}
+			</tr>
+			{/if}
+			{/section}
+			
+			</table>
+			
+			</td>
+		</tr>
+		<tr>
+			<td align="left" class="altbg1"><input type="button" onclick="history.go(-1);" value="返回"></td>
+			<td align="right" class="altbg2">
+			<input type='button' onclick="chkAll('opposite');" value="反选">
+			<input type='button' onclick="chkAll('all');" value="全选">			
+			<input type='button' onclick="chkAll('no');" value="全部不选">
+			<input type="submit" name="submit" value=" 提 交 ">
+			</td>
+		</tr>
+		</form>
+ </td>
+ </tr>
+</table>
+
+{include file=admin/footer.tpl.htm}                                                                                              
+  

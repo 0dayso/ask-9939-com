@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="/images_ask/css/lf_ok.css"/>
+            <script type='text/javascript' src="/images_ask/js/jquery-1.4.2.min.js"></script>
+            <script type='text/javascript' src='/images_ask/js/jquery.simplemodal.js'></script>
+            <link href="/images_ask/css/r.css" rel="stylesheet" type="text/css" />
+            <link href="/images_ask/css/m.css" rel="stylesheet" type="text/css" />
+            <link href="/images_ask/css/b.css" rel="stylesheet" type="text/css" />
+            <link href="/images_ask/css/g.css" rel="stylesheet" type="text/css" />
+            <link href="/images_ask/css/ru.css" rel="stylesheet" type="text/css" />
+            <link href="/images_ask/css/vote_index.css" rel="stylesheet" type="text/css" />
+            <link href="/images_ask/css/ask-login.css" type="text/css" rel="stylesheet" />
+            <link href="/images_ask/css/ask_index.css" type="text/css" rel="stylesheet" />
+            <title>调查问卷</title>
+            <script type="text/javascript">
+                var radios = new Array();
+            </script>
+    </head>
+    <body>
+        
+        <form action="<?=$this->url?>/asksubmit" method="POST" name="askfrom" id="askfrom" onsubmit="return fsubmit();">
+            <div  id="doc" class="w850">
+                <div id="hd"><?php include(APP_ROOT."/header_new.shtml"); ?></div>
+                <div id="bd">
+                    <div class="box-1">
+                        <div class="hd">
+                            <h3>填调查问卷，赢500积分</h3>
+                            <span class="icon"></span> </div>
+                        <div class="bd">
+                            <p class="wjsm">在问卷结束后请留下您的相关信息（尤其是用户名），以方便我们为您加分。</p>
+                            <?php $i=1;foreach ((array) $this->voteList as $vote):?>
+                                <script type="text/javascript">
+                                    radios[<?=$vote["id"]?>]="choice[<?=$vote["id"]?>]";
+                                </script>
+                     
+                                <h3><strong><?=$i;?>.<?=$vote["title"]?></strong></h3>
+                                    <?php foreach ((array) $this->optionList[$vote["id"]] as $option):?>
+                                <dl>
+                                    <dd>
+                                    <input type="radio"  name="choice[<?=$vote["id"]?>]" id="UU<?=$option['tid']?>" value="<?=$option['tid'];?>"/>
+                                    <label for="UU<?=$option["tid"]?>">
+                                                <?=$option['themes']?>
+                                    </label>
+                                    </dd>
+                               <!-- <td width="20%"><span class="ru-count">投票数：<?=$option['hits']?>票</span></td>
+                                <td width="40%"><span class="ru-graph">
+                                        <span style="width:<?
+                                            if ($vote["total_hits"] && $option['hits']) {
+                                                echo  $rate = round(($option['hits'] / $vote["total_hits"]) * 100, 2);
+                                            }
+                                            else {
+                                                echo $rate = 0;
+                                            }
+                                            ?>%">
+                                     </span></span></td>
+                                <td><span class="ru-per"><?=$rate?>%</span></td>
+                                <br/>-->
+                                </dl>
+                                 <?php endforeach;?>
+                               <?php $i++;endforeach;?>
+                       
+                        </div>
+                        <div class="ft">
+                            <p class="txyhm">请填写您的用户名和密码</p>
+
+                            <p class="Info">
+                                <label>用户名：</label>
+                                <input class="d-userName" name="username" id="username" value="<?=$_COOKIE['localuser']?>"/>
+                            </p>
+                            <p class="Info" >
+                                <label>密&nbsp;&nbsp;码：</label>
+                                <input class="d-userpassword" type="password"  name="userpassword" id="userpassword" value=""/>
+                            </p>
+                            <p class="Info anniu">
+                                <a href="javascript:void(0);">
+                                    <input type="image" src="<?=ASK_URL;?>images_ask/images/img-02.gif"  class="basic"/></a>
+                                <a href="javascript:void(0);"><img src="<?=ASK_URL;?>images_ask/images/img-03.gif" onClick="javascript:freset(document.askfrom);"/></a></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="ft"></div>
+            </div>
+
+            <div id="basic-modal-content" style="display:none">
+                <div class="jubao_doc" >
+                    <div class="jubao_tit"></div>
+                    <div class="jubao_con3" align="center">
+                        <p id="message" align="center">对不起，您还不是本站用户，请注册！</p>
+                        <br /><br/>
+                        <a id="reg_link" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+            <!--
+            function fsubmit(){
+               /* for (key in radios) {
+                    var checked=false;
+                    radio = document.getElementsByName(radios[key]);
+                    for (i=0; i<radio.length; i++) {
+                        if(radio[i].checked)
+                        {
+                            checked=true;
+                            break;
+                        }
+                        else
+                        {
+                            checked=false;
+                        }
+                    }
+                }
+                if(checked == false)
+                {
+                    alert("请您认真完善调查信息，谢谢合作！");
+                    return false;
+                }
+*/
+                var user=document.getElementById("username").value;
+                var pwd=document.getElementById("userpassword").value;
+                if(!user || !pwd)
+                {
+                     alert("用户名或密码不能为空！");
+                     return false;
+                }
+
+                $.post('/vote/asksubmit',$('#askfrom').serialize(), function(data){
+                    if (typeof(data) == "object") {
+                        var dialog = $('#basic-modal-content');
+                        switch (data.status)
+                        {
+                            case "1":
+                                 $("#message").html("信息已提交成功，谢谢参与！");
+                                 $("#reg_link").html('<img src="<?=ASK_URL;?>images_ask/images/zhmod06-submit.png" />')
+                                               .attr("href",data.url);
+                                 document.getElementById("askfrom").reset();
+                                 break;
+                            case "2":
+                                 $("#message").html("对不起，您还不是本站用户，请注册！");
+                                 $("#reg_link").html('<img src="<?=ASK_URL;?>images_ask/images/zhec.gif" />')
+                                               .attr("href", data.url);
+                                 break;
+                            case "3":
+                                 $("#message").html("请您填写投票选项！");
+                                 $("#reg_link").html('<img src="<?=ASK_URL;?>images_ask/images/zhmod06-submit.png" />')
+                                               .addClass("simplemodal-close")
+                        }
+                        $("#basic-modal-content").modal();
+                    }
+                    return false;
+                },"json");
+                return false;
+            }
+            function freset(obj){
+                obj.reset();
+            }
+
+            //-->
+        </script>
+        
+        <div id="hd"><?php include(APP_ROOT."/footer.html"); ?></div>
+    </body>
+</html>

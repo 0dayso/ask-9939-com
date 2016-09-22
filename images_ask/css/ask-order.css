@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+.g-m0s8 .m-wrap{ width:630px;}
+.g-m0s8 .col-s{ width:310px; margin-left:-310px;}
+
+.zhdks{ background:#FFF; padding:20px 25px; _zoom:1;}
+.zhdks .zhdks-p1{ font-size:14px;}
+.zhdks .zhdks-p1 span{ color:#AC0000;}
+.zhdks .zhdks-p2{ margin-top:15px; padding-left:40px; overflow:hidden; _zoom:1;}
+.zhdks .zhoo{ display:block; float:left; display:inline; margin-right:8px; width:97px; height:22px; background:url(../images/zhte.png) no-repeat; color:#FFF; text-align:center; line-height:22px; font-weight:800; font-size:12px;}
+.zhdks .zhoo:hover{ color:#FFF;}
+.zhdks .zhoo1{ background:url(../images/zhte1.png) no-repeat; width:57px;}
+.zhdks .zhdks-p3{ margin-top:10px;  border-top:1px dashed #BBD7EE; overflow:hidden; _zoom:1;}
+.zhdks ul{margin-top:10px; overflow:hidden; _zoom:1;}
+.zhdks li{ float:left; display:inline; width:110px; margin-top:15px; color:#666; white-space:nowrap; font-size:14px;}
+.zhdks .zhdks-list li{ background:url(../images/zhte-li.png) no-repeat left center; padding-left:10px; width:180px;}
+.zhdks .zhdks-list li.zhdks-list-extra{ background:none; margin-top:12px; padding-left:0; }
+.zhdks li a{ color:#004bC3;}
+.zhdks  li span{ font-size:12px;}
+.zhdks  li span a{ color:#666;}
+.zhmod05-ao .zhtext-list li{ width:190px;}
+
+
+/*弹出窗*/
+
+.zhmod-06{ background:#C1DDF3; border:1px solid #92C7F1; padding:2px; text-align:left;}
+.zhmod-06 a{ color:#1E376D;}
+
+.zhmod-06 .hd{ background:url(../images/zhmod06-title.png) repeat-x;}
+.zhmod-06 .hd h3{ background:url(../images/zhmod06-h.png) no-repeat left center; margin-left:4px; padding-left:18px; line-height:31px; color:#1E376D;}
+.zhmod-06 .bd{ background:#FFF; padding:10px;}
+.zhmod-06 .zhkeshi-list{ overflow:hidden; _zoom:1;}
+.zhmod-06 li{ float:left; display:inline; margin-bottom:5px; width:137px;}
+.zhmod-06 .zhkeshi-selected{ margin-top:10px;}
+.zhmod-06 .zhkeshi-selected a{ color:#000;}
+.zhmod-06 a:hover{ color:#EF760D;}
+.zhmod-06 fieldset{ border:1px solid #CDCDCD; padding:8px; color:#000;}
+.zhmod-06 legend{ margin-left:10px; color:#EF760D;}
+.zhmod-06 .zhkeshi-selected p{ margin-top:5px;}
+.zhmod-06 .zhsubmit{ text-align:center;}
+.zhmod-06 .zhsubmit a{ display:block; background:url(../images/zhmod06-submit.png) no-repeat; margin:0 auto; width:72px; height:19px;}

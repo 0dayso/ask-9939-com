@@ -1,0 +1,77 @@
+{include file="header.tpl.htm"}
+
+		 <div class="status">您当前的位置：<a href="http://ask.9939.com">健康问答</a><a href="http://ask.9939.com/doctorTeam.shtml">专家医师团</a>专家列表</div>
+		<div id="content_b" class="page_bg">
+        	<div class="main">
+            	<div class="mainwrap">
+                	<div class="hd_yslist clfix">
+                    	<span class="rc_l"></span>
+                        <span class="rc_r"></span>
+                        <h3><span>医生团成员列表</span></h3>
+                    </div><!--end-->
+                    <div class="box m_t10">
+					
+					 {foreach name="k" item="v" from="$list"}
+                    	<dl class="list_11 clfix">
+                        	<dt><a href="http://home.9939.com/space.php?uid={$v.userid}"><img src="http://ucenter.9939.com/avatar.php?uid={$v.userid}&size=big&type=virtual" width="104" height="114"/></a></dt>
+                            <dd>
+                            	<ul class="clfix">
+                                	<li><a href="http://home.9939.com/space.php?uid={$v.userid}">{$v.truename}</a></li>
+                                    <li><a href="http://home.9939.com/space.php?uid={$v.userid}">{$v.doc_keshi}</a></li>
+                                    <li><a href="http://home.9939.com/space.php?uid={$v.userid}">{$v.zhicheng}</a></li>
+                                    <li><a href="http://home.9939.com/space.php?uid={$v.userid}">{$v.doc_hos}</a></li>
+                                </ul>
+                                <p><a href="http://home.9939.com/space.php?uid={$v.userid}">{$v.memo}</a></p>
+                            	<ol class="clfix">
+                                	<li><img src="/templates/9939/skins/default/images/icon016.png" /><a href="http://home.9939.com/space.php?uid={$v.userid}" class="blue">向专家咨询</a></li>
+                                	<li><img src="/templates/9939/skins/default/images/icon015.png" /><a href="http://home.9939.com/space.php?uid={$v.userid}" class="blue">发送消息</a></li>
+                                	<li><img src="/templates/9939/skins/default/images/icon014.png" /><a href="http://home.9939.com/space.php?uid={$v.userid}" class="blue">加为好友</a></li>
+                                </ol>
+                            </dd>
+                        </dl>
+                      {/foreach}
+                    </div><!--end-->
+                    <div class="page_list">
+                    	{$Divide_Page} 
+                    </div>
+                </div>
+            </div>
+            <div class="sub">
+            	<div class="rc_t"></div><!--end-->
+                <div class="hd_xgwt">按科室查询</div>
+                <div class="l_box">
+                    <ul class="list_10 clfix">
+                       	<li><a href="/DoctorTeam.php?catid=52">内科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=77">外科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=33">妇产科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=42">儿科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=142">眼科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=89">骨科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=100">男科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=165">皮肤科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=141">五官科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=145">传染科</a></li>
+                        <li><a href="/DoctorTeam.php?catid=158">整形美容</a></li>
+                        <li><a href="/DoctorTeam.php?catid=133">中医科</a></li>
+                    </ul>
+                </div><!--end-->
+                <div class="hd_xgwt">按地区查询</div>
+                <div class="l_box">
+                    <ul class="list_10 clfix">
+                       {foreach name="k" item="v" from="$area"}
+                        <li><a href="{$v.url}">{$v.name}</a></li>
+                       {/foreach}
+                    </ul>
+                </div><!--end-->
+                <div class="hd_xgwt">医生排行榜</div>
+                <div class="l_box">
+                    <ul class="list_2">
+                       {foreach name="doc_list" item="doc_list" from="$doc_list"}
+                        <li><span><a href="http://home.9939.com/space.php?uid={$doc_list.userid}">{$doc_list.truename}</a></span><span>{$doc_list.doc_keshi}</span>{$doc_list.point}</a></li>
+                        {/foreach}
+                    </ul>
+                </div><!--end-->
+            </div>
+		</div><!--content_b end-->
+	
+{include file="include/footer.html"}

@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title><?=$this->detail[name]?>_健康问答_久久健康网</title>  
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+
+<link href="/images_ask/css/r.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/b.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/g.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/m.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/ask_index.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/ask-order.css" type="text/css" rel="stylesheet" />
+
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+ $(document).jTab({
+ menutag:".zhj-mod .hd li"
+ });
+$(document).jTab({
+ menutag:".zhmod-02 .hd li"
+ });
+}); 
+
+
+function ceng(xh){
+	$('#keshi').show();//层显示
+	$('#fromid').val(xh);
+}
+
+function show(id){
+	$('#newclassid').val(id);
+	$.ajax({
+			url:"/order/ceng/id/"+id,
+			dataType:"json",
+			cache:false,
+			success:function(data){
+				if(data){
+					$('#name').html(data.name);
+					$('#ks').html(data.ks);
+					$('#over').html(data.over);
+				}
+			}
+	});
+}
+
+function del(xh){
+	if(confirm('确定删除该科室吗')){
+		$.ajax({
+			url:"/order/del/fid/"+xh,
+			type:"post",
+			cache:false,
+			success:function(data){
+				if(data){
+					$('#gzd_'+xh).html(data);
+					$('#keshi').hide();
+					setTimeout("ok()",'10');
+				}
+			}
+		});		
+	} 
+}
+
+function add_keshi(){
+	fid = $('#fromid').val();
+	id = $('#newclassid').val();//新科室的id
+	$.ajax({
+			url:"/order/add/id/"+id+"/fid/"+fid,
+			type:"get",
+			cache:false,
+			success:function(data){
+				if(data){
+					//alert(data);
+					$('#gzd_'+fid).html(data);
+					$('#keshi').hide();
+					setTimeout("ok()",'10'); 
+				}
+			}
+	});
+}
+
+function ok(){
+	$('#frm').submit();
+}
+
+function checkFrm(){
+	var a = $("input[id^='keshi_']");
+	var keshi='';
+	$.each(a,function(i){
+        keshi = keshi + $('#keshi_'+i).val();
+    });
+    if(keshi==''){
+    	alert('请先定制科室');
+    	return false;
+    }
+    return true;
+}
+
+</script>
+</head>
+
+<body>
+  <div id="doc" class="w950">
+    <?php require(APP_ROOT."/header_new.shtml");?>
+    <div id="bd">
+      <div class="g-m0s8 l-fix">
+        <div class="col-m">
+          <div class="m-wrap">
+            <div class="tmod-08">
+               <h3>您的位置：<a href="<?=ASK_URL?>">问答首页</a>－全部问题列表</h3>
+			</div>
+			
+			<!--为选择时的层-->
+			<div class="zhmod-06" id="keshi" style="display:none;position:absolute;left:100px;top:100px;width:440px;z-index:200;">
+			<input type="hidden" id="fromid" />
+			<input type="hidden" id="newclassid" />
+			  <div class="hd">
+			   <h3><span class="close" style="float:right;cursor:pointer" onclick="$('#keshi').hide();location.href='<?=ASK_URL?>/order/';"><img src="/images_ask/images/ticon_2.png" /></span>
+久久问答温馨提示</h3>
+			  </div>
+			  <div class="bd">
+			    <div class="zhkeshi-list">
+			      <ul id="ks">
+			        <?php
+					if($this->dzjb){
+						foreach($this->dzjb as $k=>$v){
+							echo "<li><a href='#' onclick=show('".$v['id']."');>".$v['name']."</a></li>";
+						}
+					}
+				?>
+			      </ul>
+			      <span id="over" style="text-align:center;display:block"></span>
+			    </div>
+			    <div class="zhkeshi-selected">
+			      <fieldset>
+			        <legend>您选择的科室如下</legend>
+			        <p id="name"><?=$this->name?></p>
+			        <p class="zhsubmit"><a href="#" onclick="return add_keshi()"></a></p>
+			      </fieldset>
+			    </div>
+			  </div>
+			</div>
+			<!--选择时的层完-->
+			
+			
+			
+			
+            <div class="j-mod zhj-mod vMarginLg">
+							<div class="hd">
+								<ul class="l-fix">
+									<li><a href="#" class="on-zh" id="on1">定制科室</a></li>
+									<li><a href="#" class="" id="on2">全部科室</a></li>
+								</ul>
+							</div>
+							<div class="bd">
+                                <div class="zhdks">
+                <p class="zhdks-p1"><span>提示：</span>您可以在这里添加您所关注的科室，最多5个。</p>
+                <div class="zhdks-p3">
+                 <form id="frm" method="post" action="/order/post/">
+                  <ul class="zhdks-list">                 
+                  <?php
+                  for($i=0; $i<5; $i++){
+                  	if($this->gzd[$i]['id']) echo '<li id="gzd_'.$i.'"><input type="hidden" name="keshi[]" id="keshi_'.$i.'" value="'.$this->gzd[$i]['id'].'" /><a href="<?=ASK_URL?>/order/index/id/'.$this->gzd[$i]['id'].'">'.$this->gzd[$i]['name'].'</a><span>（<a href="#" onclick="ceng('.$i.')"'.'>修改</a>|<a onclick="del('.$i.')" href="#">删除</a>）</span></li>';
+                  	else echo '<li id="gzd_'.$i.'"><input type="hidden" name="keshi[]" id="keshi_'.$i.'" value="0" /><a href="#" onclick="ceng('.$i.')">点击添加</a><span>（添加关注点）</span></li>';
+                  }
+                  ?>				                 
+                    <li class="zhdks-list-extra"><a href="<?=HOME_9939_URL?>user/" target="_blank" class="zhoo">进入会员专区</a></li>                     
+                  </ul></form>
+                </div>
+              </div>
+			  <div class="zhdks">
+                <p><a href="/order/index/classid/0">科室分类</a><?=$this->daohang?></p>
+                <ul>
+				<?php
+				if($this->dzjb){
+					foreach($this->dzjb as $k=>$v){
+						echo "<li><a href=\"/order/index/classid/".$v[id]."\">$v[name]</a><span>(".mt_rand(500,5000).")</span></li>";
+					}
+				}
+				?>
+                </ul>
+              </div>
+			</div>
+			</div>
+
+            <div class="j-mod tMarginLg">
+						<div class="hd fix">
+							<ul>
+								<li <?php if($this->status==4) echo 'class="on-zh"';?> ><a href="<?=ASK_URL?>/order/index/s/4<?=$this->classid_sql?>">零回复问题</a></li>
+								<li <?php if($this->status==0) echo 'class="on-zh"';?> ><a href="<?=ASK_URL?>/order/index/s/0<?=$this->classid_sql?>">待解决问题</a></li>
+								<li <?php if($this->status==1) echo 'class="on-zh"';?> ><a href="<?=ASK_URL?>/order/index/s/1<?=$this->classid_sql?>">已解决问题</a></li>
+								<li <?php if($this->status==2) echo 'class="on-zh"';?> ><a href="<?=ASK_URL?>/order/index/s/2<?=$this->classid_sql?>">悬赏问题</a></li>
+								<li <?php if($this->status==3) echo 'class="on-zh"';?> ><a href="<?=ASK_URL?>/order/index/s/3<?=$this->classid_sql?>">全部问题</a></li>
+							</ul>
+						</div>
+						<div class="bd" id="main0">
+						
+						<?php
+						if($this->rs){
+							echo '<ol class="block">';									
+							
+							echo '<div id="page_0a"><div class="j-pages"><span>分页 <a href="<?=ASK_URL?>/order/index/p/1/s/'.$this->status.'"  class="cbi">';
+							if($this->p==1) echo '<font color="red">1</font>';
+							else echo '1';
+							echo '</a><a href="<?=ASK_URL?>/order/index/p/2/s/'.$this->status.'"  class="cbi">';
+							if($this->p==2) echo '<font color="red">2</font>';
+							else echo '2';
+							echo '</a><a href="<?=ASK_URL?>/order/index/p/3/s/'.$this->status.'" class="cbi">';
+							if($this->p==3) echo '<font color="red">3</font>';
+							else echo '3';
+							echo '</a><a href="<?=ASK_URL?>/order/index/p/4/s/'.$this->status.'" class="cbi">';
+							if($this->p==4) echo '<font color="red">4</font>';
+							else echo '4';
+							echo '</a></span></div></div>';
+							
+							echo '<div>';
+							echo '<table width="100%" border="0" cellspacing="0" cellpadding="0" class="j-tab-01">
+										<tbody>
+											<tr class="title">
+												<td width="15%">科室</td>
+												<td width="50%">标题</td>
+												<td width="10%">回复数</td>											
+												<td width="10%">悬赏分</td>
+												<td width="15%">时间</td>
+											</tr>';
+							foreach($this->rs as $k=>$v){																
+								echo "<tr>
+									<td><a target=\"_blank\" href=\"/classid/$v[classid]\">[".$this->ks_cache[$v[classid]][name]."]</td>
+									<td><a href=\"/id/$v[id]\" class=\"j-blue\">".mb_strcut($v[title],0,62,'utf8')."</a></td>
+									<td>$v[answernum]</td>											
+									<td>$v[point]</td>
+									<td>".date('Y-m-d',$v[ctime])."</td>
+								</tr>";
+							}
+							echo '</tbody>
+								</table>';	
+							echo '</div>';
+							
+							echo '<div id="page_0b"><div class="j-pages"><span>分页 <a href="<?=ASK_URL?>/order/index/p/1/s/'.$this->status.'"  class="cbi">';
+							if($this->p==1) echo '<font color="red">1</font>';
+							else echo '1';
+							echo '</a><a href="<?=ASK_URL?>/order/index/p/2/s/'.$this->status.'"  class="cbi">';
+							if($this->p==2) echo '<font color="red">2</font>';
+							else echo '2';
+							echo '</a><a href="<?=ASK_URL?>/order/index/p/3/s/'.$this->status.'" class="cbi">';
+							if($this->p==3) echo '<font color="red">3</font>';
+							else echo '3';
+							echo '</a><a href="<?=ASK_URL?>/order/index/p/4/s/'.$this->status.'" class="cbi">';
+							if($this->p==4) echo '<font color="red">4</font>';
+							else echo '4';
+							echo '</a></span></div></div>';
+							
+																						
+							echo '</ol>';
+						}						
+						?>					
+                  </div>
+        </div>
+        
+		<div class="zhmod02 tMarginLg">
+			<div class="hd"><h3>健康专题</h3>	</div>
+			<div class="bd zhtopic-ex">    
+			<?php
+			include('/home/web/htsns-9939-com/data/data_adsplace_76.php');
+			if($_ADSGLOBAL['76']){
+				foreach ($_ADSGLOBAL['76'] as $k=>$v){
+					echo '<div class="zhpic-text">
+						<div class="zhpic"><a href="'.$v['linkurl'].'" target="_blank"><img src="<?=HOME_9939_URL?>'.$v['imageurl'].'"/></a></div>
+						<span>'.$v['adsname'].'</span>
+					</div>';
+				}
+			}
+			?>            	                	                	              			                     
+			</div>
+		</div>
+        
+		<div class="zhmod05 zhmod05-ao tMarginLg">
+			<ul class="zhtext-list">
+				<?php
+				include('/home/web/htsns-9939-com/data/data_adsplace_40.php');
+				foreach ($_ADSGLOBAL['40'] as $k=>$v){
+					echo '<li><a href="'.$v['linkurl'].'" target="_blank">'.$v['adsname'].'</a></li>';
+				}
+				?>				
+			</ul>
+		</div>
+        
+        </div>
+      </div>
+			<?php require(APP_ROOT."/list_right.shtml");?>
+		</div>
+	</div>
+<?php require(APP_ROOT."/footer.html");?>
+<script>
+
+<?php if($this->classid){?>
+	$(function(){$('#on2').trigger("click");});
+<?php }?>
+
+</script>

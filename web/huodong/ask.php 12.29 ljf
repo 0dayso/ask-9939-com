@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>提问</title>
+<link href="style/r.css" type="text/css" rel="stylesheet" />
+<link href="style/b.css" type="text/css" rel="stylesheet" />
+<link href="style/g.css" type="text/css" rel="stylesheet" />
+<link href="style/m.css" type="text/css" rel="stylesheet" />
+<link href="style/activity.css" type="text/css" rel="stylesheet" />
+<link href="style/activitySub.css" type="text/css" rel="stylesheet" />
+
+<script src="js/jquery.js"></script>
+<script>
+function changeLabel(obj, __index, __index_1) {
+	if(obj.checked) {
+		$('#label_' + __index).css('display', '');
+		$('#label_' + __index_1).css('display', 'none');
+	}
+}
+
+function checkForm(obj) {
+	if(!checkTag()) {
+		return false;
+	}
+	$(obj).attr('disabled', 'disabled');
+	var __d = $('#ask_form input:checked');
+	var __str = '';
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + __d[i].value + '&';
+		}
+	}
+
+	var __d = $('#ask_form [type=text]');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + encodeURIComponent(__d[i].value) + '&';
+		}
+	}
+
+	var __d = $('#ask_form [type=password]');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + encodeURIComponent(__d[i].value) + '&';
+		}
+	}
+
+	var __d = $('#ask_form [type=hidden]');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + __d[i].value + '&';
+		}
+	}
+
+	var __d = $('#ask_form select');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + __d[i].value + '&';
+		}
+	}
+
+	__str = __str + '&info[content]=' + encodeURIComponent($('#content').val());
+
+	
+	
+	//alert(__str);
+	
+	
+	$.ajax({
+		url:  '/ask/do/do/save/',
+		data: __str,
+		type:"POST",
+		//dataType: 'json',
+		cache:false,
+		success:function(data) {
+			//alert(data);
+			if(data=='error-100') { //帐号重复
+				alert('帐号重复！提问失败！！！');
+				$(obj).attr('disabled','');
+			} else if (data==0) {
+				alert('提问失败！！！');
+				$(obj).attr('disabled','');
+			} else if (data==404) {
+				alert('用户登录失败！！！！');
+				$(obj).attr('disabled','');
+			} else if (data) {		//成功
+				$.get('/ask/loadhtml/html/okhd/id/' + data, function(msg) {
+					o = eval( "(" + msg + ")" );					
+					var n=o.name;
+					var p=o.pwd;
+					//var c=o.num;
+					if($("input[name='register']:checked").val()==1){								
+						url = encodeURI("http://ask.9939.com/web/huodong/ask_reg_ok.php?n="+n+"&p="+p);
+						location.href=url;
+					}
+					else location.href="http://ask.9939.com/web/huodong/ask_ok.php";
+				});
+			} else {				//失败
+				alert('提问失败了！！！');
+				$(obj).attr('disabled','');
+			}
+		}
+	});
+	return false;
+}
+
+
+//页面验证
+function checkTag() {
+	//标题
+	if($('#ask_title').val().length<5 ||$('#ask_title').val()=='请输入您的提问标题') {
+		alert('标题至少5个字！');
+		$('#ask_title').focus();
+		return false;
+	}	
+	
+	if($('#tag').val()=='如果没有合适的分类，请输入症状标签 如：“头疼”多个用“，”号隔开'){
+		$('#tag').val('');
+	}
+	
+	//问题描述
+	if($('#content').val().length<30) {
+		alert('问题说明至少30个字！');
+		$('#content').focus();
+		return false;
+	}
+	
+	
+	//问题科室 
+	if($('#catid').val().length<1) {
+		alert('请选择科室！');
+		return false;
+	}
+	
+<?php if(empty($_COOKIE['member_uID'])) { ?>
+	if($('#label_0').css('display') == 'none') {
+		if($('#email').val() == '')
+		{
+			alert("请填写E－mail帐号!");
+			$('#mail').focus();
+			return false;
+		}
+		//开始验证
+		var email = $('#mail').val();
+		var pattern = /^([a-zA-Z0-9_-]{2,})+@([a-zA-Z0-9_-]{2,})+(\.[a-z]{2,})+/;
+		chkFlag = pattern.test(email);
+		if(!chkFlag)
+		{
+			alert("E－mail格式不正确!");
+			$('#mail').focus();
+			return false;
+		}
+	} else {
+		if($('#username').val() == '')
+		{
+			alert("请填写E－mail帐号！");
+			$('#username').focus();
+			return false;
+		}
+		//开始验证
+		var email = $('#username').val();
+		var pattern = /^([a-zA-Z0-9_-]{2,})+@([a-zA-Z0-9_-]{2,})+(\.[a-z]{2,})+/;
+		chkFlag = pattern.test(email);
+		if(!chkFlag)
+		{
+			alert("E－mail格式不正确！");
+			$('#username').focus();
+			return false;
+		}
+		
+		if($('#pwd').val() == '' || $('#pwd').val().length<6)
+		{
+			alert("密码填写错误！请认真填写!");
+			$('#pwd').focus();
+			return false;
+		}	
+	}
+<?php } ?>
+	
+	return true;
+}
+
+</script>
+</head>
+
+<body>
+  <div id="doc" class="w950">
+    <div id="hd">
+    <?php include 'header.html';?>
+    </div>
+    <div id="bd" class="vMarginLg">
+      <div class="mod emod-02">
+        <span class="top">
+          <span class="tl">
+          </span>
+          <span class="tr">
+          </span>
+        </span>
+        <div class="inner">
+           <?php include 'nav.html';?>
+          <div class="lw-subMod">
+          	<div class="t subBg"><h1>提问题</h1></div>
+          	<div class="c lw-askProcessL">
+          		<div class="hd">
+          			<h2 class="subBg">提问规则</h2>
+          		</div>
+          		<div class="bd">
+          			<p class="vMarginLg bPaddingLg">
+          				1：每位用户每天只能参加3次“健康知识闯关“活动<br />
+						2：用户在提问的时候问题标题不能少于10个字，内容不得少于100字。用户不能重复提问，不能提无意义的问题。    
+						   更不能提问含有色情暴力、反动等法律所禁止的内容。如有以上行为，9939健康网有取消用户参与活动的权利
+          			</p>
+          		</div>
+          		<div class="hd tMarginLg tPaddingLg">
+          			<h2 class="subBg">开始提问</h2>
+          		</div>
+          		<div class="bd">
+          			<form id="ask_form" name="" method="POST" action="/ask/do/do/save">
+								<table cellpadding="0" cellspacing="0">								
+									<tbody>									
+										<tr>
+											<td class="l">您的提问</td>
+											<td class="r"><input class="inp long" id="ask_title" name="info[title]"  type="text" value="" /></td>
+										</tr>
+										<tr>
+											<td class="l">问题说明</td>
+											<td class="r">
+												<textarea name="" id="content"></textarea>
+											</td>
+										</tr>
+										<tr>
+											<td class="l">问题分类</td>
+											<td class="r"><span id="load_catid_other"></span><input type="hidden" name="info[classid]" id="catid" value="" />       										 
+<script type="text/javascript">
+var __html_start = '<select onchange="jQuery(\'#catid\').val(this.value);category_load(this.value); disabled=\'disabled\'"><option value="0">请选择</option>';
+var __html_end = '</select>';
+function category_load(id)
+{
+	$.get('/ask/loadcat/', { id: id },
+	function(data){
+		//$('#load_catid').html(data);
+			if(data){
+				//$('#load_catid_other').html('');
+				$('#load_catid_other').append(__html_start + data + __html_end);
+			}
+	});
+}
+
+
+function category_reload()
+{
+	$('#load_catid').html('');
+	$('#load_catid_other').html('');
+	category_load(0);
+}
+category_load(0);
+</script>
+
+												<a href="javascript:void(0)" onclick="category_reload()"> 重选 </a><span>选择正确的分类，您的问题将更快得到解答</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="l">健康标签</td>
+											<td class="r">
+												<input class="inp long" id="tag" name="info[tag]"  type="text" value="如果没有合适的分类，请输入症状标签 如：“头疼”多个用“，”号隔开" onfocus="this.value=''"/>
+											</td>
+										</tr>
+										<tr>
+											<td class="l">悬赏积分</td>
+											<td class="r">
+												<select name="info[point]" class="select">
+											  	<option value="0" >不悬赏</option>
+											  	<option value="10">10分</option>
+											  	<option value="20">20分</option>
+											  	<option value="50">50分</option>
+											  	<option value="100">100分</option>
+											  </select><span class="icon">悬赏分越高，您的问题将越受关注，从而得到最佳答案</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="l">问题广播</td>
+											<td class="r">
+												<input class="randC" type="radio" name="info[broadcast]" value="1" />是
+												&nbsp;&nbsp;&nbsp;
+												<input class="randC" type="radio" name="info[broadcast]" value="0" checked="checked" />否												
+												<span>(将问题发布在首页广播24小时，需要扣除20点积分)</span>
+											</td>
+										</tr>
+										
+										<tr>
+											<td class="l">有效期</td>
+											<td class="r">
+												<select name="info[term]" class="select">
+													<option value="10" >10天</option>
+													<option value="15" >15天</option>
+													<option value="20" >20天</option>
+													</select><span>请选择问题有效期</span>	
+													<input type="checkbox" name="info[hiddenname]" value="1" /> 匿名设置		  
+										  <span>(您可以对问题设定匿名，但您需要付出积分2分)</span>										
+											</td>
+										</tr>
+										<?php if(!$_COOKIE['member_uID']) { ?>
+										<tr>
+											<td colspan="2" class="l r">
+												<div class="b_block">
+													<input class="randC" type="radio"  checked name="register" value="0"  onclick="changeLabel(this, 0, 1);" />
+													会员<span>(已注册会员请登录提问，获得5点积分)</span>
+													<span class="w1"></span>
+													<input class="randC" name="register" value="1" onclick="changeLabel(this, 1, 0);" type="radio" />非会员<span>(未注册会员点此提问)</span>
+													<p class="tMarginLg">
+													<span id="label_0">
+													<span class="otherTxt">邮箱</span><input type="text" name="username" id="username" class="inp short" />
+													  
+													<span class="otherTxt">密码</span><input type="password" name="pwd" id="pwd" class="inp short" />
+												  </span>
+												  <span id="label_1" style="display:none;">
+													<span class="otherTxt">邮箱</span><input type="text" name="mail" id="mail" class="inp short" /><strong>*</strong> 请填写真实邮箱，您将自动成为久久健康网会员</span>
+												  </span>
+													<span> 
+													</p>
+												</div>
+											</td>
+										</tr>
+										<?php } ?>
+										
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2">
+												<input class="btn" name="Button1" type="button" value=""  onclick=" return checkForm(this);"/>
+												<input class="btn btn1" name="Button1" type="reset" value="" />
+											</td>
+										</tr>
+									</tfoot>									
+								</table>
+								</form>
+          		</div>
+          	</div>
+          </div>
+        </div>
+         <span class="bottom">
+          <span class="bl">
+          </span>
+          <span class="br">
+          </span>
+        </span>
+        </div>
+       
+      </div>
+    </div>
+    <div id="ft">
+    <?php include 'footer.html'; ?>
+    </div>
+  </div>
+</body>
+</html>

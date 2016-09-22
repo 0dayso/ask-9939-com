@@ -1,0 +1,67 @@
+<div class="hd">
+    <ul class="l-fix">
+        <li class="on-zh"><a href="###">疾病健康</a></li>
+        <li><a href="###">生活健康</a></li>
+        <li><a href="###">整形美容</a></li>
+    </ul>
+</div>
+<div class="bd">
+    <ul class="in l-fix lw-nav" >
+      <?php
+        foreach ($this->dzjb as $k=>$v){
+            if($k == 537) continue;
+            if($v['child']){
+                echo '<li class="trunDot" >
+                        <a href="'.$v[url].'">'.$v[name].'</a><span>('.$v['count'].')</span>
+                        <ul '.$sytle.'>';
+                        foreach ($v['child'] as $kk=>$vv){
+                         echo '<li><a href="'.$vv[url].'">'.$vv[name].'</a></li>';
+                        }
+                        echo '</ul>
+                    </li>';
+            }else{
+                echo '<li><a href="'.$v[url].'">'.$v[name].'</a></li>';
+            }
+            
+        }
+        ?>
+    </ul>
+    <ul class="in l-fix lw-nav" style="display:none;">
+      <?php
+        foreach ($this->dzjk as $k=>$v){
+            if($v['child']){
+                echo '<li class="trunDot">
+                        <a href="'.$v[url].'">'.$v[name].'</a><span>('.($v['count']).')</span>
+                        <ul>';
+                        foreach ($v['child'] as $kk=>$vv){
+                         echo '<li><a href="'.$vv[url].'">'.$vv[name].'</a></li>';
+                        }
+                        echo '</ul>
+                    </li>';
+            }
+            else{
+                echo '<li><a href="'.$v[url].'">'.$v[name].'</a></li>';
+            }
+        }
+        ?>
+    </ul>
+    <ul class="in l-fix lw-nav" style="display:none;">
+      <?php
+        foreach ($this->dzmr as $k=>$v){
+            if($v['child']){
+                echo '<li class="trunDot">
+                        <a href="'.$v[url].'">'.$v[name].'</a><span>('.($v['count']).')</span>
+                        <ul>';
+                        foreach ($v['child'] as $kk=>$vv){
+                         echo '<li><a href="'.$vv[url].'">'.$vv[name].'</a></li>';
+                        }
+                        echo '</ul>
+                    </li>';
+            }
+            else{
+                echo '<li><a href="'.$v[url].'">'.$v[name].'</a></li>';
+            }
+        }
+        ?>
+    </ul>
+</div>

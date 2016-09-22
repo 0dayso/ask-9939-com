@@ -1,0 +1,672 @@
+{include file="html/headerII.tpl.htm"}
+<script language="javascript" src="/images/js/flashbox.js"></script>
+
+		<div id="content">
+                <div class="grid-c2">
+                    <div class="main">
+                        <div class="mainwrap">
+                            <div class="box clfix">
+                                <div class="box_l">
+                                    <div class="flash_ad">
+                                        <div id="ifocus">
+                                            <div id="ifocus_pic">
+                                                <div id="ifocus_piclist" style="left:0; top:0;">
+                                                    <ul>
+														{foreach key=key item=item from=$ask_slide}
+														<li><a href="{$item.url}" target="_blank"><img src="/{$item.image}" alt="" width="400" height="220"/></a></li>
+														{/foreach}
+                                                    </ul>
+                                                </div>
+                                                <div id="ifocus_opdiv"></div>
+                                                <div id="ifocus_tx">
+                                                    <ul>
+														{foreach key=key item=item from=$ask_slide}
+														<li class="normal"><a href="{$item.url}" target="_blank">{$item.name}</a><p>{$item.desc|truncate:30:""}......</p></li>
+														{/foreach}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div id="ifocus_btn">
+                                                <ul>
+                                                    {foreach key=key item=item from=$ask_slide}
+													<li class="current"><img src="/{$item.image}" alt="" width="75" height="43"/></li>
+													{/foreach}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--ifocus end-->
+                                    </div>
+								{literal}
+								<script>
+									function timer(){
+										document.getElementById('ifrmid').src = 'new_question.html';
+										window.setTimeout(timer,10000);
+									}
+									jQuery(document).ready(function(){
+
+										timer();
+									});
+								</script>
+								{/literal}
+									<iframe id="ifrmid" name="newiframe" src="new_question.html" width="520" height="280" scrolling="no" frameborder="0"></iframe>
+                                   
+                                </div>
+                                <div class="box_r">
+                                    <div class="today">
+										<div id="MarqueePro">
+										<div id="MarqueePro1"><div class="LinkTable" >
+					
+											 {$ask_gb}
+						
+										</div>
+										</div>
+										<div id="MarqueePro2"></div>
+										</div>
+										{literal}
+										<script>
+										var speed=40;
+										var MarqueePro=document.getElementById("MarqueePro");
+										var MarqueePro2=document.getElementById("MarqueePro2");
+										var MarqueePro1=document.getElementById("MarqueePro1");
+										MarqueePro2.innerHTML=MarqueePro1.innerHTML
+										function marqueeSM(){
+										if(MarqueePro2.offsetTop-MarqueePro.scrollTop<=0){
+										  MarqueePro.scrollTop-=MarqueePro1.offsetHeight;
+										}
+										else{
+										  MarqueePro.scrollTop++;
+										}
+										}
+										var MyMar=setInterval(marqueeSM,speed);
+										MarqueePro.onmouseover=function() {clearInterval(MyMar)}
+										MarqueePro.onmouseout=function() {MyMar=setInterval(marqueeSM,speed)}
+										</script>
+										{/literal}
+                                    </div>
+                                    <div class="me_ask"><a href="http://ask.9939.com/ask/question.php?newTitle=&x=24&y=22"><img src="/templates/9939/skins/default/images_index/meask.png" /></a></div>
+                                    <div class="me_answer"><a href="http://ask.9939.com/unReply.php"><img src="/templates/9939/skins/default/images_index/meanswer.png" /></a></div>
+                                    <div class="sq_ggao">
+                                        <h3>社区公告</h3>
+                                        <ul>
+											{foreach key=key item=item from=$ask_notice}
+											<li><a href='{$item.url}' target='_blank'>{$item.name}</a></li>
+											{/foreach}
+                                        </ul>
+                                        <div class="ad212x100"><a href="{$right_shequ_pic.url}" target="_blank"><img src="{$right_shequ_pic.image}" /></a></div>
+                                    </div>
+                                </div>
+                            </div><!--box end-->
+                            <div class="ad750x100"><a href="{$ask_adA.url}"><img src="{$ask_adA.image}" width="755"  height="102"/></a></div>
+                            <div class="box clfix">
+                                <div class="box_l">
+                                    <div class="expert">
+                                        <div class="hd">
+                                            <span>
+                                                我是医生
+                                                <a href="http://home.9939.com/do.php?ac=c20eccd4c4d1ca14153b47c508f5522b">我要申请</a>
+                                                <a href="http://home.9939.com/do.php?ac=c20eccd4c4d1ca14153b47c508f5522b">加入医生团</a>
+                                            </span>
+                                            <h3>推荐专家</h3>
+                                        </div>
+                                        <div class="borbg">
+                                           	<span class="tp-rc" id="toPrevious"></span>
+                                             <div class="clfix expert_list_wrap" id="expert_list_outerwrap">
+                                              <div id="expert_list_innerwrap">
+                                              <div id="expert_list" class="expert_list">
+                                              
+ 												{foreach item=item key=key from=$ask_tjDoc}
+                                                <dl>
+                                                    <dt>
+                                                        <a href="http://home.9939.com/space.php?uid={$item.userid}"><img src="http://ucenter.9939.com/avatar.php?uid={$item.userid}&size=big&type=virtual" width="85" height="85"/></a>
+                                                        <p><a href="http://home.9939.com/space.php?uid={$item.userid}">{$item.nicheng}</a></p>
+                                                    </dt>
+                                                    <dd>{$item.doc_keshi}</dd>
+                                                </dl>
+												{/foreach}
+ 
+ 
+ 
+                                                  </div>
+                                                <div id="expert_list_clone" class="expert_list"></div>
+                                                </div>
+                                            </div>
+
+   
+                                          <span class="bt-rc" id="toNext"></span>
+                                        </div>
+											{literal}
+                                            <script type="text/javascript">
+<!--
+var space = 10;//速度，每次移动高度
+var spacePage = 153;//每次翻页高度
+var countPerPage = 5;//每页显示专家个数
+var curPage = 0;//当前位置
+var curTop;
+var flag = 0; //0为向上，1为向下
+
+function $(id){
+  return document.getElementById(id);
+}
+var innerWrap = $("expert_list_innerwrap")/*.getElementsByTagName("dl")*/;
+var outerWrap = $("expert_list_outerwrap");
+var expertList = $("expert_list");
+var expertListClone = $("expert_list_clone");
+var expertCount = innerWrap.length;
+var pageCount = Math.ceil(expertCount/countPerPage);
+var curTop;
+var toTopTimer;
+var toBottomTimer;
+
+innerWrap.style.top="0px";
+expertListClone.innerHTML = expertList.innerHTML;
+function changeLocation(addHeight){
+  curTop = parseInt(innerWrap.style.top);
+  if(0==curTop%outerWrap.offsetHeight||(-156)==curTop){
+    stopScroll();
+	setTimeout(toTop,2000);
+	}
+  if(curTop<=1-expertList.offsetHeight||curTop>outerWrap.offsetHeight){
+    innerWrap.style.top="0px";
+  }else if(curTop>0){
+    innerWrap.style.top=1-outerWrap.offsetHeight+"px";
+  }else{
+    innerWrap.style.top=(curTop+addHeight)+"px"; 
+  }
+}
+function test(){
+stopScroll();
+  alert(innerWrap.style.top);
+}
+function toTop(){
+  stopToBottom();
+  toTopTimer = setInterval(function(){changeLocation(-2)},20);
+  flag=0;
+}
+function toBottom(){
+  stopToTop();
+  toBottomTimer = setInterval(function(){changeLocation(2)},10);
+  flag=1;
+}
+function stopToTop(){
+  clearInterval(toTopTimer);
+} 
+function stopToBottom(){
+  clearInterval(toBottomTimer);
+}
+function stopScroll(){
+  stopToTop();
+  stopToBottom();
+}
+/*outerWrap.onmouseover=function(){
+  stopScroll();
+}
+outerWrap.onmouseout=function(){
+  if(0==flag){ 
+    toTop();
+  }else if(1==flag){
+    toBottom();
+  }
+}*/
+window.onload=function(){
+  toTop();
+  /*if(0==flag){ 
+    toTop();
+  }else if(1==flag){
+    toBottom();
+  }*/
+}
+//-->
+</script>
+                                            {/literal}
+                                    </div><!--expert end-->
+                                    <div class="special">
+                                        <h3>问答专题</h3>
+                                        <ul class="clfix">
+
+
+											{foreach key=key item=item from=$ask_subject}
+                                            <li>
+                                            <a href="{$item.url}"><img src="/{$item.image}" /></a>
+                                            <p><a href="{$item.url}">{$item.name}</a></p>
+                                            </li>
+											{/foreach}
+
+
+                                        </ul>
+                                    </div><!--special end-->
+                                    <div class="fk_ek">
+                                        <div class="hd clfix">
+                                            <h3>妇科问题排行</h3>
+                                            <h3>儿科问题排行</h3>
+                                        </div>
+                                        <div class="borbg">
+                                            <div class="bd clfix">
+                                                <ul>
+													{foreach key=key item=item from=$fk_top_list}
+													<li><a href="{$item.url}" target="_blank">{$item.title|truncate:42:""}</a></li>
+                                                    {/foreach}
+                                                </ul>
+                                                <ul>
+                                                    {foreach key=key item=item from=$ek_top_list}
+													<li><a href="{$item.url}" target="_blank">{$item.title|truncate:42:""}</a></li>
+                                                    {/foreach}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div><!--box end-->
+                                    <div class="fk_ek">
+                                        <div class="hd clfix">
+                                            <h3>男科问题排行</h3>
+                                            <h3>心理科问题排行</h3>
+                                        </div>
+                                        <div class="borbg">
+                                            <div class="bd clfix">
+                                                <ul>
+                                                    {foreach key=key item=item from=$nk_top_list}
+													<li><a href="{$item.url}" target="_blank">{$item.title|truncate:42:""}</a></li>
+                                                    {/foreach}
+                                                </ul>
+                                                <ul>
+                                                    {foreach key=key item=item from=$xl_top_list}
+													<li><a href="{$item.url}" target="_blank">{$item.title|truncate:42:""}</a></li>
+                                                    {/foreach}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div><!--box end-->
+                                </div>
+                                <div class="box_r">
+                                    <div class="tags">
+                                        <h3>热门标签</h3>
+                                        <ul class="clfix">
+                                            {foreach key=key item=item from=$hot_tags}
+											<li><a href="{$item.url}">{$item.name}</a></li>
+											{/foreach}
+                                        </ul>
+                                    </div><!--tags end-->
+                                    <div class="ranking">
+                                        <h3>
+                                            <ul class="menu clfix" id="menu1">
+                                                <li onMouseOver="setTab(1,0)" class="hover">医生排行</li>
+                                                <li onMouseOver="setTab(1,1)">大众会员排行</li>
+                                            </ul>
+                                        </h3>
+                                        <div id="main1" class="tabbox">
+                                            <div class="block">
+                                                <ul>
+                                                   {foreach key=key item=item from=$doctor_top_list}
+													<li><span>{$item.point}</span>{$item.name}</li>
+													{/foreach}
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <ul>
+                                                    
+													 {foreach key=key item=item from=$user_top_list}
+													<li><span>{$item.point}</span>{$item.name}</li>
+													{/foreach}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div><!--ranking end-->
+                                    <div class="hospital">
+                                        <h3>在线医院</h3>
+                                        <ul>
+											{foreach key=key item=item from=$online_hospital}
+                                            <li><a href="{$item.url}">{$item.name}</a></li>
+                                            {/foreach}
+                                        </ul>
+                                    </div><!--hospital end-->
+                                    <div class="newmember borbg">
+                                        <h3>最新加入会员</h3>
+                                        <div class="bd clfix">
+                                            <dl class="borr">
+                                                <dt>医生会员</dt>
+                                                {foreach key=key item=item from=$ask_new_doctor}
+												<dd><a href='http://home.9939.com/space.php?uid={$item.userid}' target='_blank' title='{$item.nicheng}'>{if $item.nicheng}{$item.nicheng|truncate:6:""}{else}{$item.username}{/if}</a></dd>
+												{/foreach}
+                                            </dl>
+                                            <dl>
+                                                <dt>大众会员</dt>
+                                                {foreach key=key item=item from=$ask_new_member}
+													<dd><a href='http://home.9939.com/space.php?uid={$item.userid}' target='_blank'>{if $item.nicheng}{$item.nicheng}{else}{$item.username}{/if}</a></dd>
+												{/foreach}
+                                            </dl>
+                                        </div>
+                                    </div><!--newmember end-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub">
+                        <dl>
+                            <dt><a href="#">常见病问答</a></dt>
+                            {foreach key=key item=item from=$common_ask}
+                            <dd><a href="{$item.url}">{$item.name}</a></dd>
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=52&action=all">内科</a></dt>
+                            {foreach key=key item=item from=$Cat_neike_child_names}
+								{if $key<6}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=77&action=all">外科</a></dt>
+                            {foreach key=key item=item from=$Cat_wk_child_names}
+								{if $key<6}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=100&action=all">男科</a></dt>
+                           {foreach key=key item=item from=$Cat_nk_child_names}
+								{if $key<7}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=33&action=all">妇科</a></dt>
+                            {foreach key=key item=item from=$Cat_fk_child_names}
+								{if $key<7}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=42&action=all">儿科</a></dt>
+                            {foreach key=key item=item from=$Cat_ek_child_names}
+							 	{if $key<6}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}	
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=133&action=all">中医科</a></dt>
+                            {foreach key=key item=item from=$Cat_zy_child_names}
+							 	{if $key<6}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=122&action=all">皮肤性病</a></dt>
+                            {foreach key=key item=item from=$Cat_pfb_child_names}
+							 	{if $key<6}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=112&action=all">心理</a></dt>
+                            {foreach key=key item=item from=$Cat_xl_child_names}
+							 	{if $key<6}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}	
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=141&action=all">五官</a></dt>
+                            {foreach key=key item=item from=$Cat_wg_child_names}
+							 	{if $key<3}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=145&action=all">传染</a></dt>
+                            {foreach key=key item=item from=$Cat_crk_child_names}
+							 	{if $key<3}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=149&action=all">肿瘤科</a></dt>
+                            {foreach key=key item=item from=$Cat_zl_child_names}
+							 	{if $key<6}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=158&action=all">整形</a></dt>
+                           {foreach key=key item=item from=$Cat_zx_child_names}
+							 	{if $key<7}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="/ask/list.php?catid=172&action=all">药物</a></dt>
+                           {foreach key=key item=item from=$Cat_yw_child_names}
+							 	{if $key<6}
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								{/if}
+							{/foreach}
+                        </dl>
+                        <dl>
+                            <dt><a href="#">家庭与生活</a></dt>
+                            {foreach key=key item=item from=$Cat_ye_child_names}
+							 	
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								
+							{/foreach}
+							{foreach key=key item=item from=$Cat_shhj_child_names}
+							
+								<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								
+							{/foreach}
+							{foreach key=key item=item from=$Cat_dzjk_child_names}
+								
+										<dd><a href="/ask/list.php?catid={$item.catid}&action=all" target="_blank">{$item.catname}</a></dd>
+								
+							{/foreach}
+                        </dl>
+                        <div class="ad180x230"><a href="{$left_bottom_pic.url}" target="_blank"><img src="/{$left_bottom_pic.image}" /></a></div>
+                    </div>
+                </div>
+                <div class="manualhot clfix">
+                    <div class="bd m_r10">
+                        <p>
+							
+                            <a href="{$left_bottom_pic1.url}"><img src="/{$left_bottom_pic1.image}" /></a>
+                       
+                        </p>
+                        <ul>
+                           {foreach key=key item=item from=$left_bottom_word1}
+                            <li><a href="{$item.url}">{$item.name}</a></li>
+							{/foreach}
+                        </ul>
+                    </div>
+                    <div class="bd">
+                        <p>
+                            <a href="{$left_bottom_pic2.url}"><img src="/{$left_bottom_pic2.image}" /></a>
+							
+                        </p>
+                        <ul>
+                           {foreach key=key item=item from=$left_bottom_word2}
+                            <li><a href="{$item.url}">{$item.name}</a></li>
+							{/foreach}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+				<!--#include virtual="/templates_ask/include/link.html"-->
+				<!--#include virtual="/templates_ask/include/footer.html"-->
+			</div>
+        </div>
+{literal}
+<script>
+<!--
+function setTab(m,n){
+ var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+ var mli=document.getElementById("main"+m).getElementsByTagName("div");
+ for(i=0;i<tli.length;i++){
+  tli[i].className=i==n?"hover":"";
+  mli[i].style.display=i==n?"block":"none";
+ }
+}
+//-->
+</script>
+<script type="text/javascript">
+function $(id) { return document.getElementById(id); }
+
+function addLoadEvent(func){
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function(){
+			oldonload();
+			func();
+		}
+	}
+}
+
+function moveElement(elementID,final_x,final_y,interval) {
+  if (!document.getElementById) return false;
+  if (!document.getElementById(elementID)) return false;
+  var elem = document.getElementById(elementID);
+  if (elem.movement) {
+    clearTimeout(elem.movement);
+  }
+  if (!elem.style.left) {
+    elem.style.left = "0px";
+  }
+  if (!elem.style.top) {
+    elem.style.top = "0px";
+  }
+  var xpos = parseInt(elem.style.left);
+  var ypos = parseInt(elem.style.top);
+  if (xpos == final_x && ypos == final_y) {
+		return true;
+  }
+  if (xpos < final_x) {
+    var dist = Math.ceil((final_x - xpos)/10);
+    xpos = xpos + dist;
+  }
+  if (xpos > final_x) {
+    var dist = Math.ceil((xpos - final_x)/10);
+    xpos = xpos - dist;
+  }
+  if (ypos < final_y) {
+    var dist = Math.ceil((final_y - ypos)/10);
+    ypos = ypos + dist;
+  }
+  if (ypos > final_y) {
+    var dist = Math.ceil((ypos - final_y)/10);
+    ypos = ypos - dist;
+  }
+  elem.style.left = xpos + "px";
+  elem.style.top = ypos + "px";
+  var repeat = "moveElement('"+elementID+"',"+final_x+","+final_y+","+interval+")";
+  elem.movement = setTimeout(repeat,interval);
+}
+
+function classNormal(iFocusBtnID,iFocusTxID){
+	var iFocusBtns= $(iFocusBtnID).getElementsByTagName('li');
+	var iFocusTxs = $(iFocusTxID).getElementsByTagName('li');
+	for(var i=0; i<iFocusBtns.length; i++) {
+		iFocusBtns[i].className='normal';
+		iFocusTxs[i].className='normal';
+	}
+}
+
+function classCurrent(iFocusBtnID,iFocusTxID,n){
+	var iFocusBtns= $(iFocusBtnID).getElementsByTagName('li');
+	var iFocusTxs = $(iFocusTxID).getElementsByTagName('li');
+	iFocusBtns[n].className='current';
+	iFocusTxs[n].className='current';
+}
+
+function iFocusChange() {
+	if(!$('ifocus')) return false;
+	$('ifocus').onmouseover = function(){atuokey = true};
+	$('ifocus').onmouseout = function(){atuokey = false};
+	var iFocusBtns = $('ifocus_btn').getElementsByTagName('li');
+	var listLength = iFocusBtns.length;
+	iFocusBtns[0].onmouseover = function() {
+		moveElement('ifocus_piclist',0,0,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',0);
+	}
+	if (listLength>=2) {
+		iFocusBtns[1].onmouseover = function() {
+			moveElement('ifocus_piclist',0,-220,5);
+			classNormal('ifocus_btn','ifocus_tx');
+			classCurrent('ifocus_btn','ifocus_tx',1);
+		}
+	}
+	if (listLength>=3) {
+		iFocusBtns[2].onmouseover = function() {
+			moveElement('ifocus_piclist',0,-440,5);
+			classNormal('ifocus_btn','ifocus_tx');
+			classCurrent('ifocus_btn','ifocus_tx',2);
+		}
+	}
+	if (listLength>=4) {
+		iFocusBtns[3].onmouseover = function() {
+			moveElement('ifocus_piclist',0,-660,5);
+			classNormal('ifocus_btn','ifocus_tx');
+			classCurrent('ifocus_btn','ifocus_tx',3);
+		}
+	}
+}
+
+setInterval('autoiFocus()',5000);
+var atuokey = false;
+function autoiFocus() {
+	if(!$('ifocus')) return false;
+	if(atuokey) return false;
+	var focusBtnList = $('ifocus_btn').getElementsByTagName('li');
+	var listLength = focusBtnList.length;
+	for(var i=0; i<listLength; i++) {
+		if (focusBtnList[i].className == 'current') var currentNum = i;
+	}
+	if (currentNum==0&&listLength!=1 ){
+		moveElement('ifocus_piclist',0,-220,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',1);
+	}
+	if (currentNum==1&&listLength!=2 ){
+		moveElement('ifocus_piclist',0,-440,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',2);
+	}
+	if (currentNum==2&&listLength!=3 ){
+		moveElement('ifocus_piclist',0,-660,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',3);
+	}
+	if (currentNum==3 ){
+		moveElement('ifocus_piclist',0,0,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',0);
+	}
+	if (currentNum==1&&listLength==2 ){
+		moveElement('ifocus_piclist',0,0,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',0);
+	}
+	if (currentNum==2&&listLength==3 ){
+		moveElement('ifocus_piclist',0,0,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',0);
+	}
+}
+addLoadEvent(iFocusChange);
+</script>
+{/literal}
+
+    </body>
+</html>
+
+<div style="display:none"><script src="http://s61.cnzz.com/stat.php?id=1383826&web_id=1383826" language="JavaScript"> </script></div>
+

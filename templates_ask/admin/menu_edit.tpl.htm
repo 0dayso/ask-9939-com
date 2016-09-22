@@ -1,0 +1,120 @@
+﻿{include file=admin/header_1.tpl.htm}
+
+{literal}
+<script language="javascript">
+function checkInput() 
+{		
+	if($('name').value == "")
+	{
+		alert("请填写名称！");		
+		$('name').focus();
+		return false;
+	}
+
+	if($('pID').value > 0)
+	{
+		if($('url').value == "" )
+		{
+			alert('请填写链接地址！');
+			$('url').focus();			
+			return false;
+		}
+		var len = document.add.powerID.length;	
+		var powerID = "";
+		//alert(len);
+		for(var i=0; i<len; i++ )
+		{
+			if(document.add.powerID[i].checked) powerID = document.add.powerID[i].value;
+		}
+				
+		if(powerID == "")
+		{
+			alert("请选择权限！");
+	   		return false;
+		}		
+	}	
+	return true;
+}
+
+function displayPowerUrl()
+{
+	if($('pID').value == 0)
+	{	
+		document.getElementById("tr_powerID").style.display = "none";
+		document.getElementById("tr_url").style.display = "none";
+		//$('powerID').value = 0;
+		//$('url').value = "";
+	}	
+	else
+	{
+		document.getElementById("tr_powerID").style.display = "";
+		document.getElementById("tr_url").style.display = "";
+	}
+}
+		
+</script>
+
+{/literal}
+			
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+		<tr class="header">
+			<td colspan="2">修改左边菜单</td>
+		</tr>
+		
+		<form  method="POST" onsubmit="return checkInput();" action="menu.php?act=editSave">		
+		<tr>
+          <td width="100" class="altbg1">上级菜单</td>
+          <td class="altbg2">
+          <select name="pID" onchange="displayPowerUrl();">
+          	<option value="0">新增</option>                     	
+          	{section name="menuList" loop="$aMenuList"}
+           		<option value="{$aMenuList[menuList].id}" {if $aMenuList[menuList].id == $aInfo.pID} selected {/if}>{$aMenuList[menuList].name}</option>
+           {/section}
+          </select>&nbsp;&nbsp;*</td>
+        </tr>
+        <tr>
+          <td class="altbg1">名称</td>
+          <td class="altbg2"><input type="text" name="name" size="50" class="input_text" value="{$aInfo.name}">&nbsp;&nbsp;*</td>
+        </tr>
+        <tr id="tr_url" {if $aInfo.pID == 0} style="display:none;" {/if}>
+          <td class="altbg1">链接地址</td>
+          <td class="altbg2"><input type="text" name="url" size="50" class="input_text" value="{$aInfo.url}"  >&nbsp;&nbsp;*</td>
+        </tr>
+        <tr id="tr_powerID" {if $aInfo.pID == 0} style="display:none;" {/if}>
+          <td class="altbg1">权限</td>
+          <td class="altbg2" align="left">
+			<table width="98%" cellspacing="1" cellpadding="2" class="tableborder">
+			
+          	{section name=powerList loop=$aPowerList}
+          	{if ($smarty.section.powerList.index)% 3 == 0}
+			<tr>
+			{/if}
+			<td {if $aPowerList[powerList].id <> $aInfo.powerID} class="altbg2" {else} class="header" {/if} >
+				<input type="radio" name="powerID" {if $aPowerList[powerList].id == $aInfo.powerID} checked {/if} value="{$aPowerList[powerList].id}">&nbsp;
+				{if $aPowerList[powerList].id == $aInfo.powerID}
+					<font color="Red">{$aPowerList[powerList].fileNameCn}-{$aPowerList[powerList].powerNameCn}</font>
+				{else}
+					{$aPowerList[powerList].fileNameCn}-{$aPowerList[powerList].powerNameCn}
+				{/if}	
+			</td>
+			{if ($smarty.section.powerList.index + 1) % 3 == 0}
+			</tr>
+			{/if}
+			{/section}
+			
+			</table>
+		  </td>
+        </tr>        		
+		<tr>
+			<td align="left" class="altbg1"><input type="button" onclick="history.go(-1);" value="返回"></td>
+			<td align="right" class="altbg2">
+				<input type="hidden" name="id" value="{$aInfo.id}">
+				<input type="submit" name="submit" value=" 提 交 ">
+			</td>
+		</tr>
+		</form>
+		</table>		
+
+
+{include file=admin/footer.tpl.htm}                                                                                              
+  

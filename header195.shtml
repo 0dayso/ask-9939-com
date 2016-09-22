@@ -1,0 +1,260 @@
+<link href="http://www.9939.com/9939/style/lf-bottom.css" type="text/css" rel="stylesheet" />
+<style type="text/css" media="screen">
+  	/* hd */
+#doc{background:#86B154; padding:0;}
+#doc #bd{ background:#fff; width:950px; margin:0 auto; padding:10px;}
+#doc #ft{ background:#F8F8F8; width:950px; margin:0 auto; padding:0 10px 10px;}
+.w950 #hd{ width: 970px;}
+.w970{ width:950px; margin:0 auto; background:#ffffff;padding:0 10px;}
+.hd_topbar{ background:#f8f8f8; height:24px; line-height:24px; border-bottom:1px solid #F3F3F3;}
+.hd_links{ width:960px; margin:0 auto; padding-right:10px; height:24px; }
+.hd_links ul{ float:right; font-size:12px;}
+.hd_links li{ margin:0 5px;float:left;}
+.hd_links li a{ color:#6A6A6A; }
+.hd_logo{ float:left; width:200px;}
+.hd_logo a img{ display:block;}
+.hd_logonav{ background:#ffffff;}
+.hd_nav{ margin-top:18px; width:750px; float:left;}
+.hd_nav li{ float:left; padding:0 8px; display:inline; border-right:1px solid #EAEAEA;}
+.hd_nav .b0{ border:0 none; padding-right:0;}
+.hd_nav li dd{ line-height:18px; font-size:12px;}
+.hd_nav li a{ margin:0 5px; color:#1F4679;}
+.hd_keyword{ width:946px; border:1px solid #95BACA; padding:1px;}
+.hd_keyword_bg{ background:#E2EEFA; height:24px;}
+.hd_keyword_bg h2{ width:75px; height:24px; line-height:24px; background:url(http://www.9939.com/9939/images/hd_titbg.gif) no-repeat; font-weight:bold; padding-left:15px; color:#ffffff; float:left; font-size:12px;}
+.hd_keyword_bg p{ float:left; font-size:12px;}
+.hd_keyword_bg p a{ margin:0 3px; line-height:24px; color:#012F47;}
+.hd_keyword_bg .more{ float:left; margin-left:10px; line-height:24px;}
+.g-topbar{height:30px;line-height:30px;background:url(http://www.9939.com/9939/images/g-bg.jpg) repeat-x;position:relative;}
+.g-login{left:15px;color:#6f6f6f; float:left; display:inline; width:450px; padding-left:15px;}
+.g-login legend{display:none;}
+.g-login input{border:1px solid #ddd;width:60px;height:16px;padding:1px;margin:0 5px;_margin:5px 5px;vertical-align:middle}
+.g-login .l-sub{width:37px;height:18px;background:#3BA80D;color:#fff;font-size:12px;border:0 0 2px;;padding:0;vertical-align:middle}
+.g-login .l-reg{color:#3BA80D ;}
+.hos-info{ width:815px; overflow:hidden; }
+.hd_keyword{ position:relative; z-index:99;}
+.hd_keyword .zhmore{position:absolute; top:4px; right:8px;  background:url(http://www.9939.com/9939/images/zhmore.gif) no-repeat; width:34px; height:24px; line-height:14px; text-align:center; font-size:14px; color:#FFF; text-decoration:none; padding-top:1px; cursor:pointer;}
+.hd_keyword .zhmore a{color:#FFF;}
+.zh-dcolumn{ position:absolute; top:25px; right:0; font-size:14px; padding-top:7px; width:414px; display:none; color:#000; text-align:left;}
+.zh-dcolumn .top{ position:absolute; display:block; background:url(http://www.9939.com/9939/images/zh-dcolumn.png) no-repeat; top:0; right:9px; width:13px; height:7px;}
+.zh-dcolumn .inner{ background:#5BC131; border:1px solid #369C0E; padding:2px;}
+.zh-dcolumn .hd{ background:#FFF; border-bottom:1px solid #4CBA01;}
+.zh-dcolumn .hd h4{ margin-left:12px; font-weight:700; line-height:26px;}
+.zh-dcolumn .bd{ background:#FFF; padding:0 10px 10px 0; color:#808080;}
+.zh-dcolumn .bd a{ color:#808080;}
+.zh-dcolumn .bd ul{ margin-left:-1px; overflow:hidden; zoom:1;}
+.zh-dcolumn .bd li{ float:left; display:inline; border-left:1px solid #808080; margin-top:8px; padding:0 10px; line-height:16px; white-space:nowrap;}
+
+  	/* ft */
+	.g-nav{height:49px;line-height:49px;color:#268200;background:url(http://www.9939.com/images/gm-navbg.jpg) repeat-x;border-width:3px 1px 1px;border-color:#4AA722 #ccc #ccc;border-style:solid;padding:0 16px; font-size:12px;}
+	.g-nav a,.ft-flinks .hd li a{font-size:14px;color:#268200;padding-bottom:4px;}
+	.g-nav a span{padding:1px;}
+	.g-nav a:hover,.ft-flinks .hd .on a{background:url(http://www.9939.com/images/gm-icon.png) no-repeat 50% bottom;color:#fff;text-decoration:none}
+	.g-nav a:hover span,.ft-flinks .hd .on a span{padding:0;background:#797979;border:1px solid #FF4AA9;}
+	.g-nav .icon{background:url(http://www.9939.com/images/gm-nicon.png) no-repeat 0 50%;padding-left:24px;}
+  	.ft-flinks .hd {height:32px;line-height:32px;overflow:hidden;}
+	.ft-flinks .hd li{float:left;_display:inline;margin-right:10px;}
+	.ft-flinks .hd li a{font-size:14px;color:#000;}
+	.ft-flinks .hd li a:hover{text-decoration:none}
+	.ft-flinks .hd li a span{padding:1px 3px;}
+	.ft-flinks .hd .on a span{padding:0 2px;}
+	.ft-flinks .bd{padding:5px 0;}
+	.ft-flinks .bd ul{line-height:1.8;}
+	.ft-flinks .bd li{float:left;white-space:nowrap;padding-right:10px;}
+	.ft-flinks .bd a{color:#606060;}
+	.ft-message{margin-top:20px;zoom:1;overflow:hidden;color:#bbb;border-bottom:1px solid #bbb;padding-bottom:5px; }
+	.ft-autor{float:left;}
+	.ft-tel{float:right;}
+	.ft-nav{margin-top:1px;height:20px;line-height:20px;background:#F3F5F4;color:#5F5F5F;text-align:center;}
+	.ft-nav a{color:#5F5F5F;padding:0 10px;}
+  	.copyright{margin-top:15px;text-align:center;line-height:1.4;color:#5f5f5f;}
+  </style>
+<script src="http://www.9939.com/9939/js/jquery.tab.js"></script>
+<script type="text/javascript" language="javascript" >
+	$(function(){
+		$(".zhmore").bind('click',function(){
+	      $(".zh-dcolumn").toggle();
+	   });
+	});
+	function dologin(){
+		var longinError=function() {
+			$('#tlogin-info').html('用户名或密码错误！');
+		};
+		var html = '';
+		var username = $('#l-name').val();
+		var password = $('#l-psw').val();
+		if(username.length==0||password.length==0){
+			longinError();
+			return false;
+		}   
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/login/?username="+username+"&password="+password+"&format=json&jsoncallback=?",function(data){
+			if(data!='type0'){
+					html='<fieldset>	<legend>登录</legend>您好，<font color="Red">'+data+'</font> 欢迎进入久久健康网！&nbsp;&nbsp;<a href="http://home.9939.com/user" target="_blank">我的空间</a>&nbsp;&nbsp;<span style="cursor:pointer" onclick="logout();">退出</span></fieldset>';
+					$('.t-login').addClass('k-display-none');
+					$('#login').html(html);
+					return false;
+				}else if(data=='type0'){
+					longinError();
+				}
+		});
+		return false;
+	}
+
+	function logout(){
+		
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/logout/?format=json&jsoncallback=?",function(data){
+			var html = '<form name="name" action="#" target="_blank" method="post"><fieldset>	<legend>登录</legend>	<label for="l-name">用户名</label><input type="text" name="username" value="" id="l-name" />	<label for="l-psw">密码</label><input type="password" name="password" value="" id="l-psw" />	<input type="submit" value="登录" class="l-sub" onclick="return dologin();" style="cursor:pointer"/> 	<a href="http://ask.9939.com/register" target="_blank" class="l-reg">注册</a><span id="tlogin-info" style="color:red;"></span>					</fieldset></form>';
+				$('#login').html(html);
+		});
+	}
+	
+	function AddFavorite(sURL, sTitle)
+{
+     try
+     {
+         window.external.addFavorite(sURL, sTitle);
+     }
+     catch (e)
+     {
+         try
+         {
+             window.sidebar.addPanel(sTitle, sURL, "");
+         }
+         catch (e)
+         {
+             alert("加入收藏失败，有劳您手动添加。");
+         }
+     }
+}
+
+function addBookmark(title) {
+var url=parent.location.href;
+if (window.sidebar) { 
+window.sidebar.addPanel(title, url,""); 
+} else if( document.all ) {
+window.external.AddFavorite( url, title);
+} else if( window.opera && window.print ) {
+return true;
+}
+}
+function SetHome(obj,vrl){
+try{
+obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+}
+catch(e){
+if(window.netscape) {
+try {
+netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect"); 
+} 
+catch (e) 
+{ 
+alert("抱歉！您的浏览器不支持直接设为首页。请在浏览器地址栏输入“about:config”并回车然后将[signed.applets.codebase_principal_support]设置为“true”，点击“加入收藏”后忽略安全提示，即可设置成功。"); 
+}
+var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+prefs.setCharPref('browser.startup.homepage',vrl);
+}
+}
+} 
+</script>
+<div id="hd">
+		<div class="hd_topbar">
+      <div class="hd_links">
+       <div class="g-login" id="login">
+           <script>
+      document.write("<script src=\"http://www.9939.com/user3.php?"+Date()+"\" type=\"text/javascript\"><\/script>");
+      </script>
+      </div>
+        <ul class="g-site-links">
+		<li><a href="http://www.9939.com/" target="_blank">久久健康网</a></li>
+		  <li><a href="http://so.9939.com/keylist" target="_blank">健康聚焦</a></li>
+          <li><a href="http://www.9939.com/sitemap/" target="_blank">网站地图</a></li>
+          <li> <a href="http://lady.9939.com/" target="_blank">久久女性网 </a> </li>
+          <li> <a href="http://120.9939.com" target="_blank">名院推荐 </a> </li>
+          <li> <a href="javascript:void(0)" onclick="SetHome(this,window.location)" target="_self">设为首页 </a> </li>
+          <li> <a target=_top onclick="javascript:AddFavorite('http://www.9939.com', '健康资讯网');return false;"style="cursor:pointer;">收藏 </a> </li>
+        </ul>
+      </div>
+    </div>
+        <div  class="l-fix w970 hd_logonav">
+      <div class="hd_logo g-u"><a href="http://www.9939.com"><img src="http://www.9939.com/9939/images/logo-index.png" alt="9939,久久健康网"></a></div>
+      <div class="hd_nav g-u">
+        <ul>
+           <li>
+                <dl>
+                    <dd>
+                        <a href="http://lady.9939.com/">女性</a><a href="http://baby.9939.com/">母婴</a>
+                    </dd>
+                    <dd>
+                        <a href="http://man.9939.com/">男性</a><a href="http://oldman.9939.com/">老人</a>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dd>
+                        <a href="http://baojian.9939.com/">保健</a><a href="http://lx.9939.com/">两性</a><a href="http://beauty.9939.com/">美容</a><a href="http://pic.9939.com/">图谱</a><a href="http://food.9939.com/">饮食</a>
+                    </dd>
+                    <dd>
+                        <a href="http://js.9939.com/">健身</a><a href="http://xinli.9939.com/">心理</a><a href=" http://zx.9939.com/">整形</a><a href="http://fitness.9939.com/">减肥</a><a href="http://zt.9939.com/">专题</a>
+                    </dd>
+                </dl>
+            </li>
+           <li>
+            <dl>
+              <dd><a href="http://jb.9939.com/">查疾病</a><a href="http://yisheng.9939.com/">找医生</a><a href="http://zhongyi.9939.com/">中医</a><a href="http://nurse.9939.com/">护理</a><a href="http://tijian.9939.com/">体检</a></dd>
+              <dd><a href="http://zz.9939.com/">查症状</a><a href="http://hospital.9939.com/">找医院</a><a href="http://pianfang.9939.com/">偏方</a><a href="http://jijiu.9939.com/">急救</a><a href="http://drug.9939.com/">药品</a> </dd>
+            </dl>
+          </li>
+         <li>
+            <dl>
+              <dd><a href="http://news.9939.com/">行业新闻</a><a href="http://baike.9939.com">健康百科</a></dd>
+              <dd><a href="http://zhanhui.9939.com/">医疗展会</a><a href="http://help.9939.com/">公益行动</a></dd>
+            </dl>
+          </li>
+                 
+          <li  class="b0">
+            <dl>
+              <dd><a href="http://ask.9939.com/">久久问答</a><a href="http://home.9939.com/buluo">久久部落</a></dd>
+              <dd><a href="http://home.9939.com">久久家园</a><a href="http://www.go9939.com/" style="color:#b30000;">健康商城</a></dd>
+            </dl>
+          </li>          
+        </ul>
+      </div>
+    </div>
+	  <div class="1-fix w970">
+      <div class="hd_keyword">
+        <div class="hd_keyword_bg">
+          <h2>疾病专栏</h2>
+          <p><a target="_blank" href="http://fk.9939.com/">妇科</a>|<a target="_blank" href="http://yk.9939.com/">眼科</a>|<a target="_blank" href="http://zl.9939.com/">肿瘤</a>|<a href="http://bdf.9939.com/" target="_blank">白癜风</a>|<a target="_blank" href="http://npx.9939.com/">牛皮癣</a>|<a target="_blank" href="http://lc.9939.com/">无痛人流</a>|<a target="_blank" href="http://xzb.9939.com/">心脏病</a>|<a target="_blank" href="http://nk.9939.com/">男科</a>|<a target="_blank" href="http://tnb.9939.com/">糖尿病科</a>|<a target="_blank" href="http://smyy.9939.com/">失眠抑郁</a>|<a target="_blank" href="http://gb.9939.com/">肝病科</a>|<a target="_blank" href="http://shcare.9939.com/">肾病科</a>|<a target="_blank" href="http://pf.9939.com/">皮肤科</a>|<a target="_blank" href="http://gxy.9939.com/">高血压</a>|<a target="_blank" href="http://mn.9939.com/">泌尿科</a>|<a target="_blank" href="http://eK.9939.com/">儿科</a>|<a target="_blank" href="http://dx.9939.com/">癫痫</a>|<a target="_blank" href="http://hblc.9939.com/">红斑狼疮</a></p>
+          <div class="zhmore">更多
+		<div class="zh-dcolumn">
+				  <span class="top"></span>
+				  <div class="inner">
+					<div class="hd">
+					  <h4>疾病专栏</h4>
+					</div>
+					<div class="bd">
+					   <ul>
+					   	<li><a target="_blank" href="http://wb.9939.com/">胃病科</a></li>
+					    <li><a target="_blank" href="http://kq.9939.com/">口腔科</a></li>
+						<li><a target="_blank" href="http://fengshi.9939.com/">风湿科</a></li>
+						<li><a target="_blank" href="http://byby.9939.com/">不孕不育</a></li>
+						<li><a target="_blank" href="http://jzb.9939.com/">颈椎病</a></li>
+						<li><a target="_blank" href="http://zhongfen.9939.com/">中风</a></li>
+						<li><a target="_blank" href="http://yjp.9939.com/">腰间盘</a></li>
+						<li><a target="_blank" href="http://heart.9939.com/">心血管科</a></li>					
+						<li><a target="_blank" href="http://jsk.9939.com/">精神科</a></li>
+						<li><a target="_blank" href="http://ggt.9939.com/">股骨头坏死</a> </li>
+						<li><a target="_blank" href="http://gk.9939.com/">骨科</a></li>
+						<li><a target="_blank" href="http://sda.9939.com/">食道癌</a></li>
+                        <li><a target="_blank" href="http://gc.9939.com/">肛肠</a></li>
+					  </ul>
+					</div> 
+				  </div>
+				</div>
+	  </div>
+        </div>
+      </div>
+    </div>
+		
+	</div>

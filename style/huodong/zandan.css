@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+.w950{ background:url(../../images/huodong/bg.png) repeat-x;}
+.w950 #hd,.w950 #bd,.w950 #ft{ width:950px; margin:0 auto;}
+.nav-top{ line-height:44px;}
+.nav-top .login{ float:left; width:50%; color:#fff; _margin-top:10px;}
+.nav-top .login .inp{ width:120px; height:19px; border:0; background:url(../../images/huodong/inp-bg.png) no-repeat; padding:2px; margin-right:10px; vertical-align:middle}
+.nav-top .login button{text-indent:-999px; border:0; width:50px; height:24px; margin-right:10px; vertical-align:middle; _margin-top:-3px;}
+.nav-top .login input,.nav-top .login label,.nav-top .login button{overflow:hidden;}
+.nav-top .login .sub-btn{ background:url(../../images/huodong/sub-btn.jpg) no-repeat; }
+.nav-top .login .zhuc{ background:url(../../images/huodong/zhuc-btn.jpg) no-repeat;}
+.nav-top .nav{ float:right; color:#fff;}
+.nav-top .nav a{ color:#fff; font-size:14px; margin:0 5px; text-decoration:none;}
+.nav-top .nav a.on{ font-weight:bold}
+.nav-top .header{ overflow:hidden; clear:both}
+
+#bd .left,#bd .right{ float:left;}
+#bd .left{ width:750px; margin-right:10px; display:inline;}
+#bd .left .left01 { overflow:hidden;}
+#bd .left .left01 .tit{ line-height:70px; height:70px; background:url(../../images/huodong/bottom.gif) bottom repeat-x;}
+#bd .left .left01 .tit h3{ font-family:"微软雅黑", "黑体"; font-size:28px; background:url(../../images/huodong/tit.jpg) no-repeat; padding-left:45px;}
+#bd .left .left01 ul{ padding:5px 0; overflow:hidden;}
+#bd .left .left01 ul li{ width:375px;  float:left; line-height:25px; color:#676767;}
+#bd .left .left01 ul li a{ color:#676767;}
+#bd .left .left01 p{ text-align:center; font-size:14px;}
+#bd .left .left01 p span{ margin-right:7px;background:#FFEAB5; padding:3 6px;}
+#bd .left .left01 p span.no{ background:none; padding:0}
+#bd .left .left01 p span a{ color:#000; line-height:18px;padding:0 5px;}
+#bd .left .left01 p .left{ background:url(../../images/huodong/btnleft.gif) no-repeat; line-height:18px; display:block; text-indent:-999px;}
+#bd .left .left01 p span.on{ background:#AC0B01; color:#fff;}
+#bd .left .left01 p span.on a{ color:#fff}
+#bd .left .left01 p .none{  }
+#bd .right{ width:180px; margin-right:10px; padding-top:10px;}
+#bd .right .rig01{ overflow:hidden;}
+#bd .right .rig01 .top{ background:url(../../images/huodong/top.gif) no-repeat; overflow:hidden; height:10px;}
+#bd .right .rig01 .mid{ background:url(../../images/huodong/mid.gif) repeat-y; overflow:hidden; min-height:270px; font-family:"微软雅黑", "黑体"; padding:10px 0 10px 10px;}
+#bd .right .rig01 .mid p{ line-height:25px; font-size:14px; color:#fff;}
+#bd .right .rig01 .mid .qq{ background:url(../../images/huodong/tu1.jpg) -10px no-repeat;  height:90px; display:block; text-indent:-999px; margin-top:10px;}
+#bd .right .rig01 .bot{ background:url(../../images/huodong/bot.gif) no-repeat; overflow:hidden; height:10px;}
+

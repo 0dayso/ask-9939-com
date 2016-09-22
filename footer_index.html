@@ -1,0 +1,197 @@
+<script>
+	$(document).jTab({
+	 menutag:".ft-flinks .hd li",activeClassName:"on"
+	});
+</script>
+<div class="ft-nav"><a href="http://www.9939.com/Company/wzjj.htm">网站简介</a>|<a href="http://www.9939.com/webmap_0_1.html">网站地图</a>|<a href="/map/">问答地图</a>|<a href="http://jb.9939.com/map.php">疾病地图</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=5">招聘信息</a>|<a href="http://www.9939.com/sitemap/">网站导航</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=4">友情链接</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=4">媒体报道</a>|<a href="mailto:SERVICES@9939.COM">意见反馈</a>|<a href="mailto:jianghy@2008.shou.com">网上投稿</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=7">服务条款</a>|<a href="#" onclick="setHomePage(this)" target="_self">设为首页</a>|<a href="#" onclick="addfavorite()" target="_self">加入书签</a></div>
+<div class="copyright">Copyright &copy; 2000-2009　WWW.9939.com　版权所有 玖玖叁玖网络技术(北京)有限公司 京ICP备09011420号 <br />
+  特别声明：本站信息仅供参考　不能作为诊断及医疗的依据　本站如有转载或引用文章涉及版权问题请速与我们联系 </div>
+</div>
+<script type="text/javascript">
+	function dologin(){
+		var longinError=function() {
+			$('#tlogin-info').html('<font color="red">用户名或密码错误！</font>');
+		};
+		var html = '';
+		var username = $('#l-username').val();
+		var password = $('#l-password').val();
+		if(username.length==0||password.length==0){
+			longinError();
+			return false;
+		}
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/login/?username="+username+"&password="+password+"&format=json&jsoncallback=?",function(data){
+			if(data!='type0'){
+					setcookie('localuser',username);
+					o = eval( "(" + data + ")" );
+					html='<p class="welcome" onmouseover="showlogin('+o.userid+')">您好，<font color="Red">'+o.username+'</font>欢迎进入久久健康社区！</p><ul class="top-tip"><li><a href="http://home.9939.com/user">我的空间</a></li><li><a href="javascript:;" onclick=" return logout();" target="_self">退出</a></li><li class="help"><a href="#">帮助</a></li></ul>';
+					$('.t-login').addClass('k-display-none');
+					$('.temp-iframe').hide();
+					$('#login').html(html);
+					showlogin(o.userid);
+				}else if(data=='type0'){
+					longinError();
+				}
+		});
+		return false;
+	}
+	function setcookie(name, value, days)
+	{
+		var expire = new Date();
+		if(days==null || days==0) days=365;
+		expire.setTime(expire.getTime() + 3600000*24*days);
+		document.cookie = name + "=" + escape(value) + ";expires="+expire.toGMTString();
+	}
+	function getcookie(name)
+	{
+		var arg = name + "=";
+		var alen = arg.length;
+		var clen = document.cookie.length;
+		var i = 0;
+		while(i < clen)
+		{
+			var j = i + alen;
+			if(document.cookie.substring(i, j) == arg) return getcookieval(j);
+			i = document.cookie.indexOf(" ", i) + 1;
+			if(i == 0) break;
+		}
+		return null;
+	}
+	function getcookieval(offset)
+	{
+		var endstr = document.cookie.indexOf (";", offset);
+		if(endstr == -1)
+		endstr = document.cookie.length;
+		return unescape(document.cookie.substring(offset, endstr));
+	}
+	function logout(){
+		
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/logout/?format=json&jsoncallback=?",function(data){
+			var html = '<p class="welcome">您好 欢迎进入久久健康社区！</p>	<ul class="top-tip">	<li class="g-login" onclick="tLogin(this);return false;"><a href="/">登录</a></li>	<li><a href="http://ask.9939.com/register">注册</a></li>	<li class="help"><a href="http://ask.9939.com/rule.shtml" target="_blank">帮助</a></li>	</ul>';
+				$('#login').html(html);
+				location.reload();
+				return false;
+		});
+	}
+	
+</script>
+<div class="mod tmod-02 t-login k-display-none" id="k-display-none"><span class="top"><span class="tl"></span><span class="tr"></span></span>
+  <div class="inner"><span class="close" style="cursor:pointer"></span>
+    <div class="t-innerWrap" id="t-innerWrap">
+      <form action="#" method="get" accept-charset="utf-8">
+        <table>
+          <tr>
+            <td><label for="l-username">用户名</label></td>
+            <td><input type="text" id="l-username"/>
+              <span class="tlogin-info" id="tlogin-info">请输入注册时所用邮箱</span></td>
+          </tr>
+          <tr>
+            <td><label for="l-password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label></td>
+            <td><input type="password" id="l-password"/>
+              <span class="tlogin-info">请输入密码</span></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><span>
+              <input type="submit" value="登录" class="t-submit" onclick="return dologin();" style="cursor:pointer;"/>
+              </span><span class="tlogin-info">还没账号，<a href="http://ask.9939.com/register">立即注册</a>一个</span></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+  <span class="bottom"></span></div>
+</div>
+</div>
+<div class="mod sbmod-09 loginPop" id="showlogin" style="display:none"><span class="top"><span class="tl"></span><span class="tr"></span><span class="tf"></span><span class="tt">鼠标移动到用户名，再次显示</span><span class="tb"></span></span>
+  <div class="inner">
+    <div class="fblock">
+      <p id="w_right"><span>好友请求
+        <label id="requestnum">0</label>
+        条</span><span>问答回复
+        <label id="replynum">0</label>
+        条</span><span>好友消息
+        <label id="newsnum">0</label>
+        条</span></p>
+    </div>
+    <div class="t-innerWrap">
+      <ul class="concern" id='w_up'>
+        <li><span><a href="#">我的提问</a></span></li>
+        <li><span><a href="#">我要提问</a></span></li>
+        <li><span><a href="#">站内消息</a></span></li>
+        <li><span><a href="#">完善资料</a></span></li>
+      </ul>
+      <h4>热点推荐&nbsp;&gt;&gt;</h4>
+      <ul class="t-rec" id="w_hot">
+        <li><a href="#">健康生活有奖活健康生活有奖活健康生活有奖活动</a></li>
+        <li><a href="#">健康生活有奖健康生活有奖活健康生活有奖活活动</a></li>
+      </ul>
+    </div>
+  </div>
+  <span class="bottom"><span class="bl"></span><span class="br"></span></span></div>
+<div style=" display:none; overflow:hidden; height:0;">
+  <script src='http://w.cnzz.com/c.php?id=30033500&l=3' language='JavaScript' charset='gb2312'></script>
+  <script type="text/javascript" src="http://js.tongji.linezing.com/1310077/tongji.js"></script>
+  <noscript>
+  <a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1310077/tongji.gif"/></a>
+  </noscript>
+  <!-- 2010-07-15 -->
+  <script src='http://w.cnzz.com/c.php?id=30033558&l=3' language='JavaScript' charset='gb2312'></script>
+</div>
+<script type="text/javascript">
+$(function(){
+			$(".loginPop .tb").bind('mouseover',function(){
+				$(this).addClass("tbHover");
+				$(".loginPop .tt").show();
+			});
+			$(".loginPop .tb").bind('mouseout',function(){
+				$(this).removeClass("tbHover");
+				$(".loginPop .tt").hide();
+			});
+            $(".loginPop .tb").bind('click',function(){
+				$(this).parent().parent().hide();
+			});
+
+		});
+		//收藏
+function addfavorite() {
+	if(document.all){ 
+		window.external.addFavorite('http://ask.9939.com','9939问答');
+	}
+	else if(window.sidebar)
+	{
+		window.sidebar.addPanel('9939问答', 'http://ask.9939.com', "");
+	}
+}
+</script>
+</body></html><script>
+uc = getcookie('localuser');
+if(uc==null){uc='';}
+$('#l-username').val(uc);
+</script>
+<!--google 代码统计 -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18191280-1']);
+  _gaq.push(['_setDomainName', '.9939.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18191280-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!--google 代码统计 -->

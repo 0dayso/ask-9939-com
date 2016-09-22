@@ -1,0 +1,243 @@
+@charset "utf-8";
+/* CSS Document */
+.font{font-family:"microsoft YaHei";}
+.container{width:1000px; margin:0 auto;}
+.mokd{width:1000px; margin:0 auto;}
+.w678{ width:678px;}
+.w678x{border: 1px solid #e4e4e4;  background: #f8f8f8; padding-bottom: 23px;}
+.mr20{ margin-right:20px;}
+.w300{width:300px;}
+.fl{ float:left;}
+.fr{ float:right;}
+.mTop{ margin-bottom:18px;}
+.ksul {height:48px;line-height:48px;font-size:14px; border-top:3px solid #1ebfc7;border-left:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; border-right:1px solid #e4e4e4;}
+.ksul li{position:relative;float:left;}
+.ksul li a{padding:0 5px; text-decoration:none; display:inline-block; cursor:pointer;}
+.ksul li a:hover{color:#fff;background:#1ebfc7;}
+.ksul li.on{padding:0 -2px;background:#1ebfc7; text-align:center;}
+.ksul li.on a{color:#fff;}
+.ksul  li.on:after{ height:48px; line-height:48px; text-align:center;cursor:pointer;content:"";position:absolute; top:58px; left:35%; background: url(../images/n_jt.png) no-repeat;width:18px; height:10px;}
+.l_rwz_b{width:151px; letter-spacing:1px;}
+.ksul .c_cuur a{ color:#fff;}
+.mebox{ border:1px solid #e4e4e4; margin-top:18px;  padding:17px 17px 0 14px;}
+.ksul li a{ color:#666;}
+.mebox_a  a{ padding:0px 6px; height:25px;line-height:25px; display:inline-block;table-layout:fixed;word-break:keep-all; margin: 0 6px 7px 0;}
+.mebox_a a.active{background:#1ebfc7;color:#fff;}
+.meline{ border-top:1px dashed #ccc;padding-top:15px; margin-top:5px;}
+.meline a{ display:inline-block; padding:0px 6px;margin:0 2px 14px 0;}
+.meline a:hover{ color:#ff6600;}
+.bnner{ padding:19px 0;}
+.l_ques{ overflow:hidden; border:1px solid #e4e4e4;}
+.lw_tab{ height:42px;background:#f2f2f2;  overflow:hidden; zomm:1;}
+.lw_tab a{ font-size:16px;text-align:center; height: 42px; line-height:20px; diaplay:inline; float:left; color:#000; text-decoration:none; }
+.nosanme a{ padding:10px 27px;}
+.lw_tab a.indexahover{ cursor:pointer;background:#fff;font-size:18px; text-decoration:none; line-height:18px;height: 42px;border-right: 1px solid #e4e4e4; border-left: 1px solid #e4e4e4;
+ border-top:2px solid #1ebfc7;font-weight:bold;}
+.kmname{ background:#f0f6fc; height:34px; line-height:34px;}
+.lKtit{width:406px;}
+.rKtit{width:240px;}
+.kmname,.state{padding:0 8px 0 6px;}
+.kmname span{ font-family:"宋体"; display:inline; font-size:14px; color:#000; float:left;}
+.lpom{width:406px;}
+.hf_num{ width:68px; text-align:center;}
+.lpom span{ display:inline; float:left;}
+.rpom span{ display:inline; float:left;}
+.rpom .wprob{ background: url(../images/dh.png)  no-repeat 13px -19px; padding-left:18px; width:58px; text-align: center;}
+.rpom .yprob{ background: url(../images/dh.png)  no-repeat 10px 15px;padding-left:18px; width:58px; text-align: center;}
+.rpom{ width:240px;  font-size:12px;}
+.zx_num{width:78px; text-align:center;}
+.ms_num{width:68px; text-align:center;}
+.tw_num{width:94px; text-align:center;}
+.state .asktime{width:96px; text-align: center;}
+.rpom span{ display: inline; _ display: inline; *display: inline;}
+.tuo span{ margin-right:5px;}
+.rpom .xus_num,.rpom .xus_num{  margin: 0 6px 0 23px;}
+.tuo span a{font-family:"宋体";}
+.state{height:40px; line-height:40px;}
+.yobg{background:#f5f5f5;}
+
+.nobg{background:#fff;}
+.kebox{margin-top:14px;padding:0 8px 20px 8px;font-family:"宋体";}
+.page{ text-align:center; font-size:0; margin-top:28px;}
+.page a{ display:inline-block; border:1px solid #d7d7d7; font-size: 16px; color:#000; min-width:18px; padding:0 4px; height:28px; line-height:28px; vertical-align:top; margin:0 5px 10px 0;}
+.page a:hover{ text-decoration:none;background:#1ebfc7; color:#fff;}
+.page .lpage_a{ width:85px; font-size: 14px; text-align:center;}
+.qlab{ border:1px solid #e4e4e4; overflow:hidden; padding:20px 0 0 10px ;}
+.qlab a{float:left; display:inline;font-size:16px ; font-family:"microsoft YaHei"; margin:0 10px 10px 0 ;width:94px; height:57px; line-height:57px; text-align:center;color:#fff;}
+.mTop20{ margin-top:20px;}
+.l_rqh  a.indexahover:after{ content:"";position:absolute; top:43px; left:68px; background: url(../images/jt02.png) no-repeat;width:18px; height:10px;}
+.q_pic{ width:153px; height:35px;}
+.qlab .a-blu{background:#089ad9;}
+.qlab .a-blu{background:#089ad9;}
+.qlab .a-qs{background:#1ebfc7; width:108px;}
+.qlab .a-two{width: 206px; font-size:24px;}
+.qlab .a-tr{width: 213px; font-size:24px;}
+.qlab .a-fo{width: 208px; font-size:24px;}
+.ktex h2{color:#666; font-size:14px; margin-bottom:13px;font-family:"宋体";letter-spacing: 1px;}
+.mTop15{ margin-top:15px;}
+.tw_xb{color:#333;}
+.colsam{color:#999;}
+.coline{ height:12px; width:1px; color:#b5b5b5;margin:0 12px;}
+.qask input{width:128px;height:40px;border:none;cursor: pointer; background:url(../images/mask.jpg) no-repeat; text-indent:-999;}
+.mqask input{background:url(../images/mask1.jpg) no-repeat;width:128px;height:40px;border:none;cursor: pointer; }
+.zjDv{border:1px dotted #e2e2e2;padding-top:15px;position:relative;zoom:1;}
+.nktit{ background: #f5f5f5 url(../images/icon.png) no-repeat -271px 4px; padding-left: 19px;}
+.dres{width:336px; overflow:hidden; float:left; margin-bottom:32px;}
+.nktit{  padding: 9px 0 7px 15px; border-bottom:1px solid #ccc;}
+.nktit img{ display:block;}
+.nk .dres_pic{float:left ; margin-right:10px;}
+.nk { border:1px solid #e4e4e4; overflow:hidden;}
+.nk .dres_m0{ float:left;}
+.nkop{ padding:30px 0  0 13px;}
+.dres_m0 h3{ font-size:14px;}
+.dres_m0  p{ line-height:31px; font-size:12px;}
+/*外边距*/
+.mTop20{ margin-top:20px;}
+.mRit36{ margin-right:20px;}
+.mH10{ margin-top:10px;}
+.mTop23{ margin-top:31px;}
+.mTop8{ margin-top:8px;}
+.mTop15{ margin-top:15px;}
+/*在线提问*/
+.wmdoc_ask{padding:18px 13px 10px 13px;background: #f3f3f3;font-family:"宋体";}
+.wmdoc_ask b{ font-weight:normal; color:#333; font-size:14px; margin-right:8px;}
+.mp{ position:relative; z-index:999; width: 24px;}
+.w14{width:14px; height:14px;display:inline-block; margin-top:3px;} 
+.nan,.women{ font-size:14px;}
+.kotit{ margin-bottom:14px;  overflow: hidden; background:url(../images/tws.png) no-repeat left; padding-left: 23px;}
+.mcko{color:#999;  margin-top: 1px;}
+.mcko span{margin: 0 4px 8px; font-size:12px;}
+.mTop15{ margin-top:15px;}
+.mTop20{ margin-top:20px;}
+.mcko  input{margin-right:10px;}
+.ques_lined5{width:90px; height:25px; background:#fff; border:1px solid #e4e4e4; padding:10px 0 0 10px;padding-right:8px;}
+.ques_w55{width:55px; height:20px;padding:0; margin-top:10px;}
+.quesage{width:58px; color:#999; font-size:14px;}
+.qaskce{ text-align:center;}
+.showage{text-align:right;}
+.showage span{font-size:14px; color:#555;  display: block; cursor:pointer;}
+.kotit span{display: block;float: left;}
+.asktex_d{height:36px;font-size:14px; border:0; width:638px; padding:12px 0 0 0; line-height:22px;}
+.asktex_b{height:82px;font-size:14px; border:0; width:638px; padding:12px 0 0 0;line-height:22px;}
+.qjd{ color:#fd6500; margin-top:2px; font-size: 16px;font-family:"microsoft YaHei";}
+.quesw162{ width:162px;}
+.quit_writ{ width:124px; color:#333;font-size:14px;}
+.ks_show{ background: url(../images/pic_jt.png) no-repeat 19px 5px; width:28px; height:11px; cursor:pointer;}
+.ks_show{ background: url(../images/pic_jt.png) no-repeat 19px 5px; width:28px; height:11px; cursor:pointer;}
+.ksui{ cursor:pointer; background: url(../images/pull.png) no-repeat 16px 5px;  padding-right: 48px;}
+.rol{position: absolute;left: -21px;top:25px;background: #fff;border: 1px solid #d5d5d5;border-top: 0px;padding-bottom: 5px;width:52px;}
+.kkol{position: absolute;left:100px;top: 245px;background: #fff;border: 1px solid #d5d5d5;padding-bottom: 5px;width: 180px;border-top:0;}
+.kkol a:hover{ text-decoration:none;}
+.quesw162 .kkol a{ text-align:left; padding-left:10px;}
+.ageLx a {display: block;height: 25px;line-height: 25px;text-align: center;color:#898989;font-size:14px;text-decoration:none;cursor:pointer;}
+.ktex h2{color:#666; font-size:14px; margin-bottom:13px;font-family:"宋体";letter-spacing: 1px;}
+.txa{ border:1px solid #e5e5e5; height:65px; background:#fff;padding:0 8px 3px 12px;}
+.asknum ,.etnnum{ text-align:right; color:#999; font-size:12px; }
+.twnose{ border:1px solid #e5e5e5; height:110px;}
+.yzcl{ overflow:hidden;}
+.pic_yzm{ margin:4px 0 0 8px;}
+.boder{border:1px  solid #f60;}
+.ktex  .focus {border: 1px solid #00d4df;}
+.mwTop14{ margin-top:-14px;} 
+/*科室下拉*/
+.ksxl{ width:600px;  border:1px solid #00d4dd; background:#fff; padding-bottom:16px;}
+.choks{ padding:10px 0;background:#f5fcfd;font-size:14px; position:relative;}
+.choks p{ display:inline;font-family:"microsoft YaHei";}
+.ple_ks{ color:#333; font-weight:bold;}
+.cho_zj{color:#666;}
+.ks_xlab a{ font-size:12px; color:#666; margin:0 4px;}
+.ks_xlab a:hover{text-decoration:none;}
+.choks_mian{ border:1px  solid #d5d5d5; padding:0 8px; margin:8px 14px 14px 14px;}
+.mTop12{ margin-top:12px;}
+.choks_line{ border-bottom:1px  dashed #d5d5d5;}
+.kstw_a a{ display:inline; float:left;  margin:0px 10px 14px 6px; font-size:12px; cursor:pointer;}
+.kstw_a a:hover{color:#ff6600;}
+.chosame{overflow:hidden; padding-left:5px;}
+.ksxl .pl18{ padding-left:18px;}
+.chosame h2{width:73px; height:22px; font-size:14px; background:#00d4dd; line-height:22px; text-align:center;color:#fff;}
+.ksxl .cko_wrblue{color:#00d4dd; font-size:12px; margin-right: -10px;}
+.chock{ overflow:hidden;}
+.chock span{ display:block; float:left;}
+.ksxl .cho_bqc{ width:14px; height:14px;text-align:center;margin-right:14px; background:#fff; color:#000; border:1px solid #d5d5d5; font-size: 14px;font-family:"microsoft YaHei"; font-weight: bold;}
+.cho_confirm{ margin:0 269px;width:74px; height:28px; line-height:28px;background:#00d4dd; border:1px solid #21bbc1; font-weight:bold; text-align:center; color:#fff; font-size:16px; cursor:pointer;}
+.xlerr{ position:absolute; right:-10px; top:-16px;cursor:pointer;}
+.dopc1{position: absolute; z-index: 99999; height: auto !important; top: 39px;right: -39px; display: none;}
+.dopc{position: absolute; z-index: 99999; height: auto !important; top: 198px;right: -116px;  display: none;}
+.color{ color:#ff6600;}
+/*输入框宽度*/
+.ask_h153{height:166px;}
+.ask_h127{ height:136px;}
+.wred{ color:#df0d00;}
+.quesw85{ width:85px;}
+ .kscn {background:url(../images/cn.png) no-repeat; width:45px; height:16px; font-size:12px; line-height:16px;display:block;color:#fff; padding:0 6px; margin:10px 0 0 8px;}
+ .Bigbox{ margin-top:15px;}
+.ques_w163 { width:155px;padding-right:8px; }
+.prwd_age{cursor:pointer; background: url(../images/pull.png) no-repeat 17px 5px;  padding-right: 43px; }
+.inw140{width:138px; }
+.yzcl{ overflow:hidden;}
+.pic_yzm{ margin:4px 0 0 8px;}
+.xuslogo{ background:url(../images/xllogo.jpg) no-repeat; width:13px;height:14px;  display: inline-block; margin-left:6px;  margin-top: 13px;}
+.rulk li{margin-bottom:12px;background:url(../images/rdt.jpg) no-repeat  0 6px;  padding-left:12px;}
+.rulk li span{ display:inline-block; margin-right:7px;}
+/*提问页*/
+.w693 {width:693px;border:1px solid #e4e4e4;background:#f8f8f8; padding-bottom:23px;}
+.line_blu{/overflow:hidden;  margin: 20px 0 0 0; border-top: 1px solid #1ebfc7;}
+.quit_bann{margin:21px 0;}
+.quituser{width:584px; font-family:"宋体"; font-siz:12px; margin:25px 55px 0 55px; position:relative;}
+.quituser .wrco{ color:#00d4dd; font-size:18px;font-family:"microsoft YaHei"; font-weight:normal;}
+.quituser .asktex_d{font-size:14px;width:568px;}
+.chanm{ overflow:hidden;zoom:1;color:#999;font-size:12px;}
+.chanm i{color:#F00; font-style:normal;}
+.quit_absu{background:url(../images/pic_quiz.png) no-repeat; text-align:center;width:43px; height:59px; position:absolute; top:-4px; left: -74px; }
+.mTop25{margin-top:21px;}
+.showage span{font-size:12px; color:#555;  display: block;}
+.quit_absu2{background:url(../images/pic_quiz2.png) no-repeat;}
+.quit_absu b{ font-size:26px; color:#fff; font-weight:normal;}
+.quitov{overflow:hidden;}
+.tw_expert{margin-top: 17px;}
+.tlie{overflow: hidden;margin-bottom: 14px;}
+.ask_example b{width:42px;height:17px; padding:0 5px;  margin-top: 2px;background:url(../images/quit_m0.png) no-repeat;line-height:17px; color:#fff;font-size:12px;}
+.ask_example p{color:#999; width:529px;font-size:12px;}
+.asktwo {padding-left:28px; background:#fff; padding:22px 0 11px 20px;}
+.asktwo li{ height:38px; margin-bottom:14px;}
+.yzm_quit_writ{ width:85px; color:#999;}
+.blett{ letter-spacing:3px;}
+.asktwo b{ width:80px; font-size:14px; color:#333; font-weight:normal;}
+.pregnant{ display:none;margin-left:20px;}
+.in40{ width:35px; height:20px; border:1px solid #d5d5d5;margin-right:4px;padding-left:5px;}
+.win14{width:14px;height:14px;display: inline-block;margin-right:6px;  margin-top: 3px;}
+.lin27 .cor999{color:#999;}
+.lin27{line-height:21px;}
+.mtbT10 { margin:10px 0;}
+.quit_cs{ margin-left:10px; color:#999; font-size: 12px;}
+.quit_cs a{color:#999;}
+.pull-down{ background: url(../images/pull.png) no-repeat 17px 4px; width:30px; height:14px; cursor:pointer;}
+.kl_nome2 { background: url(../images/pull.png) no-repeat 18px 4px; width:30px; height:14px;}
+.ruser_butt{ width:62px; height:23px; background: url(../images/butt.jpg) no-repeat; line-height:23px; text-align:center;}
+.ruser_butt a{color:#00d4dd;}
+.doc_quit{margin:4px 6px 0 0;}
+.doc_quit a img{width:60px; height:60px;}
+.quit_docwrit p{margin-bottom:1px;font-family:"宋体"; font-size:12px;}
+.quitr_doctor{overflow:hidden; padding:0; border-top:3px solid #00d4dd;}
+.rquit_line{ border-bottom:1px solid #e4e4e4; padding:8px 0 8px 10px;}
+.rqure3{ border:1px solid #e4e4e4; border-top:none;border-bottom:none;}.mle10{margin-left:9px;}
+.asktwo .hTe10{margin-bottom:15px;color:#999;height:20px;}
+.asktwo .hTe10 span{ margin:0 5px;}
+.asktwo .hTe10 span input{ margin-right:10px;}
+.mTop50{margin-top:23px;}
+.quituser .subdovt input{ width:155px; height:45px; font-size:24px; margin-left:9px;font-family:"microsoft YaHei";}
+.quit_setin{ margin-top:38px; overflow:hidden;}
+.hos_lie{ padding-left:9px;}
+.mLe15{ margin-left:8px; font-size:12px;}
+.mqask{ margin-top:-3px;}
+/*向专家提问页*/
+.expert_name{ overflow:hidden; margin-top:25px;}
+.introdu{ width:494px;color:#666;}
+.introdu h2{font-size:14px;  margin-bottom:13px;}
+.introdu strong a{ color:#00d4dd;}
+.introdu p a{font-size:12px;color:#666;}
+.expert_pic{border:1px solid #e4e4e4; margin-right:15px;}
+.expert_pic img{ width:70px; height:70px;}
+.mTop18{ margin-top:18px;}
+.a-none{ margin-top:0;}
+

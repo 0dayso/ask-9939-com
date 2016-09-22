@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+.w695{width:695px;}
+.medical{ border:1px solid #e4e4e4; position:relative;}
+.qlatb{ position:absolute; top:10px; left:-10px;}
+.med_tit{ background:#f5fcfd;   padding:14px 0 13px 25px;}
+.general{ padding:0 7px 0 20px;}
+.general h3{ont-family:"microsoft YaHei"; height:25px; background:#bebdbd;color:#f5fcfd; text-align:center; font-size:16px; width:90px; line-height:25px;}
+.qmore_name{margin-bottom:12px;height:23px;}
+.qmore_name li{ float:left; width: 123px;}
+.qmore_name a{  font-size:14px; font-family:"宋体"; text-align:left;}
+.qmore_name  a:hover{ color:#1ebfc7; text-decoration:none;}
+.qmore_name a.indexahover{padding-bottom:5px; color:#1ebfc7;border-bottom:2px solid #1ebfc7;  font-weight: bold;}
+.cj_secname{ margin-bottom:18px; overflow:hidden;}
+.cj_secname a{margin: 0 2px 0  0;color:#666; font-size:14px;display:inline; float:left;font-family:"宋体";width:70px;word-break:keep-all;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mTop24{ margin-top:24px;}
+.cj_plom2 a{ margin-right:10px;}
+.cj_secname a:hover{color:#1ebfc7;}
+.qsline{ border-bottom:1px dashed #d8d8d8;overflow: hidden;}
+.cj_plo a{color:#666; margin-right:9px;}
+.cj_plo1 a{ margin-right:14px;}
+.mTop18{ margin-top:18px;}
+.qhot_bq{margin-right:6px;position: relative; padding-top:61px;}
+.qhot_lab{ position:absolute; top:18px; left:-1px;width:78px;height:28px; background:url(../images/qbl.png) no-repeat; border-left:2px solid #12848a; line-height:28px; padding:0 10px;}
+.qhot_lab h2{color:#f5fcfd; font-size:16px;}
+.qhot_secname{ margin-bottom:0;}
+.qhot_secname a{margin: 0 0  10px 0;}
+.qhot_secname2 a{margin: 0 0  9px 0; width:59px;}
+#tbox {position:fixed;z-index:500;}
+#tbox a{display:block;}
+.qskul{ position:relative;}
+.qskul  li { padding:0;}
+.qskul  li a{ display:block; padding:0 5px; cursor:pointer;}
+.qskul  li a:hover{background:#1ebfc7;color:#fff; text-decoration:none;}
+.qskul  li.on:after{background:none;}
+.pl6{ padding-left:15px;}
+.bgwr{ background:#fff;}
+#tbox{width:50px;float:right; position:fixed;
+_position:absolute;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+_margin-bottom:10px;
+}/*解决IE6下不兼容 position:fixed 的问题*/
+#tbox a{ display:block;}
+#gotop{ width:50px; height:50px; background:url(../images/xfdu2.jpg) no-repeat; position:absolute; top:0px; z-index:900;cursor:pointer; margin-top:10px;}
+#gotop:hover{background:url(../images/xfdu.jpg) no-repeat;}
+po

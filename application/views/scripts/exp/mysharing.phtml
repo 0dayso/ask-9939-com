@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>我的经验_久久问医健康经验</title>
+        <link rel="canonical" href="http://wapask.9939.com/jingyan/shareing/meshare/" >
+        <link rel="stylesheet" type="text/css" href="/ask_details/css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="/ask_details/css/list.css"/>
+        <script type="text/javascript" src="/ask_details/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask_details/js/scrollbar_exp.js"></script>
+        <script type="text/javascript" src="/ask_details/js/gundong_exp.js"></script>
+        <script type="text/javascript" src="/ask_details/js/detail.js"></script>
+    </head>
+    <base target="_blank">
+    <body>
+        <!-- 头部开始 -->   
+        <!--#include virtual="/include/exp/exp_header.html"-->  
+        <!-- 头部结束 -->
+
+        <div class="waitf"><img src="/ask_details/images/wai.jpg" alt=""><h3>敬请期待...</h3><p><span>10</span>秒后自动返回经验首页。</p></div>
+
+        <!--底部 开始-->
+        <!--#include virtual="/include/exp/exp_footer.html"-->  
+        <!-- 底部 结束 -->
+    </body>
+</html>
+<script type="text/javascript">
+    $(function () {
+            var countdown = 10;
+            setInterval(function () {
+                --countdown;
+                if (countdown > 0) {
+                    $('.waitf span').text(countdown);
+                } else if (countdown == 0) {
+                    $('.waitf p').text('正在返回首页...');
+                } else {
+                    location.href = 'http://ask.9939.com/jingyan/';
+                }
+
+            }, 1000);
+    });
+</script>

@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>我要提问_健康问答_久久健康网</title>  
+
+<link rel="stylesheet" type="text/css" href="/images_ask/css/r.css"></link>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/b.css"></link>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/g.css"></link>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/m.css"></link>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_index.css"/>
+<link href="/images_ask/css/lw-askProcess.css" type="text/css" rel="stylesheet" />
+
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+$(document).jTab({
+ menutag:".hd li"
+});
+});
+
+function getPages(url){
+		var html = '';
+		jQuery.ajax({
+			url : url+'&src=JQ',
+			dataType:"json",
+			cache:false,
+			success:function(data){
+				jQuery('#page_'+data.status+'a').html(data.pagehtml);
+				jQuery('#page_'+data.status+'b').html(data.pagehtml);
+				jQuery.each(data.aList,function(i){
+					if(data.aList[i].content==null)data.aList[i].content='';
+					html+='<dl><dt><span>'+data.aList[i].ctime+'<a href=\"#\">'+data.aList[i].username+'</a></span><strong class=\"false\"><a href=\"/ask/show/?id='+data.aList[i].id+'\">'+data.aList[i].title+'</a></strong></dt><dd><p class=\"info\"><em>悬赏分：'+data.aList[i].point+'</em> - 离问题结束还有 '+data.aList[i].endtime+'</p><p class=\"des\">'+data.aList[i].content+'</p></dd></dl>';
+				});
+				jQuery('#list'+data.status).html(html);
+			}
+		});
+	}
+	
+</script>
+</head>
+<body>
+<?php require(APP_ROOT."/header_new.shtml");?>
+		<div id="bd">
+			<div class="lw-m0s6 l-fix">
+				<div class="col-m">
+					<div class="m-wrap">
+						<div class="lw-askProcessL">
+							<div class="hd topBg">
+								<h2>快速提问</h2>
+							</div>
+							<div class="bd l-fix">
+							<form id="ask_form" name="" method="POST" action="/ask/do/do/save">
+								<table cellpadding="0" cellspacing="0">								
+									<tbody>									
+										<tr>
+											<td class="l">您的提问</td>
+											<td class="r"><input class="inp long" id="ask_title" name="info[title]"  type="text" onblur="return searchdata()"
+ onfocus="if(this.value=='请输入您的提问标题') this.value='';" value="<?=$this->kw?>" /></td>
+										</tr>
+										<tr>
+											<td class="l">问题说明</td>
+											<td class="r">
+												<textarea name="" id="content"></textarea>
+											</td>
+										</tr>
+										<tr>
+											<td class="l">问题分类</td>
+											<td class="r"><span id="load_catid_other"></span><input type="hidden" name="info[classid]" id="catid" value="" />       										 
+<script type="text/javascript">
+var __html_start = '<select onchange="jQuery(\'#catid\').val(this.value);category_load(this.value); disabled=\'disabled\'"><option value="0">请选择</option>';
+var __html_end = '</select>';
+function category_load(id)
+{
+	$.get('/ask/loadcat/', { id: id },
+	function(data){
+		//$('#load_catid').html(data);
+			if(data){
+				//$('#load_catid_other').html('');
+				$('#load_catid_other').append(__html_start + data + __html_end);
+			}
+	});
+}
+
+
+function category_reload()
+{
+	$('#load_catid').html('');
+	$('#load_catid_other').html('');
+	category_load(0);
+}
+category_load(0);
+</script>
+
+												<a href="javascript:void(0)" onclick="category_reload()"> 重选 </a><span>选择正确的分类，您的问题将更快得到解答</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="l">健康标签</td>
+											<td class="r">
+												<input class="inp long" id="tag" name="info[tag]"  type="text" value="如果没有合适的分类，请输入症状标签 如：“头疼”多个用“，”号隔开" onfocus="this.value=''"/>
+											</td>
+										</tr>
+										<tr>
+											<td class="l">悬赏积分</td>
+											<td class="r">
+												<select name="info[point]" class="select">
+											  	<option value="0" >不悬赏</option>
+											  	<option value="10">10分</option>
+											  	<option value="20">20分</option>
+											  	<option value="50">50分</option>
+											  	<option value="100">100分</option>
+											  </select><span class="icon">悬赏分越高，您的问题将越受关注，从而得到最佳答案</span>
+											</td>
+										</tr>
+										<tr>
+											<td class="l">问题广播</td>
+											<td class="r">
+												<input class="randC" type="radio" name="info[broadcast]" value="1" />是
+												&nbsp;&nbsp;&nbsp;
+												<input class="randC" type="radio" name="info[broadcast]" value="0" checked />否												
+												<span>(将问题发布在首页广播24小时，需要扣除20点积分)</span>
+											</td>
+										</tr>
+										
+										<tr>
+											<td class="l">有效期</td>
+											<td class="r">
+												<select name="info[term]" class="select">
+													<option value="10" >10天</option>
+													<option value="15" >15天</option>
+													<option value="20" >20天</option>
+													</select><span>请选择问题有效期</span>	
+													<input type="checkbox" name="info[hiddenname]" value="1" /> 匿名设置		  
+										  <span>(您可以对问题设定匿名，但您需要付出积分2分)</span>										
+											</td>
+										</tr>
+										<?php if(!($this->user_info['uid'])) { ?>
+										<tr>
+											<td colspan="2" class="l r">
+												<div class="b_block">
+													<input class="randC" type="radio"  checked name="register" value="0"  onclick="changeLabel(this, 0, 1);" />
+													会员<span>(已注册会员请登录提问，获得5点积分)</span>
+													<span class="w1"></span>
+													<input class="randC" name="register" value="1" onclick="changeLabel(this, 1, 0);" type="radio" />非会员<span>(未注册会员点此提问)</span>
+													<p class="tMarginLg">
+													<span id="label_0">
+													<span class="otherTxt">邮箱</span><input type="text" name="username" id="username" class="inp short" />
+													  
+													<span class="otherTxt">密码</span><input type="password" name="pwd" id="pwd" class="inp short" />
+												  </span>
+												  <span id="label_1" style="display:none;">
+													<span class="otherTxt">邮箱</span><input type="text" name="mail" id="mail" class="inp short" /><strong>*</strong> 请填写真实邮箱，您将自动成为久久健康网会员</span>
+												  </span>
+													<span> 
+													</p>
+												</div>
+											</td>
+										</tr>
+										<?php } ?>
+										
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2">
+												<input class="btn" name="Button1" type="button" value=""  onclick=" return checkForm(this);"/>
+												<input class="btn btn1" name="Button1" type="reset" value="" />
+											</td>
+										</tr>
+									</tfoot>									
+								</table>
+								</form>
+								<div class="tip l-fix">
+									<h3><a href="###">如何正确提交您的问题？</a></h3>
+									我们提醒您注意，您需要注册并登录，才能享受我们的完整服务进行各项操作，否则您只有搜索和浏览的权限。注册成为“问答”的用户，是完全免费的。同时，如果您是9939健康网的用户，您可以直接登录。如果您连续登录三次都显示错误，将进入配有验证码的页面。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-s lw-askProcessR">
+				   <div class="zhquestion_ad" style="margin-top:26px">
+					  <a href="<?=WEB_URL?>huodong/" target="_blank"><img src="/images_ask/images/cyLink.jpg" /></a>
+					</div>
+					<div class="tip l-fix" id="search_data" style="margin-top:10px">
+						<h2>与"<?=$this->kw?>"相关的问题：</h2>
+						<span>查看他们能否解答您的疑问</span>
+						<ul class="tMarginLg">
+							<?for($i=0;$i<$this->num;$i++){?>
+						<li><a href="/ask/show/id/<?=$this->list[$i]['ID']?>" target="_blank"><?=$this->list[$i]['TITLE']?></a>
+								<?=$this->list[$i]['CONTENT']?>
+							</li>
+						<?}?>
+						</ul>		
+					</div>					
+				</div>
+			</div>	
+			<div style="display:none"><script type="text/javascript" src="http://js.tongji.linezing.com/1350708/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1350708/tongji.gif"/></a></noscript>
+			</div>	</div>	
+
+<?php require(APP_ROOT."/footer.html");?>
+		
+<script type="text/javascript" src="/images_ask/js/dialog.js" ></script>
+<script type="text/javascript">
+
+var b=new compoDialog();
+b.add(maskLayerManger.displaymaskLayer("#949494",0.5));
+	
+function changeLabel(obj, __index, __index_1) {
+	if(obj.checked) {
+		$('#label_' + __index).css('display', '');
+		$('#label_' + __index_1).css('display', 'none');
+	}
+}
+
+function goAjax(obj) {
+	var _id = obj.value;
+	$(obj).attr('disabled', 'disabled');
+}
+
+function checkForm(obj) {
+	if(!checkTag()) {
+		return false;
+	}
+	$(obj).attr('disabled', 'disabled');
+	var __d = $('#ask_form input:checked');
+	var __str = '';
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + __d[i].value + '&';
+		}
+	}
+
+	var __d = $('#ask_form [type=text]');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + encodeURIComponent(__d[i].value) + '&';
+		}
+	}
+
+	var __d = $('#ask_form [type=password]');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + encodeURIComponent(__d[i].value) + '&';
+		}
+	}
+
+	var __d = $('#ask_form [type=hidden]');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + __d[i].value + '&';
+		}
+	}
+
+	var __d = $('#ask_form select');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + __d[i].value + '&';
+		}
+	}
+
+	__str = __str + '&info[content]=' + encodeURIComponent($('#content').val());
+
+	
+	
+	//alert(__str);
+	
+	
+	$.ajax({
+		url:  '/ask/do/do/save/',
+		data: __str,
+		type:"POST",
+		//dataType: 'json',
+		cache:false,
+		success:function(data) {
+			//alert(data);
+			if(data=='error-100') { //帐号重复
+				alert('帐号重复！提问失败！！！');
+				$(obj).attr('disabled','');
+			} else if (data==0) {
+				alert('提问失败！！！');
+				$(obj).attr('disabled','');
+			} else if (data==404) {
+				alert('用户登录失败！！！！');
+				$(obj).attr('disabled','');
+			} else if (data) {		//成功
+				$.get('/ask/loadhtml/html/ok/id/' + data, function(msg) {
+					b.add(boxDialogManger.displayboxDialog(msg));
+					b.show('<div class="mod tmod-01"><h2 class="h2">问题提交成功</h2><span class="close"><img src="/images_ask/images/ticon_2.png" style="cursor:pointer" onclick="b.hide();parent.location=\'<?=ASK_URL?>/classid/'+$('#catid').val()+'\'"></span><div class="t-content"><span class="top"><span class="tl"></span><span class="tr"></span></span><div class="inner"></div><span class="bottom"><span class="bl"></span>&nbsp;<span class="br"></span></span></div></div>');
+					$(obj).attr('disabled','');
+				});
+			} else {				//失败
+				alert('提问失败了！！！');
+				$(obj).attr('disabled','');
+			}
+		}
+	});
+	
+	
+	
+	/*$.post('/ask/do/do/save/?' + __str, function(data) {
+		if(data=='error-100') { //帐号重复
+			alert('帐号重复！提问失败！！！');
+		} else if (data) {		//成功
+			$.get('/ask/loadhtml/html/ok/id/' + data, function(msg) {
+				b.add(boxDialogManger.displayboxDialog(msg));
+				b.show();
+			});
+		} else {				//失败
+			alert('提问失败！！！');
+		}
+	});*/
+	
+
+	return false;
+}
+
+
+//页面验证
+function checkTag() {
+	//标题
+	if($('#ask_title').val().length<2 ||$('#ask_title').val()=='请输入您的提问标题') {
+		alert('请正确填写标题！');
+		$('#ask_title').focus();
+		return false;
+	}	
+	
+	if($('#tag').val()=='如果没有合适的分类，请输入症状标签 如：“头疼”多个用“，”号隔开'){
+		$('#tag').val('');
+	}
+	
+	//问题描述
+	if($('#content').val().length<2) {
+		alert('请正确填写描述信息！');
+		$('#content').focus();
+		return false;
+	}
+	
+	
+	//问题科室 
+	if($('#catid').val().length<1) {
+		alert('请选择科室！');
+		return false;
+	}
+	
+<?php if(empty($this->user_info['uid'])) { ?>
+	if($('#label_0').css('display') == 'none') {
+		if($('#email').val() == '')
+		{
+			alert("请填写E－mail帐号!");
+			$('#mail').focus();
+			return false;
+		}
+		//开始验证
+		var email = $('#mail').val();
+		var pattern = /^([a-zA-Z0-9_-]{2,})+@([a-zA-Z0-9_-]{2,})+(\.[a-z]{2,})+/;
+		chkFlag = pattern.test(email);
+		if(!chkFlag)
+		{
+			alert("E－mail格式不正确!");
+			$('#mail').focus();
+			return false;
+		}
+	} else {
+		if($('#username').val() == '')
+		{
+			alert("请填写E－mail帐号！");
+			$('#username').focus();
+			return false;
+		}
+		//开始验证
+		var email = $('#username').val();
+		var pattern = /^([a-zA-Z0-9_-]{2,})+@([a-zA-Z0-9_-]{2,})+(\.[a-z]{2,})+/;
+		chkFlag = pattern.test(email);
+		if(!chkFlag)
+		{
+			alert("E－mail格式不正确！");
+			$('#username').focus();
+			return false;
+		}
+		
+		if($('#pwd').val() == '' || $('#pwd').val().length<6)
+		{
+			alert("密码填写错误！请认真填写!");
+			$('#pwd').focus();
+			return false;
+		}	
+	}
+<?php } ?>
+	
+	return true;
+}
+
+
+//用于ajax输出搜索结果
+function searchdata(){
+	var kw = $("#ask_title").val();
+	if(kw!=""){
+		$.get('/Ajaxsearch/index/kw/'+encodeURIComponent(kw),
+		function(data){
+			//alert(data)
+			$('#search_data').html('');
+			$('#search_data').append(data);
+		});
+	}
+}
+</script>

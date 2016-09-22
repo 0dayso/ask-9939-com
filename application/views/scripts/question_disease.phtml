@@ -1,0 +1,641 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>我要提问_久久问医</title>
+        <meta name="Keywords" content="久久问医,久久问答(ask.9939.com),中国权威的医疗健康在线问答平台." />
+        <meta name="description" content="久久问医为用户提供向专家提问问题的平台,帮助患者快速、及时地了解到自身的病况." />
+        <!--头部-->
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/main.css?v=20160810" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/second.css?v=20151203_07" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/rclumn.css?v=20151203_07" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/bd_search.css?v=20151203_07" />
+        
+        <script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/jquery.placeholder.min.js"?v=20151203_07></script>
+        <script type="text/javascript" src="/ask/v1/js/page.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/onclic.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/scrollbar.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/user_login.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/gundong.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/DD_belatedPNG.js"></script>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script> 
+        <base  target="_blank"/>
+    </head>
+    <body>
+        <!--头部 开始-->
+        <!--#include virtual="/headers_new.shtml"-->
+        <!-- 头部 结束-->      
+        <div class="line_blu"></div>
+        <div class="mokd">
+            <div class="bann"><a href="">
+                    <!-- 通栏广告1 -->
+                    <script type="text/javascript">
+                                var cpro_id = "u2316068";
+                                (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {at:"3", rsi0:"960", rsi1:"120", pat:"6", tn:"baiduCustNativeAD", rss1:"#FFFFFF", conBW:"1", adp:"1", ptt:"0", titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS:"14", rss2:"#000000", titSU:"0", ptbg:"90", piw:"120", pih:"70", ptp:"0"}
+                    </script>
+                    <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                </a></div>
+            <div class="container clearfix font">
+                <form  action="/askt/do/do/save" id="hidform" method="post" onsubmit="return check()" target="_self">
+                    <div class="w678 w678x mr20 fl">
+                        <div class="quituser clearfix">
+                            <div  class="aaa quit_absu"></div>
+                            <h3 class="wrco">填写基本信息</h3>
+                            <input type="hidden" name="info[answerUid]" id="doc_uid" value="<?php echo $this->doc['uid']; ?>">
+
+                                <?php
+                                //医生信息
+                                $doc = $this->doc;
+                                if ($doc['uid'] != 0) {
+                                    $best = $doc['best'] == '' ? '' : '擅长疾病：' . $doc['best'];
+                                    echo '<div id="' . $doc["uid"] . '" class="expert_name">
+                                        <div class="expert_pic fl">
+                                        <a href="http://home.9939.com/user/?uid=' . $doc["uid"] . '"><img src="http://home.9939.com/' . $doc["pic"] . '" alt="' . $doc["nickname"] . '" title="' . $doc["nickname"] . '"/></a>
+                                        </div>              
+                                        <div class="introdu fl">
+                                        <h2>您正在咨询：<strong><a href="http://home.9939.com/user/?uid=' . $doc["uid"] . '">' . $doc["nickname"] . '</a></strong></h2>
+                                        <p></p>
+                                        </div>
+                                        </div>';
+                                }
+                                ?>
+
+
+                                <div class="ktex mTop25 quitov" style="display: none;">
+                                    <div class="chanm"><h2 class="fl">请概括描述您的病情及疑问</h2><p class="ple_wirte  uho fr" style="display:none;">请输入<i>5-30</i>字</p></div>
+                                    <div class="txa  askm0" >
+                                        <textarea class="asktex_d splo text1" name="info[title]" id="inpuo" maxlength="30" placeholder="请简述您的问题作为标题"></textarea><p class="fr etnnum text11">0/30</p></div>
+                                    <div class="ask_example mTop15"><b class="fl">示例</b><p class="fl">鼻子老是流鼻血，是怎么回事？慢性鼻窦炎的危害有哪些？该如何治疗？</p></div>
+                                </div>
+                                <div class="ktex mTop25 quitov">
+                                    <div class="chanm solve"><h2 class="fl"><span>*</span>请填写您的健康疑问，描述越详细，医生们越容易解答</h2>
+                                        <p class="djshow fr" style="display:none;">请输入<i>5-500</i>字</p></div>
+                                    <div class="ask_h153 txa askm1" >
+                                        <textarea class="asktex_d ask_h127 text2" name="info[content]" id="inpuo_mp2" maxlength="500" placeholder="请描述您的主要病症、发病时间和病情变化情况等"><?= $this->content; ?></textarea>
+                                        <div class="more_writ"><p class="asknum  wred fl" style="display:none;">最多输入500个字</p>
+                                            <p class="fr asknum text22">0/500</p></div></div>
+                                    <div class="ask_example mTop15"><b class="fl">示例</b>
+                                        <p class="fl">我今年20岁，15岁开始来例假的，以前月经正常，现在五个月没来月经了，已经排除怀孕，但白带增多，有时候有点偏黄，小肚子也有点涨涨的感觉，请问是什么回事？该怎么治疗？</p></div>
+                                </div>
+                                <div class="ktex mTop25 quitov">
+                                    <div class="chanm"><h2 class="fl">想得到怎样的帮助?</h2>
+                                        <p class="ple_wirte fr djshow3" style="display:none;">请输入<i>5-30</i>字</p></div>
+                                    <div class="txa askm3"><textarea class="asktex_d text3" name="info[help]" id="inpuo_mp3" maxlength="30" placeholder="例：慢性咽炎怎么预防？"></textarea>
+                                        <p class="fr asknum text33">0/30</p></div>
+                                    <div class="ask_example mTop15"><b class="fl">示例</b>
+                                        <p class="fl">慢性鼻窦炎的危害有哪些？该怎么预防呢？</p></div>
+                                </div>
+                                <script>
+                                            $("#inpuo").focus().attr("placeholder", "");</script>
+                        </div>
+
+                        <div class="quituser clearfix">
+                            <div class="quit_absu quit_absu2"></div>
+                            <h3 class="wrco">填写用户信息</h3>
+                            <ul class="asktwo mTop50 nrest" style="background:#f8f8f8"> 
+                                <li class="hTe10">
+                                    <b class="fl"><span>*</span>性&nbsp;&nbsp;别：</b>
+                                    <div class="lin27 fl">
+                                        <span  class="nomed fl">
+                                            <input type="radio" class="w14 fl" checked="checked"  name="info[sexnn]"  value="1" />
+                                            <label class="fl">男</label>
+                                        </span>
+                                        <span class="clob5 fl">|</span>
+                                        <span  class="romed fl">
+                                            <input type="radio" class="w14 fl"  name="info[sexnn]"  value="2" />
+                                            <label class="fl">女</label>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li><b class="mtbT10 fl"><span>*</span>年&nbsp;&nbsp;龄：</b>
+                                    <div class="ques_lined5 quesw162 fl">
+                                        <input id="write_age" name="info[age]" type="text" style="color:#999;" value="如：28" onfocus="if (this.value == '如：28'){this.value = ''}; this.style.color = '#333';" onblur="if (this.value == '' || this.value == '如：28'){this.value = 如：28';this.style.color='#999';}" class="quit_writ" />
+                                        <input type="hidden" name="info[age_unit]" id="age_unit" value="0" />
+                                        <div class="showage fr mp">
+                                            <span class="ksui">岁</span>
+                                            <div class="ageLx rol" style="display: none;">
+                                                <a>岁</a>
+                                                <a>月</a>
+                                                <a>天</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+<!--                                <li>
+                                    <b  class="mtbT10 fl">选择科室：</b>
+                                    <div class="ques_lined5 quesw162 fl">
+                                        <input type="text" style="color:#999" id="choose_dis" class="quit_writ" value="请您选择科室！" onfocus="if (this.value == '请您选择科室！'){this.value = ''}; this.style.color = '#333';" onblur="if (this.value == '' || this.value == '请您选择科室！'){this.value = 如：28';this.style.color='#999';！" class="quit_writ" />
+                                        <div class="showage xl_nome pull-down fr" style="z-index:1000;"></div> 
+                                    </div>
+                                    科室弹框 开始
+                                    <div class="ksxl dopc">
+                                        <div class="choks pl18">
+                                            <p class="ple_ks">请选择科室</p><p  class="cho_zj">（选择科室专家能更快为您解答）</p>
+                                            <div class="xlerr">
+                                                <a><img  src="http://ask.9939.com/ask/v1/images/xlerr.png?v=20151203_07"/></a>
+                                            </div>
+                                        </div>
+                                        <div class="ks_xlab pl18 mTop8">
+                                            <b class="cko_wrblue">您选择的科室：</b>
+                                        </div>
+                                        <div class="choks_mian clearfix">
+                                            一级科室 开始
+                                            <div class="choksone  chosame choks_line mTop12">
+                                                <h2>一级科室</h2>
+                                                <div class="kstw_a  kstw_one mTop12"  id="ks_level1">
+                                                    //<?php
+//                                                    $keshi = $this->keshi;
+//                                                    $kk = 0;
+//                                                    foreach ($keshi as $k => $v) {
+//                                                        $active = ($kk == 0) ? 'active' : '';
+//                                                        echo '<a class="keshi1" id="' . $k . '" title="' . $v["name"] . '"  class="' . $active . '">' . $v["name"] . '</a>';
+//                                                        $kk++;
+//                                                    }
+//                                                    ?>
+                                                </div>
+                                            </div>
+                                            一级科室 结束 
+                                            二级科室 开始
+                                            <div class="bigTwo"   id="ks_level2">
+                                                //<?php
+//                                                foreach ($keshi as $k => $v) {
+//                                                    if ($v['child']) {
+//                                                        echo '<div class="chokstwo chosame choks_line mTop12" style="display:none;"><h2>二级科室</h2><div class="kstw_a  mTop12 kstw_two">';
+//                                                        $turn = 0;
+//                                                        foreach ($v['child'] as $ke => $va) {
+//                                                            echo '<a class="keshi2" id="' . $va["id"] . '" title="' . $va["name"] . '">' . $va["name"] . '</a>';
+//                                                            $turn++;
+//                                                        }
+//                                                        echo '</div></div>';
+//                                                    }
+//                                                }
+//                                                ?>
+                                            </div>
+                                            二级科室 结束                            
+
+                                            三级科室 开始
+                                            <div class="bigTre"   id="ks_level3">
+                                                
+                                            </div> 
+                                            三级科室 结束                            
+                                        </div>
+                                        <div class="chock pl18 mTop12">
+                                            <span><input type="checkbox"  class="cho_bqc" ></span>
+                                            <span id="span_ks_unclear" class="colyel">我不清楚是哪个科室</span> 
+                                        </div>
+                                        <p class="cho_confirm">确 定</p>
+                                    </div>
+                                    <input type="hidden" name="info[class_level1]" id="keshi1" value="0" />
+                                    <input type="hidden" name="info[class_level2]" id="keshi2" value="0" />
+                                    <input type="hidden" name="info[class_level3]" id="keshi3" value="0" />
+                                    <input type="hidden" name="info[classid]"  id='classid' value="0">
+                                    <input type="hidden" name="info[unclear]" id="unclear" value="0" />
+                                        科室弹框结束
+                                </li>-->
+                                <li style="display: none;">
+                                    <b class="mtbT10 fl">悬赏积分：</b>
+                                    <div class="ques_lined5 quesw162 fl">
+                                        <input type="hidden" name="qrks" id="qrks" />
+                                        <input type="text" style="color:#999" class="quit_writ quit_wrtno" value="请悬赏积分！" onfocus="if (this.value == '请悬赏积分！'){this.value = ''}; this.style.color = '#333';" onblur="if (this.value == '' || this.value == '请悬赏积分！'){this.value = 如：28';this.style.color='#999';}"><input type="hidden" name="info[point]" id="reward" value="0" />
+                                            <div class="showage fr pull-down kl_nome2 mp"></div>
+                                            <div class="ageLx kkol" style="display: none;">
+                                                <a class='reward' bounty="0">不悬赏积分</a>
+                                                <a class='reward' bounty="10">10分</a>
+                                                <a class='reward' bounty="20">20分</a>
+                                                <a class='reward' bounty="30">30分</a>
+                                                <a class='reward' bounty="40">40分</a>
+                                                <a class='reward' bounty="50">50分</a>
+                                            </div>
+                                    </div>
+                                    <div class="mtbT10 fl quit_cs">
+                                        <p>悬赏分越高，您的问题将越受关注</p>
+                                    </div>
+                                </li>
+                                <li><b class="mtbT10 fl"><span>*</span>验 证 码：</b>
+                                    <div class="ques_lined5 quesw85 fl">
+                                        <input type="text" onclick="yzmt();"  name="verifyt" class="yzm_quit_writ" />
+                                    </div>
+                                    <div class="pic_yzm fl">
+                                        <img id="verifyyzmt" onclick="shuaxint()" />
+                                    </div>
+                                    <div class="mtbT10 fl  quit_cs">
+                                        <a onclick="shuaxint()">换一个</a>
+                                    </div>
+                                </li>
+                                <li><b class="mtbT10 fl">手 机 号：</b>
+                                    <div class="ques_lined5 quesw85 fl">
+                                        <input type="text" onclick="yzmt();" id="mobile" name="info[mobile]" class="yzm_quit_writ" placeholder="请输入手机号"/>
+                                    </div>
+                                    <div class="telin fl"><span>(非必填)填写可获医生优先回复并短信通知</span></div>
+                                </li>
+                                <li>
+                                    <b class="mtbT10 fl">匿名提问：</b>
+                                    <div class="nonam fl"><input id="incognito"  type="checkbox" name="info[hiddenname]"  class="fl" value="0"/></div>		
+                                </li>
+                            </ul>
+                            <div class="quit_setin">
+                                
+                                <div class="mqask subdovt fl">
+
+                                    <input type="hidden" name="token" id="token" value="<?php echo $this->token; ?>" />
+                                    <input type="hidden" name="backurl"   value="<?php echo $this->backurl; ?>"  />
+                                    <input id="btn_save" name="btn_save" type="submit" value="" class="newin">
+                                </div>
+                            </div>
+                            <div class="clear"></div></div></div>
+                </form> 
+                <!-- +++++ -->
+                <input type="hidden" id="ks1" value="" />
+                <input type="hidden" id="ks2" value="" />
+                <input type="hidden" name="dis_name" id="dis_name" value="请您选择科室！" />
+                <input type="hidden" name="dis_id" id="dis_id" value="0" />
+
+                <!-- +++++ -->
+                <div class="w300 clearfix fr">
+                    <!-- 名医推荐 -->
+                    <div class="r_doctor quitr_doctor mTop clearfix"><div class="rquit_line"><h4><img src="/ask/v1/images/ltitm6.jpg?v=20151203_07"/></h4></div><div class="tw_expert">
+                <?php
+                if(isset($this->famousDoctors)) {
+                    foreach ($this->famousDoctors as $k => $v) {
+                        echo urldecode($v['text']);
+                    }
+                }
+                ?>
+                            
+                        <!--<script type="text/javascript">BAIDU_CLB_fillSlot("1123991");</script>-->
+
+                        </div></div>
+                    <!--猜你喜欢 开始-->
+                    <div class="quitr_doctor noplim">
+                        <div class="rquit_line  rqure3 clearfix"><h4 class="rquit_line_h4 fl"><img src="/ask/v1/images/ltitm9.jpg?v=20151203_07" alt="猜你喜欢" title="猜你喜欢"></h4></div>
+                        <div class="clumn mTop">
+                            <script type="text/javascript">
+                                                                var cpro_id = "u2316072";
+                                                                (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {at:"3", rsi0:"300", rsi1:"245", pat:"1", tn:"baiduCustNativeAD", rss1:"#FFFFFF", conBW:"0", adp:"1", ptt:"0", titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS:"14", rss2:"#000000", titSU:"0", tft:"0", tlt:"1", ptbg:"90", piw:"140", pih:"90", ptp:"0"}
+                            </script>
+                            <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+
+                        </div></div> 
+                    <!--猜你喜欢 结束-->
+                    <!-- 医院推荐 -->
+                    <div class="r_doctor quitr_doctor mTop">
+                        <div class="rquit_line"><h4><img src="http://ask.9939.com/ask/v1/images/ltitm7.jpg?v=20151203_07"/></h4></div>
+                        <div class="hos_lie">
+                            <script type="text/javascript">BAIDU_CLB_fillSlot("1123993");</script>
+                        </div>
+                    </div>
+
+                    <div>
+                        <script type="text/javascript">
+                                                            var cpro_id = "u2318079";
+                                                            (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {at:"3", rsi0:"300", rsi1:"150", pat:"3", tn:"baiduCustNativeAD", rss1:"#FFFFFF", conBW:"0", adp:"1", ptt:"0", titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS:"14", rss2:"#000000", titSU:"0", tft:"0", tlt:"1"}
+                        </script>
+                        <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+
+
+            <!-- 底部常见疾病、热门科室 -->
+            <!--#include virtual="/ask/footer_jb_ks2.php"-->
+
+        </div>
+        <!-- 页面底部 -->
+        <!--#include virtual="/ask/ask_footer/ask_footer_new.html"-->
+        <script type="text/javascript">
+            $(".kstw_a  a").click(function(){
+                $(this).addClass("color").siblings().removeClass();
+            });
+                                                    //输入框
+
+//            $(function () {
+//                $("#inpuo").focus(function () {
+//                    $('.askm0').addClass("focus").css($('.uho').show());
+//                }).blur(function () {
+//                    $('.txa').removeClass("focus").css($('.uho').hide());
+//                });
+//            });
+            
+            $(function () {
+                $("#inpuo_mp2").focus(function () {
+                    $('.askm1').addClass("focus").css($('.djshow').show());
+                }).blur(function () {
+                    $('.txa').removeClass("focus").css($('.djshow').hide());
+                });
+            });
+            $(function () {
+                $("#inpuo_mp3").focus(function () {
+                    $('.askm3').addClass("focus").css($('.djshow3').show());
+                }).blur(function () {
+                    $('.txa').removeClass("focus").css($('.djshow3').hide());
+                });
+            });
+            $().ready(function(){
+                    var isdata = '<?php echo $this->isdata; ?>';
+                    if (isdata == '1') {
+//                        $("#inpuo").html('<?php echo $this->datas["title"]; ?>');
+                        $("#inpuo_mp2").html('<?php echo $this->datas["content"]; ?>');
+                        $("#inpuo_mp3").html('<?php echo $this->datas["help"]; ?>');
+                        document.getElementById("mobile").value="<?php echo $this->datas['mobile'];?>";
+                        var sexnn = '<?php echo $this->datas["sexnn"]; ?>';
+                        var sex = parseInt(sexnn) - 1;
+                        $(":radio:eq(" + sex + ")").attr("checked", "checked");
+                        var age = '<?php echo $this->datas["age"]; ?>';
+                        var age_unit = '<?php echo $this->datas["age_unit"]; ?>';
+                        $("#write_age").val(age);
+                        if (age_unit == '0') {var unit = '岁'; };
+                        if (age_unit == '1') {var unit = '月'; };
+                        if (age_unit == '2') {var unit = '天'; };
+//                        $(".ksui").html(unit);
+//                        var class_level1 = '<?php echo $this->datas["class_level1"]; ?>';
+//                        var class_level2 = '<?php echo $this->datas["class_level2"]; ?>';
+//                        var class_level3 = '<?php echo $this->datas["class_level3"]; ?>';
+//                        var classid = '<?php echo $this->datas["classid"]; ?>';
+//                        $("#keshi1").val(class_level1);
+//                        $("#keshi2").val(class_level2);
+//                        $("#keshi3").val(class_level3);
+//                        $("#classid").val(classid);
+//                        
+//                        $("#" + class_level1).click();
+                        if("<?php echo $this->err;?>" !=""){
+                            alert("<?php echo $this->err;?>");
+                        }
+//                        $("#"+class_level2+",#"+class_level3).click();
+
+                        var unclear = '<?php echo $this->datas["unclear"]; ?>';
+                        if (unclear == '1') {
+                            $(".cho_bqc").click();
+                        };
+                        $(".cho_confirm").click();
+                        var point = '<?php echo $this->datas["point"] ?>';
+                        $(".quit_wrtno").val(point + "分");
+                        $("#reward").val(point);
+                        var hiddenname = '<?php echo $this->datas["hiddenname"] ?>';
+                        if (hiddenname == '1') {
+                            $("#incognito").click();
+                            $("#incognito").val("1");
+                        };
+                    };
+                    $(".yzm_quit_writ").click();
+                    // $("#inpuo").focus();
+                    //文本框字数 
+
+                    $("textarea").keyup(function(){
+                            var num = $(this).val().length;
+                            if ($(this).hasClass("text1")){
+                                if (num > 30) {
+                                    // alert("最大字数为30！");
+                                    $(this).val($(this).val().substring(0, 30));
+                                    $(".text11").text("30/30");
+                                } else{
+                                    $(".text11").text(num + "/30");
+                                }
+                            }
+
+                            if ($(this).hasClass("text2")){
+                            if (num >= 500) {
+                                $(".wred").attr("style", "display:block;");
+                                $(this).val($(this).val().substring(0, 500));
+                                $(".text22").text("500/500");
+                            } else{
+                                $(".wred").attr("style", "display:none;");
+                                        $(".text22").text(num + "/500");
+                                }
+                            };
+                            if ($(this).hasClass("text3")){
+                                if (num > 30) {
+                                    // alert("最大字数为30！");
+                                    $(this).val($(this).val().substring(0, 30));
+                                    $(".text33").text("30/30");
+                                } else{
+                                    $(".text33").text(num + "/30");
+                                }
+                            }
+
+                    });
+            });
+            $("textarea").click(function(){
+                $(this).attr("placeholder", "");
+            }).blur(function(){
+                $(".text1").attr("placeholder", "请简述您的问题作为标题"); 
+                $(".text2").attr("placeholder", "请描述您的主要病症、发病时间和病情变化情况等"); 
+                $(".text3").attr("placeholder", "例：慢性咽炎怎么预防？"); 
+            });
+                                                    //选择年龄
+            $('.ksui').click(function(){
+                $(this).next().toggle();
+            });
+            $('.rol a').click(function(){
+                $('.ksui').html($(this).html());
+                $('#agesel').val($(this).html());
+                $(this).parent().hide();
+            });
+            $('.kl_nome2').click(function(){
+                $(this).next().toggle();
+            });
+            $('.kkol a').click(function(){
+                $('.quit_wrtno').val($(this).html());
+                $(this).parent().hide();
+            });
+
+//            //选择科室
+//            $("#choose_dis").click(function(){
+//                $(this).blur();
+//                $('.xl_nome').click();
+//            });
+//            $('.xl_nome').click(function(){
+//                $('.ksxl').show();
+//            });
+//            $('.xlerr a,.cho_confirm').click(function(){
+//                $('.ksxl').hide();
+//            });
+//            $('.cho_bqc').click(function(){
+//                if ($(this).attr('checked') != 'checked'){
+//                    $(this).attr('checked', 'checked');
+//                } else{
+//                    $(this).removeAttr('checked'); 
+//                }
+//            });
+//            $('.choksone .kstw_one a').click(function(){
+//                $(this).addClass('active').siblings().removeClass('active');
+//                $('.chokstwo').hide().eq($(this).index()).show();
+//            });
+//            $('.chokstwo .kstw_two a').click(function(){
+//                $(this).addClass('active').siblings().removeClass('active');
+//                $('.chokstree').hide().eq($(this).index()).show();
+//            });
+//            
+//            $("#ks_level2").find("a").on("click",function(){
+//                
+//                $("#keshi2").val($(this).attr("id"));
+//                $("#keshi3").val('0');
+//                var name = $(this).attr("title");
+//                var id = $(this).attr("id");
+//                var ks1 = $("#ks1").val();
+//                $("#classid").val(id);
+//                $("#dis_name").val(name);
+//                $(".ks_xlab").empty().append(ks1 + '&gt;<a class="ks_xz2"  href="/classid/' + id + '">' + name + '</a>');
+//                $("#ks2").val(ks1 + '&gt;<a class="ks_xz2"  href="/classid/' + id + '">' + name + '</a>');
+//                
+//                var turn = $(this).index();
+//                var kong =  $(".bigTre .chokstree:eq(" + turn + ") div a:eq(0)").attr("id");
+//                if (kong == '') {
+//                    $(".bigTre").attr("style", "display:none");
+//                } else{
+//                    $(".bigTre").attr("style", "display:block");
+//                }
+//                setunclear();
+//            });
+//            $(".keshi1").on("click",function(){
+//                $("#keshi1").val($(this).attr("id"));
+//                $("#keshi2").val('0');
+//                $("#keshi3").val('0');
+//                var name = $(this).attr("title");
+//                var id = $(this).attr("id");
+//                $("#classid").val(id);
+//                $("#dis_name").val(name);
+//                $(".ks_xlab").empty().append('<b class="cko_wrblue">您选择的科室：</b><a class="ks_xz1" href="/classid/' + id + '">' + name + '</a>');
+//                $("#ks1").val('<b class="cko_wrblue">您选择的科室：</b><a class="ks_xz1" href="/classid/' + id + '">' + name + '</a>');
+//                $.ajax({type: "POST",
+//                    url:  "/asking/diseases",
+//                    dataType:'json',
+//                    data: "id=" + id,
+//                    success: function(data){
+//                        var dd = '';
+//                        var kk = 0;
+//                        $.each(data, function(i, n){
+//                            dd += '<div class="chokstree chosame mTop12" style="display:none;"><h2>相关疾病</h2><div class="kstw_a  mTop12">';
+//                            $.each(n, function(k, v){
+//                                    dd += '<a class="keshi3" id="' + v["id"] + '" title="' + v["name"] + '">' + v["name"] + '</a>';
+//                            });
+//                            dd += '</div></div>';
+//                            kk++;
+//                        });
+//                        $(".bigTre").empty().append(dd);
+//                        $(".keshi3").on("click",function(){
+//                            $("#keshi3").val($(this).attr("id"));
+//                            var name = $(this).attr("title");
+//                            var id = $(this).attr("id");
+//                            var ks2 = $("#ks2").val();
+//                            $("#classid").val(id);
+//                            $("#dis_name").val(name);
+//                            $(".keshi3").css('color', '#333');
+//                            $(this).css('color', '#F60');
+//                            $(".ks_xlab").empty().append(ks2 + '&gt;<a class="ks_xz3"  href="/classid/' + id + '">' + name + '</a>');
+//                            setunclear();
+//                        });
+//                    }
+//                });
+//                setunclear();
+//            });
+//            //勾选是否清楚科室
+//            $(".cho_confirm").click(function(){
+//                    $("#choose_dis").val($("#dis_name").val());
+//                    if ($('.cho_bqc').attr('checked') == 'checked') {
+//                        $("#unclear").val("1");
+//                    } else{
+//                        $("#unclear").val("0");
+//                    }
+//
+//            });
+                                            //悬赏积分
+            $(".reward").click(function(){
+                var rew = $(this).attr("bounty");
+                $("#reward").val(rew);
+            });
+            
+//            function setunclear(){
+//                var class_level3 = $("#keshi3").val();
+//                if(class_level3>0){
+//                    $('.cho_bqc').prop("checked","");
+//                    $('.cho_bqc').prop("disabled",true);
+//                    $('#span_ks_unclear').attr("class","change-color");
+//                }else{
+//                    $('.cho_bqc').prop('disabled',false);
+//                    $('#span_ks_unclear').attr("class","colyel");
+//                }
+//            }
+                                            //验证码
+            function shuaxint(){
+                if (!yzmkq)return;
+                var str = "/askt/verify?" + (new Date()).getTime();
+                $("#verifyyzmt").attr("src", str);
+            }
+            var yzmkq = false;
+            function yzmt(){
+                if (yzmkq)return;
+                yzmkq = true;
+                var str = "/askt/verify?" + (new Date()).getTime();
+                $("#verifyyzmt").attr("src", str);
+                $("#verifyyzmt").show();
+            }
+                                            //匿名设置
+            $("#incognito").click(function(){
+                if ($("#incognito").val() == '0'){
+                    $("#incognito").val('1');
+                } else{
+                    $("#incognito").val('0');
+                }
+            });
+            //提交验证数据
+            function check(){
+
+                //标题
+//                if ($('#inpuo').val().length < 5 || $('#inpuo').val() == '请输入您的提问标题' || $('#inpuo').val().length > 30) {
+//                    alert('请正确填写标题！标题需要大于5字且小于50字！');
+//                    $('#inpuo').focus();
+//                    return false;
+//                }
+                //疑问
+                if ($('#inpuo_mp2').val().length < 5 || $('#inpuo_mp2').val() == '请输入您的提问标题' || $('#inpuo_mp2').val().length > 500) {
+                    alert('请正确填写您的健康疑问,字数为5~500字！');
+                    $('#inpuo_mp2').focus();
+                    return false;
+                }
+                //帮助 
+//                if ($('#inpuo_mp3').val().length < 5 || $('#inpuo_mp3').val() == '请输入您的提问标题' || $('#inpuo_mp3').val().length > 500) {
+//                    alert('想得到怎样的帮助?字数为5~30字！');
+//                    $('#inpuo_mp3').focus();
+//                    return false;
+//                }
+
+                //年龄
+                if ($(".ksui").text() == '岁') {
+                    var age = $("#write_age").val();
+                    if (!/^\d{1,3}$/.test(age)){
+                        alert('请正确填写年龄！');
+                        $('#write_age').focus();
+                        return false;
+                    } else if (parseInt(age) >= 200){
+                        alert('有人能活200岁？');
+                        $('#write_age').focus();
+                        return false;
+                    }
+                };
+//                //科室
+//                if ($("#unclear").val() == "0" && $("#dis_name") == '请您选择科室！') {
+//                        alert("请您选择科室！");
+//                        $('.xl_nome').click();
+//                        return false;
+//                };
+                        //验证码
+                if ($(".yzm_quit_writ").val() == "") {
+                        alert("请填写验证码!");
+                        $(".yzm_quit_writ").focus();
+                        return false;
+                }
+                var age_unit = $(".ksui").text();
+                if (age_unit == '岁') {age_unit = '0'}
+                if (age_unit == '月') {age_unit = '1'}
+                if (age_unit == '天') {age_unit = '2'}
+                $("#age_unit").val(age_unit);
+                $("#btn_save").attr("disabled","disabled");
+            }//check结束 并提交
+
+            
+        </script>
+    </body>   
+</html>

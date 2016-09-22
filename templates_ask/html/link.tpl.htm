@@ -1,0 +1,8 @@
+<div id="flink" class="clfix">
+		<h4>友情链接</h4>
+		<ul>
+			{foreach key=key item=item from=$flinks}
+			<li><a href="{$item.url}" target="_blank">{$item.name}</a></li>
+			{/foreach}
+		</ul>
+	</div>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php try{$common_config = Zend_Registry::get("common_config");}catch(Exception $e){}?>
+<title>问答汇总_健康问答<?=$common_config['title']?></title>
+<link href="/style/r.css" rel="stylesheet" type="text/css" />
+<link href="/style/m.css" rel="stylesheet" type="text/css" />
+<link href="/style/b.css" rel="stylesheet" type="text/css" />
+<link href="/style/g.css" rel="stylesheet" type="text/css" />
+<link href="/images_ask/css/ask.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script>
+
+$(function(){
+	$(document).jTab({
+	 menutag:".lw-jbTab .hd a"
+	});
+	
+	$(document).jTab({
+	 menutag:".zhmod-02 .hd li"
+	 }); 
+	
+     $(".lw-nav").children().bind("mouseover",function(){
+		 $(this).addClass("temp");
+		});
+	
+	 $(".lw-nav").children().bind("mouseout",function(){
+		 $(this).removeClass("temp");
+		});
+});
+
+</script>
+</head>
+
+<body>
+<div id="doc" class="w950">
+
+	<div id="hd">
+		<?php require(APP_ROOT."/header.shtml");?>
+	</div><!-- hd end -->
+
+	<div id="bd">
+		<div class="g-m0s8">
+			<div class="col-m">
+				<div class="m-wrap">
+				    <div class="tmod-08">
+						<h3>您的位置：<a href="<?=ASK_URL?>">问答首页</a>－问答汇总</h3>
+					</div>
+					<div class="j-mod j-date tMarginLg">
+						<div id="menu0" class="hd fix">
+							<ul>
+<?php if(is_array($this->timeArray)) { ?>
+	<?php foreach($this->timeArray as $k => $v) { ?>
+								<li <?=$v['class']?> ><a href="<?=$v['url']?>"><?=date("Y/m", $v['stime'])?>-<?=date("Y/m", $v['etime'])?></a></li>
+	<?php } ?>
+<?php } ?>
+							</ul>
+						</div>
+						<div id="main0" class="bd">
+							<ol class="block">
+                              <ul class="zhtag">
+<?php if(is_array($this->keshi)) { ?>
+	<?php foreach($this->keshi as $k => $v) { ?>
+                                <li><a href="<?=$v['url'];?>"><?=$v['name']?></a></li>
+	<?php } ?>
+<?php } ?>
+                              </ul>
+								<div class="j-l02">
+									<div class="j-pages"><?=$this->pagehtml?></div>
+<?php if(is_array($this->ask_array)) { ?>
+	<?php foreach($this->ask_array as $k => $v) { if(!$v['userid'])continue;?>
+									<dl>
+										<dt><span><?=date("Y-m-d H:i", $v['ctime'])?><a href="<?=$v['userurl']?>" target="_blank"><?=$v['username']?></a></span><strong class="<?=$v['bestanswer'] ? 'true' : 'false';?>"><a href="<?=$v['url']?>" target="_blank" ><?=$v['title']?></a></strong></dt>
+										<dd>
+											<p class="info"><em>悬赏分：<?=$v['point']?></em> - <?=$v['lostTime']?></p>
+											<p class="des"><?=$v['content']?></p>
+										</dd>
+									</dl>
+	<?php } ?>
+<?php } ?>
+									<div class="j-pages"><?=$this->pagehtml?></div>
+								</div>
+							</ol>
+							<ol>2</ol>
+							<ol>3</ol>
+					    </div>
+					</div>
+				</div>
+			</div><!-- col-m end -->
+
+			<?php require(APP_PUBLIC_PATH."/list_right.shtml");?>
+
+		</div>
+	</div><!-- bd end -->
+
+		<?php require(APP_ROOT."/footer.html");?>
+<!-- ft end -->
+
+</div>
+</body>
+</html>

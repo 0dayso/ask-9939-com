@@ -1,0 +1,41 @@
+/*- data -*/
+.data{padding:20px 0 0 24px;font-size:14px;background: #fff; }
+.data h2{font-size:18px;}
+/*- .data-content{overflow:auto;position:absolute;top:75px;bottom:10px;left:24px;right:10px;} -*/
+/*- * html .data-content{_height:expression(function(ele){var ma=document.getElementById('main'); ele.style.height=ma.clientHeight-85+'px';ele.style.width=ma.clientWidth-155-34+'px';}(this)); }-*/
+.data-desc{margin:5px 0 15px 0; }
+.data-desc li{display:inline;margin-right:20px; }
+.data-desc em{color:#00366D;}
+.data-table {padding: 0 10px 0 1px;*padding: 0 10px 0 0px;}
+.data-table table{table-layout:fixed;border-top:1px solid #B0B3B7;width:100%;*width:auto;_width:99%}
+
+.data-table table th,.data-table table td{border:1px solid #B0B3B7;background:#F3F4F5; }
+.data-table table th{height:37px;line-height:37px;background:url(../images//th_bg.png) repeat-x;  }
+.data-table table th input{margin:0 12px 0 8px; }
+.data-table table td{color:#5097d8;}
+.data-table tfoot td{text-align:center;padding:10px 0;border:0;background:#EBEBEC;}
+.data-table tfoot td input{margin-right:20px; }
+.box-group{zoom:1;overflow:hidden;padding:0 0 20px 37px;}
+.box-group li{float:left;width:115px;_display:inline;margin:20px 10px 0 0;white-space:nowrap;overflow:hidden;  }
+.chkb{vertical-align:middle;margin-right:5px;}
+.data-i-mr10 *{margin-right:10px; }
+.Q-data-t01 tbody th{background:#F3F4F5;padding-left:25px;width:102px; }
+.Q-data-t01 tbody td{padding-left:10px; }
+.Q-data-t01 tbody td label{margin-right:10px; }
+.h-empty{height:400px; }
+.data-table .t-tal,.t-tal{text-align: left;}
+
+
+/*= Zend Form =*/
+.data-zcol{margin: 25px 20px 0 0;border: 1px solid #9fa6b0;background:#f1f2f4;padding:38px 30px;}
+.data-zcol .zend_form {zoom:1;overflow:hidden;}
+
+.data-zcol .zend_form dt{float:left;right:10px;width:150px;height:30px;line-height:30px;}
+.data-zcol .zend_form dd{zoom:1;overflow:hidden;height:30px;line-height:30px}
+.data-zcol .zend_form dd input{vertical-align:middle}
+.data-zcol .zend_form #submit-element input,.data-zcol .zend_form .submit-element input{display:inline;}
+.data-zcol #idu-element{display:none}
+.data-zcol .errors{display:inline}
+.data-zcol .errors li{display:inline;color:#f00}
+
+.data-object{position:absolute;width:99%}

@@ -1,0 +1,26 @@
+body * {margin: 0;padding: 0;font-size: 12px;}
+li {list-style: none;}
+body {background: #ebebec;margin: 0;padding: 0;}
+#container {background: url(../images/titlebg.gif) repeat-x top left;min-width:800px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<800?"800px":"");overflow: hidden;}
+h1 a {width: 305px;height: 49px;background: url(../images/title.jpg) no-repeat left top;text-indent: -9999px;display:block;outline:none;}
+#text {text-indent: -9999px;width: 353px;height: 195px;background: url(../images/login-img.jpg) no-repeat left top;float: left;margin: 15% 0 0 10%;_display:inline;}
+#login-frame{width: 319px;height: 300px;background: url(../images/login.jpg) no-repeat left top;position: relative;margin:15% 0 0 57%;overflow: hidden;}
+@media all and (min-width: 0px) {
+#login-frame{display:inline-block;margin-left: 5%;}
+}
+#login-frame .ui-tabs-nav-item {width: 75px;height: 18px;position: absolute;top:20px;right:35px;background: url(../images/lit.jpg) no-repeat left top;text-indent: -9999px;}
+#tabContainer-frag-1 {margin: 45px 0 0 38px;}
+#tabContainer-frag-1 dl {width: 245px; height: 152px;border: 0 none;}
+#tabContainer-frag-1 dt {float: left;width: 63px;height: 20px;margin: 6px 0;line-height: 20px;_margin:5px 0;}
+#tabContainer-frag-1 dd {float: left;height: 20px;margin: 6px 0;_margin:5px 0;}
+#tabContainer-frag-1 #login-element {float: right;}
+input {border: 0 none;height: 18px;background: #fff transparent;width: 160px;padding-top: 2px;}
+#username{padding-left: 20px;border: 1px solid #dedede;background: url(../images/uid.jpg) no-repeat left center;}
+#password{padding-left: 20px;border: 1px solid #dedede;background: url(../images/pwd.jpg) no-repeat left center;}
+#login {width: 70px;height: 21px;background: url(../images/login-bn.jpg) no-repeat left top;padding-left: 12px;float: right;cursor: pointer;text-indent: -999px;}
+
+#login-frame p{position: absolute;left:32px; top:55px;font-weight:700;}
+#mainForm {margin-top: 80px;*margin-top:35px;}
+.notice {margin-left: 17px;padding:1px 0 1px 22px;background: url(../images/caution.jpg) no-repeat left center;font-weight:500;color: #686868;}
+#login-frame .getpwd {top:155px;left:100px;}
+.getpwd a {color: #f07c00;font-weight:500;}

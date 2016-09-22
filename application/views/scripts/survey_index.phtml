@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<link rel="stylesheet" type="text/css" href="/ask/css/style.css"/>
+<style>
+.keshixuanze {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #0099FF;
+    height: 400px;
+    margin: 3px 0 0 67px;
+    padding: 0;
+    width: 750px;
+}
+.keshi12 {
+    color: #1F376D;
+    float: left;
+    font-size: 14px;
+    height: 39px;
+    line-height: 30px;
+}
+.guanbi {
+    cursor: pointer;
+    float: right;
+    height: 16px;
+    padding: 9px 12px 0 0;
+    width: 16px;
+}
+.keshi2 {
+    border: 1px solid #FB6C03;
+    color: #1F376D;
+    display: inline;
+    float: left;
+    height: 90px;
+    line-height: 39px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 730px;
+}
+.keshi1 {
+    color: #1F376D;
+    float: left;
+    height: 65px;
+    line-height: 20px;
+    margin-top: 20px;
+    width: 730px;
+}
+.tijiao {
+    display: inline;
+    float: left;
+    height: 35px;
+    margin-left: 330px;
+    margin-top: 15px;
+    width: 60px;
+}
+.keshi1 ul li {
+    float: left;
+}
+.keshi1 ul li a {
+    color: #1F376D;
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.keshi1label {
+    color: #000000;
+    float: left;
+    font-weight: bolder;
+    margin-left: 20px;
+    display: inline;
+    font-size: 14px;
+    margin-right: 8px;
+    text-align: right;
+    vertical-align: middle;
+    width: 60px;
+}
+.keshi2label {
+    color: #000000;
+    display: inline;
+    float: left;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-right: 8px;
+    text-align: right;
+    vertical-align: middle;
+    width: 60px;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="/ask/css/ask.css"/>
+<script type="text/javascript" src="/ask/js/jquery.js"></script>
+<script type="text/javascript">
+
+$(function(){
+    $(".submit-but").click(function(){
+        var obj = $("input[name=survery][@type=radio][checked]");
+        var content = $.trim($("#content").val());
+        var survery = obj.val();
+        var openask = $("#openask"+survery).val();
+        if(survery==null){
+            alert("请选择您遇到的问题");
+        }else if(survery==-1&&content==""){
+            alert("请填写您遇到的问题");
+        }else{
+            var thisobj=this;
+            $(thisobj).hide();
+            $(thisobj).after("<p id='zhuangtai'>正在提交...</p>");
+            $.ajax({
+        	type: "POST",
+        	url:  "<?=ASK_URL?>survey/ins",
+        	data: "survery="+survery+"&content="+content+"&rank="+Date(),
+        	dataType:'json',
+        	success: function(msg){
+        		if(msg.error==1){
+                    alert("提交成功,感谢您的建议！");
+                    if(openask==1){
+                        $(".q-ask").show();
+                    }else{
+                        window.opener = null;  
+                        window.open(' ', '_self', ' ');   
+                        window.close();  
+                    }
+        		}else{
+        			alert(msg.error);
+        		$(thisobj).show();
+        		} 
+                $("#zhuangtai").remove();
+        	}});
+        }
+    });
+});
+
+function quick_ask(){
+    var cid = $("#catid").val();
+	if(cid==""||cid==0) {
+		alert("请选择科室");
+		return false;
+	}else if($("#quick_title").val()==""){
+		alert("请输入标题");
+		$("#quick_title").focus();
+		return false;
+	} else if($("#quick_content").val()=="") {
+		alert("请输入内容");
+		$("#quick_content").focus();
+		return false;
+	} else if($("#quick_content").val()=="把您的问题描述一下") {
+		alert("请输入内容");
+		$("#quick_content").focus();
+		return false;
+	} else if($("#quick_title").val().length<5 || $("#quick_title").val().length>50) {
+		alert("标题字数要在：5-50  之间");
+		$("#quick_title").focus();
+		return false;
+	} else if($("#quick_content").val().length<10 || $("#quick_content").val().length>500) {
+		alert("内容字数要在：10-500 之间");
+		$("#quick_content").focus();
+		return false;
+	}else{
+	   var button=$("#anniu").html();
+        $("#anniu").html("正在验证数据...");
+        $.ajax({
+    	type: "POST",
+    	url:  "/askt/do/do/savecheck",
+    	dataType:'json',
+    	data: "&info[title]="+$("#quick_title").val()+"&info[content]="+$("#quick_content").val()+"&info[classid]="+$("#catid").val()+"&rank="+Date(),
+    	success: function(msg){
+    	   if(msg.error==1){
+                document.getElementById("ask_formzong").submit();
+                window.opener = null;  
+                window.open(' ', '_self', ' ');   
+                     window.close();  
+    	   }else{
+              alert(msg.error);
+    	       $("#anniu").html(button);
+    	   }
+    	}});
+	    
+        return false;
+	}
+}
+<?php 
+//科室的数组
+$CATEGORY = $this->$CATEGORY;
+$FUSHUKESHI = $this->$FUSHUKESHI;
+$KESHIGROUP = $this->$KESHIGROUP;
+
+foreach($CATEGORY as &$v){
+    unset($v['description']);
+}
+foreach($KESHIGROUP as &$v){
+    foreach($v as &$v1){
+        unset($v1['description']);
+    }
+}
+if($FUSHUKESHI){
+    $fushuarr=$FUSHUKESHI[1];
+}
+?>
+var keshiarrkey=eval('(<?=json_encode($CATEGORY)?>)');
+var keshiarr=eval('(<?=json_encode($KESHIGROUP)?>)');
+var fushuarr=eval('(<?=json_encode($fushuarr)?>)');
+var keshixz=new Array();
+var keshiid=0;
+$(function(){
+    var strcjks="";
+    var stryjks="";
+    
+    $.each(fushuarr,function(id,item){
+        strcjks+="<li><a href='javascript:;' id='99_"+item.kid+"' onclick='ksxz("+item.kid+",99);'>"+item.name+"</a></li>"
+    }); 
+    $.each(keshiarr[0],function(id,item){
+        stryjks+="<li><a href='javascript:;' id='1_"+item.id+"' onclick='ksxz("+item.id+",1);'>"+item.name+"</a></li>"
+    }); 
+    if($("#catid").val()!="")
+    if(keshiarrkey[$("#catid").val()]!=null){
+        $("#z_span").html(keshiarrkey[$("#catid").val()].name+"（点击可修改）");
+    }else{
+        $("#z_span").html("请选择科室列表");
+        $("#catid").val("");
+    }
+    $("#cjksul").html(strcjks);
+    $("#yjksul").html(stryjks);
+    $("#z_span").click(function(){
+        keshixz=new Array();
+        $("#cjksul").html(strcjks);
+        $("#yjksul").html(stryjks);
+        shuaxin($("#catid").val(),99)
+        $(".keshixuanze").show();
+    });
+    $(".guanbi").click(function(){
+        $(".keshixuanze").hide();
+    });
+    $("#queding").click(function(){
+        $(".keshixuanze").hide();
+        if(keshiarrkey[keshiid]!=null){
+            $("#z_span").html(keshiarrkey[keshiid].name+"（点击可修改）");
+            $("#catid").val(keshiid);
+        }
+    });
+});
+function ksxz(id,jb){
+    keshiid=id;
+    if(jb==1){
+        $("#ksdiv"+3).hide();
+        keshixz[3]=null;
+        keshixz[2]=null;
+    }
+    if(jb==2){
+        keshixz[3]=null;
+    }
+    if(jb==99){
+        keshixz[3]=null;
+        keshixz[2]=null;
+    }
+    if(jb<3){
+        ksshengcheng(id,jb+1);
+    }
+    shuaxin(id,jb);
+}
+function shuaxin(id,jb){
+    if(id==0)id="null";
+    var keshi=keshiarrkey[id];
+    if(keshi==null)return false;
+    ksxuanzhong(keshi.class_level1,1);
+    if(jb==99){
+        ksshengcheng(keshi.class_level1,2);
+    }
+    ksxuanzhong(keshi.class_level2,2);
+    if(jb==99){
+        ksshengcheng(keshi.class_level2,3);
+    }
+    ksxuanzhong(keshi.class_level3,3);
+    ksxuanzhong(id,99);
+    ksxuanzhong(id,jb);
+    var str="";
+    if(keshiarrkey[keshi.class_level1]!=null){
+        str+='<div class="keshi12" >'+keshiarrkey[keshi.class_level1].name;
+    }
+    if(keshiarrkey[keshi.class_level2]!=null){
+        str+='>></div><div class="keshi12" >'+keshiarrkey[keshi.class_level2].name;
+    }
+    if(keshiarrkey[keshi.class_level3]!=null){
+        str+='>></div><div class="keshi12" >'+keshiarrkey[keshi.class_level3].name;
+    }
+    str+='</div>';
+    $("#tishi").html(str);
+}
+
+function ksshengcheng(id,jb){
+    if(id==0)id="null";
+    if(keshiarr[id]!=null){
+        var str="";
+        $.each(keshiarr[id],function(id,item){
+            str+="<li><a href='javascript:;' id='"+jb+"_"+item.id+"' onclick='ksxz("+item.id+","+jb+");'>"+item.name+"</a></li>"
+        }); 
+        $("#ksul"+jb).html(str);
+        $("#ksdiv"+jb).show();
+    }else{
+        jb=jb-1;
+        if(jb==1){
+            $("#ksdiv"+2).hide();
+            $("#ksdiv"+3).hide();
+            keshixz[2]=null;
+            keshixz[3]=null;
+        }
+        if(jb==2){
+            $("#ksdiv"+3).hide();
+            keshixz[3]=null;
+        }
+    }
+}
+function ksxuanzhong(id,jb){
+    try{
+        if(keshixz[jb]!=null&&keshixz[jb]!=id){
+            var name=$("#"+jb+"_"+keshixz[jb]).children('font').html();
+            $("#"+jb+"_"+keshixz[jb]).html(name);
+        }
+        if($("#"+jb+"_"+id).children('font').html()==null){
+            var name=$("#"+jb+"_"+id).html();
+            $("#"+jb+"_"+id).html("<font color=\"#CC6600\">"+name+"</font>");
+            keshixz[jb]=id;
+        }
+    }catch(e){
+        alert(e.message);
+    }
+}
+</script>
+</head>
+<body>
+<div class="submain">
+  <div class="hd"><a href="<?=ASK_URL?>" target="_blank"></a></div>
+  <div class="bd">
+    <ul>
+<?php
+if (!empty($this->item)) {
+	foreach ($this->item as $val) {
+	   echo '<li><input name="survery" type="radio" value="'.$val['id'].'" />'.$val['content'];
+	   echo '<input type="hidden" value="'.$val['openask'].'" id="openask'.$val['id'].'" />';
+       echo '</li>';
+    }	
+}
+?>
+    <li>
+      <span>
+        <input name="survery" type="radio" value="-1" />
+        其它</span><span>
+        <textarea name="content" id="content"></textarea>
+      </span></li>
+      <li>
+        <input type="submit" class="submit-but" value="提交">
+      </li>
+    </ul>
+  </div>
+</div>
+<!--快速问答start-->
+<div class="q-ask" style="display: none;">
+  <div class="hd">
+    <h2>快速提问<strong>&nbsp;&nbsp;万名专家为您解答！</strong></h2><span></span></div>
+  <div class="bd">
+      <form name="quiz" target="_blank" class="quiz" id="ask_formzong" action="/askt/do/do/save/">
+        <p>
+          <label>标题：</label>
+          <input type="text" class="inp" name="info[title]" id="quick_title"  value="请输入您的问题标题" onfocus="javascript:if(this.value=='请输入您的问题标题') this.value='';" />
+        </p>
+        <p>
+          <label for="">科室：</label>
+          <div style="z-index:1000; margin-left:62px;*margin-left:63px;margin-top:-25px;" id="z_wselect"><span style="z-index: 100; border:#3399FF solid 1px; background-image:url(/ask/images/xuanze.jpg); width:160px;" class="z_span" id="z_span">请选择科室列表</span></div>
+        <div class="keshixuanze" style=" position: absolute;z-index:99999;display: none;height:auto !important;">
+          <div class="keshi12" style=" background:url(/ask/images/ewq1.jpg) 0 top repeat-x;height:39px;overflow:hidden; width:750px;">
+            <div style=" margin-left:10px; height:39px; line-height:30px; font-size:14px; font-weight:bolder; color:#1f376d; float:left;">您选择的科室为：</div>
+            <div id="tishi">
+            </div>
+            <div class="guanbi" style="background:url(/ask/images/qweqw.jpg) 0 9px no-repeat;"> </div>
+          </div>
+          <div class="keshi1">
+            <div class="keshi1label">一级科室</div>
+            <br/>
+            <div class="keshi1">
+              <ul id="yjksul">
+              </ul>
+            </div>
+          </div>
+          <div class="keshi1" id="ksdiv2" style="display: none;">
+            <div  class="keshi1label">二级科室</div>
+            <br/>
+            <div class="keshi1">
+              <ul id="ksul2">
+              </ul>
+            </div>
+          </div>
+          <div class="keshi1"  id="ksdiv3" style="display: none;">
+            <div class="keshi1label">三级科室</div>
+            <br/>
+            <div class="keshi1">
+              <ul id="ksul3">
+              </ul>
+            </div>
+          </div>
+          <div class="keshi2" style="margin-top: 25px;" >
+            <div class="keshi2label">常见科室</div>
+            <br/>
+            <div class="keshi1">
+              <ul id="cjksul">
+              </ul>
+            </div>
+          </div>
+          <div class="tijiao"> <a href="javascript:;" onclick="return false;" id="queding"><img src="/ask/images/queding.jpg" /></a> </div>
+        </div>
+        </p>
+        <p>
+          <label>描述：</label>
+          <textarea name="info[content]" id="quick_content" onfocus="javascript:if($('#quick_content').html()=='把您的问题描述一下') $('#quick_content').html('');" class="inp inp2">把您的问题描述一下</textarea>
+        </p>
+        <input type="hidden" name="info[classid]" id="catid" value="" />
+        <p class="sub" id="anniu">
+          <input type="button" value="" class="sub-btn" onclick="return quick_ask()">
+        </p>
+      </form>
+  </div>
+</div>
+<!--快速问答end-->
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>积分规则_健康问答_久久健康网_9939.com</title>   
+	<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+	<link rel="stylesheet" href="css_other/r.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css_other/b.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css_other/g.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css_other/qz.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+
+<style type="text/css" media="screen">
+	li p{text-indent:2em;margin:5px 0;}
+	.small{color:blue;}
+	table,table td {border:1px solid #d0d0d0;border-collapse:collapse;}
+	td{padding-left:2em;}
+	h3{margin:5px 0;}
+	.t-login td,.t-login table{ border:none;}
+</style>
+</head>
+
+<body>
+<!--#include virtual="/header.shtml"-->
+<div id="doc" class="w950">
+	<div id="hd">
+	</div>
+	<div id="bd">
+
+		<script>
+		function setTab(m,n){
+		 var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+		 var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+		 for(i=0;i<tli.length;i++){
+		  tli[i].className=i==n?"hover":"";
+		  mli[i].style.display=i==n?"block":"none";
+		 }
+		}
+		</script>
+		
+		                <div class="contentwrap">
+		                    <div class="topinfo">
+		                        <h3>一、久久健康积分说明</h3>
+		                        <p>1、什么是久久健康积分和经验值</p>
+		                        <ul>
+		                        <li>积分是久久健康社区发表提问、回答问题、论坛话题发表、回复、群组话题发表和回复、健康博文发表、回复博文、发表图片获得的积分和悬赏分，是在久久健康社区中“劳动”后给予会员的一种回馈，也是在久久健康网上唯一使用的虚拟货币，获得一积分的同时，获得一个经验值。</li>
+		                        <li>经验值：经验值是会员在久久健康社区中贡献得到的认可，它不会随着积分的消耗而减少，因此会员的等级取决以经验值，而非积分。</li>
+		                        <li>1积分=1经验值  100积分=1健康币=1人民币</li>
+		                        <li>健康币说明：健康币是久久健康社区通用的虚拟货币，当久久健康社区会员想在久久健康网上购买物品及进行一切消耗积分的活动而又没有积分时，可用人民币进行充值后、兑换同等值的健康币。</li>
+		                        </ul>
+		                        <p>2、健康积分有什么用途</p>
+		                        <p>通过在久久健康积分商城（暂定），可以兑换同等值的健康币，然后换取您心仪健康礼品，各种精致的礼物，体验优惠使用各种游戏道具。还可以参加久久健康线上线下举办的各种有奖活动、享受会员特殊服务等。</p>
+		                        <p>医生会员将可用所获积分去好医生网站购买自己所需要的商品。</p>
+		                        <p>3、如何查看自己久久健康积分与经验值</p>
+		                        <p>进入个人中心后，您将查看到自己所获得的积分、经验值、级别名称和级别图标。</p>
+		                    </div>	
+		                    <div class="t01" id="tabs0">
+		                        <samp><a href="#">返回积分页&gt;&gt;</a></samp>
+		                        <ul class="menu0" id="menu0">
+		                            <li onclick="setTab(0,0)" class="hover"><h4><span>积分等级表</span></h4></li>
+		                            <li onclick="setTab(0,1)"><h4><span>获得积分</span></h4></li>
+		                            <li onclick="setTab(0,2)"><h4><span>积分消耗</span></h4></li>
+		                        </ul>
+		                    </div>
+		                    <div class="main grouplistp" id="main0">
+		                        <ul class="block">
+		                            <li><h3>大众会员</h3>
+		                            <table class="table03" width="100%"  border="0" cellpadding="0" cellspacing="1">
+		                              <tbody><tr>
+		                                <td height="35" width="15%">等级</td>
+		                                <td width="17%">级别名称</td>
+		                                <td width="20%">等级图标</td>
+		                                <td width="17%">积分 </td>
+		                                <td width="17%">经验值</td>
+		                                <td width="14%">健康币</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">一级</td>
+		                                <td>萤火虫</td>
+		                                <td><img src="images/star_01.jpg"><img src="images/star_01.jpg"><img src="images/star_01.jpg"><img src="images/star_01.jpg"></td>
+		                                <td>0 — 300</td>
+		                                <td>0 — 300</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">二级</td>
+		                                <td>星星之火</td>
+		                                <td><img src="images/star_02.jpg"><img src="images/star_02.jpg"><img src="images/star_02.jpg"><img src="images/star_02.jpg"></td>
+		                                <td>301 — 500</td>
+		                                <td>301 — 500</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">三级</td>
+		                                <td>烛光</td>
+		                                <td><img src="images/star_03.jpg"><img src="images/star_03.jpg"></td>
+		                                <td>501 — 1000 </td>
+		                                <td>501 — 1000 </td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">四级</td>
+		                                <td>风雨彩虹</td>
+		                                <td><img src="images/star_04.jpg"><img src="images/star_04.jpg"><img src="images/star_04.jpg"></td>
+		                                <td>1001 — 3000 </td>
+		                                <td>1001 — 3000 </td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">五级</td>
+		                                <td>健康之星</td>
+		                                <td><img src="images/star_05.jpg"></td>
+		                                <td>3001 — 5000</td>
+		                                <td>3001 — 5000</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">六级</td>
+		                                <td>晨曦天使</td>
+		                                <td><img src="images/star_06.jpg" height="21" width="21"><img src="images/star_06.jpg" height="21" width="21"></td>
+		                                <td>5001 — 10000</td>
+		                                <td>5001 — 10000</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">七级</td>
+		                                <td>深海明珠</td>
+		                                <td><img src="images/star_07.jpg" height="22" width="21"></td>
+		                                <td>10001 — 30000</td>
+		                                <td>10001 — 30000</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">八级</td>
+		                                <td>繁星闪烁</td>
+		                                <td><img src="images/star_08.jpg" height="21" width="21"></td>
+		                                <td>30001以上</td>
+		                                <td>30001以上</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="5" height="34">图标名称：<img src="images/star_01.jpg" align="absmiddle">白水晶 <img src="images/star_02.jpg" align="absmiddle">粉水晶<img src="images/star_03.jpg" align="absmiddle">紫水晶<img src="images/star_04.jpg" align="absmiddle">绿宝石<img src="images/star_05.jpg" align="absmiddle">蓝宝石<img src="images/star_06.jpg" height="21" width="21" align="absmiddle">钻石</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                            </tbody></table></li>
+		                            <li><h3>医生会员</h3>
+		                            <table class="table03" width="100%" border="0" cellpadding="0" cellspacing="1">
+		                              <tbody><tr>
+		                                <td height="35" width="16%">等级</td>
+		                                <td width="18%">级别名称</td>
+		                                <td width="18%">等级图标</td>
+		                                <td width="16%">积分 </td>
+		                                <td width="16%">经验值</td>
+		                                <td width="16%">健康币</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">一级</td>
+		                                <td>仙灵小童</td>
+		                                <td><img src="images/star_01.jpg"><img src="images/star_01.jpg"><img src="images/star_01.jpg"><img src="images/star_01.jpg"></td>
+		                                <td>0 — 300</td>
+		                                <td>0 — 300</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">二级</td>
+		                                <td>健康使者</td>
+		                                <td><img src="images/star_02.jpg"><img src="images/star_02.jpg"><img src="images/star_02.jpg"><img src="images/star_02.jpg"></td>
+		                                <td>301 — 500</td>
+		                                <td>301 — 500</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">三级</td>
+		                                <td>祈福术师</td>
+		                                <td><img src="images/star_03.jpg"><img src="images/star_03.jpg"></td>
+		                                <td>501 — 1000 </td>
+		                                <td>501 — 1000 </td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">四级</td>
+		                                <td>白衣天师</td>
+		                                <td><img src="images/star_04.jpg"><img src="images/star_04.jpg"><img src="images/star_04.jpg"></td>
+		                                <td>1001 — 3000 </td>
+		                                <td>1001 — 3000 </td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">五级</td>
+		                                <td>玉液真人</td>
+		                                <td><img src="images/star_05.jpg"></td>
+		                                <td>3001 — 5000</td>
+		                                <td>3001 — 5000</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">六级</td>
+		                                <td>金身医者</td>
+		                                <td><img src="images/star_06.jpg" height="21" width="21"><img src="images/star_06.jpg" height="21" width="21"></td>
+		                                <td>5001 — 10000</td>
+		                                <td>5001 — 10000</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">七级</td>
+		                                <td>万圣天使</td>
+		                                <td><img src="images/star_07.jpg" height="22" width="21"></td>
+		                                <td>10001 — 30000</td>
+		                                <td>10001 — 30000</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="25">八级</td>
+		                                <td>医者至尊</td>
+		                                <td><img src="images/star_08.jpg" height="21" width="21"></td>
+		                                <td>30001以上</td>
+		                                <td>30001以上</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+									<tr>
+		                                <td colspan="5" height="34">图标名称：<img src="images/star_01.jpg" align="absmiddle">白水晶 <img src="images/star_02.jpg" align="absmiddle">粉水晶<img src="images/star_03.jpg" align="absmiddle">紫水晶<img src="images/star_04.jpg" align="absmiddle">绿宝石<img src="images/star_05.jpg" align="absmiddle">蓝宝石<img src="images/star_06.jpg" height="21" width="21" align="absmiddle">钻石</td>
+		                                <td>&nbsp;</td>
+		                              </tr>
+		                            </tbody></table></li>
+		<li><h4>积分说明：</h4>
+	<p>积分是久久健康社区发表提问、回答问题、论坛话题发表、回复、群组话题发表和回复、健康博文发表、回复博文、发表图片获得的积分和悬赏分，也是在久久健康网上兑换的健康币（虚拟货币），获得一积分的同时，获得一个经验值。获得100积分，便可兑换一个健康币</p>
+				<p>经验值：经验值是会员在久久健康社区中贡献得到的认可，它不会随着积分的消耗而减少，因此会员的等级取决以经验值，而非积分。</p>
+				<p>1积分=1经验值  100积分=1健康币=1人民币</p>
+				<p>健康币说明：健康币是久久健康社区通用的虚拟货币，当久久健康社区会员想在久久健康网上购买物品及进行一切消耗积分的活动而又没有积分时，可用人民币进行充值后、兑换同等值的健康币。</p>
+			<p>图标名称：<img src="images/star_01.jpg" align="absmiddle">白水晶<img src="images/star_02.jpg" align="absmiddle">粉水晶<img src="images/star_03.jpg" align="absmiddle">紫水晶<img src="images/star_04.jpg" align="absmiddle">绿宝石<img src="images/star_05.jpg" align="absmiddle">蓝宝石<img src="images/star_06.jpg" height="21" width="21" align="absmiddle">钻石</p>
+			<p class="small">注：经验值是会员在久久健康社区身份的象征，只会增多，不会减少</p>
+			</li>
+		                        </ul>
+		                        <ul>
+		                            <table class="table04" width="100%"  border="0" cellpadding="0" cellspacing="1">
+		                              <tbody><tr>
+		                                <td colspan="2" height="0"><strong>获得积分项目</strong> </td>
+		                                <td width="165"><strong>得分</strong> </td>
+		                                <td width="284"><strong>说明</strong> </td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="14">注册</td>
+		                                <td width="165">大众会员：+20 分<br>医生会员：+50 分</td>
+		                                <td width="284">新用户注册获得</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="14">完善个人资料</td>
+		                                <td width="165">+100分</td>
+		                                <td width="284">在“个人资料修改”完善资料后即可获得</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="14">推荐会员注册</td>
+		                                <td width="165">+20</td>
+		                                <td width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="14">每日登陆</td>
+		                                <td width="165">+5分</td>
+		                                <td width="284">仅一次，登录访问久久健康社区网即可获得</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="14">健康档案</td>
+		                                <td width="165">+30</td>
+		                                <td width="284">大众会员在个人中心填写完个人健康档案</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="14">在线时间</td>
+		                                <td width="165">+5分/小时</td>
+		                                <td width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td rowspan="4" width="127">健康问答</td>
+		                                <td height="14" width="169">提问</td>
+		                                <td width="165">+5分</td>
+		                                <td width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" width="169">大众会员回复</td>
+		                                <td width="165">+2分</td>
+		                                <td width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" width="169">医生会员回复</td>
+		                                <td width="165">+5分</td>
+		                                <td width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" width="169">回答</td>
+		                                <td width="165">+3分</td>
+		                                <td width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td rowspan="4" width="127">日志</td>
+		                                <td height="14" width="169">发表日志</td>
+		                                <td width="165">+5分</td>
+		                                <td rowspan="2" width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" width="169">日志留言</td>
+		                                <td width="165">+1分</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" width="169">图片</td>
+		                                <td width="165">+10分</td>
+		                                <td width="284">在个人博客的“医学资源”栏中上传各种医学课件</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" width="169">图片</td>
+		                                <td width="165">+3分</td>
+		                                <td width="284">发表日志时上传每张图片</td>
+		                              </tr>
+		                              <tr>
+		                                <td rowspan="3" width="127">健康群组</td>
+		                                <td height="14" width="169">话题发表</td>
+		                                <td width="165">+5分</td>
+		                                <td width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" width="169">回复话题</td>
+		                                <td width="165">+2分</td>
+		                                <td width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" width="169">资料上传</td>
+		                                <td width="165">+10分</td>
+		                                <td width="284">&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" colspan="2">回答悬赏</td>
+		                                <td width="165">+5分</td>
+		                                <td width="284">医生会员：如果用户向医生发起提问，在“医生问答室”回答后被采纳为最佳答案</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" colspan="2">线上|线下活动</td>
+		                                <td width="165">根据活动开设的奖励得分</td>
+		                                <td width="284">社区举办的各种有奖活动并报名参与所获积分</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="14" colspan="2">推广</td>
+		                                <td width="165">5—300分</td>
+		                                <td width="284">把久久健康社区推荐给其他网友，在其他网站发表宣传久久健康文章，根据影响力度，给予奖励积分</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="14">自发活动</td>
+		                                <td width="165">5—300分</td>
+		                                <td width="284">自发活动并取得成功，视影响程度，给予积分或物资奖励</td>
+		                              </tr>
+		                            </tbody></table>
+		                        </ul>
+		                        <ul>
+		                            <table class="table04" width="100%" border="0" cellpadding="0" cellspacing="1">
+		                              <tbody><tr>
+		                                <td colspan="2" height="35">　<strong>消耗积分项目</strong></td>
+		                                <td width="184">　<strong>消耗积分</strong> </td>
+		                                <td width="333">　<strong>说明</strong> </td>
+		                              </tr>
+		                              <tr>
+		                                <td rowspan="4" width="94">问答</td>
+		                                <td height="22" width="134">提问删除</td>
+		                                <td width="184">-10分</td>
+		                                <td class="padding5">发起提问被删的帖子</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="22" width="134">回帖删除</td>
+		                                <td width="184">—5分</td>
+		                                <td class="padding5">回复提问被删除的帖子</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="22" width="134">悬赏付出</td>
+		                                <td width="184">—悬赏积分</td>
+		                                <td class="padding5">提问者悬赏时，扣除悬赏积分</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="22" width="134">问题广播</td>
+		                                <td width="184">—20分</td>
+		                                <td><p>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td rowspan="2" width="94">群组</td>
+		                                <td height="22" width="134">发表话题被删</td>
+		                                <td width="184">-10分</td>
+		                                <td><p>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="22" width="134">回复话题被删</td>
+		                                <td width="184">-5分</td>
+		                                <td><p>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td rowspan="3" width="94">博文</td>
+		                                <td height="22" width="134">博文被删除</td>
+		                                <td width="184">-20分</td>
+		                                <td><p>&nbsp;</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="22" width="134">回复博文被删</td>
+		                                <td width="184">-5分</td>
+		                                <td class="padding5">博文图片被删除扣掉的积分</td>
+		                              </tr>
+		                              <tr>
+		                                <td height="22" width="134">博文图片被删</td>
+		                                <td width="184">-5分</td>
+		                                <td><p>&nbsp;</td>
+		                              </tr>
+
+		                              <tr>
+		                                <td><p>图片</td>
+		                                <td height="22" width="134">图片删除</td>
+		                                <td width="184">-10分</td>
+		                                <td class="padding5">图片被删所扣积分</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2">礼品兑换</td>
+		                                <td width="184">消耗相应礼品兑换积分</td>
+		                                <td class="padding5">久久健康社区网提供的各种礼品兑换消耗积分</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="22">参与线上活动</td>
+		                                <td width="184">消耗活动中相应积分</td>
+		                                <td class="padding5">久久健康社区网与某个健康机构合作，如健康体检、疾病诊断等，会员报名参与后消耗的积分</td>
+		                              </tr>
+
+		                              <tr>
+		                                <td colspan="2">恶意问答</td>
+		                                <td class="padding5" width="184">根据情况而定，扣除10-50分，情节严重者，取消会员资格。</td>
+		                                <td class="padding5">在社区中发表谩骂诽谤、恶意灌水、色情淫秽、违反国家政策法规内容</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="22">购买</td>
+		                                <td width="184">消耗相应商品积分</td>
+		                                <td class="padding5">久久健康社区为会员所设的商品</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="22">虚拟产品购买</td>
+		                                <td width="184">消耗相应积分</td>
+		                                <td class="padding5">各种游戏、道具使用的消耗</td>
+		                              </tr>
+		                              <tr>
+		                                <td colspan="2" height="22">其他违规</td>
+		                                <td width="184">-X</td>
+		                                <td class="padding5">其他作弊违规行为，由管理人员确定惩罚数额</td>
+		                              </tr>
+		                            </tbody></table>
+		                        </ul>
+		</div>
+		                </div><!-- mainwrap end -->
+
+	</div>
+	<div id="ft">		
+	</div>
+</div>
+<!--#include virtual="/footer.html"-->
+</body>
+</html>

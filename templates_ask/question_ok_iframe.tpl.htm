@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$sPageTitle}</title>
+<meta name="keywords" content="{$sKeywords}" />
+<meta name="description" content="{$sDescription}" />
+<link href="/templates/9939/skins/default/tiwen.css" rel="stylesheet" type="text/css" />
+{literal}
+<script>
+function f(id,class_name){
+	document.getElementById(id).className = class_name;
+}
+</script>
+{/literal}
+</head>
+
+<body style="background:none;">
+	<div class="tiask">
+        <div class="bd" style="height:391px;">
+            <h3 class="hd1"><img src="/templates/9939/skins/default/images_ask/icon2.gif" width="16" height="16" />推荐专家</h3>
+            <div class="boxwrap">
+            	<div class="boxbd">
+                	<div class="zjia clfix">
+                	
+                	 {foreach item=item from=$aLineDoc}
+	                    <div class="zjialist">
+                        	<div class="pic">
+	                            <a href="http://home.9939.com/space.php?uid={$item.userid}" target="_blank"><img src="http://ucenter.9939.com/avatar.php?uid={$item.userid}&size=big&type=virtual" height="88" width="78" /><P>专家在线</P></a>
+	                        </div>
+	                        <ul>
+	                             <li>姓名：<a href="http://home.9939.com/space.php?uid={$item.userid}" target="_blank" >{$item.name|truncate:6:''}</a></li>
+	                             <li>科室：{$item.doc_keshi|truncate:6:''}</li>
+	                             <li>职称：{$item.zhicheng|truncate:6:''}</li>
+	                             <li>医院：{$item.doc_hos|truncate:6:''}</li>
+	                        </ul>
+	                     </div>
+	                {/foreach}
+                
+                <!--
+                    	<div class="zjialist">
+                        	<div class="pic">
+                       	    	<img src="/templates/9939/skins/default/images_ask/askys.gif" width="102" height="102" />
+                                <P>专家在线</P>
+                            </div>
+                            <ul>
+                            	<li>姓名：可前往</li>
+                                <li>科室：二代科室</li>
+                                <li>医院：等待答案同时</li>
+                                <li>电话：123456789</li>
+                            </ul>
+                        </div>
+                        <div class="zjialist">
+                        	<div class="pic">
+                       	    	<img src="/templates/9939/skins/default/images_ask/askys.gif" width="102" height="102" />
+                                <P>专家在线</P>
+                            </div>
+                            <ul>
+                            	<li>姓名：可前往</li>
+                                <li>科室：二代科室</li>
+                                <li>医院：等待答案同时</li>
+                                <li>电话：123456789</li>
+                            </ul>
+                        </div>
+                        <div class="zjialist">
+                        	<div class="pic">
+                       	    	<img src="/templates/9939/skins/default/images_ask/askys.gif" width="102" height="102" />
+                                <P>专家在线</P>
+                            </div>
+                            <ul>
+                            	<li>姓名：可前往</li>
+                                <li>科室：二代科室</li>
+                                <li>医院：等待答案同时</li>
+                                <li>电话：123456789</li>
+                            </ul>
+                        </div>
+                        <div class="zjialist">
+                        	<div class="pic">
+                       	    	<img src="/templates/9939/skins/default/images_ask/askys.gif" width="102" height="102" />
+                                <P>专家在线</P>
+                            </div>
+                            <ul>
+                            	<li>姓名：可前往</li>
+                                <li>科室：二代科室</li>
+                                <li>医院：等待答案同时</li>
+                                <li>电话：123456789</li>
+                            </ul>
+                        </div>
+                   -->
+                    </div>
+                </div>
+            </div>
+            <h3 class="hd1"><img src="/templates/9939/skins/default/images_ask/icon3.gif" width="16" height="16" />相关问题</h3>
+            <div class="asklist">
+            	<ul>
+            	{foreach item=item from=$aSameAsk}
+                	<li><a href="/{$item.url}" target="_blank" >{$item.title|truncate:20:''}</a></li>
+                {/foreach}
+                <!--
+                    <li>一切按照几十年后的感觉对生活进行重新组合和排</li>
+                    <li>一切按照几十年后的感觉对生活进行重新组合和排</li>
+                    <li>一切按照几十年后的感觉对生活进行重新组合和排</li>
+                    <li>一切按照几十年后的感觉对生活进行重新组合和排</li>
+                    <li>一切按照几十年后的感觉对生活进行重新组合和排</li>
+                    <li>一切按照几十年后的感觉对生活进行重新组合和排</li>
+                    <li>一切按照几十年后的感觉对生活进行重新组合和排</li>
+                    <li>一切按照几十年后的感觉对生活进行重新组合和排</li>
+                    <li>一切按照几十年后的感觉对生活进行重新组合和排</li>
+                -->
+                </ul>
+            </div>
+		</div>
+        <div class="rc-bt"></div>
+	</div>
+</body>
+</html>

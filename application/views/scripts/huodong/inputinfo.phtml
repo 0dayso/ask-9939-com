@@ -1,0 +1,61 @@
+<?php
+/**
+ * 填写信息
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>填写详细信息</title>
+<link rel="stylesheet" type="text/css" href="<?=ASK_URL?>style/huodong/lf_ok7.css">
+<script type='text/javascript' src="<?=ASK_URL?>Js/jquery-min.js"></script>
+<script type="text/javascript">
+function submitData() {
+	var tname = $("#tname");
+	var phone = $("#phone");
+	var address = $("#address");
+	var postcode = $("#postcode");
+	if(tname.val() == "") {
+		alert("请输入姓名");
+		tname.focus();
+		return false;
+	} else if(phone.val() == "") {
+		alert("请输入电话");
+		phone.focus();
+		return false;
+	} else if(address.val() == "") {
+		alert("请输入地址");
+		address.focus();
+		return false;
+	} else if(postcode.val() == "") {
+		alert("请输入邮编");
+		postcode.focus();
+		return false;
+	} else {
+		var f = document.getElementById("form1");
+		f.submit();
+	}
+}
+</script>
+</head>
+
+<body>
+<div class="jubao_doc">
+  <div class="jubao_tit"><span class="hei">请填写您的详细信息</span><span class="red">（全为必填）</span></div>
+  <form action="" method="post" id="form1">
+  <p class="p"><span><strong>书&nbsp;&nbsp;名：</strong></span><span><?=$this->info['proName']?></span></p>
+  <p class="p"><span><strong>书编号：</strong></span><span>dh<?=$this->info['proId']?></span></p>
+  <p class="p"><span><strong>单&nbsp;&nbsp;价：</strong></span><span><?=$this->info['proPoint']?>积分</span></p>
+  <p class="p"><span><strong>用户名：</strong></span><span><?=$this->nickname?></span></p>
+  <p><span><strong>姓&nbsp;&nbsp;名：</strong></span><span><input type="text" name="info[exTruename]" id="tname"/></span></p>
+  <p><span><strong>电&nbsp;&nbsp;话：</strong></span><span><input type="text"  name="info[exPhone]" id="phone"/></span></p>
+  <p><span><strong>地&nbsp;&nbsp;址：</strong></span><span><input type="text"  name="info[exAddress]" id="address"/></span></p>
+  <p><span><strong>邮&nbsp;&nbsp;编：</strong></span><span><input type="text"  name="info[exPostcode]" id="postcode"/></span></p>
+  <input type="hidden" value="<?=$this->info['proId']?>" name="proid"/>
+  <div class="btn"><span><a href="#" onclick="return submitData()">提&nbsp;&nbsp;交</a></span></div>
+  </form>
+</div>		
+       
+</body>
+</html>

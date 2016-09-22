@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/*@Author:Luck&jiang*/
+/*@CreatDate:2009-03-18*/
+/*@WebSite:http://www.9939.com*/
+
+/*Overall*/
+html{color:#000;background:#FFF;}
+body{font:12px/1.5 Arial,Verdana,sans-serif;}
+body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,form,fieldset,legend,input,textarea,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img,input{border:none;}
+th,b,em,address,cite{font-style:normal;font-weight:normal;}
+ul,ol,li{list-style:none;}
+
+#flink{ border:1px solid #DDD; width:950px; margin:5px auto;}
+#flink h4{ display:block; background:#F2F2F2; padding:0 5px; line-height:24px; border-bottom:1px solid #DDD;}
+#flink ul{margin:5px 10px; line-height:22px;}
+#flink ul li{ float:left; width:103px;}
+
+#footer{width:950px;margin:5px auto;text-align:center; border-top:1px solid #DDD;padding-top:5px;}

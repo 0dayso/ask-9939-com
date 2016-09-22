@@ -1,0 +1,27 @@
+﻿.lw-wbT{border:1px solid #c9dced;width:628px;text-align:left}
+.lw-modnav{background:#e2effc;line-height:30px;color:#1f376d;padding-left:16px}
+.lw-modnav a{color:#1f376d}
+.lw-jbTab .hd{background:#f8fcff;padding:10px 15px;}
+.lw-jbTab .hd p{margin-left:-20px;_margin-left:-10px;overflow:hidden;}
+.lw-jbTab .hd a{float:left;background:url(../images/wddot.jpg) no-repeat 0 11px;padding-left:10px;font-size:14px;color:#20376b;margin-left:20px;line-height:1.8em;white-space:nowrap}
+.lw-jbTab .bd{background:#fff;padding:10px 15px;border-top:1px solid #c9dced;}
+.lw-jbTab .bd .sortList strong{font-weight:normal;font-size:14px;color:#1f376d;background:url(../images/wdarrow.jpg) no-repeat right 0px;padding-right:15px}
+.lw-jbTab .bd .sortList p{margin-left:-5px;overflow:hidden}
+.lw-jbTab .bd .sortList p a{float:left;margin-left:5px;line-height:2em;color:#727272;white-space:nowrap}
+.wdicon{display:block;margin:9px 0 10px 14px}
+
+
+/* 浮动框 */
+.lw-fblock{border:1px solid #4373bb;width:290px;background:#fff;position:fixed;right:0;bottom:0;z-index:9999}
+.lw-fblock .inWrap{padding:5px;}
+.lw-fblock .inWrap .hd{text-align:right;padding-bottom:3px}
+.lw-fblock .inWrap .inbox{background:#4372b9;padding:5px;}
+.lw-fblock .inWrap .inbox span{float:left;color:#fff;line-height:30px;font-size:14px;margin-left:2px}
+.lw-fblock .inWrap .inbox h2{color:#fff;font-size:24px;font-family:"黑体";text-align:left;font-weight:bold;margin-bottom:3px}
+.lw-fblock .inWrap .inbox .inpbox{float:left;border:2px solid #305093;background:#b2c4de;padding:3px}
+.lw-fblock .inWrap .inbox .inp,.lw-fblock .inWrap .inbox .area{border:none;background:#fff;padding:2px;width:210px;color:#949494}
+.lw-fblock .inWrap .inbox .area{height:80px;text-align:left;overflow:auto}
+.lw-fblock .inWrap .subBtn{background:url(../images/wdsubbtn.jpg) no-repeat;width:32px;height:18px;border:none;margin-top:3px}
+* html,* html body{background-image:url(about:blank);background-attachment:fixed;}
+* html .lw-fblock{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop)+document.documentElement.clientHeight-226); 
+}

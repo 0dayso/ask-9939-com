@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+/*幻灯片*/
+.zhslide{  position:relative; margin-top:0; margin-bottom:5px; width:307px; height:248px;overflow:hidden; _zoom:1;}
+.zhslide .slide-thumb-wrap{ position:relative; width:4000px; height:295px}
+.zhslide .slide-thumb{ position:relative; float:left;}
+.zhslide .slide-thumb img{ display:block; width:307px; height:250px;}
+.zhslide .slide-mini ul{ overflow:hidden; zoom:1; float:right;}
+.zhslide .slide-mini li{ color:#fff; display:inline; float:left; margin-right:3px; width:17px; height:17px; line-height:16px; background:#000; border:1px solid #fff; padding:0; text-align:center; cursor:pointer;}
+.zhslide .slide-mini li a{ color:#fff;}
+.zhslide .slide-mini li.on{background:#E93E2C;}
+.zhslide .slide-mini li.on a{color:#fff;}
+.slide-mini{position:absolute; bottom:0; right:0;z-index:999;padding:10px;}

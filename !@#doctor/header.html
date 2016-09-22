@@ -1,0 +1,62 @@
+<link href="/templates/9939/skins/default/shequ_nav.css" rel="stylesheet" type="text/css" />
+	  <div class="top_header">
+        <ul class="navigation">
+          <li class="home_index"><a href="http://www.9939.com" target="_blank">网站首页</a></li>
+          <li>
+            <a href="http://ask.9939.com/" target="_blank" id="nav_jkwd_a">健康问答</a>
+            <ul id="nav_jkwd_ul">
+              <li><a href="http://ask.9939.com/cat.shtml" target="_blank">科室分类</a></li>
+              <li><a href="http://ask.9939.com/label.shtml" target="_blank">健康标签</a></li>
+              <li><a href="http://ask.9939.com/unReply.php" target="_blank">全部问题列表</a></li>
+              <li><a href="http://ask.9939.com/doctorTeam.shtml" target="_blank">问答医师团</a></li>
+              <li><a href="http://home.9939.com/network.php?ac=jf" target="_blank">积分规则</a></li>
+              <li><a href="http://ask.9939.com/ask/question.php" target="_blank">我要提问</a></li>
+            </ul>
+          </li>
+          <li class="nav_jyt"><a href="http://doctor.9939.com/" target="_blank" id="nav_jyt_a">聚医堂</a>
+            <ul id="nav_jyt_ul">
+              <li><a href="http://doctor.9939.com/rank.php?f=1" target="_blank">找专家</a></li>
+              <li><a href="http://doctor.9939.com/rank.php?f=2" target="_blank">医学资源</a></li>
+              <li><a href="http://doctor.9939.com/rank.php?f=4" target="_blank">经验值排行</a></li>
+              <!--<li><a href="###">医学交流群</a></li>-->
+            </ul>
+          </li>
+          <li><a href="http://home.9939.com/network.php?ac=mtag" target="_blank" id="nav_jkqz_a">健康群组</a>
+            <ul id="nav_jkqz_ul">
+              <li><a href="http://home.9939.com/space.php?do=mtag">我的群组</a></li>
+              <li><a href="http://home.9939.com/space.php?do=mtagmore&subop=friend_mtag">好友的群组</a></li>
+              <li><a href="http://home.9939.com/space.php?do=mtagmore&subop=all_mtag">全部群组</a></li>
+              <li><a href="http://home.9939.com/cp.php?ac=mtag">创建群组</a></li>
+            </ul>
+          </li>
+          <li><a href="http://home.9939.com" target="_blank" id="nav_jkjy_a">健康家园</a>
+           <ul id="nav_jkjy_ul">
+            <li><a href="http://home.9939.com/space.php">个人主页</a></li>
+            <li><a href="http://home.9939.com/space.php?do=friend">我的好友</a></li>
+            <li><a href="http://home.9939.com/space.php?do=mtag">我的群组</a></li>
+            <li><a href="http://home.9939.com/space.php?do=ask1">我的问答</a></li>
+            <li><a href="http://home.9939.com/space.php?do=album&view=me">我的相册</a></li>
+            <li><a href="http://home.9939.com/space.php?do=blog&view=me">我的日志</a></li>
+			<li><a href="http://home.9939.com/cp.php?ac=detail&menu=1">基本资料</a></li>
+			<li><a href="http://home.9939.com/cp.php?ac=detail&menu=2">健康档案</a></li>
+
+          </ul>
+        </li>
+        </ul>
+
+<script language="javascript" src="/images/js/shequ_nav.js"></script>
+<script src="http://ask.9939.com/user.php"></script>
+            <p style="display:none"><span><img src="/templates/9939/skins/default/images_doctor/icon002.jpg" align="absmiddle" />在线当前用户：<script src="http://ask.9939.com/online.php"></script>人</span><span><img src="/templates/9939/skins/default/images_doctor/icon003.jpg" align="absmiddle" />在线医生：<script src="http://ask.9939.com/online.php?uType=2"></script>人</span><span><img src="/templates/9939/skins/default/images_doctor/icon004.jpg" align="absmiddle" />问答贴：<script src="/ask.js"></script></span></p>
+
+      </div>
+
+
+		<div id="header">
+			<div class="logo"><img src="/templates/9939/skins/default/images_doctor/logo.jpg" /></div>
+			<div class="question">
+			<form action="/ask/question.php" method="GET">			
+			<p class="mt5">			  <textarea name="newTitle" id="newTitle" rows="5" class="text02" value="在此输入您的问题，专家帮您解答。" onfocus="judgeQue(0);" onblur="judgeQue(1);">请在此输入您的问题内容比如“头痛该怎么办”，点击“我要提问”，提问成功后即有医生为你一一解答！</textarea>
+			  <input type="image" src="/templates/9939/skins/default/images_doctor/btn001.jpg" class="btn01" onclick="this.form.submit()"/> 
+			  <input type="image" src="/templates/9939/skins/default/images_doctor/btn002.jpg" onclick="document.getElementById('newTitle').name='keywords';this.form.action='http://ask.9939.com/ask/search.php?status=3';this.form.submit();" class="btn01"/>　</p>
+			  </form>
+			</div>		

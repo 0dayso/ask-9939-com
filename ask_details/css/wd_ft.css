@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+/*ft*/
+.ft{overflow:hidden;zoom:1;text-align:center;line-height:24px;color:#999;padding-bottom:40px;}
+.ftnav a:hover{color: #ca0000;}
+.ftImg{padding-top:15px;}
+.ftImg img{margin-right:15px;}
+.ft p a{color:#999;}
+.ftBt a{color:#6f6f6f;display:none;}
+.ft-nav {background:#F3F5F4 none repeat scroll 0 0;color:#5F5F5F;height:20px;line-height:20px;margin-top:1px;text-align:center;}
+.ft-nav a {color:#5F5F5F;padding:0 10px;}
+.copyright {color:#5F5F5F;line-height:1.4;margin-top:15px;text-align:center;}
+
+

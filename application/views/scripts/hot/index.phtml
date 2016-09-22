@@ -1,0 +1,90 @@
+<?php
+$cache_key = sprintf('%s|%s|%s-%d',$this->controllername,$this->actionname,'default',$this->cache_page);
+$data = QLib_Cache_Client::getPageCache('pages', $cache_key,24);
+if ($data) {
+    echo $data;
+} else {
+    ob_start();
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title><?=$this->metaTitle;?></title>
+        <meta name="mobile-agent" content="format=html5;url=http://wapask.9939.com/hot/" />
+        <link rel="alternate" media="only screen and(max-width: 640px)" href="http://wapask.9939.com/hot/" >
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/bd_search.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->base_include_path;?>/css/main.css?201609091"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->base_include_path;?>/css/body.css?201609091"/>
+        <script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/jquery.placeholder.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/page.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/user_login.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/gundong.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/DD_belatedPNG.js"></script>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+        <script type="text/javascript" src="<?php echo $this->base_include_path;?>/js/slide.js"></script>
+    </head>
+    <body>
+        <div class="bgcolor">
+            <!--#include virtual="/public/include/header.shtml"-->
+            <div class="line_blu"></div>
+            <div class="conet asbn">
+                <script type="text/javascript">
+                    var cpro_id="u2315937";
+                    (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"960",rsi1:"120",pat:"6",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"1",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",ptbg:"90",piw:"0",pih:"0",ptp:"0"}
+                </script>
+                <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+            </div>
+            <div class="conet bordline">
+                <h3 class="letter-search">字母检索</h3>
+                <div class="letter-switch clearfix">
+                    <?php foreach($this->letter_list as $k=>$v) {
+                        $class_name = ($v['selected']==1? 'class="nols"':'');
+                    ?>
+                    <a href="<?php echo $v['url']; ?>" <?php echo $class_name; ?>  target="_blank" ><?php echo $k; ?></a>
+                    <?php } ?>
+                </div>
+                <div class="letter-cate">
+                    <?php $mod = 2;$row_index=1; foreach($this->list as $k=>$v) { 
+                            $mod_num = $row_index%$mod;
+                            $classname = $mod_num==1?"class='plates one-{$k}'":"class='plates sameml one-{$k}'";
+                            $letter_name = strtoupper($k);
+                            $letter_url = sprintf('%s%s/',$this->letterurl,$letter_name);
+                    ?>
+                        <div <?php echo $classname; ?> >
+                            <div class="case-mores"><a href="<?php echo $letter_url; ?>">更多>></a><h4><?php echo $letter_name; ?></h4></div>
+
+                            <ul class="calist clearfix">
+                                <?php  foreach($v as $kk=>$kv){ 
+                                            $name = $kv['keywords'];
+                                            $short_name = QLib_Utils_String::cutString($name, 10,0) ;
+                                             $url = sprintf('%s%s/',$this->searchurl,  str_replace(' ', '', $kv['pinyin']));
+                                ?>
+                                    <li><a href="<?php echo $url; ?> " title="<?php echo $name; ?>" target="_blank"><?php echo $short_name; ?></a></li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                        <?php $row_index++; ?>
+                    <?php } ?>
+                    <div class="clear"></div>
+                </div>
+                <div class="letter-switch clearfix">
+                    <?php foreach($this->letter_list as $k=>$v) {
+                        $class_name = ($v['selected']==1? 'class="nols"':'');
+                    ?>
+                    <a href="<?php echo $v['url']; ?>" <?php echo $class_name; ?>  target="_blank" ><?php echo $k; ?></a>
+                    <?php } ?>
+                </div>
+            </div>
+            <!--#include virtual="/public/include/footer.shtml"-->
+        </div>
+    </body>
+</html>
+
+<?php
+    $cache_data = ob_get_contents();
+    QLib_Cache_Client::setPageCache('pages', $cache_key, $cache_data, 24);
+    ob_flush();
+}
+?>

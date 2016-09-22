@@ -1,0 +1,157 @@
+{include file="header_doctor.tpl.htm"}
+
+        <div id="main_container" class="visitedCount_rank">
+          <div class="content_zh">
+            <div class="content_title">
+              <h2>久久健康聚医堂访问量排行</h2>
+            </div>
+            <div class="content_nav">
+              <ul id="rank_by">
+                <li class="on"><a onclick="return altTab(2,0);">周访问量</a></li>
+                <li><a onclick="return altTab(2,1);">总访问量</a></li>
+              </ul>
+            </div>
+            <div class="content_main">
+              <div id="table_zh">
+              
+              <!--下面这玩意是周访问量排行-->
+                <span id="rank_by_0">
+             <!--    <tr>
+                  <td class="no_rborder"> -->
+                      <table class="left">
+                        <tbody>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">医生名称</td>
+                            <td  width="103">职称等级</td>
+                            <td  width="103">访问次数</td>
+                          </tr>
+                        <!--从这循环tr-->
+                          {foreach item=item key=key from=$dwblog}
+                          <tr>
+                            <td>{$key+1}</td>
+                            <td><a href="{$item.url}" target="_blank">{if $item.truename} {$item.truename} {else} {$item.username} {/if}</a></td>
+                            <td class="headship">{$item.zhicheng}</td>
+                            <td>{$item.viewnum_w}<img src="/templates/9939/skins/default/images_doctor/up.gif" /></td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                  <!-- </td>
+                  <td class="no_lborder" valign="top"> -->
+                      <table class="right">
+                        <tbody>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">医生名称</td>
+                            <td  width="103">职称等级</td>
+                            <td  width="103">访问次数</td>
+                          </tr>
+
+                        <!--从这循环tr50次-->
+                          {foreach item=item key=key from=$dwblog1}
+                          <tr>
+                            <td>{$key+51}</td>
+                            <td><a href="{$item.url}" target="_blank">{if $item.truename} {$item.truename} {else} {$item.username} {/if}</a></td>
+                            <td class="headship">{$item.zhicheng}</td>
+                            <td>{$item.viewnum_w}<img src="/templates/9939/skins/default/images_doctor/up.gif" /></td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                  <!-- </td>
+                </tr> -->
+                </span>
+                
+                 <!--下面这玩意是总访问量排行-->
+                <span id="rank_by_1" style="display:none;">
+                <!-- <tr>
+                  <td class="no_rborder"> -->
+                      <table class="left">
+                        <tbody>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">医生名称</td>
+                            <td  width="103">职称等级</td>
+                            <td  width="103">访问次数</td>
+                          </tr>
+                        </tbody>
+                        <tbody>
+                        <!--从这循环tr次-->
+                          {foreach item=item key=key from=$dzblog}
+                          <tr>
+                            <td>{$key+1}</td>
+                            <td><a href="{$item.url}" target="_blank">{if $item.truename} {$item.truename} {else} {$item.username} {/if}</a></td>
+                            <td class="headship">{$item.zhicheng}</td>
+                            <td>{$item.viewnum}<img src="/templates/9939/skins/default/images_doctor/up.gif" /></td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                  <!-- </td>
+                  <td class="no_lborder" valign="top"> -->
+                      <table class="right">
+                        <tbody>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">医生名称</td>
+                            <td  width="103">职称等级</td>
+                            <td  width="103">访问次数</td>
+                          </tr>
+                        </tbody>
+                        <tbody>
+                        <!--从这循环tr次-->
+                          {foreach item=item key=key from=$dzblog1}
+                          <tr>
+                            <td>{$key+51}</td>
+                            <td><a href="{$item.url}" target="_blank">{if $item.truename} {$item.truename} {else} {$item.username} {/if}</a></td>
+                            <td class="headship">{$item.zhicheng}</td>
+                            <td>{$item.viewnum}<img src="/templates/9939/skins/default/images_doctor/up.gif" /></td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                  <!-- </td>
+                </tr> -->
+                </span>
+              </div>
+             {literal}
+              <script type="text/javascript">
+				function altTab(m,n){
+				 var sTag=document.getElementById("rank_by").getElementsByTagName("li");
+				 for(i=0;i<m;i++){
+				  sTag[i].className=i==n?"on":"";
+				  document.getElementById("rank_by_"+i).style.display="none";
+				 }
+				 document.getElementById("rank_by_"+n).style.display="";
+				}
+			 </script>
+			   {/literal}
+            </div>
+          </div>
+            <script language="javascript" src="/images/js/tdColor.js"></script>			
+			<div class="sidebar_zh">{include file="include/right.html"}</div>				
+          </div>
+        </div>
+</div>
+<div class="clear"></div>
+{literal}
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+		counter = 0;
+		function show()
+		{
+			for(i=0; i<3; i++)
+			{
+				document.getElementById('hotimg'+i).style.display="none";
+			}
+			document.getElementById('hotimg'+counter).style.display="";
+			counter++;
+			if(counter == 3) counter = 0;
+			window.setTimeout("show('hotimg'+counter)",1500);
+		}
+		show()
+//-->
+</SCRIPT>		
+{/literal}
+{include file="include/footer.html"}

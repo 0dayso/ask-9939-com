@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+.w970 #hd, .w970 #bd, .w970 #ft { width:970px; margin:0 auto; }
+body { background:#3684a1; }
+.d-mod .d-box1-hd { background:url(../images/hd-bg.jpg) no-repeat; height:186px; }
+.d-box1-bd .hd { background:url(../images/bd-hd.gif) no-repeat; height:17px; }
+.d-box1-bd .bd { background:url(../images/bd-bg.gif) repeat-y; }
+.d-box1-bd .ft { background:url(../images/bd-ft.png) no-repeat; height:17px; }
+.d-grid .m-wrap { margin-right:334px; }
+.d-grid .col-e { width:334px; margin-left:-334px; }
+.d-box1-ft { height:41px; font-size:12px; line-height:20px; color:#ffffd5; text-align:center; padding-top:15px; }
+.d-box1-ft a { color:#ffffd5; margin:0 7px; }
+/*注册成功*/
+.d-box2 .d-box2-hd h4 { font-size:14px; line-height:20px; padding-left:33px; padding-top:6px; }
+.d-box2 .d-box2-hd h4 a { color:#2b6e88; }
+.d-box2 .d-box2-hd h4 span { padding-left:6px; }
+.d-box2 .d-box2-bd { padding:75px 0 53px 77px; width:478px; }
+.d-box2 .d-box2-bd .gx-Info { font-family:"微软雅黑", "黑体"; font-size:32px; line-height:21.86px; color:#c20c00; }
+.d-box2 .d-box2-bd .userName { font-size:14px; line-height:20px; color:#333333; padding:14px 0; }
+.d-box2 .d-box2-bd .userName a { color:#2b6e88; text-decoration:underline; }
+.d-box2 .d-box2-bd .userName .grInfo { padding-right:30px; }
+.d-box2 .d-box2-bd .yqts { font-size:12px; line-height:20px; color:#2b6e88; padding-top:10px; padding-bottom:20px; }
+.d-box2 .d-box2-bd .yqts span { float:left; }
+.d-box2 .d-box2-bd .yqts .yqts-Info { padding-left:6px; width:466px; }
+.d-box2 .d-box2-bd .youdo { border:1px dashed #2b6e88; font-size:14px; line-height:20px; color:#333333; padding:17px 0 42px 22px; background:#FFFFFF; }
+.d-box2 .d-box2-bd .youdo li { font-size:14px; line-height:24px; }
+.d-box2 .d-box2-bd .youdo li a { color:#2b6e88; }
+/*右侧简便注册半分钟达成*/
+.d-box3 .d-box3-hd, .d-box3 .d-box3-ft { padding-left:27px; }
+.d-box3 .d-box3-bd { margin-left:27px; margin-right:40px; }
+.d-box3 .d-box3-hd h3 { font-family:"微软雅黑", "黑体"; font-size:26px; line-height:24px; color:#5f8d9a; padding-top:30px; padding-bottom:20px; font-weight:normal; }
+.d-box3 .d-box3-bd { font-family:"微软雅黑", "黑体"; font-size:22px; line-height:24px; color:#5f8d9a; }
+.d-box3 .d-box3-bd p { border-bottom:1px dashed #5f8d9a; padding:10px 0; }
+.d-box3 .d-box3-bd .noborder { border-bottom:0; padding-bottom:215px; }
+.d-box3 .d-box3-ft { margin-left:2px; margin-right:10px; padding-left:27px; border-top:1px dashed #5f8d9a; padding-top:5px;}
+.d-box3 .d-box3-ft .lxwm { font-size:12px; line-height:18px; color:#5f8d9a; }
+.d-box3 .d-box3-ft .telInfo { background:url(../images/tel-icion.gif) no-repeat; font-family:"Arial", "Helvetica", "sans-serif"; font-size:14px; line-height:18px; color:#5f8d9a; }
+.d-box3 .d-box3-ft .telInfo .tel1 { padding-left:29px; margin-right:16px; }
+/*3*/
+.d-box2 .d-3-box2 { padding:28px 47px 0 46px; }
+.d-box2 .d-3-qrInfo { border:1px dashed #2b6e88; }
+.d-box2 .d-3-qrInfo dd { padding-left:14px; }
+.d-box2 .d-3-box2 .d-3-qrInfo .d-3-wbg { background:#FFFFFF; }
+.d-box2 .d-3-box2 .d-3-qrInfo .d-3-sm1 { font-size:14px; line-height:20px; color:#333333; padding-top:14px; }
+.d-box2 .d-3-box2 .d-3-qrInfo .d-3-xxInfo { font-size:14px; line-height:20px; color:#2b6e88; padding:19px 0 19px 30px; }
+.d-box2 .d-3-box2 .d-3-qrInfo .d-3-xxInfo a { color:#2b6e88; }
+.d-box2 .d-3-box2 .d-3-qrInfo .d-3-sm2 { font-size:12px; line-height:16px; color:#2b6e88; padding:8px 0 8px 14px; }
+.d-box2 .d-3-box2 .d-3-sm3 { font-size:12px; line-height:20px; color:#2b6e88; padding-top:31px; }
+.d-box2 .d-3-box2 .d-3-tel { padding-top:5px; }
+.d-box2 .d-3-box2 .d-3-tel dt { float:left; font-size:14px; line-height:27px; color:#333333; width:70px; height:36px; }
+.d-box2 .d-3-box2 .d-3-tel dd { float:left; font-size:12px; line-height:20px; color:#c20c00; width:467px; }
+.d-box2 .d-3-box2 .d-3-tel span { float:left; }
+.d-box2 .d-3-box2 .d-3-tel .btx { padding-left:10px; width:402px; }
+.d-box2 .d-3-box2 .d-3-tel input { height:27px; }
+.d-box2 .d-3-box2 .d-3-tel .qh { width:57px; }
+.d-box2 .d-3-box2 .d-3-tel .dwdh { width:161px; }
+.d-box2 .d-3-box2 .d-3-tel .phone { width:223px; }
+.d-box2 .d-3-box2 .imgInfo { padding:15px 0 20px 70px; }
+/*2*/
+.d-box2 .d-2-box2 { padding: 68px 0 158px 75px; }
+.d-box2 .d-2-box2 p { padding: 2px 0; }
+.d-box2 .d-2-box2 label { font-size:14px; line-height:27px; color:#333333; }
+.d-box2 .d-2-box2 input { height:27px; width:223px; }
+.d-box2 .d-2-box2 .btx { font-size:12px; line-height:20px; color:#c20c00; padding-left:70px; }
+.d-box2 .d-2-box2 .imgInfo { padding:18px 0 0 72px }

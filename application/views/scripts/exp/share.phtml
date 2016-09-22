@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>我要分享_久久问医健康经验</title>
+        <link rel="canonical" href="http://wapask.9939.com/jingyan/shareing/share/" >
+        <link rel="stylesheet" type="text/css" href="/ask_details/css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="/ask_details/css/list.css"/>
+        <script type="text/javascript" src="/ask_details/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask_details/js/scrollbar_exp.js"></script>
+        <script type="text/javascript" src="/ask_details/js/gundong_exp.js"></script>
+        <script type="text/javascript" src="/ask_details/js/detail.js"></script>
+    </head>
+    <base target="_blank">
+    <body>
+        <!-- 头部开始 -->   
+        <!--#include virtual="/include/exp/exp_header.html"-->  
+        <!-- 头部结束 -->
+
+        <a class="adv" href=""><img src="/ask_details/images/han.png" alt=""></a>
+        <div class="content">
+            <h3 class="mysa">我要分享</h3>
+            <form class="descr" action="" method="post">
+                <p><label>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</label><input type="text" class="txt" value="请输入标题..." onFocus="if (this.value == '请输入标题...')
+                            this.value = ''" onBlur="if (this.value == '')
+                                        this.value = '请输入标题...'"></p>
+                <p class="prds"><label>问题描述：</label><textarea onFocus="if (this.value == '请输入分享内容（不能少于20字）')
+                            this.value = ''" onBlur="if (this.value == '')
+                                        this.value = '请输入分享内容（不能少于20字）'">请输入分享内容（不能少于20字）</textarea></p>
+                <div class="sexag"><p><label>性&nbsp;别：</label><input type="radio" name="rad"><span>男</span><input type="radio" name="rad"><span>女</span></p><p class="age"><label>年&nbsp;龄：</label><select><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="60">60</option><option value="40">40</option></select></p></div>
+                <input type="button" class="subs" value="立即提交">
+            </form>  
+        </div>
+        <!--立即提交弹出-->
+        <div class="outbra disn" ></div>
+        <div class="tips disn" >
+            <h3>您的问题提交成功！</h3>
+            <p>3秒后自动返回首页</p>
+            <a><img src="/ask_details/images/ero.png"></a>
+        </div>
+        <!--底部 开始-->
+        <!--#include virtual="/include/exp/exp_footer.html"-->  
+        <!-- 底部 结束 -->
+    </body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        $('.subs').click(function () {
+            var title = $('.txt').val();
+            if(title == '请输入标题...'){
+                alert('请输入标题...');
+                return ;
+            }
+            var textarea = $("textarea:first").val();
+            if(textarea == '请输入分享内容（不能少于20字）'){
+                alert('请输入分享内容（不能少于20字）');
+                return;
+            }
+            
+            setTimeout(popup, 5000);
+        });
+        function popup() {
+            $('.tips').css('position', 'fixed');
+            $('.outbra,.tips').removeClass('disn');
+            var countdown = 3;
+            setInterval(function () {
+                --countdown;
+                if (countdown > 1) {
+                    $('.tips p').text(countdown + '秒后自动返回首页');
+                } else if (countdown == 1) {
+                    $('.tips p').text('正在返回首页...');
+                } else {
+                    location.href = 'http://ask.9939.com/jingyan/';
+                }
+
+            }, 1000);
+        }
+    });
+</script>

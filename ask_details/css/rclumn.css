@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+.mr20{ margin-right:20px;}
+.mTop{ margin-bottom:18px;}
+/*二级科室 推荐专家*/
+.quitr_doctor{overflow:hidden; padding:0; border:1px solid #e4e4e4;border-top:3px solid #00d4dd;}
+.rquit_line{ border-bottom:1px solid #e4e4e4; padding:8px 0 8px 10px;}
+.expert{margin-left:12px; overflow:hidden; font-size:12px; padding-bottom:17px;}
+.lie{ overflow:hidden;margin:20px 0 0 0; font-family:"宋体"; position:relative; }
+.pr20{ padding-bottom:3px;}
+.expert .doc_pic{margin-right:14px;}
+.expert .doc_pic a img{ width:80px; height:80px;}
+.pagename{font-weight:bold; margin-bottom:10px; font-size:14px;}
+.cl999{ color:#999;margin-bottom:10px;}
+.ruser_ques{background:url(../images/n_bgm0.jpg) no-repeat; width:63px; height:19px; text-align:center; line-height:19px; position:absolute; top:10px;left:190px; right:24px;}
+/*二级科室 常见用药*/
+.drehos{margin-left:12px;}
+.more_hos{ overflow:hidden; font-family:"宋体"; font-size:12px; margin:18px 0;}
+.drug_pic{ width: 70px; height: 70px;}
+.drug_pic img{ width: 70px; height: 70px;} 
+.qrw159 { width: 180px; /* margin-top:10px; */}
+.drehos .qrw159 h3 a{font-size:14px;font-family:"宋体"; color:#333;}
+.mr10{ margin-right:10px;}
+.drehos .drug_pm0{font-family:"宋体"; color:#666; margin-top:10px;}
+.drehos .drug_pm0 b{ font-weight:normal; color:#333;}
+.drug_pm0 a{color:#ff6600;}
+/*二级科室 推荐医院*/
+.hos_rpic{ margin-right:10px;}
+.more_hos h3 a{color:#333; font-size:12px;}
+.more_hos p span{ display:inline;}
+.more_hos p{color:#787878; margin-top: 8px;}
+.more_hos p.smap{ background:url(../images/smap.png) no-repeat 0 3px; padding-left:15px; }
+/*二级科室 猜你喜欢*/
+.noplim{ border:none; border-top:3px solid #00d4dd;}
+.rqure3{ border:1px solid #e4e4e4; border-top:none;border-bottom:none;}
+.clumn{ border:1px solid #e4e4e4; border-top:none; width: 298px; height:250px; overflow: hidden;}
+.mle10{margin-left:9px;}
+.hottab{margin-top:7px; margin-left:30px;color:#555;font-size:12px;}
+.hottab a{font-size:12px;color:#555;margin:0 2px;}
+.hottab .hsline{background:url(../images/hsline.jpg) no-repeat 10px 2px;}
+/*二级科室 热点文章*/
+h4.rquit_line_h2  a{font-size:18px;font-family:"Microsoft YaHei"; color:#000; font-weight:normal; text-decoration:none;}
+.r_hot{ overflow:hidden; margin-top:25px;}
+.r_hot li{ float:left;margin:0 10px 15px 15px;}
+.r_hot li img{width:120px; height:90px;}
+.r_hot li  span{ margin-top:7px; display:block; text-align:center;}
+.r_hot li  span a{ font-size:14px;}
+.er_news { overflow:hidden;  padding:18px 0 8px 10px;}
+.er_news li{background:url(../images/icon.png) no-repeat -9px -124px;overflow: hidden;zoom: 1;vertical-align: bottom;font-family:"宋体"; padding-left:10px;  margin-bottom:12px;}
+.er_news li a{ color:#333;}
+.er_news li span {float:left;margin-right: 8px;}
+.er_line{ border-top:1px dashed #ccc;}
+/*全部科室 推荐专家 ,问答详情 推荐专家 */
+.doc_w166{ width:166px;font-family:"宋体";}
+.pagna14{ font-size:14px; margin-bottom:3px;  color: #000;}
+.doc_pom{ border:1px solid #e5e5e5; padding:2px;}
+.pagna12{ font-size:12px; line-height:16px;}
+.pagna12 span a{ color:#666666;}
+.ruser_ques89{background:url(../images/n_bg1.jpg) no-repeat; width:89px; height:23px; line-height:23px; text-align:center; margin-top:7px;}
+.ruser_ques89 a{color:#1ebfc7;font-size:12px;}
+.ruser_ques a{color:#fff;}
+.r_drug {margin-bottom:23px;}
+.r_drug li{float:left; margin:25px 17px 0 20px; height:112px;}
+.r_drug li span{ display:block; font-family:"宋体"; margin-top:12px;}
+.mBto20{ margin-bottom:20px;}
+/*问答详情页 相关标签*/
+.meb_lab { padding-left:9px; overflow:hidden;}
+.meb_lab a{dispaly:block; float:left; width:49px; height:26px;line-height:26px;text-align:center; background:#ededed;margin:0 4px 8px 4px; text-decoration:none;}
+.meb_lab .w77{ width:77px;}
+.meb_lab  .cord4{ background:#00d4dd;color:#fff;}
+.meb_lab a:hover{ background:#00d4dd;color:#fff;}
+.meb_lab .cord4{}
+.quitr_doctor .mebotom{border-bottom:none;}
+.mTop18{ margin-top:18px;}
+/*问答疾病 相关疾病*/
+.dlop{ border:1px solid #e4e4e4; overflow:hidden;}
+.drelat{ padding:16px 15px 0 12px;}
+.detail_nr .symname{ height:23px; line-height:23px; padding:17px 18px 0 13px;}
+.detail_nr .symname h3{ font-size:18px; color:#000;}
+.detail_nr .symname span.lookwik{background:url(../images/dis_bd2.jpg) no-repeat 0 3px ; width:34px; display:inline;font-size:12px; text-align:center;}
+.drelat .pT16{padding-top:16px;}
+.drelat .mT20{margin-top:20px;}
+.drelat .lw5{background:url(../images/asico.png) no-repeat 0 2px; padding-left:15px; font-size:16px; font-weight:normal;}
+.drelat .meb_lab{ padding-left:0;padding-bottom:22px;}
+.drelat .meb_lab a{margin: 0 8px 8px 0;}
+.drelat .md21{ margin-bottom:21px;}
+.drelat .drehos{ margin-left:0;}
+.pTd20{ border-top:1px solid #e4e4e4; padding-top:20px;}
+.drelat .expert{margin-left:0;}
+.drelat .lie{margin-top:0;}
+.drelat .mdT20{ margin-top:20px;}
+.drelat .mdT15{ margin-top:10px;}
+
+/*wz_yc03*/
+.wz_yc03{border:1px solid #e4e4e4; overflow:hidden; padding:10px 0 6px 15px; border-top:2px solid #00c7d3;}
+.wd_yc03_ys{ overflow:hidden; margin-top:14px;}
+.wd_fl_wz{overflow:hidden;position:relative; margin-top:10px; }
+.wd_fl_wz p{ height:26px; line-height:16px;}
+.wd_fl_img{ float:left; width:70px; height:70px; margin-right:17px;}
+.wd_fl_img img {width:70px;height:70px;}
+.wd_fl_P{ color:#333; font-size:14px; font-weight:bold;}
+.wd_fl_P2{ color:#a4a4a4; font-size:12px;}
+.wd_yc04{overflow:hidden;zoom:1; border:1px solid #dfdede; border-top:2px solid #00c7d3; margin-top:20px; padding:10px 11px 0px 16px;}
+.wd_dl{overflow:hidden;margin:9px 0 20px 0;}
+.wd_dl p {width:271px; height:56px;}
+.wd_img{ float:left; margin-right:20px;}
+.wd_fl_p1 a{color:#fff; text-align:center;}
+.wd_fl_wz .wd_fl_p1{font-size:12px; text-align:center;line-height:20px; margin-top:22px;background:url(../images/n_bg1.jpg) no-repeat; width:66px;height:21px; position:absolute; right:20px; top:1px;}

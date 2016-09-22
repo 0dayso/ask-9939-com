@@ -1,0 +1,162 @@
+{include file="html/header.tpl.htm"}
+
+		<div id="mainbody" class="clfix">
+			<div class="w720 left">
+				<div id="tabs0" class="t04">
+					 <ul class="menu0 clfix" id="menu0">
+						  <li class="hover">疾病健康</li>
+					 </ul>
+				</div>
+				<div class="bd01">
+					<div class="l06 clfix">
+						<dl>
+							<dt><a href="{$Category_ask.52.url}">内科</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_neike_child_names}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.77.url}">外科</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_wk_child_names}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.33.url}">妇科</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_fk_child_names}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.100.url}">男科</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_nk_child_names}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.112.url}">心理</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_xl_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}	
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.42.url}">儿科</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_ek_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}	
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.133.url}">中医科</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_zy_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.172.url}">药物</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_yw_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.141.url}">五官科</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_wg_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.145.url}">传染科</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_crk_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.149.url}">肿瘤科</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_zl_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.122.url}">皮肤性病</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_pfb_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.158.url}">整形</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_zx_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div id="tabs0" class="t04 mt10">
+					 <ul class="menu0 clfix" id="menu0">
+						  <li class="hover">大众健康</li>
+					 </ul>
+				</div>
+				<div class="bd01">
+					<div class="pd10">
+					{foreach key=key item=item from=$Cat_dzjk_child_names}
+					 	<a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a>
+					{/foreach}
+					</div>
+				</div>
+				<div id="tabs0" class="t04 mt10">
+					 <ul class="menu0 clfix" id="menu0">
+						  <li class="hover">日常生活</li>
+					 </ul>
+				</div>
+				<div class="bd01">
+					<div class="l06 clfix">
+						<dl>
+							<dt><a href="{$Category_ask.178.url}">子女教育</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_ye_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="{$Category_ask.182.url}">生活环境</a></dt>
+							<dd>
+							{foreach key=key item=item from=$Cat_shhj_child_names}
+							 	<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+							{/foreach}
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div><!-- w720 end -->
+			<div class="w220 right">
+				<!--#include virtual="/CatRightbar.shtml"-->				
+			</div><!-- w220 end -->			
+		</div><!-- mainbody end -->
+	</div><!-- wrapper end -->
+<!--#include virtual="/templates_ask/include/footer.html"-->

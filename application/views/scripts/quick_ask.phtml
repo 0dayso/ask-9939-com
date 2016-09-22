@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://www.9939.com/js/jquery.js"></script>
+<link href="http://www.9939.com/9939/style/r.css" rel="stylesheet" type="text/css" />
+<link href="http://www.9939.com/9939/style/quiz.css" rel="stylesheet" type="text/css" />
+<script>
+function quick_ask(){
+	if($("#quick_title").val()==""){
+		alert("请输入标题");
+		$("#quick_title").focus();
+		return false;
+	} else if($("#quick_content").val()=="") {
+		alert("请输入内容");
+		$("#quick_content").focus();
+		return false;
+	} else if($("#quick_content").val()=="输入您的问题") {
+		alert("请输入内容");
+		$("#quick_content").focus();
+		return false;
+	} else if($("#quick_title").val().length<5 || $("#quick_title").val().length>50) {
+		alert("标题字数要在：5-50  之间");
+		$("#quick_title").focus();
+		return false;
+	} else if($("#quick_content").val().length<10 || $("#quick_content").val().length>500) {
+		alert("内容字数要在：10-500 之间");
+		$("#quick_content").focus();
+		return false;
+	}
+    if($("#verifyt").val()==""){
+            alert('请填写验证码');	
+			return false;
+        }
+	$('#textarea_hidden_editor').val(b.getValue());
+	return true;
+}
+function shuaxint(){
+    if(!yzmkq)return;
+    var str="/askt/verify?"+(new Date()).getTime();
+    $("#verifyyzmt").attr("src",str);
+}
+var yzmkq=false;
+function yzmt(){
+    if(yzmkq)return;
+    yzmkq=true;
+    var str="/askt/verify?"+(new Date()).getTime();
+    $("#verifyyzmt").attr("src",str);
+    $("#verifyyzmt").show();
+}
+</script>
+</head>
+
+<body>
+    <form name="quiz" method="POST" action="/askt/do/do/save/" target="_blank" class="quiz" autocomplete="off">
+	<p><label>标题：</label><input type="text" class="inp" name="info[title]" id="quick_title"  value="请输入您的问题标题" onfocus="javascript:if(this.value=='请输入您的问题标题') this.value='';" /></p>
+	<p><label class="hlabel">描述：</label><textarea class="inp inp2" onfocus="javascript:if($('#quick_content').html()=='把您的问题描述一下') $('#quick_content').html('');" id="quick_content" name="info[content]">把您的问题描述一下</textarea></p>
+			<input type="hidden" name="info[classid]" value="<?=$this->classid?>" />
+			<input type="hidden" value="<?=$this->token?>" name="token" />
+            <p><label>验证码:</label><input type="text" onfocus="yzmt();" maxlength="4" class="inp3" name="verifyt" id="verifyt"/>
+            <img id="verifyyzmt" onclick="shuaxint()" style="width:70px;height:30px;cursor:pointer; display: none; "  align="absmiddle" />
+	<p class="sub"><input type="submit" value="提&nbsp;&nbsp;交" class="sub-btn" onclick="return quick_ask()"></p>
+    </form>
+
+</body>
+</html>

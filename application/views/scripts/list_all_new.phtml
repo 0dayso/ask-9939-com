@@ -1,0 +1,510 @@
+<?php
+//$cache_key = sprintf('%s|%s|%s_%s', 'ask', 'list_'.$this->status, $this->classid, $this->page_now==''?'0':$this->page_now);
+//$data = QLib_Cache_Client::getPageCache('pages', $cache_key,24);
+//if ($data) {
+//    echo $data;
+//} else {
+//    ob_start();
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title><?php echo $this->title; ?></title>
+        <meta name="Keywords" content="<?php echo $this->keywords; ?>" />
+        <meta name="description" content="<?php echo $this->description; ?>" />
+        <!--头部-->
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/main.css?v=20160905" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/bd_search.css?v=20151203_07" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/second.css?v=20160811" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/rclumn.css?v=20160805" />
+
+        <script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/jquery.placeholder.min.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/page.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/scrollbar.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/slide.js?v=20160811"></script>
+        <script type="text/javascript" src="/ask/v1/js/user_login.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/gundong.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/DD_belatedPNG.js?v=20151203_07"></script>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+        <base  target="_blank"/>
+    </head>
+    <body>
+        <!-- 头部开始 -->   
+        <!--#include virtual="/headers_new.shtml"-->  
+        <!-- 头部结束 -->
+        <div class="wd_zj">
+            <div class="wd_flz font">
+                <ul>
+                    <li><a href="http://ask.9939.com/" title="首页">首页</a></li>
+                    <li><a href="http://ask.9939.com/cat.shtml" title=" 科室分类">科室分类</a></li>
+                    <li class="wd-ts"><a href="http://ask.9939.com/classid/0" title="问题大全">问题大全</a></li>
+                    <li><a href="http://ask.9939.com/doctorTeam.shtml" title="医生团队">医生团队</a></li>
+                    <li><a href="http://ask.9939.com/rank.shtml" title="问答排行">问答排行</a></li>
+                    <li><a href="http://ask.9939.com/jingyan/" title="健康经验">健康经验</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mokd">
+            <!-- 百度广告位1 -->
+            <div class="bann">
+                <script type="text/javascript">
+                    var cpro_id="u2315937";
+                    (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"960",rsi1:"120",pat:"6",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"1",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",ptbg:"90",piw:"0",pih:"0",ptp:"0"}
+                </script>
+                <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+            </div>
+            <div class="wd_mian font">
+                <?php
+                $keshiid = $this->classid;
+                $ks_cache = $this->ks_cache;
+                $ks_nav = $this->ks_nav;
+                $htmlArr = array();
+                $htmlArr[] = '<a href="' . WEB_URL . '" title="久久健康网">久久健康网</a>';
+                $htmlArr[] = '<a href="' . ASK_URL . '" title="久久问医">久久问医</a>';
+                $htmlStr = '';
+                foreach ($ks_nav as $k => $v) {
+                    $jb_url = $v['url'];
+                    $ks_name = $v['name'];
+                    $htmlStr = '<a href="' . $jb_url . '" title="' . $ks_name . '" class="a_bol">' . $ks_name . '</a>';
+                    $htmlArr[] = $htmlStr;
+                }
+
+                $htmlArr[] = '问题列表';
+                echo implode('>', $htmlArr);
+
+                $ret_arr = array_slice($ks_nav, 0, 1);
+                $level1_id = count($ret_arr) > 0 ? $ret_arr[0]['id'] : 0;
+                $ret_arr = array_slice($ks_nav, 1, 1);
+                $level2_id = count($ret_arr) > 0 ? $ret_arr[0]['id'] : 0;
+
+                $ret_arr = array_slice($ks_nav, 2, 1);
+                $level3_id = count($ret_arr) > 0 ? $ret_arr[0]['id'] : 0;
+                ?>
+            </div>
+            <?php $target = ' target="_blank"'; ?>
+            <div class="container w1000 font">
+                <!--左侧开始-->
+                <div class="w678  mr20 fl">
+                    <!--科室分类-->  
+                    <div class="administr">
+                        <div class="hr_rig01">
+                            <ul class="ksul clearfix">
+                                <?php
+                                $n = 0;
+                                $len_dzjb = count($this->dzjb);
+                                foreach ($this->dzjb as $k => $v) {
+                                    if ($v['child']) {
+                                        $curr_class_id = $v['id'];
+                                        $class = ($curr_class_id == $level1_id) ? "on" : "";
+                                        $style = ($k == $len_dzjb - 1) ? 'style=" padding:0 12px;"' : "";
+                                        echo '<li class="' . $class . '" data-nav-id="'.$curr_class_id.'"><a target="_self"  href="' . $v['url'] . '" title="' . $v['name'] . '" ' . $style .$target. '>' . $v['name'] . '</a></li>';
+                                        $n++;
+                                    }
+                                }
+                                ?>
+
+                            </ul>
+                        </div>              
+                        <div class="hr_left01">
+                            <?php
+                            $n = 1;
+                            foreach ($this->dzjb as $k => $v) {
+                                if ($v['child']) {
+                                    $curr_class_id = $v['id'];
+                                    $display = ($curr_class_id == $level1_id) ? "block" : "none";
+                                    echo '<dl class="mebox" id="mebox_'.$curr_class_id.'"  name="mebox_'.$curr_class_id.'"   data-nav-id="'.$curr_class_id.'"  style=" display:' . $display . ';"><div class="mebox_a">';
+                                    //二级科室
+                                    $m = 0;
+                                    foreach ($v['child'] as $key => $val) {
+
+                                        $active = ($val['id'] == $level2_id) ? "active" : "";
+                                        echo '<a target="_self" href="' . $val['url'] . '" class="' . $active . '" data-id="tab_pole' . $n . '" title="' . $val['name'] . '"' . $target . '>' . $val['name'] . '</a>';
+                                        $m++;
+                                    }
+                                    echo '</div>';
+
+                                    echo '<div class="depart_third" id="div_tab_pole' . $n . '">';
+                                    //三级科室
+                                    $m = 0;
+                                    foreach ($v['child'] as $key => $val) {
+
+                                        $display = ($val['id'] == $level2_id) ? "block" : "none";
+                                        $m++;
+                                        echo '<div class="meline clearfix" data-pid="'.$val['id'].'" style=" display:' . $display . ';">';
+                                        echo '<div class="cinfo fl">';
+                                        
+                                        $aTemp = array();
+                                        foreach ($this->ks_cache as $key1 => $val1) {
+                                            if ($val1['pID'] == $val['id']) {
+                                                $j = $val1['listorder'];
+                                                $aTemp[$j] = $val1;
+                                            }
+                                        }
+                                        ksort($aTemp);
+                                        foreach ($aTemp as $val2) {
+                                            $disease_url = '/disease/' . $val2['id'];
+                                            if($val2['class_level3'] == 0){
+                                                $disease_url = '/classid/' . $val2['id'];
+                                            }
+                                            $style_class = ($val2['id'] == $level3_id) ? "active" : "";
+                                            echo '<a target="_blank" href="'.$disease_url.'" class="' . $style_class . '" title="' . $val2["name"] . '"' . $target . '>' . $val2['name'] . '</a>';
+                                        }
+                                        echo '</div><a class="folen fr">展开&nbsp;∨</a>';
+                                        echo '</div>';
+                                    }
+
+                                    echo '</div>';
+
+                                    echo '</dl>';
+                                    $n++;
+                                }
+                            }
+                            ?>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="l_ques" style="margin-top:17px;">
+                        <div class="lw_tab nosanme clearfix">
+                            <a href="/classid/<?php echo sprintf('%d-%s-%d', $this->classid, 'all', 1); ?>" target="_self" name="tab_status_3" id="tab_status_3" class="<?php echo $this->status == 3 ? "indexahover" : ""; ?>" style=" border-left:none;">全部问题</a>
+                            <a href="/classid/<?php echo sprintf('%d-%s-%d', $this->classid, 1, 1); ?>" target="_self" name="tab_status_1" id="tab_status_1" class="<?php echo $this->status == 1 ? "indexahover" : ""; ?>">已解决问题</a>
+                            <a href="/classid/<?php echo sprintf('%d-%s-%d', $this->classid, 4, 1); ?>" target="_self" name="tab_status_4" id="tab_status_4" class="<?php echo $this->status == 4? "indexahover" : ""; ?>">待解决问题</a>
+                            <a href="/classid/<?php echo sprintf('%d-%s-%d', $this->classid, 2, 1); ?>" target="_self" name="tab_status_2" id="tab_status_2" class="<?php echo $this->status == 2 ? "indexahover" : ""; ?>">悬赏问题</a>
+                        </div>
+                        <div class="kebox" name="n2Tab22Content" id="n2Tab22Content">
+                            <div class="kmname clearfix">
+                                <div class="lKtit fl los">
+                                    <span>提问标题</span>
+                                </div>
+                                <div class="rKtit fl ros">
+                                    <span class="hf_num">回复数</span>
+                                    <span class="zx_num">状态</span>
+                                    <span class="tw_num">提问时间</span>
+                                </div>
+                            </div>
+                            <div class="Bigbox">
+                                <?php
+                                $row_index = 0;
+                                $encoding = 'utf8';
+                                foreach ($this->ask_list as $k => $v) {
+                                    $point = $v['point'];
+                                    $cntime = $v['cntime'];
+
+                                    $adopt = ($v['bestanswer'] == 0) ? '' : '<span class="kscn">已采纳</span>';
+//                                    $solve_class = ($v['status'] == 0) ? 'class="wprob"' : 'class="yprob"';
+                                    $solve_class = ($v['answernum'] == 0) ? 'class="wprob"' : 'class="yprob"';
+//                                    $solve = ($v['status'] == 1) ? '已解决' : '待解决';
+                                    $solve = ($v['answernum'] > 0) ? '已解决' : '待解决';
+                                    $reward = ($point > 0) ? '<span class="xuslogo" title="悬赏问题"></span>' : '';
+                                    $div_row_class = ($row_index % 2 == 0) ? 'class="state yobg clearfix"' : 'class="state nobg clearfix"';
+                                    
+                                    
+                                    $classid = $v['jb_classid'];
+                                    $is_disease = isset($this->ks_cache[$classid]['is_disease'])?$this->ks_cache[$classid]['is_disease']:1;
+                                    $jb_name = $v['jb_name'];
+                                    $id = $v['keshi_id'];
+                                    $jb_url =$is_disease ==1? "/disease/$id":"/classid/$id";
+                                    $ask_url = "/id/" . $v['id'];
+                                    $title = strip_tags($v['title']);
+                                    $short_title = mb_substr($title, 0, 18, $encoding);
+                                    $row_index++;
+                                    ?>
+
+                                    <div <?php echo $div_row_class; ?>>
+                                        <div class="lpom tuo fl">
+                                            <span>[<a href="<?php echo $jb_url; ?>" data-attr="<?php echo $id; ?>"><?php echo $jb_name; ?></a>]</span>     
+                                            <span><a href="<?php echo $ask_url; ?>" title="<?php echo $title; ?>"><?php echo $short_title; ?></a></span>
+                                            <?php
+                                            echo $adopt;
+                                            echo $reward;
+                                            ?>   
+                                        </div>
+                                        <div class="rpom fr">
+                                            <span class="ms_num"><?php echo $v['answernum'] ?></span>
+                                            <span <?php echo $solve_class; ?>><?php echo $solve; ?></span>
+                                            <span class="asktime"><?php echo $cntime; ?></span>
+                                        </div>
+                                    </div>
+
+                                <?php } ?>
+                            </div>
+                            <div class="page clearfix">
+                                <?php
+                                if ($this->total_pages > 1) {
+                                    $total_page = $this->total_pages;
+                                    $current_page = $this->page_now;
+                                    //显示分页的数量
+                                    $dis_page_count = 6;
+
+                                    if ($current_page > $total_page) {
+                                        $current = $total_page;
+                                    }
+                                    if ($current_page < 1) {
+                                        $current = 1;
+                                    }
+
+                                    $sUrl = $this->page_base_url;
+
+                                    $sOutput = '';
+                                    if ($current_page > 1) {
+//                                            $sOutput.='<span class="left">';
+//                                            $sOutput.='<a href="' . $sUrl . '-1" target="_self" >首页</a>';    //输出页数
+                                        $sOutput.='<a href="' . $sUrl . '-' . ($current_page - 1) . '"  title="上一页" target="_self" class="lpage_a" ><<上一页</a>';    //输出页数
+//                                            $sOutput.='</span>';
+                                    }
+                                    // if($current_page>=$dis_page_count){
+                                    //     $sOutput.='<a>...</a>';    //输出页数
+                                    // }
+                                    $start = min(floor(max(($current_page - floor($dis_page_count / 2)), 1)), max(($total_page - $dis_page_count + 1), 1));
+
+                                    $end = min(($start + $dis_page_count - 1), $total_page);
+
+//                                        $sOutput.='<span class="num">';
+                                    for ($i = $start; $i <= $end; $i++) {
+                                        if ($current_page == $i) {
+                                            $sOutput.='<a href="' . $sUrl . '-' . $i . '" class="now" target="_self" >' . $i . '</a>';    //输出页数
+                                        } else {
+                                            $sOutput.='<a href="' . $sUrl . '-' . $i . '" target="_self" >' . $i . '</a>';    //输出页数
+                                        }
+                                    }
+//                                        $sOutput.='</span>';
+                                    if ($current_page < $total_page) {
+//                                            $sOutput.='<span class="right">';
+                                        $sOutput.='<a href="' . $sUrl . '-' . ($current_page + 1) . '"  target="_self"  title="下一页" class="lpage_a">下一页>></a>';
+//                                            $sOutput.='<a href="' . $sUrl .'-'. ($total_page) . '"  target="_self"  title="尾页">尾页</a>';
+//                                            $sOutput.='</span>';
+                                    }
+                                    $sOutput .='<a href="/wenti/1.html"  target="_blank"  title="更多" class="lpage_a">更多>></a>';
+                                    echo $sOutput;
+                                }
+                                ?>
+                            </div>
+                            <div class="clear"></div>         
+                        </div>
+                    </div> 
+                    <!--全部问题  结束--> 
+                    <!--大家都在看 开始 -->  
+                    <div class="rq_wd mTop20">
+                        <div class="q_pic"><img src="http://ask.9939.com/ask/v1/images/11.jpg?v=20151203_07"/></div>
+                        <div class="qlab">
+                            <?php
+                            $top_dis = array(
+                                '32' => 1140002,//内科
+                                '102' => 1140013,//外科
+                                '220' => 1140015,//男科
+                                '193' => 1140016,//妇产科
+                                '523' => 1140017,//皮肤性病科
+                                '236' => 1140028,//儿科
+                                '276' => 1140029,//五官科
+                                '428' => 1140030,//中医科
+                                '324' => 1140031,//传染病科
+                                '371' => 1140032,//肿瘤科
+                                '299' => 1140033,//整形美容
+                                '525' => 1140045,//心理
+                                '15' => 1140046,//其他
+                                '537'=>1140002//热门标签等等
+                            );
+                            $top = $top_dis[$this->order];
+                            ?>
+                            <script type="text/javascript">BAIDU_CLB_fillSlot("<?php echo $top; ?>");</script>
+                        </div>
+                    </div>
+                    <!--热门标签 结束-->
+                    <!-- SEO百度广告位3-->
+                    <div class="wdad mTop20">
+                        <script type="text/javascript">
+                        var cpro_id="u2315945";
+                        (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"680",rsi1:"130",pat:"6",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"1",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",ptbg:"90",piw:"0",pih:"0",ptp:"0"}
+                        </script>
+                        <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                    </div>
+                </div>
+                <!--左侧结束-->    
+
+                <!--右侧开始-->
+                <div class="w300 fl">
+                    <div class="clumn mTop">
+                    <script type="text/javascript">
+                    var cpro_id="u2315960";
+                    (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"300",rsi1:"250",pat:"17",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"1",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0"}
+                    </script>
+                    <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                    </div>
+                    
+                    <!--推荐专家 开始 -->
+                    <div class="r_doctor quitr_doctor mTop">
+                        <div class="rquit_line"><h4><img src="/ask/v1/images/ltitm0.jpg?v=20151203_07"  alt="推荐专家" title="推荐专家"></h4></div>
+                        <div class="expert pr20">
+                            <?php
+                            if(isset($this->famousDoctors)) {
+                                foreach ($this->famousDoctors as $k => $v) {
+                                    echo urldecode($v['text']);
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div> 
+                    <!--推荐专家 结束-->
+                    <!--常见用药 开始 -->
+                    <?php
+                    if (isset($this->listwords) && !empty($this->listwords)) {
+                        ?>
+
+                        <div class = "r_doctor quitr_doctor mTop">
+                            <div class = "rquit_line cuols"><h4><span><?php echo $this->jb_title; ?></span>热词</h4></div>
+                            <ul class="addrel">
+                                <?php foreach ($this->listwords as $key => $value) { ?>
+                                    <?php
+                                    $wordsname = QLib_Utils_String::cutString($value['name'], 16, '...');
+                                    $url = '/top/' . $value['pinyin_initial'] . '/';
+                                    ?>
+                                    <li><a href="<?= $url ?> " title="<?= $value['name'] ?>" target="_blank"><h2 style="font-size:14px; font-weight:normal;"><?= $wordsname ?></h2></a></li>
+                                <?php } ?> 
+                            </ul>
+                        </div>
+                        <?php
+                    } else {
+                        ?>
+                        <div class="r_doctor quitr_doctor mTop">
+                            <div class="rquit_line"><h4><img src="/ask/v1/images/ltitm1.jpg?v=20151203_07" alt="常见用药" title="常见用药"></h4></div>
+                            <div class="drehos">
+                                <?php
+                                $drugs_array = array(
+                                    '32' => 1123920, //内科
+                                    '102' => 1123920, //外科
+                                    '220' => 1123920, //男科
+                                    '193' => 1123920, //妇产科
+                                    '523' => 1123920, //皮肤性病科
+                                    '236' => 1123920, //儿科
+                                    '276' => 1123920, //五官科
+                                    '428' => 1123920, //中医科
+                                    '324' => 1123920, //传染病科
+                                    '371' => 1123920, //肿瘤科
+                                    '299' => 1123920, //整形美容
+                                    '525' => 1123920, //心理
+                                    '15' => 1123920, //其他
+                                    '537' => 1123859//热门标签等等
+                                );
+                                $drugs = 1123859;
+                                if (isset($drugs_array[$this->order])) {
+                                    $drugs = $drugs_array[$this->order];
+                                }
+                                ?>
+                                <script type="text/javascript">BAIDU_CLB_fillSlot("<?php echo $drugs; ?>");</script>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                    <!--常见用药 结束 -->
+                    
+                    <!--根据热词获取文章 开始 -->
+                    <div class="r_doctor quitr_doctor mTop">
+                        <div class="rquit_line cuols"><h4><span><?=$this->jb_title;?></span>文章</h4></div>
+                        <ul class="addrel">
+                            <?php foreach ($this->rel_article as $key => $value) {?>
+                            <?php $shorttitle = QLib_Utils_String::cutString($value['title'], 16, '...');?>
+                            <li><a href="<?=$value['url']?>" title="<?=$value['title']?>" target="_blank"><?=$shorttitle?></a></li>
+                            <?php }?>
+                        </ul>
+                    </div> 
+                    <!--根据热词获取文章  结束-->   
+                    <!--推荐医院 开始 -->
+                    <div class="r_doctor quitr_doctor mTop"><div class="rquit_line"><h4><img src="/ask/v1/images/ltitm7.jpg?v=20151203_07" alt="推荐医院" title="推荐医院"></h4></div>
+                        <div class="drehos claerdfix">
+                            <?php
+                            if(!empty($this->recommendHospital)) {
+                                foreach ($this->recommendHospital as $k => $v) {
+                                    echo urldecode($v['text']);
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div> 
+                    <!--推荐医院  结束-->
+                    <div class="quitr_doctor noplim">
+                        <div class="rquit_line  rqure3 clearfix"><h4 class="rquit_line_h4 fl"><img src="/ask/v1/images/ltitm9.jpg?v=20151203_07" alt="猜你喜欢" title="猜你喜欢"></h4></div>
+                        <div class="clumn mTop">
+                            <script type="text/javascript">
+                            var cpro_id="u2315961";
+                            (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"300",rsi1:"250",pat:"1",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"0",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",tft:"0",tlt:"1",ptbg:"90",piw:"0",pih:"0",ptp:"0"}
+                            </script>
+                            <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                        </div>
+                    </div>
+                    <div class="clumn">
+                        <script type="text/javascript">
+                        var cpro_id="u2315964";
+                        (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"300",rsi1:"250",pat:"17",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"1",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0"}
+                        </script>
+                        <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                    </div>
+                </div>
+                <div  class="clear"></div>
+            </div>
+            <!-- 热搜词 开始-->
+                <div class="letter-switch  lett-tab leume  mT25 clearfix">
+                    <?php foreach($this->letter_list as $k=>$v) {
+                //                        $class_name = ($v['selected']==1? 'class="nols"':'');
+                            $class_name =($this->letter==$k)? 'class="currm move"': 'class="currm"';
+                        ?>
+                        <a  switc="<?php echo $k; ?>"  href="http://ask.9939.com/hot/<?php echo $k; ?>/" target="_blank" <?php echo $class_name; ?> ><?php echo $k; ?></a>
+                    <?php } ?>
+                </div>
+                <div class="lett-tab-con f12 clearfix">
+                    <?php $i=0;foreach($this->randWords as $k=>$v){ 
+                            $zimu = strtoupper($k);
+                            $style =(strtoupper($this->letter)==$zimu)?'':'curro';
+                        ?>
+                        <div switc-ass="<?php echo $zimu; ?>" class="lett-tab-<?php echo $zimu; ?> hotwords <?php echo $style; ?>"  >
+                            <?php
+                            if(count($v) > 1){
+                                foreach($v as $kk=>$vv){
+                                    $url = sprintf('%s%s/',$this->searchurl,  str_replace(' ', '', $vv['pinyin']));
+                                    echo '<a href="'.$url.'" title="'.$vv['keywords'].'">'.$vv['keywords'].'</a>';
+                                }
+                            }
+                            ?>
+                        </div>
+                    <?php $i++;} ?>
+                </div>
+            <script>
+                $('.currm').mousemove(function () {
+                    var zimu = $(this).attr('switc');
+                    var className=".lett-tab-" + zimu;
+                    $('.move').removeClass('move');
+                    $(this).addClass('move');
+                    var div=$(".lett-tab-con").find(className);
+                    $(".lett-tab-con div").addClass('curro');
+                    if(div){
+                        div.removeClass('curro');
+                    }
+                }).click(function(){
+//                    return false;
+                });
+            </script>
+            <!-- 热搜词 结束-->
+            <!-- 底部常见疾病、热门科室 -->
+                <!--#include virtual="/include/footer_ask_experience.shtml"--> 
+            <!-- 底部常见疾病、热门科室 -->
+            <!-- 页面底部 -->
+            <!--#include virtual="/ask/ask_footer/ask_footer_new.html"--> 
+            <!--#include virtual="/ask/speediness_questions.html"-->
+            <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?d0e72bff43bc47b182b83c5dad5596aa";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+            </script>
+    </body>   
+</html>
+<?php
+//    $cache_data = ob_get_contents();
+//    QLib_Cache_Client::setPageCache('pages', $cache_key, $cache_data, 24);
+//    ob_flush();
+//}
+?>

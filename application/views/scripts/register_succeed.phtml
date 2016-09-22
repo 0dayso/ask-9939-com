@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/images_ask/css/r.css" rel="stylesheet" type="text/css" />
+<link href="/images_ask/css/m.css" rel="stylesheet" type="text/css" />
+<link href="/images_ask/css/b.css" rel="stylesheet" type="text/css" />
+<link href="/images_ask/css/g.css" rel="stylesheet" type="text/css" />
+<link href="/images_ask/css/index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_index.css"/>
+<title>会员注册</title>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+$(document).jTab({
+ menutag:".hd li"
+});
+});
+
+function getPages(url){
+		var html = '';
+		jQuery.ajax({
+			url : url+'&src=JQ',
+			dataType:"json",
+			cache:false,
+			success:function(data){
+				jQuery('#page_'+data.status+'a').html(data.pagehtml);
+				jQuery('#page_'+data.status+'b').html(data.pagehtml);
+				jQuery.each(data.aList,function(i){
+					if(data.aList[i].content==null)data.aList[i].content='';
+					html+='<dl><dt><span>'+data.aList[i].ctime+'<a href=\"#\">'+data.aList[i].username+'</a></span><strong class=\"false\"><a href=\"/ask/show/?id='+data.aList[i].id+'\">'+data.aList[i].title+'</a></strong></dt><dd><p class=\"info\"><em>悬赏分：'+data.aList[i].point+'</em> - 离问题结束还有 '+data.aList[i].endtime+'</p><p class=\"des\">'+data.aList[i].content+'</p></dd></dl>';
+				});
+				jQuery('#list'+data.status).html(html);
+			}
+		});
+	}
+	
+</script>
+</head>
+<body>
+
+<div id="doc" class="w970">
+  <div id="hd"><?php require(APP_ROOT."/header195.shtml");?></div>
+  <div id="bd" class="d-mod" style="padding:0; width:970px;">
+    <div class="d-box1-hd"></div>
+    <div class="d-box1-bd">
+      <div class="hd"></div>
+      <div class="bd">
+        <div class="d-grid l-fix">
+          <div class="col-m">
+            <div class="m-wrap">
+              <div class="d-box2">
+                <div class="d-box2-hd">
+                  <h4><a href="#">&gt;&gt;<span>会员注册完成</span></a></h4>
+                </div>
+                <div class="d-box2-bd">
+                  <p class="gx-Info">恭喜，注册成功！</p>
+                  <p class="userName"> 登录管理的用户名是<strong><a href="#"><?=$this->info['username'] ? $this->info['username'] : $_COOKIE['member_username']?></a></strong></p>
+                  <p class="yqts l-fix">
+                  <?php if(!$this->info['uType']){?>
+                  <span>*</span><span class="yqts-Info">友情提示：久久管理员将在3个工作日内和您联系核实您的身份是否真实，超过3日未反馈
+                    或认定非注册医生本人，管理员将取消您的此次注册，以免其他用户错误注册。敬请等候 
+                    谢谢!</span>
+                    <?php }else{?>
+                    <span>*</span><span class="yqts-Info">您已经成为久久会员！祝您健康！</span>
+                    <?php } ?>
+                    </p>
+                  <dl class="youdo">
+                    <dd>您现在可以：</dd>
+                    <dd>
+                      <ul>
+                        <!--<li><a href="http://home.9939.com/user/do/do/edit">修改/完善职称、擅长和介绍>></a></li>-->
+						<li><a href="http://home.9939.com/user">登录空间&gt;&gt;</a></li>
+                        <li><a href="http://www.go9939.com" target="_blank">逛逛健康商城&gt;&gt;</a></li>
+                        <li><a href="http://ask.9939.com/">参与问答，解决病患疑难&gt;&gt;</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-e ">
+            <div class="d-box3">
+              <div class="d-box3-hd">
+                <h3>简便注册，半分钟达成！</h3>
+              </div>
+              <div class="d-box3-bd">
+                <p>第1步填写真实姓名和医院</p>
+                <p>第2步留下联系方式</p>
+                <p class="noborder">第3步完成注册</p>
+              </div>
+			  <!-- 广告开始 -->
+		<div style="width:300px; height:250px; background:#FFFFFF; margin-left:12px;">
+		<a href="http://www.go9939.com/topic/34/"><img src="/9939/images/360X300shangjie.jpg" width="300" height="250" /></a>
+		</div>			  
+			  <!-- 广告结束 -->
+              <div class="d-box3-ft">
+                <p class="lxwm">若您对我们的服务有任何疑问 请及时联系我们</p>
+                <p class="telInfo"><span class="tel1"><strong>010-58359999-9755</strong></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft"></div>
+    </div>
+    <div class="d-box1-ft"><a style="color: #1F376D;"  href="http://home.9939.com/">家园</a> | <a style="color: #1F376D;"  href="http://home.9939.com/buluo/">部落</a> | <a style="color: #1F376D;"  href="http://ask.9939.com/">问答</a></div>
+  </div>
+  <?php require(APP_ROOT."/footer.html");?>

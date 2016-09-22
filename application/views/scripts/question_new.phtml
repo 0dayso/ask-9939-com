@@ -1,0 +1,359 @@
+<?php
+/**
+ * 问题提问页
+ * @author 林原
+ */ 
+//print_r($this->user_info);
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我要提问_健康问答_久久健康网</title>
+<link href="/images_ask/style/b.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/style/g.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/style/r.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/style/quiz.css" type="text/css" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+
+<script type="text/javascript">
+
+function checkForm() {
+	//标题
+	var title = $("#ask_title");
+	if(title.val().length<5 ||title.val()=='请输入您的提问标题'||title.val().length>20) {
+		alert('标题需要大于5字且少于20字!');
+		title.focus();
+		return false;
+	}
+	var age = $('#age').val();
+	if(!/^\d{1,3}$/.test(age)){
+		alert('请正确填写年龄！');
+		$('#age').focus();
+		return false;
+	}else if(parseInt(age)>=150){
+		alert('到现在还没有人能超过150岁');
+		$('#age').focus();
+		return false;
+	}
+	var content = $("#content");
+	if(content.val().length<10||content.val().length>5000) {
+		alert('请正确填写描述信息！描述需要大于10字且小于5000字！');
+		content.focus();
+		return false;
+	}
+	
+	//问题科室 
+	if($('#catid').val().length<1) {
+		alert('请选择科室！');
+		return false;
+	}
+	return true;
+}
+
+<?php /*根据标题搜索科室*/?>
+function searchkeshi() {
+	var kw = $("#ask_title").val();
+	if(kw!=""){
+		$.get('/Ajaxsearch/index/kw/'+encodeURIComponent(kw),
+		function(data){
+			var marr = data.match(/\/id\/(\d+)/g);
+			idstr = '';
+			if(marr) {
+				for(i=0;i<marr.length;i++){
+					var tmpid = marr[i].substring(4);
+					if(tmpid!=''){
+						idstr += tmpid + ',';
+					}
+				}
+				idstr = idstr.substring(0,idstr.length-1);
+			}
+			if(idstr!=""){
+				$.get('/Ajaxsearch/keshilist/askid/'+idstr,
+				function(data){
+					$('#auto').html('');
+					$('#auto').append(data);
+					var alistkeshi = document.getElementsByName('listkeshi');
+					alistkeshi[0].checked = 'true';
+					getKeshiList(alistkeshi[0]);
+				});
+			}
+		});
+	}
+}
+
+function getKeshiList(t){
+	var stype = t.value;
+	var atype = stype.split('_');
+	$('#catid').val(atype[atype.length-1]);
+}
+
+<?php /*更改分类*/?>
+function showClass(){
+	$("#auto").hide();
+	$("#cat_div").show();
+        $("#sel_div").show();
+}
+
+<?php /*更改分类确定*/?>
+function selcat(){
+	var str = "(";
+	var catone = $("#catone option:selected").text();
+	if(catone == '') {
+		alert("请选择分类!");
+		return;
+	}
+	var catid = $("#catone option:selected").val();
+	str += catone ;
+	var cattwo = $("#cattwo option:selected").text();
+	if(cattwo) {
+		catid = $("#cattwo option:selected").val();
+		str += "<img src='/images_ask/images/icon2.gif' />"+cattwo;
+	}
+	var catthree = $("#catthree option:selected").text();
+	if(catthree) {
+		catid = $("#catthree option:selected").val();
+		str += "<img src='/images_ask/images/icon2.gif' />"+catthree;
+	}
+	str += ")";
+	$("#sel_catstr").html(str);
+	$("#catid").val(catid);
+        $("#sel_div").hide();
+
+}
+
+<?php /*更改分类取消*/?>
+function cancel(){
+	$("#sel_catStr").html("");
+	$("#catid").val('');
+	$("#cat_div").hide();
+	var obj = $(":radio[name=listkeshi]:checked").get(0);
+	if(obj){
+		getKeshiList(obj);
+	}
+	$("#auto").show();
+	$("#sel_catstr").html('');
+
+        $("#catone").get(0).selectIndex = 0;
+         category_load(32,"cattwo");
+
+}
+
+<?php //登陆后刷新页面?>
+function __login(){
+	location.reload();
+}
+
+<?php //加载分类?>
+function category_load(id,obj) {
+	$.ajax({
+		type:"GET",
+		url: "/ask/loadcat/id/"+id,
+		async: false, 
+		success:function(data){
+			if(data){
+				$('#'+obj).html(data);
+				if(obj=='catthree') {
+					$("#catthree").show();
+				} else {
+					$("#catthree").html('');
+					$("#catthree").hide();
+				}
+			} else {
+				$("#catthree").hide();
+				$("#catthree").html('');
+
+                                if(obj == 'cattwo') {
+                                    $('#cattwo').html('');
+                                }
+			}
+		} 
+	});
+}
+
+<?php //ctrl+enter 提交?>
+function isKeyTrigger(e,keyCode){   
+    var argv = isKeyTrigger.arguments;   
+    var argc = isKeyTrigger.arguments.length;   
+    var bCtrl = false;   
+    if(argc > 2){   
+        bCtrl = argv[2];   
+    }   
+    var bAlt = false;   
+    if(argc > 3){   
+        bAlt = argv[3];   
+    }   
+    var nav4 = window.Event ? true : false;   
+    if(typeof e == 'undefined') {   
+        e = event;   
+    }   
+    if(bCtrl &&   
+        !((typeof e.ctrlKey != 'undefined') ?    
+        e.ctrlKey :   
+        e.modifiers & Event.CONTROL_MASK > 0)) {   
+        return false;   
+    }   
+    if( bAlt &&   
+        !((typeof e.altKey != 'undefined') ?    
+            e.altKey : e.modifiers & Event.ALT_MASK > 0)){   
+        return false;   
+    }   
+    var whichCode = 0;   
+    if (nav4) whichCode = e.which;   
+    else if (e.type == "keypress" || e.type == "keydown") whichCode = e.keyCode;   
+    else whichCode = e.button;   
+       
+    return (whichCode == keyCode);   
+}   
+
+function ctrlEnter(e){   
+	return false;
+	var ie = navigator.appName == "Microsoft Internet Explorer" ? true : false;   
+	if(ie){   
+	    if(event.ctrlKey && event.keyCode == 13) {   
+	    	if(checkForm()){
+	    		document.getElementById("ask_form").submit();
+		    }
+	    }   
+	}  else {   
+	        if(isKeyTrigger(e,13,true)) {
+	        	if(checkForm()){
+		    		document.getElementById("ask_form").submit();
+			    }
+	        }
+	 }   
+}   
+
+</script>
+
+</head>
+
+<body>
+<?php require(APP_ROOT."/header_new.shtml");?>
+
+<div id="bd">
+	<div class="l-grid l-fix tMarginLg">
+        <div class="l-mod .column">
+                	<div class="mod-bd">
+                    	<div class="hd">
+                        	<h2>快速提问</h2>
+                        </div>
+                        <div class="bd">
+                        	<div class="quiz-form l-fix">
+                            	<form id="ask_form" name="quizform" method="post" action="/askttest/do/do/save">
+                                	<p><label>提问标题</label><input type="text" class="inp tit" id="ask_title" name="info[title]" onblur="return searchkeshi()" value="<?=$this->kw?>" onfocus="if(this.value=='请输入您的提问标题'||this.value=='<?=$this->kw?>') this.value='';"/></p>
+                                    <p><label>年龄</label><input type="text" class="inp age" name="info[age]" id="age"/><span class="l-left">岁</span><label>性别</label><input type="radio" name="info[sexnn]" value='1' checked class="sex"/>男<input type="radio" name="info[sexnn]" value='2' class="sex sex2"/>女</p>
+                                    <p><label>症状描述</label><textarea class="inp describe" onfocus="if(this.value=='描述不得少于10个汉字') this.value=''" onblur="if(this.value=='') this.value='描述不得少于10个汉字'" name="info[content]" id="content" style="color:#000">描述不得少于10个汉字</textarea></p>
+                                    <div class="sort l-fix">
+                                    	<label>问题分类</label>
+                                        <div class="sort-info">
+                                        	<div class="info-one">
+                                        		<h3>请选择合适分类</h3>
+                                        		<div id="auto"></div>
+                                            	<p>如果分类不合适，建议更改，有助于获得专业医生的解答</p>
+                                            	<p><input type="button" value="更改分类" class="btn" onclick="showClass()"/></p>
+                                        	</div>
+                                            <p class="lf-line vMarginLg"></p>
+                                            <div class="info-one">
+                                            	<div id="cat_div" style="display: none">
+                                            	<h3>请选择分类<strong><span id="sel_catstr"></span></strong></h3>
+                                                <div id="sel_div">
+                                                        <p class="select">
+                                                                <select class="one" multiple="multiple" id="catone" onchange="category_load(this.value,'cattwo')">
+                                                                        <?php //一级分类?>
+                                                                        <script type="text/javascript">
+                                                                        category_load(0,"catone");
+                                                                                                                        </script>
+                                                                </select>
+                                                                <select class="two" multiple="multiple" id="cattwo" onchange="category_load(this.value,'catthree')">
+                                                                        <?php //二级分类?>
+                                                                        <script type="text/javascript">
+                                                                        category_load(32,"cattwo");
+                                                                                                                        </script>
+                                                                </select>
+                                                            <select class="two" multiple="multiple" id="catthree" style="display: none">
+                                                            </select>
+                                                            <span>
+                                                                <input type="button" value="确定" class="btn1 btn" onclick="selcat()"/>
+                                                                <input type="button" value="取消" class="btn" onclick="cancel()"/>
+                                                            </span>
+                                                        </p>
+                                                   </div>
+                                            	</div>
+                                                <div class="fcolor_h">
+                                                        <p>
+                                                           问题广播：
+                                                            <input class="zhradio" type="radio" name="info[broadcast]" value="1" />是&nbsp;&nbsp;
+                                                            <input class="zhradio" type="radio" name="info[broadcast]" value="0" checked />否&nbsp;&nbsp;&nbsp;（将问题发布在首页广播24小时）
+                                                        </p>
+                                            	<?php //登陆显示悬赏积分?>
+                                            	<?php if(($this->user_info['uid']) && $this->user_info['credit']>=10) { ?>
+                                           			<p>您有<strong class="color_red"><?=$this->user_info['credit']?>积分</strong>可以进行悬赏</p>
+                                            		<p><label>悬赏积分</label><select class="jf" name="info[point]" multiple="multiple"><option selected value="0">不悬赏</option><option value="10">10积分</option><option value="20">20积分</option><option value="50">50积分</option><option value="100">100积分</option></select></p>
+                                            		<p>悬赏越高,您的问题将越受关注,从而得到最佳答案</p>
+                                                <?php }?>
+                                            		<p><input type="checkbox" class="cbox" name="info[hiddenname]" value="1"/>匿名设置可以对问题设置匿名</p>
+                                                </div>
+                                            	<p class="sub-p">
+                                            		<input type="hidden"  value="<?=$this->backurl?>" name="backurl"  />
+                                            		<input type="hidden" name="info[classid]" id="catid" value="" />
+                                            		<input type="hidden" name="token" id="token" value="<?=$this->token?>" />
+                                            		<input type="hidden" name="info[answerUid]" id="answerUid" value="<?=$this->answerUid?>" />  	
+                                            		<input type="submit" class="sub-btn" value="提交" onclick=" return checkForm();"/></p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <div class="l-mod2 column">
+            	<div class="mod-bd">
+                	<div class="hd">
+                    	<h2>新手帮助</h2>
+                        <p>熟悉以下流程，您将获得医生最佳的服务！</p>
+                    </div>
+                    <div class="bd">
+                    	<dl>
+                        	<dt>第1步：提问</dt>
+                            <dd>提出您所患的症状和想要得到的帮助</dd>
+                        </dl>
+                        <dl>
+                        	<dt>第2步：查看问题</dt>
+                            <dd>确认问题细节无误，等待医生解答</dd>
+                        </dl>
+                        <dl>
+                        	<dt>第3步：补充问题</dt>
+                            <dd>补充病情细节，以便医生深入了解做出更准确的
+诊断</dd>
+                        </dl>
+                        <dl>
+                        	<dt>第4步：评选最佳问题</dt>
+                            <dd>选出最佳答案，感谢并肯定为您提供帮助的好医
+生</dd>
+                        </dl>
+                        <dl>
+                        	<dt>第5步：其他</dt>
+                            <dd><strong>积分换礼：</strong>将心比心，您可以帮助回答其他网友
+的问题获得积分，参与有奖积分活动。<br/>
+<strong>投诉：</strong>如您发现错误、广告等劣质回复，您可点
+此进行投诉。<br/>
+<strong>短信通知：</strong>您的提问得到医生的解答后，会收到
+站内短信通知。</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<?php require(APP_ROOT."/footer.html");?>
+
+</div>
+</body>
+</html>

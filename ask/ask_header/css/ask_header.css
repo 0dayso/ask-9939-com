@@ -1,0 +1,44 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+html { color: #000; background: #FFF;}
+body { margin: auto; text-align: center; font:12px/1.231 arial,helvetica,clean,sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td { margin: 0; padding: 0;}
+img{ border:0;}
+a {	color: #000; text-decoration: none;}
+a:hover { text-decoration: underline;}
+
+
+.ask-header{ clear:both; margin:10px auto 0; padding:0; width:950px; overflow:hidden; zoom:1; background:#fff;}
+.ask-header .asklogo{ float:left; height:90px; border:0;}
+.ask-header .asknav{ white-space:nowrap; overflow:hidden;_zoom:1;}
+
+.ask-header .asknav .asknav-list{ border:1px solid #D3E3DC; background:url(../images/asknav_list.png) repeat-x; height:27px; line-height:27px; overflow:hidden;color:#FFF;}
+.ask-header .asknav .asknav-list ul{ padding-left:5px; overflow:hidden; _zoom:1;}
+.ask-header .asknav .asknav-list li{ float:left; width:100px; text-align:center; list-style-type:none;}
+.ask-header .asknav .asknav-list li.noBg{ background:url(../images/asknav_list_a.png) repeat-x; border:1px solid #0EA2DE; color:#FFF; text-decoration:none; font-size:14px; font-weight:bold;}
+.ask-header .asknav .asknav-list li.noBg a{ color:#FFF;}
+.ask-header .asknav .asknav-list a{ display:block; padding:0 2px;}
+.ask-header .asknav .asknav-list a:hover{ background:url(../images/asknav_list_a.png) repeat-x; border:1px solid #0EA2DE; color:#FFF; text-decoration:none; font-size:14px; font-weight:bold;}
+
+.ask-header .asknav .asknav-ask{ height:60px; background:url(../images/asknav-ask.png) repeat-x; overflow:hidden; zoom:1;}
+.ask-header .asknav .asknav-ask .asknav-ask-form{ float:left; margin:8px 0;}
+.ask-header .asknav .asknav-ask .asknav-ask-form fieldset{ display:inline; border:0;}
+.ask-header .asknav .asknav-ask .asknav-ask-form legend{ display:none;}
+.ask-header .asknav .asknav-ask .asknav-ask-form input{ float:left; display:inline;}
+.ask-header .asknav .asknav-ask .asknav-ask-form .askinput-text{ border:1px solid #949494; width:324px; font-size:14px; color:#949494; height:26px; margin-left:20px; margin-top:5px; padding-top:4px; padding-left:5px;}
+.ask-header .asknav .asknav-ask .asknav-ask-form .askinput-submit{ float:left;}
+.ask-header .asknav .asknav-ask .asknav-ask-form .askinput-submit a{ display:block; border:none; margin-top:4px; cursor:pointer; width:97px; height:35px;}
+.ask-header .asknav .asknav-ask .asknav-ask-form .askinput-submit01 a{ background:url(../images/asksubmit01.png) no-repeat; margin-left:6px;}
+.ask-header .asknav .asknav-ask .asknav-ask-form .askinput-submit01 a:hover{ background:url(../images/asksubmit01-hover.png) no-repeat;}
+.ask-header .asknav .asknav-ask .asknav-ask-form .askinput-submit02 a{ background:url(../images/asksubmit02.png) no-repeat; margin-left:3px;}
+.ask-header .asknav .asknav-ask .asknav-ask-form .askinput-submit02 a:hover{ background:url(../images/asksubmit02-hover.png) no-repeat;}
+.ask-header .asknav .asknav-ask .asknav-ask-info{ float:left; display:inline; padding:0 8px; margin:8px 0 8px 50px; line-height:20px; color:#FFF; border:1px dotted #FFF;}
+
+
+.ask-qnav{ clear:both; margin:1px auto;padding:0 10px; width:928px; background:url(../images/ask-qnav.gif) repeat; border:1px solid #CEEAF6; line-height:25px; height:25px;}
+.ask-qnav li{ float:left; padding:0 12px; list-style-type:none;}
+.ask-qnav li a{ color:#000;}
+.ask-qnav span{ float:right;}
+.ask-qnav span a{ color:#0972C0;}

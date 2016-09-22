@@ -1,0 +1,95 @@
+<style type="text/css" media="screen">
+  	/* hd */
+  	.g-topbar{height:30px;line-height:30px;background:url(images/g-bg.jpg) repeat-x;position:relative;}
+  	.g-login,.g-site-links{position:absolute;}
+  	.g-login{left:15px;color:#8B8B8B;}
+  	.g-login legend{display:none;}
+  	.g-login input{border:1px solid #ddd;width:60px;height:16px;padding:1px;margin:0 5px;_margin:5px 5px;vertical-align:middle}
+  	.g-login .l-sub{width:37px;height:18px;background:#3BA80D;color:#fff;font-size:12px;border:0;padding:0;vertical-align:middle}
+  	.g-login .l-reg{color:#3BA80D ;}
+  	.g-site-links{right:10px;}
+  	.g-site-links li{display:inline;margin:0 5px;}
+  	.g-site-links a{color:#8B8B8B;}
+	.g-nav{height:49px;line-height:49px;color:#268200;background:url(images/gm-navbg.jpg) repeat-x;border-width:3px 1px 1px;border-color:#4AA722 #ccc #ccc;border-style:solid;padding:0 16px; font-size:12px;}
+	.g-nav a,.ft-flinks .hd li a{font-size:14px;color:#268200;padding-bottom:4px;}
+	.g-nav a span{padding:1px;}
+	.g-nav a:hover,.ft-flinks .hd .on a{background:url(images/gm-icon.png) no-repeat 50% bottom;color:#fff;text-decoration:none}
+	.g-nav a:hover span,.ft-flinks .hd .on a span{padding:0;background:#797979;border:1px solid #FF4AA9;}
+	.g-nav .icon{background:url(images/gm-nicon.png) no-repeat 0 50%;padding-left:24px;}
+	.g-keywords{height:25px;line-height:25px;padding-left:10px;color:#818181;}
+	.g-keywords a{color:#818181;padding:0 5px;}
+  	/* ft */
+  	.ft-flinks{margin-top:20px;}
+  	.ft-flinks .hd {height:32px;line-height:32px;overflow:hidden;}
+	.ft-flinks .hd li{float:left;_display:inline;margin-right:10px;}
+	.ft-flinks .hd li a{font-size:14px;color:#000;}
+	.ft-flinks .hd li a:hover{text-decoration:none}
+	.ft-flinks .hd li a span{padding:1px 3px;}
+	.ft-flinks .hd .on a span{padding:0 2px;}
+	.ft-flinks .bd{padding:5px 0;}
+	.ft-flinks .bd ul{line-height:1.8;}
+	.ft-flinks .bd li{float:left;white-space:nowrap;padding-right:10px;}
+	.ft-flinks .bd a{color:#606060;}
+	.ft-message{margin-top:20px;zoom:1;overflow:hidden;color:#bbb;border-bottom:1px solid #bbb;padding-bottom:5px; }
+	.ft-autor{float:left;}
+	.ft-tel{float:right;}
+	.ft-nav{margin-top:1px;height:20px;line-height:20px;background:#F3F5F4;color:#5F5F5F;text-align:center;}
+	.ft-nav a{color:#5F5F5F;padding:0 10px;}
+  	.copyright{margin-top:5px;text-align:center;line-height:20px;color:#fff;}
+  </style>
+	<script type="text/javascript">
+	function dologin(){
+		var longinError=function() {
+			$('#tlogin-info').html('用户名或密码错误！');
+		};
+		var html = '';
+		var username = $('#l-name').val();
+		var password = $('#l-psw').val();
+		if(username.length==0||password.length==0){
+			var username = $('#l-name2').val();
+			var password = $('#l-psw2').val();
+			if(username.length==0||password.length==0){
+				longinError();
+				return false;
+			}
+		}
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/login/?username="+username+"&password="+password+"&format=json&jsoncallback=?",function(data){
+			if(data!='type0'){
+					o = eval( "(" + data + ")" );
+					html='<fieldset>	<legend>登录</legend>您好，<font color="Red">'+o.username+'</font> 欢迎进入久久健康网！&nbsp;&nbsp;<a href="http://home.9939.com/user" target="_blank">我的空间</a>&nbsp;&nbsp;<span style="cursor:pointer" onclick="logout();">退出</span></fieldset>';
+					$('.t-login').addClass('k-display-none');
+					$('#login').html(html);
+					$('#login2').html('您好，<font color="Red">'+o.username+'</font> 欢迎进入久久健康网！<a href="javascript:;" onclick="logout();">退出</a>');
+					$('#friendly').empty();
+					return false;
+				}else if(data=='type0'){
+					longinError();
+				}
+		});
+		return false;
+	}
+
+	function logout(){
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/logout/?format=json&jsoncallback=?",function(data){
+			var html = '<form name="name" action="#" target="_blank" method="post"><fieldset>	<legend>登录</legend>	<label for="l-name">用户名</label><input type="text" name="username" value="" id="l-name" />	<label for="l-psw">密码</label><input type="password" name="password" value="" id="l-psw" />	<input type="submit" value="登录" class="l-sub" onclick="return dologin();" style="cursor:pointer"/> 	<a href="http://ask.9939.com/register" target="_blank" class="l-reg">注册</a><span id="tlogin-info" style="color:red;"></span>					</fieldset></form>';$('#login').html(html);
+			
+			var html2 = '<p><label>用户名：</label><input type="text" name="username" id="l-name2" /></p><p><label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label><input type="password" name="password" value="" id="l-psw2" /></p> <p><a href="javascript:;" class="zhsubmit zhsubmit01" onclick="return dologin();">登陆</a><a href="http://ask.9939.com/register" class="zhsubmit zhsubmit02">注册</a></p>';$('#login2').html(html2);
+		});
+		alert('谢谢你的参与，退出成功！');
+		//return true;
+	}
+</script>
+	<div id="hd">
+		<div class="g-topbar">
+			<div class="g-login" id="login">
+				<script src="http://lucky.9939.com/user.php"></script>
+			</div>
+			<ul class="g-site-links">　　
+				<li><a href="http://zs.9939.com/">医药招商</a></li><li><a href="http://so.9939.com/">医药搜索</a></li><li><a href="http://www.99nv.net/">久久女性网</a></li><li><a href="http://www.9939.com" onclick="setHomePage(this)">设为首页</a></li><li><a href="javascript:myAddPanel('健康资讯网',window.location.href)">收藏</a></li>
+			</ul>
+		</div>
+		<div class="g-nav">
+		<span class="icon"></span class="icon"><a href="http://www.9939.com/" class="strong"><span>久久首页</span></a>—<a href="http://www.99nv.net/"><span>女性</span></a>—<a href="http://lx.9939.com/"><span>两性</span></a>—<a href="http://baby.9939.com/"><span>母婴</span></a>—<a href="http://man.9939.com/"><span>男性</span></a>—<a href="http://beauty.9939.com/"><span>美容</span></a>—<a href="http://xinli.9939.com/"><span>心理</span></a>—<a href="http://fitness.9939.com/"><span>减肥</span></a>—<a href="http://food.9939.com/"><span>饮食</span></a>—<a href="http://baojian.9939.com/"><span>保健</span></a>—<a href="http://js.9939.com/"><span>健身</span></a>—<a href="http://jb.9939.com/"><span>疾病</span></a>—<a href="http://hospital.9939.com/"><span>医院</span></a>—<a href="http://zhongyi.9939.com/"><span>中医</span></a>—<a href="http://pianfang.9939.com/"><span>偏方</span></a>—<a href="http://ask.9939.com/"><span>问答</span></a>—<a href="http://home.9939.com/buluo/"><span>部落</span></a>—<a href="http://home.9939.com/"><span>家园</span></a>—<a href="http://doctor.9939.com/"><span>聚医堂</span></a>—<a href="http://pic.9939.com/"><span>图谱</span></a>	
+		</div>
+	</div>
+	

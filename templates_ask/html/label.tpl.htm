@@ -1,0 +1,123 @@
+{include file="html/header.tpl.htm"}
+{literal}
+<script language="javascript" src="/images/js/jquery.min.js"></script>
+<script>
+function show_list(id){
+	if(document.getElementById('area_'+id).style.display == '')
+	{
+		document.getElementById('area_'+id).style.display = 'none';
+	}
+	else
+	{
+		document.getElementById('area_'+id).style.display = '';
+	}
+	jQuery("#right_area_1").hide();
+	var con = jQuery("#right_area_"+id).html();
+	jQuery("#inner_area").html(con);
+}
+</script>
+{/literal}
+		<div id="mainbody" class="clfix">
+			<div class="w720 left">
+				<div class="w185 left menu">
+					<div class="t01"><h3 class="white">健康标签</h3></div>
+					<div class="l04 clfix">
+						<span>全身</span>
+						{$html}
+					</div>
+					<div class="t01 mt5"><h3 class="white">常见标签</h3></div>
+					<div class="l03 clfix">
+						<ul>
+							{foreach name="key" item="value" from="$useful_label"}
+							<li><a href="/ask/list.php?catid={$value.id}&action=all&t=1">{$value.name}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+					<div class="t01 mt5"><h3 class="white">网友最新添加标签</h3></div>
+					<div class="l03 clfix">
+						<ul>
+							{foreach name="key" item="value" from="$new_label"}
+							<li><a href="/ask/list.php?catid={$value.id}&action=all&t=1">{$value.name}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+					<div class="t01 mt5"><h3 class="white">二十四小时访问热签</h3></div>
+					<div class="l03 clfix">
+						<ul>
+							{foreach name="key" item="value" from="$hot_24_label"}
+							<li><a href="/ask/list.php?catid={$value.id}&action=all&t=1">{$value.name}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+				</div>
+				<div class="w530 right">
+				<samp id="inner_area"></samp>
+				
+				{$top_area}
+					<!--<div class="w528 bd02" id="xxx">
+						<div class="t03"><h3 class="white">头部</h3></div>
+						<div class="l02 clfix">
+							<ul>
+								<li><a href="#">颈椎病(11540)</a></li>
+								<li><a href="#">将买扩张器得(7840)</a></li>
+								<li><a href="#">怀孕(650)</a></li>
+								<li><a href="#">颈椎病(11540)</a></li>
+								<li><a href="#">将买扩张器得(7840)</a></li>
+								<li><a href="#">怀孕(650)</a></li>
+								<li><a href="#">颈椎病(11540)</a></li>
+								<li><a href="#">将买扩张器得(7840)</a></li>
+								<li><a href="#">怀孕(650)</a></li>
+								<li><a href="#">颈椎病(11540)</a></li>
+								<li><a href="#">将买扩张器得(7840)</a></li>
+								<li><a href="#">怀孕(650)</a></li>
+								<li><a href="#">颈椎病(11540)</a></li>
+								<li><a href="#">将买扩张器得(7840)</a></li>
+								<li><a href="#">怀孕(650)</a></li>
+								<li><a href="#">颈椎病(11540)</a></li>
+								<li><a href="#">将买扩张器得(7840)</a></li>
+								<li><a href="#">怀孕(650)</a></li>
+								<li><a href="#">颈椎病(11540)</a></li>
+							</ul>
+						</div>
+					</div>-->
+					
+					
+					{literal}
+					
+					{/literal}
+					
+					{literal}
+					<script>
+						function samp(num,other){
+							jQuery("#menu0>li").removeAttr("class");
+							jQuery("#li_"+num).attr("class","hover");
+							jQuery("#ifr_"+num).show();
+							jQuery("#ifr_"+other).hide();
+						}
+					</script>
+					<style>
+						.iframe{width:100%;height:650px;*height:650px;_height:650px;}
+						/*FF null   IE7 *       IE6 _*/
+					</style>
+					{/literal}
+					<div id="tabs0" class="t05 mt10">
+						<ul class="menu0 clfix" id="menu0">
+							<li id="li_1" onclick="samp(1,2)" class="hover">待解决问题</li>
+							<li id="li_2" onclick="samp(2,1)">已解决问题</li>
+						</ul>
+						<samp id="ifr_1">
+						<iframe src="question_label.php" frameborder="0" scrolling="no" class="iframe"></iframe>
+						</samp>
+						<samp id="ifr_2" style="display:none">
+						<iframe src="question_label2.php" frameborder="0" scrolling="no" class="iframe"></iframe>
+						</samp>
+					</div>
+				</div>
+			</div><!-- w720 end -->
+			<div class="w220 right">
+				<!--#include virtual="/CatRightbar.shtml"-->		
+			</div><!-- w220 end -->			
+		</div><!-- mainbody end -->
+	</div><!-- wrapper end -->
+
+<!--#include virtual="/templates_ask/include/footer.html"-->

@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="google-site-verification" content="6VayB7rBv7mdsOuyT9G76geFrjR_4p6NgZSHbXWU24Y" />
+<title>久久问答_快速问医生_在线医生健康咨询_久久健康网问答频道ask.9939.com</title>
+<meta name="Keywords" content="久久问答,健康问答,健康咨询,在线问答,快速问医生,问医生,在线医生"/>
+<meta name="Description" content="久久问答(ask.9939.com),中国权威的医疗健康在线问答平台.万名医生24小时在线提供优质、专业、及时的医疗健康咨询服务,医疗健康在线交流咨询问答就上久久问答! " /> 
+<link rel="stylesheet" type="text/css" href="http://ask.9939.com/ask_details/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="http://ask.9939.com/ask_details/css/body.css"/>
+<!--头部-->
+<link rel="stylesheet" type="text/css" href="http://ask.9939.com/ask_details/css/index_common.css">
+<script type="text/javascript" src="http://ask.9939.com/ask_details/js/scrollbar.js"></script>
+<script type="text/javascript" src="http://ask.9939.com/ask_details/js/user_login.js"></script>
+<!--ends-->
+<script type="text/javascript" src="http://ask.9939.com/ask_details/js/koala.min.1.5.js"></script>
+<script type="text/javascript" src="http://ask.9939.com/ask_details/js/gundong.js"></script>
+<script type="text/javascript" src="http://ask.9939.com/ask_details/js/DD_belatedPNG.js"></script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('img,.ans li div a.ati,.focus .prev,.focus .next,.focus .shadow');
+</script>
+</head>
+<base target="_blank"/>
+<body>
+<!--header-->
+<!-- 头部开始 -->   
+<!--#include virtual="/headers.shtml"-->  
+<!-- 头部结束 -->
+  <div  class="List_box_mian font">
+   <div class="wd_zj">
+       <div class="wd_flz">
+        <ul>
+           <li class="wd-ts"><a href="http://nk.9939.com/"  title="首页">首页</a></li>
+           <li><a href="http://ask.9939.com/cat.shtml"  title=" 科室分类">科室分类</a></li>
+           <li><a href="http://ask.9939.com/list/"  title="问题大全">问题大全</a></li>
+           <li><a href="http://ask.9939.com/doctorTeam.shtml"  title="医生团队">医生团队</a></li>
+           <li><a href="http://ask.9939.com/rank.shtml"  title="问答排行">问答排行</a></li>
+        </ul>
+       </div>
+    </div>
+    <div class="List_box_bann">
+    <script type="text/javascript">
+    /*W问答首页头部960*90 创建于 2015-04-20 联盟*/
+    var cpro_id = "u2058067";
+    </script>
+    <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+<div class="wrapper" style="margin-top:15px;">
+	<div class="kinds floatL">
+    	<div class="offcl offc_01">
+        	<div class="tit"><h2><img src="http://ask.9939.com/ask_details/images/tit_01.png" alt="科室分类" title="科室分类"/></h2></div>
+            <!--科室分类 生成 开始-->
+            <!--#include virtual="/public/catleft_ksfl.shtml"-->
+            <!--科室分类 生成 结束-->
+        </div>
+        <div class="offcl offc_02">
+        	<div class="tit"><h2><img src="http://ask.9939.com/ask_details/images/tit_02.png" alt="健康专区" title="健康专区"/></h2></div>
+        	<!--健康专区 生成 开始-->
+            <!--#include virtual="/public/catleft_jkzq.shtml"-->
+            <!--健康专区 生成 结束-->
+        </div>
+    </div>
+	<div class="clinic floatR">
+    	<div style="height:250px;">
+        	<div id="fsD1" class="focus">  
+    <div id="D1pic1" class="fPic">  
+                                <div class="fcon" style="display: none;">
+                <a  href="http://ask.9939.com/asking/index/kw/" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429252215.png"/></a>
+                <span class="shadow"><a href="http://ask.9939.com/asking/index/kw/" target="_blank">足不出户看医生   省钱省力省时间</a></span>
+            </div>
+                        <div class="fcon" style="display: none;">
+                <a  href="http://www.9939.com/register/" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429253023.png"/></a>
+                <span class="shadow"><a href="http://www.9939.com/register/" target="_blank">招聘兼职医生  加入久久健康大家庭</a></span>
+            </div>
+                        <div class="fcon" style="display: none;">
+                <a  href="http://www.9939.com/register/" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429255024.png"/></a>
+                <span class="shadow"><a href="http://www.9939.com/register/" target="_blank">会员免费注册 健康问题在线解答</a></span>
+            </div>
+                        <div class="fcon" style="display: none;">
+                <a  href="http://ask.9939.com/classid/0" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429256491.png"/></a>
+                <span class="shadow"><a href="http://ask.9939.com/classid/0" target="_blank">久久问答 您的家庭医生</a></span>
+            </div>
+                        <div class="fcon" style="display: none;">
+                <a  href="http://ask.9939.com/id/4457591" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429257154.png"/></a>
+                <span class="shadow"><a href="http://ask.9939.com/id/4457591" target="_blank">春季风大皮肤过敏需要注意什么？</a></span>
+            </div>
+                      
+    </div>
+    <div class="fbg">  
+    <div class="D1fBt" id="D1fBt">  
+        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>1</i></a>  
+        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>2</i></a>  
+        <a href="javascript:void(0)" hidefocus="true" target="_self" class="current"><i>3</i></a>  
+        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>4</i></a>  
+        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>5</i></a> 
+    </div>  
+    </div>  
+    <span class="prev"></span>   
+    <span class="next"></span>    
+</div>
+        </div>
+        <div class="noteb"><div class="marq floatL"><h2></h2>
+                                                <p><a href="http://home.9939.com/news/show/vn/7" target="_blank">男科疾病</a></p>
+                                    <p><a href="http://home.9939.com/news/show/vn/5" target="_blank">孩子什么时候换牙</a></p>
+                              
+        </div>
+        <form class="frmlay" action="http://ask.9939.com/asking/index/content/" method="POST">
+            <textarea id="content" name="content" class="txta"  onfocus="if(this.value=='输入您的问题!') this.value=''" onblur="if(this.value=='') this.value='输入您的问题!'">输入您的问题!</textarea>
+            <input type="submit" class="subs" value=""/>
+        </form>
+        </div>
+        <div class="onlind">
+        	<div class="dotit"><h2><img src="http://ask.9939.com/ask_details/images/tit_03.png" alt="当前在线医生" title="当前在线医生"/></h2><span>此时<b id="bav"></b>名医生在线</span></div>
+            <!--当前在线医生 开始-->
+            <div class="cltran">
+            <div class="total">
+                                                                        <a onMouseOver="divTag('n3Tab33', 'indexahover', '', 1, 0)" name="n3Tab33" id="n3Tab33" class="indexahover" style="border-left:none;">全部</a>
+                                                                                <a  onMouseOver="divTag('n3Tab33', 'indexahover', '', 2, 0)" name="n3Tab33" id="n3Tab33">内科</a>
+                                                                                <a  onMouseOver="divTag('n3Tab33', 'indexahover', '', 3, 0)" name="n3Tab33" id="n3Tab33">外科</a>
+                                                                                <a  onMouseOver="divTag('n3Tab33', 'indexahover', '', 4, 0)" name="n3Tab33" id="n3Tab33">妇产科</a>
+                                                                                <a  onMouseOver="divTag('n3Tab33', 'indexahover', '', 5, 0)" name="n3Tab33" id="n3Tab33">儿科</a>
+                                                                                <a  onMouseOver="divTag('n3Tab33', 'indexahover', '', 6, 0)" name="n3Tab33" id="n3Tab33">皮肤科</a>
+                                                                                <a  onMouseOver="divTag('n3Tab33', 'indexahover', '', 7, 0)" name="n3Tab33" id="n3Tab33">中医科</a>
+                                                  
+            </div>
+            <ul class="doctou"  name="n3Tab33Content" id="n3Tab33Content">
+                            <li><a href="http://home.9939.com/user/?uid=729902" target="_blank"><img src="http://home.9939.com/upload/pic//201504/729902_avatar_middle.jpg" alt="王玲玲" title="王玲玲" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=729902" target="_blank">王玲玲<span>心理</span></a></h4><p>心理咨询</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=773164" target="_blank"><img src="http://home.9939.com/upload/pic//201312/773164_avatar_middle.jpg" alt="马德蓉" title="马德蓉" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=773164" target="_blank">马德蓉<span>医师</span></a></h4><p>内科</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=396295" target="_blank"><img src="http://home.9939.com/upload/pic//201401/396295_avatar_middle.jpg" alt="贺嫦洁" title="贺嫦洁" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=396295" target="_blank">贺嫦洁<span>医师</span></a></h4><p>妇产科</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=821899" target="_blank"><img src="http://home.9939.com/upload/pic//201406/821899_avatar_middle.jpg" alt="余惠平" title="余惠平" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=821899" target="_blank">余惠平<span>医师</span></a></h4><p>幼儿综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=200361" target="_blank"><img src="http://home.9939.com/upload/pic//200911/200361_avatar_middle.jpg" alt="王怀英" title="王怀英" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=200361" target="_blank">王怀英<span>医师</span></a></h4><p>男性不育</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user?uid=754532" target="_blank"><img src="http://home.9939.com/upload/pic//201504/754532_avatar_middle.jpg" alt="梁爽" title="梁爽" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=754532" target="_blank">梁爽<span>营养师</span></a></h4><p>营养饮食</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>             
+            </ul>
+            <ul class="doctou"  name="n3Tab33Content" id="n3Tab33Content" style="display:none;">
+                            <li><a href="http://home.9939.com/user/?uid=478027" target="_blank"><img src="http://home.9939.com/upload/pic//201503/478027_avatar_middle.jpg" alt="贺常见" title="贺
+
+常见" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=478027" target="_blank">贺常见<span>医师</span></a></h4><p>内科综合</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=832678" target="_blank"><img src="http://home.9939.com/upload/pic//201504/832678_avatar_middle.jpg" alt="张延强" title="张
+
+延强" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=832678" target="_blank">张延强<span>医师</span></a></h4><p>内科综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=830931" target="_blank"><img src="http://home.9939.com/upload/pic//201412/830931_avatar_middle.jpg" alt="罗春姣" title="罗
+
+春姣" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=830931" target="_blank">罗春姣<span>医师</span></a></h4><p>心内综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=273342" target="_blank"><img src="http://home.9939.com/upload/pic//201504/273342_avatar_middle.jpg" alt="轩存旺" title="轩
+
+存旺" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=273342" target="_blank">轩存旺<span>医师</span></a></h4><p>内科疾病</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=830991" target="_blank"><img src="http://home.9939.com/upload/pic//201504/830991_avatar_middle.jpg" alt="张桂平" title="张
+
+桂平" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=830991" target="_blank">张桂平<span>医师</span></a></h4><p>呼吸常见病</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=200357" target="_blank"><img src="http://home.9939.com/upload/pic//200911/200357_avatar_middle.jpg" alt="宋健美" title="宋健美" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=200357" target="_blank">宋健美<span>医师</span></a></h4><p>肾内科</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>             
+            </ul>
+            <ul class="doctou"  name="n3Tab33Content" id="n3Tab33Content" style="display:none;">
+                            <li><a href="http://home.9939.com/user/?uid=200269" target="_blank"><img src="http://home.9939.com/upload/pic//200911/200269_avatar_middle.jpg" alt="肖明第" title="肖明第" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=200269" target="_blank">肖明第<span>医师</span></a></h4><p>心胸外科</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=312932" target="_blank"><img src="http://home.9939.com/upload/pic//201504/312932_avatar_middle.jpg" alt="刘兴志" title="刘兴志" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=312932" target="_blank">刘兴志<span>医师</span></a></h4><p>男科</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=200358" target="_blank"><img src="http://home.9939.com/upload/pic//201504/200358_avatar_middle.jpg
+" alt="薛建平" title="薛建平" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=200358" target="_blank">薛建平<span>医师</span></a></h4><p>泌尿外科</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=297504" target="_blank"><img src="http://home.9939.com/upload/pic//201504/297504_avatar_middle.jpg" alt="高俊中" title="高俊中" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=297504" target="_blank">高俊中<span>医师</span></a></h4><p>外科综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=823486" target="_blank"><img src="http://home.9939.com/upload/pic//201504/823486_avatar_middle.jpg" alt="刘巧平" title="刘巧平" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=823486" target="_blank">刘巧平<span>医师</span></a></h4><p>外科综合</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=831685" target="_blank"><img src="http://home.9939.com/upload/pic//201412/831685_avatar_middle.jpg" alt="张清伦" title="张清伦" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=831685" target="_blank">张清伦<span>医师</span></a></h4><p>外科综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>             
+            </ul>
+            <ul class="doctou"  name="n3Tab33Content" id="n3Tab33Content" style="display:none;">
+                            <li><a href="http://home.9939.com/user/?uid=834861" target="_blank"><img src="http://home.9939.com/upload/pic//201504/834861_avatar_middle.jpg" alt="程慕溪" title="程慕溪" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=834861" target="_blank">程慕溪<span>医师</span></a></h4><p>妇科综合</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=831682" target="_blank"><img src="http://home.9939.com/upload/pic//201412/831682_avatar_middle.jpg" alt="张可娜" title="张可娜" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=831682" target="_blank">张可娜<span>医师</span></a></h4><p>妇科综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=745532" target="_blank"><img src="http://home.9939.com/upload/pic//201504/834864_avatar_middle.jpg" alt="史艺红" title="史艺红" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=745532" target="_blank">史艺红<span>医师</span></a></h4><p>妇科综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=249233" target="_blank"><img src="http://home.9939.com/upload/pic//201007/249233_avatar_middle.jpg" alt="马素芳" title="马素芳" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=249233" target="_blank">马素芳<span>医师</span></a></h4><p>妇产科疾病</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=200285" target="_blank"><img src="http://home.9939.com/upload/pic//201504/200285_avatar_middle.jpg" alt="黄兆英" title="黄兆英" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=200285" target="_blank">黄兆英<span>医师</span></a></h4><p>妇科综合</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=203013" target="_blank"><img src="http://home.9939.com/upload/pic//200912/203013_avatar_middle.jpg" alt="陈凤林" title="陈凤林" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=203013" target="_blank">陈凤林<span>医师</span></a></h4><p>微创妇科</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>             
+            </ul>
+            <ul class="doctou"  name="n3Tab33Content" id="n3Tab33Content" style="display:none;">
+                            <li><a href="http://home.9939.com/user/?uid=206255" target="_blank"><img src="http://home.9939.com/upload/pic//201504/206255_avatar_middle.jpg" alt="郑季彦" title="郑季彦" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=206255" target="_blank">郑季彦<span>医师</span></a></h4><p>新生儿疾病</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=200343" target="_blank"><img src="http://home.9939.com/upload/pic//201504/200343_avatar_middle.jpg" alt="宋元宗" title="宋元宗" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=200343" target="_blank">宋元宗<span>医师</span></a></h4><p>幼儿综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=206258" target="_blank"><img src="http://home.9939.com/upload/pic//201504/206258_avatar_middle.jpg" alt="吴秀静" title="吴秀静" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=206258" target="_blank">吴秀静<span>医师</span></a></h4><p>儿科常见病</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=200348" target="_blank"><img src="http://home.9939.com/upload/pic//201504/200348_avatar_middle.jpg" alt="曾艺东" title="曾艺东" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=200348" target="_blank">曾艺东<span>医师</span></a></h4><p>儿科常见病</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=831135" target="_blank"><img src="http://home.9939.com/upload/pic//201412/831135_avatar_middle.jpg" alt="袁慧淑" title="袁慧淑" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=831135" target="_blank">袁慧淑<span>医师</span></a></h4><p>幼儿综合</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=831472" target="_blank"><img src="http://home.9939.com/upload/pic//201504/831472_avatar_middle.jpg" alt="张朝文" title="张朝文" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=831472" target="_blank">张朝文<span>医师</span></a></h4><p>儿科常见病</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>             
+            </ul>
+            <ul class="doctou"  name="n3Tab33Content" id="n3Tab33Content" style="display:none;">
+                            <li><a href="http://home.9939.com/user/?uid=830774" target="_blank"><img src="http://home.9939.com/upload/pic//201504/830774_avatar_middle.jpg" alt="郭棋勇" title="郭棋勇" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=830774" target="_blank">郭棋勇<span>医师</span></a></h4><p>综合全科</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=830765" target="_blank"><img src="http://home.9939.com/upload/pic//201504/830765_avatar_middle.jpg" alt="张治" title="张治" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=830765" target="_blank">张治<span>医师</span></a></h4><p>综合病症</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=203017" target="_blank"><img src="http://home.9939.com/upload/pic//201504/203017_avatar_middle.jpg" alt="温海" title="温海" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=203017" target="_blank">温海<span>医师</span></a></h4><p>皮肤常见病</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=249291" target="_blank"><img src="http://home.9939.com/upload/pic//201504/249291_avatar_middle.jpg" alt="刘业生" title="刘业生" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=249291" target="_blank">刘业生<span>医师</span></a></h4><p>全科综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=245658" target="_blank"><img src="http://home.9939.com/upload/pic//201504/245658_avatar_middle.jpg" alt="余茂进" title="余茂进" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=245658" target="_blank">余茂进<span>医师</span></a></h4><p>皮肤常见病</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=200276" target="_blank"><img src="http://home.9939.com/upload/pic//201504/200276_avatar_middle.jpg" alt="张树遵" title="张树遵" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=200276" target="_blank">张树遵<span>医师</span></a></h4><p>皮肤传染病</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>             
+            </ul>
+            <ul class="doctou"  name="n3Tab33Content" id="n3Tab33Content" style="display:none;">
+                            <li><a href="http://home.9939.com/user/?uid=358997" target="_blank"><img src="http://home.9939.com/upload/pic//201504/358997_avatar_middle.jpg" alt="贾徐勇" title="贾徐勇" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=358997" target="_blank">贾徐勇<span>医师</span></a></h4><p>中医针灸</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=348264" target="_blank"><img src="http://home.9939.com/upload/pic//201504/348264_avatar_middle.jpg" alt="林洁港" title="林洁港" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=348264" target="_blank">林洁港<span>医师</span></a></h4><p>中医综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=369714" target="_blank"><img src="http://home.9939.com/upload/pic//201504/369714_avatar_middle.jpg" alt="胡爱玲" title="胡爱玲" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=369714" target="_blank">胡爱玲<span>医师</span></a></h4><p>中医综合</p><a href="http://ask.9939.com/asking/index?uid=745532" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=334752" target="_blank"><img src="http://home.9939.com/upload/pic//201504/334752_avatar_middle.jpg" alt="高爱萍" title="高爱萍" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=334752" target="_blank">高爱萍<span>医师</span></a></h4><p>中医综合</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=831257" target="_blank"><img src="http://home.9939.com/upload/pic//201501/831257_avatar_middle.jpg" alt="尹海波" title="尹海波" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=831257" target="_blank">尹海波<span>医师</span></a></h4><p>针灸推拿</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>
+<li><a href="http://home.9939.com/user/?uid=830735" target="_blank"><img src="http://home.9939.com/upload/pic//201411/830735_avatar_middle.jpg" alt="陈水鸥" title="陈水鸥" height="70" width="70"></a><h4><a href="http://home.9939.com/user/?uid=830735" target="_blank">陈水鸥<span>医师</span></a></h4><p>中医药理</p><a href="http://ask.9939.com/asking/" target="_blank" class="ali"></a></li>             
+            </ul>
+            </div>
+            <!--当前在线医生 结束-->
+        </div>
+        <div class="onlind">
+        	<div class="dotit"><h2><img src="http://ask.9939.com/ask_details/images/tit_04.png" alt="最新问题" title="最新问题"/></h2></div>
+            <div class="cltran">
+            	<div class="total skin"><a onMouseOver="divTag('n4Tab44', 'indexahover', '', 1, 0)" name="n4Tab44" id="n4Tab44" class="indexahover" style="border-left:none;">内科</a><a  onMouseOver="divTag('n4Tab44', 'indexahover', '', 2, 0)" name="n4Tab44" id="n4Tab44">外科</a><a  onMouseOver="divTag('n4Tab44', 'indexahover', '', 3, 0)" name="n4Tab44" id="n4Tab44">妇科</a><a  onMouseOver="divTag('n4Tab44', 'indexahover', '', 4, 0)" name="n4Tab44" id="n4Tab44">儿科</a><a  onMouseOver="divTag('n4Tab44', 'indexahover', '', 5, 0)" name="n4Tab44" id="n4Tab44">五官科</a><a  onMouseOver="divTag('n4Tab44', 'indexahover', '', 6, 0)" name="n4Tab44" id="n4Tab44">皮肤科</a><a  onMouseOver="divTag('n4Tab44', 'indexahover', '', 7, 0)" name="n4Tab44" id="n4Tab44">肿瘤科</a><a  onMouseOver="divTag('n4Tab44', 'indexahover', '', 8, 0)" name="n4Tab44" id="n4Tab44">心理科</a></div>
+            	<ul name="n4Tab44Content" id="n4Tab44Content" class="newpro" >
+                    <!--最新问答内科-->
+                    <!--#include virtual="/public/zuixinask_nk.shtml"-->
+                </ul>
+                <ul name="n4Tab44Content" id="n4Tab44Content" style="display:none;" class="newpro" >
+                    <!--最新问答外科-->
+                    <!--#include virtual="/public/zuixinask_yk.shtml"-->
+                </ul>
+                <ul name="n4Tab44Content" id="n4Tab44Content" style="display:none;" class="newpro" >
+                    <!--最新问答妇科-->
+                    <!--#include virtual="/public/zuixinask_fk.shtml"-->
+                </ul>
+                <ul name="n4Tab44Content" id="n4Tab44Content" style="display:none;" class="newpro" >
+                    <!--最新问答儿科-->
+                    <!--#include virtual="/public/zuixinask_ek.shtml"-->
+                </ul>
+                <ul name="n4Tab44Content" id="n4Tab44Content" style="display:none;" class="newpro" >
+                    <!--最新问答五官科-->
+                    <!--#include virtual="/public/zuixinask_wgk.shtml"-->
+                </ul>
+                <ul name="n4Tab44Content" id="n4Tab44Content" style="display:none;" class="newpro" >
+                    <!--最新问答皮肤科-->
+                    <!--#include virtual="/public/zuixinask_pfk.shtml"-->
+                </ul>
+                <ul name="n4Tab44Content" id="n4Tab44Content" style="display:none;" class="newpro" >
+                    <!--最新问答肿瘤科-->
+                    <!--#include virtual="/public/zuixinask_zlk.shtml"-->
+                </ul>
+                <ul name="n4Tab44Content" id="n4Tab44Content" style="display:none;" class="newpro" >
+                    <!--最新问答心理科-->
+                    <!--#include virtual="/public/zuixinask_xlk.shtml"-->
+                </ul>
+            
+            </div>
+        </div>
+        <div class="exchan">
+        	<div class="expline floatL">
+            	<h2><img src="http://ask.9939.com/ask_details/images/tit_05.png" alt="专家在线" title="专家在线"/></h2>
+                    <!-- 广告位：新问答首页--专家在线 -->
+                    <script type="text/javascript">BAIDU_CLB_fillSlot("1067114");</script>
+            </div>
+        	<div class="hetop floatR">
+            	<h2><img src="http://ask.9939.com/ask_details/images/tit_10.png" alt="热门话题" title="热门话题"/></h2>
+                <!--广告位 热门话题-->
+                                                                                        <div class="havlun"><a href="http://ask.9939.com/id/4457323" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429171739.jpg" alt="骨质疏松症患者能参加锻炼吗" title="骨质疏松症患者能参加锻炼吗" width="103" height="78"/></a><h4><a href="http://ask.9939.com/id/4457323" target="_blank">骨质疏松症患者能参加锻炼</a></h4><p>许多骨质疏松症患者因担心骨折而不敢参加体...<a href="http://ask.9939.com/id/4457323" target="_blank">[详情]</a></p></div>
+                                                                                                                                                     
+                <ul>
+                                                                                                                                    <li><a href="http://ask.9939.com/id/4457318" target="_blank">糖尿病人一定要禁酒吗？</a></li>
+                                                                                                <li><a href="http://ask.9939.com/id/4457319" target="_blank">宝宝12天黄疸如何治疗好呢？</a></li>
+                                                             
+                </ul>
+            </div>
+        	<div class="clear"></div>
+        </div>
+        <!--精彩问答 上边通图 网盟 开始-->
+        <div class="adval">
+            <script type="text/javascript">
+            /*W问答首页中间680*70 创建于 2015-04-20*/
+            var cpro_id = "u2057983";
+            </script>
+            <script src=" http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+
+        </div>
+        <!--精彩问答 上边通图 网盟 结束-->
+        <div class="patie"><h2><img src="http://ask.9939.com/ask_details/images/tit_06.png" alt="精彩问答" title="精彩问答"/></h2>
+        	<ul class="ans">
+                                        	   <li><a href="http://ask.9939.com/id/4457330" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429081456.jpg" alt="水烧到什么程度好" title="水烧到什么程度好"/></a><a href="http://ask.9939.com/id/4457330" class="ati">水烧到什么程度好</a></li>
+                            	   <li><a href="http://ask.9939.com/id/4457331" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429080918.jpg" alt="吃安眠药会上瘾吗" title="吃安眠药会上瘾吗"/></a><a href="http://ask.9939.com/id/4457331" class="ati">吃安眠药会上瘾吗</a></li>
+                            	   <li><a href="http://ask.9939.com/id/4457332" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429080490.jpg" alt="肩关节脱位常复发" title="肩关节脱位常复发"/></a><a href="http://ask.9939.com/id/4457332" class="ati">肩关节脱位常复发</a></li>
+                            	   <li><a href="http://ask.9939.com/id/4457333" target="_blank"><img src="http://home.9939.com//upload/pic/201504/1429080267.jpg" alt="流泪太多得干眼症" title="流泪太多得干眼症"/></a><a href="http://ask.9939.com/id/4457333" class="ati">流泪太多得干眼症</a></li>
+                                        </ul>
+        	<ul class="ans ans_02">
+                                        	   <li><span>·</span><a href="http://ask.9939.com/id/4457346" target="_blank">得了炎症怎么治</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457348" target="_blank">身体没有力气如何调理</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457307" target="_blank">新生儿睡觉需要枕头吗</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457306" target="_blank">患肛裂如何处理</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457310" target="_blank">肠道有病会影响性欲吗</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457314" target="_blank">女性反复脱发什么情况</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457311" target="_blank">患肾结石补钙吗</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457316" target="_blank">腹腔淋巴结肿大怎么办</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457317" target="_blank">新婚夫妇如何正确避孕</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457318" target="_blank">糖尿病人要禁酒</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457323" target="_blank">患骨质疏松症能锻炼吗</a></li>
+                            	   <li><span>·</span><a href="http://ask.9939.com/id/4457325" target="_blank">饮食性血色病怎么回事</a></li>
+                                        </ul>
+        </div>
+        <div class="patie"><h2><img src="http://ask.9939.com/ask_details/images/tit_07.png" alt="患者热问" title="患者热问"/></h2>
+        <div class="sympt">
+                                                        <a href="http://ask.9939.com/classid/58" target="_blank" class="a1">便秘</a>
+                                                                <a href="http://ask.9939.com/classid/219" target="_blank" class="a1">怀孕</a>
+                                                                <a href="http://ask.9939.com/classid/78" target="_blank" class="a1">感冒</a>
+                                                                <a href="http://ask.9939.com/classid/43" target="_blank" class="a1">糖尿病</a>
+                                                                <a href="http://ask.9939.com/classid/34" target="_blank" class="a2">高血压</a>
+                                                                <a href="http://ask.9939.com/classid/5" target="_blank" class="a2">肥胖</a>
+                                                                <a href="http://ask.9939.com/classid/238" target="_blank" class="a2">小儿手足口</a>
+                                                                <a href="http://ask.9939.com/classid/196" target="_blank" class="a2">阴道炎</a>
+                                                                <a href="http://ask.9939.com/classid/195" target="_blank" class="a3">月经不调</a>
+                                                                <a href="http://ask.9939.com/classid/150" target="_blank" class="a3">痔疮</a>
+                                                                <a href="http://ask.9939.com/classid/340" target="_blank" class="a3">湿疹</a>
+                                                                <a href="http://ask.9939.com/classid/524" target="_blank" class="a3">阳痿</a>
+                                                                <a href="http://ask.9939.com/classid/343" target="_blank" class="a4">过敏</a>
+                                                                <a href="http://ask.9939.com/classid/240" target="_blank" class="a4">小儿腹泻</a>
+                                            </div>
+        </div>
+    </div>
+	<div class="clear"></div>
+</div>
+<div class="wrapper">
+	<div class="onlind probl" style="margin-top:0;">
+      <div class="dotit necreat mend"><h2 style="padding:10px 82px 0 10px;"><img src="http://ask.9939.com/ask_details/images/tit_08.png" alt="常见疾病" title="常见疾病"/></h2><div class="total skin disea"><a onMouseOver="divTag('n5Tab55', 'indexahover', '', 1, 0)" name="n5Tab55" id="n5Tab55" class="indexahover">咳嗽</a><a  onMouseOver="divTag('n5Tab55', 'indexahover', '', 2, 0)" name="n5Tab55" id="n5Tab55">感冒</a><a  onMouseOver="divTag('n5Tab55', 'indexahover', '', 3, 0)" name="n5Tab55" id="n5Tab55">白癜风</a><a  onMouseOver="divTag('n5Tab55', 'indexahover', '', 4, 0)" name="n5Tab55" id="n5Tab55">甲亢</a><a  onMouseOver="divTag('n5Tab55', 'indexahover', '', 5, 0)" name="n5Tab55" id="n5Tab55">月经不调</a><a  onMouseOver="divTag('n5Tab55', 'indexahover', '', 6, 0)" name="n5Tab55" id="n5Tab55">流产</a><a  onMouseOver="divTag('n5Tab55', 'indexahover', '', 7, 0)" name="n5Tab55" id="n5Tab55">鼻炎</a><a  onMouseOver="divTag('n5Tab55', 'indexahover', '', 8, 0)" name="n5Tab55" id="n5Tab55">肛肠疾病</a></div></div>
+        <ul name="n5Tab55Content" id="n5Tab55Content" class="newpro clipro daid" >
+        <!--常见疾病 自动调取（咳嗽） 开始-->
+            <!--#include virtual="/public/askcjjb_ks.shtml"-->
+        <!--常见疾病 自动调取（咳嗽） 结束-->
+        </ul>
+        <ul name="n5Tab55Content" id="n5Tab55Content" style="display:none;" class="newpro clipro daid" >
+        <!--常见疾病 自动调取（感冒） 开始-->
+            <!--#include virtual="/public/askcjjb_gm.shtml"-->
+        <!--常见疾病 自动调取（感冒） 结束-->
+        </ul>
+        <ul name="n5Tab55Content" id="n5Tab55Content" style="display:none;" class="newpro clipro daid" >
+        <!--常见疾病 自动调取（白癜风） 开始-->
+            <!--#include virtual="/public/askcjjb_bdf.shtml"-->
+        <!--常见疾病 自动调取（白癜风） 结束-->
+        </ul>
+        <ul name="n5Tab55Content" id="n5Tab55Content" style="display:none;" class="newpro clipro daid" >
+        <!--常见疾病 自动调取（甲亢） 开始-->
+            <!--#include virtual="/public/askcjjb_jk.shtml"-->
+        <!--常见疾病 自动调取（甲亢） 结束-->
+        </ul>
+        <ul name="n5Tab55Content" id="n5Tab55Content" style="display:none;" class="newpro clipro daid" >
+        <!--常见疾病 自动调取（月经不调） 开始-->
+            <!--#include virtual="/public/askcjjb_yjbt.shtml"-->
+        <!--常见疾病 自动调取（月经不调） 结束-->
+        </ul>
+        <ul name="n5Tab55Content" id="n5Tab55Content" style="display:none;" class="newpro clipro daid" >
+        <!--常见疾病 自动调取（流产） 开始-->
+            <!--#include virtual="/public/askcjjb_lc.shtml"-->
+        <!--常见疾病 自动调取（流产） 结束-->
+        </ul>
+        <ul name="n5Tab55Content" id="n5Tab55Content" style="display:none;" class="newpro clipro daid" >
+        <!--常见疾病 自动调取（痛风） 开始-->
+            <!--#include virtual="/public/askcjjb_by.shtml"-->
+        <!--常见疾病 自动调取（痛风） 结束-->
+        </ul>
+        <ul name="n5Tab55Content" id="n5Tab55Content" style="display:none;" class="newpro clipro daid" >
+        <!--常见疾病 自动调取（肛肠疾病） 开始-->
+            <!--#include virtual="/public/askcjjb_gcjb.shtml"-->
+        <!--常见疾病 自动调取（肛肠疾病） 结束-->
+        </ul> 
+  </div>
+    <div class="onlind probl">
+      <div class="dotit necreat mend">
+      <h2 style="padding:10px 82px 0 10px;"><img src="http://ask.9939.com/ask_details/images/tit_09.png" alt="科室常见问题" title="科室常见问题"/></h2>
+          <div class="total skin disea">
+          <a onMouseOver="divTag('n6Tab66', 'indexahover', '', 1, 0)" name="n6Tab66" id="n6Tab66" class="indexahover">内科</a><a  onMouseOver="divTag('n6Tab66', 'indexahover', '', 2, 0)" name="n6Tab66" id="n6Tab66">外科</a><a  onMouseOver="divTag('n6Tab66', 'indexahover', '', 3, 0)" name="n6Tab66" id="n6Tab66">妇科</a><a  onMouseOver="divTag('n6Tab66', 'indexahover', '', 4, 0)" name="n6Tab66" id="n6Tab66">儿科</a><a  onMouseOver="divTag('n6Tab66', 'indexahover', '', 5, 0)" name="n6Tab66" id="n6Tab66">心理科</a><a  onMouseOver="divTag('n6Tab66', 'indexahover', '', 6, 0)" name="n6Tab66" id="n6Tab66">皮肤科</a><a  onMouseOver="divTag('n6Tab66', 'indexahover', '', 7, 0)" name="n6Tab66" id="n6Tab66">肿瘤科</a><a  onMouseOver="divTag('n6Tab66', 'indexahover', '', 8, 0)" name="n6Tab66" id="n6Tab66">两性健康</a>
+          </div>
+      </div>
+      <ul name="n6Tab66Content" id="n6Tab66Content" class="newpro clipro" >
+            <!--科室常见问题 内科-->
+            <!--#include virtual="/public/askcjwt_nk.shtml"-->
+      </ul>   
+      <ul name="n6Tab66Content" id="n6Tab66Content" style="display:none;" class="newpro clipro" >
+            <!--科室常见问题 外科-->
+            <!--#include virtual="/public/askcjwt_yk.shtml"-->
+      </ul>  
+      <ul name="n6Tab66Content" id="n6Tab66Content" style="display:none;" class="newpro clipro" >
+            <!--科室常见问题 妇科-->
+            <!--#include virtual="/public/askcjwt_fk.shtml"-->
+      </ul> 
+      <ul name="n6Tab66Content" id="n6Tab66Content" style="display:none;" class="newpro clipro" >
+            <!--科室常见问题 儿科-->
+            <!--#include virtual="/public/askcjwt_ek.shtml"-->
+      </ul> 
+      <ul name="n6Tab66Content" id="n6Tab66Content" style="display:none;" class="newpro clipro" >
+            <!--科室常见问题 心理科-->
+            <!--#include virtual="/public/askcjwt_xlk.shtml"-->
+      </ul> 
+      <ul name="n6Tab66Content" id="n6Tab66Content" style="display:none;" class="newpro clipro" >
+            <!--科室常见问题 皮肤科-->
+            <!--#include virtual="/public/askcjwt_pfk.shtml"-->
+      </ul> 
+      <ul name="n6Tab66Content" id="n6Tab66Content" style="display:none;" class="newpro clipro" >
+            <!--科室常见问题 肿瘤科-->
+            <!--#include virtual="/public/askcjwt_zlk.shtml"-->
+      </ul> 
+      <ul name="n6Tab66Content" id="n6Tab66Content" style="display:none;" class="newpro clipro" >
+            <!--科室常见问题 两性健康-->
+            <!--#include virtual="/public/askcjwt_lxjk.shtml"-->
+      </ul>                 
+  </div>
+	<div class="frelin"><h2>友情链接</h2>
+    <div class="relin">
+        <!--#include virtual="/public/endlinks_new.shtml"-->
+    </div>
+    </div>
+	<!--#include virtual="/ask/ask_footer/ask_footer_new.html"-->   
+</div>
+<script type="text/javascript">
+	Qfast.add('widgets', { path: "http://ask.9939.com/ask_details/js/terminator2.2.min.js", type: "js", requires: ['fx'] });  
+	Qfast(false, 'widgets', function () {
+		K.tabs({
+			id: 'fsD1',   //焦点图包裹id  
+			conId: "D1pic1",  //** 大图域包裹id  
+			tabId:"D1fBt",  
+			tabTn:"a",
+			conCn: '.fcon', //** 大图域配置class       
+			auto: 1,   //自动播放 1或0
+			effect: 'fade',   //效果配置
+			eType: 'click', //** 鼠标事件
+			pageBt:true,//是否有按钮切换页码
+			bns: ['.prev', '.next'],//** 前后按钮配置class                          
+			interval: 3000  //** 停顿时间  
+		}) 
+	})  
+	$('.ans li img').hover(function(){
+		$(this).parent().next('.ati').hide();	
+	},function(){
+		$(this).parent().next('.ati').show();	
+	});
+	$('.ans li:last-child,.ans_02 li:nth-child(4),.ans_02 li:nth-child(8),.ans_02 li:nth-child(12)').css('margin-right','0');
+	function GetRandomNum(Min,Max)
+    {   
+        var Range = Max - Min;   
+        var Rand = Math.random(); 
+		var bal=document.getElementById('bav');  
+        bal.innerHTML=(Min + Math.round(Rand * Range));   
+		
+    } 
+GetRandomNum(1600,5000);
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html { color:#000; background:#FFF;}
+body { margin:auto; text-align:center; font:12px/1.231 arial,helvetica,clean,sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td { margin: 0; padding: 0;}
+img{ border:0;}
+a {	color: #000; text-decoration: none;}
+a:hover { text-decoration: underline;}
+
+
+.footer{ width:950px; margin:auto; padding:0;}
+.ft-nav{ background:#F3F5F4; color:#5F5F5F; width:950px; height:20px; line-height:20px; margin-top:1px; text-align:center;}
+.ft-nav a{ color:#5F5F5F; padding:0 10px;}
+.copyright{ color:#5F5F5F; line-height:1.4; margin-top:15px; text-align:center; line-height:2;}

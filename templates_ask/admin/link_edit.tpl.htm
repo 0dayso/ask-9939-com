@@ -1,0 +1,58 @@
+{include file=admin/header_1.tpl.htm}
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+		<tr class="header">
+			<td colspan="2">添加友情连接</td>
+		</tr>		
+		<form name="adsform" method="POST" action="link.php?act=editSave" enctype="multipart/form-data" onsubmit="return checkForm();">
+		<input type="hidden"  name="id"  value="{$aField.id}">
+		<tr>
+			<td width="100" class="altbg1">名称：</td>
+			<td class="altbg2"><input type="text" id="name" name="link[name]" value="{$aField.name}" size="50"></td>
+		</tr>
+		<tr>
+			<td class="altbg1">分类：</td>
+			<td class="altbg2">
+				<select name="link[type]" id="type">
+				{$pos}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="altbg1">链接地址</td>
+			<td class="altbg2"><input type="text"  name="link[url]" value="{$aField.url}" size="50"></td>
+		</tr>
+		<tr>
+			<td class="altbg1">介绍</td>
+			<td class="altbg2"><textarea name="link[desc]"  rows="4" cols="120" >{$aField.desc}</textarea></td>
+		</tr>
+		<tr>
+			<td align="left" class="altbg1"><input type="button" onclick="history.go(-1);" value="返回" class="button"></td>
+			<td align="right" class="altbg2"><input type="submit" name="submit" value=" 提 交 " class="submit"></td>	
+		</tr>
+		</form>
+</table>
+
+{literal}
+<script language="javascript">
+//验证表单输入是否正确
+function checkForm()
+{
+	if(document.getElementById('name').value == "")
+	{
+		alert("广告名称不能为空");
+		document.getElementById('name').focus();
+		return false;
+	}
+	if(document.getElementById('type').value == "")
+	{
+		alert("请选择分类");
+		document.getElementById('type').focus();
+		return false;
+	}
+
+	return true;
+}
+</script>
+{/literal}
+{include file=admin/footer.tpl.htm}                                                                                              
+  

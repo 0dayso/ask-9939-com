@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=589812724" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+WB2.anyWhere(function (W){ 
+    W.widget.connectButton({ 
+        id: "wb_connect_btn", 
+        type: '3,2', 
+        callback: { 
+            login: function (o) { //登录后的回调函数 
+                //alert("login: " + o.screen_name);
+            	window.open("http://ask.9939.com");
+            	/* for(var name in o) {
+            		document.write("name:" + name + " value:" + o[name]);
+            	} */
+            }, 
+            logout: function () { //退出后的回调函数 
+                alert('logout');
+            } 
+        } 
+    }); 
+}); 
+
+</script>
+</head>
+<body>
+<div type="4,2" onlogin="login" onlogout="logout" id="wb_connect_btn">登录按钮</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{include file=admin/header.tpl.htm}
+{literal}
+<script language="javascript">
+	function checkInput()
+	{
+		
+		//if($('orderID[]').value == "")
+		//{
+			
+		//}
+	}
+</script>
+{/literal}
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">	
+		<tr class="header">				
+			<td width=5%>ID</td>
+			<td>名称</td>		
+			<td>简介</td>		
+			<td width="10%">顺序ID</td>			
+			<td align="center">操作</td>
+		</tr>
+				
+		<form method="POST" action="?act=changeOrder&a={$sTbl}&pID={$pID}" onsubmit="return checkInput();">
+		{section name=list loop=$aList}  
+		<tr bgcolor="White">			
+			<td>{$aList[list].id}</td>
+			<td>{$aList[list].name}</td>
+			<td>{$aList[list].intro}</td>
+			<td>
+				{if $pid <> $aList[list].id}
+					<input type="text" name="orderID[]" value="{$aList[list].orderID}" ONKEYPRESS="event.returnValue=IsDigit();" size="4">
+					<input type="hidden" name="id[]" value="{$aList[list].id}">
+				{/if}
+			</td>	
+			<td>
+			{if $sTbl == "news_class"}<a href="news.php?cID={$aList[list].id}">查看资讯</a>&nbsp;&nbsp;{/if}			
+			<a href="?act=edit&a={$sTbl}&id={$aList[list].id}">修改</a>&nbsp;&nbsp;
+			<a href="?act=del&a={$sTbl}&id={$aList[list].id}{if $pID_NEW}&pID={$pID_NEW}{/if}">删除</a></td>
+		</tr>		
+		{/section}
+		<tr bgcolor="White" align="center">
+			<td colspan="3">
+				<input type="submit" value="更改排序号">  
+				<input type="button" onclick="location.href='?act=add&a={$sTbl}&pID={$pID}';" value="添 加">
+				{if $p_p_id_flag}
+				<input type="button" value="返回上级菜单" onclick="location.href='?a={$sTbl}&pID={$p_p_id}'"/>
+				{/if}
+			</td>
+			<td colspan="3">
+			{* 默认二级分类 *}
+			
+				生成<input name="layer" value="2" size="1">级栏目 
+				<input type="button" value="提 交" onclick="location.href='?act=createOptions&a={$sTbl}&layer='+layer.value;">
+			</td>
+		</tr>		
+		</form>
+				
+		</table>
+		<br>
+		{include file=admin/pager_bar.tpl.htm}
+
+{include file=admin/footer.tpl.htm}

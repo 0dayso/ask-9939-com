@@ -1,0 +1,114 @@
+<style>
+    /*快速提问*/
+
+.l-mod{ width:226px; position:fixed; background:#fff;right:10px; bottom:0; _position:absolute;  _bottom:auto;  _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));  
+
+        z-index:1000; text-align:left;}
+
+.modlibn{border-left:1px solid #ff881d; border-right:1px solid #ff881d; }
+
+.l-mod .mebtop{background: url(../images/mod_t.jpg) no-repeat -1px 0px;  height:5px; width: 226px;}
+
+.l-mod .hd{ height:24px; background:#ff881d;position:relative; padding-left:10px;color:#000; position:relative; padding-top:6px;}
+
+.l-mod .hd .mebxle{ position:absolute; right:-9px; top:-11px;cursor:pointer;}
+
+.l-mod .hd span{width:30px;height:24px;cursor:pointer;text-align:center;display:block;position:absolute;top:3px;right:5px;color:#fff;}
+
+.l-mod .hd span b{display: none;}
+
+.l-mod .hd2 em{display: none;}
+
+.l-mod .hd2 span b{display: block;}
+
+.l-mod .hd h2{ font-size:14px; font-weight:bold; line-height:32px; color:#fff;text-align:left;}
+
+.formd{overflow: hidden;}
+
+.l-modt10{padding:10px;}
+
+.l-mod .inp{width:201px; height:58px; border:1px solid #e4e4e4; padding:10px 0 0 5px;}
+
+.l-mod .immed{ background:url(../images/kstw.jpg) no-repeat; width:90px; height:28px; text-align:center; line-height:28px; font-size:14px; font-family:"microsoft YaHei"; margin:10px 56px 0 56px;}
+
+.l-mod .immed a{color:#fff;}
+
+.l-mod  .mobdown{height:18px; font-size:14px;background:#f2f2f2 url(../images/meb_mj.png) no-repeat 11px 6px;  padding:4px 10px 4px 31px; }
+
+.l-mod  .mobdown p{font-size:12px; display:inline;}
+
+.l-mod  .mebbot{background: url(../images/mod_b.jpg) no-repeat -1px -2px;  height:5px; width: 226px;}
+
+/*我来回答弹框*/
+
+.qbwrt{ position:fixed; top:0; left:0; width:100%; height:100%; background:url(../images/qtray.png); z-index:3000; display:none;}
+
+.askboun{ background: #fff;z-index:999; position: absolute; width:422px; height:196px;margin-top:-100px; margin-left:-240px;left:50%; top:50%; border:1px solid  #00d4dd; color:#333; font-family:"宋体"; font-size:12px;}
+
+.w272{width:272px; height:265px;}
+
+.pl18{ margin-bottom:36px;}
+
+.askboun  .xlerr{ position:absolute; right:-9px; top:-11px;cursor:pointer;}
+
+.choks{ padding:10px 12px; background:#f5fcfd;font-size:14px;}
+
+.ple_ks{color:#00d4dc;font-family:"microsoft YaHei";}
+
+.wnome span,.ltw{ display:block; text-align:center;margin-top:14px;}
+
+.ltw{margin-top:0;}
+
+.askboun .p25{margin:26px 20px 0 24px;}
+
+.qw78{ width:78px;height:24px;margin-top:24px; border:1px solid #22bbc1; background:#00d5dd; display:block; text-align:center; line-height:24px;  font-size:14px;}
+
+.mr10{ margin-right:10px;}
+
+.qw78 a{color:#fff; font-weight:bold;}
+
+.fiz14{ font-size:14px; line-height:28px;}
+
+.ltw span{ display:inline-block;}
+
+.fo14{ font-size:14px;}
+
+.qfrom{ padding:22px 25px 20px 25px}
+
+.mob-input{border:1px solid #c7c6c6;height:35px;width:217px; position:relative;}
+
+.login-label{position: absolute;z-index: 3;top:0;left:0;width:32px;height:38px;background:url(../images/urs.gif) no-repeat 10px 8px;}
+
+.mob-input{margin-bottom:10px;}
+
+.mob-input .itxt{line-height:18px;height:35px;border:0;padding: 10px 0 10px 38px;width: 185px;float: none;overflow: hidden;font-size: 12px;}
+
+.pwd-label{background:url(../images/ma.gif) no-repeat 10px 8px;}
+
+.corf44{color:#f44700;background:url(../images/th.gif) no-repeat 4px 3px; padding-left:26px;}
+
+.cor0{color:#0066cc;font-family:"microsoft YaHei";}
+
+.pb-login-btn{font-family:"宋体";font-weight:bold; color: #fff; font-size: 14px; width:215px; background: url(../images/mbtn.gif) no-repeat; height: 38px; cursor: pointer; margin:10px 0;}
+
+.mqq{margin-left:18px;}
+
+.mTq15{margin-top:10px;}
+</style>
+
+<!--快速提问 开始-->
+<div class="l-mod" id="l-mod">
+    <div class="mebtop"></div>
+    <div class="hd">
+        <p><img  src="/ask/v1/images/meb_wrt6.png" alt="免费向万名医提问" title="免费向万名医提问"/></p>
+        <div class="mebxle"><a><img src="/ask/v1/images/mebxh.png?v=20160427_01"></a></div>
+    </div>
+    <iframe src="http://ask.9939.com/ask/quick/" width="236" height="150" frameborder="0" scrolling="No"></iframe>
+    <div class="mebbot"></div>
+</div>
+<script>
+    $('.mebxle a').click(function() {
+        $('.l-mod').hide();
+    });
+</script>
+<!--快速提问 结束-->

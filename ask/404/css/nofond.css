@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+body{background: #f5f5f5;}
+.font{font-family:'Microsoft Yahei',"\5FAE\8F6F\96C5\9ED1";}
+.hd{background: url(../images/toBg.png) repeat-x;}
+.hdMan{height: 48px;line-height: 48px;position: relative;}
+.bd,.hdMan{width:1004px;margin:0 auto;}
+.logo{width:95px;height:22px;background: url(../images/asLogo.png) no-repeat;position: absolute;top:14px;left: 0;}
+.logo a{width:95px;height:22px;text-indent:-999px;overflow:hidden;display:block;}
+.rText{font-size:14px;position: absolute;right: 0;line-height: 48px;color: #fff;}
+.inText{overflow: hidden;zoom:1;}
+.inText span{color: #fdd0a5;margin:0 5px;}
+.inText p{padding: 0 5px;float:left;}
+.inText p a{color: #fff;margin-right: 10px;}
+.dl{overflow: hidden;padding-top:14px;}
+.dl p{margin-left: 12px;float: left;overflow: hidden;line-height:22px;}
+.dl p label{margin-right: 8px;}
+.dl p input{width:93px;border: 1px solid #d2d2d2;height: 20px;background: #fff;padding-left: 5px;}
+.dl .lBtn input{width:68px;background:#fff;margin-top:2px;padding:0;line-height:22px;color:#0973c1;cursor:pointer;height:22px;border:none;font-family:'Microsoft Yahei',"\5FAE\8F6F\96C5\9ED1";}
+.dl p a{color:#fff;}
+.reTip{overflow: hidden;padding-top: 101px;}
+.pic{float:left;margin-right: 41px;}
+.reYa{overflow: hidden;}
+.ya{margin-bottom: 29px;}
+.reYa p{line-height:22px;color: #b4b4b4;font-size: 14px;}
+.aSr{margin-top: 20px;overflow: hidden;zoom:1;}
+.inPut{width: 304px;float:left;font-family:'Microsoft Yahei',"\5FAE\8F6F\96C5\9ED1";padding-left: 5px;height: 34px;color:#b4b4b4;font-size:14px;line-height: 34px;border: 1px solid #abadb3}
+.iBtn{width: 49px;height:36px;border:0;background: url(../images/aSr.png) no-repeat; cursor: pointer;float: left;}
+.back{overflow: hidden;margin-top: 15px;}
+.back a{padding:0 15px;margin-right:21px;display: inline-block;background: #fd7d00;height: 25px;line-height: 25px;font-size: 14px;color: #fff;}
+.back a:hover{text-decoration: none;}
+.sbM{margin-top: 75px;overflow: hidden;background: #ededed;border-top: 1px dotted #c5c5c5;padding: 14px 0 30px 20px;}
+.sbH2{font-size: 16px;line-height: 36px;}
+.jbUl{overflow: hidden;zoom:1;padding: 0 50px 20px 50px;}
+.jbUl li{width: 147px;float: left;height: 30px;line-height: 30px;font-size: 14px;}
+.jbUl li a{color: #1782b0;}
+.xgUl{overflow: hidden;zoom:1;padding: 15px 45px 0 45px;}
+.xgUl li{width: 413px;height:30px;line-height:30px;overflow:hidden;float: left;font-size: 14px;position: relative;padding-left: 14px; }
+.xgUl li a{color: #252525;}
+.xgUl li a:hover{color: #ca0000;}
+.xgUl li b{position:absolute;top:50%;left:0;margin-top:-1.5px;background: #1782b0;width: 3px;height: 3px;float:left;font-size: 0;line-height: 0;}
+.ft{border-top:1px solid #1782b0;margin-top: 35px;padding-top: 25px;text-align: center;padding-bottom: 100px;}
+.ftA{color: #666;line-height: 22px;}
+.ftA a{color: #666;margin: 0 4px;}
+.ftCopy{padding-top: 26px;line-height: 24px;color: #999;}

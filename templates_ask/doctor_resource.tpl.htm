@@ -1,0 +1,70 @@
+{include file="header_doctor.tpl.htm"}
+        <div id="main_container" class="medicineResource_rank">
+          <div class="content_zh">
+            <div class="content_title">
+              <h2>医学资源</h2>
+            </div>
+            <div class="content_main">
+              <table id="table_zh">
+              <!-- <tr>
+               <td>
+                <table> -->
+                <tbody>
+                  <tr class="table_head_zh">
+                    <td  width="400">标题</td>
+                    <td  width="100">适用疾病</td>
+                    <td  width="100">资源类别</td>
+                    <td  width="120">上传时间</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                <!--从这循环tr 20次换页-->
+                  {foreach item=item from=$docres}
+                  <tr>
+                	<td><a href="{$item.url}">{$item.file}</a></td>
+                    <td class="disease">{$item.disease}</a></td>
+                    <td>{$item.type}</td>
+                    <td>{$item.time}</td>
+				  </tr>
+				  {/foreach}
+                </tbody>
+                <!-- </table>
+                </td>
+                </tr> -->
+              </table>
+            </div>
+            <div class="page">
+            <!--<span>共117条资源</span><span>每页20条</span><span>共6页</span>
+            <span><a href="###">首页</a><a href="###">上一页</a> 
+            1 2 3 4 5 6
+             <a href="###">下一页</a>
+             <a href="###">末页</a><span>-->
+            </div>
+          </div>
+          
+			<script language="javascript" src="/images/js/tdColor.js"></script>			
+			<div class="sidebar_zh">{include file="include/right.html"}</div>				
+          </div>
+        </div>
+</div>
+<div class="clear"></div>
+{literal}
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+		counter = 0;
+		function show()
+		{
+			for(i=0; i<3; i++)
+			{
+				document.getElementById('hotimg'+i).style.display="none";
+			}
+			document.getElementById('hotimg'+counter).style.display="";
+			counter++;
+			if(counter == 3) counter = 0;
+			window.setTimeout("show('hotimg'+counter)",1500);
+		}
+		show()
+//-->
+</SCRIPT>		
+{/literal}
+{include file="include/footer.html"}

@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>活动</title>
+<link href="/huodong/201008/style/css.css" type="text/css" rel="stylesheet" />
+<script type='text/javascript' src="/huodong/201008/js/jquery-1.4.2.min.js"></script>
+<script type='text/javascript' src='/huodong/201008/js/jquery.simplemodal.js'></script>
+<link rel="stylesheet" type="text/css" href="/huodong/201008/css/lf_ok1.css">
+<style type="text/css">
+hr { margin:10px 0; height:1px;clear:both;border:0; background:#c00;}
+a:link,a:visited{color:#164A84;text-decoration:none;}
+a:hover,a:active{color:#c00;text-decoration:underline;}
+table { border-collapse:collapse;border:1px solid #ccc;border-width:1px 1px 0 0; margin-left:20px;}
+td,th { padding:5px;border:1px solid #ccc;border-width:0 0 1px 1px;}
+</style>
+<script type="text/javascript">
+
+function submitData() {
+	var form = document.getElementById('form1');
+	var nickname = document.getElementById('nickname');
+	var truename = document.getElementById('truename');
+	var phone = document.getElementById('phone');
+	var address = document.getElementById('address');
+	var postcode = document.getElementById('postcode');
+	if(nickname.value=='') {
+		alert('请输入昵称！');
+		nickname.focus();
+		return false;
+	} else if(truename.value=='') {
+		alert('请输入真实姓名！');
+		truename.focus();
+		return false;
+	} else if(phone.value=='') {
+		alert('请输入电话号码！');
+		phone.focus();
+		return false;
+	} else if(address.value=='') {
+		alert('请输入地址！');
+		address.focus();
+		return false;
+	} else if(postcode.value=='') {
+		alert('请输入邮编！');
+		postcode.focus();
+		return false;
+	} else {
+		 $.post("/activity/m201008", { nickname: nickname.value, truename:truename.value,telephone:phone.value,address:address.value,postcode:postcode.value }, 
+		   function(data){ 
+			 if(data=='end') {
+				 $("#basic-modal-content").html('<div class="jubao">图片阴影</div><div class="jubao_doc"><div class="jubao_tit">信息提交失败</div><div class="jubao_con2"><p>对不起，活动已经结束！</p></div>');
+			 } else if(data=='noreg') {
+				 $("#basic-modal-content").html('<div class="jubao">图片阴影</div><div class="jubao_doc"><div class="jubao_tit">信息提交失败</div><div class="jubao_con2"><p>对不起，请先    <a href="http://ask.9939.com/register?backurl=http%3A%2F%2Fask.9939.com%2Factivity%2Fm201008"><img src="/huodong/201008/images/8.jpg" /></a>    获得昵称并上传图像</p></div>');
+			 } else if(data == 'ok') {
+				$("#basic-modal-content").html('<div class="jubao">图片阴影</div><div class="jubao_doc"><div class="jubao_tit">信息提交成功</div><div class="jubao_con2"><p><span>信息提交成功</span><span id="define"><a href="#" class="simplemodal-close" id="define_a"><img src="/huodong/201008/images/7.jpg" /></a></span></p></div>');
+			 } else {
+				 $("#basic-modal-content").html('<div class="jubao">图片阴影</div><div class="jubao_doc"><div class="jubao_tit">信息提交失败</div><div class="jubao_con2"><p>对不起，提交失败！</p></div>');
+			 }
+			 $("#basic-modal-content").modal();
+			 return false;
+		 });
+	}
+	return false;
+}
+
+
+
+</script>
+<script type="text/javascript">
+$(function () {
+$(".zhmore").bind('click',function(){
+	  $(".zh-dcolumn").toggle();
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="box">
+<div id="hd">
+			<div class="g-topbar">
+				<div class="g-login" id="login">
+					
+				</div>
+				<ul class="g-site-links">　　
+					<li><a href="http://www.9939.com/webmap_0_1.html" target="_blank">网站地图</a></li>
+					<li><a href="http://zs.9939.com" target="_blank">医药招商 </a></li>
+					<li><a href="http://www.9939.com/sitemap/" target="_blank">网站导航 </a></li>
+					<li><a href="http://lady.9939.com" target="_blank">久久女性网 </a></li>
+					<li><a href="http://120.9939.com" target="_blank">名院推荐 </a></li>
+					<li><a href="http://www.9939.com" onclick="setHomePage(this)">设为首页 </a></li>
+					<li><a href="javascript:myAddPanel('健康资讯网',window.location.href)">收藏 </a></li>
+				</ul>
+			</div>
+			<div class="g-nav">
+			<a href="http://www.9939.com" class="icon"></a><a href="http://lady.9939.com/" target="_blank"><span>女性</span></a>—<a href="http://lx.9939.com/" target="_blank"><span>两性</span></a>—<a href="http://baby.9939.com/" target="_blank"><span>母婴</span></a>—<a href="http://man.9939.com/" target="_blank"><span>男性</span></a>—<a href="http://beauty.9939.com/" target="_blank"><span>美容</span></a>—<a href="http://xl.9939.com/" target="_blank"><span>心理</span></a>—<a href="http://fitness.9939.com/" target="_blank"><span>减肥</span></a>—<a href="http://food.9939.com/" target="_blank"><span>饮食</span></a>—<a href="http://baojian.9939.com/" target="_blank"><span>保健</span></a>—<a href="http://js.9939.com/" target="_blank"><span>健身</span></a>—<a href="http://jb.9939.com/" target="_blank"><span>疾病</span></a>—<a href="http://hospital.9939.com/" target="_blank"><span>医院</span></a>—<a href="http://zhongyi.9939.com/" target="_blank"><span>中医</span></a>—<a href="http://pianfang.9939.com/" target="_blank"><span>偏方</span></a>—<a href="http://ask.9939.com/" target="_blank"><span>问答</span></a>—<a href="http://home.9939.com/buluo/" target="_blank"><span>部落</span></a>—<a href="http://home.9939.com/" target="_blank"><span>家园</span></a>—<a href="http://pic.9939.com/" target="_blank"><span>图谱</span></a>	
+			</div>
+			<div class="g-keywords">
+				<h2>疾病专栏：</h2>
+				<p><a target="_blank" href="http://fk.9939.com/">妇科</a>|<a target="_blank" href="http://dx.9939.com">癫痫</a>|<a target="_blank" href="http://ggt.9939.com/">股骨头坏死</a>|<a href="http://www.baidianfeng123.net/" target="_blank">白癜风</a>|<a href="http://www.npx110.com/" target="_blank">牛皮癣</a>|<a target="_blank" href="http://lc.9939.com/">无痛人流</a>|<a target="_blank" href="http://xzb.9939.com/">心脏病</a>|<a target="_blank" href="http://nk.9939.com/">男科</a>|<a target="_blank" href="http://tnb.9939.com/">糖尿病科</a>|<a target="_blank" href="http://gb.9939.com/">肝病科</a>|<a target="_blank" href="http://smyy.9939.com/">失眠抑郁</a>|<a target="_blank" href="http://pf.9939.com/">皮肤科</a>|<a target="_blank" href="http://gxy.9939.com/">高血压</a>|<a target="_blank" href="http://zl.9939.com/">肿瘤</a></p>
+				<div class="zhmore">
+					<div class="zh-dcolumn">
+						<span class="top"></span>
+						<div class="inner">
+							<div class="hd">
+							  <h4>疾病专栏</h4>
+							</div>
+							<div class="bd">
+							  <ul>
+	
+								<li><a target="_blank" href="http://mn.9939.com/">泌尿科</a></li>
+								<li><a target="_blank" href="http://ek.9939.com/">儿科</a></li>
+								<li><a target="_blank" href="http://yk.9939.com/">眼科</a></li>
+								<li><a target="_blank" href="http://wb.9939.com/">胃病科</a></li>
+								<li><a target="_blank" href="http://kq.9939.com/">口腔科</a></li>
+								<li><a target="_blank" href="http://shcare.9939.com/">肾病科</a></li>
+	
+								<li><a target="_blank" href="http://fengshi.9939.com/">风湿科</a></li>
+								<li><a target="_blank" href="http://byby.9939.com/">不孕不育</a></li>
+								<li><a target="_blank" href="http://jzb.9939.com/">颈椎病</a></li>
+								<li><a target="_blank" href="http://zhongfen.9939.com/">中风</a></li>
+								<li><a target="_blank" href="http://gc.9939.com/">肛肠</a></li>
+	
+								<li><a target="_blank" href="http://heart.9939.com/">心血管科</a></li>
+								<li><a target="_blank" href="http://pf.9939.com/">皮肤科</a></li>
+								<li><a target="_blank" href="http://jsk.9939.com/">精神科</a></li>
+								<li><a target="_blank" href="http://bdf.9939.com/">白癜风</a></li>
+								<li><a target="_blank" href="http://npx.9939.com/">牛皮癣</a></li>
+	
+								<li><a target="_blank" href="http://gk.9939.com/">骨科</a></li>
+								<li><a target="_blank" href="http://yjp.9939.com/">腰间盘</a></li>
+							  </ul>
+							</div> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<div id="header">
+<div id="logo"><img src="/huodong/201008/images/logo.jpg" width="950" height="116" /></div>
+<div id="banner">
+<ul>
+<li><?=$this->count?></li>
+</ul>
+</div>
+</div>
+<div id="mainbody">
+<div class="left">
+<h1><img src="/huodong/201008/images/left.jpg" width="313" height="18" /></h1>
+<h2><img src="/huodong/201008/images/left_1.jpg" width="550" height="3" /></h2>
+<p><img src="/huodong/201008/images/right_2.jpg" width="5" height="258" /></p>
+<ul>
+<li class="a1">　　凡在8月25日---9月5日之间注册本网站的北京女性会员,完善空间资料并填写真实有效信息,就有机会免费领取本品试用装一套(价值200元人民币).</li>
+<li class="a1">活动说明：</li>
+<li>1.本次活动只限北京地区女性朋友;</li>
+<li>2.为了能更准确的统计到你的详细信息,在注册会员时请用:爱m****形式注册,比如:爱m天使之心;</li>
+<li>3.你所填写的信息和资料须通过我们申核合格后才能有机会获得免费试用装,同时我们会对你的信</li>
+<li>　息保密;</li>
+<li>4.久久健康网对此活动有最终解释权</li>
+</ul>
+<p><img src="/huodong/201008/images/right_3.jpg" width="5" height="258" /></p>
+</div>
+<div class="right">
+<h1><img src="/huodong/201008/images/right.jpg" width="390" height="25" /></h1>
+<h2><img src="/huodong/201008/images/right_1.jpg" width="390" height="3" /></h2>
+<div class="right_1">
+<form action="" method="POST" name="form1" id="form1">
+<ol>
+<li class="a3">第一步　　去注册获得用户名,并上传头像,别的无须填写</li>
+<li>　　　　　注册地址:<a href="http://ask.9939.com/register?backurl=http%3A%2F%2Fask.9939.com%2Factivity%2Fm201008"   target=_blank   title= 'd '> http://ask.9939.com/register</a></li>
+<li>第二步　　填写以下详细信息,全为必填</li>
+<li class="a4">网站妮称:<input name="nickname" type="text" id="nickname" value="<?=$this->nickName?>"/>(<a href="http://ask.9939.com/register?backurl=http%3A%2F%2Fask.9939.com%2Factivity%2Fm201008">没有?去注册</a>)</li>
+<li class="a5">真实姓名:<input name="uinfo[truename]" type="text" id="truename" value="<?=$this->userInfo->truename?>"/></li>
+<li class="a4">电　　话:<input name="uinfo[telephone]" type="text" id="phone" value="<?=$this->userInfo->telephone?>"/></li>
+<li class="a4">地　　址:<input name="uinfo[address]" type="text" id="address" value="<?=$this->userInfo->address?>"/></li>
+<li class="a4">邮　　编:<input name="uinfo[postcode]" type="text" id="postcode" value="<?=$this->userInfo->postcode?>"/></li>
+</ol>
+<style type="text/css">
+.pop { float:left; width:392px; display:none; background:url(images/66_03.gif) no-repeat; height:248px;}
+.a9{ float:left;}
+.a9 h1{ font-weight:bold; line-height:50px; margin:0 250px 0 15px; display:inline;}
+.a9 img{ margin-top:16px;}
+.a9 ul{ float:left; width:390px; margin-top:50px;}
+.a9 ul li{ float:left; width:390px; height:28px; text-align:center;}
+.a9 h2{ float:left;}
+.a9 h3{ float:left;}
+#a2{ margin-top:5px;}
+#a3{ margin:15px 0 0 130px;}
+#a4{ margin:15px 0 0 20px;}
+#a5{ margin:0 3px 0 3px;}
+.pop p{ float:left;}
+</style>
+<h3><a href="#" id="open"><input name="" type="image" src="/huodong/201008/images/login.jpg" id="a3" onclick="return submitData();" /></a><a href="#"><input name="" type="image" src="/huodong/201008/images/login_1.jpg" id="a4" onclick="javascript:document.forms['form1'].reset();return false;"/></a></h3>
+</form>
+
+<div id="basic-modal-content">
+</div>
+
+</div>
+</div>
+</div>
+<div id="footer"></div>
+<div id="ft">
+	<div class="ft-nav"><a href="http://www.9939.com/Company/wzjj.htm">网站简介</a>| <a href="/webmap_0_1.html">网站地图</a>| <a href="http://ask.9939.com/map/">问答地图</a>| <a href="http://jb.9939.com/map.php">疾病地图</a>| <a href="http://www.9939.com/Company/wzjj.htm">招聘信息</a>| <a href="http://www.9939.com/Company/wzjj.htm">友情链接</a>| <a href="http://www.9939.com/Company/wzjj.htm">媒体报道</a>| <a href="mailto:jianghy@2008.shou.com">意见反馈</a>| <a href="http://www.9939.com/Company/wzjj.htm">网上投稿</a>| <a href="http://www.9939.com/Company/wzjj.htm">服务条款</a>| <a href="http://www.9939.com/Company/wzjj.htm">渠道招商</a></div>
+<div class="copyright">
+	Copyright &copy; 2000-2010　WWW.9939.com　版权所有 玖玖叁玖网络技术(北京)有限公司 <br />特别声明：本站信息仅供参考　不能作为诊断及医疗的依据　本站如有转载或引用文章涉及版权问题请速与我们联系
+</div>
+
+
+<div style=" display:none; overflow:hidden; height:0;">
+<script src='http://w.cnzz.com/c.php?id=30033500&l=3' language='JavaScript' charset='gb2312'></script>
+
+<script type="text/javascript" src="http://js.tongji.linezing.com/1310077/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1310077/tongji.gif"/></a></noscript>
+</div>
+
+<!--独立统计开始-->
+<div style="display:none; overflow:hidden; height:0;"><?=$this->tongji?></div>
+<!--独立统计结束-->
+
+<!--2010-07-23浮动层开始-->
+<?=$this->float1?>
+<!--浮动层结束-->
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+		<div class="t-innerWrap">
+			<form action="/ask/do/do/edit" method="POST" accept-charset="utf-8" >
+				<table>
+					<tr>
+						<td>
+							<label for="l-username">问题补充:</label>
+						</td>
+						<td>
+							<textarea cols="50" rows="3" name="info[addcontent]" id="add_content"  onfocus="if(this.value=='请在此输入补充提问内容') this.value=''"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>
+							<input type="hidden" value="<?=$this->aid?>" name="info[id]" >
+							<span><input type="submit" value="提交补充" class="t-submit" onclick="if(document.getElementById('add_content').value.length<2){ alert('请输入补充内容！');return false;}"/></span>
+							<span><input type="button" value="取消补充" class="t-submit" onclick="cannelShow()"/></span>
+						</td>
+					</tr>
+				</table>
+			</form>
+	</div>		

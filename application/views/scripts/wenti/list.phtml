@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title><?php echo $this->title; ?></title>
+        <meta name="Keywords" content="<?php echo $this->keywords; ?>" />
+        <meta name="description" content="<?php echo $this->description; ?>" />
+        <!--头部-->
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/main.css?v=20160826_01" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/bd_search.css?v=20160826_01" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/second.css?v=20160826_01" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/rclumn.css?v=20160826_01" />
+
+        <script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/jquery.placeholder.min.js?v=20160826_01"></script>
+        <script type="text/javascript" src="/ask/v1/js/page.js?v=20160826_01"></script>
+        <script type="text/javascript" src="/ask/v1/js/scrollbar.js?v=20160826_01"></script>
+        <script type="text/javascript" src="/ask/v1/js/slide.js?v=20160826_01"></script>
+        <script type="text/javascript" src="/ask/v1/js/user_login.js?v=20160826_01"></script>
+        <script type="text/javascript" src="/ask/v1/js/gundong.js?v=20160826_01"></script>
+        <script type="text/javascript" src="/ask/v1/js/DD_belatedPNG.js?v=20160826_01"></script>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+        <base target="_blank"/>
+    </head>
+    <body>
+        <!-- 头部开始 -->   
+        <!--#include virtual="/headers_new.shtml"-->  
+        <!-- 头部结束 -->
+        <div class="wd_zj">
+            <div class="wd_flz font">
+                <ul>
+                    <li><a href="http://ask.9939.com/" title="首页">首页</a></li>
+                    <li><a href="http://ask.9939.com/cat.shtml" title=" 科室分类">科室分类</a></li>
+                    <li class="wd-ts"><a href="http://ask.9939.com/classid/0" title="问题大全">问题大全</a></li>
+                    <li><a href="http://ask.9939.com/doctorTeam.shtml" title="医生团队">医生团队</a></li>
+                    <li><a href="http://ask.9939.com/rank.shtml" title="问答排行">问答排行</a></li>
+                    <li><a href="http://ask.9939.com/jingyan/" title="健康经验">健康经验</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!--日期正文-->
+        <div class="ouwra">
+            <div class="datpe">
+                <?php foreach($this->datemap as $k=>$v){?>
+                    <a href="<?php echo $v['url'];?>" title="<?php echo $k;?>问题汇总列表">[<?php echo $k;?>]</a>
+                <?php }?>
+            </div>
+            
+            <div class="page trans clearfix">
+                <?php
+                $html = $this->pagehtml;
+                echo $html['html'];
+                ?>
+            </div>
+            
+        </div>
+    <!-- 页面底部 -->
+    <!--#include virtual="/ask/ask_footer/ask_footer_new.html"--> 
+    <!--#include virtual="/ask/speediness_questions.html"-->
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?d0e72bff43bc47b182b83c5dad5596aa";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    </body>   
+</html>
+

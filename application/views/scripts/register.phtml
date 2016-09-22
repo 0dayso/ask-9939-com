@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="/images_ask/css/r.css" rel="stylesheet" type="text/css" />
+        <link href="/images_ask/css/m.css" rel="stylesheet" type="text/css" />
+        <link href="/images_ask/css/b.css" rel="stylesheet" type="text/css" />
+        <link href="/images_ask/css/g.css" rel="stylesheet" type="text/css" />
+        <link href="/images_ask/css/index1.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+        <link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+        <link rel="stylesheet" type="text/css" href="/images_ask/css/ask_index.css"/>
+        <title>会员注册-第一步</title>
+        <script type="text/javascript" src="/ask/js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    show_gzd_cat(1);
+});
+
+function getPages(url){
+    var html = '';
+    jQuery.ajax({
+        url : url+'&src=JQ',
+        dataType:"json",
+        cache:false,
+        success:function(data){
+            jQuery('#page_'+data.status+'a').html(data.pagehtml);
+            jQuery('#page_'+data.status+'b').html(data.pagehtml);
+            jQuery.each(data.aList,function(i){
+                if(data.aList[i].content==null)data.aList[i].content='';
+                html+='<dl><dt><span>'+data.aList[i].ctime+'<a href=\"#\">'+data.aList[i].username+'</a></span><strong class=\"false\"><a href=\"/ask/show/?id='+data.aList[i].id+'\">'+data.aList[i].title+'</a></strong></dt><dd><p class=\"info\"><em>悬赏分：'+data.aList[i].point+'</em> - 离问题结束还有 '+data.aList[i].endtime+'</p><p class=\"des\">'+data.aList[i].content+'</p></dd></dl>';
+            });
+            jQuery('#list'+data.status).html(html);
+        }
+    });
+}
+
+function show_gzd_cat(id)
+{
+    $.get('/register/load/', {id: id},
+    // alert(data);
+    function(data){
+        $('#catid_select').html('');
+        $('#catid_select').append(data);
+    });
+}
+
+function show_gzd(id)
+{
+
+    $.get('/register/loadgzd/', {id: id},
+    function(data){
+        $('#attention_checkbox').html('');
+        $('#attention_checkbox').append(data);
+    });
+}
+function check()
+{
+    if($('#email').val() == '')
+    {
+        alert("请填写E－mail帐号!");
+        $('#email').focus();
+        return false;
+    }
+    //开始验证
+    var email = $('#email').val();
+    //var pattern = /^([a-zA-Z0-9_-]{2,})+@([a-zA-Z0-9_-]{2,})+(\.[a-z]{2,})+/;
+    var pattern = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)/;
+    chkFlag = pattern.test(email);
+    if(!chkFlag)
+    {
+        alert("E－mail格式不正确！");
+        $('#email').focus();
+        return false;
+    }
+
+    if($('#nickname').val() == '')
+    {
+        alert("请填写昵称!");
+        $('#nickname').focus();
+        return false;
+    }
+
+    if($('#pwd').val() == '')
+    {
+        alert("请填写密码!");
+        $('#pwd').focus();
+        return false;
+    }
+
+    if($('#pwd1').val() == '')
+    {
+        alert("请填写确认密码!");
+        $('#pwd1').focus();
+        return false;
+    }
+
+    if($('#pwd').val() != $('#pwd1').val())
+    {
+        alert("密码要一致!");
+        $('#pwd1').focus();
+        return false;
+    }
+
+    if($('#pwd').val().length < 6)
+    {
+        alert("密码长度不小于6个字符!");
+        $('#pwd').focus();
+        return false;
+    }
+
+    if($('#attention_checkbox input:checked').length>5)
+    {
+        alert('健康关注点不能多于5个');
+        return false;
+    }
+    return true;
+}
+function checkfm(){
+    var fm=document.getElementById('fm')
+    var pwd1=document.getElementById('username').value;
+    var pwd1=document.getElementById('pwd1').value;
+    var pwd2=document.getElementById('pwd2').value;
+    var agree=document.getElementById('agree');
+    fm.action="/register/register";
+    if($('#username').val() == '')
+    {
+        alert("请填写E－mail帐号!");
+        $('#username').focus();
+        return false;
+    }
+    //开始验证
+    var email = $('#username').val();
+    var pattern = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)/;
+    chkFlag = pattern.test(email);
+    if(!chkFlag)
+    {
+        alert("E－mail格式不正确！");
+        $('#username').focus();
+        return false;
+    }
+    var patternyh=/^[\w|\u4E00-\u9FA5]+$/;
+    chkFlag = patternyh.test($("#nickname").val());
+    if(!chkFlag)//
+    {
+        alert("昵称不合法！");
+        $('#nickname').focus();
+        return false;
+    }
+    if($('#pwd1').val() == '')
+    {
+        alert("请填写密码!");
+        $('#pwd1').focus();
+        return false;
+    }
+    if($('#pwd1').val().length < 6)
+    {
+        alert("密码长度不小于6个字符!");
+        $('#pwd').focus();
+        return false;
+    }
+    if($('#pwd1').val().length > 16)
+    {
+        alert("密码长度不大于16个字符!");
+        $('#pwd').focus();
+        return false;
+    }
+    if(pwd1!=pwd2){
+        alert('两次输入密码不一致');
+        document.getElementById('pwd1').value='';
+        document.getElementById('pwd2').value='';
+    }else if(!agree.checked){
+        alert('请勾选同意条款！');
+    }else{
+        fm.submit();
+    }
+}
+</script>
+    </head>
+    <body>
+        <div id="doc" class="w970">
+            <div id="hd"> <?php require (APP_ROOT . "/header195.shtml"); ?></div>
+            <div id="bd" class="d-mod">
+                <div class="d-box1-hd"></div>
+                <div class="d-box1-bd">
+                    <div class="hd"></div>
+                    <div class="bd">
+                        <div class="d-box2">
+                            <div class="d-box2-hd">
+                                <h4><a href="javascript:void(0)">&gt;&gt;<span>会员注册</span></a></h4>
+                            </div>
+                            <form id="fm" action="" method="POST">
+                                <div class="d-1-box2 l-fix">
+                                    <p class="l-fix">
+                                        <label>您的身份：</label>
+                                        <span class="nospan">
+                                            <input class="fcsn" name="uType"  type="radio" name="sfInfo" value="1" checked />
+                                            <strong class="no12">大众用户注册</strong></span>
+                                        <span class="nospan">
+                                            <input  class="fcsn" name="uType"  type="radio" name="sfInfo" value="2" <?php if ($_GET['uType'] ==
+2) {
+    echo "checked";
+} ?> />
+                                            <strong class="no12"> 医生用户注册</strong></span> </p>
+                                    <p class="l-fix">
+                                        <label>E-mail：</label>
+                                        <input id='username'  type="text" name="username" class="useName"/>
+                                        <span class="btx"> * 必填！4-16位的字母组合或数字。</span> <br />
+                                        <span class="sm"> 强烈建议用姓名的全拼或简拼作为用户名，这样便于同时获得对应的独立个人网址（如：<a href="#">www.9939.com/nihao</a>）有利于建立和姓名保持一致的网上个人品牌。</span>
+                                    </p>
+                                    <p class="l-fix">
+                                        <label> 昵称：</label>
+                                        <input  type="text" id="nickname" name="nickname" class="useName"/>
+                                        <span class="btx"> 为了让您得到更多用户关注，更好地与专家交流，请填写个性化昵称，中英文即可</span>
+                                    </p>
+                                    <p class="l-fix">
+                                        <label>密码：</label>
+                                        <input id="pwd1"  name="password" type="password" class="useName"/>
+                                        <span class="btx"> * 必填！建议使用6-16位的字母与数字组合。</span> </p>
+                                    <p class="l-fix">
+                                        <label>重新输入密码：</label>
+                                        <input  id="pwd2" name="password1" type="password" class="useName"/>
+                                        <span class="btx"> * 必填！便于确保密码的准确输入。</span> </p>
+                                    <p class="l-fix">
+                                        <label>健康关注点：</label>
+                                        <select id="catid_select" onchange="show_gzd(this.value);"></select>
+                                        <a href="weibo/sina_weibo.php?tj=tj_you">连接到微薄</a>
+                                        <input type="hidden" name="backurl" value="<?= $this->backurl ?>"/>
+                                        <span class="btx"> * 必填！ 健康关注点将为您找到互诉健康的好友、专家，还同时为您匹配健康指导知识。</span> <br/>
+                                        <span id="attention_checkbox"></span>
+                                        </p>
+                                    <p  class="tkInfo l-fix">
+                                        <input type="checkbox" id="agree" name="tkInfo" class="fcsn" />
+                                        <strong class="no12 no123">《久久健康网服务条款》</strong></p>
+                                    <p class="imgInfo"><a href="#" onclick="checkfm();"><img src="/images/ty.gif"/></a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="ft"></div>
+                </div>
+                <div class="d-box1-ft"><a style="color: #1F376D;" href="http://home.9939.com/">家园</a> | <a style="color: #1F376D;"  href="http://home.9939.com/buluo/">部落</a> | <a style="color: #1F376D;"  href="http://ask.9939.com/">问答</a></div>
+            </div>
+           <?php require (APP_ROOT . "/footer.html"); ?>
+        </div>

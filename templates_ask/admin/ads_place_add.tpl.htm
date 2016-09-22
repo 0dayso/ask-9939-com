@@ -1,0 +1,42 @@
+{include file=admin/header_1.tpl.htm}
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+		<tr class="header">
+			<td colspan="2">添加广告位</td>
+		</tr>		
+		<form name="adsform" method="POST" action="ads_place.php?act=addSave" onsubmit="return checkForm();">
+		<tr>
+			<td width="100" class="altbg1">广告位名称：</td>
+			<td class="altbg2"><input type="text" id="name" name="name" size="40"></td>
+		</tr>
+		<tr>
+			<td width="100" class="altbg1">广告位宽度：</td>
+			<td class="altbg2"><input type="text" name="width"></td>
+		</tr>
+		<tr>
+			<td width="100" class="altbg1">广告位高度：</td>
+			<td class="altbg2"><input type="text" id="name" name="height"></td>
+		</tr>
+		<tr>
+			<td align="left" class="altbg1"><input type="button" onclick="history.go(-1);" value="返回" class="button"></td>
+			<td align="right" class="altbg2"><input type="submit" name="submit" value=" 提 交 " class="submit"></td>	
+		</tr>
+		</form>
+</table>
+
+{literal}
+<script language="javascript">
+//验证表单输入是否正确
+function checkForm()
+{
+	if(document.getElementById('name').value == "")
+	{
+		alert("广告位不能为空");
+		document.getElementById('name').focus();
+		return false;
+	}
+	return true;
+}
+</script>
+{/literal}
+{include file=admin/footer.tpl.htm}                                                                                              
+  

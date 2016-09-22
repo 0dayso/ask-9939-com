@@ -1,0 +1,679 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="//9939/images_xinli/favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?=$this->title?></title>
+<meta name="keywords"  content="<?=$this->keywords?>" />
+<meta name="description" content="<?=$this->description?>" />    
+<base href="<?=APP_WEB_URL?>" target="_blank"></base>
+<link href="/9939/style/b.css" type="text/css" rel="stylesheet" />
+<link href="/9939/style/g.css" type="text/css" rel="stylesheet" />
+<link href="/9939/style/m.css" type="text/css" rel="stylesheet" />
+<link href="/9939/style/r.css" type="text/css" rel="stylesheet" />
+<link href="/9939/style/tupu.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/9939/js/jquery.js"></script>
+<script type="text/javascript" src="/9939/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+	var inner = $(".inners > li");
+    var len = inner.length;
+	var index = 0;
+		inner.mouseover(function(){
+	   index = inner.index(this);
+	   showImg(index);
+	}); 
+	$('.j-flashbox').hover(function(){
+		 if(MyTime){
+		 	clearInterval(MyTime);
+		 }
+	},function(){
+		 MyTime = setInterval(function(){
+		   showImg(index)
+		 index++;
+		 if(index==len){index=0;}
+		 } , 4000);
+	});
+	var MyTime = setInterval(function(){
+	   showImg(index)
+	   index++;
+	   if(index==len){index=0;}
+	} , 4000);
+
+	var jMenu = $(".conimgs ul li");
+	var jMain = $(".context dl"); 
+	jMain.eq(0).css("display","block");
+	jMenu.mousemove(function(){
+		var index = jMenu.index($(this));
+		jMenu.removeClass("on"),jMain.hide();
+		$(jMenu.get(index)).addClass("on"),$(jMain.get(index)).show();
+	});
+})
+function showImg(i){
+   $(".imgs").stop(true,false).animate({top : -256*i},800);
+   $(".inners > li").eq(i).addClass("on").siblings().removeClass("on");
+} 
+function hidead()
+{
+  document.getElementById("d-mod").style.display="none";
+}
+</script>
+
+</head>
+
+<body>
+<div id="doc" class="w950">
+   <!--#include virtual="/header.html"-->
+  	 
+  <div id="bd" class="lw-bd">
+  	 <!--#include virtual="/nav_tupu.html"-->
+  	  <div class="g-e11m0 l-fix lw-partTop bPaddingLg">
+  	  	<div class="col-m">
+  	  		<div class="m-wrap lw-partTopr">
+  	  			<div class="hd">
+  	  				<h2><a href="http://pic.9939.com/mrtc/">美容图潮</a></h2>
+  	  				<p class="fText">
+  	  					<a href="http://pic.9939.com/mrtc/mrmt/">美容美体</a>|
+  	  					<a href="http://pic.9939.com/mrtc/bjyy/">保健养颜</a>|
+  	  					<a href="http://pic.9939.com/mrtc/mfcl/">美发潮流</a>|
+  	  					<a href="http://pic.9939.com/mrtc/sslj/">时尚靓甲</a>|
+  	  					<a href="http://pic.9939.com/mrtc/mrff/">美容护肤</a>|
+  	  					<a href="http://pic.9939.com/mrtc/mxly/">明星靓颜</a>|
+  	  					<a href="http://pic.9939.com/mrtc/mlkt/">美丽课堂</a>
+  	  				</p>
+  	  			</div>
+  	  			<div class="bd l-fix">
+  	  				<?php
+					include(APP_DATA_PATH."/data_adsplace_2893.php");
+			    		foreach ($_ADSGLOBAL[2893] as $k=>$v){
+			    		?>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<a href="<?=$v['linkurl']?>" target="_blank"><img src="<?=$v['imageurl']?>" width="159" height="102"/><span class=""><?=$v['adsname']?></span></a>
+						</p>
+					</div>
+					<? }?>
+  	  			</div>
+  	  		</div>
+  	  	</div>
+  	  	<div class="col-e">
+  	  		<div class="hd lw-partTopl">
+  	  			<div class="hd">
+  					<h2><a href="###">精彩推荐</a></h2>
+  				</div>
+  				<div class="bd">
+	  				<div class="flashT">
+	  					<div id="flashbox" class="j-flashbox">
+							<div class="imgbox">
+								<ul class="imgs">
+					<li><?=$this->ModuleII->Module_ADS('adsid=906,temp=a_img_span,words=20,offset=0,count=1');?></li>
+					<li><?=$this->ModuleII->Module_ADS('adsid=906,temp=a_img_span,words=20,offset=1,count=1');?></li>
+					<li><?=$this->ModuleII->Module_ADS('adsid=906,temp=a_img_span,words=20,offset=2,count=1');?></li>
+					<li><?=$this->ModuleII->Module_ADS('adsid=906,temp=a_img_span,words=20,offset=3,count=1');?></li>
+								</ul>
+							</div>
+							<ul class="inners">
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+							</ul>
+						</div>
+	  				</div>
+	  			</div>
+  			</div>
+  	  	</div>
+  	  </div>
+	  
+	  
+	  
+  <!-- 通栏广告1 -->
+  	  <div class="tMarginLg">
+	  <!--
+	  <div class="longAd tMarginLg">
+  	  <?=$this->ModuleII->Module_ADS('adsid=908,temp=a_img,width=946,height=88');?>
+	  -->
+	  <!--12.29日注释
+	  <iframe  border="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" framespacing="0" frameborder="0" scrolling="no" width="948" height="106" src="http://www.9939.com/IframGGW/kdb1130/9480.html"></iframe>
+	  -->
+  	  </div>
+
+
+  	  <div class="g-e13m0 l-fix lw-partM1 tMarginLg">
+  	  	<div class="col-m">
+  	  		<div class="m-wrap lw-partM1r">
+  				<div class="g-line">
+	  	  			<div class="block g-u s1of2 rMarginLg">
+	  	  				<div class="hd">
+	  	  					<h2><a href="http://pic.9939.com/tssj/">图说视界</a></h2>
+	  	  				</div>
+	  	  				<div class="bd">
+	  	  					<p class="pic pic-text">
+								
+							<?=$this->ModuleII->Module_POS('posid=1598,temp=a_img_span,width=159,height=102,words=12');?>
+							</p>
+							<ul class="text-links01 tMargin">
+								
+							<?=$this->ModuleII->Module_Art('catid=9479,count=8,temp=li_a,words=11');?>
+							
+							</ul>
+							<div class="redB">
+								<ul class="text-links01 con">
+									<!--<li><a href="/9939#">了解“真正做爱”的真相</a></li>-->
+									<?//=$this->ModuleII->Module_POS('posid=1600,temp=li_a,words=12,count=4');?>
+									<?php
+									require_once(APP_DATA_PATH."/data_adsplace_2913.php");
+									foreach ($_ADSGLOBAL['2913'] as $k=>$v){
+										echo '<li><a href="'.$v['linkurl'].'">'.$v['adsname'].'</a></li>';
+									}
+									?>
+								</ul>
+								<p>精<br />彩<br />推<br />荐</p>
+							</div>
+	  	  				</div>
+	  	  			</div>
+	  	  			<div class="block g-u g-lastu s1of2">
+	  	  				<div class="hd">
+	  	  					<h2><a href="http://pic.9939.com/yytm/">孕育探秘</a></h2>
+	  	  				</div>
+	  	  				<div class="bd rr">
+	  	  					<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1599,temp=a_img_span,width=159,height=102,words=12');?>
+							</p>
+							<ul class="text-links01 tMargin lMargin">
+								
+								<?=$this->ModuleII->Module_Art('catid=9368,count=8,temp=li_a,words=11');?>
+							</ul>
+							<div class="redB">
+								<ul class="text-links01 con">
+									<!--<li><a href="/9939#">了解“真正做爱”的真相</a></li>
+									<li><a href="/9939#">80后 我们为爱结婚</a></li>
+									<li><a href="/9939#">了解“真正做爱”的真相</a></li>
+									<li><a href="/9939#">80后 我们为爱结婚</a></li>-->
+									<?=$this->ModuleII->Module_POS('posid=1600,temp=li_a,words=12,count=4');?>
+								</ul>
+								<p>热<br />点<br />推<br />荐</p>
+							</div>
+	  	  				</div>
+	  	  			</div>
+  	  			</div>
+  	  		</div>
+  	  	</div>
+
+
+
+  	  	<div class="col-e">
+  	  		<div class="hd lw-partM1l">
+  	  			<div class="hd">
+  					<h2><a href="http://pic.9939.com/lxtp/">两性视界</a></h2>
+  					<p class="fText">
+  	  					<a href="http://pic.9939.com/lxtp/mvtp/">美女图片</a>
+  	  					<a href="http://pic.9939.com/lxtp/xgtp/">性感图片</a>
+  	  					<a href="http://pic.9939.com/lxtp/xqtp/">性趣图片</a>
+  	  					<a href="http://pic.9939.com/lxtp/xslt/">性生理图</a>
+  	  					<a href="http://pic.9939.com/lxtp/xwht/">性文化图</a>
+  	  				</p>
+  				</div>
+  				<div class="bd">
+	  				<div class="flashM">
+	  					<div class="j-movebox">
+							<div class="context">
+								<dl>		
+						<?=$this->ModuleII->Module_POS('posid=1609,temp=dt_dd,words=20,desc=124,width=408,height=264,offset=0,count=1');?>
+						
+								</dl>
+								<dl>
+						<?=$this->ModuleII->Module_POS('posid=1609,temp=dt_dd,words=20,desc=124,width=408,height=264,offset=1,count=1');?>
+								</dl>
+								<dl>
+						<?=$this->ModuleII->Module_POS('posid=1609,temp=dt_dd,words=20,desc=124,width=408,height=264,offset=2,count=1');?>
+								</dl>
+								<dl>
+						<?=$this->ModuleII->Module_POS('posid=1609,temp=dt_dd,words=20,desc=124,width=408,height=264,offset=3,count=1');?>
+								</dl>
+								<dl>
+						<?=$this->ModuleII->Module_POS('posid=1609,temp=dt_dd,words=20,desc=124,width=408,height=264,offset=4,count=1');?>
+								</dl>
+							</div>
+							<div class="conimgs">
+								<span class="prev"></span>
+								<ul>
+									<?=$this->ModuleII->Module_POS('posid=1609,temp=li_img,offset=0,count=1');?>
+									<?=$this->ModuleII->Module_POS('posid=1609,temp=li_img,offset=1,count=1');?>
+									<?=$this->ModuleII->Module_POS('posid=1609,temp=li_img,offset=2,count=1');?>
+									<?=$this->ModuleII->Module_POS('posid=1609,temp=li_img,offset=3,count=1');?>
+									<?=$this->ModuleII->Module_POS('posid=1609,temp=li_img,offset=4,count=1');?>
+								</ul>
+								<span class="next"></span>
+							</div>
+						</div>
+	  				</div>
+	  			</div>
+  			</div>
+  	  	</div>
+  	  </div>
+	  
+	  	 <div class="tMarginLg l-fix" style="padding:5px; border:1px solid #AA0501;position:relative;">
+	 	<DIV style="FLOAT: left; OVERFLOW: hidden; WIDTH: 728px">
+		<iframe frameborder="0" width="740" height="80" marginheight="0" marginwidth="0" scrolling="no" src="http://www.9939.com/pic_index.htm"></iframe>	
+		</DIV>
+		 <style>
+			.rBox a{float:left;margin-left:13px;text-decoration:underline}
+			.rBox a:hover{text-decoration:none}
+		 </style>
+	 	<div style=" float:right; width:194px;line-height:1.8em" class="rBox">
+	 		<SCRIPT language=javascript>
+			var keystr="祛斑美白||祛斑美白||###保健品网||保健品网||###美容养生||美容养生||###祛除雀斑||祛除雀斑||###瘦身食谱||瘦身食谱||###治疗雀斑||治疗雀斑||###除皱手术||除皱手术||###美容去斑||美容去斑||###针灸减肥||针灸减肥||###女性美容||女性美容||###整形美容||整形美容||###减肥瘦身||减肥瘦身||###祛痘产品||祛痘产品||###男性美容||男性美容||###美容学校||美容学校||###美容整形||美容整形||###牙齿美白||牙齿美白||###牙齿矫正||牙齿矫正||###减肥产品||减肥产品||###纤体内衣||纤体内衣||###美体内衣||美体内衣||###丰胸产品||丰胸产品||###延缓衰老||延缓衰老||###牙齿松动||牙齿松动||###快速减肥||快速减肥||###男士护肤||男士护肤||###包皮切除||包皮切除||###男性健康||男性健康||###包皮包茎||包皮包茎||###治疗脱发||治疗脱发||###过敏鼻炎||过敏鼻炎||###男性不育||男性不育||###皮肤干燥||皮肤干燥||###吸脂减肥||吸脂减肥||###泌尿感染||泌尿感染||###美容脱毛||美容脱毛||###医疗设备||医疗设备||###无痛流产||无痛流产||###全身脱毛||全身脱毛||###不孕不育||不孕不育||###永久脱毛||永久脱毛||###心理咨询||心理咨询||###毛发移植||毛发移植||###男性增大||男性增大||###美容医院||美容医院||###做双眼皮||做双眼皮||###光子嫩肤||光子嫩肤||###瑜伽减肥||瑜伽减肥||###美容减肥||美容减肥||###祛除眼袋||祛除眼袋||###眼袋手术||眼袋手术||###激光美容||激光美容||###美容手术||美容手术||###韩国整形||韩国整形||###妇科咨询||妇科咨询||###脸部抽脂||脸部抽脂||###疤痕美容||疤痕美容||###美容瘦脸||美容瘦脸||###美容除皱||美容除皱||###疤痕医院||疤痕医院||###快速瘦身||快速瘦身||###宫颈糜烂||宫颈糜烂||###心里咨询||心里咨询||###除皱方法||除皱方法||###电波拉皮||电波拉皮||###眼部抽脂||眼部抽脂||###抽脂减肥||抽脂减肥||###鼻头缩小||鼻头缩小||###怎样瘦身||怎样瘦身||###瘦身方法||瘦身方法||###腹部减肥||腹部减肥||###去斑方法||去斑方法||###怎样祛斑||怎样祛斑||###健康减肥||健康减肥||###祛斑美容||祛斑美容||###美容美白||美容美白||###彩光脱毛||彩光脱毛||###全身美白||全身美白||###女子医院||女子医院||###男子医院||男子医院||###开双眼皮||开双眼皮||###瑜伽养生||瑜伽养生||###丰胸整形||丰胸整形||###减肥塑身||减肥塑身||###瘦身内衣||瘦身内衣|||###品牌折扣||品牌折扣||###特价机票||特价机票||###英语培训||英语培训||###创业项目||创业项目||###外汇交易||外汇交易||###纤体内衣||纤体内衣||###美体内衣||美体内衣||###云南旅游||云南旅游||###投资加盟||投资加盟||###舞蹈培训||舞蹈培训||###幼儿教育||幼儿教育||###英语学习||英语学习||##九寨旅游||九寨旅游||###学肚皮舞||学肚皮舞||###日语培训||日语培训||###新款手机||新款手机||###英语口语||英语口语||###异性交友||异性交友||###白领交友||白领交友||瑜伽培训||瑜伽培训||###家居饰品||家居饰品||###致富商机||致富商机||###同城交友||同城交友||###黑马股票||黑马股票||###结婚钻戒||结婚钻戒||###创业项目||创业项目||###情趣内衣||情趣内衣||###性感内衣||性感内衣||###时尚服装||时尚服装||###时尚女装||时尚女装||###排毒养颜||排毒养颜||###化妆培训||化妆培训||###护肤产品||护肤产品||###化妆产品||化妆产品||###化妆技巧||化妆技巧||###化妆品网||化妆品网||###防晒产品||防晒产品||###服装搭配||服装搭配||###搭配服饰||搭配服饰||###香水品牌||香水品牌||###内衣加盟||内衣加盟||###新款内衣||新款内衣||###潮流服装||潮流服装||###潮流女装||潮流女装||###情侣服装||情侣服装||###情侣服饰||情侣服饰||###情侣戒指||情侣戒指";
+			keystr=keystr.split("###");
+			for(var i in keystr){
+				keystr[i]=keystr[i].split("||");
+			}
+			function randomsort(a, b) {
+				return Math.random()>.5 ? -1 : 1;//用Math.random()函数生成0~1之间的随机数与0.5比较，返回-1或1
+			}
+			keystr.sort(randomsort);
+			var c_n=0;
+			for(c_n=0;c_n<9;c_n++){
+				document.write('<a href="http://www.google.com.hk/search?q='+keystr[c_n][0]+'&client=pub-1549238212314499&forid=1&prog=aff&channel=8696049005&hl=zh-CN&source=sdo_cts_html"+"\""  target="_blank" title="'+keystr[c_n][0]+'">'+keystr[c_n][0].slice(0,4)+'</a> ')
+			}
+
+			</SCRIPT>
+        
+        <div style=" margin-left:10px; margin-right:10px; background:#FCFFF7;position:absolute; right:0; bottom:5px;">
+          <table border="0" cellspacing="0" cellpadding="0">
+		  <FORM action=http://www.google.com.hk/search method=get target=_blank>
+            <tr>
+              <td style="width:68px;"><input name=q type="text" class="input"/ ></td>
+              <td><input type="submit"  value="搜索" class="button" /><INPUT 
+                  type=hidden value=pub-1549238212314499 name=client> <INPUT 
+                  type=hidden value=1 name=forid> <INPUT type=hidden value=aff 
+                  name=prog> <INPUT type=hidden value=8696049016 name=channel> 
+                  </INPUT><INPUT type=hidden value=GB2312 name=ie> <INPUT 
+                  type=hidden value=GB2312 name=oe> <INPUT type=hidden 
+                  value=active name=safe> <INPUT type=hidden value=sdo_sb_html 
+                  name=source> <INPUT type=hidden value=zh-CN 
+              name=hl></td>
+            </tr>
+			</FORM>
+          </table>
+        </div>
+
+		 </div>
+	 </div>
+
+  	  <div class="lw-partM2 l-fix tMarginLg">
+  	  	<div class="leftB">
+  	  		<div class="fBlock hot-news">
+				<p class="pic pic-text">
+					
+					<?=$this->ModuleII->Module_POS('posid=1601,temp=a_img_span,width=150,height=115,words=10,offset=0,count=1');?>
+				</p>
+			</div>
+  	  	</div>
+  	  	<div class="rightB">
+  	  		<p>
+  	  			<a href="http://pic.9939.com/nrsj/nxqg/">男性情感</a>|
+				<a href="http://pic.9939.com/nrsj/nxjj/">男性家居</a>|
+				<a href="http://pic.9939.com/nrsj/nxfs/">男性服饰</a>|
+				<a href="http://pic.9939.com/nrsj/xqnr/">性情男人</a>|
+				<a href="http://pic.9939.com/nrsj/jkyd/">健康运动</a>|
+				<a href="http://pic.9939.com/nrsj/wwzy/">玩物主义</a>|
+				<a href="http://pic.9939.com/nrsj/tmsc/">体面手册</a>|
+				<a href="http://pic.9939.com/nrsj/zzzd/">着装之道</a>
+				<a href="http://pic.9939.com/nrsj/nxgz/">男性关注</a>
+			</p>
+			<div class="">  
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_ADS('adsid=1908,temp=a_img_span,width=150,height=115,words=10');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_ADS('adsid=1909,temp=a_img_span,width=150,height=115,words=10');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_ADS('adsid=1910,temp=a_img_span,width=150,height=115,words=10');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_ADS('adsid=1911,temp=a_img_span,width=150,height=115,words=10');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1601,temp=a_img_span,width=150,height=115,words=10,offset=1,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1601,temp=a_img_span,width=150,height=115,words=10,offset=2,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1601,temp=a_img_span,width=150,height=115,words=10,offset=3,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1601,temp=a_img_span,width=150,height=115,words=10,offset=4,count=1');?>
+					</p>
+				</div>
+			</div>
+  	  	</div>
+  	  </div>
+  	  <div class="lw-partM2 l-fix tborder">
+  	  	<div class="leftB2">
+  	  		<div class="fBlock hot-news">
+				<p class="pic pic-text">
+					<?=$this->ModuleII->Module_POS('posid=1602,temp=a_img_span,width=150,height=115,words=10,offset=4,count=1');?>
+				</p>
+			</div>
+  	  	</div>
+  	  	<div class="rightB">
+  	  		<p>
+  	  			<a href="http://pic.9939.com/ssnx/lxfs/">流行服饰</a>|
+				<a href="http://pic.9939.com/ssnx/ssrw/">时尚人物</a>|
+				<a href="http://pic.9939.com/ssnx/lrmf/">靓容美发</a>|
+				<a href="http://pic.9939.com/ssnx/shfs/">奢华风尚</a>|
+				<a href="http://pic.9939.com/ssnx/ssdr/">时尚达人</a>|
+				<a href="http://pic.9939.com/ssnx/pzsh/">品质生活</a>|
+				<a href="http://pic.9939.com/ssnx/ssxc/">风尚-style</a>|
+				<a href="http://pic.9939.com/ssnx/style/">着装之道</a>|
+				<a href="http://pic.9939.com/ssnx/mvfq/">美女风情</a>
+			</p>
+			<div class="">  
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1602,temp=a_img_span,width=150,height=115,words=10,offset=0,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1602,temp=a_img_span,width=150,height=115,words=10,offset=1,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1602,temp=a_img_span,width=150,height=115,words=10,offset=2,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1602,temp=a_img_span,width=150,height=115,words=10,offset=3,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1602,temp=a_img_span,width=150,height=115,words=10,offset=5,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1602,temp=a_img_span,width=150,height=115,words=10,offset=6,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1602,temp=a_img_span,width=150,height=115,words=10,offset=7,count=1');?>
+					</p>
+				</div>
+				<div class="fBlock hot-news">
+					<p class="pic pic-text">
+						<?=$this->ModuleII->Module_POS('posid=1602,temp=a_img_span,width=150,height=115,words=10,offset=8,count=1');?>
+					</p>
+				</div>
+			</div>
+  	  	</div>
+  	  </div>
+  	  <!-- 通栏广告2 -->
+  	  <div class="longAd tMarginLg">
+  	  <?=$this->ModuleII->Module_ADS('adsid=909,temp=a_img,width=946,height=88');?>
+  	  </div>
+  	  <!-- 最下面 -->
+  	  <div class="g-e13m0 l-fix lw-partM1 tMarginLg">
+  	  	<div class="col-m">
+  	  		<div class="m-wrap lw-partM1r">
+  				<div class="g-line">
+	  	  			<div class="block g-u s1of2 rMarginLg">
+	  	  				<div class="hd">
+	  	  					<h2><a href="http://pic.9939.com/btsj/">病态视角</a></h2>
+	  	  				</div>
+	  	  				<div class="bd bl">
+	  	  					<div class="top">
+	  	  					
+	  	  					<a class="btn" href="http://pic.9939.com/btsj/nk/">内科</a>
+	  	  					<a class="btn" href="http://pic.9939.com/btsj/wk/">外科</a>
+	  	  					<a class="btn" href="http://pic.9939.com/btsj/pfk/">皮肤科</a>
+	  	  					<a class="btn" href="http://pic.9939.com/btsj/xbk/">性病科</a>
+	  	  					<a class="btn" href="http://pic.9939.com/btsj/fck/">妇产科</a>
+	  	  					<a class="btn" href="http://pic.9939.com/btsj/nank/">男科</a>
+	  	  					<a class="btn" href="http://pic.9939.com/btsj/ek/">儿科</a>
+	  	  					<a class="btn" href="http://pic.9939.com/btsj/wgk/">五官科</a>
+	  	  					<a class="btn" href="http://pic.9939.com/btsj/gk/">传染科</a>
+	  	  					
+	  	  					</div>
+							<ul class="text-links01 tMargin">
+
+								<?=$this->ModuleII->Module_Art('catid=9371,count=8,temp=li_a,words=11');?>
+							</ul>
+							<p class="pic pic-text tMargin">
+								
+								<?=$this->ModuleII->Module_POS('posid=1605,temp=a_img_span,width=150,height=115,words=10,offset=0,count=1');?>
+							</p>
+	  	  				</div>
+	  	  			</div>
+	  	  			<div class="block g-u g-lastu s1of2">
+	  	  				<div class="hd">
+	  	  					<h2><a href="http://pic.9939.com/bjtk/">保健图库</a></h2>
+	  	  				</div>
+	  	  				<div class="bd rrB">
+	  	  					<p class="pic pic-text">
+						
+								<?=$this->ModuleII->Module_POS('posid=1606,temp=a_img_span,width=150,height=115,words=10,offset=0,count=1');?>
+							</p>
+							<ul class="text-links01 tMargin lMargin">
+								
+								<?=$this->ModuleII->Module_Art('catid=9374,count=11,temp=li_a,words=11');?>
+							</ul>
+	  	  				</div>
+	  	  			</div>
+  	  			</div>
+  	  		</div>
+  	  	</div>
+  	  	<div class="col-e">
+  	  		<div class="hd lw-partM1l">
+  	  			<div class="hd">
+  					<h2><a href="http://pic.9939.com/stbw/">身体部位</a></h2>
+  					<p class="fText">
+  	  					<a href="http://pic.9939.com/stbw/hgrt/">宏观人体</a>
+  	  					<a href="http://pic.9939.com/stbw/wgrt/">微观人体</a>
+  	  					<a href="http://pic.9939.com/stbw/xz/">下肢</a>
+  	  					<a href="http://pic.9939.com/stbw/sz/">上肢</a>
+  	  					<a href="http://pic.9939.com/stbw/hyb/">会阴部</a>
+  	  					<a href="http://pic.9939.com/stbw/pq/">盆腔</a>
+  	  					<a href="http://pic.9939.com/stbw/yb/">腰部</a>
+  	  					<a href="http://pic.9939.com/stbw/bb/">背部</a>
+  	  				</p>
+  				</div>
+  				<div class="bd l-fix lPadding rPadding tPadding">
+	  				<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1603,temp=a_img_span,width=126,height=81,words=10,offset=0,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1603,temp=a_img_span,width=126,height=81,words=10,offset=1,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1603,temp=a_img_span,width=126,height=81,words=10,offset=2,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1603,temp=a_img_span,width=126,height=81,words=10,offset=3,count=1');?>
+						</p>
+					</div>
+	  			</div>
+	  			<div class="hd">
+  					<h2><a href="http://pic.9939.com/zytl/">中药图林</a></h2>
+  					<p class="fText">
+  	  					<a href="http://pic.9939.com/zytl/xljb/">辛凉解表</a>
+  	  					<a href="http://pic.9939.com/zytl/xx/">泻下</a>
+  	  					<a href="http://pic.9939.com/zytl/qrjd/">清热解毒</a>
+  	  					<a href="http://pic.9939.com/zytl/hxhy/">活血化淤</a>	
+  	  					<a href="http://pic.9939.com/zytl/pgxf/">平肝熄风</a>
+  	  					<a href="http://pic.9939.com/zytl/lsss/">利水渗湿</a>
+  	  					<a href="http://pic.9939.com/zytl/htzkpc/">化痰止咳平喘</a>
+  	  				</p>
+  				</div>
+  				<div class="bd l-fix lPadding rPadding tPadding">
+	  				<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1604,temp=a_img_span,width=126,height=81,words=10,offset=0,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1604,temp=a_img_span,width=126,height=81,words=10,offset=1,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1604,temp=a_img_span,width=126,height=81,words=10,offset=2,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1604,temp=a_img_span,width=126,height=81,words=10,offset=3,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1604,temp=a_img_span,width=126,height=81,words=10,offset=4,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1604,temp=a_img_span,width=126,height=81,words=10,offset=5,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1604,temp=a_img_span,width=126,height=81,words=10,offset=6,count=1');?>
+						</p>
+					</div>
+					<div class="fBlock hot-news">
+						<p class="pic pic-text">
+							<?=$this->ModuleII->Module_POS('posid=1604,temp=a_img_span,width=126,height=81,words=10,offset=7,count=1');?>
+						</p>
+					</div>
+	  			</div>
+  			</div>
+  	  	</div>
+  	  </div>
+	  <DIV class="tMarginLg l-fix" 
+style="BORDER-RIGHT: #aa0501 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aa0501 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: #aa0501 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #aa0501 1px solid; POSITION: relative">
+<DIV style="FLOAT: left; OVERFLOW: hidden; WIDTH: 728px">
+<iframe frameborder="0" width="740" height="80" marginheight="0" marginwidth="0" scrolling="no" src="http://www.9939.com/pic_index.htm"></iframe>	
+</DIV>
+<div style=" float:right; width:194px;line-height:1.8em" class="rBox">
+	 		<SCRIPT language=javascript>
+			var keystr="祛斑美白||祛斑美白||###保健品网||保健品网||###美容养生||美容养生||###祛除雀斑||祛除雀斑||###瘦身食谱||瘦身食谱||###治疗雀斑||治疗雀斑||###除皱手术||除皱手术||###美容去斑||美容去斑||###针灸减肥||针灸减肥||###女性美容||女性美容||###整形美容||整形美容||###减肥瘦身||减肥瘦身||###祛痘产品||祛痘产品||###男性美容||男性美容||###美容学校||美容学校||###美容整形||美容整形||###牙齿美白||牙齿美白||###牙齿矫正||牙齿矫正||###减肥产品||减肥产品||###纤体内衣||纤体内衣||###美体内衣||美体内衣||###丰胸产品||丰胸产品||###延缓衰老||延缓衰老||###牙齿松动||牙齿松动||###快速减肥||快速减肥||###男士护肤||男士护肤||###包皮切除||包皮切除||###男性健康||男性健康||###包皮包茎||包皮包茎||###治疗脱发||治疗脱发||###过敏鼻炎||过敏鼻炎||###男性不育||男性不育||###皮肤干燥||皮肤干燥||###吸脂减肥||吸脂减肥||###泌尿感染||泌尿感染||###美容脱毛||美容脱毛||###医疗设备||医疗设备||###无痛流产||无痛流产||###全身脱毛||全身脱毛||###不孕不育||不孕不育||###永久脱毛||永久脱毛||###心理咨询||心理咨询||###毛发移植||毛发移植||###男性增大||男性增大||###美容医院||美容医院||###做双眼皮||做双眼皮||###光子嫩肤||光子嫩肤||###瑜伽减肥||瑜伽减肥||###美容减肥||美容减肥||###祛除眼袋||祛除眼袋||###眼袋手术||眼袋手术||###激光美容||激光美容||###美容手术||美容手术||###韩国整形||韩国整形||###妇科咨询||妇科咨询||###脸部抽脂||脸部抽脂||###疤痕美容||疤痕美容||###美容瘦脸||美容瘦脸||###美容除皱||美容除皱||###疤痕医院||疤痕医院||###快速瘦身||快速瘦身||###宫颈糜烂||宫颈糜烂||###心里咨询||心里咨询||###除皱方法||除皱方法||###电波拉皮||电波拉皮||###眼部抽脂||眼部抽脂||###抽脂减肥||抽脂减肥||###鼻头缩小||鼻头缩小||###怎样瘦身||怎样瘦身||###瘦身方法||瘦身方法||###腹部减肥||腹部减肥||###去斑方法||去斑方法||###怎样祛斑||怎样祛斑||###健康减肥||健康减肥||###祛斑美容||祛斑美容||###美容美白||美容美白||###彩光脱毛||彩光脱毛||###全身美白||全身美白||###女子医院||女子医院||###男子医院||男子医院||###开双眼皮||开双眼皮||###瑜伽养生||瑜伽养生||###丰胸整形||丰胸整形||###减肥塑身||减肥塑身||###瘦身内衣||瘦身内衣|||###品牌折扣||品牌折扣||###特价机票||特价机票||###英语培训||英语培训||###创业项目||创业项目||###外汇交易||外汇交易||###纤体内衣||纤体内衣||###美体内衣||美体内衣||###云南旅游||云南旅游||###投资加盟||投资加盟||###舞蹈培训||舞蹈培训||###幼儿教育||幼儿教育||###英语学习||英语学习||##九寨旅游||九寨旅游||###学肚皮舞||学肚皮舞||###日语培训||日语培训||###新款手机||新款手机||###英语口语||英语口语||###异性交友||异性交友||###白领交友||白领交友||瑜伽培训||瑜伽培训||###家居饰品||家居饰品||###致富商机||致富商机||###同城交友||同城交友||###黑马股票||黑马股票||###结婚钻戒||结婚钻戒||###创业项目||创业项目||###情趣内衣||情趣内衣||###性感内衣||性感内衣||###时尚服装||时尚服装||###时尚女装||时尚女装||###排毒养颜||排毒养颜||###化妆培训||化妆培训||###护肤产品||护肤产品||###化妆产品||化妆产品||###化妆技巧||化妆技巧||###化妆品网||化妆品网||###防晒产品||防晒产品||###服装搭配||服装搭配||###搭配服饰||搭配服饰||###香水品牌||香水品牌||###内衣加盟||内衣加盟||###新款内衣||新款内衣||###潮流服装||潮流服装||###潮流女装||潮流女装||###情侣服装||情侣服装||###情侣服饰||情侣服饰||###情侣戒指||情侣戒指";
+			keystr=keystr.split("###");
+			for(var i in keystr){
+				keystr[i]=keystr[i].split("||");
+			}
+			function randomsort(a, b) {
+				return Math.random()>.5 ? -1 : 1;//用Math.random()函数生成0~1之间的随机数与0.5比较，返回-1或1
+			}
+			keystr.sort(randomsort);
+			var c_n=0;
+			for(c_n=0;c_n<9;c_n++){
+				document.write('<a href="http://www.google.com.hk/search?q='+keystr[c_n][0]+'&client=pub-1549238212314499&forid=1&prog=aff&channel=8696049005&hl=zh-CN&source=sdo_cts_html"+"\""  target="_blank" title="'+keystr[c_n][0]+'">'+keystr[c_n][0].slice(0,4)+'</a> ')
+			}
+
+			</SCRIPT>
+        
+        <div style=" margin-left:10px; margin-right:10px; background:#FCFFF7;position:absolute; right:0; bottom:5px;">
+          <table border="0" cellspacing="0" cellpadding="0">
+		  <FORM action=http://www.google.com.hk/search method=get target=_blank>
+            <tr>
+              <td style="width:68px;"><input name=q type="text" class="input"/ ></td>
+              <td><input type="submit"  value="搜索" class="button" /><INPUT 
+                  type=hidden value=pub-1549238212314499 name=client> <INPUT 
+                  type=hidden value=1 name=forid> <INPUT type=hidden value=aff 
+                  name=prog> <INPUT type=hidden value=8696049016 name=channel> 
+                  </INPUT><INPUT type=hidden value=GB2312 name=ie> <INPUT 
+                  type=hidden value=GB2312 name=oe> <INPUT type=hidden 
+                  value=active name=safe> <INPUT type=hidden value=sdo_sb_html 
+                  name=source> <INPUT type=hidden value=zh-CN 
+              name=hl></td>
+            </tr>
+			</FORM>
+          </table>
+        </div>
+  </div>
+ </div>
+ <style type="text/css" media="screen">
+  	/* hd */
+  	.g-topbar{height:30px;line-height:30px;background:url(images/g-bg.jpg) repeat-x;position:relative;}
+  	.g-login,.g-site-links{position:absolute;}
+  	.g-login{left:15px;color:#8B8B8B;}
+  	.g-login legend{display:none;}
+  	.g-login input{border:1px solid #ddd;width:60px;height:16px;padding:1px;margin:0 5px;_margin:5px 5px;vertical-align:middle}
+  	.g-login .l-sub{width:37px;height:18px;background:#3BA80D;color:#fff;font-size:12px;border:0;padding:0;vertical-align:middle}
+  	.g-login .l-reg{color:#3BA80D ;}
+  	.g-site-links{right:10px;}
+  	.g-site-links li{display:inline;margin:0 5px;}
+  	.g-site-links a{color:#8B8B8B;}
+	.g-nav{height:49px;line-height:49px;color:#268200;background:url(images/gm-navbg.jpg) repeat-x;border-width:3px 1px 1px;border-color:#4AA722 #ccc #ccc;border-style:solid;padding:0 16px;}
+	.g-nav a,.ft-flinks .hd li a{font-size:14px;color:#268200;padding-bottom:4px;}
+	.g-nav a span{padding:1px;}
+	.g-nav a:hover,.ft-flinks .hd .on a{background:url(images/gm-icon.png) no-repeat 50% bottom;color:#fff;text-decoration:none}
+	.g-nav a:hover span,.ft-flinks .hd .on a span{padding:0;background:#797979;border:1px solid #FF4AA9;}
+	.g-nav .icon{background:url(images/gm-nicon.png) no-repeat 0 50%;padding-left:24px;}
+	.g-keywords{height:25px;line-height:25px;padding-left:10px;color:#818181;}
+	.g-keywords a{color:#818181;padding:0 5px;}
+  	/* ft */
+  	.ft-flinks{margin-top:20px;}
+  	.ft-flinks .hd {height:32px;line-height:32px;overflow:hidden;}
+	.ft-flinks .hd li{float:left;_display:inline;margin-right:10px;}
+	.ft-flinks .hd li a{font-size:14px;color:#000;}
+	.ft-flinks .hd li a:hover{text-decoration:none}
+	.ft-flinks .hd li a span{padding:1px 3px;}
+	.ft-flinks .hd .on a span{padding:0 2px;}
+	.ft-flinks .bd{padding:5px 10px;background:#F3F5F4}
+	.ft-flinks .bd ul{line-height:1.8;}
+	.ft-flinks .bd li{float:left;white-space:nowrap;padding-right:10px;}
+	.ft-flinks .bd a{color:#606060;}
+	.ft-message{margin-top:20px;zoom:1;overflow:hidden;color:#bbb;border-bottom:1px solid #bbb;padding-bottom:5px; }
+	.ft-autor{float:left;}
+	.ft-tel{float:right;}
+	.ft-nav{margin-top:5px;height:20px;line-height:20px;background:#F3F5F4;color:#5F5F5F;text-align:center;}
+	.ft-nav a{color:#5F5F5F;padding:0 10px;}
+  	.copyright{margin-top:15px;text-align:center;line-height:1.4;color:#fff;}
+  </style>
+
+  <div id="ft">
+<!--#include virtual="/link.html"-->
+<!--#include virtual="/footer.html"-->
+</div>
+</div>
+
+<div style=" display:none; overflow:hidden; height:0;">
+<!-- 内部统计 -->
+<script src="http://tongji.9939.com/img/tjpindao.js"></script>
+<!-- 内部统计 -->
+
+<div class="d-mod" id="d-mod">
+    <a href="javascript:;" onclick="hidead();" class="closebank"></a>
+	<a href="http://auto.sohu.com/hot/"><img src="http://www.9939.com/uploadfile/201101/womanbank.gif" /></a>
+</div>

@@ -1,0 +1,66 @@
+#facebox .b {
+	BACKGROUND: url(/image/b.png)
+}
+#facebox .tl {
+	BACKGROUND: url(/image/tl.png)
+}
+#facebox .tr {
+	BACKGROUND: url(/image/tr.png)
+}
+#facebox .bl {
+	BACKGROUND: url(/image/bl.png)
+}
+#facebox .br {
+	BACKGROUND: url(/image/br.png)
+}
+#facebox {
+	Z-INDEX: 100; LEFT: 0px; POSITION: absolute; TOP: 0px; TEXT-ALIGN: left
+}
+#facebox .popup {
+	POSITION: relative
+}
+#facebox TABLE {
+	BORDER-COLLAPSE: collapse
+}
+#facebox TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#facebox .body {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: #fff; PADDING-BOTTOM: 10px; WIDTH: 320px; PADDING-TOP: 10px
+}
+#facebox .loading {
+	TEXT-ALIGN: center
+}
+#facebox .image {
+	TEXT-ALIGN: center
+}
+#facebox IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+#facebox .footer {
+	/*BORDER-TOP: #dddddd 1px solid; MARGIN-TOP: 10px; /*PADDING-TOP: 5px;*/ /*TEXT-ALIGN: right*/
+}
+#facebox .tl {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 10px; PADDING-TOP: 0px; HEIGHT: 10px
+}
+#facebox .tr {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 10px; PADDING-TOP: 0px; HEIGHT: 10px
+}
+#facebox .bl {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 10px; PADDING-TOP: 0px; HEIGHT: 10px
+}
+#facebox .br {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 10px; PADDING-TOP: 0px; HEIGHT: 10px
+}
+#facebox_overlay {
+	LEFT: 0px; WIDTH: 100%; POSITION: fixed; TOP: 0px; HEIGHT: 100%
+}
+.facebox_hide {
+	Z-INDEX: -100
+}
+.facebox_overlayBG {
+	Z-INDEX: 99; BACKGROUND-COLOR: #000
+}
+ HTML #facebox_overlay {
+	POSITION: absolute; ; HEIGHT: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px')
+}

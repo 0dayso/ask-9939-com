@@ -1,0 +1,46 @@
+<p>您的问题已经提交成功，久久健康专家将快速为您解答，</p>
+<div class="anon">
+	<?php if($this->user_info['pwd']) { ?>
+		<p>给您分配的会员名为：<em><?=$this->user_info['username']?></em>，密码为：<em><?=$this->user_info['pwd']?></em></p><p>会员名跟密码不容易记忆？您可以：</p>
+				<p><a href="<?=HOME_9939_URL?>/user/do/do/edit" target="_blank">修改用户名和密码</a>（采用汉字或者字母）</p>
+	<?php } ?>
+			</div>
+				<h3 class="h2">在您等待答案的同时，可前往：</h3>
+				<ul class="concern">
+					<li><span><a href="/id/<?=$this->aid?>"  target="_blank">我的提问</a></span></li>
+					<li><span><a href="/ask"  target="_blank">继续提问</a></span></li>
+					<li><span><a href="/all.shtml"  target="_blank">看别人问什么</a></span></li>
+					<li><span><a href="<?=HOME_9939_URL?>/user"  target="_blank">我的健康家园</a></span></li>
+					<li><span><a href="<?=HOME_9939_URL?>/user/do/do/edit"  target="_blank">完善个人资料</a></span></li>
+				</ul>
+				<p>
+					现在立即<a href="<?=HOME_9939_URL?>/user/do/do/edithealth"  target="_blank">填写健康档案</a>将获的<em>50</em>积分<a href="/rule.shtml">查看积分规则</a>
+				</p>
+				<div class="t-supinfo">
+					<div>
+					<ul class="t-tab">
+						<li><h3 class="t-pro h4"><span>推荐专家</span></h3></li>
+						<li><h3 class="t-rel h4"><span>相关问题</span></h3></li>
+					</ul>
+					</div>
+					<div>
+					<div>
+						<dl class="t-proc active">
+<?php if(is_array($this->doctor)) { ?>
+<?php foreach ($this->doctor as $k => $v) { ?>
+<dt><a href="<?=$v['linkurl']?>" target="_blank"><img src="<?=HOME_9939_URL?><?=$v['imageurl']?>" alt=""/></a></dt><dd><ul><li>姓名：<?=$v['adsname']?></li><li><a href="<?=$v['linkurl']?>" target="_blank">专家在线</a></li></ul></dd><?php } ?><?php } ?>
+</dl>
+					</div>
+					<div style="overflow:hidden"><ul class="t-relc">
+					<?php if(is_array($this->ask)) { ?>
+						<?php foreach ($this->ask as $k => $v) { ?>
+							<li><a href="<?=$v['url']?>" target="_blank"><?=$v['TITLE']?></a></li>
+						<?php } ?>
+					<?php } ?>
+					</ul></div></div>
+					<script type="text/javascript" charset="utf-8">
+						$(document).jTab({
+						 menutag:".t-tab li"
+						});
+					</script>
+				</div>

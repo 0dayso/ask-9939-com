@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+/*二级科室 推荐专家*/
+.quitr_doctor{overflow:hidden; padding:0; border:1px solid #e4e4e4;border-top:3px solid #00d4dd;}
+.rquit_line{ border-bottom:1px solid #e4e4e4; padding:8px 0 8px 10px;}
+.pr20{ padding-bottom:20px;}
+.expert{margin-left:12px; overflow:hidden; font-size:12px; padding-bottom:17px;}
+.lie{ overflow:hidden;margin:20px 0 0 0; font-family:"宋体"; position:relative; }
+.expert .doc_pic{margin-right:14px;}
+.expert .doc_pic a img{ width:80px; height:80px;}
+.pagename{font-weight:bold; margin-bottom:10px; font-size:14px;}
+.cl999{ color:#999;margin-bottom:10px;}
+.ruser_ques{background:url(../images/n_bgm0.jpg) no-repeat; width:63px; height:19px; text-align:center; line-height:19px; position:absolute; top:37px; right:24px;}
+/*二级科室 常见用药*/
+.drehos{margin-left:12px;}
+.mBto20{ margin-bottom:20px;}
+.more_hos{ overflow:hidden; font-family:"宋体"; font-size:12px; margin:18px 0;}
+.mr10{ margin-right:10px;}
+.drug_pic{ width:100px; height:100px;}
+.drug_pic img{ width:100px; height:100px;} 
+.drehos .drug_pm0{font-family:"宋体"; color:#666; margin-top:10px;}
+.drehos .drug_pm0 b{ font-weight:normal; color:#333;}
+.qrw159 { width:159px; margin-top:10px;}
+.drehos .qrw159 h3 a{font-size:14px;font-family:"宋体"; color:#333;}
+.drug_pm0 a{color:#ff6600;}
+/*二级科室 推荐医院*/
+.hos_rpic{ margin-right:10px;}
+.more_hos h3 a{color:#333; font-size:12px;}
+.more_hos p span{ display:inline;}
+.more_hos p{color:#787878; margin-top:4px;}
+.more_hos p.smap{ background:url(../images/smap.png) no-repeat 0 3px; padding-left:15px; }
+/*二级科室 猜你喜欢*/
+.mTop{ margin-bottom:18px;}
+.rqure3{ border:1px solid #e4e4e4; border-top:none;border-bottom:none;}
+.hottab{margin-top:3px;margin-left:25px;}
+.hottab .colo55{color:#555;margin:0 5px;}
+.hottab span a{color:#555;}
+/*二级科室 热点文章*/
+.plr10{padding:0 9px;}
+.r_hot{ overflow:hidden; margin-top:25px;}
+.r_hot li{ float:left;margin:0 10px 15px 10px;}
+.r_hot li img{width:120px; height:90px;}
+.r_hot li  span{ margin-top:7px; display:block;}
+.r_hot li  span a{ font-size:14px;}
+.er_news { overflow:hidden;  padding:18px 0 8px 10px;}
+.er_news li{background:url(../images/icon.png) no-repeat -9px -124px;overflow: hidden;zoom: 1;vertical-align: bottom;font-family:"宋体"; padding-left:10px;  margin-bottom:12px;}
+.er_news li a{ color:#333;}
+.er_news li span {float:left;margin-right: 8px;}
+.er_line{ border-top:1px dashed #ccc;}
+/*提问页 名师推荐*/
+.tw_expert{margin-top: 17px;}
+.mle10{margin-left:9px;}
+.tlie{overflow: hidden;margin-bottom: 14px;}
+.doc_quit{margin:4px 6px 0 0;}
+.doc_quit a img{width:60px; height:60px;}
+.quit_docwrit p{margin-bottom:1px;font-family:"宋体"; font-size:12px;}
+.ruser_butt{ width:62px; height:23px; background: url(../images/butt.jpg) no-repeat; line-height:23px; text-align:center;}
+.ruser_butt a{color:#00d4dd;}
+/*全部科室 推荐专家*/
+.pagna14{ font-size:14px; margin-bottom:3px;}
+.pagna12{ font-size:12px; line-height:16px;}
+.pagna12 span a{ color:#666666;}
+.ruser_ques89{background:url(../images/n_bg1.jpg) no-repeat; width:89px; height:23px; line-height:23px; text-align:center; margin-top:7px;}
+.ruser_ques89 a{color:#1ebfc7;font-size:12px;}

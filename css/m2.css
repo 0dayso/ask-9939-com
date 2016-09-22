@@ -1,0 +1,71 @@
+.data h2  {position: relative;margin-bottom: 10px;color: #000;}
+.t-fontblack{color: #000!important;}
+.t-fontred{color: #f00!important;}
+.t-whitebg {background: #fff;}
+.t-bnbg {padding-left: 34px;height: 31px;line-height: 32px;background: url(../images/bnbg.jpg) no-repeat left top;display:inline-block;margin-right: 10px;}
+.t-bnbg a {display:inline-block;height: 31px;background: url(../images/bnbg.jpg) no-repeat right top;padding-right: 16px;text-decoration: none;font-weight: 700;font-size: 14px;color: #000;}
+.t-bnbg a:hover {color: #d22c2b;text-decoration: none;cursor:pointer;}
+
+.t-search {margin: 10px 0;}
+.t-search label {margin-right: 5px;}
+.t-search select ,.t-select{min-width:10%;_width: 10%;vertical-align: middle;margin-right: 5px;}
+.t-search input {width:200px;height: 20px;vertical-align: middle;margin-right: 5px; }
+.t-search .t-button ,.t-button {width: 80px;height: 22px;vertical-align: middle;}
+
+.t-table {color: #077ac7;overflow: hidden;padding: 1px;}
+.t-table label {white-space: nowrap;}
+.t-table input[type="button"] {cursor: pointer;}
+.t-table .vatop {vertical-align:top;}
+.t-table .vatop div {float: none;overflow: hidden;}
+.t-table .vatop div span {float: left;}
+.t-table .vatop div a {float: right;margin-top: 5px;}
+.t-table li span {display:inline-block;width: 160px;}
+.t-table a img {margin: 6px 0;}
+.t-table .abn {display:inline-block;height: 20px;line-height: 21px;padding: 0 6px;border: 2px outset #d4d0c8;background: #d4d0c8;font-size:12px;font-size: 500;color: #000;text-decoration: none;cursor:pointer;white-space: nowrap;}
+.t-table .abn:hover {text-decoration: none;}
+
+.t-table tr.t-trbg{background:url(../images/th_bg.png) repeat-x #f3f4f5;text-align: center;}
+.t-table table {border:1px solid #B0B3B7; margin-bottom: 10px; }
+.t-table table div {margin: 0;float: left;white-space: nowrap;}
+.t-table table tr {height:35px;line-height:26px;background-color: #fff;}
+.t-table table th {padding-left:10px; white-space: nowrap;font-size: 14px; font-weight: 700;border:1px solid #99d3fb;}
+.t-table table td {padding:0 8px;border:1px solid #99d3fb;background: transparent;line-height: 26px;}
+.t-table .t-tdpd {padding-left:5%;}
+.t-table table input {margin: 0 2px;}
+.t-table tfoot td {text-align: right;}
+.t-pagination {margin: 10px 0 30px;clear: both;float:right;color: #000;}
+.t-pagination span {margin: 0 10px;}
+.t-pagination li {float: left;margin: 0 10px;}
+.t-pagination form {display: inline;}
+.t-pagination li a {margin: 0 3px;float: left;padding-top: 0px;}
+.t-pagination .current {color: #f00;font-weight:700;}
+
+.t-addinfo {clear: both;padding-bottom: 10px;}
+.t-addinfo table {border: 1px solid #99d3fb;}
+.t-addinfo tr{height: auto!important;}
+.t-addinfo td,.t-addinfo th{padding: 0 30px;}
+.t-addinfo td.t-ai_first {width: 80px;}
+.t-addinfo label {float:left;}
+.t-addinfo table input {width: 300px;padding: 0;}
+.t-addinfo table .radio,.t-addinfo table .checkbox {width: auto;margin: 0 10px;}
+.t-addinfo table textarea {width: 70%;height: 80px;margin:5px 0 5px 2px;}
+.t-addinfo div {margin-bottom:15px;margin-left: 20%;}
+.t-addinfo input {padding:0 20px;margin-right: 20px;}
+
+.zend_form {padding:2% 0;overflow: hidden; }
+.zend_form #idu-element {display:none;}
+.zend_form dt {float: left;height: 20px;padding: 0 0 0 10px;}
+.zend_form dd {height: 20px;float: left;padding: 0 2px;}
+.zend_form dt label {line-height: 20px;}
+.zend_form input {width: 150px;height: 20px;}
+.zend_form #submitSearchBt {width: auto;}
+.zend_form p {float: left;}
+
+/* temp */
+.t-table .t-pagination li span {width: auto;}
+
+/*- change by robben 2009-7-7 -*/
+.t-table tr.t-trbg td{background:url(../images/th_bg.png) repeat-x #f3f4f5;text-align: center;}
+.t-table table td{background:#fff; }
+/* modify by Tong Sep 01 09 */
+.t-table .t-inputs input{width:auto;}

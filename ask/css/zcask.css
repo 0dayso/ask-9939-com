@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+/*提问注册页*/
+.mT20{margin-top:20px;}
+.asbn{ margin:0 auto; width:960px;}
+.wqce4{border:1px solid #e6e6e6;}
+.pt58{ padding:62px 0 58px 0;}
+.w538{width:538px; margin:0 auto;}
+.succes{ background:url(../images/askm0.jpg) no-repeat left 1px; padding-left:46px; height:40px;}
+.md34{ margin-bottom:28px;}
+.w538 .succes p,.w538 .psame p{ display:inline-block;}
+.w538 .succes p{margin-top:5px;}
+.w538 .succes p.Seeque{ width:86px; height:29px; background:#ff6600; text-align:center; line-height:29px; margin-left:14px;}
+.w538 .succes .Seeque a{  color:#fff;}
+.w538 .psame{ background:url(../images/askmbg.jpg) no-repeat left 14px; height:37px; padding-left:16px;}
+.md18{ margin-bottom:18px;}
+.w538 .psame p{ font-size:14px; font-family:"宋体"; } 
+.w538 .psame .ssrt{width:258px;border:1px solid #e2e2e2;height:35px;}
+.w538 .psame .lin37{ line-height:37px;margin-right:20px;}
+.w538 .psame .ssrt input{ width:170px;height:35px; color:#b4b4ac; padding-left:5px; line-height:35px;}
+.w538 .psame .ssrt  span{ width:83px; height:35px; background:#e2e2e2; line-height:35px; text-align:center;}
+.website{ overflow:hidden;}
+.mT50{ margin-top:50px;}
+.md20{margin-top:18px;}
+.bore5{ border:1px solid #e5e5e5; padding:1px;}
+.website .mobile .fiz22,.website .weChat .fiz22 {font-size:22px; color:#000;font-family:"microsoft YaHei";}
+.website .mobile .fiz14,.website .weChat .fiz14{font-size:14px; color:#666;font-family:"microsoft YaHei";}
+.mTwz{ margin:20px 0 20px 5px;}
+.mr70{ margin-right:70px;}
+.ainfor .news{border:1px solid #e6e6e6; overflow:hidden; width:450px; padding:17px 20px 16px 17px;}
+.ainfor .newtit{ position:relative;}
+.ainfor .newtit i{ position:absolute; right:5px; top:3px;color:#666;font-size:12px; }  
+.newtit .lw5{background:url(../images/asico.png) no-repeat 0 1px; padding-left:15px;}
+.ainfor .news i{ font-style:normal; }
+.mT26{ margin-top:26px;}
+.mT22{ margin-top:22px;}
+.mr20{ margin-right:20px;}
+.ainfor .lie{ overflow:hidden;font-family:"宋体"; position:relative; }
+.ainfor .doc_writ{ width:338px;}
+.mr10{ margin-right:10px;}
+.ainfor .expert .doc_pic{margin-right:14px;}
+.ainfor .expert .doc_pic a img{ width:80px; height:80px;}
+.ainfor .pagename{ margin-bottom:10px; font-size:14px; margin-top:6px;}
+.ainfor .pagename b{margin-right:10px;  color:#000;}
+.ainfor .cl999{margin-bottom:5px;font-size:12px;}
+.ainfor .ruser_ques{background:url(../images/asyua.jpg) no-repeat; width:87px; height:21px; text-align:center; line-height:19px; position:absolute; top:10px; right:24px; padding:7px 0 0 10px;}
+.ainfor .axline{border-bottom:1px  dashed #e4e3e3; padding: 0 0 15px 0; margin: 0 0 15px 0;}
+.ainfor .ruser_ques img{ margin-left:10px;}
+.ainfor .division{font-size:12px; }
+.ainfor .ruser_ques a{background:url(../images/asico.png) no-repeat -259px -408px; display:block;}
+/*提问成功页*/
+.suuser p{display:inline; float:left; }
+.suuser p b{font-family:"宋体"; font-weight:normal;}
+.suuser .usw180{ width:180px;font-weight:bold;}
+.suuser .usw140{ width:140px;font-weight:bold;}
+.suuser .cord4 a{color:#00d4dd; text-decoration:underline;}
+.suln37 p{ line-height:37px;}
+.suln37 .sucsame{ margin-left:8px;}
+.mT24 { margin-top:24px;}
+/*通用滚动slider*/
+.lc_focus{width:450px; height:286px;position:relative; overflow:hidden;}
+.lc_focus .imglie3{position:absolute;left:0;top:0;z-index:100;width:100%;}
+.lc_focus .imglie3 li{width:100%;position:absolute;left:0;top:0;height:286px;}
+.imglie3 li .axlin{font-size:14px;font-family:"宋体"; border-bottom:1px  dashed #e4e3e3; padding-bottom:11px;margin-bottom:12px; position:relative; background:url(../images/asico.png) no-repeat  6px -162px; padding-left:17px;}
+.imglie3 li .axlin  i{ position:absolute; right:5px; top:3px;color:#999;}
+.lc_focus .imglie3 li.on{z-index:105;}
+.lc_focus .control i{display:inline-block; width:5px; height:5px; background:url(../images/asdt.png) no-repeat 0 -14px; margin:0 6px; _background:#fff; overflow:hidden;}
+.lc_focus .aslb{ position:absolute; bottom:-1px; left:180px;z-index:999;}
+.lc_focus .control{ margin-top:7px;}
+.lc_focus .control i.cur{background-position:0 0;}
+.lc_focus .btn-next{width:19px;height:19px;cursor:pointer; background:url(../images/aslb.png) no-repeat 0 0;}
+.lc_focus .btn-prev{width:19px;height:19px;cursor:pointer; background:url(../images/aslb.png) no-repeat -30px 0;}
+

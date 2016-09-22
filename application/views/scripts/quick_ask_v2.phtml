@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="/ask/v1/css/main.css?v=20160810"/>
+<link rel="stylesheet" type="text/css" href="/ask/v1/css/detail.css?v=20150910021"/>
+<link rel="stylesheet" type="text/css" href="/ask/v1/css/rclumn.css?v=2015091002"/>
+<script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script>
+<script>
+function quick_ask(){
+	if($("#quick_content").val()=="") {
+		alert("请输入内容");
+		$("#quick_content").focus();
+		return false;
+	} else if($("#quick_content").val()=="输入您的问题") {
+		alert("请输入内容");
+		$("#quick_content").focus();
+		return false;
+	} else if($("#quick_content").val().length<10 || $("#quick_content").val().length>500) {
+		alert("内容字数要在：10-500 之间");
+		$("#quick_content").focus();
+		return false;
+	}
+        $("#quick").submit();
+//        $("#title").val($("#quick_content").val().substring(0,30));
+//        alert($("#quick_content").val());
+//        return false;
+        
+//        alert($("#quick_content").val());
+//	$('#textarea_hidden_editor').val(b.getValue());
+//	return true;
+}
+</script>
+</head>
+<body>
+<!--<form id="quick" name="quiz" method="POST" action="/askt/do/do/save/" target="_blank" class="quiz" autocomplete="off">-->
+<form id="quick" name="quiz" method="post" action="/Asking/index/" target="_blank" class="quiz" autocomplete="off">
+<div class="l-mod">
+    <div class="modlibn">
+        <!--
+        <div class="l-modt10">
+            <textarea class="inp inp2" id="quick_content" name="info[content]" onfocus="javascript:if($('#quick_content').html()=='把您的问题描述一下') $('#quick_content').html('');" placeholder="填写症状 描述信息，如：小孩不发烧，手脚冰凉，是怎么回事？"></textarea>
+            <input type="hidden" id="title" name="info[title]" value="" />
+            <input type="hidden" name="info[classid]" value="<?=$this->classid?>" />
+            <input type="hidden" name="token" value="<?=$this->token?>" />
+            <div class="immed"><a href="javascript:void(0)" title="立即提问" onclick="return quick_ask()">立即提问</a></div>
+        </div>
+        -->
+        <div class="l-modt10">
+            <textarea class="inp inp2" id="quick_content" name="content" onfocus="javascript:if($('#quick_content').html()=='把您的问题描述一下') $('#quick_content').html('');" placeholder="填写症状 描述信息，如：小孩不发烧，手脚冰凉，是怎么回事？"></textarea>
+            <div class="immed"><a href="javascript:void(0)" title="立即提问" onclick="return quick_ask()">立即提问</a></div>
+        </div>
+        <div class="mobdown"><p class="fl">手机版随时随地,在线问医生</p><p class="fr"><a href=""><img  src="/ask/v1/images/meb_xz.png"/></a></p></div>
+    </div>
+</div>
+</form>    
+</body>
+</html>

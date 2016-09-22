@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title><?=$this->detail[name]?>_健康问答_久久健康网</title>  
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+$(document).jTab({
+ menutag:".hd li"
+});
+});
+var queen=(function(){
+	var list=[]
+	return {
+		status:false,
+		add:function(o){
+			list.push(o);
+		},
+		start:function(){
+			if(this.status||list.length==1){
+				//console.log(list);
+				var tmp=list.shift();
+				
+				this.status=false;
+				tmp();
+			}
+			if(list.length){
+				setTimeout(arguments.callee,30);
+			}
+		}
+	}
+})();
+function getPages(url){
+		queen.add(function(){
+			var u=url;
+			(function(u){
+				var html = '<table width="100%" cellspacing="0" cellpadding="0" border="0" class="j-tab-01"><tbody><tr class="title"><td width="10%">科室</td><td width="47%">标题</td><td width="14%">查看/回复数</td><td width="10%">状态</td><td width="9%">悬赏分</td><td width="10%">时间</td></tr>';
+			var status='';
+			jQuery.ajax({
+				url : url+'&src=JQ',
+				dataType:"json",
+				cache:false,
+				success:function(data){
+					if(data.status==0){
+						status=1;
+					}else if(data.status==1){
+						status=2;
+					}else if(data.status==2){
+						status=3;
+					}else if(data.status==3){
+						status=0;
+					}
+					jQuery('#page_'+status+'a').html(data.pagehtml);
+					jQuery('#page_'+status+'b').html(data.pagehtml);
+					
+					jQuery.each(data.aList,function(i){
+						//console.log(data.aList);
+					html+='<tr><td><a target="_blank" href="/list/?classid='+data.aList[i].classid+'">['+data.aList[i].name+']</td><td><a href="/ask/show/?id='+data.aList[i].id+'">'+data.aList[i].title+'</a></td><td>'+data.aList[i].browsenum+'/'+data.aList[i].answernum+'</td><td>'+data.aList[i].status+'</td><td>'+data.aList[i].point+'</td><td></td></tr>';
+					//alert(html);
+					//jQuery('#list'+data.status).html(html);
+					//alert('#on-zh1'+data.status);
+					//alert('#on-zh1'+status);
+					//jQuery('#on-zh1'+status).html(html);
+					//alert('#clist'+status);
+					jQuery('#clist'+status).html(html);
+				});
+				queen.status=true;
+			}
+			});
+			})();
+		});
+		queen.start();
+	}
+
+</script>
+</head>
+<body>
+<?php require(APP_ROOT."/header.shtml");?>
+	<div id="bd">
+		<div class="g-m0s8 l-fix tMarginLg">
+			<div class="col-m">
+				<div class="m-wrap">
+					<div class="tmod-08">
+						<h3>您的位置：<a href="<?=ASK_URL?>">问答首页</a><?php if($this->pdetail){echo "－<a href=/list/?classid=".$this->pdetail['id'].">".$this->pdetail['name']."</a>";}if($this->detail){echo "－<a href=/list/?classid=".$this->detail['id'].">".$this->detail['name']."</a>";}?></h3>
+						<ul>
+							<?php
+							if($this->classid!=0){
+								if(is_array($this->aKeshi)){
+									foreach($this->aKeshi as $k=>$v){
+										echo "<li><a href=\"/list/?classid=".$v[id]."\">$v[name]</a></li>";
+									}
+								}else{
+									echo '无科室';
+								}
+							}
+							?>
+						</ul>
+					</div>
+									
+							
+					<div class="j-mod">
+						<div class="hd fix">
+							<ul>
+								<li class="hover">全部问题</li>
+								<li>待解决问题</li>
+								<li>已采纳问题</li>
+								<li>悬赏问题</li>
+							</ul>
+						</div>
+						<div id="main0" class="bd">
+						<?php
+						foreach($this->rs as $key=>$val){
+							echo '
+							<ol class="block">	
+								<div id="page_'.$key.'a" class="j-pages">'.$val[pagehtml].'</div>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0" class="j-tab-01">
+									<tbody id="clist'.$key.'">
+										<tr class="title">
+											<td width="10%">科室</td>
+											<td width="47%">标题</td>
+											<td width="14%">查看/回复数</td>
+											<td width="10%">状态</td>
+											<td width="9%">悬赏分</td>
+											<td width="10%">时间</td>
+										</tr>';
+									foreach($val[aList] as $k=>$v){
+										$status = $v[status]==1 ? '已解决' : '未解决';
+										echo "<tr>
+											<td><a target=\"_blank\" href=\"/list/?classid=$v[classid]\">[".substr($this->ks_cache[$v[classid]][name],0,6)."]</td>
+											<td><a href=\"/ask/show/?id=$v[id]\">".substr($v[title],0,54)."</a></td>
+											<td>$v[browsenum]/$v[answernum]</td>
+											<td>$status</td>
+											<td>$v[point]</td>
+											<td>".date("Y-m-d",$v[ctime])."</td>
+										</tr>";
+									}
+							echo '</tbody>
+								</table>								
+								<div id="page_'.$key.'b" class="j-pages">'.$val[pagehtml].'</div>
+							</ol>
+							';
+							}
+							?>
+					    </div>
+					</div>
+					
+					
+				<div class="mod zhmod-04 tMarginLg">
+	            <span class="top">
+	              <span class="tl"></span>
+	            </span>
+	            <div class="inner">
+	              <div class="hd">
+	                <h3>快速提问</h3>
+	              </div>
+	              <div class="bd">
+							<form id="ask_div" name="" method="POST" action="/ask/do/do/save/">
+						<?php if(!$_COOKIE['member_uID']) { ?>
+								<p>
+								  <label>
+									我是会员<input type="radio" style="width:10px;" checked name="register" value="0"  onclick="changeLabel(this, 3, 4);" /></select>
+								  </label>
+								  <span>（会员登录提问，将获得5积分）</span>   
+								  <label>
+								  	我要注册<input type="radio" style="width:10px;" name="register" value="1" onclick="changeLabel(this, 4, 3);" />
+								  </label>
+								  <br />
+								  <span id="label_3">
+									邮箱：<input type="text" name="username" style="width:200px;" />
+									  
+									密码：<input type="password" name="pwd" style="width:200px;" />
+								  </span>
+								  <span id="label_4" style="display:none;">
+									邮箱：<input type="text" name="mail" style="width:260px;" />
+								  </span>
+								</p>
+						<?php } ?>
+								<p>
+									<label for="">提问标题：</label><input type="text" name="info[title]" />
+								</p>
+								<p>
+									<label for="">提问内容：</label><textarea name="info[content]" style="width:510px; height:90px;"></textarea>
+								</p>
+								<input type="hidden" value="<?=$this->classid?>" name="info[classid]" />
+								<p align="center"><input type="submit" class="submit-zh" value="提交" onclick="return ask('ask_div');"/></p>
+							</form>
+	              </div>
+	            </div>
+	          </div>
+
+	          <div class="mod zhmod-04 tMarginLg">
+	            <span class="top">
+	              <span class="tl"></span>
+	            </span>
+	            <div class="inner">
+	              <div class="hd">
+	                <h3>某某科专家推荐</h3>
+	              </div>
+	              <div class="bd">
+	                <?php require(APP_ROOT."/List_ask_footads.shtml");?>
+	              </div>
+	            </div>
+	          </div>
+			</div>
+			</div>
+			<?php require(APP_ROOT."/list_right.shtml");?>
+		</div>
+	</div>
+<?php require(APP_ROOT."/footer.html");?>
+
+
+
+<script type="text/javascript" src="/images_ask/js/dialog.js" ></script>
+<script type="text/javascript">
+	var b=new compoDialog();
+	b.add(maskLayerManger.displaymaskLayer("#f0f",0.5));
+	function changeLabel(obj, __index, __index_1) {
+		if(obj.checked) {
+			$('#label_' + __index).css('display', '');
+			$('#label_' + __index_1).css('display', 'none');
+		}
+	}
+	
+	function ask(__id) {
+		var __d = $('#'+ __id + ' input[type!=radio],input:checked,textarea ');
+		var __str = '';
+		for(i=0; i<__d.length; i++) {
+			if(__d[i].name != '') {
+				__str = __str + __d[i].name + '=' + encodeURIComponent(__d[i].value) + '&';
+			}
+		}
+		
+		$.post('/ask/do/do/save/?' + __str, function(data) {
+				if(data=='error-100') { //帐号重复
+					alert('帐号重复！提问失败！！！');
+				} else if (data=='100') {
+					alert('帐号或密码错误！！！');
+				} else if (data==0) {
+					alert('提问失败！！！');
+				} else if (data) {		//成功
+					$.get('/ask/loadhtml/html/ok/id/' + data, function(msg) {
+						b.add(boxDialogManger.displayboxDialog(msg));
+						b.show('<div class="mod tmod-01"><h2 class="h2">会员提交成功</h2><div class="t-content"><span class="top"><span class="tl"></span><span class="tr"></span></span><div class="inner"></div><span class="bottom"><span class="bl"></span>&nbsp;<span class="br"></span></span></div></div>');
+					});
+				} else {				//失败
+					alert('提问失败！！！');
+				}
+			});
+			
+		return false;
+	}
+</script>

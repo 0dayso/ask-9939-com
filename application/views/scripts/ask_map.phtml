@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>问答地图</title>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_index.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_map.css"/>
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script>
+$(function(){	
+	$(document).jTab({
+	 menutag:".j-mod .hd li"
+	});
+	
+	$(document).jTab({
+	 menutag:".zhmod-02 .hd li"
+	 }); 
+	
+     $(".lw-nav").children().bind("mouseover",function(){
+		 $(this).addClass("temp");
+		});
+	
+	 $(".lw-nav").children().bind("mouseout",function(){
+		 $(this).removeClass("temp");
+		});
+});
+</script>
+
+</head>
+
+<body>
+	<div id="doc" class="w950">
+		<div id="hd"><?php include("/home/web/ask-9939-com/header_new.shtml"); ?></div>
+		<div id="bd">
+			<div class="j-mod tMarginLg j-lwmod">
+				<div class="hd fix">
+					<ul>
+						<?php
+						foreach ($this->keshi as $k=>$v){
+							$css = '';
+							if($this->classid == $v['id']) $css = ' class="on-zh"';
+							echo '<li'.$css.'><a href="/map/index/classid/'.$v['id'].'">'.$v['name'].'</a></li>';
+						}
+						?>
+					</ul>
+				</div>
+				<div class="bd">
+				  <div class="zhmap-a">
+				<?php				
+				$arr = explode(',',$this->CATEGORY[$this->classid]['arrchildid']);
+				foreach ($arr as $k=>$v){
+					echo '<a target="_blank" href="'.ASK_URL.'classid/'.$v.'">'.$this->CATEGORY[$v]['name'].'</a> ';
+				}							
+				?>
+				</div>										
+			    </div>
+			</div>
+			<div class="j-mod tMarginLg">
+				<div class="bd">
+					<ol class="block" id="on-zh20">
+						<div class="j-l02">
+						<div class="zhpage"><?=$this->page_str?></div>
+						<dl class="noline fix">
+						
+								<dt><h3><?=$this->cat1?> >></h3></dt>
+								<dd>
+									<div class="g-line">
+									
+										<div class="g-u s1of2">
+											<div class="zhmod06 rMarginLg">
+							                    <ul class="zhtext-list">							                          
+					                                  <?php
+					                                  foreach ($this->rs1 as $k=>$v){
+					                                  	echo '<li><span>'.date("Y-m-d",$v['ctime']).'</span><a href="/id/'.$v['id'].'">'.$v['title'].'</a></li>';
+					                                  }
+					                                  ?>
+							                     </ul>
+							                  </div>
+										</div>
+										
+										<div class="g-u g-lastu s1of2">
+											<div class="zhmod06 lMarginLg">
+							                    <ul class="zhtext-list">
+							                          <?php
+					                                  foreach ($this->rs2 as $k=>$v){
+					                                  	echo '<li><span>'.date("Y-m-d",$v['ctime']).'</span><a href="/id/'.$v['id'].'">'.$v['title'].'</a></li>';
+					                                  }
+					                                  ?>
+							                     </ul>
+							                  </div>
+										</div>
+										
+									</div>									
+								</dd>
+								
+
+<?
+if($this->rs3)
+{
+//echo "11";
+?>
+								<dt><h3><?=$this->cat2?> >></h3></dt>
+								<dd>
+									<div class="g-line">
+									
+										<div class="g-u s1of2">
+											<div class="zhmod06 rMarginLg">
+							                    <ul class="zhtext-list">
+							                          <?php
+					                                  foreach ($this->rs3 as $k=>$v){
+					                                  	echo '<li><span>'.date("Y-m-d",$v['ctime']).'</span><a href="/id/'.$v['id'].'">'.$v['title'].'</a></li>';
+					                                  }
+					                                  ?>
+							                     </ul>
+							                  </div>
+										</div>
+										
+										<div class="g-u g-lastu s1of2">
+											<div class="zhmod06 lMarginLg">
+							                    <ul class="zhtext-list">
+							                          <?php
+					                                  foreach ($this->rs4 as $k=>$v){
+					                                  	echo '<li><span>'.date("Y-m-d",$v['ctime']).'</span><a href="/id/'.$v['id'].'">'.$v['title'].'</a></li>';
+					                                  }
+					                                  ?>
+							                     </ul>
+							                  </div>
+										</div>
+										
+									</div>									
+								</dd>
+								
+							</dl>
+<?
+}
+?>							
+							<div class="zhpage"><?=$this->page_str?></div>												
+						</div>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<div id="ft"><?php include("/home/web/ask-9939-com/footer.html"); ?></div>
+	

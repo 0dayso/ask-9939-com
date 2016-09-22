@@ -1,0 +1,65 @@
+﻿@charset "utf-8";
+/* 通用样式 */
+.hot-news{zoom:1;overflow:hidden;}
+.hot-news .pic{float:left;}
+.hot-news .pic img{display:block;}
+.hot-news .content{float:left;margin-left:10px;_display:inline;}
+.hot-news .desc{margin-top:1em;}	
+.hot-news .more{color:#f00;}
+.pic-text{text-align:center;border:1px solid #f00;}
+.pic-text img{display:block;}
+.pic-text span{display:block;background:#f00;}
+.text-links01 li{background:url(images/tdot_01.png) no-repeat 0 50%;padding-left:10px;}
+.text-links02 dt{color:#f00;font-weight:bold;}
+.text-links02 dd{zoom:1;overflow:hidden;}
+.text-links02 .w30 li{width:33%;float:left;overflow:hidden;font-size:14px;} 
+.text-links03 span{color:#f0f;}
+.text-links04 li{position:relative;}
+.text-links04 span{position:absolute;right:50px}
+h1,h2,h3,h4{font-weight:bold}
+/* 布局样式 */
+.lw-m0s6 .m-wrap { margin-right: 326px; }
+.lw-m0s6 .col-s { width: 316px; margin-left: -316px; }
+
+.topR{background:url(../images/askProcessBg.png) no-repeat right -38px;width:4px;height:26px;float:right}
+.top{background:url(../images/askProcessBg.png) no-repeat 0 -1px;height:26px}
+.lw-askProcessL .topBg{background:url(../images/askProcess.png) no-repeat 0 0;height:26px;width:103px;margin-left:10px}
+.lw-askProcessL .icon{background:url(../images/askProcessBg.png) no-repeat 0 -46px;padding-left:23px;line-height:20px;margin-top:3px;color:#414141}
+.lw-askProcessL .hd{height:26px;position:relative;margin-bottom:-1px}
+.lw-askProcessL .b_block{text-align:left!important;margin:0 28px 0 15px;border-top:1px dashed #acacac;border-bottom:1px dashed #acacac;padding:10px 0px 40px 18px}
+.lw-askProcessL .b_block .inp{ vertical-align:middle}
+
+.lw-askProcessL .w1{padding:0 0px!important}
+.lw-askProcessL .w2{padding:0 4px 0 3px!important}
+.lw-askProcessL .otherTxt{font-size:14px!important;color:#223770!important;padding-left:20px!important;}
+.hd h2{ text-indent:-9999px}
+.lw-askProcessL .hd a{float:left;background:url(../images/askProcess.png) no-repeat 0 0; width:103px;height:26px;text-indent:-9999px;overflow:hidden}
+.lw-askProcessL .bd{border:1px solid #c6dcf1;padding:10px 0;background:#fff;}
+.lw-askProcessL .bd table{width:100%;}
+.lw-askProcessL .bd td{padding:5px 0;}
+.lw-askProcessL .bd td input,.lw-askProcessL .bd td textarea{color:#acacac}
+.lw-askProcessL .bd td .inp{border:1px solid #82a0c2;padding:3px;line-height:1.31em}
+.lw-askProcessL .bd td textarea{border:1px solid #82a0c2;height:110px;*height:107px;_height:112px;width:387px;overflow:auto;text-align:left; left top;padding:5px;line-height:17px}
+.lw-askProcessL .bd td .long{width:390px}
+.lw-askProcessL .bd td .short{width:200px}
+.lw-askProcessL .bd td .randC{ vertical-align:middle}
+.lw-askProcessL .bd td span{color:#414141;padding:0 3px;font-size:12px;font-weight:normal;}
+.lw-askProcessL .bd td span.icon{padding-left:19px;float:right;margin-right:146px}
+.lw-askProcessL .bd td span strong{color:#db0000}
+.lw-askProcessL .bd tfoot td {text-align:center;width:100%}
+.lw-askProcessL .bd tfoot .btn{background:url(../images/askProcess.png) no-repeat 0 -35px;width:87px;height:25px;border:none;cursor:pointer;margin:13px 5px 10px 5px;}
+.lw-askProcessL .bd tfoot .btn1{background-position:-99px -35px}
+.lw-askProcessL .bd .l{width:13%;vertical-align:top;font-size:14px;color:#223770;text-align:right;line-height:25px;font-weight:bold}
+.lw-askProcessL .bd .r{width:87%;padding-left:10px;}
+.lw-askProcessL .bd .tip,.lw-askProcessR .tip{border:1px solid #c6dcf1;background:#eef7ff;line-height:1.8em;color:#1d366c;padding:10px 20px;margin:13px 13px 23px 13px}
+.lw-askProcessL .bd .tip h3 a,.lw-askProcessR .tip h3 a{font-size:14px;color:#5095cc}
+.lw-askProcessL .select{float:left}
+.lw-askProcessR .tip{margin:8px 0 0 0; min-height:379px;_height:379px;}
+.lw-askProcessR .tip li{padding:8px 0;border-bottom:1px dashed #1D366C}
+.lw-askProcessR .tip h2{font-size:16px;font-weight:bold;color:#223770}
+.lw-askProcessR .tip li a{color:#21366d;font-size:14px;}
+.lw-askProcessR .tip span{color:#414141}
+.lw-askProcessR .tip li a strong{color:#e50402}
+.lw-askProcessR .tip li span{color:#414141;display:block;height:63px;overflow:hidden;line-height:20px}
+
+

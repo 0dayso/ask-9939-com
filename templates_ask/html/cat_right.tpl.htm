@@ -1,0 +1,56 @@
+<div class="mt5">
+<input type="image" src="/templates/9939/skins/default/images/btn003.jpg" class="btn02" onclick="window.location.href='/ask/question.php'"/>
+<input type="image" src="/templates/9939/skins/default/images/btn004.jpg" class="btn02" onclick="window.location.href='/unReply.php'"/>
+</div>
+<div class="clear"></div>
+<div class="extra mt5">
+					<div class="w218 bd01">
+						<div class="flashbox">{include file="../slide.html}</div>
+						<div class="t01"><h3>问答热帖</h3></div>
+						<div class="l01">
+							<ul>
+								{foreach key=key item=item from=$ask_new10}						
+									<li><a href="/ask/list.php?catid={$key}&action=all">[{$item.catname}]</a>　<a href="{$item.url}" target="_blank" title="{$item.title}">{$item.title|truncate:9:""}</a>
+								{/foreach}
+							</ul>
+						</div>
+					</div>
+					<div class="mt5">
+						<div class="t02"><img src="/templates/9939/skins/default/images/t01.jpg" /></div>
+						<div class="p01 clfix">
+							{foreach key=key item=item from=$ask_tjDoc}
+							<dl>
+								<dt><a href="http://home.9939.com/space.php?uid={$item.userid}"><img src="http://ucenter.9939.com/avatar.php?uid={$item.userid}&size=big&type=virtual" width="85" height="80" /></a><!-- <p><a href="http://home.9939.com/space.php?uid={$item.userid}" class="orange">详细>></a></p> -->
+								</dt>
+								<dd>
+									<p>姓名：{$item.truename}</p>
+									<p>科室：{$item.doc_keshi}</p>
+									<p>职称：{$item.chicheng}</p>
+									<p><h3><a href="http://home.9939.com/space.php?uid={$item.userid}" class="red">向我提问</a><img src="/templates/9939/skins/default/images/icon007.jpg" align="absmiddle" /></h3>
+									</p>
+								</dd>
+							</dl>
+							{/foreach}
+						</div>
+					</div>					
+					<div class="w218 bd01 mt5">
+						<div class="t01"><h3>一周问答热榜</h3></div>
+						<div class="l01">
+							<ul>
+								{foreach key=key item=item from=$ask_feedback_week}
+									<li><a href="{$item.url}" target="_blank" title="{$item.title}" >{$item.title|truncate:16:""}</a></li>		
+								{/foreach}
+							</ul>
+						</div>
+					</div>
+					<div class="w218 bd01 mt5">
+						<div class="t01"><h3>社区公告</h3></div>
+						<div class="l01">
+							<ul>
+								{foreach key=key item=item from=$ask_notice}
+									<li><a href='{$item.url}' target='_blank'>{$item.name}</a></li>
+								{/foreach}
+							</ul>
+						</div>
+					</div>
+				</div><!-- extra end -->

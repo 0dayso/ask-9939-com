@@ -1,0 +1,183 @@
+<style>
+    .d-box1-bd .bd { background:url(http://ask.9939.com/images/bd-bg.gif) repeat-y; }
+    .d-grid .m-wrap { margin-right:334px; }
+    .d-grid .col-e { width:334px; margin-left:-334px; }
+    .d-box1-ft { height:41px; font-size:12px; line-height:20px; color:#ffffd5; text-align:center; padding-top:15px; }
+    .d-box1-ft a { color:#ffffd5; margin:0 7px; }
+    /*注册成功*/
+    .d-box2 .d-box2-hd h4 { font-size:14px; line-height:20px; padding-left:33px; padding-top:6px; }
+    .d-box2 .d-box2-hd h4 a { color:#2b6e88; }
+    .d-box2 .d-box2-hd h4 span { padding-left:6px; }
+    .d-box2 .d-box2-bd { padding:75px 0 53px 77px; width:478px; }
+    .d-box2 .d-box2-bd .gx-Info { font-family:"微软雅黑", "黑体"; font-size:32px; line-height:21.86px; color:#c20c00; }
+    .d-box2 .d-box2-bd .userName { font-size:14px; line-height:20px; color:#333333; padding:14px 0; }
+    .d-box2 .d-box2-bd .userName a { color:#2b6e88; text-decoration:underline; }
+    .d-box2 .d-box2-bd .userName .grInfo { padding-right:30px; }
+    .d-box2 .d-box2-bd .yqts { font-size:12px; line-height:20px; color:#2b6e88; padding-top:10px; padding-bottom:20px; }
+    .d-box2 .d-box2-bd .yqts span { float:left; }
+    .d-box2 .d-box2-bd .yqts .yqts-Info { padding-left:6px; width:466px; }
+    .d-box2 .d-box2-bd .youdo { border:1px dashed #2b6e88; font-size:14px; line-height:20px; color:#333333; padding:17px 0 42px 22px; background:#FFFFFF; }
+    .d-box2 .d-box2-bd .youdo li { font-size:14px; line-height:24px; }
+    .d-box2 .d-box2-bd .youdo li a { color:#2b6e88; }
+    /*右侧简便注册半分钟达成*/
+    .d-box3 .d-box3-hd, .d-box3 .d-box3-ft { padding-left:27px; }
+    .d-box3 .d-box3-bd { margin-left:27px; margin-right:40px; }
+    .d-box3 .d-box3-hd h3 { font-family:"微软雅黑", "黑体"; font-size:26px; line-height:24px; color:#5f8d9a; padding-top:30px; padding-bottom:20px; font-weight:normal; }
+    .d-box3 .d-box3-bd { font-family:"微软雅黑", "黑体"; font-size:22px; line-height:24px; color:#5f8d9a; }
+    .d-box3 .d-box3-bd p { border-bottom:1px dashed #5f8d9a; padding:10px 0; }
+    .d-box3 .d-box3-bd .noborder { border-bottom:0; padding-bottom:215px; }
+    .d-box3 .d-box3-ft { width: 280px;margin-left:10px; margin-right:10px; padding-left:27px; border-top:1px dashed #5f8d9a; padding-top:5px;}
+    .d-box3 .d-box3-ft .lxwm { font-size:12px; line-height:18px; color:#5f8d9a; }
+    .d-box3 .d-box3-ft .telInfo { background:url(http://ask.9939.com/images/tel-icion.gif) no-repeat; font-family:"Arial", "Helvetica", "sans-serif"; font-size:14px; line-height:18px; color:#5f8d9a; }
+    .d-box3 .d-box3-ft .telInfo .tel1 { padding-left:29px; margin-right:16px; }
+    /*3*/
+    .d-box2 .d-3-box2 { padding:28px 47px 0 46px; }
+    .d-box2 .d-3-qrInfo { border:1px dashed #2b6e88; }
+    .d-box2 .d-3-qrInfo dd { padding-left:14px; }
+    .d-box2 .d-3-box2 .d-3-qrInfo .d-3-wbg { background:#FFFFFF; }
+    .d-box2 .d-3-box2 .d-3-qrInfo .d-3-sm1 { font-size:14px; line-height:20px; color:#333333; padding-top:14px; }
+    .d-box2 .d-3-box2 .d-3-qrInfo .d-3-xxInfo { font-size:14px; line-height:20px; color:#2b6e88; padding:19px 0 19px 30px; }
+    .d-box2 .d-3-box2 .d-3-qrInfo .d-3-xxInfo a { color:#2b6e88; }
+    .d-box2 .d-3-box2 .d-3-qrInfo .d-3-sm2 { font-size:12px; line-height:16px; color:#2b6e88; padding:8px 0 8px 14px; }
+    .d-box2 .d-3-box2 .d-3-sm3 { font-size:12px; line-height:20px; color:#2b6e88; padding-top:31px; }
+    .d-box2 .d-3-box2 .d-3-tel { padding-top:5px; }
+    .d-box2 .d-3-box2 .d-3-tel dt { float:left; font-size:14px; line-height:27px; color:#333333; width:70px; height:36px; }
+    .d-box2 .d-3-box2 .d-3-tel dd { float:left; font-size:12px; line-height:20px; color:#c20c00; width:467px; }
+    .d-box2 .d-3-box2 .d-3-tel span { float:left; }
+    .d-box2 .d-3-box2 .d-3-tel .btx { padding-left:10px; width:402px; }
+    .d-box2 .d-3-box2 .d-3-tel input { height:27px; }
+    .d-box2 .d-3-box2 .d-3-tel .qh { width:57px; }
+    .d-box2 .d-3-box2 .d-3-tel .dwdh { width:161px; }
+    .d-box2 .d-3-box2 .d-3-tel .phone { width:223px; }
+    .d-box2 .d-3-box2 .imgInfo { padding:15px 0 20px 70px; }
+    /*2*/
+    .d-box2 .d-2-box2 { padding: 68px 0 158px 75px; }
+    .d-box2 .d-2-box2 p { padding: 2px 0; }
+    .d-box2 .d-2-box2 label { font-size:14px; line-height:27px; color:#333333; }
+    .d-box2 .d-2-box2 input { height:19px; width:223px; }
+    .d-box2 .d-2-box2 .btx { font-size:12px; line-height:20px; color:#c20c00; padding-left:70px; }
+    .d-box2 .d-2-box2 .imgInfo { padding:18px 0 0 72px }
+    .d-box3 p {
+        color: #2B6E88;
+        font-family: "微软雅黑","黑体";
+        font-size: 22px;
+        line-height: 24px;
+        width: 290px;
+    }
+</style>
+<script>
+    function nbcheckfm() {
+
+        if ($('#qh').val() == '') {
+            $("#error").html("请填区号");
+            $('#qh').focus();
+            return false;
+        }
+        if ($('#dwdh').val() == '') {
+            $("#error").html("请填写电话号");
+            $('#dwdh').focus();
+            return false;
+        }
+        if ($('#phone').val() == '') {
+            $("#error").html("请填写手机号");
+            $('#phone').focus();
+            return false;
+        }
+        var button = $("#button2").html();
+        $("#button2").html("正在提交...");
+        iframej.ajax({
+            type: "POST",
+            url: webroot + "<?= $this->tzurl ?>",
+            data: ""
+                    + "qh=" + $('#qh').val()
+                    + "&dwdh=" + $("#dwdh").val()
+                    + "&phone=" + $('#phone').val()
+                    + "&secondInfo=" + $('#secondInfo').val()
+                    + "&qrInfo=" + $('#rlx').val()
+                    + "&rank=" + (new Date()).getTime(),
+            dataType: 'json',
+            success: function (msg) {
+                if (msg.error == 1) {
+                    $("#error").html("注册成功");
+                    $("#htmlzz").html(msg.html);
+                } else {
+                    $("#error").html(msg.error);
+                    $("#button2").html(button);
+                }
+            }});
+        return false;
+    }
+</script>
+<div class="d-grid l-fix">
+    <div class="col-m">
+        <div class="m-wrap">
+            <div class="d-box2">
+                <div class="d-box2-hd">
+                    <h4><a href="javascript:;">&gt;&gt;<span>医生联系方式</span></a></h4>
+                </div>
+
+                <div class="d-3-box2"> 
+                    <?php if (!empty($this->doctor)) { ?>
+                        <dl class="d-3-qrInfo">
+                            <dd class="d-3-wbg d-3-sm1">久久医生库里找到和您相符的信息，请核实确认。</dd>
+                            <?php foreach ($this->secondInfo AS $k => $v): ?>
+                                <dd class="d-3-wbg d-3-xxInfo l-fix "> <span> 
+                                        <strong><?= $this->hospital['name_hospital'] ?></strong> </span> <span><?= $this->keshi ?></span> <span><?= $this->doctor[0]['name_doctor'] ?></span> <span><a href="http://yisheng.9939v2.com/<?= $this->doctor[0]['url'] ?>" target="_blank">查看详情&gt;&gt;</a></span> 
+                                </dd>
+                                <dd class="d-3-wbg d-3-xxInfo l-fix "> <span><strong>
+                                            <input id="rlx" type="radio"  name="qrInfo" checked value='<?= serialize($v) ?>'/>我是本人
+                                            <input id="rl" type="radio"  name="qrInfo" />我不是本人</strong></span>
+                                </dd>
+                            <?php endforeach; ?>
+                            <dd class="d-3-sm2">如果确认是您本人，请选中直接认领，同时留下您的联系方式，我们将把线上已有账号发送给您。</dd>
+                        </dl>
+                    <?php }else { ?>
+                        <input  type="hidden" name="secondInfo" value='<?= serialize($this->secondInfo) ?>'/>
+                    <?php } ?>
+          <!--<p class="d-3-sm3">如果医生库内没有找到匹配的医生信息，就不显示。直接填加单位电话和手机。</p>-->
+                    <dl class="d-3-tel l-fix">
+                        <dt>单位电话：</dt>
+                        <dd>
+                            <input id="qh" type="text" name="qh"  class="qh"/>
+                            <input id="dwdh" type="text" name="dwdh"  class="dwdh"/>
+                        </dd>
+                        <dd class="fix"> <span>* </span> <span class="btx">必填！如010-12345678转8866，请详细填写所在医院的固定电话区号--电话
+                                号及分机，并确保能联系到您。同时我们将拨打此电话，核实是否本人注册。
+                                此电话不会被公开。</span> </dd>
+                    </dl>
+                    <dl class="d-3-tel l-fix" >
+                        <dt>您的手机：</dt>
+                        <dd>
+                            <input id="phone" type="text" name="phone"  class="phone"/>
+                        </dd>
+                        <dd> <span>*</span> <span class="btx"> 必填！作为应急的联系方式，主要用于账号密码的接收沟通。
+                                此号码不会被公开。</span> </dd>
+                    </dl>
+                    <p  class="imgInfo" id="button2"> <a href="javascript:;" onclick="nbcheckfm();"><img src="http://ask.9939.com/images/next-btn.gif"/></a> </p>
+                    <p class="imgInfo" style="padding-top: 0px;">
+                        <label>&nbsp;</label>
+                        <span class="btx" id="error" style="color: #FF0000;font-size: 15px;"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-e">
+        <div class="d-box3">
+            <div class="d-box3-hd">
+                <h3>简便注册，半分钟达成！</h3>
+            </div>
+            <div class="d-box3-bd">
+                <p>第1步填写真实姓名和医院</p>
+                <p>第2步留下联系方式</p>
+                <p class="noborder">第3步完成注册</p>
+            </div>
+            <div class="d-box3-ft">
+                <p class="lxwm">若您对我们的服务有任何疑问 请及时联系我们</p>
+                <p class="telInfo"><span class="tel1"><strong>010-58359999-9755</strong></span>
+                    <span><strong>QQ：40905529</strong></span></p>
+            </div>
+        </div>
+    </div>
+</div>

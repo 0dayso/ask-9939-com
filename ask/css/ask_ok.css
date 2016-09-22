@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.clear{ clear:both;}
+
+
+
+/*- -*/
+.ask_ok_l{ float:left; width:480px; padding:0 10px;}
+.ask_ok_r{ float:left; width:430px; padding:0 10px;}
+
+.ask_ok_mod-01{ clear:both; width:448px; height:120px; padding:15px 15px; background:url(../images/ask_ok-01_bg.gif) no-repeat;}
+.ask_ok_mod-01 .ok{ line-height:28px;}
+.ask_ok_mod-01 .ok h3{ float:left; font-size:16px;}
+.ask_ok_mod-01 .ok h1{ float:left; font-size:22px; color:#FF0404; padding:0 5px;}
+.ask_ok_mod-01 .info li{ margin:10px 5px; height:20px; line-height:20px;}
+.ask_ok_mod-01 .info .left{ float:left; width:150px;}
+.ask_ok_mod-01 .info .right{ float:left;}
+.ask_ok_mod-01 .info a{ float:left; display:block; width:40px; height:35px; padding:15px 0 0 10px; margin:8px; background:#F12262; color:#fff; font-weight:bold; font-size:14px; }
+.ask_ok_mod-01 .pw{ margin:10px 5px; height:20px; line-height:20px;}
+.ask_ok_mod-01 .pw .hd{ color:#F90326; font-size:14px;}
+.ask_ok_mod-01 .pw .bd .inp{ border:1px solid #c4c4c4; width:230px;}
+.ask_ok_mod-01 .pw .bd .but{ background:url(../images/ask_ok-01_pw.gif) no-repeat; width:68px; height:20px; line-height:20px; text-align:center; border:0; color:#fff;}
+
+.ask_ok_mod-01 .list{ width:448px; height:120px; line-height:120px; color:#FF0404; background:#fff; font-weight:bold; font-size:40px; text-align:center;}
+
+
+.ask_ok_mod-02 .hd h3{ font-size:22px; color:#F5030E;}
+.ask_ok_mod-02 .hd h3 span{ color:#F59103;}
+.ask_ok_mod-02 .list li{ background:none; width:200px; padding-left:6px; padding-bottom:10px; padding-top:15px; float:left;}
+.ask_ok_mod-02 .list p{float:left; padding-left:10px; line-height:22px;}
+.ask_ok_mod-02 .list p a{color:#0A78C3;}
+.ask_ok_mod-02 .list p span{ display:block; background:url(../images/ask_ok-02_bg.gif) no-repeat; width:69px; height:20px; line-height:20px; text-align:center;}
+.ask_ok_mod-02 .list img{ float:left; width:102px; height:87px; border:#D2D2D2 1px solid;}
+
+
+.ask_ok_mod-03 .hd h3{ font-weight:normal; margin:15px 0 25px 0;}
+.ask_ok_mod-03 .bd .list li{ float:left; display:inline; padding-right:8px; font-size:14px; font-weight:bold; }
+.ask_ok_mod-03 .bd .list a{ float:left; height:28px; color:#FFF;padding-left:8px; background:url(../images/ask_ok-03_but_l.gif) no-repeat left;}
+.ask_ok_mod-03 .bd .list a span{ float:left; height:28px; padding-right:6px; line-height:28px; background:url(../images/ask_ok-03_but_r.gif) no-repeat right;}
+
+
+.ask_ok_mod-04{ clear:both; height:80px; padding:15px 20px; background:url(../images/ask_ok-04.gif) no-repeat center 40px;}
+
+.ask_ok_mod-05{ line-height:25px; overflow:hidden; zoom:1;}
+.ask_ok_mod-05 img{ margin-bottom:30px;}
+.ask_ok_mod-05 .left{ float:left; padding:0 15px; width:210px; color:#0A73AA;}
+.ask_ok_mod-05 .right{ float:left; padding:0 5px; width:230px; }
+.ask_ok_mod-05 .right a{ color:#0A73AA; font-size:14px; text-decoration:underline;}
+
+
+.ask_ok_mod-06{ position:absolute; left:200px; top:200px; overflow:hidden; zoom:1;}

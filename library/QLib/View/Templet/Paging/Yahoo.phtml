@@ -1,0 +1,41 @@
+<?php
+$pages = array();
+$pageNum = $this->getPageNum(); #总分页数
+$current = $this->getCurrent(); #当前页
+$size = $this->getSize(); #每页显示数
+$total = $this->getTotal(); #获取总数
+$pageSetNum = $this->getPageSetSize(); #分页集数
+$middlePageNum = ceil($pageSetNum / 2); #得到中间数
+$start = $end = 0;
+if ($current <= $middlePageNum) {
+	$start = 1;
+	$end = min($pageNum, $pageSetNum);
+}
+else if ($current + $middlePageNum - 1 > $pageNum) {
+	$start = max(1, $pageNum - $pageSetNum - 1);
+	$end = $pageNum;
+}
+else {
+	$start = max(1, $current - $middlePageNum);
+	$end = min($current + $middlePageNum - 1, $pageNum);
+}
+$html = '';
+if ($current > 1) {
+	$html .= '<a href="' . $this->getUrl($current - 1) . '" title="上一页">上一页</a>&nbsp;';
+}
+if ($pageNum > 1) {
+	for ($i = $start; $i <= $end; ++$i) {
+		$_start = $size * ($i - 1) + 1;
+		$_end = min($size * $i, $total);
+		if ($i != $current) {
+			$html .= '<a href="' . $this->getUrl($i) . '" title="Results ' . $_start . ' - ' . $_end . '">' . $i . '</a>';
+		}
+		else {
+			$html .= '<a href="javascript:void(0);" class="here">' . $i . '</a>';
+		}
+	}
+}
+if ($current < $pageNum) {
+	$html .= '&nbsp;<a href="' . $this->getUrl($current + 1) . '" title="下一页">下一页</a>';
+}
+print $html;

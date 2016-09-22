@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/images_ask/css/r.css" rel="stylesheet" type="text/css" />
+<link href="/images_ask/css/m.css" rel="stylesheet" type="text/css" />
+<link href="/images_ask/css/b.css" rel="stylesheet" type="text/css" />
+<link href="/images_ask/css/g.css" rel="stylesheet" type="text/css" />
+<link href="/images_ask/css/index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_index.css"/>
+<title>会员注册-认领</title>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+$(document).jTab({
+ menutag:".hd li"
+});
+});
+
+function getPages(url){
+		var html = '';
+		jQuery.ajax({
+			url : url+'&src=JQ',
+			dataType:"json",
+			cache:false,
+			success:function(data){
+				jQuery('#page_'+data.status+'a').html(data.pagehtml);
+				jQuery('#page_'+data.status+'b').html(data.pagehtml);
+				jQuery.each(data.aList,function(i){
+					if(data.aList[i].content==null)data.aList[i].content='';
+					html+='<dl><dt><span>'+data.aList[i].ctime+'<a href=\"#\">'+data.aList[i].username+'</a></span><strong class=\"false\"><a href=\"/ask/show/?id='+data.aList[i].id+'\">'+data.aList[i].title+'</a></strong></dt><dd><p class=\"info\"><em>悬赏分：'+data.aList[i].point+'</em> - 离问题结束还有 '+data.aList[i].endtime+'</p><p class=\"des\">'+data.aList[i].content+'</p></dd></dl>';
+				});
+				jQuery('#list'+data.status).html(html);
+			}
+		});
+	}
+	
+</script>
+</head>
+<body>
+
+<div id="doc" class="w970">
+  <div id="hd"> <?php require(APP_ROOT."/header195.shtml");?></div>
+  <div id="bd" class="d-mod">
+    <div class="d-box1-hd"></div>
+    <div class="d-box1-bd">
+      <div class="hd"></div>
+      <div class="bd">
+        <div class="d-grid l-fix">
+          <div class="col-m">
+            <div class="m-wrap">
+              <div class="d-box2">
+                <div class="d-box2-hd">
+                  <h4><a href="#">&gt;&gt;<span>医生联系方式</span></a></h4>
+                </div>
+                <form id="fm" action="" method="POST">
+                <div class="d-3-box2"> 
+                  <?php if(!empty($this->doctor)){ ?>
+                   <dl class="d-3-qrInfo">
+                    <dd class="d-3-wbg d-3-sm1">久久医生库里找到和您相符的信息，请核实确认。</dd>
+		    <?php foreach($this->secondInfo AS $k=>$v):?>
+			    <dd class="d-3-wbg d-3-xxInfo l-fix "> <span> 
+			      <strong><?=$this->hospital['name_hospital']?></strong> </span> <span><?=$this->keshi?></span> <span><?=$this->doctor[0]['name_doctor']?></span> <span><a href="http://yisheng.9939v2.com/<?=$this->doctor[0]['url']?>" target="_blank">查看详情&gt;&gt;</a></span> 
+			    </dd>
+			    <dd class="d-3-wbg d-3-xxInfo l-fix "> <span><strong>
+				<input id="rl" type="radio"  name="qrInfo" checked value='<?=serialize($v)?>'/>我是本人
+				<input id="rl" type="radio"  name="qrInfo" />我不是本人</strong></span>
+			    </dd>
+                   <?php endforeach; ?>
+		    <dd class="d-3-sm2">如果确认是您本人，请选中直接认领，同时留下您的联系方式，我们将把线上已有账号发送给您。</dd>
+                  </dl>
+                  <?php }else{ ?>
+			<input  type="hidden" name="secondInfo" value='<?=serialize($this->secondInfo)?>'/>
+		  <?}?>
+                  <!--<p class="d-3-sm3">如果医生库内没有找到匹配的医生信息，就不显示。直接填加单位电话和手机。</p>-->
+                  <dl class="d-3-tel l-fix">
+                    <dt>单位电话：</dt>
+                    <dd>
+                      <input id="qh" type="text" name="qh"  class="qh"/>
+                      <input id="dwdh" type="text" name="dwdh"  class="dwdh"/>
+                    </dd>
+                    <dd class="fix"> <span>* </span> <span class="btx">必填！如010-12345678转8866，请详细填写所在医院的固定电话区号--电话
+                      号及分机，并确保能联系到您。同时我们将拨打此电话，核实是否本人注册。
+                      此电话不会被公开。</span> </dd>
+                  </dl>
+                  <dl class="d-3-tel l-fix" >
+                    <dt>您的手机：</dt>
+                    <dd>
+                      <input id="phone" type="text" name="phone"  class="phone"/>
+                    </dd>
+                    <dd> <span>*</span> <span class="btx"> 必填！作为应急的联系方式，主要用于账号密码的接收沟通。
+                      此号码不会被公开。</span> </dd>
+                  </dl>
+                 <p  class="imgInfo"> <a href="#" onclick="checkfm();"><img src="/images/next-btn.gif"/></a> </p></div>
+              </div>
+            </div>
+          </div>
+          </form>
+          <div class="col-e">
+            <div class="d-box3">
+              <div class="d-box3-hd">
+                <h3>简便注册，半分钟达成！</h3>
+              </div>
+              <div class="d-box3-bd">
+                <p>第1步填写真实姓名和医院</p>
+                <p>第2步留下联系方式</p>
+                <p class="noborder">第3步完成注册</p>
+              </div>
+              <div class="d-box3-ft">
+                <p class="lxwm">若您对我们的服务有任何疑问 请及时联系我们</p>
+                <p class="telInfo"><span class="tel1"><strong>010-58359999-9755</strong></span>
+                <span><strong>QQ：40905529</strong></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft"></div>
+    </div>
+    <div class="d-box1-ft"><a style="color: #1F376D;"  href="http://home.9939.com/">家园</a> | <a style="color: #1F376D;"  href="http://home.9939.com/buluo/">部落</a> | <a style="color: #1F376D;"  href="http://ask.9939.com/">问答</a></div>
+  </div>
+ <?php require(APP_ROOT."/footer.html");?>
+</div>
+<script>
+function checkfm(){
+	var fm=document.getElementById('fm')
+	var qh=document.getElementById('qh').value;
+	var dwdh=document.getElementById('dwdh').value;
+	var phone=document.getElementById('phone').value;
+	
+	fm.action="<?=$this->tzurl?>";
+    if(!qh){
+        alert('请填区号!');	
+    }else if(!dwdh){
+    	alert('请填写电话号!');
+    }else if(!phone){
+    	alert('请填写手机号!');
+    }else{
+    	fm.submit();
+    }
+	
+}
+
+
+</script>

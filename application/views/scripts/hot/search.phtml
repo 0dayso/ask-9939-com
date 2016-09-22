@@ -1,0 +1,225 @@
+<?php
+$cache_key = sprintf('%s|%s|%s-%d',$this->controllername,$this->actionname,$this->pinyinKeywords,$this->cache_page);
+$data = QLib_Cache_Client::getPageCache('pages', $cache_key,24);
+if ($data) {
+    echo $data;
+} else {
+    ob_start();
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title><?=$this->metaTitle;?></title>
+        <meta name="mobile-agent" content="format=html5;url=http://wapask.9939.com/hot/<?php echo $this->pinyinKeywords;?>/" />
+        <link rel="alternate" media="only screen and(max-width: 640px)" href="http://wapask.9939.com/hot/<?php echo $this->pinyinKeywords;?>/" >
+        <meta name="keywords" content="<?=$this->metaKeywords;?>" />
+        <meta name="description" content="<?=$this->metaDescription;?>" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/bd_search.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->base_include_path; ?>/css/main.css?201609091"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->base_include_path; ?>/css/body.css?201609091"/>
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/rclumn.css?v=2016091212" />
+        <script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/jquery.placeholder.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/page.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/scrollbar.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/user_login.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/gundong.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/DD_belatedPNG.js"></script>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+        <style type="text/css">
+            /*wz_yc03*/
+            .wz_yc03{border:1px solid #e4e4e4; overflow:hidden; padding:10px 0 6px 15px; border-top:2px solid #00c7d3;}
+            .wd_yc03_ys{ overflow:hidden; margin-top:14px;}
+            .wd_fl_wz{overflow:hidden;position:relative; margin-top:10px; }
+            .wd_fl_wz p{ height:31px; line-height:26px;}
+            .wd_fl_img{ float:left; width:80px; height:80px; margin-right:17px;}
+            .wd_fl_P{ color:#333; font-size:14px; font-weight:bold;}
+            .wd_fl_P2{ color:#a4a4a4; font-size:12px;}
+            .wd_yc04{overflow:hidden;zoom:1; border:1px solid #dfdede; border-top:2px solid #00c7d3; margin-top:20px; padding:10px 11px 0px 16px;}
+            .wd_dl{overflow:hidden;margin:9px 0 20px 0;}
+            .wd_dl p {width:271px; height:56px;}
+            .wd_img{ float:left; margin-right:20px;}
+            .wd_fl_p1 a{color:#fff; text-align:center;}
+            .wd_fl_wz .wd_fl_p1{font-size:12px; text-align:center;line-height:20px; margin-top:22px;background:url(http://ask.9939.com/ask/v1/images/wd_hs.jpg) no-repeat; width:66px;height:21px; position:absolute; right:10px; top:10px;}            
+        </style>
+    </head>
+    <body>
+
+        <!--#include virtual="/public/include/header.shtml"-->        
+        <div class="line_blu"></div>
+        <div class="conet wd_mian"><b>当前位置：</b><a href="http://www.9939.com/" title="久久健康网">久久健康网</a>&gt;<a href="http://ask.9939.com" title="久久问医">久久问医</a>&gt;<a href="http://ask.9939.com/hot/" title="">热搜词</a>&gt;<a href="http://ask.9939.com/hot/<?=$this->pinyinKeywords;?>" title="<?=$this->keywords;?>" target="_blank"><?=$this->keywords;?></a></div>
+        <div class="conet hotpage">
+            <div class="w678 fl">
+                <h1 class="hotques"><?=$this->keywords;?></h1>
+                <ul class="allubot">
+                    
+                    <?php if (!empty($this->searchList)) { ?>
+                        <?php foreach($this->searchList as $k =>$v) { 
+                                    $title = $v['ask']['title'];
+                                    $short_title  = QLib_Utils_String::cutString($title, 20);
+//                                    $short_title = str_replace($this->keywords, '<font>'.$this->keywords.'</font>', $short_title);
+                                    $short_title = preg_replace("'({$this->explain_words})'","<font>$0</font>",$short_title);
+                                    $content = QLib_Utils_String::cutString(strip_tags($v['ask']['content'],''), 45);
+                                    $url = "http://ask.9939.com/id/".$v['ask']['id'];
+                                    $answer_content = !empty($v['answer']['content'])?QLib_Utils_String::cutString(strip_tags($v['answer']['content'],''), 45):'';
+                        ?>
+                    <li>
+                        <h2 class="adopt-proble"><a href="<?=$url?>" target="_blank" title="<?php echo $title; ?>"><?=$short_title?></a></h2>
+                        <p class="qusdesc">问题描述：<?=$content?></p>
+                        <p class="doctan"><b>医生分析：</b><?=$answer_content?></p>
+                    </li>
+                        <?php } ?>
+                    <?php } ?>
+                    
+                </ul>
+                <div class="page clearfix">
+                    <?php echo $this->paging->view(); ?>
+                </div>
+            </div>
+            <div class="w300 fr">
+                <?php if(count($this->relateDiseaseWords)>0) { ?>
+                    <div class="quitr_doctor mTop">
+                        <div class="rquit_line">
+                            <h4>相关热词</h4>
+                        </div>
+                        <div class="meb_lab mT12">
+                            <?php
+                            foreach ($this->relateDiseaseWords as $k=>$v){
+                                $cls = $k==0?' class="cord4"':'';
+                                $cls = '';
+                                $url = sprintf('%s%s/',$this->searchurl,  str_replace(' ', '', $v['pinyin']));
+                            ?>
+                            <a href="<?php echo $url; ?>" <?=$cls?>  target="_blank" title="<?php echo $v['keywords']; ?>"><?=$v['keywords']?></a>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                <?php } ?>
+                <div class="clumn mTop">
+                <script type="text/javascript">
+                    var cpro_id = "u2316046";
+                    (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {at: "3", rsi0: "300", rsi1: "250", pat: "17", tn: "baiduCustNativeAD", rss1: "#FFFFFF", conBW: "1", adp: "1", ptt: "0", titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS: "14", rss2: "#000000", titSU: "0"}
+                </script>
+                <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                </div>
+                <div class="r_doctor quitr_doctor mTop">
+                    <div class="rquit_line cuols"><h4><span title="<?php echo $this->keywords; ?>"><?php echo QLib_Utils_String::cutString($this->keywords, 6,0);?></span>文章</h4></div>
+                    <ul class="er_news">
+                        <?php foreach($this->rel_art_list as $k=>$v){?>
+                        <?php
+                            $title = $v['title'];
+                            $shorttitle = QLib_Utils_String::cutString($v['title'], 17, '...');
+                            $url = $v['url'];
+                        ?>
+                        <li><a href="<?=$url?>" title="<?=$title;?>" target="_blank"><?=$shorttitle?></a></li>
+                        <?php }?>
+                    </ul>
+                </div>
+                <div class="r_doctor quitr_doctor mTop">
+                    <div class="rquit_line"><h4>推荐专家</h4></div>
+                    <div class="expert pr20">
+                        <?php
+                        if(isset($this->famousDoctors)) {
+                            foreach ($this->famousDoctors as $k => $v) {
+                                echo urldecode($v['text']);
+                            }
+                        }
+                        ?>
+
+                        <?php
+//                            $tuijianDoc = array(
+//                                '32' => '1037469', //内科
+//                                '102' => '1056316', //外科
+//                                '220' => '1056318', //男科
+//                                '193' => '1056320', //妇产科
+//                                '523' => '1056322', //皮肤病
+//                                '236' => '1056324', //	儿科
+//                                '276' => '1056325', //	五官科
+//                                '428' => '1056326', //	中医科
+//                                '324' => '1056327', //	传染病
+//                                '371' => '1056329', //	肿瘤科
+//                                '299' => '1056332', //	整形美容
+//                                '525' => '1056366', //	心理推荐
+//                                '15' => '1037469', //	其他推荐
+//                                '537' => '1123858' //热门标签等等
+//                            );
+//                            $doc = $tuijianDoc[$this->adnum];
+                            ?>
+<!--                            <script type="text/javascript">BAIDU_CLB_fillSlot("<?php //echo $doc; ?>");</script>-->
+                    </div>
+                </div>
+                <div class="r_doctor quitr_doctor mTop">
+                    <div class="rquit_line"><h4>热门问答</h4></div>
+                    <ul class="er_news">
+                        <?php foreach($this->hotQuestion as $k=>$v){?>
+                        <?php
+                            $title = $v['title'];
+                            $shorttitle = QLib_Utils_String::cutString($v['title'], 17, '...');
+                            $url = "http://ask.9939.com/id/".$v['id'];
+                        ?>
+                        <li><a href="<?=$url?>" title="<?=$title;?>" target="_blank"><?=$shorttitle?></a></li>
+                        <?php }?>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="letter-switch  lett-tab leume  mT25 clearfix">
+                <?php foreach($this->letter_list as $k=>$v) {
+                        $class_name =($this->letter==$k)? 'class="currm move"': 'class="currm"';
+                        $letter_url = sprintf('%s%s/',$this->letterurl,$k);
+                    ?>
+                    <a  switc="<?php echo $k; ?>"  href="<?php echo $letter_url; ?>" <?php echo $class_name; ?> target="_blank" ><?php echo $k; ?></a>
+                <?php } ?>
+            </div>
+            <div class="lett-tab-con f12">
+                <?php $i=0;foreach($this->randWords as $k=>$v){ 
+                        $zimu = strtoupper($k);
+                        $style =(strtoupper($this->letter)==$zimu)?'':'curro';
+                    ?>
+                    <div switc-ass="<?php echo $zimu; ?>" class="lett-tab-<?php echo $zimu; ?> hotwords <?php echo $style; ?>"  >
+                        <?php
+                        if(count($v) > 1){
+                            foreach($v as $kk=>$vv){
+                                $url = sprintf('%s%s/',$this->searchurl,  str_replace(' ', '', $vv['pinyin']));
+                                echo '<a href="'.$url.'" title="'.$vv['keywords'].'" target="_blank">'.$vv['keywords'].'</a>';
+                            }
+                        }
+                        ?>
+                    </div>
+                <?php $i++;} ?>
+            </div>
+            <script>
+                $('.currm').mousemove(function () {
+                    var zimu = $(this).attr('switc');
+                    var className=".lett-tab-" + zimu;
+                    $('.move').removeClass('move');
+                    $(this).addClass('move');
+                    var div=$(".lett-tab-con").find(className);
+                    $(".lett-tab-con div").addClass('curro');
+                    if(div){
+                        div.removeClass('curro');
+                    }
+                }).click(function(){
+//                    return false;
+                });
+            </script>
+            
+            <!-- 底部常见疾病、热门科室 -->
+                <!--#include virtual="/include/footer_ask_experience.shtml"--> 
+            <!-- 底部常见疾病、热门科室 -->
+        </div>
+        <!-- 页面底部 -->
+        <!--#include virtual="/public/include/footer.shtml"-->
+        <!--#include virtual="/public/include/baidu_js_push.php"-->
+    </body>
+</html>
+
+<?php
+    $cache_data = ob_get_contents();
+    QLib_Cache_Client::setPageCache('pages', $cache_key, $cache_data, 24);
+    ob_flush();
+}
+?>

@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+/*@Author:Luck&jiang*/
+/*@CreatDate:2009-03-18*/
+/*@WebSite:http://www.9939.com*/
+
+/*Link*/
+a{color:#333; text-decoration:none}
+a:hover{color:#000; text-decoration:none}
+.white,.white:hover{ color:#FFF}
+.orange,.orange:hover{color:#F60}
+.lblue,.lblue:hover{ color:#2577A9}
+.red,.red:hover{ color:#C00;}
+.green{ background:#99CC00}
+.lgreen{color:#2E98A6}
+
+/*Font*/
+h3{ font-size:14px;}
+/*Layout*/
+#wrapper{width:950px; margin:auto;}
+#top{margin:10px auto 0; height:55px;}
+#header{margin:0 auto 10px;}
+#mainbody{margin:auto;}
+.bd01{ border:1px solid #DDD;}
+.bd02{ border:1px solid #D9EBFF;}
+.left{float:left;}
+.right{float:right;}
+.w950{ width:950px;}
+.w755{ width:755px;}
+.w720{width:720px;}
+.w530{width:530px;}
+.w528{width:528px;}
+.w218{ width:218px;}
+.w220{width:220px;}
+.w185{width:185px;}
+.h200{height:200px;}
+.pd10{padding:10px;}
+.mt10{margin-top:10px;}
+.mt5{margin-top:5px;}
+.mr5{ margin-right:5px;}
+.pb10{ padding-bottom:10px;}
+/*Class*/
+.clear{clear:both;height:0;overflow:hidden;}
+.clfix{zoom:1;}
+.clfix:after{height:0;visibility: hidden;content: ".";display:block;clear:both;}
+.top_nav{width:330px; height:30px; background:url(images_doctor/icon001.png) no-repeat left; float:left}
+.top_nav ul li{ float:left; width:54px; text-align:center; padding-top:32px; }
+.logins{height:30px; float:right; text-align:right}
+.logins .text01{ border:1px solid #DDD; width:100px;vertical-align:middle;}
+.logins p{padding-top:5px;}.logins span{ margin-left:50px;}
+.logo{ margin-left:10px;}
+.logo a{ outline:0;}
+.logo a{ blur:expression(onfocus=this.blur);}
+/*.question{float:right;width:720px; height:130px;}*/
+.question{ margin-left:10px;}
+.question .text02{width:705px; height:35px; margin:2px 5px 0 0;vertical-align:middle;color:#ccc; font-size:14px; padding:5px 0 0 5px; border:1px solid #BBB; overflow:auto;}
+.nav{ height:35px; margin-top:10px; background:url(images_doctor/line002.jpg) repeat-x; border-right:1px solid #E4F2FD; border-left:1px solid #E4F2FD;}
+.nav ul li{ float:left; font-size:14px; line-height:35px; margin:0 12px;}
+.nav .on{ padding:0 5px;background:url(images_doctor/line003.jpg) repeat; color:#FFF; font-weight:bold;}
+.menu{background:url(images_doctor/left_top.jpg) no-repeat top; padding-top:11px;}
+.extra{background:url(images_doctor/right_top.jpg) no-repeat top; padding-top:11px;}
+/*Button*/
+.btn01{vertical-align:middle;}
+.btn02{ margin:0 5px;}
+/*Title*/
+.t01{ background:url(images_doctor/line004.jpg) repeat; height:23px;}
+.t01 h3{ padding:0 5px;}
+.t02{ display:block;}.t02 h3{ padding:5px 0 0 10px;}
+/*List*/
+.l01{ width:533px; margin-top:5px;}
+.l01 ul li{ background:url(images_doctor/arrow01.jpg) no-repeat 0 5px; float:left; width:48%; padding-left:10px; line-height:20px;}
+.hdimg { padding:5px 0; text-align:center;}
+.l01 ul li a,.l01 ul li a:hover{color:#3A5298;}
+.l02 ul li{ line-height:24px; padding-left:10px;}
+.l03{background:#F5F5F5; padding:4px 0 0 0;}
+.l03 ul li{ float:left; line-height:28px; margin:0 5px; white-space:nowrap; display:inline}
+.l03 dl { margin-bottom:10px; line-height:20px;}
+.l03 dl dt { margin-bottom:10px;}
+.l03 dl dt span { padding:2px 16px 2px 10px; background:url(images_doctor/dtbg.png) no-repeat right top; color:#fff;}
+.l03 dl dd { display:inline; float:left; margin:2px 0 2px 6px;}
+.l04{ border:1px solid #D5D5D5; border-bottom:none; background:url(images_doctor/t01_b.jpg) no-repeat -1px bottom; width:218px; overflow:hidden;}
+.l04 span{ height:28px; background:url(images_doctor/bg04.jpg) right; line-height:24px; font-weight:bold; color:#FFF; padding:6px 15px 6px 10px; font-size:14px;}
+.l04 ul{margin:5px;}
+.l04 ul li{ float:left; width:22%; padding-left:5px; line-height:20px;}
+.l04 ul li a,.l04 ul li a:hover{ color:#00285F;}
+.l04 dl{margin:10px; line-height:25px; color:#00285F;}
+.l04 dl dt { margin:5px 0; font-size:14px; font-weight:700;}
+.l05{ float:left}
+.l05 ul{ background:url(images_doctor/bg05.jpg) no-repeat bottom; width:260px;}
+.l05 ul li{ padding:0 10px; line-height:24px;}
+.l05 ul li span{ float:right;}
+.l06{background:url(images_doctor/bg05.jpg) no-repeat bottom; width:260px; float:left}
+.l06 ul{ background:url(images_doctor/arrow03.jpg) no-repeat 8px 25px;}
+.l06 ul li{ padding:0 10px 0 28px; line-height:24px;}
+.l06 .title{ background:#DDD; line-height:20px; margin:5px 5px 0px 5px;}
+.l06 .title .l{ padding-left:20px;}.l06 .title .r{ padding-right:10px; float:right}
+.l06 ul li span{ float:right;}
+
+.current { padding-left:6px; background:url(images_doctor/currentbg.png) repeat-x scroll left bottom; line-height:30px;}
+.ulimg { float:left; margin-right:10px;}
+.m_b6 { margin-bottom:7px;}
+.tl_v { vertical-align:middle;}
+#main2 ul li { margin:20px 0;}
+#main2 ul li span,#main2 ul li a { margin-right:10px;}
+#main2 ul li a { font-weight:700; color:#0259a0;}
+
+/*Picture*/
+.p01{ width:755px; height:174px; background:url(images_doctor/bg02.jpg) no-repeat;}
+.p01 ul li{ float:left; margin:4px 2px 0 8px; display:inline;text-align:center;}
+.p01 ul li img{ border:1px solid #DDD; width:95px; height:90px; overflow:hidden}
+.p01 ul li p{ background:#576FAD;line-height:20px; margin-bottom:5px;}
+.p02 dl{ float:left; margin:5px 0 0 0;width:250px;}
+.p02 dt img{ border:1px solid #DDD; width:250px; height:135px;}
+.p02 dt p{ background:url(images_doctor/line001.jpg) repeat-x; height:27px; line-height:27px; width:252px;text-align:center; font-weight:bold;}
+.p02 dd{ color:#666; text-indent:2em; padding-top:5px;}
+.p03{ width:530px; height:143px; background:url(images_doctor/bg03.jpg) no-repeat;}
+.p03 ul li{float:left; margin:30px 0 0 10px;} 
+.p03 ul li img{ width:90px; height:80px; border:2px solid #DDD;}
+.p03 ul li p{ text-align:center; padding-top:0;*padding-top:5px;}
+/*jjt*/
+.hotimg{ width:220px; height:170px; background:url(images_doctor/bg01.jpg) no-repeat}
+.hotimg img{ margin:5px 0 0 5px; width:210px; height:135px;}.hotimg p{width:210px; text-align:center; padding-top:5px;}
+#tabs0{width:218px;border-left:1px solid #3DADB9; border-right:1px solid #3DADB9;background:#fff}
+.main0 ul,#main2 ul{display: none;}.main0 ul.block,#main2 ul.block{ display: block;}
+.menu1{ width:98%;font-size:12px;}
+.menu0 ul{ float:left; }
+.menu0 li{display:block; float:left; cursor:pointer; margin:5px; }
+.menu0 li.hover{ color:#F60;font-weight:bold}
+#tabs2 { margin:10px 0; border-bottom:1px solid #ccc;}
+#menu2 ul { margin-top:10px;}
+#menu2 li { float:right; margin-right:10px; width:75px; line-height:25px; font-size:13px; text-align:center; cursor:pointer; background:url(images_doctor/butbg.png) no-repeat left bottom;}
+#menu2 li.hover { background:url(images_doctor/butbg.png) no-repeat left top; color:#fff; font-weight:700;}
+.main0{ background:url(images_doctor/t01_b.jpg) no-repeat bottom; padding-bottom:10px;}
+.main0 ul{background:url(images_doctor/arrow02.jpg) no-repeat 5px 7px; padding-left:30px;}
+.main0 ul li{ line-height:24px;}
+#MarqueePro,#MarqueePro3,#MarqueePro6{overflow: hidden; height:105px;*height:106px; width:220px; margin-top:10px; margin-bottom:10px;}
+
+/*juyitang  begin,main_nav begin*/
+#main_nav{ background:url(images_doctor/nav_bg.png) no-repeat; height:35px; margin-bottom:9px; font-size:14px;}
+#main_nav ul li{ float:left; display:inline; width:94px; height:22px; padding-top:10px; text-align:center;}
+#main_nav ul .on{ background:url(images_doctor/nav_bg.png) no-repeat left -155px; font-weight:700;}
+#main_nav ul .on a{ color:#FFF;}
+#main_container{}
+.content_zh{ width:718px; float:left;}
+.content_title{ background:url(images_doctor/nav_bg.png) no-repeat left -56px; padding-top:14px; height:21px; overflow:hidden;}
+.content_title h2{ background:url(images_doctor/content_title_bg.png) no-repeat; margin-left:11px; text-indent:-99999px;}
+.content_nav{ background:url(images_doctor/nav_bg.png) no-repeat left -93px; height:32px; margin-top:2px;}
+.content_nav ul{ float:right; display:inline; margin-right:37px;}
+.content_nav ul li{ background:url(images_doctor/content_nav_bg.png) no-repeat; float:left; display:inline; height:18px; margin:5px 0 0 11px; padding-top:7px; text-align:center;}
+.content_nav ul li a{ outline:none;blr:expression(this.onFocus=this.blur())}
+.content_nav ul .on{ font-weight:700;}
+.content_nav ul .on a{ color:#FFF;}
+.content_main{ margin-top:13px;}
+.content_main table td{ padding:6px 0; border:1px solid #EAEAEA; text-align:center;}
+.table_head_zh{ font-weight:700; text-align:center;}
+.content_main table td img{ vertical-align:middle;}
+.content_main table .headship a{ color:#00ADA9; text-decoration:underline;}
+.content_main table .disease a{ color:#00ADA9; text-decoration:underline;}
+.right_table{ margin-left:8px;}
+.content_main table .no_lborder{ border-left:none;  valign:top}
+.content_main table .no_rborder{ border-right:none;}
+.page{ background:url(images_doctor/page_bg.gif) repeat-x; height:21px; padding-top:7px; margin-top:5px; border:1px solid #EAEAEA; text-align:center;}
+.page span{ margin-left:10px;}
+.t1{ background:#FFF;}
+.t2{ background:#F9F9F9;}
+.doctor_data{ height:300px;}
+.doctor_data h4{ margin:21px 0 10px 17px; color:#00275E;}
+.doctor_data p{ margin-left:17px; color:#00275E; line-height:21px;}
+/*sidebar -------------------------------------------------------------begin*/
+.sidebar_zh{ width:222px; float:right;}
+
+/*articles_rank page -------------------------------------------------begin*/
+.articles_rank .content_nav ul li{ background-position:-66px -169px; width:56px;}
+.articles_rank .content_nav ul .on{ background-position:left -169px;}
+.articles_rank .content_main table table td{ padding-left:6px; text-align:left;}
+.articles_rank .content_main table .article_author a{ color:#558B95; text-decoration:underline;}
+.articles_rank .content_main table .rank_num{ padding-left:0; color:#631717; font-weight:700; text-align:center;}
+.articles_rank .content_main table .rank_num_head{ color:#000;}
+
+/*experience_rank page -------------------------------------------------begin*/
+.experience_rank .content_title h2{ background-position:left -97px;}
+.experience_rank .content_nav ul li{ background-position:-88px -111px; width:73px;}
+/*.experience_rank .content_nav ul .on_1{ background-position:-165px top; width:157px;}*/
+.experience_rank .content_nav ul .on_1{ background-position:left top; width:157px;}
+.experience_rank .content_nav ul .on_1 a{ color:#FFF; font-weight:700;}
+.experience_rank .content_nav ul .down_1{ background-position:-165px top; width:157px;}
+.experience_rank .content_nav ul .on_2{ background-position:left -111px; width:78px;}
+.experience_rank .content_nav ul .on_2 a{ color:#FFF; font-weight:700;}
+/*.experience_rank .content_nav ul #ex_rank_second{ background-position:-88px -111px; width:73px;}*/
+
+/*visitedCount_rank page -------------------------------------------------begin*/
+.visitedCount_rank .content_title h2{ background-position:left -143px;}
+.visitedCount_rank .content_nav ul li{ background-position:-88px -111px; width:78px;}
+.visitedCount_rank .content_nav ul .on{ background-position:left -111px;}
+
+/*reversion_rank page -------------------------------------------------begin*/
+.reversion_rank .content_title h2{ background-position:left -51px;}
+.reversion_rank .content_nav ul li{ background-position:-118px -55px; width:108px;}
+.reversion_rank .content_nav ul .on{ background-position:left -55px;}
+
+/*flowerReceived_rank page -------------------------------------------------begin*/
+.flowerReceived_rank .content_title h2{ background-position:left -233px;}
+.flowerReceived_rank .content_nav ul li{ background-position:-66px -169px; width:56px;}
+.flowerReceived_rank .content_nav ul .on{ background-position:left -169px;}
+
+
+/*medicineResource_rank page -------------------------------------------------begin*/
+.medicineResource_rank .content_title h2{ background-position:left -189px;}
+.medicineResource_rank .content_nav ul li{ background-position:-66px -169px; width:56px;}
+.medicineResource_rank .content_nav ul .on{ background-position:left -169px;}
+.medicineResource_rank .content_main table table td{ padding-left:6px; text-align:left;}
+
+/*grade_rank page -------------------------------------------------begin*/
+.grade_rank .content_title h2{ background-position:left -277px;}
+.grade_rank .content_nav ul li{ background-position:-66px -169px; width:56px;}
+.grade_rank .content_nav ul .down_1{ background-position:-118px -55px; width:108px;}
+.grade_rank .content_nav ul .on{ background-position:left -169px;}
+.grade_rank .content_nav ul .on_1{ background-position:0 -55px; width:108px; font-weight:700;}
+.grade_rank .content_nav ul .on_1 a{ color:#FFF;}
+.table_title{ font-size:14px; font-weight:700;}

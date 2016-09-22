@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<title>提交成功_健康问答_久久健康网</title>  
+<link rel="stylesheet" type="text/css" href="/ask/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="/ask/css/ask.css"/>
+<link rel="stylesheet" type="text/css" href="/ask/css/ask_message_ok.css">
+<script type="text/javascript" src="/ask/js/jquery.js"></script>
+<script>
+var userpassword="<?=$this->tmp_new_user['zdpassword'] ?>";
+function tijiao(){
+    if($('#username').val() == ''){
+        alert("请填写用户名");
+        $('#username').focus();
+        return false;
+    }
+    var patternyh=/^[\w]+$/;
+    chkFlag = patternyh.test($("#username").val());
+    if(!chkFlag){
+        alert("用户名只能是下划线，数字，字母");
+        $('#username').focus();
+        return false;
+    }
+    if($('#password').val() == ''){
+        alert("请填写密码");
+        $('#password').focus();
+        return false;
+    }
+    if($('#password').val().length < 6){
+        alert("密码长度不小于6个字符");
+        $('#password').focus();
+        return false;
+    }
+    var button=$("#button").html();
+	$("#button").html("<br><br>正在提交...");
+	$.ajax({
+	type: "POST",
+	url:  "/askt/cross",
+	data: "act=update"
+         +"&username="+$('#username').val()
+         +"&password="+$("#password").val()
+         +"&oldusername=<?=$this->tmp_new_user['username'] ?>"
+         +"&oldpassword=<?=$this->tmp_new_user['zdpassword'] ?>"
+         +"&rank="+(new Date()).getTime(),
+	dataType:'json',
+	success: function(msg){
+		if(msg.error==1){
+	        alert("更改成功");
+            $("#button").html("");
+      	    $(".ask_ok_mod-01").html('<div class="list">问题发布成功！</div>');
+            userpassword=$("#password").val();
+            window.location.href="#email";
+            
+		}else{
+	        alert(msg.error);
+            $("#button").html(button);
+		}
+	}});
+    return false;
+}
+var cid='<?php echo $this->askid;?>';
+function ismobile(o){
+    var button=$("#button3").html();
+    var ismobile = o.checked ? 1 :0;
+	$.ajax({
+	type: "POST",
+	url:  "/askt/ismobile",
+	data: "act=is_mobile"
+         +"&password="+userpassword
+         +"&ismobile="+ismobile
+         +"&askid="+cid,
+	dataType:'json',
+	success: function(msg){
+	}});
+    return false;
+}
+function ismail(o){
+    var button=$("#button4").html();
+    var ismail = o.checked ? 1 :0;
+	$.ajax({
+	type: "POST",
+	url:  "/askt/ismail",
+	data: "act=is_mail"
+         +"&password="+userpassword
+         +"&ismail="+ismail
+         +"&askid="+cid,
+	dataType:'json',
+	success: function(msg){
+	}});
+    return false;
+}
+function tomail(){
+    if($('#mail').val() == ''){
+        alert("请填写E－mail");
+        $('#mail').focus();
+        return false;
+    }
+    var email = $('#mail').val();
+    var pattern = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)/;
+    chkFlag = pattern.test(email);
+    if(!chkFlag){
+        alert("E－mail格式不正确");
+        $('#mail').focus();
+        return false;
+    }
+    var button=$("#button2").html();
+	$("#button2").html("正在发送邮件，请耐心等待...");
+	$.ajax({
+	type: "POST",
+	url:  "/askt/tomail",
+	data: "act=update"
+         +"&password="+userpassword
+         +"&mail="+$('#mail').val()
+         +"&rank="+(new Date()).getTime(),
+	dataType:'json',
+	success: function(msg){
+		if(msg.error==1){
+	        alert("邮件发送成功，请检查邮件");
+            $("#button2").html("");
+		}else{
+	        alert(msg.error);
+            $("#button2").html(button);
+		}
+	}});
+    $("#ismail").attr("disabled",false);
+    return false;
+}
+function is_code(){
+    var code = $("#code").val();
+    var mobile = $("#mobile").val();
+    if(code){
+        $.get('http://home.9939.com/user/iscode/?sy=1&jsoncallback=?',{act:'c',c:$('#code').val(),n:mobile},function(e){
+            
+    	   if(e.msg=='exists'){
+    	        alert("验证码有误请重新输入");
+                return false;
+    		}
+            if(e.msg=='success'){
+    		    alert("验证成功");
+                window.location.href=location.href;
+    		}
+            
+        },'jsonp')
+    }else{
+        alert("请输入验证码");
+    }
+}
+function flushImg(){     
+    var mobile = $("#mobile").val();
+    var regexp = /(13|15|18|14)\d{9}$/
+     if(!regexp.test(mobile)){
+        alert('手机号码格式错误');
+        //return false;
+    }else{
+        
+         $.get('http://home.9939.com/user/ismobile/?sy=1&jsoncallback=?',{act:'m',m:$('#mobile').val()},function(msg){
+             if(msg.msg=='exists'){
+    	        alert("手机号已存在请更改");
+                return false;
+    		}else{
+    		  img();
+    		}
+            
+        },'jsonp')
+    }
+   // var url = 'http://home.9939.com/user/mobile/';
+//        url += '?m='+mobile+'&r='+Math.random();
+
+    var input = '<br/><div style="float:left;">请输入验证码：<input name="code" type="text" id="code" size="4"  value="" />&nbsp;&nbsp;</div>';
+    var button ='<a href="javascript:is_code();" class="mail-btn"><span>确认</span></a>';
+    $("#simg").html(input+button);
+    $("#ismobile").attr("disabled",false);
+}
+var count = 30;
+var t;
+$(document).ready(function(){
+	$("#is_obtain").click(function(){
+	   flushImg();
+		var t = window.setInterval(function(){
+			$("#is_obtain").attr('disabled',true);
+			$("#is_obtain").val(count+"秒之后重新获取验证码");
+			 if (count <= 0) {
+				$("#is_obtain").attr('disabled',false);
+				$("#is_obtain").val("获取验证码");
+				clearInterval(t);
+				count = 10
+			 }
+			  count--;
+		},1000)
+	});
+});
+</script>
+</head>
+<body>
+<div id="doc" class="w950">
+  <div id="hd">
+    <!--#include virtual="/header.shtml"-->  
+  </div>
+  <div id="bd" class="tMarginLg">
+   	<div class="ask_ok_tb">
+        <div class="ask_ok_a">提问成功提示:</div>
+        <div class="ask_ok_b">问题发布成功！</div>
+        <?php if(!$this->askislogin){ ?>
+        <div class="ask_ok_login">
+        	<dl>
+            	<dt>系统自动为您分配账户，为了方便记忆，请设置您的个性账户</dt>
+              <dd>
+               	  <table width="373" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>用户名：<?=$this->tmp_new_user['username'] ?></td>
+                        <td width="170" align="right">修改用户名：<input type="text" name="username" id="username" size="10" /></td>
+                        <td width="60" rowspan="2" align="right"><div id="button"><a href="javascript:;" onclick="tijiao();"><img src="/ask/images/ask_m_ok_ok.jpg" width="53" height="49" border="0" /></a></div></td>
+                    </tr>
+                      <tr>
+                        <td>密　码：<?=$this->tmp_new_user['zdpassword'] ?></td>
+                        <td align="right">修改密码：<input name="password" id="password" type="password" size="10" /></td>
+                      </tr>
+                </table>
+              </dd>
+            </dl>
+        </div>
+        <?php } ?>
+       	<div class="ask_ok_c"><a target="_blank" href="/id/<?php echo $this->askid;?>">返回问题页面</a>　　　　　　　　<a target="_blank" href="<?php echo HOME_9939_URL;?>user/index/">前往个人中心</a>　　　　　　　　<a target="_blank" href="http://www.go9939.com">前往健康商城</a></div>
+        
+    </div>
+    	<div class="ask_ok_tb">
+        	<div class="ask_ok_notice_hd"><span>问题得到答复后通过以下方式通知我：</span></div>
+        	<div class="ask_ok_notice_l">
+            	<div class="ask_ok_notice_info">
+                	<dl>
+                    	<dt>手机短信通知</dt>
+                        <?php if($this->tmp_new_user['checkmobile']=="0"){ ?>
+						<dd><p>通过手机验证，当问题被回复后，我们将第一时间发送回复提醒至您的手机；<p></p>通过手机验证可获得<span class="red">500</span>健康积分！</p></dd>
+                        <?php } else { ?>
+                        <dd><p>您已经通过手机验证，选择“手机短信通知”，当问题被回复后，我们将第一时间发送回复提醒至您的手机；</p></dd>
+                        <?php } ?>
+                    	<dt>　</dt>
+                        <?php if($this->tmp_new_user['checkmobile']=="0"){ ?>
+                        <dd class="blue"><input name="mobile" id="mobile" type="text" />　输入您的手机号码</dd>
+                        <dd><input style="background-image:url(../images/ask_m_ok_hqyzm.jpg); width:88px; height:24px; border:0px; cursor:pointer" type="button" id="is_obtain" value="获取验证码"/>
+                        <div id="simg"></div>
+                        <?php } ?>
+                        </dd>
+                    </dl>
+            	</div>
+				
+				<div class="ask_ok_notice_check">
+					<div class="pic"><img src="/ask/images/ask_m_tel.jpg" /></div>
+					<dl>
+						<dt>手机短信通知</dt>
+                        <?php if($this->tmp_new_user['checkmobile']=="1"){ ?>
+						<dd class="blue"><font id="button3"><input name="ismobile"  id="ismobile"  type="checkbox"  value="1" onclick="ismobile(this);" /></font>　得到回复后发短信通知</dd>
+                        <?php } else { ?>
+                        <dd class="blue"><font id="button3"><input name="ismobile"  id="ismobile" type="checkbox" disabled="true" value="1"  onclick="ismobile(this);"/></font>　得到回复后发短信通知</dd>
+                        <?php } ?>
+					<dl>
+				</div>
+                <?php if($this->tmp_new_user['checkmobile']=="1"){ ?>
+                <div class="ask_ok_notice_checkgo"><a href="/user/do/do/edit" class="blue">修改验证手机&gt;&gt;</a></div>
+                <?php } ?>
+            </div>
+        	<div class="ask_ok_notice_r">
+            	<div class="ask_ok_notice_info">
+                	<dl>
+                    	<dt>站内消息通知</dt>
+						<dd><p>当问题被回复后，您将在个人中心系统信息中收到通知！</p></dd>
+                    	<dt>邮件通知</dt>
+                        <?php if($this->tmp_new_user['checkemail']==""){ ?>
+						<dd><p>通过邮箱验证，当问题被回复后，我们将第一时间发送回复提醒至您的<br/>E-mail邮箱！</p></dd>
+                        <?php } else { ?>
+                        <dd><p>您的邮箱已经通过验证，当问题被回复后，我们将第一时间发送回复提醒至您的E-mail邮箱！</p></dd>
+                        <?php } ?>
+                        <?php if($this->tmp_new_user['checkemail']==""){ ?>
+                        <a id="email"></a>
+                        <dd>邮箱：<input name="mail" type="text" id="mail" />
+                        <font id="button2">
+                        <a href="javascript:;" onclick="tomail();" class="blue">发送验证邮件</a></font></dd>
+                        <?php } ?>
+                    </dl>
+            	</div>
+				<div class="ask_ok_notice_check">
+					<div class="pic"><img src="/ask/images/ask_m_mail.jpg" /></div>
+					<dl>
+						<dt>邮件通知</dt>
+                        <?php if($this->tmp_new_user['checkemail']=="1"){ ?>
+						<dd class="blue"><font id="button4"><input name="ismail"  id="ismail" type="checkbox" value="1"  onclick="ismail(this);" /></font>　得到回复后发邮件通知</dd>
+                        <?php } else { ?>
+                        <dd class="blue"><font id="button4"><input name="ismail"  id="ismail" type="checkbox" value="1" disabled="true"  onclick="ismail(this);"/></font> 得到回复后发邮件通知</dd>
+                        <?php } ?>
+					<dl>
+				</div>
+                <?php if($this->tmp_new_user['checkemail']=="1"){ ?>
+               <div class="ask_ok_notice_checkgo"><a href="/user/do/do/edit" class="blue">修改验证邮箱&gt;&gt;</a></div>
+                <?php } ?>
+			</div>
+        
+        </div>
+  </div>
+  <div id="ft">
+    <!--#include virtual="/ask/ask_end_menu.html"-->
+    <!--#include virtual="/ask/ask_footer/ask_footer.html"-->
+  </div>
+</div>
+</body>
+</html>

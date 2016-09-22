@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<?php try{$common_config = Zend_Registry::get("common_config");}catch(Exception $e){}?>
+<title>健康问答_问答医师团列表<?=$common_config['title']?></title>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+$(document).jTab({
+ menutag:".hd li"
+});
+});
+</script>
+</head>
+<body>
+<?php require(APP_ROOT."/header.shtml");?>
+	<div id="bd">
+		<div class="tmod-08 tMarginLg">
+			<h3>您的位置：问答首页－－问答医师团</h3>
+		</div>
+		<div class="g-s8m0 l-fix tMarginLg">
+			<div class="col-m">
+				<div class="m-wrap">
+					
+					
+					<div class="mod lwmod-02 ">
+			          <span class="top">
+			            <span class="tl"></span>
+			          </span>
+			          <div class="inner consul">
+			            <div class="hd">
+			              <h4>医生团成员列表</h4>
+			            </div>
+			            <div class="bd">
+			               <ul class="lwpartmod4 l-fix">
+			               <?php
+			               foreach ($this->team as $k=>$v)
+			               {
+			               	echo '<li class="l-fix">
+			                 		<a href="/user/?uid='.$v[uid].'"><img src="http://home.9939.com/upload/pic/'.$v[pic].'" /></a>
+			                 		<p>
+			                 			<span>'.$v[name].'</span><span>'.$v[doc_keshi].'</span><span>'.$v[keshi].'</span><span>'.$v[doc_hos].'</span>
+			                 			<span class="con">
+			                 				'.$v[memo].'
+			                 			</span>
+			                 			<span class="b">
+			                 				<a class="j-ico" href="/user/?uid='.$v[uid].'"">加为好友</a>
+			                 				<a class="j-ico" href="http://home.9939.com/news/index/fid/'.$v[uid].'/hf/1/">发送消息</a>
+			                 				<a class="j-ico" href="/ask/">向专家咨询</a>
+			                 			</span>
+			                 		</p>
+				                 </li>';
+			               }
+			               ?>
+			               </ul>
+			            </div>
+			          </div>
+			        </div>
+			        
+				</div>
+			</div>
+			<div class="col-s">
+		        <div class="mod zhmod-02 ">
+		          <div class="hd">
+		            <ul>
+		              <li class="textColor-01">按科室查询</li>
+		            </ul>
+		          </div>
+		      	  <div class="bd">
+		      			<ul class="lwmod-01">
+		      				<li><p><a href="/listd/?class=<?=urlencode('内科')?>">内<span></span>科</a></p></li>
+		      				<li><p><a href="/listd/?class=<?=urlencode('外科')?>">外<span></span>科</a></p></li>
+		      				<li><p><a href="/listd/?class=<?=urlencode('五官科')?>">五官科</a></p></li>
+		      				<li><p><a href="/listd/?class=<?=urlencode('儿科')?>">儿<span></span>科</a></p></li>
+		      				<li><p><a href="/listd/?class=<?=urlencode('眼科')?>">眼<span></span>科</a></p></li>
+		      				<li><p><a href="/listd/?class=<?=urlencode('骨科')?>">骨<span></span>科</a></p></li>       
+		      			</ul>
+		      			</div>
+		        </div>
+		        <div class="mod zhmod-02 tMarginLg">
+		          <div class="hd">
+		            <ul>
+		              <li class="textColor-01 on-zh">按地区查询</li>
+		            </ul>
+		          </div>
+		      	  <div class="bd">
+		                <ul class="lwmod-01">
+		                  <li><p><a href="/listd/?area=<?=urlencode('北京')?>">北<span></span>京</a></p></li>
+		                  <li><p><a href="/listd/?area=<?=urlencode('上海')?>">上<span></span>海</a></p></li>	
+		                  <li><p><a href="/listd/?area=<?=urlencode('山东省')?>">山东省</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('辽宁省')?>">辽宁省</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('河南省')?>">河南省</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('黑龙江')?>">黑龙江</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('广东省')?>">广东省</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('深圳市')?>">深圳市</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('江苏省')?>">江苏省</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('四川省')?>">四川省</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('浙江省')?>">浙江省</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('云南省')?>">云南省</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('河北省')?>">河北省</a></p></li>
+                           <li><p><a href="/listd/?area=<?=urlencode('安徽省')?>">安徽省</a></p></li>                
+		                </ul>		               
+		          </div>
+		        </div>
+		        <div class="mod lwmod-02 tMarginLg">
+		          <span class="top">
+		            <span class="tl"></span>
+		          </span>
+		          <div class="inner consult lwpartmod1">
+		            <div class="hd">
+		              <h4>医生排行</h4>
+		            </div>
+		            <div class="bd">
+		               <ul>
+		               <?php
+		               foreach ($this->doc_ph as $k=>$v)
+		               {
+		               		echo '<li><a href="'.$v[url].'">'.$v[name].'</a></li>';
+		               }
+		               ?>
+		               </ul>
+		            </div>
+		          </div>
+		        </div>	
+			</div>
+		</div>
+	</div>
+	<?php require("footer.html");?>

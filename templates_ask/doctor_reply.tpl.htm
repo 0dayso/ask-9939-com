@@ -1,0 +1,98 @@
+{include file="header_doctor.tpl.htm"}		
+        <div id="main_container" class="reversion_rank">
+          <div class="content_zh">
+            <div class="content_title">
+              <h2>久久健康聚医堂问题回复排行</h2>
+            </div>
+            <div class="content_main">
+              <div id="table_zh">
+                <!-- <tbody id="rank_by_0">
+                <tr>
+                  <td class="no_rborder"> -->
+                      <table class="left">
+                        <tbody>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">医生名称</td>
+                            <td  width="103">职称等级</td>
+                            <td  width="103">回帖数</td>
+                          </tr>
+
+                        <!--从这循环tr50次-->
+                          {foreach item=item key=key from=$reply}
+                          <tr>
+                            <td>{$key+1}</td>
+                            <td><a href="{$item.url}">{$item.username}</a></td>
+                            <td class="headship">{$item.zhicheng}</td>
+                            <td>{$item.num}<img src="/templates/9939/skins/default/images_doctor/up.gif" /></td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                  <!-- </td>
+                  <td class="no_lborder" valign="top"> -->
+                      <table class="right">
+                        <tbody>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">医生名称</td>
+                            <td  width="103">职称等级</td>
+                            <td  width="103">回帖数</td>
+                          </tr>
+
+                        <!--从这循环tr50次-->
+                          {foreach item=item key=key from=$reply1}
+                          <tr>
+                            <td>{$key+51}</td>
+                            <td><a href="{$item.url}">{$item.username}</a></td>
+                            <td class="headship">{$item.zhicheng}</td>
+                            <td>{$item.num}<img src="/templates/9939/skins/default/images_doctor/up.gif" /></td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                 <!--  </td>
+                </tr>
+                </tbody> -->
+              </div>
+              {literal}
+              <script type="text/javascript">
+				function altTab(m,n){
+				 var sTag=document.getElementById("rank_by").getElementsByTagName("li");
+				 for(i=0;i<m;i++){
+				  sTag[i].className=i==n?"on":"";
+				  document.getElementById("rank_by_"+i).style.display="none";
+				 }
+				 document.getElementById("rank_by_"+n).style.display="";
+				}
+			 </script>
+			 {/literal}
+            </div>
+          </div>	          
+	          <script language="javascript" src="/images/js/tdColor.js"></script>
+	          <div class="sidebar_zh">{include file="include/right.html"}</div>
+          </div>
+      </div>
+</div>
+<div class="clear"></div>
+
+{literal}
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+		counter = 0;
+		function show()
+		{
+			for(i=0; i<3; i++)
+			{
+				document.getElementById('hotimg'+i).style.display="none";
+			}
+			document.getElementById('hotimg'+counter).style.display="";
+			counter++;
+			if(counter == 3) counter = 0;
+			window.setTimeout("show('hotimg'+counter)",1500);
+		}
+		show()
+//-->
+</SCRIPT>		
+{/literal}
+{include file="include/footer.html"} 

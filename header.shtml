@@ -1,0 +1,379 @@
+<link rel="stylesheet" type="text/css" href="/ask/header_user/css/hearder_user.css">
+<style>
+.popup{ width:265px; height:118px; background:url(/images/popup_bg.png) no-repeat; font-family:"宋体"; font-size:12px;bottom: 5px;left: 10px;position: fixed;z-index: 9999;}
+.popup_t{ clear:both; height:30px; position:relative;}
+.popup_t .mini a, .popup_t .close a{ float:right; display:block; width:25px; height:20px; margin-top:5px;}
+.popup_t .close a{width:20px;height:20px;display:block;margin-right:5px;}
+.popup_c{height:54px;padding-top:4px;clear:both; margin:0;position: relative;text-align: left;}
+.popup_c p{ margin:0; padding:0 10px; width:245px; line-height:18px; text-indent: 2em;}
+.popup_c span{height:18px; width:50px; display:block; margin:0; padding:0;position:absolute;bottom: 3px;left: 50px;}
+.popup_but{height:18px; width:50px;padding:0;margin:0;border:none;background: none;color:#1878cc;font-size: 12px;cursor: pointer;}
+.popup_c a{height:30px;line-height:30px;margin:0; display:block; padding-left:38px; color:#000;background:url(/images/popup_info.jpg) no-repeat 10px center; text-decoration:none;}
+.popup_c a b{ color:#d92323}
+</style>
+<meta property="qc:admins" content="1571012133611316375" />
+<script type="text/javascript">
+
+$(function(){
+    
+    try{
+    	$("#login").load("http://ask.9939.com/index/user?"+(new Date()).getTime());
+        if(getcookie('member_uID')!=null){
+            var uidc=getcookie('member_uID');
+            var uType=getcookie('member_uType');
+            if(uType==1){
+                $.ajax({
+        			url:'/ask/loadhtml/html/xinhuifu/id/'+uidc,
+        			dataType:"json",
+        			cache:false,
+        			success:function(data){
+        				if(data.error=1){
+        				    if(data.arn>0){
+        				        $("#shuliang").html(data.arn);
+        				        $("#tishixiaokuang").show();
+        				    }
+        				}
+        			}		
+        	})
+            }
+        }
+        $(".askinput-submit01").click(function(){
+            try{diaocha=false;}catch(e){}
+            if($("#searchtext").val()!="输入提问内容，点击“我要提问”"){
+                location.href='http://ask.9939.com/Ask/index/kw/'+$("#searchtext").val();
+            }else{
+                location.href='http://ask.9939.com/Ask/index/kw/';
+            }
+            return false;
+        });
+        $(".askinput-submit02").click(function(){
+            if($("#searchtext").val()!="输入提问内容，点击“我要提问”"){
+                location.href='http://so.9939.com/?kw='+$("#searchtext").val();
+            }else{
+                location.href='http://so.9939.com/';
+            }
+            return false;
+        });
+    }catch(e){
+        
+    }
+});
+try{
+function showlogin(uid){
+	$.ajax({
+			url:'/ask/loadhtml/html/showlogin/id/'+uid,
+			dataType:"json",
+			cache:false,
+			success:function(data){
+				//alert('a='+data.w_up);
+				$('#w_up').html(data.w_up);
+				$('#w_right').html(data.w_right);
+				$('#w_hot').html(data.w_hot);				
+				$('#showlogin').show().css('left',(document.documentElement.offsetWidth-950)/2+"px");			
+			}		
+	})
+}
+function getcookie(name)
+{
+	var arg = name + "=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i = 0;
+	while(i < clen)
+	{
+		var j = i + alen;
+		if(document.cookie.substring(i, j) == arg) return getcookieval(j);
+		i = document.cookie.indexOf(" ", i) + 1;
+		if(i == 0) break;
+	}
+	return null;
+}
+function getcookieval(offset)
+{
+	var endstr = document.cookie.indexOf (";", offset);
+	if(endstr == -1)
+	endstr = document.cookie.length;
+	return unescape(document.cookie.substring(offset, endstr));
+}
+function addCookie(){　 // 加入收藏夹  
+  if (document.all){  
+        try{
+            window.external.addFavorite(window.location.href, $("title").html()); 
+        }catch(e){
+             try{
+                window.external.addToFavoritesBar(window.location.href,$("title").html(),""); 
+            }catch(e1){
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+        
+    }else if (window.sidebar){  
+        window.sidebar.addPanel($("title").html(), window.location.href, "");  
+   }  
+}  
+function setHomepage(){　 // 设置首页  
+    if (document.all){  
+        document.body.style.behavior = 'url(#default#homepage)';  
+        document.body.setHomePage('http://ask.9939.com/');  
+    }else if (window.sidebar){  
+        if (window.netscape){  
+            try {  
+                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");  
+            }catch (e) {  
+                alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");  
+            }  
+        }  
+        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);  
+        prefs.setCharPref('browser.startup.homepage', 'http://ask.9939.com/');  
+    }  
+}   
+function dologin(){
+    
+	var longinError=function() {
+		$('#tlogin-info').html('<font color="red">用户名或密码错误！</font>');
+	};
+	var html = '';
+	var username = $('#l-username').val();
+	var password = $('#l-password').val();
+	if(username.length==0){
+		$('#tlogin-info').html('<font color="red">请输入注册时所用邮箱</font>');
+		return false;
+	}
+    if(password.length==0){
+		$('#tlogin-info2').html('<font color="red">请输入您的密码</font>');
+		return false;
+	}
+    var button=$("#buttondl").html();
+    $("#buttondl").html("正在验证...");
+	jQuery.getJSON("http://home.9939.com//buluo/index/do/login/?username="+username+"&password="+password+"&format=json&jsoncallback=?",function(data){
+		if(data!='type0'){
+    		if(typeof(__login)=='function') {
+    			__login();
+    		}
+		}else if(data=='type0'){
+			longinError();
+		}
+         $("#buttondl").html(button);
+	});
+	return false;
+}
+function logout(){
+    $("#login").html("正在退出...");
+	jQuery.getJSON("http://home.9939.com/buluo/index/do/logout/?format=json&jsoncallback=?",function(data){
+		var html = '<p class="welcome">您好 欢迎进入久久健康社区！</p>	<ul class="top-tip">	<li class="g-login" onclick="tLogin(this);return false;"><a href="/">登录</a></li>	<li><a href="http://ask.9939.com/register">注册</a></li>	<li class="help"><a href="http://ask.9939.com/rule.shtml" target="_blank">帮助</a></li>	<li><a href="javascript:void(0);" onclick="toQzoneLogin()"><img src="http://home.9939.com/images/qq_login.png"></a></li></ul>';
+			$('#login').html(html);
+
+			if(typeof(__logout)=='function') {
+					__logout();
+			} else {
+				location.reload();
+			}
+			return false;
+	});
+}
+function __login(){
+    $("#k-display-none").hide();
+    $("#login").html("正在登陆...");
+	$("#login").load("http://ask.9939.com/index/user?"+(new Date()).getTime());
+}
+function __logout(){
+    $('#showlogin').hide()
+	$("#login").load("http://ask.9939.com/index/user?"+(new Date()).getTime());
+}
+function logintoubu(obj){
+    var kd=1423;
+    kd=kd-$('body').width();
+    kd=446-(kd/2);
+    $("#k-display-none").attr('style',"left: "+kd+"px;");
+	$("#k-display-none").show();
+}
+function closelogin(){
+	$("#k-display-none").hide();
+}
+}catch(e){
+        
+    }
+    
+function guanbitishi(){
+    $('#tishixiaokuang').hide();
+    return false;
+}
+function tiaozhuantishi(){
+    location.href="http://home.9939.com/user/do/do/edit/";
+}
+ var childWindow;
+            function toQzoneLogin()
+            {
+                childWindow = window.open("http://ask.9939.com/qq/oauth/qq_login.php","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+            } 
+            
+            function closeChildWindow()
+            {
+                childWindow.close();
+            }
+</script>
+<div class="popup" id="tishixiaokuang" style="display: none;">
+  <div class="popup_t">
+   	<div class="close"><a href="javascript:;" onclick="return guanbitishi();"></a></div>
+  </div>
+	<div class="popup_c"><p>尊敬的用户您好，完善您的健康档案，我们的营养师会为您量身定做出更符合您的健康方案。</p>
+<span><input name="" type="button" class="popup_but" style="cursor:pointer;" onclick="tiaozhuantishi();" value="立刻设置" /></span>
+<a href="http://home.9939.com/news/index/wdhf/1">您有<b id="shuliang">0</b>个问题已经回复。需要您处理！</a>
+</div>
+</div>
+  <div id="heard_top">
+    <div class="menu">
+      <div id="login">
+       
+      </div>
+      <div class="top-line">
+        <ul class="top-fav">
+          <li class="addFav"><a href="javascript:;" onclick="addCookie();return false;">加入收藏</a></li>
+          <li class="setHomePage"><span onclick="setHomepage();return false;"  style="cursor:pointer;">设为主页</span></li>
+        </ul>
+        <ul class="top-nav">
+          <li><a href="http://www.9939.com/" target="_blank">久久健康网</a></li>
+          <li><a href="http://ask.9939.com/">久久问答</a></li>
+          <li><a href="http://home.9939.com/" target="_blank">久久家园</a></li>
+          <li><a href="http://home.9939.com/buluo" target="_blank">久久部落</a></li>
+          <li><a href="http://doctor.9939.com/" target="_blank">聚医堂</a></li>
+        </ul>
+      </div>
+    </div>
+<iframe class="temp-iframe" style="position: absolute; top: 0pt; left: 0pt; display: none;" frameborder="0" height="200" width="380"></iframe>
+<div class="mod tmod-02 t-login " id="k-display-none" style="display: none;"><span class="top"><span class="tl"></span><span class=""></span></span>
+  <div class="inner"><span class="close" style="cursor:pointer" onclick="closelogin();"></span>
+    <div class="t-innerWrap" id="t-innerWrap">
+      <form action="#" method="get" accept-charset="utf-8">
+        <table>
+          <tbody>
+            <tr>
+              <td><label for="l-username">用户名</label></td>
+              <td><input id="l-username" type="text" size="18">
+                <span class="tlogin-info" id="tlogin-info">请输入注册时所用邮箱</span></td>
+            </tr>
+            <tr>
+              <td><label for="l-password" >密&nbsp;&nbsp;&nbsp;&nbsp;码</label></td>
+              <td><input id="l-password" type="password" size="18">
+                <span class="tlogin-info" id="tlogin-info2">请输入密码</span></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td id="buttondl"><span>
+                <input value="登录" class="t-submit" onClick="return dologin();" style="cursor: pointer;" type="submit">
+                </span><span class="tlogin-info">还没账号，<a href="http://www.9939.com/register">立即注册</a>一个</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+  <span class="bottom"></span></div></div>
+  <link rel="stylesheet" type="text/css" href="/ask/ask_header/css/ask_header.css">
+<div class="ask-header">
+  <div class="asklogo"> <a href="http://ask.9939.com/"><img src="/ask/images/ask_logo.png" alt="久久健康问答"></a> </div>
+  <div class="asknav">
+    <div class="asknav-list">
+      <ul>
+        <li id="cdhome"><a href="http://ask.9939.com/">问答首页</a></li>
+        <li><a href="http://ask.9939.com/cat.shtml">科室分类</a></li>
+        <li><a href="http://ask.9939.com/classid/0">全部问题列表</a></li>
+        <li><a href="http://ask.9939.com/doctorTeam.shtml">问答医师团</a></li>
+        <li><a href="http://ask.9939.com/rank.shtml">问答排行榜</a></li>
+        <li><a href="http://ask.9939.com/list/time/">问答汇总</a></li>
+        <li><a href="http://ask.9939.com/rule.shtml">积分规则</a></li>
+      </ul>
+    </div>
+    <script>
+    //头部菜单选中标识
+    var touurl = window.location.href;
+    var touli=null;
+    $(".asknav-list").children("ul").children("li").each(function(){
+        if(touurl.indexOf($(this).children("a").attr("href"))>-1&&'http://ask.9939.com/'!=$(this).children("a").attr("href")){
+            if(touli!=null){
+                touli.attr("class","");
+            }
+            $(this).attr("class","noBg");
+            touli=$(this);
+        }else{
+            $(this).attr("class","");
+        }
+        
+    });
+    if('http://ask.9939.com/'==touurl||'http://ask.9939.com/index.shtml'==touurl){
+         if(touli!=null){
+            touli.attr("class","");
+        }
+        $("#cdhome").attr("class","noBg");
+    }
+    </script>
+    <div class="ask-box">
+    	<div class="ask-search">
+    	<form action="http://sousuo.9939.com/cse/search" method="get" target="_blank" id="bdcs-search-form">
+            <input type="hidden" name="s" value="2346771288837901423"> <input type="hidden" name="entry" value="1"> 
+    		<input type="text" class="asks-text" autocomplete="off" name="q" id="bdcs-search-form-input" placeholder="请输入关键词" />
+    		<input type="submit" id="bdcs-search-form-submit" class="asks-btn" value="快速搜索答案" />            
+    	</form>
+    	</div>
+    	<a href="http://ask.9939.com/Ask/index/kw/" class="ask-question">免费提问</a>
+    	<div class="ask-info-number">
+    		<script>
+            document.write("<script src=\"/index/topasknum?"+Date()+"\" type=\"text/javascript\"><\/script>");
+            </script>
+    	</div>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" type="text/css" href="/ask/ask_header/css/ask_header.css">
+<link rel="stylesheet" type="text/css" href="/ask/ask_header/css/hearder_user.css">
+<div class="ask-qnav">
+  <ul>
+    <li><a href="http://ask.9939.com/classid/32" target="_blank">内科</a></li>
+    <li><a href="http://ask.9939.com/classid/102" target="_blank">外科</a></li>
+    <li><a href="http://ask.9939.com/classid/193" target="_blank">妇产科</a></li>
+    <li><a href="http://ask.9939.com/classid/220" target="_blank">男科</a></li>
+    <li><a href="http://ask.9939.com/classid/236" target="_blank">儿科</a></li>
+    <li><a href="http://ask.9939.com/classid/276" target="_blank">五官</a></li>
+    <li><a href="http://ask.9939.com/classid/299" target="_blank">整形</a></li>
+    <li><a href="http://ask.9939.com/classid/324" target="_blank">传染</a></li>
+    <li><a href="http://ask.9939.com/classid/371" target="_blank">肿瘤</a></li>
+    <li><a href="http://ask.9939.com/classid/525" target="_blank">心理</a></li>
+    <li><a href="http://ask.9939.com/classid/428" target="_blank">中医</a></li>
+    <li><a href="http://ask.9939.com/classid/299" target="_blank">美容</a></li>
+    <li><a href="http://ask.9939.com/classid/524" target="_blank">两性</a></li>
+    <li><a href="http://ask.9939.com/classid/13" target="_blank">塑身</a></li>
+    <li><a href="http://ask.9939.com/classid/0-all-1" target="_blank">最新回答</a></li>
+  </ul>
+</div>
+
+<div class="mod sbmod-09 loginPop" id="showlogin" style="display:none"><span class="top"><span class="tl"></span><span class="tr"></span><span class="tf"></span><span class="tt">鼠标移动到用户名，再次显示</span><span class="tb" onclick="$('#showlogin').hide();"></span></span>
+  <div class="inner">
+    <div class="fblock">
+      <p id="w_right"><span>好友请求
+        <label id="requestnum">0</label>
+        条</span><span>问答回复
+        <label id="replynum">0</label>
+        条</span><span>好友消息
+        <label id="newsnum">0</label>
+        条</span></p>
+    </div>
+    <div class="t-innerWrap">
+      <ul class="concern" id='w_up'>
+        <li><span><a href="#">我的提问</a></span></li>
+        <li><span><a href="#">我要提问</a></span></li>
+        <li><span><a href="#">站内消息</a></span></li>
+        <li><span><a href="#">完善资料</a></span></li>
+      </ul>
+      <h4>热点推荐&nbsp;&gt;&gt;</h4>
+      <ul class="t-rec" id="w_hot">
+        <li><a href="#">健康生活有奖活健康生活有奖活健康生活有奖活动</a></li>
+        <li><a href="#">健康生活有奖健康生活有奖活健康生活有奖活活动</a></li>
+      </ul>
+    </div>
+  </div>
+  <span class="bottom"><span class="bl"></span><span class="br"></span></span></div>
+<script>
+$("#vvvlogin").live("click", function(event){
+    logintoubu() ;
+});</script>
+ 

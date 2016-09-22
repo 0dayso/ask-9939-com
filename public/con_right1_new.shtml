@@ -1,0 +1,78 @@
+        <div class="rig02 tMarginLg">
+          <div class="hd"><h3>相关问答</h3></div>
+          <div class="bd">
+            <ul>
+              <?php 
+require_once(APP_ROOT."/include/ask_new.php");
+ ?>            
+            </ul>
+          </div>
+        </div>
+        
+        
+        
+        <div class="rig04 tMarginLg">
+        <div class="hd"><h3>专家推荐</h3></div>
+        <div class="bd">
+        
+          <?php 
+require_once(APP_ROOT."/include/zhuanjiatuijian.php");
+ ?>          
+        </div>
+        </div>
+        <div class="rig05 tMarginLg">
+          <div class="hd">
+            <ul>
+              <li class="lion" id="ka_1" onmouseover="select_kc(1,'ka','kda')">热点导读</li>
+              <li id="ka_2" onmouseover="select_kc(2,'ka','kda')">热点疾病</li>
+            </ul>
+          </div>
+          <div class="bd">
+            <div id="kda_1">
+              <ul>
+                             <li><a href="http://ask.9939.com/id/4451265">6岁小孩换牙晚为什么</a></li><li><a href="http://ask.9939.com/id/4451262">成人门牙不齐能矫正吗</a></li><li><a href="http://ask.9939.com/id/4451261">宝宝打喷嚏咳嗽怎么办</a></li><li><a href="http://ask.9939.com/id/4451253">高血压的诱因如何预防</a></li><li><a href="http://ask.9939.com/id/4451252">厕所门把手会传染病毒</a></li><li><a href="http://ask.9939.com/id/4451242">白天头疼睡不着怎么办</a></li>              </ul>
+            </div>
+            
+            <div id="kda_2" class="ct_off">
+              <ul>
+                              <li><a href="http://ask.9939.com/id/4451457">最近特别爱着急且失眠</a></li><li><a href="http://ask.9939.com/id/4451456">手指有轻微麻感怎么办</a></li><li><a href="http://ask.9939.com/id/4451455">我眼袋很厉害能否去除</a></li><li><a href="http://ask.9939.com/id/4451366">白带中有血丝外阴痒呢</a></li><li><a href="http://ask.9939.com/id/4451277">孩子13岁不高怎么办</a></li><li><a href="http://ask.9939.com/id/4451259">头晕乏力易困怎么回事</a></li>              </ul>
+            </div>
+            
+          </div>
+        </div>
+        <div class="rig06 tMarginLg">
+        	        	<a href="http://ask.9939.com/classid/0" title="久久问答"><img src="http://home.9939.com//upload/pic/201308/1376019297.jpg" /></a>        	
+        </div>
+         <div class="rig06 tMarginLg" align="center">
+             <!--名称:问答频道右下富媒体、类型:嵌入式、规格:300*250、网站:久久健康网、频道:默认频道==开始-->
+            <script type="text/javascript">
+            var sogou_ad_id=148395;
+            var sogou_ad_height=250;
+            var sogou_ad_width=300;
+            </script>
+            <script language='JavaScript' type='text/javascript' src='http://images.sohu.com/cs/jsfile/js/c.js'></script>
+            <!--名称:问答频道右下富媒体、类型:嵌入式、规格:300*250、网站:久久健康网、频道:默认频道==结束-->
+        </div>
+        <div class="rig06 tMarginLg" align="center">
+             <script type="text/javascript">
+             var sogou_ad_id=263270;
+             var sogou_ad_height=250;
+             var sogou_ad_width=300;
+             </script>
+             <script language='JavaScript' type='text/javascript' src='http://images.sohu.com/cs/jsfile/js/c.js'></script>
+
+        </div>
+      </div>
+     
+      <script type="text/javascript">//<![CDATA[
+ac_as_id = 77857;
+ac_click_track_url = "";ac_format = 0;ac_mode = 1;
+ac_width = 280;ac_height = 210;
+//]]></script>
+<script type="text/javascript" src="http://static.acs86.com/g.js"></script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+
+<!-- 广告位：久久健康网所有页面会员注册有礼活动 -->
+<!--<script type="text/javascript">BAIDU_CLB_fillSlot("773021");</script>-->
+      
+

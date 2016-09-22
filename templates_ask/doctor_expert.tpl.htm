@@ -1,0 +1,78 @@
+{include file="header_doctor.tpl.htm"}	
+		<div id="mainbody" class="clfix">
+			<div class="w185 left menu">
+				<div class="t01"><h3>科室专家列表</h3></div>
+				<div class="l03">
+					{include file="include/expert_left.html"}
+				</div>
+			</div><!-- w185 end -->
+			<div class="w755 right">
+				<div class="w530 left">
+					<div class="current">当前选择：所有科室 的 所有医生 (1146677)</div>
+                    <div id="tabs2">
+                         <ul id="menu2" class="clfix">
+                              <li class="hover" onclick="setTab(2,0)">特邀医生</li>
+                              <li onclick="setTab(2,1)">所有医生</li>
+                              <li onclick="setTab(2,2)">在线医生</li>
+                         </ul>
+                     </div>
+                     <div id="main2">
+                        <ul class="block">
+                            {foreach item=item from=$allmem}
+                            <li class="clfix">
+                            	<a href="http://home.9939.com/space.php?uid={$item.uid}" target="_blank"><img src="http://ucenter.9939.com/avatar.php?uid={$item.uid}&size=small&type=virtual" class="ulimg" /></a>
+                                <p class="m_b6"><a href="http://home.9939.com/space.php?uid={$item.uid}" target="_blank"><span>({if $item.nicheng}{$item.nicheng}{else}{$item.username}{/if})</span></a><a href="http://ask.9939.com/ask/question.php?toUID={$item.uid}"><img src="/templates/9939/skins/default/images_doctor/but001.png" class="tl_v" /></a></p>
+                                <p class="m_b6"><span>{$item.address}</span><span>{$item.doc_hos}</span>{$item.doc_keshi}</p>
+                                <p>最后登录时间：{$item.lastlogin}</p>
+                            </li>
+							{/foreach}
+                        </ul>
+                        <ul>
+                            {foreach item=item from=$allmem}
+                            <li class="clfix">
+                            	<a href="http://home.9939.com/space.php?uid={$item.uid}" target="_blank"><img src="http://ucenter.9939.com/avatar.php?uid={$item.uid}&size=small&type=virtual" class="ulimg" /></a>
+                                <p class="m_b6"><a href="http://home.9939.com/space.php?uid={$item.uid}" target="_blank"><span>({if $item.nicheng}{$item.nicheng}{else}{$item.username}{/if})</span></a><a href="#"><img src="/templates/9939/skins/default/images_doctor/but001.png" class="tl_v" /></a></p>
+                                <p class="m_b6"><span>{$item.address}</span><span>{$item.doc_hos}</span>{$item.doc_keshi}</p>
+                                <p>最后登录时间：{$item.lastlogin}</p>
+                            </li>
+							{/foreach}
+                        </ul>
+                        <ul>
+                            {foreach item=item from=$online}
+                            <li class="clfix">
+                            	<a href="http://home.9939.com/space.php?uid={$item.uid}" target="_blank"><img src="http://ucenter.9939.com/avatar.php?uid={$item.uid}&size=small&type=virtual" class="ulimg" /></a>
+                                <p class="m_b6"><a href="http://home.9939.com/space.php?uid={$item.uid}" target="_blank"><span>({if $item.nicheng}{$item.nicheng}{else}{$item.username}{/if})</span></a><a href="#"><img src="/templates/9939/skins/default/images_doctor/but001.png" class="tl_v" /></a></p>
+                                <p class="m_b6"><span>{$item.address}</span><span>{$item.doc_hos}</span>{$item.doc_keshi}</p>
+                                <p>最后登录时间：{$item.lastlogin}</p>
+                            </li>
+							{/foreach}
+                        </ul>
+                        </ul>
+                    </div>
+				</div>
+				<div class="w220 right">
+					{include file="include/right.html"}
+				</div>
+			</div><!-- w755 end -->
+		</div><!-- mainbody end -->
+	</div><!-- wrapper end -->
+{literal}
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+		counter = 0;
+		function show()
+		{
+			for(i=0; i<3; i++)
+			{
+				document.getElementById('hotimg'+i).style.display="none";
+			}
+			document.getElementById('hotimg'+counter).style.display="";
+			counter++;
+			if(counter == 3) counter = 0;
+			window.setTimeout("show('hotimg'+counter)",1500);
+		}
+		show()
+//-->
+</SCRIPT>		
+{/literal}
+{include file="include/footer.html"}

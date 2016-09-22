@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>提问成功_健康问答_久久健康网</title>
+<meta name="Keywords" content="久久问医,久久健康问答,<?php echo $this->keywords;?>" />
+<meta name="description" content="久久问医,久久健康问答" />
+<link rel="stylesheet" type="text/css" href="/ask/v1/css/main.css">
+<link rel="stylesheet" type="text/css" href="/ask/v1/css/success.css">
+<link rel="stylesheet" type="text/css" href="/ask/v1/css/bd_search.css" />
+ <script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script> 
+ <script type="text/javascript" src="/ask/v1/js/user_login.js"></script>
+ <script type="text/javascript" src="/ask/v1/js/slide.js"></script>
+ <script src="/ask/v1/js/lb.js"></script>
+ <script src="/ask/v1/js/lb2.js"></script>
+ <script type="text/javascript" src="/ask/v1/js/jquery.touchSlider.js"></script>
+ <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script> 
+ <base  target="_blank" />
+</head>
+<body>
+   <!--头部 开始-->
+  <!--#include virtual="/headers_new.shtml"-->
+  <!-- 头部 结束-->      
+  <div class="line_blu"></div>
+ <!-- 提问成功页 开始-->
+       <div class="mokd mT20">
+        <div class="asbn"><a href="">
+          <script type="text/javascript">
+          var cpro_id="u2316058";
+          (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"960",rsi1:"120",pat:"6",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"1",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",ptbg:"90",piw:"0",pih:"0",ptp:"0"}
+          </script>
+          <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+
+        </a></div>
+         <div class="wqce4 pt58 mT20">
+          <div class="w538">
+           <div class="succes md34"><p><img src="http://ask.9939.com/ask/v1/images/askwm1.jpg"/></p><p class="Seeque"><a href="/id/<?php echo $this->askid;?>" title="查看提问">查看提问</a></p></div>
+
+            <!-- 未登录 -->
+          <div class="bacon">
+                <div class="suuser infde clearfix">
+                    <?php 
+                        if ($this->askislogin==0) {
+                    ?>
+                    <div class="reci">
+                        <p class="usw180"><b>用户名：</b><?php echo $this->tmp_new_user['username'] ?></p>
+                        <p class="usw140"><b>密码：</b><?php echo $this->tmp_new_user['zdpassword'] ?></p>
+                        <?php 
+                            if($this->tmp_new_user['is_update_password']=='0'){
+                        ?>
+                        <p class="cord4">为方便下次查看医生回答，<a target="_self" href="javascript:void(0)" class="bac_01">修改密码</a></p>
+                        <?php
+                            }
+                        ?>
+                    </div>
+                    <?php
+                        }
+                    ?>
+                    <div class="subal sumar disn">
+                        <form class="celin" action="" method="post">
+                            <div class="checo">
+                                <p><label>用户名：</label><input type="text" id='username' name='username' class="txt"/></p>
+                                <p class="tips users" style="display: none;">用户名已占有，请重新输入</p>
+                                <p><label>密码：</label><input type="password" id="userpassword" name="userpassword" class="txt"/></p>
+                                <p class="tips password" style="display: none;">密码长度不够，请重新设置</p>
+                                <p><label>确认密码：</label><input type="password" id="userpasswords" name="userpasswords" class="txt"/></p>
+                                <p class="tips passwords" style="display: none;">两次密码不一致，请再次输入</p>
+                            </div>
+                            <div class="confir"><input type="button" class="subs" onclick="usertijiao();" value="确 定"/></div>
+                        <a class="cloer"></a>
+                        </form>
+                        <div class="baqu"></div>
+                    </div>
+                    <?php 
+                        if($this->tmp_new_user['is_binding_mobile']=='0'){
+                    ?>
+                    <div class="reci"><p class="cord4">绑定手机号登录，专家回复短信通知<a target="_self" href="javascript:void(0)"  class="bac_02">绑定手机</a></p></div>
+                    <?php
+                        }
+                    ?>
+                    <div class="subal ago <?php if($this->tmp_new_user['is_binding_mobile']=='1'){echo'disn';}?>" style="padding-bottom: 10px;">
+                        <form class="celin" action="" method="post">
+                            <div class="checo">
+                                <p><label>输入手机号：</label><input type="text" id="tel" class="txt"/><input type="button" id="btn" class="sust" onclick="huoqu();" value="获取验证码"></p>
+                                <p class="tips shouji" style='display: none;'>手机号已绑定，请选择其他手机号</p>
+                                <p><label>输入验证码：</label><input type="text"  id='code' class="txt"/></p>
+                                <p class="tips yanzhengma" style="display: none;">验证码输入错误，请重新获取</p>
+                                <p><label>新  密  码：</label><input type="password" id="npwd" class="txt"/></p>
+                            </div>
+                            <input type="hidden" id ="asktoken" value="<?php echo $this->asktoken ;?>">
+                            <input type="hidden" id='uid' value='<?php echo $this->uid ?>'>
+                            <div class="confir"><input type="button" class="subs" onclick="tijiao();" value="确 定"/></div>
+                        <a class="cloer"></a>
+                        </form>
+                        <div class="baqu"></div>
+                    </div>
+                    <p class="infx">可用手机号登录</p>
+                </div>
+          </div>
+          <div class="shado disn"></div>
+          <div class="talay disn" style="left: 730px;top:290px;"><h3>提示</h3><p>恭喜您，已经成功绑定手机</p><span><b>3</b>秒后自动关闭</span><a class="clowi"></a></div>
+          
+          <script type="text/javascript">
+          	$(function(){
+                        $('.reci a').click(function(){
+                                if($(this).attr('class')=='bac_01'){
+                                        $('.ago').removeClass('shac').addClass('disn');
+                                        $('.ago').find('a').attr('data_c','0');
+                                }
+                                if($(this).attr('class')=='bac_02'){
+                                        $('.sumar').removeClass('shac').addClass('disn');
+                                        $('.sumar').find('a').attr('data_c','0');
+                                }
+                                $(this).attr('data_c');
+                                if($(this).attr('data_c')==0){
+                                        $(this).parents('.reci').next('.subal').removeClass('shac').addClass('disn');	
+                                        $(this).attr('data_c','1');	
+                                }
+                                else{
+                                        $(this).parents('.reci').next('.subal').removeClass('disn').addClass('shac');	
+                                        $(this).attr('data_c','0');		
+                                }
+                        });	
+                        $('a.cloer').click(function(){
+                                $(this).parents('.subal').removeClass('shac').addClass('disn');	
+                                $(this).parents('.subal').prev('.reci').find('a').attr('data_c','1');
+
+                        });	
+                    });
+                    $().ready(function(){ 
+                        $("#tel").val("");
+                        $("#code").val("");
+                        $("#npwd").val("");
+                        $("#username").val("");
+                        $("#userpassword").val("");
+                        $("#userpasswords").val(""); 
+                    });
+          </script>
+          <script>
+                var wait=60;  
+                var flag=0;
+                function time(o) {
+                    if (wait == 0) {
+                        o.removeAttribute("disabled");   
+                        o.value="获取验证码";  
+                        wait = 60;  
+                    } else {
+                        if(wait=='60'){
+                            $('.shouji').css('display','none');
+                            var mobile = document.getElementById("tel").value;
+                            var uid = document.getElementById("uid").value;
+                            var asktoken = document.getElementById("asktoken").value;
+                            $.ajax({
+                                type: "POST",
+                                url:  "/askt/mobile-code",
+                                data: "mobile="+mobile+"&uid="+uid+'&asktoken='+asktoken,     
+                                dataType:'json',
+                                success: function(msg){
+                                    if(msg.msg=='1'){
+                                       $("#asktoken").val(msg.asktoken);
+                                    }else if(msg.msg=='3'){
+                                       $('.shouji').css('display','');
+                                       $(".shouji").html(msg.flag);
+                                       $("#asktoken").val(msg.asktoken);
+                                       wait = 0;  
+                                       flag=1;
+                                    }else{
+                                       o.setAttribute("disabled", true);
+                                       $('.shouji').css('display','');
+                                       $(".shouji").html(msg.msg);
+                                       wait = 0;  
+                                       flag=1;
+                                    }
+                                }
+                            });
+                        }
+                        o.setAttribute("disabled", true);  
+                        o.value="重新发送(" + wait + ")";  
+                        wait--;
+                        setTimeout(function() {  
+                            time(o)
+                        },  
+                        1000)  
+                    }
+                }
+                function huoqu(){
+                    var moblies = document.getElementById("tel").value;
+                    if(moblies==""){
+                        alert("手机号不能为空");
+                        return falsel;
+                    }
+                    if(moblies!=""){
+                        var reg = /^1[3|4|5|7|8][0-9]\d{8}$/;
+                        if(!reg.test(moblies)){
+                         alert("手机号码格式不对！");
+                         return false;
+                        }
+                    }
+                    var but = document.getElementById("btn");
+                    time(but);
+                }
+              function tijiao(){
+                var npwd = document.getElementById("npwd").value;
+                var code = document.getElementById("code").value;
+                var mobile = document.getElementById("tel").value;
+                if(npwd==""){
+                    alert('密码不能为空');
+                    return false;
+                }
+                if(code=="" || isNaN(code)){
+                    alert('验证码输入不正确!');
+                    return false;
+                }
+                var res = /^(\w){6,16}$/;
+                if(!res.test(npwd)){
+                    alert('请输入6-16位字母或数字密码');
+                    return false;
+                }
+                $.ajax({ //绑定手机号
+                    type: "POST",
+                    url:  "/askt/binding-mobile",
+                    data: "code="+code+"&npwd="+npwd+"&mobile="+mobile,     
+                    dataType:'json',
+                    success: function(msg){
+                        if(msg.msg==1){
+                            $('.shado,.talay').removeClass('disn').addClass('shac');
+                            setInterval(function(){
+                                     $('.talay b').html(($('.talay b').html()-1));	
+                                     if(parseInt($('.talay b').html())==0){
+                                         $('.shado,.talay').removeClass('shac').addClass('disn');	
+                                         clearInterval(0);
+                                     }
+                             },1000);
+                            window.location.href="/askt/tiaozhuan";
+                        }else{
+                             $('.yanzhengma').css('display','');
+                             $(".tips").html(msg.msg);
+                        }
+                    }});
+                return false;
+              }
+              //---------------------修改用户名密码操作-------------------------
+              //用户名,光标事件
+              var isusername=0;
+              $("#username").blur(function(){
+                 var uname = $("#username").val();
+                 if($.trim(uname).length==0){
+                     $('.users').css('display','').html('用户名不能为空,请重新填写！');
+                     isusername = 1;
+                     return;
+                 }else{
+                     isusername = 0;
+                 }
+                 $.ajax({
+                    type: "POST",
+                    url:  "/askt/get-member",
+                    data: "username="+uname, 
+                    dataType:'json',
+                    success: function(msg){
+                        if(msg.msg!='1'){
+                            $('.users').css('display','').html(msg.msg);
+                            isusername = 1;
+                        }else{
+                            $('.users').css('display','none');
+                            isusername = 0;
+                        }
+                    }
+                });
+              });
+              //密码，光标事件
+              var ispassword =0;
+              $("#userpassword").blur(function(){
+                    var password = $("#userpassword").val();
+                    if($.trim(password).length==0){
+                        $(".password").css('display','').html('密码不能为空,请填写密码！');
+                        ispassword =1;
+                        return false;
+                    }else{
+                        $(".password").css('display','none');
+                        ispassword =0;
+                    }
+                    var res = /^(\w){6,16}$/;
+                    if(!res.test(password)){
+                        $(".password").css('display','').html('密码格式不对,请重新填写！');
+                        ispassword =1;
+                        return false;
+                    }else{
+                        $(".password").css('display','none');
+                        ispassword =0;
+                    }
+              });
+              //确认密码光标判断
+              var ispasswords =0;
+              $("#userpasswords").blur(function(){
+                  var passwords = $("#userpasswords").val();
+                  var password = $("#userpassword").val();
+                  if($.trim(passwords).length==0){
+                      $(".passwords").css('display','').html('确认密码不能为空，请重新填写！');
+                      ispasswords =1;
+                      return false;
+                  }else{
+                      $(".passwords").css('display','none');
+                      ispasswords =0;
+                  }
+                  if(password!=passwords){
+                    $(".passwords").css('display','').html('密码不一致，请重新填写！');
+                    ispasswords =1;
+                    return false;
+                }else{
+                     $(".passwords").css('display','none');
+                     ispasswords =0;
+                }
+              });
+              //---------------------------修改用户名密码，提交事件-------------
+              function usertijiao(){
+                if(isusername=='1'){
+                    $("#username").focus();
+                    return false;
+                }
+                if(ispassword=='1'){
+                    $("#userpassword").focus();
+                    return false;
+                }
+                if(ispasswords=='1'){
+                    $("#userpasswords").focus();
+                    return false;
+                }
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("userpassword").value;
+                var passwords = document.getElementById("userpasswords").value;
+                $.ajax({
+                    type: "POST",
+                    url:  "/askt/update-member",
+                    data: "username="+username+"&password="+password+"&passwords="+passwords,     
+                    dataType:'json',
+                    success: function(msg){
+                        if(msg.msg=='1'){
+                            $('.shado,.talay').removeClass('disn').addClass('shac');
+                            setInterval(function(){
+                                     $('.talay b').html(($('.talay b').html()-1));	
+                                     if(parseInt($('.talay b').html())==0){
+                                         $('.shado,.talay').removeClass('shac').addClass('disn');	
+                                         clearInterval(0);
+                                     }
+                             },1000);
+                            window.location.href="/askt/tiaozhuan";
+                        }else{
+                            $('.passwords').css('display','');
+                            $(".passwords").html(msg.msg);
+                        }
+                    }
+                });
+              }
+          </script>
+          <!-- phone 成功 -->
+          <div class="pnumber psame md18  suln37 mT24 clearfix aftermobile" style="display:none;">
+              <p  class="fl">设置成功，医生回复答案提醒将发送至</p>
+              <p class="sucsame fl"><a ></a></p>
+          </div>
+
+          <!-- mail 成功 -->
+          <div class="semail psame suln37 clearfix afteremail" style="display:none;"><p  class="fl">设置成功，医生回复答案提醒将发送至</p><p class="sucsame fl"><a></a></p></div>
+            <!--//////////////////////////////////////////-->
+          <div class="website mT50">
+            <div class="mobile  mr70 fl clearfix">
+             <div class="bore5 fl"><a><img  src="http://ask.9939.com/ask/v1/images/aksj.jpg" alt="手机版网站" title="手机版网站"/></a></div>
+             <div class="mTwz fl"><p class="fiz22">手机版网站</p><p class="fiz14 md20">随时随地 在线问医生</p></div>
+           </div>
+           <div class="weChat fl clearfix">
+             <div class="bore5 fl"><a><img  src="http://ask.9939.com/ask/v1/images/akwx.jpg" alt="官方微信" title="官方微信"/></a></div>
+             <div class="mTwz fl"><p class="fiz22">官方微信</p><p class="fiz14 md20">随时随地 在线问医生</p></div>
+           </div>
+         </div>
+         <div class="clear"></div>
+       </div>
+      
+      </div>
+         <div class="ainfor mT20 clearfix">
+         <div class="news  mr20 fl">
+          <div class="newtit clearfix">
+            
+          <div class="lw5 fl"><img  src="http://ask.9939.com/ask/v1/images/askwm2.jpg" alt="其他类似问题" title="其他类似问题"/></div><i><a href="http://ask.9939.com/disease/<?php echo $this->telmal['classid'];?>" title="更多">更多>></a></i></div>
+          <div class="lc_focus left" id="lc_focus_1">
+           <div class="inock oks">
+         <a href="javascript:void(0);"></a>
+           <a href="javascript:void(0);"></a>
+         <a href="javascript:void(0);"></a>
+        </div>
+           <div class="moul nomkl">
+           <ul>
+             <?php 
+              $kk=0;
+              foreach ($this->list as $k => $v) {
+                $on=$kk==0 ? "on" : "";
+                if($kk%6==0){
+                  echo '<li class="newul mT26 '.$on.'">';
+                }
+                echo '<div class="axlin"><a href="/id/'.$v["id"].'" title="'.$v["title"].'">'.mb_substr($v["title"],0,20,'UTF-8').'</a><i>'.$v["answernum"].'条回复</i></div>';
+                if ($kk%6==5) {
+                  echo '</li>';
+                }
+                $kk++;
+              }
+            ?>
+            
+        </ul>
+        </div>
+            <a href="javascript:void(0);" id="btn_prev"></a>
+            <a href="javascript:void(0);" id="btn_next"></a>
+      </div>
+      <div class="clear"></div>
+      </div>
+         <div class="news fl">
+        <div class="newtit clearfix">
+         <div class="lw5 fl"><img  src="http://ask.9939.com/ask/v1/images/askwm3.jpg" alt="咨询在线专家" title="咨询在线专家"/></div></div>
+         <div class="lc_focus left" id="lc_focus_2">
+           <div class="inock2 oks">
+        <a href="javascript:void(0);"></a>
+           <a href="javascript:void(0);"></a>
+         <a href="javascript:void(0);"></a>
+        </div>
+           <div class="moul2 nomkl">
+                <ul>
+                    <li class="mT20">
+                        <script type="text/javascript">BAIDU_CLB_fillSlot("1123989");</script>
+                    </li>
+                    <li class="mT20">
+                        <script type="text/javascript">BAIDU_CLB_fillSlot("1140690");</script>
+                    </li>
+                     <li class="mT20">
+                        <script type="text/javascript">BAIDU_CLB_fillSlot("1140697");</script>
+                    </li>
+                </ul>
+            </div>
+            <a href="javascript:void(0);" id="btn_prev1"></a>
+            <a href="javascript:void(0);" id="btn_next1"></a>
+           </div>
+      </div>
+      </div>
+     </div>
+      <div class="clear"></div>
+   </div>
+ <!-- 提问成功页 结束-->
+  <!--底部 开始-->  
+   <!--#include virtual="/ask/ask_footer/ask_footer_new.html"-->
+   <!--底部 结束-->
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$sPageTitle}</title>
+<meta name="keywords" content="{$sKeywords}" />
+<meta name="description" content="{$sDescription}" />
+<link href="/templates/9939/skins/default/askII.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="/images/js/common.js"></script>
+<script src="http://ask.9939.com/images/js/jquery.min.js"></script>
+{literal}
+<script>
+function setTab(m,n){
+ var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+ var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+ for(i=0;i<tli.length;i++){
+  tli[i].className=i==n?"hover":"";
+  mli[i].style.display=i==n?"block":"none";
+ }
+}
+</script>
+{/literal}
+</head>
+
+<body>
+	<div id="page">
+			<!--#include virtual="/templates_ask/include/headerII.html"-->
+			<div class="nav">
+				<ul>
+					<li {if $sFlag == "index"}class="on"{/if}><a href="/">问答首页</a></li>
+					<li {if $sFlag == "cat"}class="on"{/if}><a href="/cat.shtml">科室分类</a></li>
+					<li {if $sFlag == "label"}class="on"{/if}><a href="/label.shtml">健康标签</a></li>
+					<li {if $sFlag == "unReply"}class="on"{/if}><a href="/unReply.php">全部问题列表</a></li>
+					<li {if $sFlag == "onlineHosp"}class="on"{/if}><a href="http://hospital.9939.com" target="_blank">在线医院</a></li>
+					<li {if $sFlag == "doctorTeam"}class="on"{/if}><a href="/doctorTeam.shtml">问答医师团</a></li>
+					<li {if $sFlag == "scoreRank"}class="on"{/if}><a href="credit.php" target="_blank">积分排行榜</a></li>
+					<li {if $sFlag == "scoreRule"}class="on"{/if}><a href="http://home.9939.com/network.php?ac=jf" target="_blank">积分规则</a></li>
+				</ul>
+			</div>
+		</div><!-- header end -->

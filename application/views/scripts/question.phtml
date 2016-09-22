@@ -1,0 +1,669 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<?php try{$common_config = Zend_Registry::get("common_config");}catch(Exception $e){}?>
+<title>我要提问_健康问答<?=$common_config['title']?></title>
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<link rel="stylesheet" type="text/css" href="/ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/ask/css/ask.css"/>
+<link href="/css/r.css" type="text/css" rel="stylesheet" />
+<link href="/css/b.css" type="text/css" rel="stylesheet" />
+<link href="/css/g.css" type="text/css" rel="stylesheet" />
+<link href="/css/m.css" type="text/css" rel="stylesheet" />
+<link href="/ask/css/ask_indexx.css" type="text/css" rel="stylesheet" />
+<link href="/ask/css/lw-askProcess.css" type="text/css" rel="stylesheet" />
+<link href="/ask/css/temp.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/ask/js/jquery.js"></script>
+<script type="text/javascript" src="/ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+<?php 
+$CATEGORY = $this->$CATEGORY;
+$FUSHUKESHI = $this->$FUSHUKESHI;
+$KESHIGROUP = $this->$KESHIGROUP;
+
+foreach($CATEGORY as &$v){
+    unset($v['description']);
+}
+foreach($KESHIGROUP as &$v){
+    foreach($v as &$v1){
+        unset($v1['description']);
+    }
+}
+if($FUSHUKESHI){
+    $fushuarr=$FUSHUKESHI[1];
+}
+if($FUSHUKESHI){
+    $fushuarr=$FUSHUKESHI[1];
+}
+?>
+var bylj=window.location.href;
+var mblj="";
+var diaocha=true;
+window.onbeforeunload = onbeforeunload_handler; 
+window.onunload = guanbi; 
+function guanbi(){
+    if(document.documentElement.scrollWidth!=0){
+        
+    }else{
+        if(diaocha){
+            open("<?=ASK_URL?>survey","提问调查","height=600,,width=850,top=100,left=200");
+        }
+    }
+}
+function onbeforeunload_handler(){  
+    try{
+        var n = window.event.screenX - window.screenLeft; 
+        var b = n > document.documentElement.scrollWidth-20; 
+        if(b && window.event.clientY < 0 || window.event.altKey) {  
+            if(diaocha){
+                open("<?=ASK_URL?>survey","提问调查","height=600,,width=850,top=100,left=200");
+            }
+        }
+    }catch(e){
+        
+    }
+    if(diaocha&&mblj!=""){
+      open("<?=ASK_URL?>survey","提问调查","height=600,,width=850,top=100,left=200");
+    } 
+}  
+
+var keshiarrkey=eval('(<?=json_encode($CATEGORY)?>)');
+var keshiarr=eval('(<?=json_encode($KESHIGROUP)?>)');
+var fushuarr=eval('(<?=json_encode($fushuarr)?>)');
+var keshixz=new Array();
+var keshiid=0;
+$(function(){
+    $("a").click(function(){
+       mblj=$(this).attr("href");
+    });
+    var strcjks="";
+    var stryjks="";
+    $.each(fushuarr,function(id,item){
+        strcjks+="<li><a href='javascript:vodi(0);' id='99_"+item.kid+"' onclick='ksxz("+item.kid+",99);return false;'>"+item.name+"</a></li>"
+    }); 
+    $.each(keshiarr[0],function(id,item){
+        stryjks+="<li><a href='javascript:vodi(0);' id='1_"+item.id+"' onclick='ksxz("+item.id+",1);return false;'>"+item.name+"</a></li>"
+    }); 
+    $("#cjksul").html(strcjks);
+    $("#yjksul").html(stryjks);
+    $("#z_span").click(function(){
+        $(".keshixuanze").show();
+    });
+    $(".guanbi").click(function(){
+        $(".keshixuanze").hide();
+    });
+    $("#queding").click(function(){
+        $(".keshixuanze").hide();
+        if(keshiarrkey[keshiid]!=null){
+            $("#z_span").html(keshiarrkey[keshiid].name+"（点击可修改）");
+            $("#catid").val(keshiid);
+        }
+    });
+});
+function ksxz(id,jb){
+    keshiid=id;
+    if(jb==1){
+        $("#ksdiv"+3).hide();
+        keshixz[3]=null;
+        keshixz[2]=null;
+    }
+    if(jb==2){
+        keshixz[3]=null;
+    }
+    if(jb==99){
+        keshixz[3]=null;
+        keshixz[2]=null;
+    }
+    if(jb<3){
+        ksshengcheng(id,jb+1);
+    }
+    shuaxin(id,jb);
+    
+}
+function shuaxin(id,jb){
+    if(id==0)id="null";
+    var keshi=keshiarrkey[id];
+    if(keshi==null)return false;
+    ksxuanzhong(keshi.class_level1,1);
+    if(jb==99){
+        ksshengcheng(keshi.class_level1,2);
+    }
+    ksxuanzhong(keshi.class_level2,2);
+    if(jb==99){
+        ksshengcheng(keshi.class_level2,3);
+    }
+    ksxuanzhong(keshi.class_level3,3);
+    ksxuanzhong(id,99);
+    ksxuanzhong(id,jb);
+    var str="";
+    if(keshiarrkey[keshi.class_level1]!=null){
+        str+='<div class="keshi12" >'+keshiarrkey[keshi.class_level1].name;
+    }
+    if(keshiarrkey[keshi.class_level2]!=null){
+        str+='>></div><div class="keshi12" >'+keshiarrkey[keshi.class_level2].name;
+    }
+    if(keshiarrkey[keshi.class_level3]!=null){
+        str+='>></div><div class="keshi12" >'+keshiarrkey[keshi.class_level3].name;
+    }
+    str+='</div>';
+    $("#tishi").html(str);
+}
+
+function ksshengcheng(id,jb){
+    if(id==0)id="null";
+    if(keshiarr[id]!=null){
+        var str="";
+        $.each(keshiarr[id],function(id,item){
+            str+="<li><a href='javascript:;' id='"+jb+"_"+item.id+"' onclick='ksxz("+item.id+","+jb+");return false;'>"+item.name+"</a></li>"
+        }); 
+        $("#ksul"+jb).html(str);
+        $("#ksdiv"+jb).show();
+    }else{
+        jb=jb-1;
+        if(jb==1){
+            $("#ksdiv"+2).hide();
+            $("#ksdiv"+3).hide();
+            keshixz[2]=null;
+            keshixz[3]=null;
+        }
+        if(jb==2){
+            $("#ksdiv"+3).hide();
+            keshixz[3]=null;
+        }
+    }
+}
+function ksxuanzhong(id,jb){
+    try{
+        if(keshixz[jb]!=null&&keshixz[jb]!=id){
+            var name=$("#"+jb+"_"+keshixz[jb]).children('font').html();
+            $("#"+jb+"_"+keshixz[jb]).html(name);
+        }
+        if($("#"+jb+"_"+id).children('font').html()==null){
+            var name=$("#"+jb+"_"+id).html();
+            $("#"+jb+"_"+id).html("<font color=\"#CC6600\">"+name+"</font>");
+            keshixz[jb]=id;
+        }
+    }catch(e){
+        alert(e.message);
+    }
+}
+function shuaxint(){
+    if(!yzmkq)return;
+    var str="/askt/verify?"+(new Date()).getTime();
+    $("#verifyyzmt").attr("src",str);
+}
+var yzmkq=false;
+function yzmt(){
+    if(yzmkq)return;
+    yzmkq=true;
+    var str="/askt/verify?"+(new Date()).getTime();
+    $("#verifyyzmt").attr("src",str);
+    $("#verifyyzmt").show();
+}
+</script>
+<body> 
+<div id="doc" class="w950">
+  <div id="hd">
+    <!--#include virtual="/header.shtml"-->  
+  </div>
+  <div id="bannera">
+    <div class="aaaa">
+    <?php 
+    @include(APP_ROOT . "/data/data_adsplace_132.php");
+    $tmp_ads_array = $_ADSGLOBAL['132'];
+    if(is_array($tmp_ads_array)){
+        foreach ($tmp_ads_array as $k => &$v) {
+    		$v['imageurl'] = HOME_9939_URL.$v['imageurl'];
+    	}
+    }
+    if(is_array($tmp_ads_array)) { ?>
+    <?php 
+		foreach ($tmp_ads_array as $k => $v) { 
+			if($v['type']=='图片') {
+				echo '<a href="'.$v['linkurl'].'" target="_blank">';
+				echo '<img src="'.$v['imageurl'].'" height="'.$v['height'].'" width="'.$v['width'].'"/>';
+				echo '</a>';
+			} else {
+				 echo ' <object height="'.$v['height'].'" width="'.$v['width'].'">';
+				 echo '<param value="'.$v['linkurl'].'" name="movie"/>';
+				 echo '<embed wmode="transparent" height="'.$v['height'].'" width="'.$v['width'].'" src="'.$v['imageurl'].'"/>';
+				 echo '</object>';
+			}
+		}
+	?>
+	<?php } ?>
+    </div>
+  </div>
+  <div class="zhnmod01">
+    <div class="hd"> </div>
+    <div class="bd" style="width:920px; margin:0 auto;">
+      <form id="ask_formzong" name="ask_formzong" method="POST" action="/askt/do/do/save">
+        <legend></legend>
+        <div class="line">
+          <label>提问标题</label> 
+          <div class="row-input"> 
+            <input size="50" id="ask_title" name="info[title]"  type="text" onblur="return searchdata()"
+ onfocus="if(this.value=='请输入您的提问标题') this.value='';" value="<?=$this->kw?>" class="zhinput" />
+            <span>(限5-50字)</span> </div>
+        </div>
+        <div class="line">
+          <label style="*padding-top:2px;_padding-top:0">年龄</label>
+          <div class="row-input">
+            <input class="inpAge" type="text" name="info[age]" id="age"/>
+            <label>岁</label>
+          </div>
+          <label style="*padding-top:2px;_padding-top:0">性别</label>
+          <div class="row-input">
+            <input type="radio" name="info[sexnn]" class="zhradio" value='1' checked/>
+            <label>男</label>
+            <input type="radio" name="info[sexnn]" class="zhradio" value='2'/>
+            <label>女</label>
+          </div>
+        </div>
+        <div class="line">
+          <label>症状描述</label>
+          <textarea name="info[content]" id="content"><?=$this->content?></textarea>
+          <span class="grayTxt">(不少于10字)</span> </div>
+        <hr color="#FFFFFF"/>
+        <span>
+        <label>选择科室</label>
+        </span>
+        <div style="z-index:1000; margin-left:67px;" id="z_wselect"><span style="z-index: 100; border:#3399FF solid 1px; background-image:url(/ask/images/xuanze.jpg); width:160px;" class="z_span" id="z_span">请选择科室列表</span></div>
+        <div class="keshixuanze" style=" position: absolute;z-index: 1000;display: none;height:auto !important;">
+          <div class="keshi12" style=" background:url(/ask/images/ewq1.jpg) 0 top repeat-x;height:39px;overflow:hidden; width:750px;">
+            <div style=" margin-left:10px; height:39px; line-height:30px; font-size:14px; font-weight:bolder; color:#1f376d; float:left;">您选择的科室为：</div>
+            <div id="tishi">
+            </div>
+            <div class="guanbi" style="background:url(/ask/images/qweqw.jpg) 0 9px no-repeat;"> </div>
+          </div>
+          <div class="keshi1">
+            <label>一级科室</label>
+            <br/>
+            <div class="keshi1">
+              <ul id="yjksul">
+              </ul>
+            </div>
+          </div>
+          <div class="keshi1" id="ksdiv2" style="display: none;">
+            <label>二级科室</label>
+            <br/>
+            <div class="keshi1">
+              <ul id="ksul2">
+              </ul>
+            </div>
+          </div>
+          <div class="keshi1"  id="ksdiv3" style="display: none;">
+            <label>三级科室</label>
+            <br/>
+            <div class="keshi1">
+              <ul id="ksul3">
+              </ul>
+            </div>
+          </div>
+          <div class="keshi2" style="margin-top: 25px;">
+            <label>常见科室</label>
+            <br/>
+            <div class="keshi1">
+              <ul id="cjksul">
+              </ul>
+            </div>
+          </div>
+          <div class="tijiao"> <a href="javascript:;" onclick="return false;" id="queding"><img src="/ask/images/queding.jpg" /></a> </div>
+        </div>
+        <div class="line">
+          <div id="rrr">
+            <p><label>验证码:</label><input type="text" onfocus="yzmt();" maxlength="4" style="width: 55px;" name="verifyt" id="verifyt"/>
+            <img id="verifyyzmt" onclick="shuaxint()" style="width:70px;height:30px;cursor:pointer; display: none; "  align="absmiddle" /></p>
+	    <span>
+            <label>问题广播</label>
+            </span>
+            <input class="zhradio" id="broadcast" type="radio" name="info[broadcast]" value="1" />
+            是
+            <input class="zhradio" id="broadcast"  type="radio" name="info[broadcast]" value="0" checked />
+            否
+            </label>
+            （将问题发布在首页广播24小时，需要扣除20点积分）
+            <div class="line" style=" position:relative; z-index:10px;"> <span>
+              <label>悬赏积分</label>
+              </span>
+              <select name="info[point]" class="select" id="point">
+	  			<option value="0" >不悬赏</option>
+	  			<option value="10">10分</option>
+	  			<option value="20">20分</option>
+	  			<option value="50">50分</option>
+	  			<option value="100">100分</option>
+	  		</select>
+              <span >悬赏分越高，您的问题将越受关注，从而得到最佳答案</span> </div>
+            <div class="line">
+              <input type="checkbox" name="info[hiddenname]" value="1"  id="hiddenname" />
+              <label>匿名设置</label>
+              （您可以对问题设定匿名，但您需要付出积分2分） </div>
+            <div class="submit">
+            <input type="hidden" name="info[classid]" id="catid" value="" />
+            <input type="hidden" name="token" id="token" value="<?=$this->token ?>" />
+            <input type="hidden" name="info[answerUid]" id="answerUid" value="<?=$this->answerUid ?>" />
+            <input type="hidden" name="hsid" value="<?=$this->hsid ?>" />
+            <input type="hidden" name="ksid" value="<?=$this->ksid ?>" />
+            <input type="hidden" name="jyid" value="<?=$this->jyid ?>" /> 		
+              <input type="hidden"  value="<?=$this->backurl?>" name="backurl"  />
+              <div id="anniu">
+			  <input type="button"  value="" onclick=" return checkForm(this);" />
+               </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+  <div id="ft">
+    <!--#include virtual="/public/endmenu.shtml"-->
+    <!--#include virtual="/ask/ask_footer/ask_footer.html"-->
+  </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript" src="/images_ask/js/dialog.js" ></script>
+<script type="text/javascript">
+
+var b=new compoDialog();
+b.add(maskLayerManger.displaymaskLayer("#949494",0.5));
+	
+function changeLabel(obj, __index, __index_1) {
+	if(obj.checked) {
+		$('#label_' + __index).css('display', '');
+		$('#label_' + __index_1).css('display', 'none');
+	}
+}
+
+function goAjax(obj) {
+	var _id = obj.value;
+	$(obj).attr('disabled', 'disabled');
+}
+
+function checkForm(obj) {
+	if(!checkTag()) {
+		return false;
+	}
+	/*
+	$(obj).attr('disabled', 'disabled');
+	var __d = $('#ask_form input:checked');
+	var __str = '';
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + __d[i].value + '&';
+		}
+	}
+
+	var __d = $('#ask_form [type=text]');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + encodeURIComponent(__d[i].value) + '&';
+		}
+	}
+
+	var __d = $('#ask_form [type=password]');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + encodeURIComponent(__d[i].value) + '&';
+		}
+	}
+
+	var __d = $('#ask_form [type=hidden]');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + __d[i].value + '&';
+		}
+	}
+
+	var __d = $('#ask_form select');
+	for(i=0; i<__d.length; i++) {
+		if(__d[i].name != '') {
+			__str = __str + __d[i].name + '=' + __d[i].value + '&';
+		}
+	}
+
+	__str = __str + '&info[content]=' + encodeURIComponent($('#content').val());
+
+	
+	
+	alert(__str);
+	
+	
+	$.ajax({
+		url:  '/ask/do/do/save/',
+		data: __str,
+		type:"POST",
+		//dataType: 'json',
+		cache:false,
+		success:function(data) {
+			//alert(data);
+			if(data=='error-100') { //帐号重复
+				alert('帐号重复！提问失败！！！');
+				$(obj).attr('disabled','');
+			} else if (data==0) {
+				alert('提问失败！！！');
+				$(obj).attr('disabled','');
+			} else if (data==404) {
+				alert('用户登录失败！！！！');
+				$(obj).attr('disabled','');
+			} else if (data) {		//成功
+				$.get('/ask/loadhtml/html/ok/id/' + data, function(msg) {
+					b.add(boxDialogManger.displayboxDialog(msg));
+					b.show('<div class="mod tmod-01"><h2 class="h2">问题提交成功</h2><span class="close"><img src="/images_ask/images/ticon_2.png" style="cursor:pointer" onclick="b.hide();parent.location=\'<?=ASK_URL?>/classid/'+$('#catid').val()+'\'"></span><div class="t-content"><span class="top"><span class="tl"></span><span class="tr"></span></span><div class="inner"></div><span class="bottom"><span class="bl"></span>&nbsp;<span class="br"></span></span></div></div>');
+					$(obj).attr('disabled','');
+				});
+			} else {				//失败
+				alert('提问失败了！！！');
+				$(obj).attr('disabled','');
+			}
+		}
+	});
+	
+	
+	
+	/*$.post('/ask/do/do/save/?' + __str, function(data) {
+		if(data=='error-100') { //帐号重复
+			alert('帐号重复！提问失败！！！');
+		} else if (data) {		//成功
+			$.get('/ask/loadhtml/html/ok/id/' + data, function(msg) {
+				b.add(boxDialogManger.displayboxDialog(msg));
+				b.show();
+			});
+		} else {				//失败
+			alert('提问失败！！！');
+		}
+	});*/
+	
+    diaocha=false;
+	return true;
+    if($("#verifyt").val()==""){
+            alert('请填写验证码');	
+			return false;
+        }
+	$('#textarea_hidden_editor').val(b.getValue());
+	return true;
+}
+
+
+//页面验证
+function checkTag() {
+	//标题
+	if($('#ask_title').val().length<5 ||$('#ask_title').val()=='请输入您的提问标题'||$('#ask_title').val().length>50) {
+		alert('请正确填写标题！标题需要大于5字且小于50字！');
+		$('#ask_title').focus();
+		return false;
+	}	
+	/*
+	if($('#tag').val()=='如果没有合适的分类，请输入症状标签 如：“头疼”多个用“，”号隔开'){
+		$('#tag').val('');
+	}
+	*/
+	var age = $('#age').val();
+	if(!/^\d{1,3}$/.test(age)){
+		alert('请正确填写年龄！');
+		$('#age').focus();
+		return false;
+	}else if(parseInt(age)>=200){
+		alert('有人能活200岁？');
+		$('#age').focus();
+		return false;
+	}
+	if($('#content').val().length<10||$('#content').val().length>5000) {
+		alert('请正确填写描述信息！标题需要大于10字且小于5000字！');
+		$('#content').focus();
+		return false;
+	}
+	
+	//问题科室 
+	if($('#catid').val().length<1) {
+		alert('请选择科室！');
+        
+		return false;
+	}//hiddenname
+    var hiddenname=0;
+    if($("#hiddenname").attr("checked")==true){
+        hiddenname=1;
+    }
+    var broadcast=0;
+    $('#broadcast').each(function(){
+        if($(this).attr('checked')==true){
+            broadcast=$(this).val();
+        }
+    });
+    var button=$("#anniu").html();
+    $("#anniu").html("正在验证数据...");
+    $.ajax({
+	type: "POST",
+	url:  "/askt/do/do/savecheck",
+	dataType:'json',
+	data: "info[broadcast]="+broadcast+"&info[hiddenname]="+hiddenname+"&info[point]="+$("#point").val()+"&info[title]="+$("#ask_title").val()+"&info[content]="+$("#content").val()+"&info[classid]="+$("#catid").val()+"&rank="+Date(),
+	success: function(msg){
+	   if(msg.error==1){
+	       diaocha=false;
+            document.getElementById("ask_formzong").submit();
+	   }else{
+	       diaocha=true;
+          alert(msg.error);
+	       $("#anniu").html(button);
+	   }
+	}});
+    return false;
+    
+<?php if(empty($this->user_info['uid'])) { ?>
+/*
+	if($('#label_0').css('display') == 'none') {
+		if($('#email').val() == '')
+		{
+			alert("请填写E－mail帐号!");
+			$('#mail').focus();
+			return false;
+		}
+		//开始验证
+		var email = $('#mail').val();
+		var pattern = /^([a-zA-Z0-9_-]{2,})+@([a-zA-Z0-9_-]{2,})+(\.[a-z]{2,})+/;
+		chkFlag = pattern.test(email);
+		if(!chkFlag)
+		{
+			alert("E－mail格式不正确!");
+			$('#mail').focus();
+			return false;
+		}
+	} else {
+		if($('#username').val() == '')
+		{
+			alert("请填写E－mail帐号！");
+			$('#username').focus();
+			return false;
+		}
+		//开始验证
+		var email = $('#username').val();
+		var pattern = /^([a-zA-Z0-9_-]{2,})+@([a-zA-Z0-9_-]{2,})+(\.[a-z]{2,})+/;
+		chkFlag = pattern.test(email);
+		if(!chkFlag)
+		{
+			alert("E－mail格式不正确！");
+			$('#username').focus();
+			return false;
+		}
+		if($('#pwd').val() == '' || $('#pwd').val().length<6)
+		{
+			alert("密码填写错误！请认真填写!");
+			$('#pwd').focus();
+			return false;
+		}	
+	}
+	*/
+<?php } ?>
+}
+
+//用于ajax输出搜索结果
+function searchdata(){
+	var kw = $("#ask_title").val();
+	if(kw!=""){
+		$.get('/Ajaxsearch/index/kw/'+encodeURIComponent(kw),
+		function(data){
+			//alert(data)
+			$('#search_data').html('');
+			$('#search_data').append(data);
+			var marr = data.match(/\/id\/(\d+)/g);
+			idstr = '';
+			for(i=0;i<marr.length;i++){
+				var tmpid = marr[i].substring(4);
+				if(tmpid!=''){
+					idstr += tmpid + ',';
+				}
+			}
+			idstr = idstr.substring(0,idstr.length-1);
+			if(idstr!=""){
+				$.get('/Ajaxsearch/keshilist/askid/'+idstr,
+				function(data){
+					//alert(data);
+					$('#auto').html('');
+					$('#auto').append(data);
+					var alistkeshi = document.getElementsByName('listkeshi');
+					alistkeshi[0].checked = 'true';
+					getKeshiList(alistkeshi[0]);
+				});
+				//$('#load_catid_container').css('display','block');
+			}
+		});
+	}else{
+		$("#ask_title").val('请输入您的提问标题');
+	}
+}
+
+function getKeshiList(t){
+	$('#load_catid').html('');
+	$('#load_catid_other').html('');
+	var stype = t.value;
+	var atype = stype.split('_');
+	/*
+	category_load(0);
+	for(var i=0;i<atype.length;i++){
+		var grandtype = document.getElementsByName('grandtype');
+		//alert(grandtype.length);
+		//alert(grandtype[i].value);
+		if(i==0){
+			grandtype[i].value = atype[i];
+			category_load(atype[i]);
+			grandtype[i].disabled = 'disabled';
+		}else{
+			grandtype[i].value = atype[i];
+			category_load(atype[i]);
+			grandtype[i].disabled = 'disabled';
+		}
+		$('#catid').val(atype[i]);
+	}
+	*/
+	$('#catid').val(atype[atype.length-1]);
+}
+</script>
+

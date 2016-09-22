@@ -1,0 +1,18 @@
+<?php		
+$_ADSGLOBAL['285']=Array(
+			816 => Array
+			(
+			'adsid' => '816',
+			'adsname' => '全部科室页-名医推荐',
+			'introduce' => '',
+			'placeid' => '285',
+			'width' => '0',
+			'height' => '0',
+			'type' => '外部调用',		
+			'linkurl' => 'http://tongji.9939.com/count/goto.php?url=',
+			'imageurl' => '',							
+            'text' => '%3Cdiv+class%3D%22lie+clearfix%22%3E%0D%0A++++%3Cdiv+class%3D%22doc_pic+doc_pom+fl%22%3E%0D%0A%09%3Ca+href%3D%22http%3A%2F%2Fask.9939.com%2FAsking%2F%3Fuid%3D830991%22+rel%3D%22nofollow%22%3E%3Cimg+width%3D%2280%22+height%3D%2280%22+title%3D%22%E5%BC%A0%E6%A1%82%E5%B9%B3%22+alt%3D%22%E5%BC%A0%E6%A1%82%E5%B9%B3%22+src%3D%22http%3A%2F%2Fubmcmm.baidustatic.com%2Fmedia%2Fv1%2F0f000PY4zP-y8U9409XDO0.jpg%22%3E%3C%2Fa%3E%0D%0A++++%3C%2Fdiv%3E%0D%0A++++%3Cdiv+class%3D%22doc_writ+doc_w166++fl%22%3E%0D%0A%09%3Cp+class%3D%22pagename+pagna14%22%3E%E5%BC%A0%E6%A1%82%E5%B9%B3%3C%2Fp%3E%0D%0A%09%3Cp+class%3D%22pagna12%22%3E%0D%0A%09++++%E6%93%85%E9%95%BF%EF%BC%9A%E5%86%85%E7%A7%91%E8%B0%83%E7%90%86%3Cspan%3E%5B%3Ca+href%3D%22http%3A%2F%2Fask.9939.com%2FAsking%2F%3Fuid%3D830991%22+rel%3D%22nofollow%22%3E%E8%AF%A6%E6%83%85%3C%2Fa%3E%5D%3C%2Fspan%3E%0D%0A%09%3C%2Fp%3E%0D%0A%09%3Cp+class%3D%22ruser_ques89%22%3E%3Ca+href%3D%22http%3A%2F%2Fask.9939.com%2FAsking%2F%3Fuid%3D830991%22+rel%3D%22nofollow%22%3E%E7%AB%8B%E5%8D%B3%E5%85%8D%E8%B4%B9%E5%92%A8%E8%AF%A2%3C%2Fa%3E%3C%2Fp%3E%0D%0A++++%3C%2Fdiv%3E%0D%0A%3C%2Fdiv%3E%0D%0A%3Cdiv+class%3D%22lie+clearfix%22%3E%0D%0A++++%3Cdiv+class%3D%22doc_pic+doc_pom+fl%22%3E%0D%0A%09%3Ca+href%3D%22http%3A%2F%2Fask.9939.com%2FAsking%2F%3Fuid%3D831742%22+rel%3D%22nofollow%22%3E%3Cimg+width%3D%2280%22+height%3D%2280%22+title%3D%22%E8%B5%B5%E5%B9%B3%E5%8E%9A%22+alt%3D%22%E8%B5%B5%E5%B9%B3%E5%8E%9A%22+src%3D%22http%3A%2F%2Fubmcmm.baidustatic.com%2Fmedia%2Fv1%2F0f000AsdQ6WnWsVx374wW0.jpg%22%3E%3C%2Fa%3E%0D%0A++++%3C%2Fdiv%3E%0D%0A++++%3Cdiv+class%3D%22doc_writ+doc_w166++fl%22%3E%0D%0A%09%3Cp+class%3D%22pagename+pagna14%22%3E%E8%B5%B5%E5%B9%B3%E5%8E%9A%3C%2Fp%3E%0D%0A%09%3Cp+class%3D%22pagna12%22%3E%0D%0A%09++++%E6%93%85%E9%95%BF%EF%BC%9A%E9%AA%A8%E8%B4%A8%E7%BB%BC%E5%90%88%3Cspan%3E%5B%3Ca+href%3D%22http%3A%2F%2Fask.9939.com%2FAsking%2F%3Fuid%3D831742%22+rel%3D%22nofollow%22%3E%E8%AF%A6%E6%83%85%3C%2Fa%3E%5D%3C%2Fspan%3E%0D%0A%09%3C%2Fp%3E%0D%0A%09%3Cp+class%3D%22ruser_ques89%22%3E%3Ca+href%3D%22http%3A%2F%2Fask.9939.com%2FAsking%2F%3Fuid%3D831742%22+rel%3D%22nofollow%22%3E%E7%AB%8B%E5%8D%B3%E5%85%8D%E8%B4%B9%E5%92%A8%E8%AF%A2%3C%2Fa%3E%3C%2Fp%3E%0D%0A++++%3C%2Fdiv%3E%0D%0A%3C%2Fdiv%3E%0D%0A%3Cdiv+class%3D%22lie+clearfix%22%3E%0D%0A++++%3Cdiv+class%3D%22doc_pic+doc_pom+fl%22%3E%0D%0A%09%3Ca+href%3D%22http%3A%2F%2Fask.9939.com%2FAsking%2F%3Fuid%3D312932%22+rel%3D%22nofollow%22%3E%3Cimg+width%3D%2280%22+height%3D%2280%22+title%3D%22%E5%88%98%E5%85%B4%E5%BF%97%22+alt%3D%22%E5%88%98%E5%85%B4%E5%BF%97%22+src%3D%22http%3A%2F%2Fubmcmm.baidustatic.com%2Fmedia%2Fv1%2F0f000aUOmODXGDkpM1wft0.jpg%22%3E%3C%2Fa%3E%0D%0A++++%3C%2Fdiv%3E%0D%0A++++%3Cdiv+class%3D%22doc_writ+doc_w166++fl%22%3E%0D%0A%09%3Cp+class%3D%22pagename+pagna14%22%3E%E5%88%98%E5%85%B4%E5%BF%97%3C%2Fp%3E%0D%0A%09%3Cp+class%3D%22pagna12%22%3E%0D%0A%09++++%E6%93%85%E9%95%BF%EF%BC%9A%E6%B3%8C%E5%B0%BF%E5%A4%96%E7%A7%91%3Cspan%3E%5B%3Ca+href%3D%22http%3A%2F%2Fask.9939.com%2FAsking%2F%3Fuid%3D312932%22+rel%3D%22nofollow%22%3E%E8%AF%A6%E6%83%85%3C%2Fa%3E%5D%3C%2Fspan%3E%0D%0A%09%3C%2Fp%3E%0D%0A%09%3Cp+class%3D%22ruser_ques89%22%3E%3Ca+href%3D%22http%3A%2F%2Fask.9939.com%2FAsking%2F%3Fuid%3D312932%22+rel%3D%22nofollow%22%3E%E7%AB%8B%E5%8D%B3%E5%85%8D%E8%B4%B9%E5%92%A8%E8%AF%A2%3C%2Fa%3E%3C%2Fp%3E%0D%0A++++%3C%2Fdiv%3E%0D%0A%3C%2Fdiv%3E',
+            'dateline' => '1465973301',
+        	),
+			)
+		?>

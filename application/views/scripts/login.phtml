@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="/images_ask/css/login/style/r.css" type="text/css" rel="stylesheet" />
+        <link href="/images_ask/css/login/style/m.css" type="text/css" rel="stylesheet" />
+        <link href="/images_ask/css/login/style/b.css" type="text/css" rel="stylesheet" />
+        <link href="/images_ask/css/login/style/g.css" type="text/css" rel="stylesheet" />
+        <link href="/images_ask/css/ask_index.css" type="text/css" rel="stylesheet" />
+        <link href="/images_ask/css/login/style/index1.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/ask/js/jquery.js"></script>
+        <title>会员注册-登录页</title>
+    </head>
+    <body>
+        <div id="doc" class="w970">
+            <div id="hd"> <?php include(APP_ROOT."/header195.shtml"); ?> </div>
+            <div id="bd" class="d-mod">
+                <div class="d-box1-hd"></div>
+                <div class="d-box1-bd">
+                    <div class="hd"></div>
+                    <div class="bd">
+                        <div class="d-grid l-fix">
+                            <div class="col-m">
+                                <div class="m-wrap">
+                                    <div class="d-box2">
+                                        <div class="d-login-box2">
+                                            <h3><span style="color: #1F376D;">会员登录入口</span></h3>
+                                            <form action="login/login" method="POST" id="fm">
+                                                <p class="userInfo name l-fix">
+                                                    <label class="wInfo">用户名：</label>
+                                                    <input  type="text" id="username" name="info[username]" class="userName"/>
+                                                </p>
+                                                <p class="userInfo ps l-fix">
+                                                    <label class="wInfo">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                                                    <input  type="password" onkeydown="huiche(event);" id="pwd" name="info[password]" class="userPassword"/>
+                                                </p>
+                                                 <input  type="hidden" id="backurl" name="info[backurl]" value="<?=$this->backurl?>"/>
+                                            </form>
+                                            <p class="dlan"><a href="javascript:;" onclick="checkform();" style="margin-left: 184px;">
+                                            <img class="imgInfo" src="/images/login-dl.gif" style="padding-left: 0px;"/></a>
+                                       
+                                             </p>
+                                            <p style="margin-left: 20px;margin-top: -20px;margin-bottom: 5px;">
+                                            <a href="/login/getpwd" style="margin-left: 184px;">
+                                           找回密码
+                                            </a>
+                                       
+                                             </p>
+                                        </div>
+                                        <p class="d-login-fgmm"> 忘记密码了？您可以找久久客服询问：010-58359999-9755</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-e">
+                                <div class="d-box3">
+                                    <p class="p-1">普通注册会员可以发布自己的疾病问答，寻求万名专业医生的帮助和解答。同时，结交同病相怜的病友，沟通交换就医经验。</p>
+                                    <p class="p-2">注册医生可以建立自己的个人信息中心和个人网站，参与病患的问答互动，树立个人品牌；结交志同道合的医生朋友，进行互动学术交流，增长知识。</p>
+                                    <p class="p-3">您还不是会员吗？<a href="<?=ASK_URL?>register">赶快去注册吧！</a> 半分钟即可完成。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ft"></div>
+                </div>
+                <div class="d-box1-ft"><a style="color: #1F376D;" href="<?=HOME_9939_URL?>">家园</a> | <a  style="color: #1F376D;" href="<?=HOME_9939_URL?>buluo/">部落</a> | <a  style="color: #1F376D;"  href="<?=ASK_URL?>">问答</a></div>
+            </div>
+            <?php include(APP_ROOT."/footer.html"); ?>
+        </div>
+    </body>
+</html>
+<script>
+  function huiche(event){
+    		if (event.keyCode == 13)    {
+            	checkform();
+        	}
+    	}
+    function checkform(){
+        var fm=document.getElementById('fm');
+        fm.action="/login/checklogin";
+        if($('#username').val()=='')
+        {
+            alert('请输入通行证');
+            $('#username').focus();
+            return false;
+        }
+        if($('#pwd').val()==''){
+            alert('请输入密码');
+            $('#pwd').focus();
+            return false;
+        }
+        if($('#pwd').val()!='' && $('#username').val()!=''){
+            fm.submit();
+        }
+    }
+</script>

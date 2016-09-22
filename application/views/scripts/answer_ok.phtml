@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>问答成功</title>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>  
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_ok.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_index.css"/>
+<script src="/images_ask/js/jquery.js" type="text/javascript"/>
+</head>
+<script>
+//搜索用
+function mksearch(id,i)
+{
+	var kw = $("#"+id).val();
+	var type = 10; 
+	if(i==1){
+		if(kw=='输入提问内容，点击“我要提问”' || kw==''){
+			alert('请输入您要搜索的内容!');
+			$("#"+id).val('');
+			$('#searchtext').focus();
+			return false;
+		}
+		window.location.href="<?=SO_URL?>index/index/kw/"+kw+"/type/"+type;
+	}else if(i==2){
+		window.location.href="<?=ASK_URL?>/Asking/index/";
+	}
+	return false;
+}
+</script>
+<body>
+<div id="doc" class="w950">
+	<div id="hd"><?php include(APP_ROOT."/header_new.shtml"); ?> </div>
+	<div id="bd">
+		<div class="lw-sucessBlock l-fix vMarginLg">
+			<div class="l"></div>
+			<div>
+				<h1>恭喜您获得了50分积分</h1>
+				<span>如果您的回答被提问者采纳为最佳答案，我们将及时通过站内信方式通知您。</span>
+				<a href="<?=$this->url?>">返回该答案 &gt;&gt;</a>
+				<a href="<?=ASK_URL?>/order/">查看我的定制页 &gt;&gt;</a>
+				<a href="###">查看积分 &gt;&gt;</a>
+				<a href="<?=HOME_9939_URL?>ask/?type=2">我的回答 &gt;&gt;</a>
+				<span class="line"></span>
+				<span>解决提问者疑难，继续回答问题</span>
+				<a href="<?=ASK_URL?>/all.shtml">更多相关问题 &gt;&gt;</a>
+				<span class="line"></span>
+				<span>久久更我精彩推荐，您还可以</span>
+				<a href="<?=HOME_9939_URL?>">去逛逛社区 &gt;&gt;</a>
+				<a href="<?=HOME_9939_URL?>buluo">我的部落 &gt;&gt;</a>
+				<a href="<?=HOME_9939_URL?>">我的家园 &gt;&gt;</a>
+			</div>
+		</div>
+	</div>
+	<div id="ft"><?php include(APP_ROOT."/footer.html"); ?></div>
+</div>
+</body>
+</html>

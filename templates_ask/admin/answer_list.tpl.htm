@@ -1,0 +1,70 @@
+{include file=admin/header.tpl.htm}
+{literal}
+<script language="javascript">
+	function checkInput()
+	{
+		
+		//if($('orderID[]').value == "")
+		//{
+			
+		//}
+	}
+</script>
+{/literal}
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">	
+		<tr class="header">				
+			<td width="8%">ID</td>
+			<td>问题ID</td>		
+			<td width="50%">回复内容摘要</td>		
+			<td width="10%">回答者</td>			
+			<td align="center">回答时间</td>
+			<td>状态</td>
+			<td>管理操作</td>
+		</tr>
+	<form action="answer.php?act=delchecked" method="POST">
+		{foreach item=item from=$aList}
+		<tr>
+			<td><input type="checkbox" name="ID[{$item.pid}]" value="{$item.pid}">  {$item.pid}</td>
+			<td>{$item.askid}</td>
+			<td><a href="answer.php?act=show&id={$item.pid}&askid={$item.askid}" >{$item.message}</a></td>
+			<td><a href="http://home.9939.com/space.php?uid={$item.userid}" target="_blank">{$item.username}</a></td>
+			<td>{$item.addtime}</td>
+			<td>{$item.status}</td>
+			<td><a href="answer.php?act=show&askid={$item.askid}&isask=1" >原帖</a> | <a href="answer.php?act=del&id={$item.pid}" onclick="return confirm('确定要删除吗？');">删除</a></td>
+		</tr>
+		{/foreach}
+		<tr>
+			<td>
+				<!--<input type="button" value="全选" onclick="$('input').attr('checked', 'checked');"/>-->
+				{literal}
+				<input type="checkbox" onclick="if(this.checked){ $('input').attr('checked', 'checked'); } else { $('input').attr('checked', ''); }" />全选
+				{/literal}
+			</td>
+			<td colspan="8">
+				<input type="submit" value="批量删除" onclick="return confirm('确定要删除吗？');"/>
+			</td>
+		</tr>
+	<form>
+		</table>
+		<br>
+		{include file=admin/pager_bar.tpl.htm}
+
+{include file=admin/footer.tpl.htm}
+{literal}
+<script>
+	//$(document).ready(function(){
+  		//alert($("#Submit2").val());
+  		//$("#Submit2").attr('onClick', 'location.href="answer.php?pageNo=" + $("#pageNo").val() + "&{$where}"; return false;')
+	function go()
+	{
+{/literal}
+		location.href = "answer.php?pageNo=" + $("#pageNo").val() + "&{$where}";
+		return false;
+{literal}	
+	}
+		//document.getElementsByName('Submit2').type='button';
+		//document.getElementsByName('Submit2').onclick="location.href='http://www.google.cn'; return false;";
+	//}); 
+</script>
+{/literal}

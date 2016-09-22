@@ -1,0 +1,62 @@
+{include file="header.tpl.htm"}
+
+		<div id="mainbody" class="clfix">
+			<div class="w720 left">
+				<div class="location  nobb">您当前的位置：久久健康问答 — 未回复问题</div>
+				<div class="tags01 mt5">
+					<ul>
+					{foreach name="cat" item="cat" from="$arr"}
+						<li><a href="?id={$cat.catid}">{$cat.catname}</a></li>
+					{/foreach}
+					</ul>
+				</div>
+				<div id="tabs0" class="t04 mt10">
+					 <ul class="menu0 clfix" id="menu0">
+						  <li class="hover">未回复问题</li>
+					 </ul>
+				</div>
+				<div class="bd01">
+				  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table01">
+                    <tr>
+                      <td width="48%" height="31" style="border-bottom:1px dashed #666"><strong>标题</strong></td>
+                      <td width="18%"style="border-bottom:1px dashed #666"><strong>提问时间</strong></td>
+                      <td width="15%"style="border-bottom:1px dashed #666"><strong>提问人</strong></td>
+                      <td width="11%"style="border-bottom:1px dashed #666"><strong>状态</strong></td>
+                      <td width="8%"style="border-bottom:1px dashed #666"><strong>悬赏</strong></td>
+                    </tr>
+					{foreach name="v" item="v" from="$con"}
+                    <tr>
+                      <td>[{$v.catname}]{$v.title} [{$v.label_names}] </td>
+					  <td>{$v.addtime}</td>
+					  <td>{$v.username}</td>
+					  <td>未回复</td>
+					  <td>{$v.reward}</td>
+                    </tr>
+					{/foreach}
+                  </table>
+				  <div class="pages">{$Divide_Page}</div>
+				</div>
+			</div><!-- w720 end -->
+			<div class="w220 right">
+				<div class="flashbox"><img src="/templates/9939/skins/default/images/flashbox.jpg" /></div>
+				<div class="mt5"><input type="image" src="/templates/9939/skins/default/images/btn003.jpg" class="btn02"/><input type="image" src="/templates/9939/skins/default/images/btn004.jpg" class="btn02"/></div>
+					{include file="include/cat_right.html}
+					<div class="w218 bd01 mt5">
+						<div class="t01"><h3>群组推荐</h3></div>
+						<div class="p03">
+							<ul>
+								<li><a href="#"><img src="/templates/9939/skins/default/images/mm3.jpg" border="0" /></a><p><a href="#">哇达成</a></p></li>
+								<li><a href="#"><img src="/templates/9939/skins/default/images/mm3.jpg" border="0" /></a><p><a href="#">哇达成</a></p></li>
+								<li><a href="#"><img src="/templates/9939/skins/default/images/mm3.jpg" border="0" /></a><p><a href="#">哇达成</a></p></li>
+								<li><a href="#"><img src="/templates/9939/skins/default/images/mm3.jpg" border="0" /></a><p><a href="#">哇达成</a></p></li>
+								<li><a href="#"><img src="/templates/9939/skins/default/images/mm3.jpg" border="0" /></a><p><a href="#">哇达成</a></p></li>
+								<li><a href="#"><img src="/templates/9939/skins/default/images/mm3.jpg" border="0" /></a><p><a href="#">哇达成</a></p></li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- extra end -->
+			</div><!-- w220 end -->			
+		</div><!-- mainbody end -->
+	</div><!-- wrapper end -->
+	
+{include file="include/footer.html"}

@@ -1,0 +1,58 @@
+{include file="header.tpl.htm"}
+		<div id="mainbody" class="clfix">
+			<div class="w720 left">
+				<div class="location  nobb">您当前的位置：<a href="/">久久健康问答</a> — <a href="/unReply.php">{$temp}</a></div>
+				<div class="tags01 mt5">
+					<ul>
+					{foreach name="cat" item="cat" from="$arr"}
+						<li><a href="?id={$cat.catid}" target="_blank">{$cat.catname}</a></li>
+					{/foreach}
+					</ul>
+				</div>
+				<div id="tabs0" class="t04 mt10">
+					 <ul class="menu0 clfix" id="menu0">
+					 	  <li {$all}><a href="/unReply.php">全部问题</a></li>
+						  <li {$status3}><a href="/unReply.php?w=status/3">待解决问题</a></li>
+						  <li {$status5}><a href="/unReply.php?w=status/5">已解决问题</a></li>
+						  <li {$reward0}><a href="/unReply.php?w=reward>0">悬赏问题</a></li>
+						  <li {$answercount0}><a href="/unReply.php?w=answercount/0">零回复问题</a></li>
+					 </ul>
+				</div>
+				<div class="bd01">
+				  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table01">
+                    <tr>
+                      <td width="48%" height="31" style="border-bottom:1px dashed #666"><strong>标题</strong></td>
+                      <td width="12%"style="border-bottom:1px dashed #666"><strong>提问人</strong></td>                     
+                      <td width="16%"style="border-bottom:1px dashed #666" align="center"><strong>查看/回复</strong></td>
+                      <td width="10%"style="border-bottom:1px dashed #666"><strong>状态</strong></td>
+                      <td width="14%"style="border-bottom:1px dashed #666"><strong>提问时间</strong></td>
+                    </tr>
+					{foreach name="v" item="v" from="$con"}
+                    <tr>
+                      <td><a href="/ask/list.php?catid={$v.catid}&action=all" target="_blank" class="lblue">[{$v.catname}]</a> <a href="{$v.url}" target="_blank">{$v.title|truncate:15:""}</a> {if $v.label_names}[{$v.label_names}]{/if}&nbsp;&nbsp;{if $v.reward}<font color="red">{$v.reward}分</font>{/if}</td>
+					  <td><a href="http://home.9939.com/space.php?uid={$v.userid}" target="_blnak">{$v.username}</a></td>					 
+					  <td align="center">{$v.hits}/{$v.answercount}</td>
+					  <td>{$v.status}</td>
+					  <td>{$v.addtime}</td>
+                    </tr>
+					{/foreach}
+                  </table>
+				  <div class="pages">{$Divide_Page}</div>
+				</div>
+			</div><!-- w720 end -->
+			<div class="w220 right">				
+					{include file="../CatRightbar.shtml}
+					<div class="w218 bd01 mt5">
+						<div class="t01"><h3>群组推荐</h3></div>
+						<div class="p03">
+							<ul>
+								{include file="../mtag_tj.html}
+							</ul>
+						</div>
+					</div>
+				</div><!-- extra end -->
+			</div><!-- w220 end -->			
+		</div><!-- mainbody end -->
+	</div><!-- wrapper end -->
+	
+{include file="include/footer.html"}

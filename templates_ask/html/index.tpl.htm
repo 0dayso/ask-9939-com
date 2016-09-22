@@ -1,0 +1,553 @@
+{include file="html/header.tpl.htm"}
+<script language="javascript" src="/images/js/flashbox.js"></script>
+
+		<div id="mainbody" class="clfix">
+			<div class="w185 left menu">
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.52.url}">内科</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_neike_child_names}
+								{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.77.url}">外科</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_wk_child_names}
+								{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.100.url}">男科</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_nk_child_names}
+								{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.33.url}">妇科</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_fk_child_names}
+								{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.42.url}">儿科</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_ek_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}	
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.112.url}">心理</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_xl_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}	
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.122.url}">皮肤性病</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_pfb_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.133.url}">中医科</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_zy_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.141.url}">五官科</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_wg_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.145.url}">传染科</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_crk_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.149.url}">肿瘤科</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_zl_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.158.url}">整形</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_zx_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.172.url}">药物</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_yw_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.178.url}">育儿</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_ye_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="{$Category_ask.182.url}">生活环境</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_shhj_child_names}
+							 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+							{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="http://ask.9939.com/label.shtml" target="_blank">症状问答</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						<li><a href="/cat.shtml">全身</a></li>
+						<li><a href="{$Category_ask.161.url}">头部</a></li>
+						<li><a href="{$Category_ask.171.url}">颈部</a></li>
+						<li><a href="{$Category_ask.162.url}">胸部</a></li>
+						<li><a href="/cat.shtml">腹部</a></li>
+						<li><a href="{$Category_ask.166.url}">腰部</a></li>
+						<li><a href="{$Category_ask.165.url}">皮肤</a></li>
+						<li><a href="{$Category_ask.167.url}">四肢</a></li>
+						<li><a href="/cat.shtml">生殖部位</a></li>
+						<li><a href="{$Category_ask.182.url}">背部</a></li>
+						<li><a href="/cat.shtml">其他</a></li>
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white"><a href="http://ask.9939.com/ask/list.php?catid=26&action=all" target="_blank">大众健康</a></h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$Cat_dzjk_child_names}
+					 	{if $key<6}
+								<li><a href="/ask/list.php?catid={$item.catid}&action=all">{$item.catname}</a></li>
+								{/if}
+					{/foreach}
+					</ul>
+				</div>
+				<div class="t01 mt5"><h3 class="white">在线医院</h3></div>
+				<div class="l03 clfix">
+					<ul>
+						{foreach key=key item=item from=$ask_online_hospital}
+							<li><a href="{$item.url}">{$item.name}</a></li>	
+						{/foreach}
+					</ul>
+				</div>
+				<div class="juser mt5">
+					<div id="tabs2" class="">
+						 <ul class="menu2 clfix" id="menu2">
+							  <li onclick="setTab(2,0)" class="hover">医生会员</li>
+							  <li onclick="setTab(2,1)">大众会员</li>
+						 </ul>
+						 <div class="main2" id="main2">
+							  <ul class="block">
+							  	{foreach key=key item=item from=$ask_new_doctor}
+								<li><a href='http://home.9939.com/space.php?uid={$item.userid}' target='_blank' title='{$item.nicheng}'>{if $item.nicheng}{$item.nicheng|truncate:6:""}{else}{$item.username}{/if}</a></li>
+								{/foreach}
+							  </ul>
+							  <ul>
+							  	{foreach key=key item=item from=$ask_new_member}
+									<li><a href='http://home.9939.com/space.php?uid={$item.userid}' target='_blank'>{if $item.nicheng}{$item.nicheng}{else}{$item.username}{/if}</a></li>
+								{/foreach}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div><!-- w185 end -->
+			<div class="w755 right">
+				<div class="w530 left">
+					<div class="flashbox">
+<div id="ifocus">
+	<div id="ifocus_pic">
+		<div id="ifocus_piclist" style="left:0; top:0;">
+			<ul>
+				{foreach key=key item=item from=$ask_slide}
+				<li><a href="{$item.url}" target="_blank"><img src="/{$item.image}" alt="" width="410" height="225"/></a></li>
+				{/foreach}
+			</ul>
+		</div>
+		<div id="ifocus_opdiv"></div>
+		<div id="ifocus_tx">
+			<ul>
+				{foreach key=key item=item from=$ask_slide}
+				<li class="normal"><a href="{$item.url}" target="_blank">{$item.name}</a><p>{$item.desc|truncate:30:""}......</p></li>
+				{/foreach}
+			</ul>
+		</div>
+	</div>
+	<div id="ifocus_btn">
+		<ul>
+			{foreach key=key item=item from=$ask_slide}
+			<li class="current"><img src="/{$item.image}" alt="" width="75" height="45"/></li>
+			{/foreach}
+		</ul>
+	</div>
+</div><!--ifocus end-->
+					</div>
+					
+					<div class="l11 mt10 clfix">
+						<div class="t02"><img src="/templates/9939/skins/default/images/t17.jpg" /></div>
+						<ul>
+						{foreach key=key item=item from=$ask_new10}						
+							<li><span><a href="{$item.url}" target="_blank" class="lblue">{$item.username}</a>　{$item.time_m}分{$item.time_s}秒钟前提问</span><a href="/ask/list.php?catid={$key}&action=all">[{$item.catname}]</a>　<a href="{$item.url}" target="_blank" title="{$item.title}">{$item.title|truncate:20:""}</a>
+						{/foreach}
+							
+						</ul>
+					</div>
+					
+					
+					<div class="l10 mt10 clfix">
+						<div class="t02"><img src="/templates/9939/skins/default/images/t16.jpg" /></div>
+						<ul>
+							{foreach key=key item=item from=$ask_focus}
+							<li><a href="{$item.url}" target="_blank">{$item.title|truncate:42:""}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+				</div><!-- w530 end -->
+				<div class="w220 right">
+						<div class="today">
+						<div id="MarqueePro" style="overflow:hidden;height:100px;width:200px;">
+						<div id="MarqueePro1"><div class="LinkTable" >
+						{foreach key=key item=item from=$ask_gb}
+						<a href='{$item.url}' target='_blank'>{$item.title|truncate:46:""}</a><br />
+						{/foreach}
+						</div>
+						</div>
+						<div id="MarqueePro2"></div>
+						</div>
+						{literal}
+						<script>
+						var speed=40;
+						var MarqueePro=document.getElementById("MarqueePro");
+						var MarqueePro2=document.getElementById("MarqueePro2");
+						var MarqueePro1=document.getElementById("MarqueePro1");
+						MarqueePro2.innerHTML=MarqueePro1.innerHTML
+						function Marquee(){
+						if(MarqueePro2.offsetTop-MarqueePro.scrollTop<=0){
+						  MarqueePro.scrollTop-=MarqueePro1.offsetHeight;
+						}
+						else{
+						  MarqueePro.scrollTop++;
+						}
+						}
+						var MyMar=setInterval(Marquee,speed);
+						MarqueePro.onmouseover=function() {clearInterval(MyMar)}
+						MarqueePro.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+						</script>
+						{/literal}
+						<div class="cur"></div>
+					</div>
+					<div class="extra mt5">
+						<div class="w218 bd01">
+							<div class="t01"><h3>本月关注的问题</h3></div>
+							<div class="l07">
+								<ul>
+									{foreach key=key item=item from=$ask_top10}
+							 		<li><a href="{$item.url}" target="_blank">{$item.title|truncate:46:""}</a></li>
+									{/foreach}
+								</ul>
+							</div>
+						</div>
+						<div class="mt5">
+							<div class="t02"><img src="/templates/9939/skins/default/images/t10.jpg" /></div>
+							<div class="p01 clfix">
+							{foreach key=key item=item from=$ask_askKing}
+								<dl>
+									<dt><a href="/ask/question.php?toUID={$item.userid}" target="_blank" class="red"><img src="http://ucenter.9939.com/avatar.php?uid={$item.userid}&size=big&type=virtual" width="70" height="70"/></a></dt>
+									<dd>
+										<p>姓名：<a href="/ask/question.php?toUID={$item.userid}" target="_blank" class="red">{$item.truename}</a></p>
+										<p>科室：{$item.doc_keshi}</p>
+										<p>职称：{$item.zhicheng}</p>
+										<p><h3><a href="/ask/question.php?toUID={$item.userid}" target="_blank" class="red">向我提问</a><a href="/ask/question.php?toUID={$item.userid}" target="_blank"><img src="/templates/9939/skins/default/images/icon007.jpg" align="absmiddle" /></a></h3>
+										</p>
+									</dd>
+								</dl>
+							{/foreach}
+							</div>
+						</div>
+						
+						
+						<div class="notice mt5">
+							<h4>问答公告</h4>
+							<ul>
+								{foreach key=key item=item from=$ask_notice}
+								<li><a href='{$item.url}' target='_blank'>{$item.name}</a></li>
+								{/foreach}
+							</ul>
+						</div>
+						
+
+					</div><!-- extra end -->
+				</div><!-- w220 end -->
+				<div class="brand_recommend_content">
+					<div class="t07"><span>我是医生 我要申请 <strong><a href="http://home.9939.com/do.php?ac=c20eccd4c4d1ca14153b47c508f5522b" class="red">加入医师团</a></strong></span></div>
+				  <div class="brand_to_left"><a href="###" onmouseout="ISL_StopUp_1()" onmousedown="ISL_GoUp_1()" onmouseup="ISL_StopUp_1()" ><img src="/templates/9939/skins/default/images/brand_to_left.gif" /></a>
+				  </div>
+				  <div class="brand_show">
+					<div id="ISL_Cont_1" class="Cont">
+					  <div class="scrCont">
+					  <ul id="List1_1">
+					  {foreach key=key item=item from=$ask_tjDoc}
+					  {if $key < 7}
+						<li><a href="http://home.9939.com/space.php?uid={$item.userid}"><img src="http://ucenter.9939.com/avatar.php?uid={$item.userid}&size=big&type=virtual" width="85" height="85"/></a><p><a href="http://home.9939.com/space.php?uid={$item.userid}">{$item.nicheng}</a></p><input type="image" onclick="window.location.href='http://home.9939.com/space.php?uid={$item.userid}'" src="/templates/9939/skins/default/images/btn_05.jpg" /></li>
+					  {/if}
+					  {/foreach}
+					  </ul>
+					  <ul id="List1_2">
+					  {foreach key=key item=item from=$ask_tjDoc}
+					  {if $key > 7}
+						<li><a href="http://home.9939.com/space.php?uid={$item.userid}"><img src="http://ucenter.9939.com/avatar.php?uid={$item.userid}&size=big&type=virtual" width="85" height="85" /></a><p><a href="http://home.9939.com/space.php?uid={$item.userid}">{$item.nicheng}</a></p><input type="image" onclick="window.location.href='http://home.9939.com/space.php?uid={$item.userid}'" src="/templates/9939/skins/default/images/btn_05.jpg" /></li>
+					  {/if}
+					  {/foreach}
+					  </ul>
+					  </div>
+					</div>
+					{literal}
+				<script type="text/javascript">
+					 var speed_1 = 10; //速度(毫秒)
+					 var space_1 = 10; //每次移动(px)
+					 var PageWidth_1 = 98; //翻页宽度
+					 var fill_1 = 0; //整体移位
+					 var moveLock_1 = false;
+					 var moveTimeObj_1;
+					 var moveWay_1 = "right";
+					 var comp_1 = 0;
+					 var autoPlayObj_1=null;
+					
+					 GetObj("List2_1").innerHTML=GetObj("List1_1").innerHTML;
+					 GetObj('ISL_Cont_1').scrollLeft=fill_1>=0?fill_1:GetObj('List1_1').scrollWidth-Math.abs(fill_1);
+					 GetObj("ISL_Cont_1").onmouseover=function(){clearInterval(autoPlayObj_1)}
+					 GetObj("ISL_Cont_1").onmouseout=function(){AutoPlay_1()}
+					 AutoPlay_1();
+					
+					 function GetObj(objName){
+					 if(document.getElementById){return eval('document.getElementById("'+objName+'")')}else{return eval('document.all.'+objName)}
+					 }
+					
+					 function AutoPlay_1(){
+					 clearInterval(autoPlayObj_1);
+					 autoPlayObj_1=setInterval('ISL_GoDown_1();ISL_StopDown_1();',5000)
+					 }
+					
+					 function ISL_GoUp_1(){
+					 if(moveLock_1)return;
+					 clearInterval(autoPlayObj_1);
+					 moveLock_1=true;
+					 moveWay_1="left";
+					 moveTimeObj_1=setInterval('ISL_ScrUp_1();',speed_1);
+					 }
+					  
+					 function ISL_StopUp_1(){
+					 if(moveWay_1 == "right"){return};
+					 clearInterval(moveTimeObj_1);
+					 if((GetObj('ISL_Cont_1').scrollLeft-fill_1)%PageWidth_1!=0){
+					 comp_1=fill_1-(GetObj('ISL_Cont_1').scrollLeft%PageWidth_1);
+					 CompScr_1()}else{moveLock_1=false}
+					 AutoPlay_1()}
+					
+					 function ISL_ScrUp_1(){
+					 if(GetObj('ISL_Cont_1').scrollLeft<=0){GetObj('ISL_Cont_1').scrollLeft=GetObj('ISL_Cont_1').scrollLeft+GetObj
+					
+					('List1_1').offsetWidth}
+					 GetObj('ISL_Cont_1').scrollLeft-=space_1
+					 }
+					
+					 function ISL_GoDown_1(){
+					 clearInterval(moveTimeObj_1);
+					 if(moveLock_1)return;
+					 clearInterval(autoPlayObj_1);
+					 moveLock_1=true;
+					 moveWay_1="right";
+					 ISL_ScrDown_1();
+					 moveTimeObj_1=setInterval('ISL_ScrDown_1()',speed_1)
+					 }
+					
+					 function ISL_StopDown_1(){
+					 if(moveWay_1 == "left"){return};
+					 clearInterval(moveTimeObj_1);
+					 if(GetObj('ISL_Cont_1').scrollLeft%PageWidth_1-(fill_1>=0?fill_1:fill_1+1)!=0){
+					 comp_1=PageWidth_1-GetObj('ISL_Cont_1').scrollLeft%PageWidth_1+fill_1;
+					 CompScr_1()
+					 }
+					 else{moveLock_1=false}
+					 AutoPlay_1()
+					 }
+					
+					 function ISL_ScrDown_1(){
+					 if(GetObj('ISL_Cont_1').scrollLeft>=GetObj('List1_1').scrollWidth){GetObj('ISL_Cont_1').scrollLeft=GetObj
+					
+					('ISL_Cont_1').scrollLeft-GetObj('List1_1').scrollWidth}
+					 GetObj('ISL_Cont_1').scrollLeft+=space_1
+					 }
+					
+					 function CompScr_1(){
+					 if(comp_1==0){moveLock_1=false;return}
+					 var num,TempSpeed=speed_1,TempSpace=space_1;
+					 if(Math.abs(comp_1)<PageWidth_1/2){
+					 TempSpace=Math.round(Math.abs(comp_1/space_1));
+					 if(TempSpace<1){TempSpace=1}
+					 }
+					 if(comp_1<0){
+					 if(comp_1<-TempSpace){
+					 comp_1+=TempSpace;
+					 num=TempSpace
+					 }
+					 else{num=-comp_1;comp_1=0}
+					 GetObj('ISL_Cont_1').scrollLeft-=num;
+					 setTimeout('CompScr_1()',TempSpeed)
+					 }
+					 else{if(comp_1>TempSpace){comp_1-=TempSpace;num=TempSpace}
+					 else{num=comp_1;
+					 comp_1=0}
+					 GetObj('ISL_Cont_1').scrollLeft+=num;
+					 setTimeout('CompScr_1()',TempSpeed)}
+					 }
+					</script>
+					{/literal}
+				  </div>
+				  <div class="brand_to_right"><a href="###"  onmouseout="ISL_StopDown_1()" onmousedown="ISL_GoDown_1()" onmouseup="ISL_StopDown_1()"><img src="/templates/9939/skins/default/images/brand_to_right.gif" /></a></div>
+				</div><!-- brand -->
+				<div class="clear"></div>
+				<div class="w720 mt10"><a href="{$ask_adA.url}"><img src="{$ask_adA.image}" width="755"  height="102"/></a></div>
+				<div class="l12 mt10">
+					<div class="t02"><img src="/templates/9939/skins/default/images/t18.jpg" /></div>
+					<ul>
+						{foreach key=key item=item from=$ask_solve10}
+							<li><a href="{$item.url}" target="_blank" title="{$item.title}">{$item.title|truncate:18:""}</a></li>			
+						{/foreach}
+					</ul>
+				</div>
+				<div class="l12 mt10">
+					<div class="t02"><img src="/templates/9939/skins/default/images/t19.jpg" /></div>
+					<ul>
+						{foreach key=key item=item from=$ask_wonder10}
+						{if $item.message!=''}
+							<li><a href="{$item.url}" target="_blank" title="{$item.message}">{$item.message|truncate:18:""}</a></li>		
+						{/if}
+						{/foreach}
+					</ul>
+				</div>
+				<div id="tabs1" class="t06 mt10">
+						 <ul class="menu1 clfix" id="menu1">
+							  <li onclick="setTab(1,0)" >每周回答</li>
+							  <li onclick="setTab(1,1)" class="hover">总回答</li>
+						 </ul>
+						 <div class="main1" id="main1">
+						 	<ul>
+								{foreach key=key item=item from=$ask_feedback_week}
+								<li><span style="float:right;margin-right:5px;">回复数:{$item.count}</span><a href="http://home.9939.com/space.php?uid={$item.userid}" target="_blank" >{$item.truename}</a></li>		
+								{/foreach}
+							</ul>
+							
+							 <ul class="block">
+								{foreach key=key item=item from=$ask_feedback_total}
+								<li><span style="float:right;margin-right:5px;">回复数:{$item.count}</span><a href="http://home.9939.com/space.php?uid={$item.userid}" target="_blank" >{$item.truename}</a></li>			
+								{/foreach}
+							</ul>
+							  
+						</div>
+					</div>
+					<div class="clear"></div>
+				<div class="l09 mt10">
+					<ul>
+						{foreach key=key item=item from=$ask_aszt}
+						<li><a href="{$item.url}"><img src="/{$item.image}" width="130" height="115"/></a><p><a href="{$item.url}">{$item.name|truncate:11:""}</a></p></li>
+						{/foreach}
+					</ul>
+				</div>
+				<div class="l08 mt10 left">
+					<div class="t02"><img src="/templates/9939/skins/default/images/t11.jpg" /></div>
+					<ul>
+						
+						{foreach key=key item=item from=$ask_reward}
+							<li><span>{$item.username}</span><a href="/ask/list.php?catid={$item.catid}&action=all" class="lblue">[{$item.catname}]</a>　<a href="{$item.url}" target="_blank" title="{$item.title}">{$item.title|truncate:20:""}</a>{if $item.reward>0}{$item.reward}分{/if}</li>		
+						{/foreach}
+					</ul>
+				</div>
+				<div class="l08 mt10 right">
+					<div class="t02"><img src="/templates/9939/skins/default/images/t12.jpg" /></div>
+					<ul>
+						{foreach key=key item=item from=$ask_new_feedback}
+							<li><span>{$item.username}</span><a href="/ask/list.php?catid={$item.catid}&action=all" class="lblue">[{$item.catname}]</a>　<a href="{$item.url}" target="_blank" title="{$item.title}">{$item.title|truncate:18:""}</a></li>		
+						{/foreach}
+					</ul>
+				</div>
+				<div class="l08 mt10 left">
+					<div class="t02"><img src="/templates/9939/skins/default/images/t13.jpg" /></div>
+					<ul>
+						{foreach key=key item=item from=$ask_unsolve}
+							<li><span>{$item.username}</span><a href="/ask/list.php?catid={$item.catid}&action=all" class="lblue">[{$item.catname}]</a>　<a href="{$item.url}" target="_blank" title="{$item.title}">{$item.title|truncate:20:""}</a></li>		
+						{/foreach}
+					</ul>
+				</div>
+				<div class="l08 mt10 right">
+					<div class="t02"><img src="/templates/9939/skins/default/images/t14.jpg" /></div>
+					<ul>
+						{foreach key=key item=item from=$ask_common}
+							<li><span>{$item.username}</span><a href="/ask/list.php?catid={$item.catid}&action=all" class="lblue">[{$item.catname}]</a>　<a href="{$item.url}" target="_blank" title="{$item.title}">{$item.title|truncate:20:""}</a></li>		
+						{/foreach}
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div><!-- w720 end -->
+			<div class="clear"></div>
+		</div><!-- mainbody end -->
+	</div><!-- wrapper end -->
+<div style="display:none"><script src="http://s61.cnzz.com/stat.php?id=1383826&web_id=1383826" language="JavaScript"> </script></div>
+<!--#include virtual="/templates_ask/include/link.html"-->
+<!--#include virtual="/templates_ask/include/footer.html"-->

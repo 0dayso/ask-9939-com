@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background:#AB0201 url(../images/body_bg.png) repeat-x;}
+
+/* .emod-02 extend mod */
+.emod-02{background:#E00102;overflow:hidden;zoom:1;position:relative;}
+.emod-02 .top{background:url(../images/even_tb.png) no-repeat;height:12px;}
+.emod-02 .bottom{background:url(../images/even_tb.png) no-repeat 0 100%;height:12px;}
+.emod-02 .tl{background:url(../images/even_lr.png) no-repeat ;width:12px;height:32000px;}
+.emod-02 .tr{background:url(../images/even_lr.png) no-repeat 100% 0;width:12px;height:32000px;}
+.emod-02 .br{background:url(../images/even_tb.png) no-repeat 100% 100%;margin-top:0;}
+.emod-02 .inner{ background:url(../images/inner_bg.png) no-repeat; margin:0px 12px; padding:0 14px; overflow:hidden;}
+
+.zhlinks{ overflow:hidden; _zoom:1;}
+.zhlinks ul{ float:right; display:inline; margin:196px 110px 0 0;}
+.zhlinks li{ float:left; display:inline; background:url(../images/zhlinks-li.png) no-repeat; margin-left:5px; width:95px; padding-left:2px; text-align:center; line-height:32px;height:40px; font-family:Arial; font-size:16px; font-weight:700;}
+.zhlinks li a{color:#fff;}
+.zhlinks li a:hover{text-decoration:none; color:#FCEC50;}
+.zhlinks li.on a{color:#FCEC50;}
+
+.zhstep{ position:relative; background:url(../images/zhstep.png) no-repeat left top; margin-top:10px; padding:20px 0 130px 30px; }
+
+.zhstep .zhlink-temp{ position:absolute; left:45px; top:120px; width:150px; height:40px;}
+.zhstep .zhlink-temp a{display:block; width:150px; height:100%; background:url(../images/imgs.gif) repeat;}
+.zhstep .zhlink-temp a:hover{ text-decoration:none;}
+.zhtag{ background:#FFF url(../images/zhtag.png) no-repeat right bottom; padding:15px 0 50px; overflow:hidden; _zoom:1;}
+.zhtag .zhblock{ float:left; color:#666;}
+.zhtag .zhblock .hd h3{ margin-left:18px; color:#C10202;}
+.zhtag .zhblock01 .bd,.zhtag .zhblock03 .bd{ padding-top:10px;}
+.zhtag .zhblock table{ line-height:25px; text-align:center;}
+.zhtag .zhblock th{ text-align:center; font-weight:700;}
+
+.zhtag .zhblock01{ width:270px;}
+.zhtag .zhblock02{ width:380px;}
+.zhtag .zhblock02 .bd{ border:1px dashed #D7D7D7; border-top:none; border-bottom:none;}
+.zhtag .zhblock02 .zhnews{ float:left; display:inline; margin-top:12px; margin-left:15px; width:170px;}
+.zhtag .zhblock02 .zhnews h4{ font-weight:700; color:#000;}
+.zhtag .zhblock02 .zhnews li{ background:url(../images/zhnews-li.gif) no-repeat 0 50%; margin-top:5px; padding-left:8px;}
+.zhtag .zhblock02 .zhnews a{ color:#666;}
+.zhtag .zhblock03{ padding:0 10px; width:160px;}
+.zhtag .zhblock03 li{ float:left; display:inline; margin-top:5px; margin-left:10px; width:70px; font-size:14px;}
+
+.zhlala{ background:url(../images/zhlala.png) no-repeat; margin-top:10px; height:408px; overflow:hidden; _zoom:1;}
+.zhla-inner{ width:490px; margin:115px auto 0; line-height:24px; font-size:14px; color:#989898;}
+.zhla-inner a{ color:#3043A7; text-decoration:underline;}
+.zhla-2p{ margin-top:30px;}
+.zhla-link{ margin-top:20px; text-align:center;}
+
+/* subPage */
+.subBg{background:url(../images/subPng.png) no-repeat}
+.lw-subMod{background:#fff;margin:19px 0 10px 0;color:#666;zoom:1}
+.lw-subMod .t{background-position:0 0;height:60px;padding:55px 0 0 100px;position:relative}
+.lw-subMod .t h1{ font-family:"幼圆";position:absolute;top:2px;left:2px;line-height:37px;width:180px;text-align:center;font-size:24px;color:#fff}
+.lw-subMod .c{padding:10px 20px 10px 84px;}
+.lw-subMod .hd{border-bottom:1px solid #d2d2d2;}
+.lw-subMod .hd h2{background-position:0 -115px;padding-left:23px;font-size:24px;font-family:"幼圆";line-height:29px;color:#8c1821}
+.lw-subMod .inBlock{ position:relative}
+.lw-subMod .lw-ico{position:absolute;right:0;top:5px;_right:30px}
+.lw-subMod .lw-ico1{ background-position:right -157px;width:40px;height:70px}
+.lw-subMod .lw-ico2{ background-position:-770px  -157px;width:88px;height:72px;top:-34px}
+.lw-subMod .lw-ico3{ background-position:-647px -157px;width:126px;height:61px}
+.lw-subMod .bd{line-height:1.8em;padding-left:20px;font-size:14px}
+.lw-subMod .guid{background:url(../images/subBtn.png) no-repeat 0 -98px;height:76px;width:724px;margin-left:85px}
+.lw-picBlock{border-bottom:1px solid #cfceca;padding:15px 0}
+.lw-picBlock img{float:left;border:1px solid #cfceca;padding:3px;vertical-align:bottom;width:170px;height:108px;}
+.lw-picBlock .text{float:left;line-height:120px;font-family:"幼圆";font-size:22px;width:60%;padding-left:100px;}
+.lw-qgmod{font-size:14px;line-height:3.0em}
+.lw-qgmod span{display:block;text-align:center;padding:20px}
+.lw-qgmod span .btn{background:url(../images/zhbut.gif) no-repeat;width:345px;height:44px;border:none;cursor:pointer;}
+/* 快速提问 */
+.lw-askProcessL .b_block{text-align:left!important;margin:0 28px 0 15px;border-top:1px dashed #acacac;border-bottom:1px dashed #acacac;padding:10px 0px 40px 18px}
+.lw-askProcessL .b_block .inp{vertical-align:middle}
+.lw-askProcessL .bd table{margin-top:30px}
+.lw-askProcessL .bd td{padding:5px 0;}
+.lw-askProcessL .bd td input,.lw-askProcessL .bd td textarea{color:#acacac}
+.lw-askProcessL .bd td .inp{border:1px solid #8a9ebf;padding:3px;line-height:1.31em}
+.lw-askProcessL .bd td textarea{border:1px solid #82a0c2;height:110px;*height:107px;_height:112px;width:386px;overflow:auto;text-align:left;padding:5px;line-height:17px}
+.lw-askProcessL .bd td .long{width:390px}
+.lw-askProcessL .bd td .short{width:200px}
+.lw-askProcessL .bd td .randC{ vertical-align:middle}
+.lw-askProcessL .bd td span{color:#414141;padding:0 3px;font-size:12px;font-weight:normal}
+.lw-askProcessL .bd td span strong{color:#db0000}
+.lw-askProcessL .bd tfoot td {text-align:center;width:100%}
+.lw-askProcessL .bd tfoot .btn{background:url(../images/subBtn.png) no-repeat 0 -46px;width:100px;height:40px;border:none;cursor:pointer;margin:13px 5px 10px 5px;}
+.lw-askProcessL .bd tfoot .btn1{background-position:-124px -45px}
+.lw-askProcessL .bd .l{width:13%;vertical-align:top;text-align:right;line-height:25px;}
+.lw-askProcessL .bd .r{width:87%;padding-left:10px;}
+
+.zhflash_bd{ text-align:center;}
+.zhflash_bd table{ border:1px solid #656565; width:698px;}
+.zhflash_bd table th{border-bottom:1px solid #656565; line-height:34px; text-align:center; font-weight:700; color:#D60204; font-size:18px;}
+.zhflash_bd table td{ border-bottom:1px solid #656565;}
+
+.zhtemp_span{ color:#F00; padding-left:20px;}

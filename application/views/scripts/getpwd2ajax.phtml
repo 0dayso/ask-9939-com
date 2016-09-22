@@ -1,0 +1,31 @@
+
+<script>
+try{
+    var mail="<?=$this->username?>";
+    var strmail=mail.split("@");
+    
+}catch(e){
+    
+}
+function tiaozhuan(){
+    window.location.href="http://mail."+strmail[1];
+}
+
+</script>
+
+<div class="bd">
+    <div class="d-grid l-fix" style="overflow:hidden; zoom:1;">
+        <div class="col-m">
+            <div class="d-box2">
+              <div class="d-login-pw">
+                      <h3>找回密码</h3>
+                            <p class="top name l-fix">1.填写绑定邮箱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.接受密码找回邮件</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.重置密码</p>
+                            <p class="info name l-fix">
+                                我们已将“[9939会员]找回密码”邮件发送到您的邮箱<?=$this->username?>中，请在48小时内收信重置密码。
+                            </p>
+                  <p class="dlan"><a href="javascript:;" onclick="tiaozhuan();"><img class="imgInfo" src="<?=ASK_URL?>ask/images/but-qyx.gif"></a></p>
+                    </div>
+                    </div>
+        </div>
+        </div>
+</div>

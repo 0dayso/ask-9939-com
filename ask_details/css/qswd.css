@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+.l-mod{ width:265px; position:fixed; right:10px; bottom:0; _position:absolute;  _bottom:auto;  _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));  
+z-index:9999; text-align:left;}
+.l-mod .hd{ background:url(../images/asktit.png) no-repeat; height:30px; line-height:30px;position:relative; padding-left:10px;}
+.l-mod .hd span{width:30px;height:24px;cursor:pointer;text-align:center;display:block;position:absolute;top:3px;right:5px;color:#00529b;}
+.l-mod .hd span b{display: none;}
+.l-mod .hd2 em{display: none;}
+.l-mod .hd2 span b{display: block;}
+.l-mod .hd h2{ font-size:14px; font-weight:bold; line-height:32px; color:#fff;text-align:left;}
+.formd{overflow: hidden;}
+.quiz p{*zoom: 1; margin-top:7px;}
+.quiz p:after{content: "";visibility: hidden;display: block;height: 0;clear: both;}
+.quiz label{display:block; width:64px; float:left; text-align:right;font-size:12px;color:#333; line-height:23px;}
+.quiz .inp{ height:30px; line-height:30px;border:none;background: url(../images/lInput.png) no-repeat; width:172px; padding-left:5px; overflow:hidden;}
+.quiz .inp{ *width:210px;}
+.quiz .inp2{ height:42px;background: url(../images/ms.png) no-repeat;}
+.quiz .sub{ text-align:center;}
+.quiz .sub .sub-btn{ font-size:14px;color:#fff;background:url(../images/sub-bg.jpg) no-repeat; width:83px; height:24px; border:0;cursor:pointer; font-family:"微软雅黑";}
+.l-mod .bd{height:160px; background:url(../images/bd-y.png) no-repeat;text-align:left;}
+.quiz .inp3{width:78px;height:30px; line-height:30px;padding-left:5px;border:none;background:url(../images/sInput.png) no-repeat;}
+.quiz .hlabel{height:42px;line-height: 42px;}
+.l-mod .hd span em{font-style: normal;}
+

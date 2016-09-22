@@ -1,0 +1,131 @@
+<?=$this->render('/other_header.phtml')?>
+<script language="javascript"> 
+$("#searchtext").val('<?=$this->kw?>');
+</script>
+	<div id="bd">
+		<div class="g-m0s8 l-fix tMarginLg">
+			<div class="col-m">
+				<div class="m-wrap">
+					<div class="tmod-08">
+						<h3>您的位置：问答首页－－<?=$this->kw?></h3>
+					</div>
+					<div class="j-mod tMarginLg">
+						<div id="menu0" class="hd fix">
+							<ul>
+								<li class="hover">所有问题</li>
+							</ul>
+						</div>
+						<div id="main0" class="bd">
+							<ol class="block">
+								<div class="j-l02 m-clist">
+									<div class="j-pages">您搜索的 <font color="Red"><?=$this->kw?></font>结果有<font color="Red"><?=$this->totle?></font>条，耗时<font color="Red"><?=$this->searchtime?></font>秒</div>
+									<?foreach ((array) $this->list as $v){?>
+									<dl>
+										<dt>
+										<?if($v['hdstate']==0){?>
+										<strong class="false">
+										<?}else{?>
+										<strong class="true">
+										<?}?>
+										<a href="<?=$this->view_url?><?=$v['ID']?>"><?=$v['TITLE']?></a></strong></dt>
+										<dd>
+											<p class="des"><?=$v['CONTENT']?></p>
+										</dd>
+										<dd class="a-desc"><a href="#" class="name"><?=$v['ftuid']?></a><span class="date">
+										<?if($v['fttime']>0){?><?=date("Y-m-d H:i:s",$v['fttime'])?><?}?></span><span class="a-name">
+	<?if ($v['hdstate']==1){?>最佳回答者:<a href="#"><?=$v['hduid']?></a>-<?}?><?=$v['tname']?></span></dd>
+									</dl>  
+									<?}?>
+									<div class="j-pages"><?=$this->pagehtml?></div>
+								</div>
+							</ol>
+					    </div>
+				</div>
+				<div class="mod zhmod-04 tMarginLg">
+	            <span class="top">
+	              <span class="tl"></span>
+	            </span>
+	            <div class="inner">
+	              <div class="hd">
+	                <h3>快速提问</h3>
+	              </div>
+	              <div class="bd">
+	                <form action="/Ask/" method="post">
+	                  <fieldset>
+	                    <legend>快速提问</legend>
+	                    <p><label for="">提问标题：</label><input type="text" name="kw"/></p>
+	                    <p><label for="">提问内容：</label><textarea name="askcontent"></textarea></p>
+	                    <p><input type="submit" class="submit-zh" value="提交" /></p>
+	                  </fieldset>
+	                </form>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="mod zhmod-04 tMarginLg">
+	            <span class="top">
+	              <span class="tl"></span>
+	            </span>
+	            <div class="inner">
+	              <div class="hd">
+	                <h3>某某科专家推荐</h3>
+	              </div>
+	              <div class="bd">
+	                <div class="zhmod-03">
+	                  <div class="header-left fl">
+	                    <a href="###"><img src="temp/photo2.jpg" /></a>
+	                  </div>
+	                  <div class="info-right fl">
+	                    <h5>某某某</h5>
+	                    <P>擅长吹牛等，但是不精通</P>
+	                    <p class="submit-zh"><a href="###">加为好友</a></p>
+	                    <p class="submit-zh"><a href="###">向我提问</a></p>
+	                  </div>
+	                </div>
+	                <div class="zhmod-03">
+	                  <div class="header-left fl">
+	                    <a href="###"><img src="temp/photo2.jpg" /></a>
+	                  </div>
+	                  <div class="info-right fl">
+	                    <h5>某某某</h5>
+	                    <P>擅长吹牛等，但是不精通</P>
+	                    <p class="submit-zh"><a href="###">加为好友</a></p>
+	                    <p class="submit-zh"><a href="###">向我提问</a></p>
+	                  </div>
+	                </div>
+	                <div class="zhmod-03">
+	                  <div class="header-left fl">
+	                    <a href="###"><img src="temp/photo2.jpg" /></a>
+	                  </div>
+	                  <div class="info-right fl">
+	                    <h5>某某某</h5>
+	                    <P>擅长吹牛等，但是不精通</P>
+	                    <p class="submit-zh"><a href="###">加为好友</a></p>
+	                    <p class="submit-zh"><a href="###">向我提问</a></p>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+			</div>
+			</div> 
+			<?php require(APP_ROOT.'/con_right1.shtml');?>  
+			<div class="mod zhmod-02 tMarginLg">
+		          <div class="hd">
+		            <ul>
+		              <li>相关文章</li>
+		              <li>相关疾病</li>
+		            </ul>
+		          </div>
+		      <div class="bd">
+		                <ul>
+		                  <?=$this->AskObj->getCorArt($this->keywords,10);?>
+		                </ul>
+		                <ul>
+		                 <?=$this->AskObj->getCorDis($this->keshiid,10);?>
+		                </ul>
+		          </div>
+		        </div>
+			<?php require(APP_ROOT.'/con_right2.shtml');?>
+		</div>
+	</div>
+<?php require(APP_ROOT."/footer.html");?>

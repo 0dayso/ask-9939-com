@@ -1,0 +1,82 @@
+<?php
+/*
+ * 问答投诉页面
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/images_ask/style/d_tousu.css"/>
+<link href="/images_ask/style/d_ask_tousu.css"type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="/images_ask/js/d_ask_tousu.js"></script>
+<title>投诉页</title>
+</head>
+<body>
+<div class="wrap ">
+    <form action="/ask/tousu2" name="form1" method="post">
+  <div class="wrap1 fix"> <span>被投诉人：</span>
+    <label class="r_lable"><?php if($this->uid>0) echo '<a href="http://home.9939.com/user/?uid='.$this->uid.'">'; ?><?=$this->uname?><?php if($this->uid>0) echo '</a>'; ?></label>
+  </div>
+  <div> <span>投诉时间：</span>
+    <label class=" timer r_lable ">
+    <script> getTimer(); </script>
+    </label>
+  </div>
+  <div> <span>投诉类别：</span>
+    <div class="tscheckbox">
+      <label>
+      <input type="radio" name="tousuItem" value="1"  checked="checked"/>
+      谩骂诽谤 </label>
+      <label>
+      <input type="radio" name="tousuItem" value="2" />
+      色情淫秽 </label>
+      <label>
+      <input type="radio" name="tousuItem" value="3" />
+      无意义灌水 </label>
+      <br />
+      <label>
+      <input type="radio" name="tousuItem" value="4" />
+      政治敏感性内容 </label>
+      <label>
+      <input type="radio" name="tousuItem" value="5" />
+      广告 </label>
+      <label>
+      <input type="radio" name="tousuItem" value="6" />
+      暴力犯罪 </label>
+      <br />
+
+      <?php if($this->type==2) {   ?>
+          <label>
+          <input type="radio" name="tousuItem" value="7" />
+          无满意答案 </label>
+          <label>
+          <input type="radio" name="tousuItem" value="8" />
+          医生回答内容肤浅应付 </label>
+      <?php } ?>
+    </div>
+  </div>
+  <div> <span>投诉说明：</span>
+    <textarea  class="tousuContentr_lable" name="tousu_content" id="tousu_content" style="width: 246px; height: 140px;"></textarea>
+  </div>
+  <div class="sb">
+      <input type="hidden" name="type" value="<?=$this->type?>" />
+      <input type="hidden" name="id" value="<?=$this->id?>" />
+    <input type="submit"  value="提交" class="bton" onclick="return tousu()"/>
+  </div>
+        </form>
+</div>
+</body>
+    <script>
+        function tousu(){
+            var content = document.getElementById("tousu_content");
+            if(content.value =="") {
+                    alert("请输入投诉内容!");
+                    content.focus();
+                    return false;
+            }
+            return true;
+
+        }
+        </script>
+</html>

@@ -1,0 +1,473 @@
+<?php
+//$cache_key = sprintf('%s|%s|%d', 'ask', 'detail', $this->askid);
+//$data = QLib_Cache_Client::getPageCache('pages', $cache_key, 24);
+//if ($data) {
+//    echo $data;
+//} else {
+//    ob_start();
+?>
+<?php
+
+function getremark($uid) {
+    $map_user = array(
+//        '北京天伦医院' => array(1134995, 1135113, 1135198, 1135222, 1135239),
+//        '北京华盛医院' => array(1138636, 1138686, 1138762, 1138875, 1138942, 1153927),
+        '华海白癜风医院'=>array(1435941)
+    );
+    
+    $remark = '';
+    foreach ($map_user as $k => $v) {
+        if (in_array($uid, $v)) {
+            $remark = '<span class="corc fl">|</span><span class="spec fl" style="color:#f60">医院：'.$k.'</span>';
+            break;
+        }
+    }
+    return $remark;
+}
+
+?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php try {
+    $common_config = Zend_Registry::get("common_config");
+} catch (Exception $e) {
+    
+} ?>
+        <title><?php echo $this->title; ?></title>
+        <meta name="Keywords" content="<?php echo $this->keywords; ?>" />
+        <meta name="description" content="<?php echo $this->description; ?>" />
+        <meta name="mobile-agent" content="format=html5;url=http://wapask.9939.com/id/<?= $this->info['id'] ?>.html" />
+        <link rel="alternate" media="only screen and(max-width: 640px)" href="http://wapask.9939.com/id/<?= $this->info['id'] ?>.html" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/main.css?v=20160906" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/detail.css?v=20160907"/>
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/rclumn.css?v=20160906"/>
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/bd_search.css?v=20160906" />
+        <script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/scrollbar.js?v=20160906"></script>
+        <script type="text/javascript" src="/ask/v1/js/slide.js?v=20160906"></script>
+        <!--script type="text/javascript" src="/ask/v1/js/smartFloat.js?v=20160427_01"></script-->
+        <script type="text/javascript" src="/ask/v1/js/set.js?v=20160906"></script>
+        <!--ends-->
+        <script type="text/javascript" src="/ask/v1/js/gundong.js?v=20160906"></script>
+        <script type="text/javascript" src="/ask/v1/js/DD_belatedPNG.js?v=20160906"></script>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/koala.min.1.5.js"></script>
+    </head>
+    <body>
+
+        <!-- 头部开始 -->   
+<?php require(APP_ROOT . "/headers_new.shtml"); ?>
+        <!-- 头部结束 -->
+        <div class="wd_zj">
+            <div class="wd_flz font">
+                <ul>
+                    <li><a href="http://ask.9939.com/" title="首页">首页</a></li>
+                    <li><a href="http://ask.9939.com/cat.shtml" title=" 科室分类">科室分类</a></li>
+                    <li class="wd-ts"><a href="http://ask.9939.com/classid/0" title="问题大全">问题大全</a></li>
+                    <li><a href="http://ask.9939.com/doctorTeam.shtml" title="医生团队">医生团队</a></li>
+                    <li><a href="http://ask.9939.com/rank.shtml" title="问答排行">问答排行</a></li>
+                    <li><a href="http://ask.9939.com/jingyan/" title="健康经验">健康经验</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 内容部分 start -->
+        <div class="mokd">
+
+            <!-- 通栏广告 1 start -->
+            <div class="bann">
+                <script type="text/javascript">
+                    /*问答详情页头部通栏广告*/
+                    var cpro_id = "u2364740";
+                </script>
+                <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+            </div>
+            <!-- 通栏广告 2 end -->
+            <div class="wd_mian font">
+                <a href="<?php echo WEB_URL; ?>" title="久久健康网">久久健康网</a>>
+                <a href="<?php echo ASK_URL; ?>" title="久久问医">久久问医</a>>
+                <?php
+                    $class_html = $this->info['class_html'];
+                    if(!empty($class_html)){
+                        echo $class_html.'>';
+                    }
+                ?>
+                <a href="http://ask.9939.com/id/<?= $this->info['id'] ?>" title="<?= htmlspecialchars($this->info['title']) ?>" class="a_bol"><?= htmlspecialchars(QLib_Utils_String::cutString($this->info['title'], 20, '...')) ?></a>   
+            </div>
+            <!--提问区 开始--> 
+            <div class="container">
+                <!--左侧 开始-->
+                <div class="w678  mr20 fl">
+                    <!--用户提问区  开始-->
+                    <div class="inqur bord">
+                    	<h1><?= mb_strcut(htmlspecialchars($this->info['title']), 0, 60, 'utf8') ?></h1>
+                        <p class="sex">
+                            <span><?php echo $this->user_info['nickname']; ?></span>
+                            <span><?php echo $this->info['age']; ?>岁</span><?php echo date("Y-m-d H:i:s", $this->info['ctime']);?>
+                        </p>
+                    	<div class="descip">
+                            <h3>病情描述：</h3>
+                            <p><?php echo $content = nl2br($this->info['content']);?></p>
+                            <?php 
+                                if($this->info['help'] !=''){
+                            ?>
+                            <h3>想得到怎样的帮助：</h3><p><?php echo $this->info['help'];?></p>
+                            <?php
+                                }
+                            ?>
+                        </div>
+                    	<div class="freas">
+                            <a rel=“nofollow” href="http://ask.9939.com/asking/" class="myan">免费提问</a>
+                            <?php
+                            $prohibit_reply = $this->info['prohibit_reply']==0?1:0;
+                            $answernum = $this->info['answernum']<2?1:0;
+                            $can_answer_flag = ($answernum===1 && $prohibit_reply===1)?1:0;
+                            if($this->user_isloogin_info['uType']=='2' && $can_answer_flag==1){?>
+                             
+                            <a href="javascript:void(0)" target="_self" id="latak" class="fres" data-prohibit_reply="0" title="我来回答">我来回答</a>
+                            <?php }?>
+                        </div>
+                        <form method="POST" name="form_answer" id="form_answer">
+                            <div class="capain mT18" id="capain">
+                                <div class="inputo">
+                                    <div class="txa clearfix">
+                                        <b class="oneclo1">病情分析：</b> 
+                                        <textarea class="btn_textarea asktex_d cor999 h38" id="answer_content" name="answer[content]" onfocus="if(this.value=='请根据患者提问的内容，给予专业详尽的指导意见。（最多输入500字）')this.value=''" onblur="if(this.value=='')this.value='请根据患者提问的内容，给予专业详尽的指导意见。（最多输入500字）'" style="color:#999">请根据患者提问的内容，给予专业详尽的指导意见。（最多输入500字）</textarea>
+                                        <div class="cor999 fiz12 pr8 fr "><i id="contentNum" style="font-style: normal">0</i>/500</div>
+                                    </div>
+                                    <div class="txam0 clearfix">
+                                        <b class="oneclo1">指导意见：</b>
+                                        <textarea class="btn_textarea  cor999  asktex_d  h52" id="answer_suggest" name="answer[suggest]" onfocus="if(this.value=='请给出具体的运动，饮食，康复等方面的指导。（最多输入500字）')this.value=''" onblur="if(this.value=='')this.value='请给出具体的运动，饮食，康复等方面的指导。（最多输入500字）'">请给出具体的运动，饮食，康复等方面的指导。（最多输入500字）</textarea> <div class="cor999 fiz12 pr8  fr"><i id="suggestNum" style="font-style: normal">0</i>/500</div>
+                                    </div>
+                                </div>
+                                <div class="web_btn mT10 fr ">
+                                    <input type="hidden" value="<?= $this->info['id'] ?>" name="answer[askid]" id="answer_askid" />
+                                            <input type="hidden" value="<?= $this->info['point'] ?>" name="answer[point]" id="answer_point" />
+                                    <button type="button" id="answer_submit" name="answer_submit">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="aslo"><img src="/ask/v1/images/mebqus.png"/></div>
+                    </div>
+                    <div class="reques bord">
+                    	<h2>相关问题</h2>
+                    	<ul class="queli">
+                            <?php 
+                            if($this->relatedProblem){
+                                foreach($this->relatedProblem as $k=> $val){
+                            ?>
+                            <li><a href="/id/<?php echo $val['ask']['id'];?>" title="<?php echo $val['ask']['title'];?>" target="_blank"><?php echo $val['ask']['title'];?></a></li>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <!--用户提问区 结束-->
+                    <div class="meb_ban mT20" style="display:none">
+                    </div>
+                    <?php
+                    //            print_r($this->info);
+                    //            exit;
+                    ?>
+                    <!--医生回答区 开始-->
+                    <?php
+                    if($this->doc_answerList){
+                        foreach($this->doc_answerList as $k =>$answer){
+                    ?>
+                    <div class="awer2015 mT20">
+                        <div class="awe_absu"></div>
+                        <div class="adoctor">
+                            <div class="awetit clearfix">
+                                <h3 class="fl">&nbsp;</h3><p class="fiz12 cor666 fr">因不能面诊，医生的建议仅供参考</p>
+                            </div>		
+                            <div class="descip paint">
+                                        <h3>病情分析：</h3>
+                                        <p><?php echo nl2br($answer['content']); ?></p>
+                                        <?php
+                                        if (!empty($answer['suggest'])) {
+                                            ?>
+                                            <h3>指导意见：</h3>
+                                            <p><?php echo nl2br($answer['suggest']); ?></p>
+                                            <?php
+                                        }
+                                        ?>
+                            </div>
+                            <div class="exask">
+                                <a href="http://home.9939.com/user/?uid=<?php echo $answer['user_info']['uid'];?>"><img src="<?php echo $answer['user_info']['pic'];?>" alt="" title=""/></a>
+                                <h3><span><?php echo $answer['user_info']['nickname'];?></span><?php echo $answer['user_detail_info']['zhicheng'];?></h3>
+                                <p><?php echo date('Y-m-d H:i:s',$answer['addtime']) ?></p>
+                                <div class="direc"><a rel=“nofollow” href="http://ask.9939.com/Asking/?uid=<?php echo $answer['user_info']['uid'];?>" class="dir_01">向TA提问</a><a href="javascript:;" class="dir_02">有用(12)</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                        }
+                    }
+                    ?>
+                    <!--医生回答区 结束-->
+                    <script type="text/javascript" src="/ask/v1/js/answer.js?v=20160822"></script>
+                    <div class="reques bord">
+                    	<h2>网友关注</h2>
+                        <div id="fsD1" class="focus">  
+                            <div id="D1pic1" class="fPic">  
+                                <ul class="fcon queli eypat">
+                                    <?php
+                                    if($this->friend_follow){
+                                        foreach($this->friend_follow as $k=>$val){
+                                    ?>
+                                    <li><a href="/id/<?php echo $val['id'];?>" title="<?php echo $val['title'];?>" target="_blank"><?php echo $val['title'];?></a></li>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>	
+                               <ul class="fcon queli eypat" style="display:none;">
+                                   <?php
+                                    if($this->friend_follow_1){
+                                        foreach($this->friend_follow_1 as $k=>$val){
+                                    ?>
+                                    <li><a href="/id/<?php echo $val['id'];?>" target="_blank"><?php echo $val['title'];?></a></li>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                               </ul>
+                               <ul class="fcon queli eypat" style="display:none;">
+                                   <?php
+                                    if($this->friend_follow_2){
+                                        foreach($this->friend_follow_2 as $k=>$val){
+                                    ?>
+                                    <li><a href="/id/<?php echo $val['id'];?>" target="_blank"><?php echo $val['title'];?></a></li>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                               </ul>	
+                            </div>
+                        <div class="fbg">  
+                            <div class="D1fBt" id="D1fBt">  
+                                <a href="javascript:void(0)" hidefocus="true" target="_self" class="current"><i>1</i></a>  
+                                <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>2</i></a>  
+                                <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>3</i></a>
+                            </div>  
+                            </div>  
+                            <span class="prev"></span>   
+                            <span class="next"></span>    
+                        </div>
+                        
+                        <script type="text/javascript">
+							Qfast.add('widgets', { path: "/ask/v1/js/terminator2.2.min.js", type: "js", requires: ['fx'] });  
+							Qfast(false, 'widgets', function () {
+								K.tabs({
+									id: 'fsD1',   //焦点图包裹id  
+									conId: "D1pic1",  //** 大图域包裹id  
+									tabId:"D1fBt",  
+									tabTn:"a",
+									conCn: '.fcon', //** 大图域配置class       
+									auto: 1,   //自动播放 1或0
+									effect: 'fade',   //效果配置
+									eType: 'click', //** 鼠标事件
+									pageBt:true,//是否有按钮切换页码
+									bns: ['.prev', '.next'],//** 前后按钮配置class                          
+									interval: 5000  //** 停顿时间  
+								}) 
+							})  
+						</script>
+						
+                        <p class="recla">与 <a href="http://zhannei.baidu.com/cse/search?s=11390991775594799180&entry=1&q=<?= urlencode(htmlspecialchars($this->info['title'])) ?>" target="_blank"><span style="color:#ff7a67"><?= htmlspecialchars($this->info['title']) ?></span></a> 有关的更多问题，<span><a href="http://zhannei.baidu.com/cse/search?s=11390991775594799180&entry=1&q=<?= urlencode(htmlspecialchars($this->info['title'])) ?>" target="_blank" style="color:#ff7a67">点击查看&gt;&gt;</a></span></p>
+
+                    </div>
+                    <!--精彩推荐 开始-->
+                    <div class="issues mT20 pt20">
+                        <ul class="mepho mT18 clearfix" style="height:128px; overflow:hidden;">
+                            <script type="text/javascript">BAIDU_CLB_fillSlot("1123983");</script>
+                        </ul>
+                        <div class="measo">
+                            <script type="text/javascript">
+                            var cpro_id="u2316040";
+                            (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"660",rsi1:"90",pat:"3",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"0",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",tft:"0",tlt:"1"}
+                            </script>
+                            <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                        </div>
+
+                    </div>
+                    <!--精彩推荐 结束-->
+                    <div class="clear"></div>
+                </div>
+                <!--左侧  结束-->
+                <div class="w300 fl">
+                    <div class="clumn mTop">
+                        <script type="text/javascript">
+                            var cpro_id = "u2316046";
+                            (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {at: "3", rsi0: "300", rsi1: "250", pat: "17", tn: "baiduCustNativeAD", rss1: "#FFFFFF", conBW: "1", adp: "1", ptt: "0", titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS: "14", rss2: "#000000", titSU: "0"}
+                        </script>
+                        <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                    </div>
+
+                    <div class="r_doctor quitr_doctor mTop">
+
+                        <div class="rquit_line cuols">
+                            <h4><span><?php echo QLib_Utils_String::cutString($this->info['title'], 10, '...');?></span><b class="howo">热词<em>TOP</em></b></h4>
+                        </div>
+                        <ul class="curco">
+                            <?php
+                            if($this->related_hot_words){
+                                foreach ($this->related_hot_words as $k1=>$hot){
+                            ?>
+                            <li <?php if($k1<3){echo'class="sp_01"';}?>><span><?php echo $k1+1;?></span><a href="http://ask.9939.com/top/<?php echo $hot['pinyin_initial'];?>/" title="<?php echo $hot['name']?>" target="_blank"><?php echo $hot['name'];?></a></li>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </ul>
+                       	
+                    </div> 
+                    <!--推荐专家12.1 开始 -->
+                    <div class="r_doctor quitr_doctor mTop">
+                        <div class="rquit_line"><h4 class="introd">推荐专家</h4></div>
+                        <div class="expert pr20">
+                            <?php
+                            if(isset($this->famousDoctors)) {
+                                foreach ($this->famousDoctors as $k => $v) {
+                                    echo urldecode($v['text']);
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <!--推荐专家 结束 -->
+                    <?php
+                    if ($this->related_jingyan) {
+                        ?>
+                        <div class="r_doctor quitr_doctor mTop">
+                            <div class="rquit_line cuols rexp">
+                                <h4 class="introd">相关经验</h4>
+                            </div>		
+                            <ul class="curco patco">
+                                <?php
+                                foreach ($this->related_jingyan as $k2 => $val3) {
+                                    ?>
+                                    <li><a href="/exp/<?php echo $val3['addtime']; ?><?php echo $val3['id']; ?>.html" title="<?php echo $val3['title']; ?>" target="_blank"><?php echo $val3['title']; ?></a></li>
+                                    <?php
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                    
+                    <?php
+                        if(!empty($this->recommendDrug)) {
+                    ?>
+                        <!--常见用药 开始 -->
+                        <div class="quitr_doctor mTop">
+                            <div class="rquit_line"><h2 class="introd">使用药品</h2></div>
+                            <div class="drehos">
+                                <?php 
+                                   foreach ($this->recommendDrug as $k => $v) {
+                                       echo urldecode($v['text']);
+                                   }
+                                ?>
+                            </div>
+                        </div>
+                        <!--常见用药 结束 -->
+                    <?php }?>
+                    <!--根据热词获取文章 开始 -->
+                    <div class="r_doctor quitr_doctor mTop">
+                        <div class="rquit_line cuols"><h4><span><?=$this->jb_title;?></span>文章</h4></div>
+                        <ul class="addrel">
+                            <?php foreach ($this->rel_article as $key => $value) {?>
+                            <?php $shorttitle = QLib_Utils_String::cutString($value['title'], 17, '...');?>
+                            <li><a href="<?=$value['url']?>" title="<?=$value['title']?>" target="_blank"><?=$shorttitle?></a></li>
+                            <?php }?>
+                        </ul>
+                    </div> 
+                    <!--根据热词获取文章  结束-->
+                    
+                    <!--猜你喜欢 开始 -->
+                    <div class="bgwr noplim">
+                        <div class="rquit_line  rqure3 clearfix"><h2 class="rquit_line_h2 introd fl">猜你喜欢</h2></div>
+                        <div class="clumn mTop">
+                            <script type="text/javascript">
+                                var cpro_id = "u2316050";
+                                (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {at: "3", rsi0: "300", rsi1: "245", pat: "1", tn: "baiduCustNativeAD", rss1: "#FFFFFF", conBW: "0", adp: "1", ptt: "0", titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS: "14", rss2: "#000000", titSU: "0", tft: "0", tlt: "1", ptbg: "90", piw: "0", pih: "0", ptp: "0"}
+                            </script>
+                            <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                        </div>
+                    </div>
+                    </div>
+                    <!--猜你喜欢 结束 -->
+                <div class="clear"></div>
+            </div>
+            <!--提问区 结束--> 
+            <!-- 热搜词 开始-->
+                <div class="letter-switch  lett-tab leume  mT25 clearfix">
+                    <?php foreach($this->letter_list as $k=>$v) {
+                            $class_name =($this->letter==$k)? 'class="currm move"': 'class="currm"';
+                        ?>
+                    <a  switc="<?php echo $k; ?>"  href="http://ask.9939.com/hot/<?php echo $k; ?>/" target="_blank" <?php echo $class_name; ?> ><?php echo $k; ?></a>
+                    <?php } ?>
+                </div>
+                <div class="lett-tab-con f12 clearfix">
+                    <?php $i=0;foreach($this->randWords as $k=>$v){ 
+                            $zimu = strtoupper($k);
+                            $style =(strtoupper($this->letter)==$zimu)?'':'curro';
+                        ?>
+                        <div switc-ass="<?php echo $zimu; ?>" class="lett-tab-<?php echo $zimu; ?> hotwords <?php echo $style; ?>"  >
+                            <?php
+                            if(count($v) > 1){
+                                foreach($v as $kk=>$vv){
+                                    $url = sprintf('%s%s/',$this->searchurl,  str_replace(' ', '', $vv['pinyin']));
+                                    echo '<a href="'.$url.'" title="'.$vv['keywords'].'" target="_blank">'.$vv['keywords'].'</a>';
+                                }
+                            }
+                            ?>
+                        </div>
+                    <?php $i++;} ?>
+                </div>
+            <!-- 热搜词 结束-->
+            <!-- 底部常见疾病、热门科室 -->
+                <!--#include virtual="/include/footer_ask_experience.shtml"--> 
+            <!-- 底部常见疾病、热门科室 -->
+            <!-- 页面底部 -->
+        </div>
+        <!-- 内容部分 end -->
+        <!-- 底部 start -->
+        <!--#include virtual="/ask/ask_footer/ask_footer_new.html"-->
+        <!--#include virtual="/public/include/baidu_js_push.php"-->
+        <!-- 底部 end -->
+
+        <!--快速提问 开始-->
+        <div class="l-mod" id="l-mod">
+            <div class="mebtop"></div>
+            <div class="hd">
+                <p><img  src="/ask/v1/images/meb_wrt6.png" alt="免费向万名医提问" title="免费向万名医提问"/></p>
+                <div class="mebxle"><a><img src="/ask/v1/images/mebxh.png?v=20160427_01"></a></div>
+            </div>
+            <iframe src="http://ask.9939.com/ask/quick/" width="236" height="150" frameborder="0" scrolling="No"></iframe>
+            <div class="mebbot"></div>
+        </div>
+        <!--快速提问 结束-->
+        
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?33be6f33f20ffd1a8555a825db2599d5";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    </body>
+</html>
+<?php
+//    $cache_data = ob_get_contents();
+//    QLib_Cache_Client::setPageCache('pages', $cache_key, $cache_data, 24);
+//    ob_flush();
+//}
+?>

@@ -1,0 +1,77 @@
+﻿{include file=admin/header.tpl.htm}
+
+{literal}
+<script language="javascript">
+	function checkInput()
+	{
+		
+		//if($('orderID[]').value == "")
+		//{
+			
+		//}
+	}
+	
+	function go(id,t)
+	{
+		var obj = document.getElementById('user_' + id);
+		document.getElementById('edit_' + id + '_' + t).style.display = 'none';
+		if(t)
+		{
+			obj.style.display = "none";
+			document.getElementById('edit_' + id + '_0').style.display = '';
+		}
+		else
+		{
+			obj.style.display = "";
+			document.getElementById('edit_' + id + '_1').style.display = '';
+		}
+		
+	}
+	
+</script>
+{/literal}
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">	
+		<tr class="header">	
+			<td>推荐位修改</td>
+			{if $type==3}<td>会员ID</td>{/if}
+			<td>{if $type==1}栏目名称{elseif $type==2}标题{else}真实名称{/if}</td>
+			<td>{if $type==1}栏目级别{elseif $type==2}点击量{else}积分{/if}</td>
+			<td>{if $type==1}有无子栏目{elseif $type==2}悬赏积分{else}居住地{/if}</td>
+			<td>{if $type==1}栏目ID{elseif $type==2}开始时间{else}证件{/if}</td>
+			<td>{if $type==1}所属{elseif $type==2}用户{else}科室{/if}</td>
+		</tr>		
+		
+		<form method="POST" action="pos.php?a=add_to_pos_new&pageNo={$iPage}&posid={$posid}" onsubmit="return checkInput();">
+		<input type="hidden" name="type" value="{$type}" />
+		{section name=list loop=$aList}  
+		
+		<tr bgcolor="White">
+			<td>
+				<input type="hidden"  name="u_n[{if $type==1}{$aList[list].id}{elseif $type==2}{$aList[list].askid}{else}{$aList[list].userid}{/if}]" />
+				<a href="javascript:go({if $type==1}{$aList[list].id}{elseif $type==2}{$aList[list].askid}{else}{$aList[list].userid}{/if},0)" id="edit_{if $type==1}{$aList[list].id}{elseif $type==2}{$aList[list].askid}{else}{$aList[list].userid}{/if}_0" >修改</a>
+				<a href="javascript:go({if $type==1}{$aList[list].id}{elseif $type==2}{$aList[list].askid}{else}{$aList[list].userid}{/if},1)" id="edit_{if $type==1}{$aList[list].id}{elseif $type==2}{$aList[list].askid}{else}{$aList[list].userid}{/if}_1" style='display:none' >确定</a>
+			</td>
+			{if $type==3}<td>{$aList[list].nicheng}</td>{/if}
+			<td>{if $type==1}{$aList[list].name}{elseif $type==2}<a href="/ask/show.php?id={$aList[list].askid}" target="_blank">{$aList[list].title}</a>{else}{$aList[list].truename}{/if}</td>
+			<td>{if $type==1}{$aList[list].level}级{elseif $type==2}{$aList[list].hits}{else}{$aList[list].point}{/if}</td>
+			<td>{if $type==1}{if $aList[list].trueOrFalse}<font color="red">是</font>{else}否{/if}{elseif $type==2}{$aList[list].reward}分{else}{$aList[list].address}{/if}</td>
+			<td>{if $type==1}{$aList[list].id}{elseif $type==2}{$aList[list].addtime|date_format:"%Y-%m-%d"}{else}{$aList[list].doccardname}{/if}</td>
+			<td>{if $type==1}{if $aList[list].type==1}管理员添加{else}用户添加{/if}{elseif $type==2}{$aList[list].username}{else}{$aList[list].doc_keshi}{/if}</td>
+		</tr>
+		<tr style="display:none" id="user_{if $type==1}{$aList[list].id}{elseif $type==2}{$aList[list].askid}{else}{$aList[list].userid}{/if}" >
+			<td colspan="7">
+			<table width="100%">
+				{$aList[list].pos_new}
+			</table>
+			</td>
+		</tr>
+		{/section}
+		<tr bgcolor="White" align="center"><td colspan="{if $type==3}7{else}6{/if}"><input type="submit" value="提交推荐信息" name="doSubmit"/>&nbsp;&nbsp;&nbsp;<input type="button" value="返回推荐位" onclick="location.href='pos.php?a=listAll'"/></td></tr>
+		</form>
+		</table>
+		<br>
+		{include file=admin/pager_bar.tpl.htm}
+
+{include file=admin/footer.tpl.htm}                                                                                              
+  

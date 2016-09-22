@@ -1,0 +1,94 @@
+{include file=admin/header_1.tpl.htm}
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+		<tr class="header">
+			<td colspan="2">添加广告</td>
+		</tr>		
+		<form name="adsform" method="POST" enctype="multipart/form-data" action="ads.php?act=addSave" onsubmit="return checkForm();">
+		<tr>
+			<td width="100" class="altbg1">广告名称：</td>
+			<td class="altbg2"><input type="text" id="name" name="ads[name]" size="50"></td>
+		</tr>
+		<tr>
+			<td class="altbg1">所在广告位：</td>
+			<td class="altbg2">
+				<select name="ads[pos]" id='pos'>
+				{$pos}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="altbg1">广告类型：</td>
+			<td class="altbg2">
+				<select name="ads[type]">
+				<option value="1">图片</option>
+				<option value="2">幻灯片</option>
+				<option value="3">文字链</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="altbg1">广告图片</td>
+			<td class="altbg2"><input type="file" name="image"></td>
+		</tr>
+		<tr>
+			<td class="altbg1">广告图片(小)</td>
+			<td class="altbg2"><input type="file" name="simage"></td>
+		</tr>		
+		<tr>
+			<td class="altbg1">链接地址</td>
+			<td class="altbg2"><input type="text" name="ads[url]" size="50"></td>
+		</tr>
+		<tr>
+			<td class="altbg1">作者</td>
+			<td class="altbg2"><input type="text" id="author" name="ads[author]" size="50"></td>
+		</tr>
+		<tr>
+			<td class="altbg1">作者ID</td>
+			<td class="altbg2"><input type="text" id="author" name="ads[authorid]" size="50"></td>
+		</tr>		
+		<tr>
+			<td class="altbg1">作者空间地址</td>
+			<td class="altbg2"><input type="text" name="ads[aurl]" size="50"></td>
+		</tr>
+		<tr>
+			<td class="altbg1">开始日期</td>
+			<td class="altbg2"><input type="text" onfocus="setday(this)" name="ads[begintime]" /></td>
+		</tr>
+		<tr>
+			<td class="altbg1">结束日期</td>
+			<td class="altbg2"><input type="text" onfocus="setday(this)" name="ads[endtime]" /></td>
+		</tr>
+		<tr>
+			<td class="altbg1">广告介绍</td>
+			<td class="altbg2"><textarea name="ads[desc]"  rows="4" cols="120" ></textarea></td>
+		</tr>
+		<tr>
+			<td align="left" class="altbg1"><input type="button" onclick="history.go(-1);" value="返回" class="button"></td>
+			<td align="right" class="altbg2"><input type="submit" name="submit" value=" 提 交 " class="submit"></td>	
+		</tr>
+		</form>
+</table>
+
+{literal}
+<script language="javascript">
+//验证表单输入是否正确
+function checkForm()
+{
+	if(document.getElementById('name').value == "")
+	{
+		alert("广告名称不能为空");
+		document.getElementById('name').focus();
+		return false;
+	}
+	if(document.getElementById('pos').value == "")
+	{
+		alert("请选择广告位");
+		document.getElementById('pos').focus();
+		return false;
+	}
+	return true;
+}
+</script>
+{/literal}
+{include file=admin/footer.tpl.htm}                                                                                              
+  

@@ -1,0 +1,153 @@
+<?php
+/**
+ * 提问中转页
+ * @author 林原 
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>提交成功_健康问答_久久健康网</title>
+<link rel="stylesheet" type="text/css" href="/images_ask/style/zz.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/style/b.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/style/g.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/style/m.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/style/r.css"/>
+
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_index.css"/>
+<link href="/images_ask/css/twzz.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+
+<?php /*退出时跳转到首页 LinYuan 2010-4-21*/ ?>
+	function __logout() {
+		location.href="<?=ASK_URL?>";
+	}
+
+</script>
+
+</head>
+
+<body>
+    
+<?php require(APP_ROOT."/header_new.shtml");?>
+  
+  <div id="bd" class="bMarginLg">
+    <div class="lf_box01 l-fix tMarginLg">
+      <img src="/images_ask/images/dui.png" />
+      <div class="lf_box01_rig">
+        <h4>你的问题已提交成功，久久健康专家将给你尽快回复!</h4>
+        <input type="button" value="查看您的提问" onclick="javascript:location.href='http://ask.9939.com/id/<?=$this->askid ?>';"/>
+
+        <?php if($this->newMember==1){ ?>
+            <p class="fix">
+                <span>请保管好系统分配账号&nbsp;&nbsp; </span>
+                <span class="blue">用户名：&nbsp;&nbsp;</span><span class="red" id="showname"><?=$this->tmp_new_user['username'] ?>&nbsp;&nbsp;</span>
+                <span class="blue">密码：&nbsp;&nbsp;</span><span class="red" id="showpwd"><?=$this->tmp_new_user['password'] ?>&nbsp;&nbsp;</span>
+            </p>
+            <p class="fix" id="changeuser">
+                <span>或修改为您的个性账号（仅一次）&nbsp;&nbsp;</span>
+                <span class="blue">个人邮箱：</span>
+                <span><input type="text" class="input1" id="mail"/>&nbsp;&nbsp;</span>
+                <span class="blue">新密码：</span>
+                <span><input type="text" class="input1" id="pwd"/>&nbsp;&nbsp;</span>
+                <span><input type="button" value="提交" class="input2" onclick="subName()" /></span>
+            </p>
+        <?php } ?>
+        
+      </div>
+    </div>
+    <div class="lf_box02 l-fix">
+      <div class="hd fix">
+        <span>等待期间您可以做：</span>
+        <span><input type="button" value="继续提问" onclick="javascript:location.href='http://ask.9939.com/asking/index/kw/输入提问内容，点击“我要提问”';" /></span>
+        <span><input type="button" value="我的健康家园"  onclick="javascript:location.href='http://home.9939.com/user';"/></span>
+        <span><input type="button" value="完善个人资料" onclick="javascript:location.href='http://home.9939.com/user/do/do/edit';" /></span>
+      </div>
+      <div class="bd fix">
+        <div class="tuli fix">
+
+            <?php
+                    //4个图片广告位
+                    if(file_exists(APP_DATA_PATH.'/data_adsplace_123.php')) {
+                        include APP_DATA_PATH.'/data_adsplace_123.php';
+                        if($_ADSGLOBAL['123']) {
+                            foreach($_ADSGLOBAL['123'] as $key=>$val) {
+                                    $imgurl =$val['imageurl'];
+                                    if(strpos($imgurl,'http://')!==0) $imgurl = 'http://home.9939.com/'.$imgurl;
+                                    
+                                      echo ' <p>';
+                                      echo ' <a href="'.$val['linkurl'].'"><img src="'.$imgurl.'" /></a>';
+                                      echo ' <span class="zi">';
+                                      echo $val['introduce'];
+                                      echo ' </span>';
+                                      echo ' </p>';
+                            }
+                        }
+                    }
+            ?>
+       
+        </div>
+      </div>
+      <div class="ft">
+        <h4>以下内容可能对您有帮助</h4>
+        <ul>
+            <?php
+            if($this->asklist) {
+                foreach($this->asklist as $val ) {
+                    echo '<li><span class="span2">(已回复)</span><span class="span1"><a href="http://ask.9939.com/id/'.$val['id'].'">'.mb_substr($val['title'],0,13,'utf-8').'</a></span></li>';
+                }
+            }
+            ?>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+<?php require(APP_ROOT."/footer.html");?>
+
+<script type="text/javascript">
+
+
+function subName(){
+		var email = $('#mail').val();
+		var pattern = /^([a-zA-Z0-9_-]{2,})+@([a-zA-Z0-9_-]{2,})+(\.[a-z]{2,})+/;
+		chkFlag = pattern.test(email);
+		if(!chkFlag)
+		{
+			alert("E－mail格式不正确!");
+			$('#mail').focus();
+			return false;
+		}
+		var pwd = $('#pwd').val();
+		if( pwd == '' || pwd.length<6)
+		{
+			alert("密码应该大于6位！请认真填写!");
+			$('#pwd').focus();
+			return false;
+		}
+		$.get('/Ajaxsearch/updmember/email/'+email+'/pwd/'+pwd,
+		function(data){
+			if(data==1){
+				alert('与他人账号重复,请填写您自己的email,或者重新申请一个唯一的email!');
+				$('#mail').val('');
+				$('#pwd').val('');
+			}else if (data==0){
+				alert('修改成功!');
+				$('#showname').html(email);
+				$('#showpwd').html(pwd);
+                                $("#changeuser").hide();
+				//$('#member_username').val(email);
+			}
+		});
+		return;
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+a{ color:#1F376D;}
+a:hover{ color:#1F376D; text-decoration:underline;}
+
+.zhmod02{ border:1px solid #C5DDF1;}
+.zhmod02 .hd{ background:url(../images/zhmod02.png) repeat-x; line-height:25px;}
+.zhmod02 .hd h3{ padding-left:10px; line-height:25px; font-size:14px; color:#1F376D;}
+.zhmod02 .bd{ overflow:hidden;_zoom:1;}
+.zhmod02 .zhtext-list{ margin:10px 10px 0;}
+.zhmod02 .zhtext-list li{ width:190px; overflow:hidden;}
+.zhmod02 .zhtext-list a{ font-size:14px; color:#1F376D;}
+
+.zhtag-list{ _zoom:1;}
+.zhtag-list:after{ clear:both; content:""; display:block;}
+.zhtag-list li{ float:left; display:inline; white-space:nowrap;}
+
+.zhtext-list li{ background:url(../images/zhtext-list-li01.png) no-repeat 0 50%; padding-left:9px;overflow:hidden; white-space:nowrap;}
+
+/*main*/
+
+.zhtag-block{ background:#C1DDF3; border:1px solid #92C7F1; overflow:hidden; _zoom:1;}
+.zhtag-block .hd,.zhtag-block .bd{ float:left;}
+.zhtag-block .hd{ width:60px;}
+.zhtag-block .bd{ background:#FFF; margin:2px 0; width:166px; height:101px; overflow:hidden;}
+.zhtag-block .hd li{ background:url(../images/zhtag-block-li.png) no-repeat; padding-left:7px; line-height:35px; font-size:14px; color:#1F376D; }
+.zhtag-block .hd li.on{ background:url(../images/zhtag-block-lion.png) no-repeat;}
+.zhtag-block .zhtag-list{ margin-top:5px;}
+.zhtag-block .zhtag-list li{ margin:0 0 4px 10px;white-space:nowrap;}
+
+.zhboard{ padding-bottom:6px;}
+.zhboard .zhtext-list{ margin:16px 10px 0;}
+
+
+.g-m0s6 .m-wrap{ margin-right:240px;}
+.g-m0s6 .col-s{ width:230px; margin-left:-230px; overflow:hidden;}
+
+.zhmod07{ background:#C1DDF3; border:1px solid #93C7EF; padding:4px;}
+.zhmod07 .hd,.zhmod07 .bd{ background:#FFF; _zoom:1;}
+.zhmod07 .hd,.zhmod07 .zherror{ font-size:18px; font-weight:700; color:#F76301;}
+.zhmod07 .hd{ font-family:"黑体";}
+.zhmod07 .hd h3{ background:url(../images/zhmod07-title.png) no-repeat 20px 10px; border-bottom:1px solid #C2DDF2; padding-left:50px; line-height:44px; font-weight:400; font-size:18px;}
+.zhmod07 .hd h3 span{ color:#000;}
+
+.zhmod07 .bd{ padding-top:30px; padding-bottom:35px; overflow:hidden; _zoom:1;}
+.zhmod07 .zherror{ background:url(../images/zherror.png) no-repeat; border-bottom:1px dashed #949494; margin-right:90px; line-height:44px; font-family:"黑体"; font-weight:400;}
+.zhmod07 p{ margin-left:77px; margin-bottom:10px; padding-left:55px; line-height:30px; font-size:14px;}
+.zhmod07 p a{ color:#0220a2; text-decoration:underline;}
+.zhmod07 .zhdask{ display:block; float:right; display:inline; margin-right:100px; background:url(../images/zhdask.png) no-repeat; width:117px; height:30px;}
+.zhmod07 .zhdask:hover{ background:url(../images/zhdask-on.png) no-repeat; }
+.zhnew-ask .zhtext-list li{ background-image:url(../images/zhtext-list-li01.png);}
+.ques-broad .zhtext-list li,.zhboard .zhtext-list li{ background-image:url(../images/zhtext-list-li02.png); font-size:12px;}
+.ques-broad .zhtext-list li a,.zhboard .zhtext-list li a{ font-size:12px; color:#5F5F5F;}
+.ques-broad .bd{ height:176px;}
+.ques-broad .bd .zhtext-list{ marker-top:0;}

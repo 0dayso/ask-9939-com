@@ -1,0 +1,118 @@
+{include file="header_doctor.tpl.htm"}
+        <div id="main_container" class="articles_rank">
+          <div class="content_zh">
+            <div class="content_title">
+              <h2>久久健康聚医堂博文排行Top50</h2>
+            </div>
+            <div class="content_nav">
+              <ul id="rank_by">
+                <li class="on"><a onclick="return altTab(3,0);">每周</a></li>
+                <li><a  onclick="return altTab(3,1);">每月</a></li>
+                <li><a  onclick="return altTab(3,2);">总排行</a></li>
+              </ul>
+            </div>
+            <div class="content_main">
+           <table id="table_zh" width="100%">
+<!--            <tr>
+               <td>
+                <table>-->
+                
+                <!--周排行显示这玩意-->
+                <tbody id="rank_by_0">
+                
+                <tr class="table_head_zh">
+                    <td class="rank_num rank_num_head"  width="54">排名</td>
+                    <td  width="469">标题</td>
+                    <td  width="82">用户名</td>
+                    <td  width="82">时间</td>
+                  </tr>
+                  <!--从这循环tr50次-->
+                   {foreach item=item key=key from=$wblog}
+                  <tr>
+                	<td class="rank_num">{$key+1}</td>
+                    <td><a href="{$item.b_url}" target="_blank">{$item.subject}</a></td>
+                    <td class="article_author"><a href="{$item.u_url}" target="_blank">{$item.username}</a></td>
+                    <td>{$item.hits_time}</td>
+                  </tr>
+				   {/foreach}
+                </tbody>
+                
+                <!--月排行显示这玩意-->
+                <tbody id="rank_by_1" style="display:none;">
+                  <tr class="table_head_zh">
+                    <td class="rank_num rank_num_head"  width="54">排名</td>
+                    <td  width="469">标题</td>
+                    <td  width="82">用户名</td>
+                    <td  width="82">时间</td>
+                  </tr>
+                   {foreach item=item key=key from=$mblog}
+                  <tr>
+                	<td class="rank_num">{$key+1}</td>
+                    <td><a href="{$item.b_url}" target="_blank">{$item.subject}</a></td>
+                    <td class="article_author"><a href="{$item.u_url}" target="_blank">{$item.username}</a></td>
+                    <td>{$item.hits_time}</td>
+                  </tr>
+				   {/foreach}
+                </tbody>
+                
+                <!--总排行显示这玩意-->
+                <tbody id="rank_by_2" style="display:none;">
+                  <tr class="table_head_zh">
+                    <td class="rank_num rank_num_head"  width="54">排名</td>
+                    <td  width="469">标题</td>
+                    <td  width="82">用户名</td>
+                    <td  width="82">时间</td>
+                  </tr>
+                   {foreach item=item key=key from=$zblog}
+                  <tr>
+                	<td class="rank_num">{$key+1}</td>
+                    <td><a href="{$item.b_url}" target="_blank">{$item.subject}</a></td>
+                    <td class="article_author"><a href="{$item.u_url}" target="_blank">{$item.username}</a></td>
+                    <td>{$item.hits_time}</td>
+                  </tr>
+				   {/foreach}
+                </tbody>
+                <!--</table>
+                </td>
+                </tr>-->
+              </table>
+              {literal}
+              <script type="text/javascript">
+				function altTab(m,n){
+				 var sTag=document.getElementById("rank_by").getElementsByTagName("li");
+				 for(i=0;i<m;i++){
+				  sTag[i].className=i==n?"on":"";
+				  document.getElementById("rank_by_"+i).style.display="none";
+				 }
+				 document.getElementById("rank_by_"+n).style.display="";
+				}
+			 </script>
+			 {/literal}
+            </div>
+          </div>
+          			<script language="javascript" src="/images/js/tdColor.js"></script>			
+			<div class="sidebar_zh">{include file="include/right.html"}</div>				
+          </div>
+        </div>
+</div>
+<div class="clear"></div>
+{literal}
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	/*	counter = 0;
+		function show()
+		{
+			for(i=0; i<3; i++)
+			{
+				document.getElementById('hotimg'+i).style.display="none";
+			}
+			document.getElementById('hotimg'+counter).style.display="";
+			counter++;
+			if(counter == 3) counter = 0;
+			window.setTimeout("show('hotimg'+counter)",1500);
+		}
+		show() */
+//-->
+</SCRIPT>		
+{/literal}
+{include file="include/footer.html"}

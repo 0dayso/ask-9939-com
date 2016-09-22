@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.clear{ clear:both;}
+
+
+
+/*- -*/
+
+.blue, .blue a:link, .blue a:visited, a.blue:link, a.blue:visited {	COLOR:#0E5B84}
+.blue a:active, .blue a:hover, a.blue:active, a.blue:hover { COLOR:#0E5B84}
+
+.red, .red a:link, .red a:visited, a.red:link, a.red:visited {	COLOR:#F70303}
+.red a:active, .red a:hover, a.red:active, a.red:hover { COLOR:#F70303}
+
+
+.ask_ok_tb{ border:1px solid #e5e5e5; margin-top:10px; overflow:hidden; zoom:1;}
+
+.ask_ok_a{ clear:both; font-size:16px; font-weight:bold; padding:20px 30px; }
+.ask_ok_b{ clear:both; font-size:34px; font-weight:bold; color:#FF0404; text-align:center;}
+.ask_ok_c{ clear:both; padding:30px; text-align:center;}
+.ask_ok_c a{ color:#0E5B84; text-decoration:underline;}
+
+.ask_ok_login{ width:450px; margin:auto; padding-top:20px;}
+.ask_ok_login dl dt{ text-align:center; border-bottom:1px dashed #3FB5E7; padding-bottom:10px;}
+.ask_ok_login dl dd{ padding:15px 0 15px 64px;}
+.ask_ok_login dl dd input{ border:1px solid #999999; width:92px; height:18px;}
+
+.ask_ok_notice_hd{ background:#EFF6FC; margin-bottom:5px;}
+.ask_ok_notice_hd span{ display:block; background: url(../images/ask_m_ok_t_bg.jpg) no-repeat right #3FB5E7; color:#FFFFFF; font-size:14px; font-weight:bold; width:322px; height:34px; line-height:34px; padding:0 0 0 20px;}
+
+
+.ask_ok_notice_l{ float:left; width:466px; border-right:1px dashed #3FB5E7; padding-bottom:20px;}
+.ask_ok_notice_r{ float:left; width:456px; padding-left:10px; padding-bottom:20px;}
+
+
+.ask_ok_notice_info{ padding:10px 10px 5px 20px; overflow:hidden; zoom:1;}
+.ask_ok_notice_info dl dt{ color:#0C8ED1; font-size:14px; font-weight:bold;}
+.ask_ok_notice_info dl dd{ line-height:24px; padding:8px 0;}
+.ask_ok_notice_info dl dd p{ text-indent:26px;}
+.ask_ok_notice_info dl dd input{ border:1px solid #cccccc; height:22px; width:170px;}
+
+.ask_ok_notice_check{ clear:both; padding:5px 10px 0 20px; height:66px; overflow:hidden; zoom:1;}
+.ask_ok_notice_check .pic{ float:left; width:82px;}
+.ask_ok_notice_check dl{ padding-top:8px; overflow:hidden; zoom:1;}
+.ask_ok_notice_check dl dt{ color:#0C8ED1; font-size:14px;}
+.ask_ok_notice_check dl dd{ line-height:24px; padding-top:15px;}
+.ask_ok_notice_check dl dd input{ vertical-align:middle;}
+
+.ask_ok_notice_checkgo{ clear:both; text-align:right; padding:0 15px 0 0;}
+.ask_ok_notice_checkgo a{ font-size:14px; font-weight:bold;}
+

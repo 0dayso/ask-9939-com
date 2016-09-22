@@ -1,0 +1,143 @@
+<?php
+    $current = $this->current;
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>最真实的<?php echo $current['curname'];?>经验分享_久久问医健康经验</title>
+        <meta name="keywords" content="<?php echo $current['curname'];?>经验分享" />
+        <meta name="description" content="久久问医健康经验<?php echo $current['curname'];?>经验分享，分享<?php echo $current['curname'];?>的各种经验，帮助你解决<?php echo $current['curname'];?>在现实生活中遇到的各种问题，还可以把自己的<?php echo $current['curname'];?>经验分享出来让更多的人受益。" />
+        <link rel="canonical" href="http://wapask.9939.com/<?php echo $current['uri'];?>" >
+        <link rel="stylesheet" type="text/css" href="/ask_details/css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="/ask_details/css/list.css"/>
+        <script type="text/javascript" src="/ask_details/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask_details/js/scrollbar_exp.js"></script>
+        <script type="text/javascript" src="/ask_details/js/gundong_exp.js"></script>
+        <script type="text/javascript" src="/ask_details/js/detail.js"></script>
+    </head>
+    <!--<base target="_blank">-->
+    <body>
+        <!-- 头部开始 -->   
+        <!--#include virtual="/include/exp/exp_header.html"-->  
+        <!-- 头部结束 -->
+        
+        <div class="content">
+            <!--灰色导航条-->
+            <div class="sharcu">
+                <a href="http://www.9939.com/">久久健康网</a><span>></span>
+                <a href="/jingyan/">健康经验</a><span>></span>
+                <a href="/expcat/<?php echo $current['plateid']?>/"><?php echo $current['plateshow'];?></a>
+                <?php
+                if ($current['cate'] != 'expcat') {
+                    echo '<span>></span><a href="/explist/'.$current['catid'].'/">'.$current['catshow'].'</a>';
+                    if ($current['cate'] == 'expdis') {
+                        echo '<span>></span><a href="/explist/'.$current['diseaseid'].'/">'.$current['curname'].'</a>';
+                    }
+                }
+                ?>
+            </div>
+            <h2 class="lifp"><a href="http://ask.9939.com/jingyan/shareing/share/">我要分享</a><?php echo $current['plateshow'];?></h2>
+            
+            <div class="lacol clearfix">
+                <a href="/expcat/<?php echo $current['plateid'];?>/" class="<?php echo ($current['cate'] == 'expcat') ? 'atc' : '';?>">全部</a>
+                <?php
+                    foreach($this->categories as $k=>$v){
+                        $atc = ($current['catid'] == $v['id']) ? 'atc' : '';
+                        ?>
+                <a href="/explist/<?php echo $v['id'];?>/" class="<?php echo $atc;?>"><?php echo $v['name'];?><div class="disn"></div></a>
+                <?php
+                    }
+                ?>
+            </div>
+            <div class="alinf">
+                <?php
+                if ($current['cate'] != 'expcat') {
+                    ?>
+                    <div class="necol shay">
+                        <a href="/explist/<?php echo $current['catid']; ?>/" class="<?php echo ($current['cate'] == 'explist') ? 'all' : ''; ?>">全部</a>
+                        <?php
+                        if (!empty($this->disease)) {
+                            foreach ($this->disease as $k => $v) {
+                                $all = ($current['cate'] == 'expdis' && $current['diseaseid'] == $v['id']) ? 'all' : '';
+                                ?>
+                        <a href="/expdis/<?php echo $v['id']; ?>/" class="<?php echo $all;?>"><?php echo $v['name'];?></a>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                    <?php
+                }
+                ?>
+            </div>
+            <div class="rila">
+                <div class="lbar fl">
+                    <ul class="leftbar">
+                        <?php
+                        $list = $this->list;
+                        $listcontent = $this->listcontent;
+                        $listdisease = $this->listdisease;
+                        foreach ($list as $k => $v) {
+                            $shorttitle = QLib_Utils_String::cutString($v['title'], 20, '...');
+                            ?>
+                            <li>
+                                <h3><a href="/exp/<?php echo $v['addtime'] . $v['id']; ?>.html" title="<?php echo $v['title']; ?>"><?php echo $shorttitle ?></a></h3>
+                                <p><?php echo QLib_Utils_String::cutString($listcontent[$v['id']]['content'], 120, '...'); ?></p>
+                                <p class="sher">
+                                    <span>分享者：<?php echo $v['username']; ?></span>
+                                    <span><?php echo date("Y-m-d", $v['addtime']) ?></span>
+                                    <span><?php echo $listdisease[$v['diseaseid']]['name']; ?></span>
+                                </p>
+                            </li>
+                            <?php
+                        }
+                        ?>
+
+                    </ul>
+                    <div class="paget paint">
+                        <?php echo $this->pageurl->view()?>
+                    </div>
+                </div>
+                <div class="ribar fr">
+                    <div id="float">
+                        <div class="upde">
+                            <h3>最新经验</h3>
+                            <ul>
+                                <?php
+                                $latest_experience = $this->latest_experience;
+                                if (!empty($latest_experience)) {
+                                    foreach ($latest_experience as $k => $v) {
+                                        ?>
+                                        <li><span></span><a href="/exp/<?php echo $v['addtime'] . $v['id']; ?>.html" title="<?php echo $v['title']; ?>"><?php echo $v['title']; ?></a></li>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                        <div class="upde">
+                            <h3>猜你喜欢</h3>
+                            <div>
+                                <script type="text/javascript">
+                                /*经验PC内容及列表页右侧猜你喜欢下通发*/
+                                var cpro_id = "u2713618";
+                                </script>
+                                <script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        <!--底部 开始-->
+        <!--#include virtual="/include/exp/exp_footer.html"-->  
+        <!-- 底部 结束 -->
+        <!--rightbar-->
+        <dl class="rightbar"><dt style="display: none;"><img src="/ask_details/images/bar_01.png"><p>扫一扫官方微信<br>关注更多健康资讯</p></dt><dd class="hel_01"></dd><dd class="hel_02"><p><a href="http://ask.9939.com/asking/">问专家</a></p></dd><dd class="hel_04"><p><a href="javascript:scroll(0,0)" target="_self">回顶部</a></p></dd></dl>
+
+
+</body>
+</html>

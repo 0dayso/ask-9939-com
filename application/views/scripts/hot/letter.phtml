@@ -1,0 +1,73 @@
+<?php
+$cache_key = sprintf('%s|%s|%s-%d',$this->controllername,$this->actionname,$this->letter,$this->cache_page);
+$data = QLib_Cache_Client::getPageCache('pages', $cache_key,24);
+if ($data) {
+    echo $data;
+} else {
+    ob_start();
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title><?=$this->metaTitle;?></title>
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/bd_search.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->base_include_path; ?>/css/main.css?201609091"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->base_include_path; ?>/css/body.css?201609091"/>
+        <script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/jquery.placeholder.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/page.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/user_login.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/gundong.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/DD_belatedPNG.js"></script>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+        <script type="text/javascript" src="<?php echo $this->base_include_path;?>/js/slide.js"></script>
+    </head>
+    <body>
+        <div class="bgcolor">
+            <!--#include virtual="/public/include/header.shtml"-->  
+            <div class="line_blu"></div>
+            <div class="conet hmT20 bordline">
+                <div class="letter-switch clearfix">
+                    <?php foreach($this->letter_list as $k=>$v) {
+                        $class_name = ($v['selected']==1? 'class="nols"':'');
+                    ?>
+                    <a href="<?php echo $v['url']; ?>" <?php echo $class_name; ?>  target="_blank" ><?php echo $k; ?></a>
+                    <?php } ?>
+                </div>
+                <div class="actlmore">
+                    <div class="wd_mian sckol"><b><?php echo $this->letter; ?></b><a href="http://www.9939.com/" title="久久健康网">久久健康网</a>&gt;<a href="http://ask.9939.com/" title="久久问医">久久问医</a>&gt;<a href="http://ask.9939.com/hot/" title="久久问医热搜">久久问医热搜</a></div>
+                    <?php if (!empty($this->list)) { ?>
+                        <ul class="actle clearfix"> 
+                            <?php foreach($this->list as $k =>$v) { 
+                                $name = $v['keywords'];
+                                $short_name = QLib_Utils_String::cutString($name, 24,0) ;
+                                $url = sprintf('%s%s/',$this->searchurl,  str_replace(' ', '', $v['pinyin']));
+                                ?>
+                                <li><a href="<?php echo $url; ?> " title="<?php echo $name; ?>"  target="_blank"><?php echo $short_name; ?></a></li>
+                            <?php } ?>
+                        </ul>
+                    <?php } ?>
+                    <div class="page mater clearfix">
+                        <?php echo $this->paging->view(); ?>
+                    </div>
+                </div>
+                <div class="letter-switch clearfix">
+                    <?php foreach($this->letter_list as $k=>$v) {
+                        $class_name = ($v['selected']==1? 'class="nols"':'');
+                    ?>
+                    <a href="<?php echo $v['url']; ?>" <?php echo $class_name; ?>  target="_blank"><?php echo $k; ?></a>
+                    <?php } ?>
+                </div>
+            </div>
+             <!--#include virtual="/public/include/footer.shtml"-->
+        </div>
+    </body>
+</html>
+
+<?php
+    $cache_data = ob_get_contents();
+    QLib_Cache_Client::setPageCache('pages', $cache_key, $cache_data, 24);
+    ob_flush();
+}
+?>

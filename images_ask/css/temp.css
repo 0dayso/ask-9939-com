@@ -1,0 +1,18 @@
+﻿.lw-jbTab{width:630px}
+.lw-jbTab .hd{background:#eef5fb;border:0px solid #c4ddf3;border-bottom:none;position:relative;height:auto;height:25px}
+.lw-jbTab .hd a{width:89px;float:left;color:#1d366c;font-size:14px;text-align:center;padding-top:5px;}
+.lw-on{background:url(../images/tabOn.gif) no-repeat 0px 0px;font-weight:bold;height:28px!important;_margin-bottom:-40px;_position:relative;}
+.lw-jbTab .hd a:hover{text-decoration:none}
+.lw-jbTab .bd{background:#c1ddf3;border:1px solid #92c7ef;padding:2px}
+.lw-jbTab .bd .in{background:#fff;padding:5px 0;line-height:1.8em;}
+.lw-jbTab .bd .lw-nav li{float:left;margin:0 10px;color:#1d366c;display:inline;white-space:nowrap;position:relative;z-index:1;zoom:1}
+
+.lw-jbTab .bd .lw-nav li a{color:#1d366c}
+.lw-jbTab .bd .lw-nav ul {background: #eaf3fa;border:1px solid #bfddf5;padding:5px;width: 200px;position: absolute;top: 5px;left: 50px;display:none}
+.lw-jbTab .bd .lw-nav li.temp{ z-index:999;}
+.lw-jbTab .bd .lw-nav li.temp ul{ display:block;}
+
+.lw-jbTab .bd .lw-nav ul li a{background:none;color:#666}
+.lw-jbTab .lw-nav li.trunDot a{background:url(../images/trunDot.gif) no-repeat right 2px}
+.lw-jbTab .lw-nav li.trunDot a{padding-right:10px}
+.lw-jbTab .lw-nav li.trunDot span{color:#949494;padding-left:3px}

@@ -1,0 +1,15 @@
+# robots.txt for http://ask.9939.com
+User-agent: * 
+Disallow: /*?*
+Disallow: /?*
+Disallow: /404.html
+Disallow: /404.shtml
+Disallow: /*.jpg$
+Disallow: /*.jpeg$ 
+
+
+Sitemap: http://ask.9939.com/sitemap.xml
+Sitemap: http://ask.9939.com/sitemap.html
+Sitemap: http://ask.9939.com/sitemap_ask.xml
+Sitemap: http://ask.9939.com/newlist.txt
+Sitemap: http://ask.9939.com/7_16.txt

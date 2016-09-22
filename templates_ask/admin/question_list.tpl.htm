@@ -1,0 +1,117 @@
+{include file=admin/header.tpl.htm}
+{literal}
+<script language="javascript">
+	function checkInput()
+	{
+		
+		//if($('orderID[]').value == "")
+		//{
+			
+		//}
+	}
+</script>
+{/literal}
+<table>
+  <tr>
+  	<td colspan='3'>
+  		<a href="question.php" {$answerall} >全部问题</a> | <a href="question.php?w=status/3" {$status3} >待解决问题</a> | <a href="question.php?w=status/5" {$status5} >已解决问题</a> | <a href="question.php?w=reward>0" {$reward0} >悬赏问题</a> | <a href="question.php?timeout=1" {$timeout} >过期的问题</a> | <a href="question.php?w=status/1" {$status1} >审核问题</a> | <a href="">移动问题</a> <!-- | <a href="">删除问题</a> -->
+  	</td>
+  </tr>
+  <tr>
+  	<td width="180">
+		<form action="question.php" method="GET">
+			每页显示数
+			<input type="text" name="l" value="{$l}" size='1' />
+			<input type="hidden" size="15" name="username" value="{$username}" />
+			<input type="hidden" size="15" name="title" value="{$title}" />
+			<input type="hidden" size="15" name="w" value="{$w}" />
+			<input type="submit" value="修改" />
+		</form>
+	</td>
+	<td width="380">
+		<form action="question.php" method="GET">
+			用户名：
+			<input type="text" size="15" name="username" value="{$username}" />
+			标题：
+			<input type="text" size="15" name="title" value="{$title}" />
+			<input type="hidden" size="15" name="w" value="{$w}" />
+			<input type="hidden" name="l" value="{$l}" />
+			<input type="submit" value="查询" />
+		</form>
+	</td>
+	<td>
+	{$s_select_sec}
+	</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">	
+		<tr class="header">				
+			<td width="8%">ID</td>
+			<td>所属类别</td>		
+			<td width="32%">标题</td>		
+			<td width="10%">作者</td>			
+			<td align="center">提问时间</td>
+			<td>悬赏</td>
+			<td>回复数</td>
+			<td>状态</td>
+			<td>管理操作</td>
+		</tr>
+	<form action="question.php?act=delchecked" method="POST">
+		{foreach item=item from=$aList}
+		<tr>
+			<td><input type="checkbox" name="ID[{$item.askid}]" value="{$item.url}]">  {$item.askid}</td>
+			<td>{$item.catname}</td>
+			<td><a href="http://ask.9939.com/{$item.url}" target="_blank">{$item.title}</a></td>
+			<td><a href="http://home.9939.com/space.php?uid={$item.userid}" target="_blank">{$item.username}</a></td>
+			<td>{$item.addtime}</td>
+			<td>{$item.reward}</td>
+			<td>{$item.answercount}</td>
+			<td>{$item.status}</td>
+			<td><a href="question.php?act=makeshow&id={$item.askid}&time={$item.addtime}">生成</a> | <a href="http://ask.9939.com/{$item.url}" target="_blank">查看</a> | <a href="question.php?act=del&id={$item.askid}&url={$item.url}" onclick="return confirm('确定要删除吗？');">删除</a></td>
+		</tr>
+		{/foreach}
+		<tr>
+			<td>
+				<!--<input type="button" value="全选" onclick="$('input').attr('checked', 'checked');"/>-->
+				{literal}
+				<input type="checkbox" onclick="if(this.checked){ $('input').attr('checked', 'checked'); } else { $('input').attr('checked', ''); }" />全选
+				{/literal}
+			</td>
+			<td colspan="8">
+				<input type="submit" value="批量删除" onclick="return confirm('确定要删除吗？');"/>
+				<input type="button" onclick="location.href='question.php?act=makeall'" value="生成所有" />
+			</td>
+		</tr>
+	<form>
+		</table>
+		<br>
+		{include file=admin/pager_bar.tpl.htm}
+
+{include file=admin/footer.tpl.htm}
+{literal}
+<script>
+
+	//$(document).ready(function(){
+  		//alert($("#Submit2").val());
+
+		//document.form.form1.action = 'question.php';
+		//$("#Submit2").attr('type', 'button');
+  		//$("#Submit2").attr('onClick', 'location.href="question.php?pageNo=" + $("#pageNo").val() + "&{$where}"; return false;')
+
+		//document.getElementsByName('Submit2').type='button';
+		//document.getElementsByName('Submit2').onclick="location.href='http://www.google.cn'; return false;";
+	//}); 
+	
+	function go()
+	{
+{/literal}
+		location.href = "question.php?pageNo=" + $("#pageNo").val() + "&{$where}";
+		return false;
+{literal}	
+	}
+
+	//alert(document.getElementById('Submit2').type);
+	//document.getElementById('Submit2').type = 'button';
+	//alert(document.getElementById('Submit2').type);
+</script>
+{/literal}

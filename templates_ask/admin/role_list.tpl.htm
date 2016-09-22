@@ -1,0 +1,36 @@
+﻿{include file=admin/header.tpl.htm}
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+	<tr class="header">
+		<td colspan="8">角色列表</td>
+	</tr>
+	{section name=a_list loop=$aList}
+	<tr class="altbg2">
+		<td align="left" nowrap>ID：{$aList[a_list].id}</td>
+		<td align="left" nowrap>状态：<font color="Red">{if ($aList[a_list].status == '1')}开启{else}<span class="grayLink">关闭</span>{/if}</font></td>
+		<td align="left" nowrap>角色名：<font color="Red">{$aList[a_list].name}</font></td>
+		<td align="left" nowrap>角色说明：{$aList[a_list].description}</td>
+		<td align="left" nowrap>动作：<a href="role.php?act=edit&id={$aList[a_list].id}">编辑</a>&nbsp;&nbsp;
+		{if ($aList[a_list].status == '1')}
+			<a href="role.php?act=close&id={$aList[a_list].id}" onclick="return confirm('确认关闭此角色？');"  class="grayLink">关闭</a>
+		{else}
+			<a href="role.php?act=open&id={$aList[a_list].id}" onclick="return confirm('确认开启此角色？');">开启</a>
+		{/if}
+			</td>
+	</tr>
+	{*
+    <tr class="altbg2">
+   		<td align="left" nowrap>功能列表：</td>
+    	<td align="left" nowrap colspan="4">
+    	<table class="tableborder" width="98%" cellpadding="4" cellspacing="1" border="0" align="center">{$aList[a_list].powerNameTable}</table>
+    	</td>
+    </tr>
+    *}
+    <tr class="altbg1">
+    	<td align="left" nowrap colspan="8">&nbsp;</td>
+    </tr>
+{/section}
+	</table>
+	
+{include file=admin/footer.tpl.htm}                                                                                              
+  

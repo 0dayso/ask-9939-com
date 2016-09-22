@@ -1,0 +1,13 @@
+/* mod */
+.mod .hd,.mod .bd,.mod .ft{overflow:hidden;_overflow:visible; _zoom:1;}
+.mod .top,.mod .bottom,.mod .tl,.mod .tr,.mod .bl,.mod .br{display:block;background-repeat:no-repeat;font-size:1%;position:relative;z-index:10;}
+.mod .tl,.mod .tr,.mod .bl,.mod .br{height:10px; width:10px;float:left;}
+.mod .tl{background-position: left top;}
+.mod .tr{background-position: right top;}
+.mod .bl{background-position: left bottom;} 
+.mod .br{background-position: right bottom;}
+.mod .br,.mod .tr{float:right;}
+.mod .tr,.mod .tl{overflow:hidden;margin-bottom:-32000px;}
+.mod .bl,.mod .br{margin-top:-10px;}
+.mod .top{background-position:center top;}
+.mod .bottom{background-position:center bottom;_zoom:1;}

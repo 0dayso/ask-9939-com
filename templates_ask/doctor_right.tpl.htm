@@ -1,0 +1,71 @@
+					{foreach item=item key=key from=$ads}
+					<div class="hotimg" style="display:none" id="hotimg{$key}">	
+						<a href="{$item.url}" target="_blank"><img src="http://ask.9939.com/{$item.image}" /></a>
+						<p><a href="{$item.url}" target="_blank">{$item.name}</a></p>
+					</div>
+					{/foreach}
+						<div class="extra mt5">
+						<div class="w218 bd01">
+							<div class="t01"><h3>互助公告</h3></div>
+							<div class="l02">
+								<ul>
+									{foreach item=item from=$notice}
+									<li><a href="{$item.url}" target="_blank">{$item.name}</a></li>
+									{/foreach}
+								</ul>
+							</div>
+						</div>
+					</div><!-- extra end -->
+                    <div class="mt10">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t01_t.jpg" /></div>
+							<div id="tabs0" class="clfix">
+								 <ul class="menu0 clfix" id="menu0">
+									  <li onmouseover="setTab(0,0)" class="hover">回答</li>
+									  <li onmouseover="setTab(0,1)">经验值</li>
+									  <li onmouseover="setTab(0,2)">博文</li>
+								 </ul>
+							 <div class="main0" id="main0">
+							 	<ul class="block">
+								  {foreach item=item from=$reply}
+									<li><a href="http://home.9939.com/space.php?uid={$item.userid}" target="_blank">{$item.username}&nbsp;&nbsp;回复数:{$item.num}</a></li>
+								  {/foreach}
+								</ul>
+								<ul>
+								  {foreach item=item from=$jyzph}
+									<li><a href="http://home.9939.com/space.php?uid={$item.uid}" target="_blank">{$item.username}&nbsp;&nbsp;&nbsp;&nbsp;积分:{$item.credit}</a></li>
+								  {/foreach}
+								</ul>
+								<ul>
+								  {foreach item=item from=$hotblog}
+									<li><a href="http://home.9939.com/space.php?uid={$item.uid}&do=blog" target="_blank">{$item.name}&nbsp;&nbsp;&nbsp;&nbsp;{$item.num}篇</a></li>
+								  {/foreach}								
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="l04 mt5 pb10">
+						<span>热门博客</span>
+						<ul class="clfix">
+							{foreach item=item from=$hotdoc}
+							<li><a href="http://home.9939.com/space.php?uid={$item.uid}" target="_blank">{if $item.name}{$item.name}{else}{$item.username}{/if}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+					<div class="l04 mt5 pb10">
+						<span>最新加入的医师</span>
+						<ul class="clfix">
+							{foreach item=item from=$user}
+								<li><a href="{$item.url}" target="_blank">{$item.truename}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+					<div class="l04 mt5 doctor_data">
+						<span>医生会员数据统计</span>
+						<h4>医师堂信息</h4>
+                        <p>博客个数：{$bknum}个</p>
+                        <p>实名医生：{$docnum}位</p>
+                        <p>总访问量：{$totalnum}次</p>
+                        <p>总咨询量：{$asknum}篇</p>
+                        <p>博文总量：{$bwnum}篇</p>
+                        <p>医学资源总量：{$zynum}篇</p>
+					</div>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title><?php echo $this->exp['title']; ?>_健康经验分享_久久问医</title>
+    <meta name="keywords" content="<?php echo $this->exp['title']; ?>" />
+    <meta name="description" content="<?php echo $this->exp['title']; ?>,概述" />
+
+    <meta name="mobile-agent" content="format=html5;url=http://wapask.9939.com/exp/<?php echo $this->exp['addtime_init'] . $this->exp['id']; ?>.html" />
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="http://wapask.9939.com/exp/<?php echo $this->exp['addtime_init'] . $this->exp['id']; ?>.html" />
+
+    <link rel="stylesheet" type="text/css" href="/ask_details/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/ask_details/css/list.css"/>
+
+    <script type="text/javascript" src="/ask_details/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/ask_details/js/scrollbar_exp.js"></script>
+    <script type="text/javascript" src="/ask_details/js/gundong_exp.js"></script>
+    <script type="text/javascript" src="/ask_details/js/detail.js"></script>
+</head>
+
+<base target="_blank">
+
+<body>
+    <!-- 头部开始 -->   
+    <!--#include virtual="/include/exp/exp_header.html"-->  
+    <!-- 头部结束 -->
+
+<div class="content">
+    <div class="sharcu clisc">
+        <a href="http://ask.9939.com/jingyan/">健康经验</a>
+        <?php
+        if (!empty($this->disease)){
+        ?>
+            <span>></span>
+            <a href="/expcat/<?php echo $this->disease['cat']['plateid']; ?>/"><?php echo $this->disease['cat']['plate_name']; ?></a>
+            <span>></span>
+            <a href="/explist/<?php echo $this->disease['cat']['id']; ?>/"><?php echo $this->disease['cat']['name']; ?></a>
+            <span>></span>
+            <a href="/expdis/<?php echo $this->disease['id']; ?>/"><?php echo $this->disease['name']; ?></a>
+            <span>></span>
+        <?php
+        }
+        ?>
+        <a href="javascript:;"><?php echo $this->exp['title']; ?></a>
+    </div>
+
+    <div class="rila">
+        <div class="lbar fl">
+            <div class="prevent">
+                <h1><?php echo $this->exp['title']; ?></h1>
+                <p>
+                    <span>分享着：<?php echo $this->exp['username']; ?></span>
+                    <span>文章发布时间：<?php echo $this->exp['addtime']; ?></span>
+
+                    <?php
+                    if (!empty($this->disease)){
+                    ?>
+                        <span><?php echo $this->disease['cat']['plate_name']; ?></span>
+                        <?php
+                    }
+                    ?>
+                </p>
+                <div class="shacon">
+                    <div>分享</div>
+                    <ul>
+                        <?php
+                        $title = $this->exp['title'];
+                        $url = 'http://ask.9939.com/exp/'. $this->exp['addtime_init'] . $this->exp['id'] .'.html';
+                        ?>
+                        <li class="xinl">
+                            <a href="http://service.weibo.com/share/share.php?title=<?php echo $title; ?>&url=<?php echo $url; ?>&pic="
+                               data-url='<?php echo $url; ?>' data-text="<?php echo $title; ?>" class="wodes">新浪微博
+                            </a>
+                        </li>
+                        <li class="weix">
+                            <a href="http://qr.liantu.com/api.php?text=<?php echo $url; ?>" data-url='<?php echo $url; ?>' data-text="<?php echo $title; ?>" class="wodes freai devel">微信</a>
+                        </li>
+                        <li class="zone">
+                            <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<?php echo $url; ?>"
+                               data-url='<?php echo $url; ?>' data-text="<?php echo $title; ?>" class="wodes freai">QQ空间</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="conte">
+                <h2 class="tode">概述</h2>
+                <p>
+                    <?php echo $this->exp['content']['desc']; ?>
+                </p>
+                <h2><?php echo $this->exp['title']; ?></h2>
+                <div class="step">
+                    <?php
+                        foreach ($this->exp['content']['content'] as $key => $content){
+                    ?>
+                            <div class="step_01">
+                                <b><?php echo $key + 1; ?></b>
+                                <p>
+                                    <?php echo $content; ?>
+                                </p>
+                            </div>
+                    <?php
+                        }
+                    ?>
+                </div>
+                <h2>注意事项</h2>
+                <p>
+                    <?php echo $this->exp['content']['tip']; ?>
+                </p>
+            </div>
+
+            <div class="a_rea a_hop">
+                <h2>
+					<span>
+						<a href="http://ask.9939.com/jingyan/">更多&gt;&gt;</a>
+					</span>
+                    相关文章
+                </h2>
+                <ul class="a_prev">
+                    <?php
+                    if (!empty($this->relExps)) {
+                        foreach ($this->relExps as $relExp){
+                    ?>
+                            <li>
+                                <a href="/exp/<?php echo $relExp['addtime'] . $relExp['id']; ?>.html" title="<?php echo $relExp['title']; ?>"><?php echo $relExp['title']; ?></a>
+                            </li>
+                    <?php
+                        }
+                    }
+                    ?>
+                </ul>
+                <div class="adto">
+                    <script type="text/javascript">
+                        /*经验PC内容页左侧相关文章下方*/
+                        var cpro_id = "u2713599";
+                    </script>
+                    <script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+                </div>
+            </div>
+
+            <div class="a_rea a_hop a_margi">
+                <h2>
+					<span>
+						<a href="http://ask.9939.com/">更多&gt;&gt;</a>
+					</span>
+                    相关问答
+                </h2>
+                <ul class="hoque">
+                    <?php
+                    if (isset($this->relAsks['ask']) && !empty($this->relAsks['ask'])){
+                        foreach ($this->relAsks['ask'] as $key => $ask){
+                            $style = '';
+                            if ($key % 2 == 0){
+                                $style = 'style="margin-right: 0px;"';
+                            }
+                ?>
+                            <li <?php echo $style;?>>
+                                <dl>
+                                    <dt>
+                                        <a href="/id/<?php echo $ask['id'];?>" title="<?php echo $ask['title'];?>"><?php echo $ask['title'];?></a>
+                                    </dt>
+                                    <dd>
+                                        <?php echo $this->relAsks['answer'][$ask['id']]['content'];?>
+                                        <a href="/id/<?php echo $ask['id'];?>">[详情]</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                    <?php
+                        }
+                    }
+                    ?>
+                </ul>
+            </div>
+            <div class="rela_a a_labe">
+                <div class="a_rea a_hop a_mar">
+                    <h2>猜你感兴趣</h2>
+                    <div class="aplces">
+                        <script type="text/javascript">
+                            /*经验PC内容页左侧底部猜你感兴趣下方*/
+                            var cpro_id = "u2713625";
+                        </script>
+                        <script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribar fr">
+            <div id="float2">
+                <div class="upde">
+                    <h3>最新经验</h3>
+                    <ul>
+                        <?php
+                        if (!empty($this->latestExps)) {
+                            foreach ($this->latestExps as $latestExp){
+                         ?>
+                                <li>
+                                    <span></span>
+                                    <a href="/exp/<?php echo $latestExp['addtime'] . $latestExp['id']; ?>.html" title="<?php echo $latestExp['title']; ?>"><?php echo $latestExp['title']; ?></a>
+                                </li>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </ul>
+                </div>
+                <div class="upde">
+                    <h3>猜你喜欢</h3>
+                    <div>
+                        <script type="text/javascript">
+                            /*经验PC内容及列表页右侧猜你喜欢下通发*/
+                            var cpro_id = "u2713618";
+                        </script>
+                        <script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+    <!--底部 开始-->
+    <!--#include virtual="/include/exp/exp_footer.html"-->  
+    <!-- 底部 结束 -->
+
+    <!--rightbar-->
+    <!--#include virtual="/include/exp/exp_right.html"-->  
+
+</body>
+</html>

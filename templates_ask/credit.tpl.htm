@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>健康问答_久久健康网</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/templates/9939/skins/default/global0.css" rel="stylesheet" type="text/css" />
+<link href="/templates/9939/skins/default/wenda0.css" rel="stylesheet" type="text/css" />
+{literal}
+<script language="javascript" src="/images/js/common.js"></script>
+<script>
+function setTab(m,n){
+ var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+ var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+ for(i=0;i<tli.length;i++){
+  tli[i].className=i==n?"hover":"";
+  mli[i].style.display=i==n?"block":"none";
+ }
+}
+</script>
+{/literal}
+</head>
+
+<body onload="typetext();">
+	<div id="page" class="ask_9939">
+<style type="text/css">
+
+{literal}
+.top_header{ background:url(http://doctor.9939.com/images/head.png) repeat-x; height:32px; color:#534E54;}
+.top_header a{ color:#534E54}
+.top_header ul{ float:left; display:inline;}
+
+.navigation { margin-left:30px;}
+	  .navigation li{ float:left; width:79px; position:relative; }
+	    .navigation li a{ background:url(http://doctor.9939.com/images/head.png) no-repeat 66px -170px; display:block; height:24px; padding-top:8px; text-align:center; color:#534E54;}
+		.navigation li a:hover{ background:#4F4F4F url(http://doctor.9939.com/images/nav_li_on.gif) no-repeat 66px 15px; color:#FFF; text-decoration:none;}
+		  .navigation .nav_jyt a{ background:url(http://doctor.9939.com/images/head.png) no-repeat 62px -170px;}
+		  .navigation .nav_jyt a:hover{ background:#4F4F4F url(http://doctor.9939.com/images/nav_li_on.gif) no-repeat 62px 15px;}
+		  .navigation .home_index a{ background:none;}
+		  .navigation .home_index a:hover{background:#4F4F4F;}
+	    .navigation li ul{ display:none; background:#FFF; position:absolute; top:31px; left:0; padding:0; margin:0; border:1px solid #4F4F4F; z-index:199; zoom:1;}
+		  .navigation li ul li{ padding:0; width:90px;}
+		  .navigation li ul li a{ background:url(http://doctor.9939.com/images/head.png) no-repeat 6px -244px;display:block; padding:4px 0 0 13px; height:20px; text-align:left;}
+		  .navigation .nav_jyt ul li a{ background:url(.http://doctor.9939.com/images/head.png) no-repeat 6px -244px;}
+		  .navigation li ul li a:hover,.navigation .nav_jyt ul li a:hover{ background:#A6E003 url(http://doctor.9939.com/images/head.png) no-repeat 6px -244px; text-decoration:none; color:#000;}		  	  
+
+  .quick_tool{ margin-left:50px; padding-top:8px;}
+    .quick_tool li{ float:left; display:inline; margin-right:8px;}
+    .myhome{ background:url(http://doctor.9939.com/images/head.png) no-repeat left -52px; width:54px; padding-left:6px;}
+	.myexit{ background:url(http://doctor.9939.com/images/head.png) no-repeat left -90px; width:31px; padding-left:6px; font-weight:700;}
+  .quick_tool input{ width:85px; height:14px; vertical-align:middle;}
+  .quick_tool .submit_new{ background:url(http://doctor.9939.com/images/head.png) no-repeat left -90px; width:37px; height:18px; border:none; *padding-top:2px; font-weight:700; vertical-align:middle; color:#534E54;}
+  
+  .my_nav{ margin-top:14px;}
+  .note{ background:#F2F2F2; float:left; width:190px; height:26px; line-height:26px; display:inline; border-bottom:1px solid #AFAFAF;  text-align:center; color:#666;}
+  .new_content_nav{ background:url(http://doctor.9939.com/images/head.png) repeat-x left -289px; float:left; padding-right:4px;}
+    .new_content_nav ul{}
+    .new_content_nav li{ background:url(http://doctor.9939.com/images/head.png) repeat-x left -128px; float:left; display:inline; margin-right:5px; width:70px; height:22px; padding-top:4px; border:1px solid #AFAFAF; border-bottom:none; font-size:14px; text-align:center;}
+	.new_content_nav li.on { background:#FFFFFF none repeat scroll 0 0;}
+	
+  .search_friends{ float:left; display:inline; _margin-top:-2px;}
+	.input_text{ width:242px; height:25px; border:1px solid #7D7D7D; font-size:14px; vertical-align:middle; line-height:25px!important; line-height:25px;}
+	.input_submit{ background:url(http://doctor.9939.com/images/head.png) no-repeat left -336px; width:70px; height:27px; border:none; font-size:14px; margin-left:-4px; vertical-align:middle;}
+	
+.myexit{ margin-left:15px;}
+
+
+#top_show { position:absolute; left:600px; _left:500px; top:40px; background-color:#ccc; color:#333;}
+
+#append_parent,#ajaxwaitid { display:none;}
+
+#header .nav { padding-top:18px;}
+.hd_top{ padding-top:20px;}
+#header{ zoom:1;} /*==for IE==*/
+#layout:after{display: block;clear: both; content: "";visibility:hidden; height: 0;}
+#content,#content-c2{ padding-top:0; margin-top:10px;}
+.ask_9939 #header .nav{ padding-top:0;}
+{/literal}
+
+</style>
+	  <div class="top_header">
+        <ul class="navigation">
+          <li class="home_index"><a href="http://www.9939.com" target="_blank">网站首页</a></li>
+          <li>
+            <a href="http://ask.9939.com/" target="_blank" id="nav_jkwd_a">健康问答</a>
+            <ul id="nav_jkwd_ul">
+              <li><a href="http://ask.9939.com/cat.shtml" target="_blank">科室分类</a></li>
+              <li><a href="http://ask.9939.com/label.shtml" target="_blank">健康标签</a></li>
+              <li><a href="http://ask.9939.com/unReply.php" target="_blank">全部问题列表</a></li>
+              <li><a href="http://ask.9939.com/doctorTeam.shtml" target="_blank">问答医师团</a></li>
+              <li><a href="http://home.9939.com/network.php?ac=jf" target="_blank">积分规则</a></li>
+              <li><a href="http://ask.9939.com/ask/question.php" target="_blank">我要提问</a></li>
+            </ul>
+          </li>
+          <li class="nav_jyt"><a href="http://doctor.9939.com/" target="_blank" id="nav_jyt_a">聚医堂</a>
+            <ul id="nav_jyt_ul">
+              <li><a href="http://doctor.9939.com/rank.php?f=1" target="_blank">找专家</a></li>
+              <li><a href="http://doctor.9939.com/rank.php?f=2" target="_blank">医学资源</a></li>
+              <li><a href="http://doctor.9939.com/rank.php?f=4" target="_blank">经验值排行</a></li>
+              <li><a href="###">医学交流群</a></li>
+            </ul>
+          </li>
+          <li><a href="http://home.9939.com/network.php?ac=mtag" target="_blank" id="nav_jkqz_a">健康群组</a>
+            <ul id="nav_jkqz_ul">
+              <li><a href="space.php?do=mtag">我的群组</a></li>
+              <li><a href="space.php?do=mtagmore&subop=friend_mtag">好友的群组</a></li>
+              <li><a href="space.php?do=mtagmore&subop=all_mtag">全部群组</a></li>
+              <li><a href="cp.php?ac=mtag">创建群组</a></li>
+            </ul>
+          </li>
+          <li><a href="http://home.9939.com" target="_blank" id="nav_jkjy_a">健康家园</a>
+           <ul id="nav_jkjy_ul">
+            <li><a href="space.php">个人主页</a></li>
+            <li><a href="space.php?do=friend">我的好友</a></li>
+            <li><a href="space.php?do=mtag">我的群组</a></li>
+            <li><a href="space.php?do=ask1">我的问答</a></li>
+            <li><a href="space.php?do=album&view=me">我的相册</a></li>
+            <li><a href="space.php?do=blog&view=me">我的日志</a></li>
+          </ul>
+        </li>
+        </ul>
+{literal}
+        <script type="text/javascript">
+		var aId= document.getElementById("nav_jkwd_a");
+		var aId2=document.getElementById("nav_jyt_a");
+		var aId3=document.getElementById("nav_jkqz_a");
+		var aId4=document.getElementById("nav_jkjy_a");
+		
+		  function showUl(){
+		    
+			var ulId= document.getElementById("nav_jkwd_ul");
+			aId.onmouseover=function(){ ulId.style.display="block";};
+			ulId.onmouseover=function(){ ulId.style.display="block";};
+			ulId.onmouseout=function(){ ulId.style.display="none";};
+			aId.onmouseout=function(){ ulId.style.display="none";};
+			
+			var ulId2= document.getElementById("nav_jyt_ul");
+			aId2.onmouseover=function(){ ulId2.style.display="block";};
+			ulId2.onmouseover=function(){ ulId2.style.display="block";};
+			ulId2.onmouseout=function(){ ulId2.style.display="none";};
+			aId2.onmouseout=function(){ ulId2.style.display="none";};
+			
+			var ulId3= document.getElementById("nav_jkqz_ul");
+			aId3.onmouseover=function(){ ulId3.style.display="block";};
+			ulId3.onmouseover=function(){ ulId3.style.display="block";};
+			ulId3.onmouseout=function(){ ulId3.style.display="none";};
+			aId3.onmouseout=function(){ ulId3.style.display="none";};
+			
+			var ulId4= document.getElementById("nav_jkjy_ul");
+			aId4.onmouseover=function(){ ulId4.style.display="block";};
+			ulId4.onmouseover=function(){ ulId4.style.display="block";};
+			ulId4.onmouseout=function(){ ulId4.style.display="none";};
+			aId4.onmouseout=function(){ ulId4.style.display="none";};
+		  }
+		  window.onload=showUl;
+		</script>
+{/literal}
+<script src="http://ask.9939.com/user.php"></script>
+            <p style="display:none"><span><img src="/templates/9939/skins/default/images_doctor/icon002.jpg" align="absmiddle" />在线当前用户：<script src="http://ask.9939.com/online.php"></script>人</span><span><img src="/templates/9939/skins/default/images_doctor/icon003.jpg" align="absmiddle" />在线医生：<script src="http://ask.9939.com/online.php?uType=2"></script>人</span><span><img src="/templates/9939/skins/default/images_doctor/icon004.jpg" align="absmiddle" />问答贴：<script src="/ask.js"></script></span></p>
+
+      </div>
+	
+		<div id="header">
+			<div class="logo"><img src="/templates/9939/skins/default/images/logo.jpg" /></div>
+			<div class="question">
+			<form action="/ask/question.php" method="GET">
+			  <textarea name="newTitle" rows="5" class="text02" id="newTitle" onFocus="stoptext()"></textarea>
+			  <input type="image" src="/templates/9939/skins/default/images/btn001.gif" class="btn01" onclick="this.form.submit()" /> 
+			  <input type="image" src="/templates/9939/skins/default/images/btn002.jpg" class="btn01" onclick="document.getElementById('newTitle').name='keywords';this.form.action='/ask/search.php?status=3';this.form.submit()" /> 
+			</form>
+			<script src="/images/js/question.js"></script>
+			</div>
+			<div class="clear"></div>
+			<div class="nav">
+				<ul>
+					<li><a href="/">问答首页</a></li>
+					<li ><a href="/cat.shtml">科室分类</a></li>
+					<li ><a href="/label.shtml">健康标签</a></li>
+					<li ><a href="/unReply.php">全部问题列表</a></li>
+					<li ><a href="http://hospital.9939.com" target="_blank">在线医院</a></li>
+					<li ><a href="/doctorTeam.shtml">问答医师团</a></li>
+					<li class="on"><a href="credit.php" target="_blank">积分排行榜</a></li>
+					<li ><a href="http://home.9939.com/network.php?ac=jf" target="_blank">积分规则</a></li>
+				</ul>
+			</div>
+		</div><!-- header end -->
+		<div id="mainbody" class="clfix">
+			<div class="w720 left">
+              <div class="content_title">
+                <h4>积分排行榜</h4>
+              </div>
+              <div class="content_nav">
+              <ul id="rank_by">
+                <li class="on"><a href="###" onclick="return altTab(3,0);">积分榜</a></li>
+                <li><a href="###" onclick="return altTab(3,1);">回答榜</a></li>
+                <li class="down_1"><a href="###" onclick="return altTab(3,2);">上周积分上升榜</a></li>
+              </ul>
+            </div>
+            <div class="content_main">
+              <div id="table_zh">
+               <span id="rank_by_0">
+                <!--<tr>
+                  <td class="no_rborder">-->
+                      <table class="left" width="49%">
+                        <tbody>
+						<tr align="center"><td colspan="5"><strong>医生会员排行榜</strong></td></tr>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">用户名</td>
+                            <td  width="103">等级</td>
+                            <td  width="103">等级名称</td>
+                            <td  width="103">经验积分</td>
+                          </tr>
+
+                        <!--从这循环tr50次-->
+						  {foreach item=item key=key from=$doctor}
+                          <tr>
+                            <td>{$key+1}</td>
+                            <td><a href="{$item.url}">{$item.username}</a></td>
+                            <td class="headship">{$item.grouptitle}</td>
+                            <td>{$item.groupName}</td>
+                            <td>{$item.credit}</td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                  <!--</td>
+                  <td class="no_lborder" valign="top">-->
+                      <table class="right" width="49%">
+                        <tbody>
+						<tr align="center"><td colspan="5"><strong>大众会员排行榜</strong></td></tr>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">用户名</td>
+                            <td  width="103">等级</td>
+                            <td  width="103">等级名称</td>
+                            <td  width="103">经验积分</td>
+                          </tr>
+
+                        <!--从这循环tr50次-->
+						  {foreach item=item key=key from=$dazong}
+                          <tr>
+                            <td>{$key+1}</td>
+                            <td><a href="{$item.url}">{$item.username}</a></td>
+                            <td class="headship">{$item.grouptitle}</td>
+                            <td>{$item.groupName}</td>
+                            <td>{$item.credit}</td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                 <!-- </td>
+                </tr>-->
+                </span>
+                <span id="rank_by_1" style="display:none;">
+                <!--<tr>
+                  <td class="no_rborder">-->
+                      <table class="left" width="49%">
+                        <tbody>
+						<tr align="center"><td colspan="5"><strong>医生会员排行榜</strong></td></tr>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">用户名</td>
+                            <td  width="103">经验积分</td>
+                            <td  width="103">回答数</td>
+                            <td  width="103">采纳率</td>
+                          </tr>
+                        </tbody>
+                        <tbody>
+                        <!--从这循环tr50次-->
+						  {foreach item=item key=key from=$doctor_hf}
+                          <tr>
+                            <td>{$key+1}</td>
+                            <td><a href="{$item.url}">{$item.username}</a></td>
+                            <td class="headship">{$item.credit}</td>
+                            <td>{$item.num}</td>
+                            <td>{$item.rate}</td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                 <!-- </td>
+                  <td class="no_lborder" valign="top">-->
+                      <table class="right" width="49%">
+                        <tbody>
+						<tr align="center"><td colspan="5"><strong>大众会员排行榜</strong></td></tr>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">用户名</td>
+                            <td  width="103">经验积分</td>
+                            <td  width="103">回答数</td>
+                            <td  width="103">采纳率</td>
+                          </tr>
+                        </tbody>
+                        <tbody>
+                        <!--从这循环tr50次-->
+						  {foreach item=item key=key from=$dazong_hf}
+                          <tr>
+                            <td>{$key+1}</td>
+                            <td><a href="{$item.url}">{$item.username}</a></td>
+                            <td class="headship">{$item.credit}</td>
+                            <td>{$item.num}</td>
+                            <td>{$item.rate}</td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                 <!-- </td>
+                </tr>-->
+                </span>
+                
+                <span id="rank_by_2" style="display:none;">
+               <!-- <tr>
+                  <td class="no_rborder">-->
+                      <table class="left">
+                        <tbody>
+						<tr align="center"><td colspan="4"><strong>医生会员排行榜</strong></td></tr>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">用户名</td>
+                            <td  width="103">上周积分</td>
+                            <td  width="103">总积分</td>
+                          </tr>
+
+                        <!--从这循环tr50次-->
+						  {foreach item=item key=key from=$doctor}
+                          <tr>
+                            <td>{$key+1}</td>
+                            <td><a href="{$item.url}">{$item.username}</a></td>
+                            <td class="headship">{$item.credit-50}</td>
+                            <td>{$item.credit}</td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                  <!--</td>
+                  <td class="no_lborder" valign="top">-->
+                      
+                      <table class="right">
+                        <tbody>
+						<tr align="center"><td colspan="4"><strong>大众会员排行榜</strong></td></tr>
+                          <tr class="table_head_zh">
+                            <td  width="40">排名</td>
+                            <td  width="103">用户名</td>
+                            <td  width="103">上周积分</td>
+                            <td  width="103">总积分</td>
+                          </tr>
+
+                        <!--从这循环tr50次-->
+						  {foreach item=item key=key from=$dazong}
+                          <tr>
+                            <td>{$key+1}</td>
+                            <td><a href="{$item.url}">{$item.username}</a></td>
+                            <td class="headship">{$item.credit-50}</td>
+                            <td>{$item.credit}</td>
+                          </tr>
+						  {/foreach}
+                        </tbody>
+                      </table>
+                  <!--</td>
+                </tr>-->
+                </span>
+              </div>
+			  {literal}
+              <script type="text/javascript">
+				function altTab(m,n){
+				 var tab=document.getElementById("rank_by").getElementsByTagName("li");
+				 var tBody=document.getElementById("rank_by"+n);
+				 
+				 for(i=0;i<m;i++){
+					 document.getElementById("rank_by_"+i).style.display="none";
+					 }
+				 if(0==n){
+				   tab[0].className="on";
+				   tab[1].className="";
+				   tab[2].className="down_1";
+				   document.getElementById("rank_by_0").style.display="";
+				   }
+				 if(1==n){
+				   tab[0].className="";
+				   tab[1].className="on";
+				   tab[2].className="down_1";
+				   document.getElementById("rank_by_1").style.display="";
+				 }
+				 if(2==n){
+				   tab[0].className="";
+				   tab[1].className="";
+				   tab[2].className="on_1";
+				   document.getElementById("rank_by_2").style.display="";
+				   }
+				  }
+			 </script>
+			 {/literal}
+          </div>
+          {literal}<script src="js/tdColor.js" type="text/javascript"></script>{/literal}
+			</div><!-- w720 end -->
+			<div class="w220 right">				
+				{include file="../CatRightbar.shtml}
+			</div><!-- w220 end -->			
+		</div><!-- mainbody end -->
+	</div><!-- wrapper end -->
+
+<div id="footer">
+<p><a href="http://www.9939.com/Company/wzjj.htm">网站简介</a>　|　
+<a href="http://jb.9939.com/map.php">疾病地图</a>　|　<a href="http://www.9939.com/Company/zpxx.htm">招聘信息</a>　|　<a href="http://www.9939.com/Company/yqlj.htm">友情链接</a>　|　<a href="mailto:jianghy@2008.shou.com">意见反馈</a>　|　<a href="http://www.9939.com/Company/wstg.htm">网上投稿</a>　|　<a href="http://www.9939.com/Company/fwtk.htm">服务条款</a>　|　<a href="#" onclick="setHomePage(this)" target="_self">设为首页</a>　|　<a href="javascript:addBookmark('健康资讯网','http://www.9939.com')" target="_self">加入书签</a> <br />
+版权所有　　玖玖叁玖网络技术(北京)有限公司 <br />
+特别声明：本站信息仅供参考　不能作为诊断及医疗的依据 <br />
+本站如有转载或引用文章涉及版权问题　请速与我们联系 <br />
+<img src="http://www.9939.com/images/hongdun.gif" width="35" height="42" align="middle" />
+京ICP证080149　　互联网药品信息服务资格证书(京)-经营性-2008-0006</p>
+</div><!-- footer end -->
+</body>
+</html>

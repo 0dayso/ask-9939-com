@@ -1,0 +1,131 @@
+<div class="extra" style=" background:none;padding:0;padding-top:29px;">
+
+<!--
+		<div class="m_b10">
+		
+		<a href="{$aAds_1.url}" target="_blank"><img src="{$aAds_1.image}" width="{$aAds_1.width}" height="{$aAds_1.height}" /></a>
+		
+		</div>
+-->		
+		
+		<div class="flashbox">
+		                      {include file="../slide.html"}
+		</div>
+
+		<div class="t_but m_b10 clfix"><a href="/ask/question.php" target="_blank"><img src="/templates/9939/skins/default/images/show/but_4.png" style="float:left;" /></a><a href="/unReply.php" target="_blank"><img src="/templates/9939/skins/default/images/show/but_5.png" style="float:right;" /></a></div>
+		
+		<div class="m_b10">
+        	<!-- <div><img src="/templates/9939/skins/default/images/show/hd_yp.png" /></div> -->
+            <div class="bor_E1E1E1">
+            	<ul class="list_7 clfix">
+            	{foreach item=item from=$aAds_4}
+					<li><a href="{$item.url}">{$item.name|truncate:8:''}</a></li>
+				{/foreach}
+                </ul>
+            </div>
+        </div><!--end-->
+        
+        
+        
+		<!--<div class="m_b10 bor_E1E1E1">
+			<ul class="list_1">
+			{foreach item=item from=$aAds_2}
+				<li><a href="{$item.url}" target="_blank">{$item.name|truncate:10:''}</a></li>
+			{/foreach}
+			</ul>
+		</div>-->
+		
+        <div class="m_b10">
+        	<div class="hd_xgwt">相关问题</div>
+            <div class="bor_E1E1E1">
+            	
+            	<script src="/question.htm"></script>
+                
+            </div>
+        </div>
+        
+		<div class="flashbox">
+		                      {include file="../slide_1.html"}
+		</div>
+        
+        <div class="m_b10">
+        	<div class="hd_xgwt">擅长此类疾病专家</div>
+            <div class="bor_E1E1E1">
+            	
+            	<script src="/question_1.htm"></script>
+            	
+            </div>
+        </div><!--end-->
+        
+        <!--
+        <div class="m_b10">
+        	<div><img src="/templates/9939/skins/default/images/show/hd_zxyy.png" /></div>
+            <div class="bor_E1E1E1">
+            	<ul class="list_3">
+            	{foreach item=item from=$aAds_5}
+                	<li><a href="{$item.url}">{$item.name|truncate:12:''}</a></li>
+                {/foreach}
+                </ul>
+            </div>
+        </div>
+        -->
+        <!--end-->
+        
+
+
+        <!--end-->
+        <div class="m_b10">
+        	<div class="hd_xgwt">网友好评医院</div>
+            <div class="bor_E1E1E1">
+            	<ul class="list_6">
+				{foreach item=item from=$aAds_3}
+					<li class="clfix">
+						<img src="/{$item.image}" width="{$item.width}" height="{$item.height}" />
+						<span><a href="{$item.url}" class="blue">{$item.name|truncate:7:''}</a></span>
+						<p>{$item.desc|truncate:27:''}</p>
+					</li>
+				{/foreach}
+                </ul>
+            </div>
+        </div><!--end-->
+
+<!--
+		<div class="adplus"><a href="{$aAds_up_tj.url}" target="_blank"><img src="http://ask.9939.com/{$aAds_up_tj.image}" width="270" height="200" /></a></div>
+		-->
+        
+        <div class="m_b10">
+        	<div class="hd_xgwt">热点群组推荐</div>
+            <div class="bor_E1E1E1">
+            	<ul class="list_8 clfix">
+				{foreach item=item from=$aGroup}
+					<li class="clfix">
+						<a href="{$item.url}" target="_blank"><img src="/{$item.image}" width="48" height="48" /></a>
+						<p><a href="{$item.url}" target="_blank">{$item.name|truncate:4}</a></p>
+					</li>
+				{/foreach}
+                </ul>
+            </div>
+        </div><!--end-->
+        <div class="m_b10">
+        	<div class="hd_xgwt">精彩资讯</div>
+            <div class="bor_E1E1E1">
+            	<ul class="list_2">
+            	{foreach item=item from=$aNews}
+                	<li><a href="{$item.url}">{$item.title|truncate:18:''}</a></li>
+                {/foreach}
+                </ul>
+            </div>
+        </div><!--end-->
+        
+        <div class="m_b10">
+        	<div class="hd_xgwt">疾病常识</div>
+            <div class="bor_E1E1E1">
+            	<script src="/question_2.htm"></script>
+            </div>
+        </div>
+        
+        <!--end-->
+        
+       <!--end-->
+	</div>
+</div><!--end-->

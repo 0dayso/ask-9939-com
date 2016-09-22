@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+.zhask-login{ float:left; width:500px;padding-top:10px; padding-left:75px;}
+.zhask-login .hd{ margin-bottom:15px;}
+.zhask-login .hd h3{ background:url(../images/zhlogin-title01.png) no-repeat; padding-left:33px; font-family:"黑体"; font-size:18px; font-weight:400;}
+.zhask-login p{ margin-top:18px; overflow:hidden; _zoom:1;}
+.zhask-login .zhsubmit-p{ margin-top:30px;}
+.zhask-login p label,.zhask-login p input,.zhask-login p span{ float:left; line-height:20px; vertical-align:middle;}
+.zhask-login label{ width:110px; text-align:right; color:#F76301; font-weight:700; font-size:14px}
+.zhask-login input{ border:1px solid #666; width:148px; height:20px;}
+.zhask-login span{ display:inline; margin-left:10px; color:#666;}
+.zhask-login .zhsubmit,.zhask-login .zhreset{ display:inline; margin-left:42px; border:none; width:89px; height:28px;}
+.zhask-login .zhsubmit{ background:url(../images/zhsubmit.png) no-repeat;}
+.zhask-login .zhreset{ background:url(../images/zhreset.png) no-repeat;}
+
+
+.zhask-login-info{ float:left; display:inline; border-left:1px solid #9CC5E1;  padding:10px 0 10px 57px;}
+.zhask-login-info .hd{ margin-bottom:15px;}
+.zhask-login-info .hd h3{ background:url(../images/zhlogin-title02.png) no-repeat; padding-left:33px; font-family:"黑体"; font-size:18px; font-weight:400;}
+.zhask-login-info .bd li{ background:url(../images/zhlogin-li.png) no-repeat left center; margin-top:8px; padding-left:17px; font-size:14px; color:#666;}
+.zhask-login-info .bd .zhtag{ background:url(../images/zhlogin-tag.png) no-repeat; margin-top:30px; padding-left:30px;}
+.zhask-login-info .bd .zhtag a{ color:#FF751A; font-weight:700;}

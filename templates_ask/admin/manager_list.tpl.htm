@@ -1,0 +1,55 @@
+﻿{include file=admin/header.tpl.htm}
+	
+	
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">	
+		
+		<tr>
+		<td align="center" colspan="12">	
+			 <form name="form1" method="post" onsubmit="return checkForm();">	
+          <input type="radio" name="status" value="0" onclick="location.href='?status=0'" {if $iStatus == 0} checked {/if} >已关闭&nbsp;
+          <input type="radio" name="status" value="1" onclick="location.href='?status=1'" {if $iStatus == 1} checked {/if}>正式&nbsp;                       
+          <input type="radio" name="status" value="-1" onclick="location.href='?status=-1'" {if $iStatus == -1} checked {/if}>全部&nbsp;
+          <select name="role" onchange="location.href='?roleID='+this.value">
+	          <option value="" >全部</option>
+	          {html_options options=$aRole selected=$iRoleID}            
+          </select>
+          <input type="text" name="q" value="{$q}">         	  
+		  <input type="submit" value="搜索">
+      </td>
+	  </tr>		
+	  
+		<tr  class="header">
+			<td width="5" height="20">ID</td>
+			<td width="80">用户名</td>
+			<td width="80">姓名</td>			
+			<td width="60">进入后台</td>
+			<td width="80">角色</td>
+			<td width="80">最后登陆IP</td>
+			<td width="80">最后登陆时间</td>
+			<td width="100" colspan="3" align="right">动作</td>
+		</tr>
+		
+		{section name=a_list loop=$aList}
+		<tr bgcolor="#FFFFFF">
+			<td height="20">{$aList[a_list].id}</td>
+			<td>{$aList[a_list].userName}</td>
+			<td>{$aList[a_list].trueName}</td>			
+			<td>{if $aList[a_list].status != 0}<a href="?act=intoback&id={$aList[a_list].id}" target="_parent">进入后台</a>{/if}</td>
+			<td>{$aList[a_list].roleName}</td>
+			<td>{$aList[a_list].lastIP}</td>
+			<td>{$aList[a_list].lastTime}</td>
+			<td><a href="manager.php?act=detail&id={$aList[a_list].id}">查看</a></td>
+			<td><a href="manager.php?act=edit&id={$aList[a_list].id}">编辑</a></td>
+			<td>
+			{if $aList[a_list].status == '0'}
+			<a href="manager.php?act=open&id={$aList[a_list].id}" onclick="return confirm('确认开启[{$aList[a_list].trueName}]的帐号');">开启</a>
+			{else}
+			<a href="manager.php?act=closed&id={$aList[a_list].id}" onclick="return confirm('确认关闭[{$aList[a_list].trueName}]的帐号');">关闭</a>
+			{/if}
+			</td>
+		</tr>
+		{/section}	
+		</table>
+		
+{include file=admin/pager_bar.tpl.htm}
+{include file=admin/footer.tpl.htm}

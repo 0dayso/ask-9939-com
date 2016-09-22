@@ -1,0 +1,278 @@
+{include file="html/header_doctor.tpl.htm"}
+		<div id="mainbody" class="clfix">
+			<div class="w185 left menu">
+			{foreach item=child from=$qz}
+			<div class="t01 mt5"><h3>{$child.title}</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  {foreach item=item from=$child.child}
+						<li><a href="http://home.9939.com/space.php?do=mtag&tagid={$item.tagid}">{$item.tagname}</a></li>
+					  {/foreach}
+					</ul>
+				</div>
+			{/foreach}
+			</div><!-- w185 end -->
+			<div class="w755 right">
+				<div class="w530 left">
+					<h3>今日热点</h3>
+					
+					
+					<div class="p02">
+						{foreach item=item key=key from=$picblog}
+						{if $key==0}<dl>{else}<dl style="margin-left:18px">{/if}
+							<dt><a href="http://home.9939.com/space.php?uid={$item.uid}&do=blog&id={$item.blogid}" class="white" target="_blank"><img src="{$item.pic}" /></a><p><a href="http://home.9939.com/space.php?uid={$item.uid}&do=blog&id={$item.blogid}" class="white" target="_blank">{$item.subject}</a></p>
+							</dt>
+							<dd>{$item.message}</dd>
+							</dl>
+						{/foreach}
+					</div>
+					<div class="l01">
+						<ul>
+							{foreach item=item from=$topblog}
+							<li><a href="http://home.9939.com/space.php?uid={$item.uid}&do=blog&id={$item.blogid}" target="_blank">{$item.subject}</a></li>
+							{/foreach}
+						</ul>
+					</div>
+					
+					
+				</div>
+				<div class="w220 right">
+					{foreach item=item key=key from=$ads}
+					<div class="hotimg" style="display:none" id="hotimg{$key}">	
+						<a href="{$item.url}" target="_blank"><img src="http://ask.9939.com/{$item.image}" /></a>
+						<p><a href="{$item.url}" target="_blank">{$item.name}</a></p>
+					</div>
+					{/foreach}
+						<div class="extra mt5">
+						<div class="w218 bd01">
+							<div class="t01"><h3>互助公告</h3></div>
+							<div class="l02">
+								<ul>
+									{foreach item=item from=$notice}
+									<li><a href="{$item.url}" target="_blank">{$item.name}</a></li>
+									{/foreach}
+								</ul>
+							</div>
+						</div>
+					</div><!-- extra end -->
+				</div><!-- w220 end -->
+				<div class="clear"></div>
+				<div class="p01 mt5">
+					<div class="t02"><h3>聚医堂名医推荐</h3></div>
+					<ul>
+						{section name=list loop=$doctor}
+							<li><a href="{$doctor[list].url}"><img src="{$doctor[list].pic}" target="_blank"/></a><p><a href="{$doctor[list].url}" target="_blank"  class="white">{if $doctor[list].nicheng}{$doctor[list].nicheng}{else}{$doctor[list].username}{/if}</a></p><span>
+							<input type="image" src="/templates/9939/skins/default/images_doctor/btn003.jpg" onclick="location.href='http://ask.9939.com/ask/question.php?toUID={$doctor[list].userid}'" /></span></li>	
+						{/section}						
+					</ul>
+				</div>
+				<div class="w530 left mt10">
+					<div class="l05">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t02.jpg" /></div>
+						<ul>
+							{section name=list loop=$blog_tj}
+							<li><a href="http://home.9939.com/space.php?uid={$blog_tj[list].uid}&do=blog&classid={$blog_tj[list].classid}" class="lblue" target="_blank">{if $blog_tj[list].classname}[{$blog_tj[list].classname}]{/if}</a> <a href="http://home.9939.com/space.php?uid={$blog_tj[list].uid}&do=blog&id={$blog_tj[list].blogid}" target="_blank">{$blog_tj[list].subject}</a></li>
+							{/section}
+						</ul>
+					</div>
+					<div class="l05" style="margin-left:10px; display:inline;">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t03.jpg" /></div>
+						<ul>
+							{section name=list loop=$blog_zx}
+							<li><a href="http://home.9939.com/space.php?uid={$blog_zx[list].uid}&do=blog&classid={$blog_zx[list].classid}" class="lblue" target="_blank">{if $blog_zx[list].classname}[{$blog_zx[list].classname}]{/if}</a> <a href="http://home.9939.com/space.php?uid={$blog_zx[list].uid}&do=blog&id={$blog_zx[list].blogid}" target="_blank">{$blog_zx[list].subject}</a></li>
+							{/section}						
+						</ul>
+					</div>
+					<div class="l05 mt10">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t04.jpg" /></div>
+						<ul>
+							{section name=list loop=$ht_tj}
+							<li><a href="http://home.9939.com/space.php?do=mtag&tagid={$ht_tj[list].tagid}" class="lblue" target="_blank">{if $ht_tj[list].tagname}[{$ht_tj[list].tagname}]{/if}</a> <a href="http://home.9939.com/space.php?uid={$ht_tj[list].uid}&do=thread&id={$ht_tj[list].tid}" target="_blank">{$ht_tj[list].subject}</a></li>
+							{/section}
+						</ul>
+					</div>
+					<div class="l05 mt10" style="margin-left:10px;">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t05.jpg" /></div>
+						<ul>
+							{section name=list loop=$ht_zx}
+							<li><a href="http://home.9939.com/space.php?do=mtag&tagid={$ht_zx[list].tagid}" class="lblue" target="_blank">{if $ht_zx[list].tagname}[{$ht_zx[list].tagname}]{/if}</a> <a href="http://home.9939.com/space.php?uid={$ht_zx[list].uid}&do=thread&id={$ht_zx[list].tid}" target="_blank">{$ht_zx[list].subject}</a></li>
+							{/section}								
+						</ul>
+					</div>
+                    <div class="clear"></div>
+					<div class="p03 mt10">
+						<ul>
+							{foreach item=item from=$xc}
+							<li><a href="{$item.url}" target="_blank"><img src="{$item.pic}" width="210" height="135"/></a><p><a href="{$item.url}" target="_blank">{$item.albumname}</a></p></li>
+							{/foreach}
+						</ul>
+					</div>
+					<div class="l06 mt10">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t06.jpg" /></div>
+						<ul>
+							<div class="title"><span class="r">上传者</span><span class="l">文件名称</span></div>
+{section name=list loop=$docres}
+
+{if $docres[list].id}
+	<li><span>{$docres[list].name}</span><a href="http://home.9939.com/space.php?uid={$docres[list].uid}&do=resource&act=download&id={$docres[list].id}">{$docres[list].file}</a></li>
+{/if}
+
+{/section}
+
+							
+						</ul>
+					</div>
+					<div class="l05 mt10" style="margin-left:10px;">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t07.jpg" /></div>
+						<ul>
+							{section name=list loop=$wblog}
+							<li><a href="http://home.9939.com/space.php?uid={$wblog[list].uid}&do=blog&classid={$wblog[list].classid}" class="lgreen" target="_blank">{if $wblog[list].classname}[{$wblog[list].classname}]{/if}</a> <a href="http://home.9939.com/space.php?uid={$wblog[list].uid}&do=blog&id={$wblog[list].blogid}" target="_blank">{$wblog[list].subject}</a></li>
+							{/section}						
+						</ul>
+					</div>
+				</div>
+				<div class="w220 right">
+					<div class="mt10">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t01_t.jpg" /></div>
+							<div id="tabs0" class="clfix">
+								 <ul class="menu0 clfix" id="menu0">
+									  <li onmouseover="setTab(0,0)" class="hover">回答</li>
+									  <li onmouseover="setTab(0,1)">经验值</li>
+									  <li onmouseover="setTab(0,2)">博文</li>
+								 </ul>
+							 <div class="main0" id="main0">
+							 	<ul class="block">
+								  {foreach item=item from=$reply}
+									<li><a href="http://home.9939.com/space.php?uid={$item.userid}" target="_blank">{$item.username}&nbsp;&nbsp;回复数:{$item.num}</a></li>
+								  {/foreach}
+								</ul>
+								<ul>
+								  {foreach item=item from=$jyzph}
+									<li><a href="http://home.9939.com/space.php?uid={$item.uid}" target="_blank">{$item.username}&nbsp;&nbsp;&nbsp;&nbsp;积分:{$item.credit}</a></li>
+								  {/foreach}
+								</ul>
+								<ul>
+								  {foreach item=item from=$hotblog}
+									<li><a href="http://home.9939.com/space.php?uid={$item.uid}&do=blog" target="_blank">{$item.name}&nbsp;&nbsp;&nbsp;&nbsp;{$item.num}篇</a></li>
+								  {/foreach}									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="l04 mt5 pb10">
+						<span>热门博客</span>
+						<div id="MarqueePro6">
+						<div id="MarqueePro7"><div class="LinkTable" >
+						<ul class="clfix">
+							{foreach item=item from=$hotdoc}
+							<li><a href="http://home.9939.com/space.php?uid={$item.uid}">{if $item.name}{$item.name}{else}{$item.username}{/if}</a></li>
+							{/foreach}
+						</ul>
+						</div>
+						</div>
+						<div id="MarqueePro8"></div>
+						</div>
+					</div>
+					<div class="l04 mt5 pb10">
+						<span>最新加入的医师</span>
+						<div id="MarqueePro3">
+						<div id="MarqueePro4"><div class="LinkTable" >
+						<ul class="clfix">
+							{foreach item=item from=$user}
+							<li><a href="{$item.url}" target="_blank">{if $item.nicheng}{$item.nicheng}{else}{$item.username}{/if}</a></li>
+							{/foreach}
+						</ul>
+						</div>
+						</div>
+						</div>
+					</div>
+					<div  class="l04 mt5 pb10" >
+						<span>最近浏览过的医生群</span>
+							<div id="MarqueePro">
+							<div id="MarqueePro1"><div class="LinkTable" >
+							<ul class="clfix">
+							<!--<script src="http://doctor.9939.com/get_history_qz.php"></script>-->
+							<!--#include virtual="/get_history_qz.php" -->
+							</ul>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- w755 end -->
+		</div><!-- mainbody end -->
+	{literal}	
+		<script>
+		var speed=50;
+		var MarqueePro=document.getElementById("MarqueePro");
+		var MarqueePro2=document.getElementById("MarqueePro2");
+		var MarqueePro1=document.getElementById("MarqueePro1");
+		MarqueePro2.innerHTML=MarqueePro1.innerHTML
+		function Marquee(){
+		if(MarqueePro2.offsetTop-MarqueePro.scrollTop<=0){
+		  MarqueePro.scrollTop-=MarqueePro1.offsetHeight;
+		}
+		else{
+		  MarqueePro.scrollTop++;
+		}
+		}
+		var MyMar=setInterval(Marquee,speed);
+		//MarqueePro.onmouseover=function() {clearInterval(MyMar)}
+		//MarqueePro.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+		</script>
+		<script>
+		var speed=50;
+		var MarqueePro3=document.getElementById("MarqueePro3");
+		var MarqueePro5=document.getElementById("MarqueePro5");
+		var MarqueePro4=document.getElementById("MarqueePro4");
+		MarqueePro5.innerHTML=MarqueePro4.innerHTML
+		function Marquee(){
+		if(MarqueePro5.offsetTop-MarqueePro3.scrollTop<=0){
+		  MarqueePro3.scrollTop-=MarqueePro4.offsetHeight;
+		}
+		else{
+		  MarqueePro3.scrollTop++;
+		}
+		}
+		var MyMar=setInterval(Marquee,speed);
+		//MarqueePro3.onmouseover=function() {clearInterval(MyMar)}
+		//MarqueePro3.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+		</script>
+		<script>
+		var speed=50;
+		var MarqueePro6=document.getElementById("MarqueePro6");
+		var MarqueePro8=document.getElementById("MarqueePro8");
+		var MarqueePro7=document.getElementById("MarqueePro7");
+		MarqueePro8.innerHTML=MarqueePro7.innerHTML
+		function Marquee(){
+		if(MarqueePro8.offsetTop-MarqueePro6.scrollTop<=0){
+		  MarqueePro6.scrollTop-=MarqueePro7.offsetHeight;
+		}
+		else{
+		  MarqueePro6.scrollTop++;
+		}
+		}
+		var MyMar=setInterval(Marquee,speed);
+		//MarqueePro6.onmouseover=function() {clearInterval(MyMar)}
+		//MarqueePro6.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+
+
+		counter = 0;
+		function show()
+		{
+			for(i=0; i<3; i++)
+			{
+				document.getElementById('hotimg'+i).style.display="none";
+			}
+			document.getElementById('hotimg'+counter).style.display="";
+			counter++;
+			if(counter == 3) counter = 0;
+			window.setTimeout("show('hotimg'+counter)",1500);
+		}
+		show();
+
+		</script>
+		{/literal}
+		
+<!--#include virtual="/link.html"-->
+<!--#include virtual="/footer.html"-->

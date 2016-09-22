@@ -1,0 +1,47 @@
+﻿@charset "utf-8";
+*{ margin:0; padding:0; }
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,input,legend{border:0;outline:0;background:transparent;}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+section,article,aside,header,footer,nav,dialog,figure{display:block}
+:focus{outline:0}
+em{font-style:normal}
+del{text-decoration:line-through}
+a:hover,ul li a:hover,.relin a:hover,.footer p a:hover,.marq marquee a:hover,.offcl dl dt a:hover,.marq p a:hover,.clipro li span.sp2 a,.havlun p a:hover{color:#ff6600;}
+button, input[type="button"], input[type="submit"] {cursor: pointer;}
+a{text-decoration:none;color:#666;}
+img{vertical-align:middle;border:none;}
+body {font: 14px "SimSun","宋体","Arial Narrow",HELVETICA; _font-family:"宋体"; color:#333;}
+p{ line-height:20px;}
+.clear { clear:both;}
+.clearfix:after { clear:both; content:' '; display:block; font-size:0; line-height:0; visibility:hidden; width:0; height:0}
+table{ border-collapse:collapse; border-spacing:0;}  /*coll 设置td 间距离*/
+.floatL{float:left;}
+.floatR{float:right;}
+* html .clearfix, *:first-child+html .clearfix { zoom:1 }
+/*头部滚动样式*/
+.focus{ position:relative; width:680px; height:250px; background-color: #000; float: left;}  
+.focus img{ width: 680px; height: 250px;} 
+.focus .shadow .title{width: 260px; height: 65px;padding-left: 30px;padding-top: 20px;}
+.focus .shadow .title a{ text-decoration:none; color:#fff; font-size:14px; font-weight:bolder; overflow:hidden; }
+.focus .btn{ position:absolute; bottom:34px; left:510px; overflow:hidden; zoom:1;} 
+.focus .btn a{position:relative; display:inline; width:13px; height:13px; border-radius:7px; margin:0 5px;color:#B0B0B0;font:12px/15px "\5B8B\4F53"; text-decoration:none; text-align:center; outline:0; float:left; background:#D9D9D9; }  
+.focus .btn a:hover,.focus .btn a.current{  cursor:pointer;background:#fc114a;}  
+.focus .fPic{ position:absolute; left:0px; top:0px; }  
+.focus .D1fBt{ overflow:hidden; zoom:1;  height:16px; z-index:10;  }  
+.focus .shadow{ width:100%; position:absolute; bottom:0; left:0px; z-index:10; height:30px; line-height: 30px; background:url(../images/gray.png);  display:block;  text-align:left; }
+.focus .shadow a{ text-decoration:none; color:#fff; font-size:16px; overflow:hidden; margin-left:10px; font-family: "\5FAE\8F6F\96C5\9ED1";}  
+.focus .fcon{ position:relative; width:100%; float:left;  display:none; background:#000  }  
+.focus .fcon img{ display:block; }  
+.focus .fbg{bottom:4px; right:12px; position:absolute; height:21px; text-align:center; z-index: 200; }  
+.focus .fbg div{margin:4px auto 0;overflow:hidden;zoom:1;height:14px}    
+.focus .D1fBt a{position:relative; display:inline; width:12px; height:12px; margin:0 5px;color:#B0B0B0;font:12px/15px "\5B8B\4F53"; text-decoration:none; text-align:center; outline:0; float:left; background:url(../images/icot.png) no-repeat left top;}    
+.focus .D1fBt .current,.focus .D1fBt a:hover{background:#fc114a;background:url(../images/icot.png) no-repeat left -28px;}    
+.focus .D1fBt img{display:none}    
+.focus .D1fBt i{display:none; font-style:normal; }    
+.focus .prev,.focus .next{position:absolute;width:40px;height:74px;background: url(../images/focus_btn.png) no-repeat;}
+.focus .prev{top: 50%;margin-top: -37px; left: 0;background-position:0 -74px; cursor:pointer; }  
+.focus .next{top: 50%;margin-top: -37px; right: 0;  background-position:-40px -74px;  cursor:pointer;}  
+.focus .prev:hover{  background-position:0 0; }  
+.focus .next:hover{  background-position:-40px 0;}  

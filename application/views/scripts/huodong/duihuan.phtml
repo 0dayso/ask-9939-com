@@ -1,0 +1,176 @@
+<?php
+/**
+ * 兑换奖品
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纪念品列表</title>
+<link target="_blank" href="<?=ASK_URL?>style/huodong/r.css" rel="stylesheet" type="text/css" />
+<link target="_blank" href="<?=ASK_URL?>style/huodong/index.css" rel="stylesheet" type="text/css" />
+<link target="_blank" href="<?=ASK_URL?>style/huodong/lf_ok7.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="<?=ASK_URL?>images_ask/css/ask.css">
+<script type='text/javascript' src="<?=ASK_URL?>Js/jquery-min.js"></script>
+
+<script type="text/javascript">
+	function dologin(){
+		var username = $('#username').val();
+		var password = $('#password').val();
+		if(username.length==0||password.length==0){
+			alert("用户名或密码错误！");
+			return false;
+		}   
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/login/?username="+username+"&password="+password+"&format=json&jsoncallback=?",function(data){
+			if(data!='type0'){
+					o = eval( "(" + data + ")" );
+					$("#login").html('<p><span>您好</span>,<span class="col_red">'+o.username+'</span>,<span><a href="http://home.9939.com/ask/?type=1">我的提问</a></span><span><a href="#" onclick="return logout()">退出</a></span></p>');
+					location.reload();
+				}else if(data=='type0'){
+					alert("用户名或密码错误！");
+				}
+		});
+		return false;
+	}
+	
+	
+	function logout(){
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/logout/?format=json&jsoncallback=?",function(data){
+				location.reload();
+				return false;
+		});
+	}
+</script>
+
+</head>
+
+<body>
+<div class="w950">
+	<div id="hd">
+    	<div class="nav-top fix ">
+        	<div class="login" id="login">
+        	<?php 
+			if($this->nickname) {
+				echo '<p><span>您好</span>,<span class="col_red">'.$this->nickname.'</span>,<span><a href="http://home.9939.com/ask/?type=1">我的提问</a></span><span><a href="#" onclick="return logout()">退出</a></span></p>';
+			} else {
+				echo '<form name="loginf"><label>用户名：</label><input type="text" class="inp" name="username" id="username"/><label>密码:</label><input name="password" id="password" type="password" class="inp" /><button class="sub-btn" type="button" onclick="dologin()">登录 </button><a class="a_img" href="http://ask.9939.com/register?backurl='.urlencode("http://ask.9939.com/huodong/index").'" target="_blank"><img src="'.ASK_URL.'images/huodong/zhuc-btn.jpg" /></a></form>';
+			}
+		?>
+            
+            </div>
+            <div class="nav">
+            	<a href="http://ask.9939.com/huodong/index">活动首页</a>|<a href="#" class="on">纪念品展示</a>
+            </div>
+            <div class="header">
+            	<img src="<?=ASK_URL?>images/huodong/header.jpg" />
+            </div>
+        </div>
+    </div>
+    <div id="bd" class=" fix">
+    	<div class="left tMarginLg">
+        	<ul class="lists fix">
+        	<?php
+        		if($this->result) {
+        			foreach ($this->result as $key => $val) {
+        				echo '<li>';
+                			echo '<dl>';
+                    		echo '<dt><a href="#"><img src="http://home.9939.com/upload/propic/'.$val['proPic'].'" /></a></dt>';
+                        		echo '<dd class="title">'.$val['proName'].'</dd>';
+                        		echo '<dd class="price">单价：'.$val['proPoint'].'分</dd>';
+                        		//echo '<dd><a href="#" onclick="return duihuan('.$val['proId'].');"><img src="'.ASK_URL.'images/huodong/dh.jpg" /></a></dd>';
+                        		echo '<dd><a href="/huodong/inputinfo/proid/'.$val['proId'].'"><img src="'.ASK_URL.'images/huodong/dh.jpg" /></a></dd>';
+                    		echo '</dl>';
+                    		echo '</li>';
+        			}
+        		}
+        	?>
+            	
+            </ul>
+            <div class="page">
+            
+            <?php
+            	 	//分页 
+            	 	if($this->pageCount>1) {
+	            	 	//首页
+	            	 	echo '<a href="http://ask.9939.com/huodong/duihuan"class="paging"><img src="'.ASK_URL.'images/huodong/left.jpg" /></a>';
+	            	 	
+	            	 	//上一页
+	            	 	if($this->page>1) {
+	            	 		$page = $this->page-1;
+	            	 		echo '<a href="http://ask.9939.com/huodong/duihuan/page/'.$page.'" class="paging">上一页</a>';
+	            	 	} else {
+	            	 		echo '上一页';
+	            	 	}
+	            	 	
+	            	 	//页数
+	            	 	for ($i=1; $i <= $this->pageCount; $i++) { 
+	            	 		if($this->page == $i ) {
+	            	 			echo '<a href="#" class="onpage">';
+	            	 		} else {
+	            	 			echo '<a href="http://ask.9939.com/huodong/duihuan/page/'.$i.'" >';
+	            	 		}
+	            	 		echo $i.'</a>';
+	            	 	}
+	            	 	
+	            	 	//下一页
+	            	 	if($this->page<$this->pageCount) {
+	            	 		$page = $this->page+1;
+	            	 		echo '<a href="http://ask.9939.com/huodong/duihuan/page/'.$page.'" class="paging">下一页</a>';
+	            	 	} else {
+	            	 		echo '下一页';
+	            	 	}
+	            	 	
+	            	 	//尾页
+	            	 	echo '<a href="http://ask.9939.com/huodong/duihuan/page/'.$this->pageCount.'" class="paging"><img src="'.ASK_URL.'images/huodong/right.jpg" /></a>';
+            	 	}
+            ?>
+            
+                
+                
+                
+                
+                
+            </div>
+        </div>
+        <div class="right tMarginLg">
+        	<div class="mod">
+            	<div class="hd">
+                	<h2>中奖用户</h2>
+                </div>
+                <div class="bd">
+                	<ul class="txt-list">
+                	<?php
+                			include APP_DATA_PATH.'/huojiang.php';
+                    		if($huojiangList) {
+                    			foreach($huojiangList as $key=>$val) {
+                    				echo '<li><span class="name">'.$val['name'].'</span><span class="liwu">'.$val['jiang'].'</span></li>';
+                    				if($key>19) {
+                    					break;
+                    				}
+                    			}
+            				}
+                	?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ft">
+    	
+    		<div class="ft-nav" style="margin-top:10px;"> 
+	<a href="http://www.9939.com/Company/wzjj.htm">网站简介</a>|<a href="http://www.9939.com/webmap_0_1.html">网站地图</a>|<a href="/map/">问答地图</a>|<a href="http://jb.9939.com/map.php">疾病地图</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=5">招聘信息</a>|<a href="http://www.9939.com/sitemap/">网站导航</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=4">友情链接</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=4">媒体报道</a>|<a href="mailto:jianghy@2008.shou.com">意见反馈</a>|<a href="mailto:jianghy@2008.shou.com">网上投稿</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=7">服务条款</a>|<a href="#" onclick="setHomePage(this)" target="_self">设为首页</a>|<a href="#" onclick="addfavorite()" target="_self">加入书签</a> 
+	</div> 
+	<div class="copyright"> 
+		Copyright &copy; 2000-2009　WWW.9939.com　版权所有 玖玖叁玖网络技术(北京)有限公司 <br />特别声明：本站信息仅供参考　不能作为诊断及医疗的依据　本站如有转载或引用文章涉及版权问题请速与我们联系
+	</div> 
+    	
+    </div>
+</div>
+
+<div style="overflow: hidden; display: none; height: 0px;">
+<script type="text/javascript" src="http://js.tongji.linezing.com/1388846/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1388846/tongji.gif"/></a></noscript>
+</div>
+
+</body>
+</html>

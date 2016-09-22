@@ -1,0 +1,7 @@
+stdClass Object
+(
+    [_explicitType] => flex.messaging.messages.ErrorMessage
+    [faultCode] => AMFPHP_FILE_NOT_FOUND
+    [faultDetail] => E:\amfphp\core\shared\app\BasicActions.php on line 33
+    [faultString] => The class {Amf3Broker} could not be found under the class path {E:\amfphp\caicaifeitest/amfphp/Amf3Broker.php}
+)

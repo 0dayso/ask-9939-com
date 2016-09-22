@@ -1,0 +1,21 @@
+<?php
+class bb{
+	public function __construct(){
+		$this->gift = array(1=>'恭喜您获得一等奖！',2=>'恭喜您获得二等奖！',3=>'恭喜您获得三等奖！',4=>'恭喜您获得幸运奖！',5=>'恭喜您获得参与奖！',6=>'恭喜您获得参与奖！',7=>'恭喜您获得参与奖！');
+	}
+	
+	public function getSessionInfo(){
+		session_start();
+		$ReArr=array();
+		$ReArr['err']=false;
+		if($_SESSION['aa']==''){
+			$ReArr['data']['lab']="0";
+			$ReArr['data']['msg']="11得二等奖！";
+			$ReArr['data']['nextPage']='http://ask.9939.com/web/huodong/';
+			$ReArr['err']=true;
+			
+		}
+		return $ReArr;
+	}
+}
+?>

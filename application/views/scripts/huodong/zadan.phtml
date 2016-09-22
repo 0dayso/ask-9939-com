@@ -1,0 +1,165 @@
+<?php
+/**
+ * 砸蛋首页
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>[砸蛋赢大奖]—久久问答—久久健康网</title>
+<link target="_blank" href="<?=ASK_URL?>style/huodong/r.css" rel="stylesheet" type="text/css" />
+<link target="_blank" href="<?=ASK_URL?>style/huodong/index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="<?=ASK_URL?>css/lf_ok3.css">
+<link rel="stylesheet" type="text/css" href="<?=ASK_URL?>images_ask/css/ask.css">
+<script type='text/javascript' src="<?=ASK_URL?>Js/jquery-min.js"></script>
+
+<script type="text/javascript">
+	function dologin(){
+		var username = $('#username').val();
+		var password = $('#password').val();
+		if(username.length==0||password.length==0){
+			alert("用户名或密码错误！");
+			return false;
+		}   
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/login/?username="+username+"&password="+password+"&format=json&jsoncallback=?",function(data){
+			if(data!='type0'){
+					o = eval( "(" + data + ")" );
+					$("#login").html('<p><span>您好</span>,<span class="col_red">'+o.username+'</span>,<span><a href="http://home.9939.com/ask/?type=1">我的提问</a></span><span><a href="#" onclick="return logout()">退出</a></span></p>');
+					location.reload();
+				}else if(data=='type0'){
+					alert("用户名或密码错误！");
+				}
+		});
+		return false;
+	}
+	function logout(){
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/logout/?format=json&jsoncallback=?",function(data){
+				location.reload();
+				return false;
+		});
+	}
+</script>
+</head>
+
+<body>
+<div class="w950 w9502">
+	<div id="hd">
+    	<div class="nav-top fix ">
+            <div class="header">
+                   <object width="950" height="560"><param value="<?=ASK_URL?>images/huodong/top.swf" name="movie"/> <param value="transparent" name="wmode" /><embed height="560" width="950" quality="high" wmode="transparent" src="<?=ASK_URL?>images/huodong/top.swf"></embed></object>
+			</div>
+            
+            <div class="fix">
+                <div class="login" id="login">
+		<?php 
+			if($this->nickname) {
+				echo '<p><span>您好</span>,<span class="col_red">'.$this->nickname.'</span>,<span><a href="http://home.9939.com/ask/?type=1">我的提问</a></span><span><a href="#" onclick="return logout()">退出</a></span></p>';
+				//echo '<p>您好，<font color="red">'.$this->nickname.'</font>,<a href="http://home.9939.com/ask/?type=1">我的提问</a></p>';
+			} else {
+				echo '<form name="loginf"><label>用户名：</label><input type="text" class="inp" name="username" id="username"/><label>密码:</label><input name="password" id="password" type="password" class="inp" /><button class="sub-btn" type="button" onclick="dologin()">登录 </button> <a class="a_img" href="http://ask.9939.com/register?backurl='.urlencode("http://ask.9939.com/huodong/index").'" target="_blank"><img src="'.ASK_URL.'images/huodong/zhuc-btn.jpg" /></a></form>';
+			}
+		?>
+                    
+                </div>
+                 <div class="nav">
+            		<a href="#" class="on">活动首页</a>|<a href="http://ask.9939.com/huodong/duihuan" >纪念品展示</a>|<a href="http://ask.9939.com/huodong/huojiang">查看全部中奖用户</a>|<a href="http://ask.9939.com/">久久问答</a>
+            	</div>
+            </div>
+        </div>
+    </div>
+    <div id="bd" class=" fix">
+    	<div class="left tMarginLg">
+            <div class="mod2">
+            	<div class="hd">
+                	活动介绍
+                </div>
+                <div class="bd fix">
+                	<dl class="dlist lc">
+                    	<dt>活动流程</dt>
+                        <dd>1、注册或登录</dd>
+                        <dd>2、<a href="http://ask.9939.com/asking/index/kw/?backurl=<?php echo urlencode("http://ask.9939.com/huodong/index")?>"><img src="<?=ASK_URL?>images/huodong/a-bg.jpg" /></a></dd>
+                        <dd>3、砸金蛋赢大奖或图书</dd>
+                        <dd>4、填写个人信息，兑奖</dd>
+                    </dl>
+                    <dl class="dlist lc">
+                    	<dt>活动规则</dt>
+                        <dd>1、每次提问只能砸蛋一次</dd>
+                        <dd>2、提问必须与健康有关</dd>
+                        <dd>3、不能灌水，发广告和其他违法提问</dd>
+                        <dd>4、活动最终解释权归久久问答</dd>
+                    </dl>
+                    <dl class="dlist lc">
+                    	<dt>活动奖励</dt>
+                        <dd class="color-r">一等奖1名:佳能数码相机<span>(通过砸蛋所得)</span></dd>
+                        <dd class="color-r">二等奖2名:诺基亚手机<span>(通过砸蛋所得)</span></dd>
+                        <dd class="color-r">三等奖3名:飞利浦mixMp3<span>(通过砸蛋所得)</span></dd>
+                        <dd class="color-r">纪念奖30名:各种养生图书<span>(通过砸蛋所得积分兑换)</span></dd>
+                    </dl>
+                </div>
+            </div>
+            
+            <div class="mod2">
+            	<div class="hd">
+                	<span class="more"><a href="http://ask.9939.com/huodong/huojiang">显示全部&gt;&gt;</a></span>中奖用户
+                </div>
+                <div class="bd fix">
+                    <ul class="txt-list txt-list2">
+                    	<?php
+                    		//获奖用户  前5名
+                    		if(file_exists(APP_DATA_PATH.'/huojiang.php')) {
+                    			include APP_DATA_PATH.'/huojiang.php';
+                    			if($huojiangList) {
+                    				foreach ($huojiangList as $key => $val) {
+                    					echo '<li><span class="name">'.$val['name'].'</span><span href="#" class="liwu">'.$val['jiang'].'</span></li>';
+                    					if($key>=4) break;
+                    				}
+                    			}
+                    		}
+                    	?>
+                    </ul>
+                    <ul class="txt-list txt-list2 txt-list3">
+                    <?php
+                    	//获奖用户  后5名
+            			if($huojiangList) {
+            				foreach ($huojiangList as $key => $val) {
+            					if($key> 4 )  {
+            						echo '<li><span class="name">'.$val['name'].'</span><span class="liwu">'.$val['jiang'].'</span></li>';
+            					} 
+            					if($key >= 9) break;					
+            				}
+            			}
+                    ?>
+                    		
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right tMarginLg">
+        	<!--a href="#"><img src="<?=ASK_URL?>images/huodong/logo.jpg" /></a-->
+        	<div class="rig01 tMarginLg">
+            <div class="top"></div>
+            <div class="mid">
+              <p>活动对象：<br />网站全体普通会员<br />活动时间：<br />从即日起至2010年10月9号<br />注明：<br />活动免邮费</p>
+              <div class="qq">活动QQ</div>
+            </div>
+            <div class="bot"></div>
+          </div>
+        </div>
+    </div>
+    <div id="ft">
+    	<div class="ft-nav" style="margin-top:10px;"> 
+	<a href="http://www.9939.com/Company/wzjj.htm">网站简介</a>|<a href="http://www.9939.com/webmap_0_1.html">网站地图</a>|<a href="/map/">问答地图</a>|<a href="http://jb.9939.com/map.php">疾病地图</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=5">招聘信息</a>|<a href="http://www.9939.com/sitemap/">网站导航</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=4">友情链接</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=4">媒体报道</a>|<a href="mailto:jianghy@2008.shou.com">意见反馈</a>|<a href="mailto:jianghy@2008.shou.com">网上投稿</a>|<a href="http://www.9939.com/Company/wzjj.htm?tag=7">服务条款</a>|<a href="#" onclick="setHomePage(this)" target="_self">设为首页</a>|<a href="#" onclick="addfavorite()" target="_self">加入书签</a> 
+	</div> 
+	<div class="copyright"> 
+		Copyright &copy; 2000-2009　WWW.9939.com　版权所有 玖玖叁玖网络技术(北京)有限公司 <br />特别声明：本站信息仅供参考　不能作为诊断及医疗的依据　本站如有转载或引用文章涉及版权问题请速与我们联系
+	</div> 
+	
+    </div>
+</div>
+<div style="overflow: hidden; display: none; height: 0px;">
+<script type="text/javascript" src="http://js.tongji.linezing.com/1388846/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1388846/tongji.gif"/></a></noscript>
+<script src=' http://w.cnzz.com/c.php?id=30033558' language='JavaScript' charset='gb2312'></script>
+</div>
+</body>
+</html>

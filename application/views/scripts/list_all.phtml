@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="Description" content="<?php echo $this->description; ?>" />
+<meta name="Keywords" content="<?php echo $this->keywords; ?>" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title><?php echo $this->title; ?></title>
+<link rel="stylesheet" type="text/css" href="/ask/css/rbgm.css?v=20151203_07"/>
+<link rel="stylesheet" type="text/css" href="/ask/css/askx.css?v=20151203_07"/>
+<link href="/ask/css/r.css?v=20151203_07" type="text/css" rel="stylesheet" />
+<link href="/ask/css/b.css?v=20151203_07" type="text/css" rel="stylesheet" />
+<link href="/ask/css/g.css?v=20151203_07" type="text/css" rel="stylesheet" />
+<link href="/ask/css/m.css?v=20151203_07" type="text/css" rel="stylesheet" />
+<link href="/ask/css/ask_indexx.css?v=20151203_07" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="/ask/css/ggao.css?v=20151203_07" />
+<link rel="stylesheet" type="text/css" href="/ask/css/tContent.css?v=20151203_07"/>
+<script type="text/javascript" src="/ask/js/jquery.js?v=20151203_07"></script>
+<script type="text/javascript" src="/ask/js/jquery.tab.js?v=20151203_07"></script>
+
+<script type="text/javascript">
+
+var queen=(function(){
+	var list=[]
+	return {
+		status:true,
+		add:function(o){
+			list.push(o);
+		},
+		start:function(){
+			if(this.status){
+				//console.log(list);
+				var tmp=list.shift();
+				queen.status=false;
+				tmp();
+			}
+			if(list.length){
+				setTimeout(arguments.callee,30);
+			}
+		},
+		urlcache:{}
+	}
+})();
+function makeLinks(href,text){
+	var tmp=document.createElement('a');
+	tmp.href=href;
+	tmp.appendChild(document.createTextNode(text));
+	return tmp;
+}
+function getPages(url,ele){
+	var status,html='';
+	var pele=jQuery(ele).parents().filter(function(){
+		if (this.tagName.toLowerCase()=='ol') return this;
+	});
+	var jTab=jQuery(pele).find('.j-tab-01');
+	if(!queen.urlcache[url]){
+		queen.urlcache[url]=true;
+		queen.add(function(){
+			var u=url;
+			(function(url){
+			var status='';
+			jQuery.ajax({
+				url : url+'&src=JQ',
+				dataType:"json",
+				cache:false,
+				success:function(data){
+					queen.urlcache[url]=data;
+					if(data.status==0){
+						status=1;
+					}else if(data.status==1){
+						status=2;
+					}else if(data.status==2){
+						status=3;
+					}else if(data.status==3){
+						status=0;
+					}
+					jTab.html('');
+					var j=0;
+					jTab[0].insertRow(j);
+					jTab[0].rows[j].insertCell(0);
+					jTab[0].rows[j].cells[0].width="10%";
+					jTab[0].rows[j].cells[0].appendChild(document.createTextNode('科室'));
+					jTab[0].rows[j].insertCell(1);
+					jTab[0].rows[j].cells[1].width="47%";
+					jTab[0].rows[j].cells[1].appendChild(document.createTextNode('标题'));
+					jTab[0].rows[j].insertCell(2);
+					jTab[0].rows[j].cells[2].width="14%";
+					jTab[0].rows[j].cells[2].appendChild(document.createTextNode('查看/回复数'));
+					jTab[0].rows[j].insertCell(3);
+					jTab[0].rows[j].cells[3].width="10%";
+					jTab[0].rows[j].cells[3].appendChild(document.createTextNode('状态'));
+					jTab[0].rows[j].insertCell(4);
+					jTab[0].rows[j].cells[4].width="9%";
+					jTab[0].rows[j].cells[4].appendChild(document.createTextNode('悬赏分'));
+					jTab[0].rows[j].insertCell(5);
+					jTab[0].rows[j].cells[0].width="10%";
+					jTab[0].rows[j++].cells[5].appendChild(document.createTextNode('时间'));
+					jQuery('#page_'+status+'a').html(data.pagehtml);
+					jQuery('#page_'+status+'b').html(data.pagehtml);
+					jQuery.each(data.aList,function(i){
+					jTab[0].insertRow(j);
+					jTab[0].rows[j].insertCell(0);
+					jTab[0].rows[j].cells[0].appendChild(makeLinks("/classid/"+data.aList[i].classid,data.aList[i].name));
+					jTab[0].rows[j].insertCell(1);
+					jTab[0].rows[j].cells[1].appendChild(makeLinks("/?id="+data.aList[i].id,data.aList[i].title));
+					jTab[0].rows[j].insertCell(2);
+					jTab[0].rows[j].cells[2].appendChild(document.createTextNode(data.aList[i].browsenum+'/'+data.aList[i].answernum));
+					jTab[0].rows[j].insertCell(3);
+					jTab[0].rows[j].cells[3].appendChild(document.createTextNode(data.aList[i].status));
+					jTab[0].rows[j].insertCell(4);
+					jTab[0].rows[j].cells[4].appendChild(document.createTextNode(data.aList[i].point));
+					jTab[0].rows[j].insertCell(5);
+					jTab[0].rows[j++].cells[5].appendChild(document.createTextNode(data.aList[i].ctime));
+					});
+					queen.status=true;
+			}
+			});
+			})(u);
+		});
+		queen.start();
+		}else{
+					var data=queen.urlcache[url];
+					if (typeof data == 'object') {
+						setTimeout(function(){
+							if(data.status==0){
+								status=1;
+							}else if(data.status==1){
+								status=2;
+							}else if(data.status==2){
+								status=3;
+							}else if(data.status==3){
+								status=0;
+							}		
+							var j=0;
+							jTab[0].insertRow(j);
+							jTab[0].rows[j].insertCell(0);
+							jTab[0].rows[j].cells[0].width="10%";
+							jTab[0].rows[j].cells[0].appendChild(document.createTextNode('科室'));
+							jTab[0].rows[j].insertCell(1);
+							jTab[0].rows[j].cells[1].width="47%";
+							jTab[0].rows[j].cells[1].appendChild(document.createTextNode('标题'));
+							jTab[0].rows[j].insertCell(2);
+							jTab[0].rows[j].cells[2].width="14%";
+							jTab[0].rows[j].cells[2].appendChild(document.createTextNode('查看/回复数'));
+							jTab[0].rows[j].insertCell(3);
+							jTab[0].rows[j].cells[3].width="10%";
+							jTab[0].rows[j].cells[3].appendChild(document.createTextNode('状态'));
+							jTab[0].rows[j].insertCell(4);
+							jTab[0].rows[j].cells[4].width="9%";
+							jTab[0].rows[j].cells[4].appendChild(document.createTextNode('悬赏分'));
+							jTab[0].rows[j].insertCell(5);
+							jTab[0].rows[j].cells[0].width="10%";
+							jTab[0].rows[j++].cells[5].appendChild(document.createTextNode('时间'));
+							jQuery('#page_'+status+'a').html(data.pagehtml);
+							jQuery('#page_'+status+'b').html(data.pagehtml);
+							jQuery.each(data.aList,function(i){
+							jTab[0].insertRow(j);
+							jTab[0].rows[j].insertCell(0);
+							jTab[0].rows[j].cells[0].appendChild(makeLinks("/classid/"+data.aList[i].classid,data.aList[i].name));
+							jTab[0].rows[j].insertCell(1);
+							jTab[0].rows[j].cells[1].appendChild(makeLinks("/?id="+data.aList[i].id,data.aList[i].title));
+							jTab[0].rows[j].insertCell(2);
+							jTab[0].rows[j].cells[2].appendChild(document.createTextNode(data.aList[i].browsenum+'/'+data.aList[i].answernum));
+							jTab[0].rows[j].insertCell(3);
+							jTab[0].rows[j].cells[3].appendChild(document.createTextNode(data.aList[i].status));
+							jTab[0].rows[j].insertCell(4);
+							jTab[0].rows[j].cells[4].appendChild(document.createTextNode(data.aList[i].point));
+							jTab[0].rows[j].insertCell(5);
+							jTab[0].rows[j++].cells[5].appendChild(document.createTextNode(data.aList[i].ctime));
+							});
+						},1)
+					};
+		}
+	}
+	
+$(function(){
+	$(document).jTab({
+	 menutag:".zhj-mod .hd li"
+	});
+	
+	$(document).jTab({
+	 menutag:".zhmod-02 .hd li"
+	 }); 
+	
+     $(".lw-nav").children().bind("mouseover",function(){
+		 $(this).addClass("temp");
+		 $(".j-pages").children("select").css("visibility","hidden");
+		});
+	
+	 $(".lw-nav").children().bind("mouseout",function(){
+		 $(this).removeClass("temp");
+		 $(".j-pages").children("select").css("visibility","visible");
+		});
+});	
+	
+</script>
+<body>
+<div id="doc" class="w950">
+  <div id="hd">
+    <!--#include virtual="/header.shtml"-->  
+  </div>
+	<div id="bd">
+  <div class="tmod-08">
+    <h3>您的位置：<a href="<?=ASK_URL?>">问答首页</a>
+<?php 
+$keshiid = $this->classid;
+$ks_cache = $this->ks_cache;
+$htmlStr = '';
+while(true) {
+	$htmlStr = ' - <a href="'.$keshiid.'">'.$ks_cache[$keshiid]['name'].'</a>' . $htmlStr;
+	$keshiid = $ks_cache[$keshiid]['pID'];
+	if($keshiid == 0) break;
+}
+if($htmlStr!=' - <a href="0"></a>'){
+    $boolzilei=true;//表示为选择科室
+    echo $htmlStr;
+}else{
+    $boolzilei=false;//表示全部列表
+    echo "－全部问题列表";
+}
+?>
+    </h3>
+  </div>
+  <div class="g-m0s8 l-fix tMarginLg">
+    <div class="col-m">
+      <div class="m-wrap">
+        <div class="j-mod zhj-mod vMarginLg">
+          <div class="hd">
+            <ul class="l-fix">
+              <li class="on-zh"><a href="###">疾病健康</a></li>
+              <li><a href="###">生活健康</a></li>
+              <li><a href="###">整形美容</a></li>
+            </ul>
+          </div>
+          <div class="bd">
+            <ul class="in l-fix lw-nav" >
+              <?php
+				foreach ($this->dzjb as $k=>$v){
+					if($k == 537) continue;
+					if($v['child']){
+						echo '<li class="trunDot" >
+								<a href="'.$v['url'].'">'.$v['name'].'</a><span>('.$v['count'].')</span>
+								<ul '.$sytle.'>';
+								foreach ($v['child'] as $kk=>$vv){
+							     echo '<li><a href="'.$vv['url'].'">'.$vv['name'].'</a></li>';
+								}
+								echo '</ul>
+							</li>';
+                            
+                  
+					}
+					else{
+						echo '<li><a href="'.$v['url'].'">'.$v['name'].'</a></li>';
+					}
+                    
+				}
+				?>
+            </ul>
+            <ul class="in l-fix lw-nav" style="display:none;">
+              <?php
+			foreach ($this->dzjk as $k=>$v){
+				if($v['child']){
+					echo '<li class="trunDot">
+							<a href="'.$v['url'].'">'.$v['name'].'</a><span>('.($v['count']).')</span>
+							<ul>';
+							foreach ($v['child'] as $kk=>$vv){
+						     echo '<li><a href="'.$vv['url'].'">'.$vv['name'].'</a></li>';
+							}
+							echo '</ul>
+						</li>';
+				}
+				else{
+					echo '<li><a href="'.$v['url'].'">'.$v['name'].'</a></li>';
+				}
+			}
+			?>
+            </ul>
+            <ul class="in l-fix lw-nav" style="display:none;">
+              <?php
+			foreach ($this->dzmr as $k=>$v){
+				if($v['child']){
+					echo '<li class="trunDot">
+							<a href="'.$v['url'].'">'.$v['name'].'</a><span>('.($v['count']).')</span>
+							<ul>';
+							foreach ($v['child'] as $kk=>$vv){
+						     echo '<li><a href="'.$vv['url'].'">'.$vv['name'].'</a></li>';
+							}
+							echo '</ul>
+						</li>';
+				}
+				else{
+					echo '<li><a href="'.$v['url'].'">'.$v['name'].'</a></li>';
+				}
+			}
+			?>
+            </ul>
+          </div>
+          <div class="bd">
+            <div class="sortList l-fix"> 
+<?php
+/*二级分类*/
+if($boolzilei&&$this->detail['child']>0) {
+?>			
+
+<strong><?php echo $this->detail['name'];  ?></strong>
+<p class="l-fix tMarginLg" id="showChildName"> 
+    <?php
+    	//如果不是最后一级分类 显示默认子分类
+    	$aTemp = array();
+    	foreach ($this->ks_cache as $key=>$val){
+    		if($val['pID']==$this->detail['id']) {
+    			$k = $val['listorder'];
+    			$aTemp[$k] = $val;
+    		}
+    	}
+    	ksort($aTemp);
+    	//print_r($aTemp);
+    	//xzxin 2010-08-20
+    	foreach ($aTemp as $val){
+    		echo '<a href="/classid/'.$val['id'].'">'.$val['name'].'</a>';
+    	}
+    ?>
+<?php
+}
+?>
+              <div class="anniu">
+                <div class="tiwen"> 
+                <a href="#kuaisutiwen" style="float:left; margin-left:5px; margin-right:10px;">
+                <img src="/ask/images/wdIcon.jpg" width="170" height="53" /></a> 
+                <a target="_blank"  href="http://ask.9939.com/doctorTeam.shtml" ><img src="/ask/images/wdIcon1.jpg?v=20151203_07" width="170" height="53" /></a> 
+                </div>
+                <div id="zhuce">
+                  <div id="zhuce1"> <a href="http://ask.9939.com/register" class="zhinput-submit zhinput-submit03" ></a></div>
+                  <div id="zhuce2"> <a href="http://ask.9939.com/register" class="zhinput-submit zhinput-submit04" ></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="j-mod">
+          <div class="hd fix">
+            <ul>
+                <li <?php if($this->status==3)echo 'class="on-zh"';?>><a href="/classid/<?php echo sprintf('%d-%s-%d',$this->classid,'all',1); ?>">全部问题</a></li>
+    			<li <?php if($this->status==0)echo 'class="on-zh"';?>><a href="/classid/<?php echo sprintf('%d-%d-%d',$this->classid,0,1);?>">待解决问题</a></li>
+    			<li <?php if($this->status==1)echo 'class="on-zh"';?>><a href="/classid/<?php echo sprintf('%d-%d-%d',$this->classid,1,1); ?>">已解决问题</a></li>
+    			<li <?php if($this->status==2)echo 'class="on-zh"';?>><a href="/classid/<?php echo sprintf('%d-%d-%d',$this->classid,2,1); ?>">悬赏问题</a></li>
+    			<li <?php if($this->status==4)echo 'class="on-zh"'?>><a href="/classid/<?php  echo sprintf('%d-%d-%d',$this->classid,4,1); ?>">零回复问题</a></li>
+            </ul>
+          </div>
+          <div id="main0" class="bd">
+            	<?php
+						/*echo "<!-- resultset\n";
+						var_dump($this->rs);
+						echo "-->\n";*/
+						foreach($this->rs as $key=>$val){
+							echo '
+							<ol class="block">	
+								<div id="page_'.$key.'a" >'.$val[pagehtml].'</div>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0" class="j-tab-01">
+									<tbody>
+										<tr class="title">
+											<td width="15%">科室</td>
+											<td width="32%">标题</td>
+											<td width="14%">回复数</td>
+											<td width="10%">状态</td>
+											<td width="10%">悬赏分</td>
+											<td width="15%">时间</td>
+										</tr>';
+									echo '<div id="clist'.$key.'">';
+									foreach($val[aList] as $k=>$v){
+										//$status = $v[status]==1 ? '已解决' : '未解决';
+                                        $status = '';
+										switch ($v['status']) {
+											case 0:
+                                                if($v['answernum']){
+                                                    $status = '已回答';
+                                                }else{
+                                                    $status = '待解决';
+                                                }
+                                                break;
+											case 1:
+												$status = '已解决';
+												break;
+										}
+										echo "<tr>";
+										$classid=0;
+                                        $classname="";
+                                        if($v['classid']){
+                                            $classid=$v['classid'];
+                                            $classname=$this->ks_cache[$v['classid']]['name'];
+                                        }else if($v['class_level3']){
+                                            $classid=$v['class_level3'];
+                                            $classname=$this->ks_cache[$v['class_level3']]['name'];
+                                        }else if($v['class_level2']){
+                                            $classid=$v['class_level2'];
+                                            $classname=$this->ks_cache[$v['class_level2']]['name'];
+                                        }else if($v['class_level1']){
+                                            $classid=$v['class_level1'];
+                                            $classname=$this->ks_cache[$v['class_level1']]['name'];
+                                        }
+                                        echo "<td><a target=\"_blank\" href=\"/classid/{$classid}\">[".$classname."]</td>";
+										echo "<td><a target=\"_blank\" href=\"/id/$v[id]\" class=\"j-blue\">".mb_strcut($v[title],0,62,'utf8')."</a></td>
+											<td>$v[answernum]</td>
+											<td>$status</td>
+											<td>$v[point]</td>
+											<td>$v[ctime]</td>
+										</tr>";
+									}
+									echo '</div>';
+							echo '</tbody>
+								</table>								
+								<div id="page_'.$key.'b" >'.$val[pagehtml].'</div>
+							</ol>
+							';
+							}
+							?>
+          </div>
+        </div>
+<script type="text/javascript"><!--
+var pubsage_site_id = 289;
+var pubsage_slot = "ask_list";
+//--></script>
+        <?php require(APP_ROOT."/quickask.php");?>
+<!--保健品推荐 开始-->
+<?php 
+//$keywords = urlencode($ks_cache[$this->classid]['keywords']);
+//$cents = file_get_contents("http://192.168.229.105/interface.php?keywords=$keywords&count=4");$list = json_decode($cents,true);
+?>
+<?php //if($list){
+?>
+<!--<div class="mod zhmod-06 tMarginLg">
+<div class="inner">
+<div class="hd">
+<h3>保健品推荐</h3>
+</div>
+<div class="bd">
+<?php //foreach($list as $info){ ?>
+<div class="zhmod-07">
+<a href="http://www.go9939.com/goods/<?php //echo $info['goods_id'];?>/" target="_blank"><img src="http://www.go9939.com/<?php //echo $info['thumb_url'];?>"></a>
+<p><a href="http://www.go9939.com/goods/<?php //echo $info['goods_id'];?>/" class="j-blue01" target="_blank"><?php //echo mb_substr($info['goods_name'],0,10,'utf-8');?></a></p>
+<p class="j-orange"><?php //echo mb_substr($info['ads_note'],0,10,'utf-8');?></p>
+<p class="j-gray">市场价：￥<?php //echo $info['market_price'];?></p>
+<p class="j-gray">商城价：￥<?php //echo $info['shop_price'];?></p>
+</div>
+<?php //}?>
+</div>
+</div>
+</div>-->
+<?php //}?>
+<!--保健品推荐 结束-->
+
+        <div class="mod zhmod-04 tMarginLg"> <span class="top"> <span class="tl"></span> </span>
+          <div class="inner">
+            <div class="hd">
+              <h3>专家推荐</h3>
+            </div>
+            <div class="bd">
+                <?php require(APP_PUBLIC_PATH."/List_ask_footads.shtml");?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-s">
+     <?php require(APP_PUBLIC_PATH."/list_right2.shtml");?>
+   </div>
+</div>  
+  <div id="ft">
+    <!--#include virtual="/public/endmenu.shtml"-->
+    <!--#include virtual="/ask/ask_footer/ask_footer.html"-->
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+﻿.lw-sucessBlock{border:1px solid #c2dcf5;font-size:14px;padding:50px 235px 25px 0}
+.lw-sucessBlock .l{float:left;width:210px;height:400px;background:url(../images/sucessPic.png) no-repeat 40px 34px;margin-right:20px}
+.lw-sucessBlock h1{color:#ff6600;font-family:黑体;font-size:32px;font-weight:900}
+.lw-sucessBlock span{color:#5e5e5e;margin:20px 0;display:block;font-size:14px}
+.lw-sucessBlock a{color:#0138d1;padding-right:20px;text-decoration:underline}
+.lw-sucessBlock a:hover{text-decoration:none}
+.lw-sucessBlock .line{background:url(../images/line.png) repeat-x;display:block;margin:40px 0;height:1px;overflow:hidden}

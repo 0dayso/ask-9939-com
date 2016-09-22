@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>问答地图</title>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_index.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask_map.css"/>
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script>
+$(function(){	
+	$(document).jTab({
+	 menutag:".j-mod .hd ul li"
+	});
+	
+	$(document).jTab({
+	 menutag:".zhmod-02 .hd li"
+	 }); 
+	
+     $(".lw-nav").children().bind("mouseover",function(){
+		 $(this).addClass("temp");
+		});
+	
+	 $(".lw-nav").children().bind("mouseout",function(){
+		 $(this).removeClass("temp");
+		});
+});
+</script>
+
+</head>
+
+<body>
+	<div id="doc" class="w950">
+		<div id="hd"><link rel="stylesheet" type="text/css" href="/images_ask/css/tContent.css"/>
+<script type="text/javascript" src="/images_ask/js/topform.js"></script>
+<script>
+
+function showlogin(uid){
+	$.ajax({
+			url:'/ask/loadhtml/html/showlogin/id/'+uid,
+			dataType:"json",
+			cache:false,
+			success:function(data){
+				//alert('a='+data.w_up);
+				$('#w_up').html(data.w_up);
+				$('#w_right').html(data.w_right);
+				$('#w_hot').html(data.w_hot);				
+				$('#showlogin').show().css('left',(document.documentElement.offsetWidth-950)/2+"px");			
+			}		
+	})
+}
+
+//搜索用
+function mksearch(id,i)
+{
+	var kw = $("#"+id).val();
+	var type = 10; 
+	if(i==1){
+		if(kw=='输入提问内容，点击“我要提问”' || kw==''){
+			alert('请输入您要搜索的内容!');
+			$("#"+id).val('');
+			$('#searchtext').focus();
+			return false;
+		}
+		window.location.href="http://so.9939.com/index/index/kw/"+kw+"/type/"+type;
+	}else if(i==2){
+		window.location.href="http://ask.9939.com/asking/index/";
+	}
+	return false;
+}
+</script>
+<div id="doc" class="w950">
+  <div id="hd">
+    <div class="menu">
+		<div id="login">
+			<script src="/user2.php"></script>
+		</div>
+		<div class="top-line">
+			<ul class="top-fav">
+				<li class="addFav"><a href="javascript:addFavorite();">加入收藏</a></li>
+				<li class="setHomePage"><a href="javascript:setHomePage(this);">设为主页</a></li>
+			</ul>
+			<ul class="top-nav">
+				<li><a href="http://www.9939.com" target="_blank">网站首页</a></li>
+				<li><a href="http://ask.9939.com">久久问答</a></li>
+				<li><a href="http://home.9939.com" target="_blank">久久家园</a></li>
+				<li><a href="http://home.9939.com/buluo" target="_blank">久久部落</a></li>
+				<li><a href="http://doctor.9939.com" target="_blank">聚医堂</a></li>
+			</ul>				
+		</div>
+    </div>
+    <div class="zhlogo-nav tMarginLg">
+      <h1 class="zhlogo">
+        <a href="/"><img src="/images_ask/images/ask_logo.png" /></a>
+      </h1>
+      <div class="zhnav">
+        <div class="zhnav-list">
+          <ul>
+            <li><a href="/">问答首页</a></li>
+            <li><a href="/all.shtml">全部问题列表</a></li>
+            <li><a href="/cat.shtml">问题分类</a></li>
+            <li><a href="/doctorTeam.shtml">问答医师团</a></li>
+            <li><a href="/rank.shtml">问答排行榜</a></li>
+            <li><a href="/rule.shtml">积分规则</a></li>
+            <li class="noBg"><a href="http://ask.9939.com/list/time/">问答汇总</a></li>
+          </ul>       
+        </div>
+        <div class="zhnav-ask">
+          <div class="zhnav-ask-form">
+            <form action="###" method="post">
+              <fieldset>
+              <legend>我要提问</legend>
+                <input type="text" class="zhinput-text" value="输入提问内容，点击“我要提问”" id="searchtext" onblur="if(this.value=='') this.value='输入提问内容，点击“我要提问”';" 
+onfocus="if(this.value=='输入提问内容，点击“我要提问”') this.value='';"/>
+                <a class="zhinput-submit zhinput-submit01"  onclick="return mksearch('searchtext',2)"></a>
+                <a class="zhinput-submit zhinput-submit02" onclick="return mksearch('searchtext',1)"></a>
+              </fieldset>
+            </form>
+          </div>
+          <div class="zhnav-ask-info">
+            <p>当前在线用户：<script src="/reg.php"></script>人</p>
+            <p>问答贴：<script src="/askNum.php"></script>贴</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+		<div id="bd">
+			<div class="j-mod tMarginLg j-lwmod">
+				<div class="hd fix">
+					<ul>
+						<li>生活热点</li><li>家居健康</li><li>亚健康类</li><li>内科</li><li>外科</li><li>妇产科</li><li>男科</li><li>儿科</li><li>不孕不育</li><li>五官科</li><li>整形美容</li><li>传染病科</li><li>肿瘤科</li><li>心理科</li><li>中医科</li>					</ul>
+				</div>
+				<div class="bd">
+				<ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/3">生活热点</a><a target="_blank" href="http://ask.9939.com/classid/4">两性生活</a><a target="_blank" href="http://ask.9939.com/classid/5">减肥瘦体</a><a target="_blank" href="http://ask.9939.com/classid/6">休闲健身</a><a target="_blank" href="http://ask.9939.com/classid/7">百姓健康</a><a target="_blank" href="http://ask.9939.com/classid/8">营养饮食</a><a target="_blank" href="http://ask.9939.com/classid/9">家居健康</a><a target="_blank" href="http://ask.9939.com/classid/10">保健养生</a><a target="_blank" href="http://ask.9939.com/classid/11">育儿</a><a target="_blank" href="http://ask.9939.com/classid/12">百姓生活</a><a target="_blank" href="http://ask.9939.com/classid/13">美容塑身</a><a target="_blank" href="http://ask.9939.com/classid/14">其他</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/15">家居健康</a><a target="_blank" href="http://ask.9939.com/classid/16">生活百科</a><a target="_blank" href="http://ask.9939.com/classid/17">电脑与健康</a><a target="_blank" href="http://ask.9939.com/classid/18">手机与健康</a><a target="_blank" href="http://ask.9939.com/classid/19">家具与健康</a><a target="_blank" href="http://ask.9939.com/classid/20">环境与健康</a><a target="_blank" href="http://ask.9939.com/classid/21">其他</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/22">亚健康类</a><a target="_blank" href="http://ask.9939.com/classid/23">腰疼</a><a target="_blank" href="http://ask.9939.com/classid/24">易怒</a><a target="_blank" href="http://ask.9939.com/classid/25">头晕</a><a target="_blank" href="http://ask.9939.com/classid/26">黑眼圈</a><a target="_blank" href="http://ask.9939.com/classid/27">多汗</a><a target="_blank" href="http://ask.9939.com/classid/28">四肢肿</a><a target="_blank" href="http://ask.9939.com/classid/29">抽筋</a><a target="_blank" href="http://ask.9939.com/classid/30">其他</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/32">内科</a><a target="_blank" href="http://ask.9939.com/classid/34">高血压</a><a target="_blank" href="http://ask.9939.com/classid/35">心脏病</a><a target="_blank" href="http://ask.9939.com/classid/36">冠心病</a><a target="_blank" href="http://ask.9939.com/classid/37">心律失常</a><a target="_blank" href="http://ask.9939.com/classid/38">心肌炎</a><a target="_blank" href="http://ask.9939.com/classid/39">动脉硬化</a><a target="_blank" href="http://ask.9939.com/classid/40">心绞痛</a><a target="_blank" href="http://ask.9939.com/classid/41">其他</a><a target="_blank" href="http://ask.9939.com/classid/43">糖尿病</a><a target="_blank" href="http://ask.9939.com/classid/44">甲亢</a><a target="_blank" href="http://ask.9939.com/classid/45">高血脂</a><a target="_blank" href="http://ask.9939.com/classid/46">淋巴瘤</a><a target="_blank" href="http://ask.9939.com/classid/47">性早熟</a><a target="_blank" href="http://ask.9939.com/classid/48">其他</a><a target="_blank" href="http://ask.9939.com/classid/50">痛风</a><a target="_blank" href="http://ask.9939.com/classid/51">药物过敏</a><a target="_blank" href="http://ask.9939.com/classid/52">红斑狼疮</a><a target="_blank" href="http://ask.9939.com/classid/53">关节炎</a><a target="_blank" href="http://ask.9939.com/classid/54">风湿性关节炎</a><a target="_blank" href="http://ask.9939.com/classid/55">其他</a><a target="_blank" href="http://ask.9939.com/classid/57">胃病</a><a target="_blank" href="http://ask.9939.com/classid/58">便秘</a><a target="_blank" href="http://ask.9939.com/classid/59">腹痛</a><a target="_blank" href="http://ask.9939.com/classid/60">腹泻</a><a target="_blank" href="http://ask.9939.com/classid/61">胃炎</a><a target="_blank" href="http://ask.9939.com/classid/62">肝硬化</a><a target="_blank" href="http://ask.9939.com/classid/63">胃癌</a><a target="_blank" href="http://ask.9939.com/classid/64">消化性溃疡</a><a target="_blank" href="http://ask.9939.com/classid/65">消化不良</a><a target="_blank" href="http://ask.9939.com/classid/66">消化道出血</a><a target="_blank" href="http://ask.9939.com/classid/67">食管癌</a><a target="_blank" href="http://ask.9939.com/classid/68">其它</a><a target="_blank" href="http://ask.9939.com/classid/70">头疼</a><a target="_blank" href="http://ask.9939.com/classid/71">癫痫</a><a target="_blank" href="http://ask.9939.com/classid/72">脑梗塞</a><a target="_blank" href="http://ask.9939.com/classid/73">神经衰弱</a><a target="_blank" href="http://ask.9939.com/classid/74">坐骨神经痛</a><a target="_blank" href="http://ask.9939.com/classid/75">昏迷</a><a target="_blank" href="http://ask.9939.com/classid/76">其它</a><a target="_blank" href="http://ask.9939.com/classid/78">感冒</a><a target="_blank" href="http://ask.9939.com/classid/79">肺结核</a><a target="_blank" href="http://ask.9939.com/classid/80">哮喘</a><a target="_blank" href="http://ask.9939.com/classid/81">肺炎</a><a target="_blank" href="http://ask.9939.com/classid/82">支气管炎</a><a target="_blank" href="http://ask.9939.com/classid/83">甲型H1N1流感</a><a target="_blank" href="http://ask.9939.com/classid/84">气胸</a><a target="_blank" href="http://ask.9939.com/classid/85">肺气肿</a><a target="_blank" href="http://ask.9939.com/classid/86">其他</a><a target="_blank" href="http://ask.9939.com/classid/88">贫血</a><a target="_blank" href="http://ask.9939.com/classid/89">白血病</a><a target="_blank" href="http://ask.9939.com/classid/90">过敏性紫绀</a><a target="_blank" href="http://ask.9939.com/classid/91">血友病</a><a target="_blank" href="http://ask.9939.com/classid/92">低血糖症</a><a target="_blank" href="http://ask.9939.com/classid/93">出血性疾病</a><a target="_blank" href="http://ask.9939.com/classid/94">其他</a><a target="_blank" href="http://ask.9939.com/classid/96">尿道炎</a><a target="_blank" href="http://ask.9939.com/classid/97">血尿</a><a target="_blank" href="http://ask.9939.com/classid/98">膀胱炎</a><a target="_blank" href="http://ask.9939.com/classid/99">尿毒症</a><a target="_blank" href="http://ask.9939.com/classid/100">尿失禁</a><a target="_blank" href="http://ask.9939.com/classid/101">其他</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/102">外科</a><a target="_blank" href="http://ask.9939.com/classid/104">颈椎病</a><a target="_blank" href="http://ask.9939.com/classid/105">骨折</a><a target="_blank" href="http://ask.9939.com/classid/106">腰椎间盘突出症</a><a target="_blank" href="http://ask.9939.com/classid/107">骨质增生</a><a target="_blank" href="http://ask.9939.com/classid/108">骨质疏松</a><a target="_blank" href="http://ask.9939.com/classid/109">肩周炎</a><a target="_blank" href="http://ask.9939.com/classid/110">其他</a><a target="_blank" href="http://ask.9939.com/classid/112">肺癌</a><a target="_blank" href="http://ask.9939.com/classid/113">鸡胸</a><a target="_blank" href="http://ask.9939.com/classid/114">胸腔积液</a><a target="_blank" href="http://ask.9939.com/classid/115">心包积液</a><a target="_blank" href="http://ask.9939.com/classid/116">其它</a><a target="_blank" href="http://ask.9939.com/classid/117">手术科</a><a target="_blank" href="http://ask.9939.com/classid/119">肾结石</a><a target="_blank" href="http://ask.9939.com/classid/120">前列腺增生</a><a target="_blank" href="http://ask.9939.com/classid/121">输尿管结石</a><a target="_blank" href="http://ask.9939.com/classid/122">尿道结石</a><a target="_blank" href="http://ask.9939.com/classid/123">膀胱结石</a><a target="_blank" href="http://ask.9939.com/classid/124">其它</a><a target="_blank" href="http://ask.9939.com/classid/126">触电</a><a target="_blank" href="http://ask.9939.com/classid/127">烧伤</a><a target="_blank" href="http://ask.9939.com/classid/128">冻僵</a><a target="_blank" href="http://ask.9939.com/classid/129">热烧伤</a><a target="_blank" href="http://ask.9939.com/classid/130">其它</a><a target="_blank" href="http://ask.9939.com/classid/132">中风</a><a target="_blank" href="http://ask.9939.com/classid/133">脑出血</a><a target="_blank" href="http://ask.9939.com/classid/134">脑积水</a><a target="_blank" href="http://ask.9939.com/classid/135">脑膜炎</a><a target="_blank" href="http://ask.9939.com/classid/136">脑震荡</a><a target="_blank" href="http://ask.9939.com/classid/137">其它</a><a target="_blank" href="http://ask.9939.com/classid/139">脑血栓</a><a target="_blank" href="http://ask.9939.com/classid/140">血管肉瘤</a><a target="_blank" href="http://ask.9939.com/classid/141">血管瘤</a><a target="_blank" href="http://ask.9939.com/classid/142">其它</a><a target="_blank" href="http://ask.9939.com/classid/144">乳腺增生</a><a target="_blank" href="http://ask.9939.com/classid/145">乳腺癌</a><a target="_blank" href="http://ask.9939.com/classid/146">乳腺结核</a><a target="_blank" href="http://ask.9939.com/classid/147">乳腺炎</a><a target="_blank" href="http://ask.9939.com/classid/148">其它</a><a target="_blank" href="http://ask.9939.com/classid/150">痔疮</a><a target="_blank" href="http://ask.9939.com/classid/151">肛裂</a><a target="_blank" href="http://ask.9939.com/classid/152">外痔</a><a target="_blank" href="http://ask.9939.com/classid/153">肛瘘</a><a target="_blank" href="http://ask.9939.com/classid/154">内痔</a><a target="_blank" href="http://ask.9939.com/classid/155">直肠息肉</a><a target="_blank" href="http://ask.9939.com/classid/156">结肠息肉</a><a target="_blank" href="http://ask.9939.com/classid/157">肛周脓肿</a><a target="_blank" href="http://ask.9939.com/classid/158">其它</a><a target="_blank" href="http://ask.9939.com/classid/160">胆结石</a><a target="_blank" href="http://ask.9939.com/classid/161">脂肪肝</a><a target="_blank" href="http://ask.9939.com/classid/162">肝囊肿</a><a target="_blank" href="http://ask.9939.com/classid/163">胆囊息肉</a><a target="_blank" href="http://ask.9939.com/classid/164">肝损伤</a><a target="_blank" href="http://ask.9939.com/classid/165">其它</a><a target="_blank" href="http://ask.9939.com/classid/167">脓肿</a><a target="_blank" href="http://ask.9939.com/classid/168">脂肪瘤</a><a target="_blank" href="http://ask.9939.com/classid/169">慢性阑尾炎</a><a target="_blank" href="http://ask.9939.com/classid/170">甲状腺腺瘤</a><a target="_blank" href="http://ask.9939.com/classid/171">创伤性溃疡</a><a target="_blank" href="http://ask.9939.com/classid/172">其它</a><a target="_blank" href="http://ask.9939.com/classid/174">腰肌劳损</a><a target="_blank" href="http://ask.9939.com/classid/175">疼痛</a><a target="_blank" href="http://ask.9939.com/classid/176">破伤风</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/193">妇产科</a><a target="_blank" href="http://ask.9939.com/classid/195">月经不调</a><a target="_blank" href="http://ask.9939.com/classid/196">阴道炎</a><a target="_blank" href="http://ask.9939.com/classid/197">宫颈糜烂</a><a target="_blank" href="http://ask.9939.com/classid/198">盆腔炎</a><a target="_blank" href="http://ask.9939.com/classid/199">痛经</a><a target="_blank" href="http://ask.9939.com/classid/200">闭经</a><a target="_blank" href="http://ask.9939.com/classid/201">子宫肌瘤</a><a target="_blank" href="http://ask.9939.com/classid/202">附件炎</a><a target="_blank" href="http://ask.9939.com/classid/203">外阴瘙痒</a><a target="_blank" href="http://ask.9939.com/classid/204">不孕症</a><a target="_blank" href="http://ask.9939.com/classid/205">外阴炎</a><a target="_blank" href="http://ask.9939.com/classid/206">细菌性阴道炎</a><a target="_blank" href="http://ask.9939.com/classid/207">其它</a><a target="_blank" href="http://ask.9939.com/classid/209">流产</a><a target="_blank" href="http://ask.9939.com/classid/210">宫外孕</a><a target="_blank" href="http://ask.9939.com/classid/211">早孕反应</a><a target="_blank" href="http://ask.9939.com/classid/212">早产</a><a target="_blank" href="http://ask.9939.com/classid/213">羊水过多</a><a target="_blank" href="http://ask.9939.com/classid/214">产后出血</a><a target="_blank" href="http://ask.9939.com/classid/215">难产</a><a target="_blank" href="http://ask.9939.com/classid/216">破水</a><a target="_blank" href="http://ask.9939.com/classid/217">子宫破裂</a><a target="_blank" href="http://ask.9939.com/classid/218">其它</a><a target="_blank" href="http://ask.9939.com/classid/219">避孕流产</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/220">男科</a><a target="_blank" href="http://ask.9939.com/classid/222">早泄</a><a target="_blank" href="http://ask.9939.com/classid/223">阳痿</a><a target="_blank" href="http://ask.9939.com/classid/224">包皮龟头炎</a><a target="_blank" href="http://ask.9939.com/classid/225">遗精</a><a target="_blank" href="http://ask.9939.com/classid/226">小阴茎</a><a target="_blank" href="http://ask.9939.com/classid/227">附睾炎</a><a target="_blank" href="http://ask.9939.com/classid/228">男性不育症</a><a target="_blank" href="http://ask.9939.com/classid/229">隐睾</a><a target="_blank" href="http://ask.9939.com/classid/230">包皮过长</a><a target="_blank" href="http://ask.9939.com/classid/231">其它</a><a target="_blank" href="http://ask.9939.com/classid/233">前列腺炎</a><a target="_blank" href="http://ask.9939.com/classid/234">前列腺增生</a><a target="_blank" href="http://ask.9939.com/classid/235">其它</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/236">儿科</a><a target="_blank" href="http://ask.9939.com/classid/238">小儿手足口病</a><a target="_blank" href="http://ask.9939.com/classid/239">小儿感冒</a><a target="_blank" href="http://ask.9939.com/classid/240">婴幼儿腹泻</a><a target="_blank" href="http://ask.9939.com/classid/241">疝气</a><a target="_blank" href="http://ask.9939.com/classid/242">小儿高热</a><a target="_blank" href="http://ask.9939.com/classid/243">小儿肺炎</a><a target="_blank" href="http://ask.9939.com/classid/244">黄疸</a><a target="_blank" href="http://ask.9939.com/classid/245">早产儿</a><a target="_blank" href="http://ask.9939.com/classid/246">小儿脑瘫</a><a target="_blank" href="http://ask.9939.com/classid/247">其它</a><a target="_blank" href="http://ask.9939.com/classid/249">多动症</a><a target="_blank" href="http://ask.9939.com/classid/250">孤独症</a><a target="_blank" href="http://ask.9939.com/classid/251">惊厥</a><a target="_blank" href="http://ask.9939.com/classid/252">儿童睡眠障碍</a><a target="_blank" href="http://ask.9939.com/classid/253">儿童学习障碍</a><a target="_blank" href="http://ask.9939.com/classid/254">儿童精神分裂</a><a target="_blank" href="http://ask.9939.com/classid/255">其它</a><a target="_blank" href="http://ask.9939.com/classid/256">小儿外科</a><a target="_blank" href="http://ask.9939.com/classid/258">小儿肥胖</a><a target="_blank" href="http://ask.9939.com/classid/259">厌食症</a><a target="_blank" href="http://ask.9939.com/classid/260">锌缺乏病</a><a target="_blank" href="http://ask.9939.com/classid/261">维生素D缺乏</a><a target="_blank" href="http://ask.9939.com/classid/262">维生素A缺乏</a><a target="_blank" href="http://ask.9939.com/classid/263">其它</a><a target="_blank" href="http://ask.9939.com/classid/265">肺炎</a><a target="_blank" href="http://ask.9939.com/classid/266">呕吐</a><a target="_blank" href="http://ask.9939.com/classid/267">新生儿败血症</a><a target="_blank" href="http://ask.9939.com/classid/268">新生儿溶血病</a><a target="_blank" href="http://ask.9939.com/classid/269">新生儿窒息</a><a target="_blank" href="http://ask.9939.com/classid/270">新生儿泪囊炎</a><a target="_blank" href="http://ask.9939.com/classid/271">其它</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/272">不孕不育</a><a target="_blank" href="http://ask.9939.com/classid/273">不孕</a><a target="_blank" href="http://ask.9939.com/classid/274">不育</a><a target="_blank" href="http://ask.9939.com/classid/275">其它</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/276">五官科</a><a target="_blank" href="http://ask.9939.com/classid/278">白内障</a><a target="_blank" href="http://ask.9939.com/classid/279">弱视</a><a target="_blank" href="http://ask.9939.com/classid/280">沙眼</a><a target="_blank" href="http://ask.9939.com/classid/281">近视眼</a><a target="_blank" href="http://ask.9939.com/classid/282">青光眼</a><a target="_blank" href="http://ask.9939.com/classid/283">其它</a><a target="_blank" href="http://ask.9939.com/classid/285">鼻炎</a><a target="_blank" href="http://ask.9939.com/classid/286">鼻出血</a><a target="_blank" href="http://ask.9939.com/classid/287">鼻息肉</a><a target="_blank" href="http://ask.9939.com/classid/288">扁桃体炎</a><a target="_blank" href="http://ask.9939.com/classid/289">中耳炎</a><a target="_blank" href="http://ask.9939.com/classid/290">其它</a><a target="_blank" href="http://ask.9939.com/classid/292">口腔溃疡</a><a target="_blank" href="http://ask.9939.com/classid/293">龋齿</a><a target="_blank" href="http://ask.9939.com/classid/294">牙周病</a><a target="_blank" href="http://ask.9939.com/classid/295">磨损</a><a target="_blank" href="http://ask.9939.com/classid/296">唇裂</a><a target="_blank" href="http://ask.9939.com/classid/297">舌病</a><a target="_blank" href="http://ask.9939.com/classid/298">其它</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/299">整形美容</a><a target="_blank" href="http://ask.9939.com/classid/300">男性生殖</a><a target="_blank" href="http://ask.9939.com/classid/301">隆胸</a><a target="_blank" href="http://ask.9939.com/classid/303">激光永久脱毛术</a><a target="_blank" href="http://ask.9939.com/classid/304">皮肤移植术</a><a target="_blank" href="http://ask.9939.com/classid/305">去纹身数</a><a target="_blank" href="http://ask.9939.com/classid/306">其它</a><a target="_blank" href="http://ask.9939.com/classid/310">口腔</a><a target="_blank" href="http://ask.9939.com/classid/307">头部</a><a target="_blank" href="http://ask.9939.com/classid/308">眼部</a><a target="_blank" href="http://ask.9939.com/classid/309">胸部</a><a target="_blank" href="http://ask.9939.com/classid/311">鼻部</a><a target="_blank" href="http://ask.9939.com/classid/312">女性生殖</a><a target="_blank" href="http://ask.9939.com/classid/313">四肢</a><a target="_blank" href="http://ask.9939.com/classid/314">眉部</a><a target="_blank" href="http://ask.9939.com/classid/316">疤痕矫正</a><a target="_blank" href="http://ask.9939.com/classid/317">痣切除术</a><a target="_blank" href="http://ask.9939.com/classid/318">祛斑</a><a target="_blank" href="http://ask.9939.com/classid/319">其它</a><a target="_blank" href="http://ask.9939.com/classid/320">耳部</a><a target="_blank" href="http://ask.9939.com/classid/321">腰腹部</a><a target="_blank" href="http://ask.9939.com/classid/322">颈部</a><a target="_blank" href="http://ask.9939.com/classid/323">臀部</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/324">传染病科</a><a target="_blank" href="http://ask.9939.com/classid/326">乙肝</a><a target="_blank" href="http://ask.9939.com/classid/327">肝癌</a><a target="_blank" href="http://ask.9939.com/classid/328">肝性脑病</a><a target="_blank" href="http://ask.9939.com/classid/329">新生儿肝炎</a><a target="_blank" href="http://ask.9939.com/classid/330">其它</a><a target="_blank" href="http://ask.9939.com/classid/332">淋病</a><a target="_blank" href="http://ask.9939.com/classid/333">梅毒</a><a target="_blank" href="http://ask.9939.com/classid/334">尖锐湿疣</a><a target="_blank" href="http://ask.9939.com/classid/335">性交疼痛</a><a target="_blank" href="http://ask.9939.com/classid/336">生殖器疱疹</a><a target="_blank" href="http://ask.9939.com/classid/337">黄褐斑</a><a target="_blank" href="http://ask.9939.com/classid/338">其它</a><a target="_blank" href="http://ask.9939.com/classid/351">艾滋病</a><a target="_blank" href="http://ask.9939.com/classid/352">麻疹</a><a target="_blank" href="http://ask.9939.com/classid/353">狂犬病</a><a target="_blank" href="http://ask.9939.com/classid/354">水痘</a><a target="_blank" href="http://ask.9939.com/classid/355">病毒性肝炎</a><a target="_blank" href="http://ask.9939.com/classid/356">风疹</a><a target="_blank" href="http://ask.9939.com/classid/357">伤寒</a><a target="_blank" href="http://ask.9939.com/classid/358">天花</a><a target="_blank" href="http://ask.9939.com/classid/359">丝虫病</a><a target="_blank" href="http://ask.9939.com/classid/360">流行性感冒</a><a target="_blank" href="http://ask.9939.com/classid/361">甲型肝炎</a><a target="_blank" href="http://ask.9939.com/classid/362">鼠疫</a><a target="_blank" href="http://ask.9939.com/classid/363">其它</a><a target="_blank" href="http://ask.9939.com/classid/365">阴虱病</a><a target="_blank" href="http://ask.9939.com/classid/366">肝吸虫病</a><a target="_blank" href="http://ask.9939.com/classid/367">阴道毛滴虫</a><a target="_blank" href="http://ask.9939.com/classid/368">血吸虫病</a><a target="_blank" href="http://ask.9939.com/classid/369">疟疾</a><a target="_blank" href="http://ask.9939.com/classid/370">其它</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/371">肿瘤科</a><a target="_blank" href="http://ask.9939.com/classid/372">综合治疗</a><a target="_blank" href="http://ask.9939.com/classid/373">手术治疗</a><a target="_blank" href="http://ask.9939.com/classid/374">放疗</a><a target="_blank" href="http://ask.9939.com/classid/375">化疗</a><a target="_blank" href="http://ask.9939.com/classid/376">中医治疗</a><a target="_blank" href="http://ask.9939.com/classid/377">偏方疗法</a><a target="_blank" href="http://ask.9939.com/classid/378">肝癌</a><a target="_blank" href="http://ask.9939.com/classid/379">胃癌</a><a target="_blank" href="http://ask.9939.com/classid/380">肺癌</a><a target="_blank" href="http://ask.9939.com/classid/381">胰腺癌</a><a target="_blank" href="http://ask.9939.com/classid/382">直肠癌</a><a target="_blank" href="http://ask.9939.com/classid/383">其它</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/384">心理科</a><a target="_blank" href="http://ask.9939.com/classid/386">焦虑症</a><a target="_blank" href="http://ask.9939.com/classid/387">强迫症</a><a target="_blank" href="http://ask.9939.com/classid/388">恐怖症</a><a target="_blank" href="http://ask.9939.com/classid/389">贪食症</a><a target="_blank" href="http://ask.9939.com/classid/390">厌食症</a><a target="_blank" href="http://ask.9939.com/classid/391">癔症</a><a target="_blank" href="http://ask.9939.com/classid/392">抑郁症</a><a target="_blank" href="http://ask.9939.com/classid/393">神经衰弱</a><a target="_blank" href="http://ask.9939.com/classid/394">洁癖症</a><a target="_blank" href="http://ask.9939.com/classid/395">其它</a><a target="_blank" href="http://ask.9939.com/classid/397">性障碍</a><a target="_blank" href="http://ask.9939.com/classid/398">性欲减退</a><a target="_blank" href="http://ask.9939.com/classid/399">性变态</a><a target="_blank" href="http://ask.9939.com/classid/400">恋物癖</a><a target="_blank" href="http://ask.9939.com/classid/401">性厌恶</a><a target="_blank" href="http://ask.9939.com/classid/402">露阴癖</a><a target="_blank" href="http://ask.9939.com/classid/403">其它</a><a target="_blank" href="http://ask.9939.com/classid/405">精神分裂症</a><a target="_blank" href="http://ask.9939.com/classid/406">躁狂症</a><a target="_blank" href="http://ask.9939.com/classid/407">其它障碍</a><a target="_blank" href="http://ask.9939.com/classid/409">情感障碍</a><a target="_blank" href="http://ask.9939.com/classid/410">记忆障碍</a><a target="_blank" href="http://ask.9939.com/classid/411">失眠症</a><a target="_blank" href="http://ask.9939.com/classid/412">自闭症</a><a target="_blank" href="http://ask.9939.com/classid/413">强迫性障碍</a><a target="_blank" href="http://ask.9939.com/classid/414">嗜睡症</a><a target="_blank" href="http://ask.9939.com/classid/415">磨牙</a><a target="_blank" href="http://ask.9939.com/classid/416">抽动障碍</a><a target="_blank" href="http://ask.9939.com/classid/417">遗忘</a><a target="_blank" href="http://ask.9939.com/classid/418">其它</a><a target="_blank" href="http://ask.9939.com/classid/420">适应能力差</a><a target="_blank" href="http://ask.9939.com/classid/421">反应迟钝</a><a target="_blank" href="http://ask.9939.com/classid/422">工作效率低</a><a target="_blank" href="http://ask.9939.com/classid/423">身体疲乏</a><a target="_blank" href="http://ask.9939.com/classid/424">办公室综合症</a><a target="_blank" href="http://ask.9939.com/classid/425">其它</a><a target="_blank" href="http://ask.9939.com/classid/427">沟通障碍</a></dd>
+									</dl>								
+								</div>							
+							</ol><ol style="display:block">
+								<div class="j-l01">
+									<dl class="noline fix">
+									<dd><a target="_blank" href="http://ask.9939.com/classid/428">中医科</a><a target="_blank" href="http://ask.9939.com/classid/429">中医内科</a><a target="_blank" href="http://ask.9939.com/classid/430">中医外科</a><a target="_blank" href="http://ask.9939.com/classid/431">中医妇科</a><a target="_blank" href="http://ask.9939.com/classid/432">中医儿科</a><a target="_blank" href="http://ask.9939.com/classid/433">中医保健科</a><a target="_blank" href="http://ask.9939.com/classid/434">针灸保健科</a><a target="_blank" href="http://ask.9939.com/classid/435">中医骨伤</a></dd>
+									</dl>								
+								</div>							
+							</ol>										
+			    </div>
+			</div>
+			<div class="j-mod tMarginLg">
+				<div class="bd">
+					<ol class="block" id="on-zh20">
+						<div class="j-l02">
+						<dl class="noline fix">
+								<dt/><h3><a target="_blank" href="/classid/371">肿瘤科</a> >></h3></dt>
+								<dd>
+									<div class="g-line">
+									
+										<div class="g-u s1of2">
+											<div class="zhmod06 rMarginLg">
+							                    <ul class="zhtext-list">
+							                          <li><span>2009-12-10</span><a href="/id/3219898">手腿严重无力，查不出病因!</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219900">眩晕近两周求治疗方法!</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219902">CT能检测出颅压高不高吗？</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219905">经常吐痰是什么问题啊</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219907">慢性喘息气管炎如何治疗</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219916">我患上了神经炎如何治疗</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219921">肺部和咽喉疼痛怎么办?</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219923">什么情况会引起血压升高?</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219925">我有轻度肝硬化能治好吗?</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219927">饭后喝水稍等片刻就会呕吐</a></li>
+							                     </ul>
+							                  </div>
+										</div>
+										<div class="g-u g-lastu s1of2">
+											<div class="zhmod06 lMarginLg">
+							                    <ul class="zhtext-list">
+							                          <li><span>2009-12-10</span><a href="/id/3219898">手腿严重无力，查不出病因!</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219900">眩晕近两周求治疗方法!</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219902">CT能检测出颅压高不高吗？</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219905">经常吐痰是什么问题啊</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219907">慢性喘息气管炎如何治疗</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219916">我患上了神经炎如何治疗</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219921">肺部和咽喉疼痛怎么办?</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219923">什么情况会引起血压升高?</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219925">我有轻度肝硬化能治好吗?</a></li>
+					                                  <li><span>2009-12-10</span><a href="/id/3219927">饭后喝水稍等片刻就会呕吐</a></li>
+							                     </ul>
+							                  </div>
+										</div>
+										
+									</div>									
+								</dd>
+							</dl>
+															
+						</div>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<div id="ft"><div id="ft">
+    <div class="mod ft-flinks">
+		<div class="hd">
+			<ul>
+
+				<li class="on"><a href="#"><span>问答友链</span></a></li><li><a href="#"><span>友情链接</span></a></li></ul>
+		</div>
+		<div class="bd">
+			<ul>
+				<li>
+					<a href="http://wen.58.com/" target="_blank">58同城问答</a>
+				</li>
+				<li>
+					<a href="http://hospital.xin91.cn/" target="_blank">医院医生大全  </a>
+				</li><li>
+
+					<a href="http://area.xin91.cn/" target="_blank">地区看病导航</a>
+				</li><li>
+					<a href="http://subject.xin91.cn/" target="_blank">疾病专科导航 </a>
+				</li><li>
+					<a href="http://www.xin91.cn/" target="_blank">看病网 </a>
+				</li><li>
+					<a href="http://www.ppneed.com" target="_blank">女娲网</a>
+
+				</li><li>
+					<a href="http://www.yodak.net" target="_blank">先天性心脏病</a>
+				</li><li>
+					<a href="http://bg.whjm.com " target="_blank">龙牡儿童健康网</a>
+				</li><li>
+					<a href="http://www.hnmama.com" target="_blank">湖南妈妈网</a>
+				</li><li>
+
+					<a href="http://www.yejk.com" target="_blank">婴儿健康</a>
+				</li><li>
+					<a href="http://www.1313.cc/ " target="_blank">1313网址导航</a>
+				</li><li>
+					<a href="http://ask.9939.com" target="_blank">有问必答 </a>
+				</li><li>
+					<a href="http://www.tianshibaobao.com/" target="_blank">育儿网</a>
+
+				</li><li>
+					<a href="http://www.99nv.net" target="_blank">久久女性网</a>
+				</li><li>
+					<a href="http://baby.panjk.com/" target="_blank">平安健康网育儿 </a>
+				</li><li>
+					<a href="http://www.mamacn.com/" target="_blank">中国妈妈网</a>
+				</li><li>
+
+					<a href="http://www.iqinzi.com" target="_blank">亲子家装 </a>
+				</li><li>
+					<a href="http://www.xywy.com/baby/" target="_blank">寻医问药-母婴</a>
+				</li><li>
+					<a href="http://www.cxname.com/" target="_blank">宝宝起名网</a>
+				</li><li>
+					<a href="http://www.baby-name.cn " target="_blank">宝宝起名网</a>
+
+				</li><li>
+					<a href="http://www.zmmw.cn" target="_blank">准妈妈怀孕网</a>
+				</li><li>
+					<a href="http://www.chinababy365.com" target="_blank">天下宝贝网</a>
+				</li><li>
+					<a href="http://www.fumuzaixian.com/" target="_blank">父母在线</a>
+				</li><li>
+
+					<a href="http://www.baby100.com" target="_blank">宝贝100 </a>
+				</li><li>
+					<a href="http://www.76baobao.com " target="_blank">儿歌</a>
+				</li><li>
+					<a href="http://www.6yuer.com" target="_blank">快乐育儿网</a>
+				</li><li>
+					<a href="http://www.babypapa.cn" target="_blank">PAPA育儿网</a>
+
+				</li><li>
+					<a href="http://www.igrow.cn" target="_blank">好育园</a>
+				</li><li>
+					<a href="http://flash.yun5.cn " target="_blank">儿歌网</a>
+				</li><li>
+					<a href="http://www.qipaoxian.com/" target="_blank">起跑线</a>
+				</li><li>
+
+					<a href="http://www.babyly.com " target="_blank">baby乐园</a>
+				</li><li>
+					<a href="http://www.26263.com/bbs" target="_blank">娇子家园</a>
+				</li><li>
+					<a href="http://www.baobaomm.com" target="_blank">宝宝妈妈网</a>
+				</li><li>
+					<a href="http://www.cn0-6.com" target="_blank">中国幼儿网</a>
+
+				</li><li>
+					<a href="http://www.cxcz.com " target="_blank">畅想成长网</a>
+				</li><li>
+					<a href=" http://www.3861.com.cn" target="_blank">3861中国妇婴网</a>
+				</li><li>
+					<a href="http://www.lrbey.com/" target="_blank">母婴护理网</a>
+				</li><li>
+
+					<a href="http://www.iyaya.com " target="_blank">丫丫网</a>
+				</li><li>
+					<a href="http://www.duoduo.cn" target="_blank">多多网</a>
+				</li><li>
+					<a href="http://www.mama100.com" target="_blank">妈妈100网</a>
+				</li><li>
+					<a href="http://www.onlylady.com/baby/" target="_blank">onlylady亲子网</a>
+
+				</li>
+			</ul><ul><li>
+					<a href="http://www.99nv.net" target="_blank">久久女性网</a>
+				</li><li>
+					<a href="http://www.qinzi.com.cn/ " target="_blank">中国亲子网</a>
+				</li><li>
+					<a href="http://www.baby868.com" target="_blank">育宝网</a>
+
+				</li><li>
+					<a href="http://www.kid520.com/" target="_blank">趣味少儿网</a>
+				</li><li>
+					<a href="http://www.kid520.com/" target="_blank">趣味少儿网</a>
+				</li><li>
+					<a href="http://baby.china-b.com/" target="_blank">育龙亲子教育网</a>
+				</li><li>
+
+					<a href="http://www.58995.com " target="_blank">安康育儿网</a>
+				</li><li>
+					<a href="http://www.mamacn.com/" target="_blank">中国妈妈网</a>
+				</li><li>
+					<a href="http://zf.36578.com" target="_blank">致富商机网</a>
+				</li><li>
+					<a href="http://cy.78.cn" target="_blank">创业加盟网</a>
+
+				</li></ul>
+		</div>
+	</div><script>
+					$(document).jTab({
+					 menutag:".ft-flinks .hd li",activeClassName:"on"
+					});
+			</script>
+  	<div class="ft-nav">
+	<a href="http://www.9939.com/Company/wzjj.htm">网站简介</a>|<a href="/webmap_0_1.html">网站地图</a>|<a href="/map/">问答地图</a>|<a href="http://jb.9939.com/map.php">疾病地图</a>|<a href="http://www.9939.com/Company/zpxx.htm">招聘信息</a>|<a href="http://www.9939.com/Company/yqlj.htm">友情链接</a>|<a href="http://www.9939.com/Company/mtbd.htm">媒体报道</a>|<a href="mailto:jianghy@2008.shou.com">意见反馈</a>|<a href="http://www.9939.com/Company/wstg.htm">网上投稿</a>|<a href="http://www.9939.com/Company/fwtk.htm">服务条款</a>|<a href="#" onclick="setHomePage(this)" target="_self>设为首页</a>|<a href="javascript:addBookmark('健康资讯网','http://www.9939.com')" target="_self">加入书签</a>
+
+</div>
+<div class="copyright">
+	Copyright ? 2000-2009　WWW.9939.COM　版权所有 玖玖叁玖网络技术(北京)有限公司 <br />特别声明：本站信息仅供参考　不能作为诊断及医疗的依据　本站如有转载或引用文章涉及版权问题请速与我们联系
+</div>
+	
+</div>
+<script type="text/javascript">
+	function dologin(){
+		var longinError=function() {
+			$('#tlogin-info').html('<font color="red">用户名或密码错误！</font>');
+		};
+		var html = '';
+		var username = $('#l-username').val();
+		var password = $('#l-password').val();
+		if(username.length==0||password.length==0){
+			longinError();
+			return false;
+		}
+		
+            
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/login/?username="+username+"&password="+password+"&format=json&jsoncallback=?",function(data){
+			if(data!='type0'){
+					setcookie('localuser',username);
+					o = eval( "(" + data + ")" );
+					html='<p class="welcome" onmouseover="showlogin('+o.userid+')">您好，<font color="Red">'+o.username+'</font> 欢迎进入久久健康社区！</p><ul class="top-tip"><li><a href="http://home.9939.com/user">我的空间</a></li><li><a href="javascript:;" onclick=" return logout();">退出</a></li><li class="help"><a href="#">帮助</a></li></ul>';
+					$('.t-login').addClass('k-display-none');
+					$('.temp-iframe').hide();
+					$('#login').html(html);
+					showlogin(o.userid);
+				}else if(data=='type0'){
+					longinError();
+				}
+		});
+		return false;
+	}
+	
+	function setcookie(name, value, days)
+	{
+		var expire = new Date();
+		if(days==null || days==0) days=365;
+		expire.setTime(expire.getTime() + 3600000*24*days);
+		document.cookie = name + "=" + escape(value) + ";expires="+expire.toGMTString();
+	}
+	
+	function getcookie(name)
+	{
+		var arg = name + "=";
+		var alen = arg.length;
+		var clen = document.cookie.length;
+		var i = 0;
+		while(i < clen)
+		{
+			var j = i + alen;
+			if(document.cookie.substring(i, j) == arg) return getcookieval(j);
+			i = document.cookie.indexOf(" ", i) + 1;
+			if(i == 0) break;
+		}
+		return null;
+	}
+	
+	function getcookieval(offset)
+	{
+		var endstr = document.cookie.indexOf (";", offset);
+		if(endstr == -1)
+		endstr = document.cookie.length;
+		return unescape(document.cookie.substring(offset, endstr));
+	}
+
+	
+
+	
+	/*function logout(){
+		var html='';
+		jQuery.getJSON("http://home.9939.com/buluo/index/do/logout/?format=json&jsoncallback=?",function(data){
+			html='<p class="welcome">您好 欢迎进入久久健康社区！</p><ul class="top-tip"><li class="g-login" onclick="tLogin(this);return false;"><a href="/">登录</a></li><li><a href="http://ask.9939.com/register">注册</a></li><li class="help"><a href="http://ask.9939.com/rule.shtml" target="_blank">帮助</a></li></ul>';
+			$('#login').html(html);
+		});
+	}*/
+	
+	function logout(){
+		
+		/*jQuery.getJSON("http://home.9939.com/buluo/index/do/logout/?format=json&jsoncallback=?",function(data){
+			var html = '<p class="welcome">您好 欢迎进入久久健康社区！</p>	<ul class="top-tip">	<li class="g-login" onclick="tLogin(this);return false;"><a href="/">登录</a></li>	<li><a href="http://ask.9939.com/register">注册</a></li>	<li class="help"><a href="http://ask.9939.com/rule.shtml" target="_blank">帮助</a></li>	</ul>';
+				$('#login').html(html);
+		});*/
+		
+		$.ajax({
+			url:"/buluo/index/do/logout/",
+			type:"post",
+			dataType:"json",
+			cache:false,
+			success:function(data){
+				var html = '<p class="welcome">您好 欢迎进入久久健康社区！</p>	<ul class="top-tip">	<li class="g-login" onclick="tLogin(this);return false;"><a href="/">登录</a></li>	<li><a href="http://ask.9939.com/register">注册</a></li>	<li class="help"><a href="http://ask.9939.com/rule.shtml" target="_blank">帮助</a></li>	</ul>';
+				$('#login').html(html);
+                $('.temp-iframe').hide();
+                $('#showlogin').hide();
+			}
+		});
+		return false;
+	}
+	
+</script>
+
+	<div class="mod tmod-02 t-login k-display-none" id="k-display-none">
+				<span class="top"><span class="tl"></span><span class="tr"></span></span>
+				<div class="inner">
+					<span class="close" style="cursor:pointer"></span>
+					<div class="t-innerWrap" id="t-innerWrap">
+						<form action="#" method="get" accept-charset="utf-8">
+							<table>
+								<tr><td><label for="l-username">用户名</label></td><td><input type="text" id="l-username"/><span class="tlogin-info" id="tlogin-info">请输入注册时所用邮箱</span></td></tr>
+								<tr><td><label for="l-password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label></td><td><input type="password" id="l-password"/><span class="tlogin-info">请输入密码</span>	</td></tr>
+								<tr><td>&nbsp;</td><td><span><input type="submit" value="登录" class="t-submit" onclick="return dologin();" style="cursor:pointer;"/></span><span class="tlogin-info">还没账号，<a href="http://ask.9939.com/register">立即注册</a>一个</span></td></tr>
+							</table>
+						</form>
+				</div>		
+			</div>
+			<span class="bottom"></span>
+</div>
+
+			</div>
+</div>
+
+
+
+
+
+<div class="mod sbmod-09 loginPop" id="showlogin" style="display:none">
+	<span class="top"><span class="tl"></span><span class="tr"></span><span class="tf"></span><span class="tt">鼠标移动到用户名，再次显示</span><span class="tb"></span></span>
+	<div class="inner">
+		<div class="fblock">
+			<p id="w_right">
+				<span>好友请求 <label id="requestnum">0</label>条</span>
+				<span>问答回复 <label id="replynum">0</label>条</span>
+				<span>好友消息 <label id="newsnum">0</label>条</span>
+			</p>
+		</div>
+		<div class="t-innerWrap">
+			<ul class="concern" id='w_up'>
+			<li><span><a href="#">我要提问</a></span></li>
+			<li><span><a href="#">站内消息</a></span></li>
+			<li><span><a href="#">完善资料</a></span>	</li>
+			</ul>
+			<h4>热点推荐&nbsp;&gt;&gt;</h4>
+			<ul class="t-rec" id="w_hot">
+				<li><a href="#">健康生活有奖活健康生活有奖活健康生活有奖活动</a></li>
+				<li><a href="#">健康生活有奖健康生活有奖活健康生活有奖活活动</a></li>
+			</ul>
+		</div>		
+	</div>
+	<span class="bottom"><span class="bl"></span><span class="br"></span></span>
+</div>
+
+
+
+
+<div style=" display:none; overflow:hidden; height:0;">
+<script type="text/javascript" src="http://js.tongji.linezing.com/1265784/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1265784/tongji.gif"/></a></noscript>
+<script src="http://s60.cnzz.com/stat.php?id=1768278&web_id=1768278" language="JavaScript" charset="gb2312"></script>
+
+
+<script src=" http://s61.cnzz.com/stat.php?id=1383826&web_id=1383826" language="JavaScript" charset="gb2312"></script>
+
+
+
+<!-- 09-11-12 -->
+<script type="text/javascript" src=" http://js.tongji.linezing.com/1310077/tongji.js"></script><noscript><a href=" http://www.linezing.com"><img src=" http://img.tongji.linezing.com/1310077/tongji.gif"/></a></noscript>
+</div>
+<script type="text/javascript">
+$(function(){
+			$(".loginPop .tb").bind('mouseover',function(){
+				$(this).addClass("tbHover");
+				$(".loginPop .tt").show();
+			});
+			$(".loginPop .tb").bind('mouseout',function(){
+				$(this).removeClass("tbHover");
+				$(".loginPop .tt").hide();
+			});
+            $(".loginPop .tb").bind('click',function(){
+				$(this).parent().parent().hide();
+			});
+
+		});
+</script>
+</body>
+</html>
+<script>
+uc = getcookie('localuser');
+if(uc==null){uc='';}
+$('#l-username').val(uc);
+</script>
+</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html { color:#000; background:#FFF;}
+body { margin:auto; text-align:center; font:12px/1.231 arial,helvetica,clean,sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td { margin: 0; padding: 0;}
+img{ border:0;}
+a {	color: #000; text-decoration: none;}
+a:hover { text-decoration: underline;}
+
+.menu{color:#505050;height:30px;line-height:30px;background:url(../images/mhd_bg.gif) repeat-x;*zoom:1;overflow:hidden; width:950px; margin:0 auto;}
+.menu a{color:#505050;}
+.menu .welcome{float:left;margin-left:10px;}
+.menu .top-tip{float:left;margin-left:10px;line-height:30px;_display:inline;}
+.menu .top-tip li{float:left;_display:inline;margin:0 5px;background:url(../images/mhdicon.gif) no-repeat 100% 15px;padding-right:5px; list-style:none;}
+.menu .top-tip .help{background:none;}
+.menu .top-line{float:right;margin-right:15px;_display:inline;}
+.menu .top-nav{float:right;}
+.menu .top-nav li{float:left;margin:0 5px;_display:inline; list-style:none;} 
+.menu .top-fav{float:right;margin-left:30px;}
+.menu .top-fav li{float:left;_display:inline;margin:0 5px;background:url(../images/mhdicon.gif) no-repeat 0 -24px;padding-left:18px; list-style:none;}
+.menu .top-fav .setHomePage{background-position:0 -79px}
+#heard_top .tlogin-info{background:none; font-size:12px;}
+/*- tmod-02 -*/
+.tmod-02{width:380px;}
+.tmod-02 .t_center{text-align:center!important;}
+.tmod-02 .top{background:url("../images/tpopup.gif") repeat-x 0 -18px ;display:block;height:9px;margin-left:15px; width:322px;}
+.tmod-02 .tl{background: url("../images/tpopup.gif") no-repeat 0 0 ;width:15px;height:14px;margin-left:-15px;display:block;}
+.tmod-02 .tr{background:url("../images/tpopup.gif") no-repeat -7px -35px ;width:9px;height:14px;display:block;}
+.tmod-02 .bottom{ margin-left:5.5px;solidmargin-left:6px;height:7px;border:1px solid #d2f1b6;border-top:0 none;  background: url("../images/tpopup.gif") repeat-x scroll 0 -80px transparent; width:330px; display:block;}
+.tmod-02 .inner{margin:0 0 0 6px;border-left:1px solid #d2f1b6;border-right:1px solid #d2f1b6;padding:0 7px;background:#effbe7;}
+.tmod-02 .t-innerWrap{border:1px solid #ecfcdf;border-top:0 none;background:#fff;text-align:left;padding:1px; font-size:12px; height:118px;}
+.tmod-02 table .tlogin-info {background: none repeat scroll 0 0 transparent;color: #A1A1A1; }
+.tmod-02 .concern {padding:10px;border-bottom:1px dashed #cfdff8;}
+.tmod-02 .concern li {display:inline-block;vertical-align:top;*display:inline;*zoom:1;margin:0 8px;}
+.tmod-02 .concern span{display:block;*display:inline;*zoom:1;background:url("../images/tbutton_01.png") no-repeat left top;padding-left:10px;height:19px;line-height:20px;margin:0 2px;}
+.tmod-02 .concern span a{display:block;background:url("../images/tbutton_01.png") no-repeat right top;padding-right:10px;font-size:14px;color:#fff;text-decoration:none;text-align:center;}
+.tmod-02 h4{color:#ef760d;font-weight:bold;margin:10px 16px;}
+.tmod-02 .t-rec{margin:0 16px 10px;}
+.tmod-02 .t-rec li{margin:2px 0;}
+.tmod-02 form{margin:5px 15px;padding:1px;}
+.tmod-02 td{padding:2px 0; font-size:12px;}
+.tmod-02 input{border:1px solid #cedef5;}
+.tmod-02 table span{display:inline-block;height:19px;padding-left:10px;background:url("../images/tbutton_01.png") no-repeat left top;}
+.tmod-02 table span input{display:block;height:19px;line-height:19px;padding-right:10px;color:#fff;font-size:14px;border:0 none;background:url("../images/tbutton_01.png") no-repeat right top;}
+.tmod-02 p{font-size:14px;line-height:28px;margin:20px;}
+.tmod-02 .active{display:block;}
+/*- t-login -*/
+.t-login{width:365px;position:absolute;top:10px;left:30px;}
+/* add t-login .close  2009-11-11 17:30:30*/
+.t-login .inner{position:relative; width:315px; height:120px;}
+.t-login .close{position:absolute;top:0;right:15px;background:url(../images/close_btn.jpg) no-repeat ;width:13px;height:13px; margin-top:5px;z-index:10}
+.t-login table{ border:none;}
+#tlogin-info { background: none repeat scroll 0 0 transparent;color: #FF0000;}
+.tmod-02 table .tlogin-info a {background: none repeat scroll 0 0 transparent;color: #0B3ECB;}

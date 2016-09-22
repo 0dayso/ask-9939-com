@@ -1,0 +1,12 @@
+
+.bdcs-container .bdcs-search-form-input {
+    width:286px;height:28px;line-height:28px;background:url(../images/wd_search.png) no-repeat 8px center;padding-left:30px;border:0;font-size:14px;color:#B6B7B9;
+}
+/*按钮样式自定义*/
+.bdcs-container .bdcs-search-form-submit {
+    width:76px;height:30px; line-height:30px;_height:30px;display:block;border:0;cursor:pointer;background:#34a150;position:absolute;top:-1px;right:-1px; color:#fff;font-size:16px; font-family:"microsoft YaHei";
+}
+input#bdcs-search-form-submit{ text-align:center;}
+#bdcs-search-form-input { border:none;}
+#bdcs-search-inline{ width:374px;}
+.art_ser #bdcs-search-inline{width:242px;}

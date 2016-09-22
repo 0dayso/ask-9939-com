@@ -1,0 +1,52 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.g-m0s7 .col-s{ width:280px; margin-left:-280px;}
+.g-m0s7 .m-wrap{ margin-right:290px;}
+
+.zhnmod01{}
+.zhnmod01 .hd{position:relative; z-index:99;}
+.zhnmod01 .bd{ border:4px solid #9BB9F1; margin-top:-4px; padding:15px;}
+.zhnmod01 .line{ margin-top:10px; clear:both; overflow:hidden; *zoom:1;}
+.zhnmod01 label{ display:block; float:left; display:inline; margin-right:8px; width:60px; text-align:right; color:#1F376D; font-size:14px; vertical-align:middle;*line-height:22px;}
+.zhnmod01 .row-input{ float:left;}
+.zhnmod01 .row-input label{ float:none;}
+.zhnmod01 .row-input span,.grayTxt{ font-size:14px; color:#949494;}
+.zhnmod01 input{ vertical-align:middle;}
+.zhnmod01 .zhinput{ border:1px solid #C6DCF1; width:265PX; height:19PX;}
+.zhnmod01 textarea{ border:1px solid #C6DCF1; width:463px; height:108px; overflow:auto; color:#000;float:left}
+.zhnmod01 .inp{ color:#949494}
+.zhnmod01 .zhsort{ border:1px solid #C6DCF1; padding-bottom:20px;width:463px}
+.zhnmod01 .zhsort h4{ padding-left:10px; line-height:30px; font-weight:700; border-bottom:1px dashed #C6DCF1; margin:0 2px;}
+.zhnmod01 .zhsort p{ margin-top:10px; margin-left:10px;}
+.zhnmod01 .zhsort p.tip{ margin-top:25px; color:#F47121;}
+.zhnmod01 .zhsort p.se_sort{ background:url(../images/se_sort.png) no-repeat; padding-left:30px; margin-left:20px; font-weight:700;}
+.zhnmod01 .zhsort p.se_sort select{ font-size:12px;}
+.row-input .line{ color:#1F376D; font-size:12px;}
+.row-input .line span{ font-size:14px; color:#1F376D;}
+.row-input .line label{ font-size:12px;vertical-align:bottom}
+.zhnmod01 .submit{ padding:16px 0; text-align:center;}
+.zhnmod01 .submit input{ background:url(../images/subm.png) no-repeat; width:80px; height:30px; border:none;cursor:pointer}
+
+.zhnmod02{ background:#E7F2FA; border:1px solid #C9DCED;}
+.dhhh{ *zoom:1; padding-left:10px; border-bottom:1px dashed #9FC5e7; padding-bottom:20px;}
+.dhhh h4{ padding:20px 0 15px;}
+.dhhh p{ color:#1F376D; line-height:20px;}
+.dhhh div{ margin-top:15px;}
+.dhhh img,.dhhh input{ vertical-align:middle;}
+.dhhh input{ width:196px; height:23px;}
+
+
+.ques_rela h4{ padding:15px 0 10px 20px; font-weight:700; font-size:12px;}
+.ques_rela li{ background:url(../images/ques_rela_li.gif) no-repeat 10px 15px; border-bottom:1px dashed #9FC5E7; padding:10px 20px; line-height:15px; *zoom:1;}
+.ques_rela li a{ color:#1F376D;}
+
+.thua{ margin-top:10px; text-align:center;}
+
+.gre{ color:#6EAC01; font-weight:700;}
+.red{ color:#F10000;}
+.ora{ color:#FD7529; font-weight:700;}
+.dhhh .info{ border:1px solid #D7DCE0; background:#FFF; padding:5px 0 10px 10px;}
+#qd{display:none}
+.inpAge{width:30px}
+.zhquestion_ad{margin-top:38px}

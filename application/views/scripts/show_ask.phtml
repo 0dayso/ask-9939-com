@@ -1,0 +1,1383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?=$this->info['title']?>_<?=preg_replace("/ >> /", "_", strip_tags($this->info['class_html']))?>_健康问答_久久健康网</title> 
+<link href="/images_ask/css2/r.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css2/b.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css2/g.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css2/m.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css2/ask-diceng.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css2/temp.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="/images_ask/css/rbgm.css"/>
+<link rel="stylesheet" type="text/css" href="/images_ask/css/ask.css"/>
+
+
+
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript" src="/images_ask/js/jquery.textSlider.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(document).jTab({
+	 menutag:".j-mod .hd li"
+	});
+	$(document).jTab({
+	 menutag:".zhmod-02 .hd li"
+	});
+	$(".user_info .pic").bind("mouseover",function(){
+	  $(this).children().eq(0).show();
+	});
+	$(".user_info .pic").bind("mouseout",function(){
+	  $(this).children().eq(0).hide();
+	});
+	$(".zhlocation_cc").textSlider({
+line:1,
+ speed:100,
+ timer:3000
+});
+	});
+	  function showZ(n){
+	    document.getElementById("j-box0"+n).style.display="block";
+	    document.getElementById("j-box0"+n).parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.cssText="z-index:9999;";
+
+	    var now =new Date();
+	    //var nowStr = now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate()+" "+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
+	    var nowStr = now.toLocaleString();
+	    $("#showTime").html(nowStr);
+	    
+	  }
+	  function hideZ(n){
+	    document.getElementById("j-box0"+n).style.display="none";
+	    document.getElementById("j-box0"+n).parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.cssText="z-index:1;";
+	  }
+	  function changeLabel(obj, __index, __index_1) {
+			if(obj.checked) {
+				$('#label_' + __index).css('display', '');
+				$('#label_' + __index_1).css('display', 'none');
+			}
+		}
+
+
+	 	 function copyToClipBoard(){
+			var clipBoardContent="";
+			clipBoardContent+=document.title;
+			clipBoardContent+="\n";
+			clipBoardContent+=this.location.href; //获取地址
+			window.clipboardData.setData("Text",clipBoardContent);
+			alert("复制成功");
+			return false;
+		} 
+	function ians(n){
+	  location.href="#answer";
+	    $(".j-temphref .hd li").eq(n).addClass("on-zh").siblings().removeClass("on-zh");
+		$(".j-temphref .bd").children().eq(n).show().siblings().hide();
+	}
+
+	<?php /*隐藏登录框*/ ?>
+	function __login(){
+		$("#showLoginInput").hide();
+		$("#showLoginInput2").hide();
+	}
+
+	<?php /*显示登录框*/ ?>
+	function __logout(){
+		location.reload();
+		/*$("#showLoginInput").show();
+		$("#showLoginInput2").show();
+		$("#showlogin").hide();*/
+	}
+
+</script>
+</head>
+
+<body>
+	<?php require(APP_ROOT."/header.shtml");?>
+  
+  <div id="bd" class="bMarginLg">
+    <div class="g-m0s8 l-fix">
+      <div class="col-m">
+        <div class="m-wrap">
+        	
+          <div class="zhlocation">
+       
+            <div class="zhlocation_cc">	
+            <ul>
+            	<?php
+            		//读取 问题广播
+            		if(file_exists(APP_PUBLIC_PATH.'/broadcast.shtml')) {
+            			$str = file_get_contents(APP_PUBLIC_PATH.'/broadcast.shtml');
+            			echo $str; 
+            		}
+            	?>
+            </ul>
+            </div>
+            您的位置：<a href="/">问答首页</a>&gt;&gt;<?=$this->info['class_html']?><span style="margin-right:10px;float:right;">问题广播:</span>
+          </div>
+          <div class="zhnmod03 zhnmod03_b tMarginLg">
+            <div class="inner">
+              <div class="hd">
+                <h3>问题</h3>
+              </div> 
+              <div class="bd">
+                <div class="ask_item l-fix">
+                
+                  <div class="user_info">
+                    <div>
+                    
+         
+					<?php
+						if($this->info['hiddenname']==1) {
+							//匿名提问，显示 默认图片
+							echo '<a href="###"><img src="/images_ask/images/niming_dz.png" /></a>';
+						} else {
+							echo '<a href="'.$this->user_info['linkurl'].'"><img src="'.$this->user_info['pic'].'" /></a>';
+						}
+					?>
+                    </div>
+                    <?php if($this->info['hiddenname']==1) {?>
+                    	<p><a href="###">匿名</a></p>
+                    <?php } else {?>
+	                    <p><a href="<?=$this->user_info['linkurl']?>"><?=$this->user_info['nickname']?></a></p>
+	                    <ul>
+	                      <li><a href="javascript:;" class="<?=$this->user_info['uid']?>" onclick="<?=($this->user_isloogin_info['uid'] ? '' : 'alert(\'您尚未登录！\');return false;')?>return showHiddenHome('/pic/loadhtml/html/friendadd', this);">加为好友</a></li>
+	                      <li><a href="<?=HOME_9939_URL. '/news/index/fid/'. $this->user_info['uid'] .'/zf/1/'?>" onclick="<?=($this->user_isloogin_info['uid'] ? 'return true;' : 'alert(\'您尚未登录！\');return false;')?>">发送消息</a></li>
+	                      <li>积分：<?=$this->user_info['credit']?></li>
+	                    </ul>
+                    <?php }?>
+                  </div>
+                  <div class="ask_info">
+                    <div class="ask_head">
+                      <h4><a href="<?=ASK_URL?>id/<?=$this->info['id']?>"><?=strip_tags($this->info['title'])?></a></h4>
+                      
+                      <p>
+						悬赏分：<?=$this->info['point']?>&nbsp;&nbsp;&nbsp;回答状态：<?=($this->info['answernum'] ? '已' : '未')?>回复&nbsp;&nbsp;&nbsp;回答数：<?=$this->info['answernum']?> </p>
+                      <p>
+                      		<?php /* 结束时间   */ ?>
+                      		<?php
+                      			if($this->info[status]==0) {
+                      				$endTime = 15*86400+$this->info['ctime'];//应该结束的时间
+	                      			$haveTime = $endTime - time(); //剩余的时间
+									if($haveTime>0) {
+										$day = floor($haveTime/86400); //天数
+										$hour = floor(($haveTime%86400)/3600); //小时
+										
+										if($day<=0&&$hour<=0) {
+											echo '离问题结束不到1小时';
+										} else {
+											if($day>0) $day = $day.'天';
+											if($hour>0) $hour = $hour.'小时';
+											echo  "离问题结束还有$day $hour";
+										}
+									} else {
+										echo '已结束！';
+									}
+                      			} else {
+                      				echo '已解决！';
+                      			} 
+                      		?>
+                      		
+                      </p>
+                    </div>
+                    <div class="ask_content">
+                    
+					<?php /*问题内容*/ ?>
+
+                    <?=nl2br($this->info['content'])?>
+                    
+                    </div>
+                 
+					 <div class="ask_sex">
+					 <?php
+						if($this->info['sexnn']) {
+							$str = $this->info['sexnn']==1 ? '男' : '女';
+							echo '性别：'.$str.'&nbsp;&nbsp;&nbsp;&nbsp;';
+						}
+						if($this->info['age']) {
+							echo '年龄：'.$this->info['age'].'&nbsp;&nbsp;&nbsp;&nbsp;';
+						}
+					 ?>
+                    </div>
+                    
+                    <div id="askaddlist">
+                    <?php
+                    	//问题补充列表 
+                    	if($this->askAddList) {
+                    		$count = 0;
+                    		foreach($this->askAddList as $val) {
+                    			$count++;
+                    			echo ' <div class="ask_added"><strong>问题补充'.$count.':</strong>('.date("Y-m-d H:i:s",$val['addtime']).')<br/>'.nl2br($val['content']).'</div>';
+                    		}
+                    	}
+                    ?>
+                    </div>
+                    
+                    <div class="ask_anniu">
+                      <input type="button" value="咨询同类问题" onclick="ians(1)"/><input type="button" value="我来回答" onclick="ians(0)"/>
+                    </div>
+                    <div class="ask_time">
+                    <div class="j-box j-box01" id="j-box01">
+						<div class="inner2">
+							<div class="hd">
+								<a href="#" onclick="hideZ(1)">关闭</a>
+							</div>
+							<div class="bd">
+								<textarea name="textarea" class="text" style="width:210px; height:90px;" id="askadd_content"></textarea>
+								<input type="submit" value="提交" class="bton" onclick="return askadd();"/>
+							</div>
+						</div>
+					</div>
+
+
+		
+		
+        <div class="j-box j-box02"  id="j-box05">
+			<div class="inner2">
+				<div class="hd">
+					<a href="#" onclick="hideZ(5)">关闭</a>
+					<span>投诉区</span>
+				</div>
+				<div class="bd">
+					<table width="93%" align="center" class="j-tousu">
+						<tbody>
+							<tr>
+								<td><strong>被投诉人：</strong></td>
+								<td><a href="#"> <?php if($this->info['hiddenname']==1) { echo '匿名';} else { echo $this->user_info['nickname']; }?> </a></td>
+							</tr>
+							<tr>
+								<td><strong>投诉世间：</strong></td>
+								<td id="showTime"></td>
+							</tr>
+							<tr>
+								<td valign="top"><strong>投诉类别：</strong></td>
+								<td>
+									<p>
+										<label>
+											<input type="radio" name="tousuItem1" value="1" checked="checked"/><?=$this->tousuArr[1]?>
+										</label>
+										<label>
+											<input type="radio" name="tousuItem1" value="2" /><?=$this->tousuArr[2]?>
+										</label>
+									</p>
+									<p>
+										<label>
+											<input type="radio" name="tousuItem1" value="3" /><?=$this->tousuArr[3]?>
+										</label>
+										<label>
+											<input type="radio" name="tousuItem1" value="4" /><?=$this->tousuArr[4]?>
+										</label>
+									</p>
+									<p>
+										<label>
+											<input type="radio" name="tousuItem1" value="5" /><?=$this->tousuArr[5]?>
+										</label>
+										<label>
+											<input type="radio" name="tousuItem1" value="6" /><?=$this->tousuArr[6]?>
+										</label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td valign="top"><strong>投诉说明：</strong></td>
+								<td><textarea name="textarea" class="text text01" style="width:246px; height:140px;" id="tousuContent1"></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+					<input type="submit" value="提交" class="bton" onclick="return askTousu();"/>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+                      提问时间：<?=date("Y-m-d H:i:s",$this->info['ctime'])?><a href="###" onclick="showZ(1)">问题补充</a> <a href="###" onclick="showZ(5)">投诉</a> <a href="###" onclick="return copyToClipBoard()">推荐给朋友</a>
+					  <a title="分享到搜狐" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var f='http://t.sohu.com/third/post.jsp?',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=660,height=470,left=',(s.width-660)/2,',top=',(s.height-470)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','','','utf-8'));" style="margin:0 0 0 20px;font-size:12px;font-family:'\5b8b\4f53';color:#369"><span style="display:inline-block;width:16px;height:16px;margin:0 3px 0.2em -20px;vertical-align:middle;background:url(http://s2.cr.itc.cn/img/t/152.png) no-repeat"></span></a><a title="分享到微薄" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=589812724',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','<?=ASK_URL?>id/<?=$this->info['id']?>','<?=$this->weibo_title?><?=nl2br($this->weibo_content)?>',''));"><img src="http://simg.sinajs.cn/miniblog/images/common/smalllogo.gif" /></a>
+
+					  <a href="javascript:void((function(s,d,e){if(/renren\.com/.test(d.location))return;var f='http://share.renren.com/share/buttonshare?link=',u=d.location,l=d.title,p=[e(u),'&title=',e(l)].join('');function%20a(){if(!window.open([f,p].join(''),'xnshare',['toolbar=0,status=0,resizable=1,width=626,height=436,left=',(s.width-626)/2,',top=',(s.height-436)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent));" title="分享到人人"><img src="http://xnimg.cn/imgpro/share/browser_share_btn.png" title="分享到人人"/></a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+   <!--div style="margin-top:10px; padding:5px; border:1px solid #C4DDF1">
+		<script type="text/javascript">
+		google_ad_client = "pub-6929538788058109";
+		/* 468x60, ask_content_left head */
+		google_ad_slot = "4350628503";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	</div-->
+          <p class="ask_tip">
+                提示：如果您已经有满意答案，请及时采纳，不要辜负回答者的劳动
+          </p>
+        
+        
+        <?php /* 最佳答案  */?>
+        <?php if($this->goodAnswer){ ?>
+		          <div class="zhnmod03 zhnmod03_o">
+		            <div class="inner">
+		              <div class="hd">
+		                <h3>最佳答案</h3>
+		              </div>
+		              <div class="bd">
+		                <div class="ask_item l-fix best_answer">
+		                  <div class="user_info" style="background:none; border:0;">
+		                    <div <?php if($this->goodAnswer['user_info']['uType']==2) echo 'class="pic"'; ?>>
+		                    <?php /* 医生最佳答案   */?>
+		                    <?php if($this->goodAnswer['user_info']['uType']==2) {?>
+		                    <div class="j-box j-box04" id="j-box04">
+								<div class="inner2">
+									<div class="bd">
+										<dl class="user_info2 fix">
+											<dt><a href="<?=HOME_9939_URL?>user/?uid=<?=$this->goodAnswer['user_info']['uid']?>" target="_blank"></a><img src="<?=$this->goodAnswer['user_info']['pic']?>" /></a></dt>
+											<dd>
+												<p>姓名：<?=$this->goodAnswer['user_info']['nickname']?></p>
+												<p>积分：<?=$this->goodAnswer['user_info']['credit']?></p>
+												<p>科室：<?=$this->goodAnswer['user_detail_info']['doc_keshi']?></p>
+												<p>专长：<?=$this->goodAnswer['user_detail_info']['best_dis']?></p>
+											</dd>
+										</dl>
+										<div class="btn_line"><input type="button" value="向我提问" class="bton" onclick="javascript:location.href='<?=HOME_9939_URL?>/ask/look/?uid=<?=$this->goodAnswer['user_info']['uid']?>&type=3';"/> <input type="button" value="医生咨询室" class="bton" onclick="javascript:location.href='<?=HOME_9939_URL?>user/?uid=<?=$this->goodAnswer['user_info']['uid']?>';"/></div>
+									</div>
+								</div>
+							</div>
+							<?php }?>
+							
+		                     <a href="<?=HOME_9939_URL?>user/?uid=<?=$this->goodAnswer['user_info']['uid']?>"><img src="<?=$this->goodAnswer['user_info']['pic']?>" /></a>                    
+		                     </div>
+		                    <p><a href="<?=HOME_9939_URL?>user/?uid=<?=$this->goodAnswer['user_info']['uid']?>"><?=$this->goodAnswer['user_info']['nickname']?></a></p>
+		                    <ul>
+		                      <li><a href="javascript:;" class="<?=$this->goodAnswer['user_info']['uid']?>" onclick="<?=($this->user_isloogin_info['uid'] ? '' : 'alert(\'您尚未登录！\');return false;')?>return showHiddenHome('/pic/loadhtml/html/friendadd', this);">加为好友</a></li>
+	                      	  <li><a href="<?=HOME_9939_URL. '/news/index/fid/'. $this->goodAnswer['user_info']['uid'] .'/zf/1/'?>" onclick="<?=($this->user_isloogin_info['uid'] ? 'return true;' : 'alert(\'您尚未登录！\');return false;')?>">发送消息</a></li>
+		                      <li>积分：<?=$this->goodAnswer['user_info']['credit']?></li>
+		                    </ul>
+		                  </div>
+		                  <div class="ask_info" style="background:none; border:0;">
+		                    <div class="answer_content" id="answer_content_<?=$this->goodAnswer['id']?>">
+		                    	<?=nl2br($this->goodAnswer['content'])?>
+		               		 </div>
+		                    <div class="ask_time ask_time2">
+		                    
+		                     
+		                      回答时间：<?=date("Y-m-d H:i:s",$this->goodAnswer[addtime])?> <a href="###" onclick="return updateAnswer(<?=$this->goodAnswer['id']?>,this)">修改回答</a> <a href="###" onclick="return tousu('<?=$this->goodAnswer['user_info']['nickname']?>',<?=$this->goodAnswer['id']?>,this)">投诉</a> <a href="###" onclick="ians(1)">继续提问</a>                    </div>
+		                    <div class="ask_hos">
+		                    
+		                    <?php if($this->goodAnswer['user_info']['uType']==2&&$this->goodAnswer['user_info']['isvip']) {?>
+		                      		本回复来自:<a href="###"><?=$this->goodAnswer['user_detail_info']['doc_hos']?></a>                   
+		                     <?php }?>
+		                       </div>
+		                  </div>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+          
+          <?php }?>
+        
+        <?php
+        	//print_r($this); 
+        ?>
+        
+        
+        <?php /*医生回答列表 */ ?>
+        <?php if($this->haveDoctorAnswer) { ?>
+          <div class="zhnmod03 zhnmod03_b tMarginLg">
+            <div class="inner">
+              <div class="hd">
+                <h3>医生回答</h3>
+              </div>
+              <div class="bd">
+              
+              <?php foreach ($this->answerList as $val) {?>
+              <?php 	if($val['user_info']['uType']==2) {?>
+			                <div class="ask_item l-fix">
+			                  <div class="user_info">
+			                    <div class="pic">
+			                    <div class="j-box j-box04" id="j-box04">
+						<div class="inner2">
+							<div class="bd">
+								<dl class="user_info2 fix">
+									<dt><a href="<?=HOME_9939_URL?>user/?uid=<?=$val['user_info']['uid']?>" target="_blank"><img src="<?=$val['user_info']['pic']?>" /></a></dt>
+									<dd>
+										<p>姓名：<?=$val['user_info']['nickname']?></p>
+										<p>积分：<?=$val['user_info']['credit']?></p>
+										<p>科室：<?=$val['user_detail_info']['doc_keshi']?></p>
+										<p>专长：<?=$val['user_detail_info']['best_dis']?></p>
+									</dd>
+								</dl>
+								<div class="btn_line"><input type="button" value="向我提问" class="bton" onclick="javascript:location.href='<?=HOME_9939_URL?>/ask/look/?uid=<?=$val['user_info']['uid']?>&type=3';"/> <input type="button" value="医生咨询室" class="bton" onclick="javascript:location.href='<?=HOME_9939_URL?>user/?uid=<?=$val['user_info']['uid']?>';"/></div>
+							</div>
+						</div>
+					</div>
+			                      <a href="<?=HOME_9939_URL?>user/?uid=<?=$val['user_info']['uid']?>"><img src="<?=$val['user_info']['pic']?>" /></a>
+			                    </div>
+			                    <p><a href="<?=HOME_9939_URL?>user/?uid=<?=$val['user_info']['uid']?>"><?=$val['user_info']['nickname']?></a></p>
+			                    <ul>
+			                      <li><a href="javascript:;" class="<?=$val['user_info']['uid']?>" onclick="<?=($this->user_isloogin_info['uid'] ? '' : 'alert(\'您尚未登录！\');return false;')?>return showHiddenHome('/pic/loadhtml/html/friendadd', this);">加为好友</a></li>
+	                      			<li><a href="<?=HOME_9939_URL. '/news/index/fid/'. $val['user_info']['uid'] .'/zf/1/'?>" onclick="<?=($this->user_isloogin_info['uid'] ? 'return true;' : 'alert(\'您尚未登录！\');return false;')?>">发送消息</a></li>
+			                      <li>积分：<?=$val['user_info']['credit']?></li>
+			                    </ul>
+			                  </div>
+			                  <div class="ask_info">
+			                  
+			                    <div class="answer_content" id="answer_content_<?=$val['id']?>">
+								       <?=nl2br($val['content'])?>
+			                    </div>
+			                    <div class="ask_time">
+			                      	回答时间：<?=date("Y-m-d H:i:s",$val['addtime'])?>
+			                      
+			                      <?php
+			                      	if($this->info[bestanswer]<=0&&$this->user_isloogin_info['uid']==$this->user_info['uid']) { 
+			                      ?>
+			                      		<a href="/ask/over/askid/<?=$this->info['id']?>/id/<?=$val['id']?>">采纳为答案</a> 
+			                      <?php }?>
+			                      
+			                      <a href="###" onclick="return updateAnswer(<?=$val['id']?>,this)">修改回答</a> <a href="###" onclick="return tousu('<?=$val['user_info']['nickname']?>',<?=$val['id']?>,this)">投诉</a> <a href="###"  onclick="ians(1)">继续提问</a>   
+			                    </div>
+			                    <div class="ask_hos">
+			                    		
+			                      	<?php if($val['user_info']['uType']==2&&$val['user_info']['isvip']) {?>
+		                      				本回复来自:<a href="###"><?=$val['user_detail_info']['doc_hos']?></a>                   
+		                    		 <?php }?>
+			                      		
+			                      		
+			                    </div>
+			                  </div>
+			                </div>
+                 <?php }?>
+                <?php }?>
+                
+             
+              </div>
+            </div>
+          </div>
+          
+          <?php }?>
+          
+          
+        <?php /*普通会员回答列表 */ ?>
+        <?php if($this->haveNormalAnswer) { ?>
+        
+          <div class="zhnmod03 zhnmod03_g">
+            <div class="inner">
+              <div class="hd">
+                <h3>普通会员回答</h3>
+              </div>
+              <div class="bd">
+              
+             <?php foreach ($this->answerList as $val) {?>
+              <?php 	if($val['user_info']['uType']==1) {?>
+                <div class="ask_item l-fix">
+                  <div class="user_info">
+                    <div>
+                      <a href="<?=HOME_9939_URL?>user/?uid=<?=$val['user_info']['uid']?>"><img src="<?=$val['user_info']['pic']?>" width="65" height="61"/></a>
+                    </div>
+                    <p><a href="<?=HOME_9939_URL?>user/?uid=<?=$val['user_info']['uid']?>"><?=$val['user_info']['nickname']?></a></p>
+                    <ul>
+                      <li><a href="javascript:;" class="<?=$val['user_info']['uid']?>" onclick="<?=($this->user_isloogin_info['uid'] ? '' : 'alert(\'您尚未登录！\');return false;')?>return showHiddenHome('/pic/loadhtml/html/friendadd', this);">加为好友</a></li>
+	                  <li><a href="<?=HOME_9939_URL. '/news/index/fid/'. $val['user_info']['uid'] .'/zf/1/'?>" onclick="<?=($this->user_isloogin_info['uid'] ? 'return true;' : 'alert(\'您尚未登录！\');return false;')?>">发送消息</a></li>
+                      <li>积分：<?=$val['user_info']['credit']?></li>
+                    </ul>
+                  </div>
+                  <div class="ask_info">
+                    <div class="answer_content" id="answer_content_<?=$val['id']?>">
+			                    <?=nl2br($val['content'])?>
+                    </div>
+                    <div class="ask_time">
+                      回答时间：<?=date("Y-m-d H:i:s",$val['addtime'])?>
+                       <?php
+			              	if($this->info[bestanswer]<=0&&$this->user_isloogin_info['uid']==$this->user_info['uid']) { 
+			           ?>
+			           	<a href="/ask/over/askid/<?=$this->info['id']?>/id/<?=$val['id']?>">采纳为答案</a> 
+			           <?php }?>
+                       <a href="###" onclick="return updateAnswer(<?=$val['id']?>,this)">修改回答</a> <a href="###" onclick="return tousu('<?=$val['user_info']['nickname']?>',<?=$val['id']?>,this)">投诉</a> <a href="###" onclick="ians(1)">继续提问</a>   
+                    </div>
+                  </div>
+                </div>
+                
+                <?php }?>
+                <?php }?>
+                
+              </div>
+            </div>
+          </div>
+          
+          <?php }?>
+          
+          <!-- <div class="j-ad tMarginLg">
+            <a href="###"><img src="images/temp.jpg" /></a>
+          </div> -->
+			<a id="answer"></a>
+          <div class="j-mod tMarginLg j-temphref">
+						<div class="hd fix">
+							<ul>
+							<?php if(!$this->goodAnswer) { ?>
+								<li class="on-zh">我来回答</li>
+							<?php } ?>
+								<li>快速提问</li>
+							</ul>
+						</div>
+						<div class="bd">
+						
+						<?php if(!$this->goodAnswer) { ?>
+								<div class="j-ask j-login">
+									<form id="" name="" method="POST" action="/answer/" onsubmit="return checkAnswerData();">
+
+
+									<p id="showLoginInput" 	<?php if(!empty($this->user_isloogin_info['uid'])) { echo 'style="display:none"';} ?>>
+										  <label>
+											我是会员<input type="radio" checked name="register1" value="0"  onclick="changeLabel(this, 0, 1);" /></select>
+										  </label>
+										  <span>（会员登录提问，将获得5积分）</span>   
+										  <label>
+										  	我要注册<input type="radio" name="register1" value="1" onclick="changeLabel(this, 1, 0);" />
+										  </label>
+										  <br />
+										  <span id="label_0">
+											邮箱：<input type="text" name="username" style="width:100px;" id="username1"/>
+											  
+											密码：<input type="password" name="pwd" style="width:100px;" id="pwd1"/>
+										  </span>
+										  <span id="label_1" style="display:none;">
+											邮箱：<input type="text" name="mail" style="width:260px;" id="mail1"/>
+										  </span>
+										</p>
+
+
+										<p>
+										<script>
+										function texton(type){
+											if(type=='on'){
+												$('#answer_content').val('');
+												$('#answer_content').removeAttr('onclick');
+											}
+										}
+										</script>
+											<label><textarea name="answer[content]" style="width:580px; height:90px;" id="answer_content" onclick="texton('on')">请快速回答"<?=$this->info['title']?>"</textarea></label>
+										</p>
+										<input type="hidden" value="<?=$this->info['id']?>" name="answer[askid]" />
+										<input type="hidden" value="<?=$this->info['point']?>" name="answer[point]" />
+										<p align="center"><input type="submit" class="j-submit" value="" id="answer_submit"/></p>
+										<p><span>操作提示：<br />（1）如果您的回答内容参照了其他书籍、网络、词典等他人文章，请务必标明出处。如有知识产权等纠纷， 由回答者本人承担相应法律责任。<br />
+										（2）如果您没有在上面的问题中找到适合您的答案，请在下面的提问框中向专家提问。</span></p>
+									</form>
+									
+								</div>
+						<?php } ?>
+								
+								
+								<div class="j-ask j-login" >
+									<form id="ask_div_show" method="POST" action="/askt/do/do/save/">
+
+										<p id="showLoginInput2" <?php if(!empty($this->user_isloogin_info['uid'])) { echo 'style="display:none"';} ?>>
+										  <label>
+											我是会员<input type="radio" checked name="register" value="0"  onclick="changeLabel(this, 3, 4);$('#login').val('true');$('#register').val('');" /></select>
+											<input type="hidden" name="login" id="login" value="true"/> 
+										  </label>
+										  <span>（会员登录提问，将获得5积分）</span>   
+										  <label>
+										  	我要注册<input type="radio" name="register" value="1" onclick="changeLabel(this, 4, 3);$('#register').val('true');$('#login').val('');" />
+										  	<input type="hidden" name="register" id="register" value=""/> 
+										  </label>
+										  <br />
+										  <span id="label_3">
+											邮箱：<input type="text" name="username" style="width:100px;" />
+											  
+											密码：<input type="password" name="pwd" style="width:100px;" />
+										  </span>
+										  <span id="label_4" style="display:none;">
+											邮箱：<input type="text" name="mail" style="width:260px;" />
+										  </span>
+										</p>
+
+										<p>
+											标题：<input type="text" id="zhtform_title" name="info[title]" onclick="flush2()" style="width:300px" />
+										</p>
+										<p>
+											<label><textarea name="info[content]" style="width:580px; height:90px;" id="ans_content"></textarea></label>
+										</p>
+										<input type="hidden" value="<?=$this->info['classid']?>" name="info[classid]" />
+										<input type="hidden" value="<?=$this->token?>" name="token" />
+										<p align="center"><input type="submit" class="j-submit" value="" onclick="return checkData()"/></p>
+									</form>
+									<script type="text/javascript">
+			var msgall2="挂号难 看病贵……怎么办？请输入您的健康疑惑，比如：孩子发烧怎么办？久久健康专家全天在线为您解答！";
+var msg2  = "输入问题内容，点击“我要提问”。" ; 
+var interval2 = 100 
+var spacelen2 = 100; 
+var space102=" "; 
+var seq2=0; 
+var cont2=true;
+var zhtform_title = document.getElementById("zhtform_title");
+
+function Scroll99() { 
+	len2 = msg2.length; 
+	
+    
+	zhtform_title.value = msg2.substring(0, seq2+1); 
+	seq2++; 
+	if ( seq2 >= len2 ) {
+		setTimeout(function(){
+								seq2 = 0;  
+								var per=Math.round(Math.random()*(3-1))+1;
+								switch (per){
+									case 1: msg2="挂号难 看病贵……怎么办？";break;
+									case 2: msg2="请输入您的健康疑惑，比如：孩子发烧怎么办？";break;
+									case 3: msg2="久久健康专家全天在线为您解答！";break;
+								}
+								if (cont2) {
+									window.setTimeout("Scroll99();", interval ); 
+								}
+								else{
+									zhtform_title.value="";
+								}
+							},2000);
+	} 
+	else 
+		if (cont2) { 
+			window.setTimeout("Scroll99();", interval );
+		}
+		else{
+			zhtform_title.value="";
+		}
+}  
+
+Scroll99(); 
+
+function flush2(){
+   zhtform_title.value="";
+   cont2=false;
+   zhtform_title.onclick=function(){return void(0);}
+}
+zhtform_title.value="1";		</script>
+								</div>
+
+								
+						</div>
+					</div>
+
+
+
+          
+          <?php /* 半通栏广告位 */?>
+          <div style="height:40px; border:1px solid #C4DDF1; margin-top:10px; background:#f8fcff;">
+
+	  <?php require_once(APP_INCLUDE_PATH.'/ip_mid.php');?>
+						
+			</div>
+          
+          
+          <div class="mod zhmod-01 tMarginLg">
+		                <span class="top">
+		                  <span class="tl"></span>
+		                </span>
+		                <div class="inner text-list-main wygz">
+		                  <div class="hd">
+		                    <h4>网友最关注的&nbsp;<font color="red"><?=$this->info[classname]?></font>&nbsp;问题</h4>
+							<?php
+								//print_r($this->focusAskList); 
+							?>
+		                  </div>
+		                  <div class="bd">
+		                    <ul>
+<?php require_once(APP_INCLUDE_PATH.'/ask_xiangguan.php');?>
+		                	</ul>
+		                  </div> 
+		                </div>
+		              </div>
+
+<div class="mod zhmod-01 tMarginLg">
+    <span class="top">
+      <span class="tl"></span>
+    </span>
+    <div class="inner text-list-main wygz">
+      <div class="hd">
+        <h4><font color="red"><?=$this->info[classname]?></font>&nbsp;精彩资讯</h4>
+		<?php
+			//print_r($this->focusAskList); 
+		?>
+      </div>
+      <div class="bd">
+        <ul>
+        <?php
+			require_once(APP_INCLUDE_PATH.'/article.php');
+        ?>
+    	</ul>
+      </div> 
+    </div>
+  </div>
+          <!--div style="margin-top:10px; padding:5px; border:1px solid #C4DDF1">
+	  <script type="text/javascript">
+		google_ad_client = "pub-6929538788058109";
+		/* 468x60, ask_content_left_bottom */
+		google_ad_slot = "7004966576";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	  </div-->
+          <div class="j-top tMarginLg"><strong><a class="j-blue" href="#">返回顶部</a></strong></div>
+          
+          <a name="answer"></a>
+		
+                    
+        </div>
+      </div>
+    
+      		<?php /*右侧列表*/ ?>
+
+
+<?php 
+
+	require(APP_PUBLIC_PATH.'/con_right1.shtml');
+
+?>
+			<?php require(APP_PUBLIC_PATH.'/con_right2.shtml');?>
+			
+ 
+    </div>
+	<div class="jmod l-fix tMarginLg">
+		<div class="col-s">
+			<div class="tit">疾病专栏</div>
+			<div class="con">
+				<a href="http://gb.9939.com">肝病</a>|<a href="http://xzb.9939.com">心脏病</a>|<a href="http://gxy.9939.com">高血压</a>|<a href="http://tnb.9939.com">糖尿病</a>|<a href="http://ggt.9939.com">股骨头</a><br /><a href="http://bdf.9939.com">白癜风</a>|
+				<a href="http://npx.9939.com">牛皮癣</a>|<a href="http://fk.9939.com">妇科</a>|<a href="http://nk.9939.com">男科</a>|<a href="http://heart.9939.com">心血管</a><br /><a href="http://jsk.9939.com">精神科</a>|<a href="http://smyy.9939.com">失眠抑郁</a>|<a href="http://dx.9939.com">癫痫</a>|<a href="http://pf.9939.com">皮肤</a>|<a href="http://jzb.9939.com">颈椎病</a><br /><a href="http://gc.9939.com">肛肠</a>|<a href="http://yjp.9939.com">腰间盘</a>|<a href="http://mn.9939.com">泌尿</a>|<a href="http://gk.9939.com">骨科</a>|<a href="http://ek.9939.com">儿科</a><br /><a href="http://fengshi.9939.com">风湿</a>|<a href="http://shcare.9939.com">肾病</a>|<a href="http://lc.9939.com">流产</a>|<a href="http://byby.9939.com">不孕不育</a>|<a href="http://yk.9939.com">眼科</a><br /><a href="http://kq.9939.com">口腔</a>|<a href="http://zl.9939.com">肿瘤</a>|<a href="http://wb.9939.com">胃病</a>|<a href="http://zhongfen.9939.com">中风</a>
+			</div>
+		</div>
+		<div class="col-m">
+			<div class="tit">大众频道</div>
+			<div class="con">
+				<a href="http://baby.9939.com">母婴</a>|<a href="http://lx.9939.com">两性</a>|<a href="http://www.99nv.net/">女性</a>|<a href="http://beauty.9939.com">美容</a>|<a href="http://xinli.9939.com">心理</a>|<a href="http://zt.9939.com">健康专题</a><br /><a href="http://baojian.9939.com">保健</a>|<a href="http://food.9939.com">饮食</a>|<a href="http://man.9939.com">男性</a>|<a href="http://js.9939.com">健身</a>|<a href="http://fitness.9939.com">减肥</a>|<a href="http://pic.9939.com/">健康图谱</a>
+			</div>
+			<div class="tit" style="margin-top:25px;">服务产经</div>
+			<div class="con">
+				<a href="http://news.9939.com">行业新闻</a>|<a href="http://ezone.9939.com/">电子杂志</a>|<a href="http://zs.9939.com/">医药招商</a><br /><a href="http://zhanhui.9939.com/">医疗展会</a>|<a href="http://help.9939.com/">公益行动</a>
+			</div>
+		</div>
+		<div class="col-e">
+			<div class="tit">疾病健康</div>
+			<div class="con">
+				<a href="http://jb.9939.com">查疾病</a>|<a href="http://yisheng.9939.com/">找医生</a>|<a href="http://zhongyi.9939.com/">中医</a>|<a href="http://nurse.9939.com/">护理</a>|<a href="http://tijian.9939.com/">体检</a><br /><a href="http://zz.9939.com/">查症状</a>|<a href="http://hospital.9939.com/">找医院</a>|<a href="http://pianfang.9939.com/">偏方</a>|<a href="http://jijiu.9939.com/">急救</a>|<a href="http://drug.9939.com/">药品</a>
+			</div>
+			<div class="tit" style="margin-top:25px;">社区互动</div>
+			<div class="con">
+				<a href="http://ask.9939.com">久久问答</a>|<a href="http://buluo.9939.com">久久部落</a>|<a href="http://home.9939.com">久久家园</a><br /><a href="http://baike.9939.com">健康百科</a>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+		
+
+		<div class="j-box j-box03" id="j-box03">
+			<div class="inner">
+				<div class="hd">
+					<a href="#" onclick="hideZ(3)">关闭</a>
+					<span>对不起，您不是提问者，不能采纳为答案！</span>
+				</div>
+			</div>
+		</div>
+
+
+<?php /*修改 弹出 */?>
+ <div class="j-box j-box01" id="updateAns_div">
+		<div class="inner2">
+			<div class="hd">
+				<a href="javascript:;" onclick="javascript:$('#updateAns_div').hide()">关闭</a>				</div>
+			<div class="bd">
+				<textarea name="textarea" class="text" style="width:210px; height:90px;" id="updateAns_content"></textarea>
+				<input type="hidden" value="" id="ansId"/>"
+				<input type="submit" value="提交" class="bton" onclick="return updateAnswerSubmit()"/>
+			</div>
+		</div>
+</div>
+<?php /*修改 弹出 */?>
+
+
+
+<?php /*投诉弹出 界面*/ ?>
+<div class="j-box j-box02"  id="tousu_div" style="display: none">
+			<div class="inner2">
+				<div class="hd">
+					<a href="javascript:;" onclick="javascript:$('#tousu_div').hide();">关闭</a>
+					<span>投诉区</span>
+				</div>
+				<div class="bd">
+					<table width="93%" align="center" class="j-tousu">
+						<tbody>
+							<tr>
+								<td><strong>被投诉人：</strong></td>
+								<td><a href="#" id="tousuren"></a></td>
+							</tr>
+							<tr>
+								<td><strong>投诉世间：</strong></td>
+								<td id="showTime2"></td>
+							</tr>
+							<tr>
+								<td valign="top"><strong>投诉类别：</strong></td>
+								<td>
+									<p>
+										<label>
+											<input type="radio" name="tousuItem2" value="1" checked="checked"/><?=$this->tousuArr[1]?>
+										</label>
+										<label>
+											<input type="radio" name="tousuItem2" value="2" /><?=$this->tousuArr[2]?>
+										</label>
+									</p>
+									<p>
+										<label>
+											<input type="radio" name="tousuItem2" value="3" /><?=$this->tousuArr[3]?>
+										</label>
+										<label>
+											<input type="radio" name="tousuItem2" value="4" /><?=$this->tousuArr[4]?>
+										</label>
+									</p>
+									<p>
+										<label>
+											<input type="radio" name="tousuItem2" value="5" /><?=$this->tousuArr[5]?>
+										</label>
+										<label>
+											<input type="radio" name="tousuItem2" value="6" /><?=$this->tousuArr[6]?>
+										</label>
+									</p>
+									<p>
+										<label>
+											<input type="radio" name="tousuItem2" value="7" /><?=$this->tousuArr[7]?>
+										</label>
+										<label>
+											<input type="radio" name="tousuItem2" value="8" /><?=$this->tousuArr[8]?>
+										</label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td valign="top"><strong>投诉说明：</strong></td>
+								<td><textarea name="textarea" class="text text01" style="width:246px; height:140px;" id="tousuContent2"></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+					<input type="hidden" value="" id="tousuId"/>
+					<input type="submit" value="提交" class="bton" onclick="return tousuSubmit();"/>
+				</div>
+			</div>
+		</div>
+<?php /*投诉弹出 界面*/?>
+
+
+		
+		<?php require(APP_ROOT."/footer.html");?>
+		<?php require(APP_ROOT."/ip_keshi.php");?>
+		
+		
+		
+<!--快速提问 浮动面板-->
+	<!--快速提问改-->
+	<script>
+	$(function(){
+		//$(".l-mod .bd").css("display","none");
+		$(".l-mod span").toggle(function(){
+					$(".l-mod .bd").hide();
+					$(this).parent().addClass("hd2");
+				},function(){
+					$(".l-mod .bd").show();
+					$(this).parent().removeClass("hd2");
+		})
+	})
+</script>
+
+<link href="http://www.9939.com/9939/style/quiz.css" rel="stylesheet" type="text/css" />
+<div class="l-mod" id="l-mod">
+	<div class="hd">
+    	<h2>快速提问<strong>&nbsp;&nbsp;万名专家为您解答！</strong></h2>
+        <span></span>    
+    </div>
+    <div class="bd">
+		<div class="formd">
+			<iframe src="http://ask.9939.com/ask/quick/" width="280" height="151" frameborder="0" scrolling="No" style="margin-left:1px;"></iframe>
+		</div>
+    </div>
+</div>
+<!-- 快速提问改版完 -->
+	<!--div class="lw-fblock" id="rbf">
+		<div class="inWrap">
+			<div class="hd"><a href="###" id="close" onclick="javascript: $('#rbf').toggle();"><img src="/images_ask/images/wdclose.jpg" /></a></div>
+			<div class="inbox">
+				<form id="quick_ask_div_show" name="" method="POST" action="/askt/do/do/save/">
+				<h2>快速提问</h2>
+				<div class="l-fix">
+					<span>标题：</span>
+					<p class="inpbox">
+						<input type="text" class="inp" id="quick_title" name="info[title]" onfocus="if(this.value=='请输入你的问题标题') this.value='';" value="请输入你的问题标题"/>
+					</p>
+				</div>
+				<div class="l-fix tMargin">
+					<span>描述：</span>
+					<p class="inpbox">
+						<textarea class="area" onfocus="javascript:if($('#quick_content').html()=='把您的问题描述一下') $('#quick_content').html('');" id="quick_content" name="info[content]">把您的问题描述一下</textarea>
+					</p>
+				</div>
+				<p>
+					<input type="hidden" value="<?=$this->info['classid']?>" name="info[classid]" />
+					<input type="hidden" value="<?=$this->token?>" name="token" />
+					<input class="subBtn" type="submit" value="" onclick="return quick_ask()"/>
+				</form>
+				</p>
+			</div>
+		</div>
+	</div-->
+<!--快速提问 浮动面板结束-->
+
+<script type="text/javascript">
+function quick_ask(){
+	if($("#quick_title").val()==""){
+		alert("请输入标题");
+		$("#quick_title").focus();
+		return false;
+	} else if($("#quick_content").val()=="") {
+		alert("请输入内容");
+		$("#quick_content").focus();
+		return false;
+	} else if($("#quick_content").val()=="输入您的问题") {
+		alert("请输入内容");
+		$("#quick_content").focus();
+		return false;
+	} else if($("#quick_title").val().length<5 || $("#quick_title").val().length>50) {
+		alert("标题字数要在：5-50  之间");
+		$("#quick_title").focus();
+		return false;
+	} else if($("#quick_content").val().length<10 || $("#quick_content").val().length>500) {
+		alert("内容字数要在：10-500 之间");
+		$("#quick_content").focus();
+		return false;
+	}
+}
+function checkData(){
+	if($("#zhtform_title").val()==""){
+		alert("请输入标题");
+		$("#zhtform_title").focus();
+		return false;
+	} else if($("#ans_content").val()=="") {
+		alert("请输入内容");
+		$("#ans_content").focus();
+		return false;
+	} else if($("#ans_content").val()=="输入您的问题") {
+		alert("请输入内容");
+		$("#ans_content").focus();
+		return false;
+	} else if($("#zhtform_title").val().length<5 || $("#zhtform_title").val().length>50) {
+		alert("标题字数要在：5-50  之间");
+		$("#zhtform_title").focus();
+		return false;
+	} else if($("#ans_content").val().length<10 || $("#ans_content").val().length>500) {
+		alert("内容字数要在：10-500 之间");
+		$("#ans_content").focus();
+		return false;
+	}
+}
+</script>
+		
+		
+<script src="/ask/addvn/askid/<?=$this->askid?>" type="text/javascript" charset="utf-8"></script>		
+<script type="text/javascript" src="/images_ask/js/dialog.js" ></script>
+<script type="text/javascript">
+	var b=new compoDialog();
+	b.add(maskLayerManger.displaymaskLayer("#949494",0.5));
+	var c=new compoDialog();
+	c.add(maskLayerManger.displaymaskLayer("#949494",0.5));
+	function showHidden(obj) {
+		$.get($(obj).attr('href'), function(data) {
+			b.add(boxDialogManger.displayboxDialog(data));
+			b.show();
+		})
+		return false;
+	}
+	
+	
+	//var b=new compoDialog();
+	//b.add(maskLayerManger.displaymaskLayer("#949494",0.5));
+	
+	
+	function showHiddenHome(__act, obj) {
+		$.get('/ask/loadHome/?url=' + __act, function(data){
+			b.add(boxDialogManger.displayboxDialog(data));	
+			b.show();
+			//$('#frm').attr('action',"hhh");
+			uid = $(obj).attr('class');
+			//alert(document.getElementById('a_uid').href);
+			//alert(uid);
+			$('#frm')[0].action = "/ask/home/?url=friend/add/fid/"+uid;
+			$('#uimg').attr('src', $('#'+uid).attr('src'));
+			return false;
+		});
+		//alert(error);
+		return false;
+	}
+	function hidden() {
+		b.hide();
+	}
+	
+	
+	
+	function cannelShow() {
+		b.hide();
+	}
+	
+	function changeLabel(obj, __index, __index_1) {
+		if(obj.checked) {
+			$('#label_' + __index).css('display', '');
+			$('#label_' + __index_1).css('display', 'none');
+		}
+	}
+	
+	function ask(__id,obj) {
+		$(obj).attr('disabled', 'disabled');
+		var __d = $('#'+ __id + ' input[type!=radio],input:checked,textarea ');
+		var __str = '';
+		for(i=0; i<__d.length; i++) {
+			if(__d[i].name != '') {
+				__str = __str + __d[i].name + '=' + encodeURIComponent(__d[i].value) + '&';
+			}
+		}
+		
+		$.post('/ask/do/do/save/?' + __str, function(data) {
+				if(data=='error-100') { //帐号重复
+					alert('帐号重复！提问失败！！！');
+					$(obj).attr('disabled', '');
+				} else if (data=='100') {
+					alert('帐号或密码错误！！！');
+					$(obj).attr('disabled', 'disabled');
+				} else if (data) {		//成功
+					$.get('/ask/loadhtml/html/ok/id/' + data, function(msg) {
+						//alert('/ask/loadhtml/html/ok/id/' + data);
+						c.add(boxDialogManger.displayboxDialog(msg));
+						c.show('<div class="mod tmod-01"><h2 class="h2">会员提交成功</h2><div class="t-content"><span class="top"><span class="tl"></span><span class="tr"></span></span><div class="inner"></div><span class="bottom"><span class="bl"></span>&nbsp;<span class="br"></span></span></div></div>');
+						$(obj).attr('disabled', '');
+					});
+				} else {				//失败
+					alert('提问失败！！！');
+					$(obj).attr('disabled', 'disabled');
+				}
+			});
+			
+		return false;
+	} 
+</script>
+
+
+<script language="javascript" charset="utf-8"> 
+
+function getcookie(name)
+{
+	var arg = name + "=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i = 0;
+	while(i < clen)
+	{
+		var j = i + alen;
+		if(document.cookie.substring(i, j) == arg) return getcookieval(j);
+		i = document.cookie.indexOf(" ", i) + 1;
+		if(i == 0) break;
+	}
+	return null;
+}
+
+function getcookieval(offset)
+{
+	var endstr = document.cookie.indexOf (";", offset);
+	if(endstr == -1)
+	endstr = document.cookie.length;
+	return unescape(document.cookie.substring(offset, endstr));
+}
+
+function checkAnswerData() {
+
+	var uid = getcookie("member_uID");
+	if(uid==null||uid=="") {
+		var isreg = $(":radio[name=register1]:checked").val();
+		if(isreg==0) {
+			var username = $("#username1").val();
+			var pwd = $("#pwd1").val();
+
+			if(username=="") {
+				alert("请输入邮箱！");
+				$("#username1").focus();
+				return false;
+			} else if(pwd=="") {
+				alert("请输入密码！");
+				$("#username1").focus();
+				return false;
+			}
+		} else {
+			var mail = $("#mail1").val();
+			if(mail=="") {
+				alert("请输入注册邮箱!");
+				$("#mail1").focus();
+				return false;
+			}
+		}
+		
+	}
+
+
+	var content = $("#answer_content").val();
+	if(content=="") {
+		alert('请输入回答内容!');
+		$("#answer_content").focus();
+		return false;
+	}
+
+	$("#answer_submit").attr("disabled","disabled");
+	return true;
+}
+
+
+
+<?php /* 问题补充 */ ?>
+function askadd() {
+
+	var askid = <?=$this->info['id']?>;
+	
+	if($("#askadd_content").val()=="") {
+		alert("请输入内容!");
+		$("#askadd_content").focus();
+		return false;
+	}
+	
+	 $.ajax({ 
+		   type: "POST", 
+		   url: "/ask/askadd", 
+		   data: "askid="+askid+"&content="+$("#askadd_content").val(), 
+		   success: function(msg){ 
+		     if(msg=='empty') {
+			     alert('内容不能为空！');
+			     return false;
+			  } else if(msg=='notfound') {
+				  alert('该问题不存在或已被删除！');
+				   return false;
+			  } else if(msg=='isclose') {
+				  alert('问题已经结束！');
+				   return false;
+			  } else if(msg=='nopower') {
+				  alert('你没有权限修改！');
+				   return false;
+			  } else if(msg=='notsafe') {
+				  	alert('内容含有非法词语！');
+				   return false;
+			  } else if(msg=='ok') {
+				  $("#askadd_content").val('');
+
+				  $.ajax({ 
+					   type: "POST", 
+					   url: "/ask/getaskadd", 
+					   cache: false,
+					   data: "askid="+askid, 
+					   success: function(msg){ 
+					  	$("#askaddlist").html(msg);
+					   	hideZ(1);
+					   } 
+					 });
+				  /*$.get("/ask/getaskadd/askid/"+askid+"?t="+Math.random, function(data){ 
+					   $("#askaddlist").html(data);
+					   hideZ(1);
+					 });*/
+
+				  
+			  } else {
+				  alert('添加失败！');
+				   return false;
+			  } 
+		   } 
+		 });
+	return false;
+}
+
+<?php /* 投诉问题  */?>
+function askTousu(){
+	var tousuItem = $("input[name=tousuItem1]:checked").val();
+	var askid = <?=$this->info['id']?>;
+	var type = 1;
+	var content = $("#tousuContent1").val();
+	if(content=="") {
+		alert("请输入投诉内容!");
+		$("#tousuContent1").focus();
+		return false;
+	}
+
+	$.ajax({ 
+		   type: "POST", 
+		   url: "/ask/tousu", 
+		   data: "id="+askid+"&content="+content+"&item="+tousuItem+"&type=1", 
+		   success: function(msg){ 
+		     if(msg=='ok'){
+			     alert("投诉成功!");
+			     $("#tousuContent1").val('');
+			     hideZ(5);
+			  } else if(msg=="nologin"){
+				  alert("请先登录！");
+			  } else {
+				  alert("投诉失败！");
+			  }
+		     
+		   } 
+		 });
+	
+	return false;
+}
+
+function tousu(uname,contentid,obj) {
+	$("#tousu_div").show();
+	$("#tousu_div").css("top",$(obj).offset().top+$(obj).height()+2);
+	$("#tousu_div").css("left",$(obj).offset().left-50);
+	$("#tousuren").html(uname);
+	$("#tousuContent2").val('');
+	$("#showTime2").html(new Date().toLocaleString());
+	$("#tousuId").val(contentid);
+	return false;
+}
+
+<?php /* 投诉回答  */?>
+function tousuSubmit(){
+	var tousuItem = $("input[name=tousuItem2]:checked").val();
+	var askid = $("#tousuId").val();
+	var content = $("#tousuContent2").val();
+	if(content=="") {
+		alert("请输入投诉内容!");
+		$("#tousuContent2").focus();
+		return false;
+	}
+	
+	$.ajax({ 
+		   type: "POST", 
+		   url: "/ask/tousu", 
+		   data: "id="+askid+"&content="+content+"&item="+tousuItem+"&type=2", 
+		   success: function(msg){ 
+		     if(msg=='ok'){
+			     alert("投诉成功!");
+			     $("#tousuContent2").val('');
+			     $("#tousu_div").hide();
+			  } else if(msg=="nologin"){
+				  alert("请先登录！");
+			  } else {
+				  alert("投诉失败！");
+			  }
+		     
+		   } 
+		 });
+	
+	return false;
+}
+
+
+<?php /* 修改回答 */?>
+function updateAnswer(aid,obj){
+	$("#updateAns_div").show();
+	$("#updateAns_div").css("top",$(obj).offset().top+$(obj).height()+2);
+	$("#updateAns_div").css("left",$(obj).offset().left-50);
+	var content = $("#answer_content_"+aid).html();
+//        content = content.replace(/<br\/>/ig,"\n");
+//        content = content.replace(/<br>/ig,"\n");
+//        $("#debug_div").html(content);
+//	content = content.replace(/<.+?>/ig,'');
+	content = content.replace(/\s+/,'');
+        content = content.replace(/<.+?>/ig,"\n");
+        $("#updateAns_content").html("");
+	$("#updateAns_content").val(content);
+	$("#ansId").val(aid);
+	return false;
+	
+}
+function updateAnswerSubmit(){
+	var ansId = $("#ansId").val();
+	var content = $("#updateAns_content").val();
+	
+	if(content=="") {
+		alert("请输入内容!");
+		$("#updateAns_content").focus();
+		return false;
+	}
+	
+	$.ajax({ 
+		   type: "POST", 
+		   url: "/ask/editanswer", 
+		   data: "id="+ansId+"&content="+content, 
+		   success: function(msg){ 
+		     if(msg=='ok'){
+			     alert("修改成功!");
+			     location.reload();
+			  } else if(msg=="nologin"){
+				  alert("请先登录！");
+			  } else if(msg=="nopower"){
+				  alert("你没有权限修改！");
+			  } else if(msg=='notsafe') {
+				  alert('内容含有非法词语！');
+			  } else {
+				  alert("修改失败！");
+			  }
+		     
+		   } 
+		 });
+	
+	return false;
+}
+
+
+//举报用
+var xxk =new compoDialog();
+function closedv(){
+	xxk.hide();
+}
+function add(o,i){
+	if(i==1){
+		var url = '/Commentindex';
+	}else if(i==2){
+		var url = '/Reportindex';
+	}
+	// 	var url = '/Commentindex';
+	xxk.add(maskLayerManger.displaymaskLayer("#949494",0.2));
+	xxk.add(boxDialogManger.displayboxDialog('<form action="'+url+'" method="get"><div class="t-innerWrap"><input type="hidden" id="xid" name="id" value=""><input type="hidden" id="xidtype" name="idtype" value=""><input type="hidden" id="xuid" name="uid" value=""><input type="hidden" id="xcid" name="cid" value=""><textarea name="message" rows="8" cols="40"></textarea><br><span><input type="submit" value="提交">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="qx" value="取消" onclick="closedv()"></span></div></form>'));
+	xxk.show()
+	// b['compo'][1].element.click(function(){
+	//	b.hide();
+	//})
+	if(o.href){
+		var hr     = o.href.split('&');
+		var id     = hr[0].split('=')[1];
+		var idtype = hr[1].split('=')[1];
+		if(i==1){
+			var uid    = hr[2].split('=')[1];
+			var cid    = hr[3].split('=')[1];
+			if($('#xuid')){
+				$("#xuid").val(uid);
+			}
+			if($('#xcid')){
+				$("#xcid").val(cid);
+			}
+		}
+
+		if($('#xid')){
+			$("#xid").val(id);
+		}
+		if($('#xidtype')){
+			$("#xidtype").val(idtype);
+		}
+	}
+}
+$('#searchtext').val('<?=$this->info['title']?>');
+</script>
+
+<div style="display: none" id="debug_div"></div>
+</body>
+</html>

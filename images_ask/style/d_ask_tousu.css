@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+	color: #000;
+	background: #FFF;
+}
+body,div,input,textarea,p {
+	margin: 0;
+	padding: 0;
+}
+input,textarea,select {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+.fix {
+	*zoom: 1;
+}
+.fix:after {
+	content: "";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+.wrap{ padding:15px 15px; background: #FFFFFF; overflow:hidden; position: absolute; width:450px; height:340px;left:50%;top:50%; margin-left:-225px;margin-top:-170px; border:3px solid  #dfedfa; padding:5px 10px 5px 10px; }
+.wrap1{padding:5px 0 0 0;}
+.wrap span{display:block; float:left; padding:0 0 0; width:100px; color:#003366; font-weight:bold;}
+.wrap .r_lable{display:block; float:left; padding:0 0 15px; width:350px;color:#003366;}
+.wrap .tscheckbox{ display:block; float:left; padding:0 0 15px; white-space:350px; margin:0 0; color:#003366;}
+.wrap .sb{ display:inline; float:left; margin:15px 0 0 30px; width:90%; text-align:center;}
+.wrap .tousuContent{width:300px; height:70px; border-style:double #003366; }
+.r_lable a{background:#E7F2FB; color:#003366; text-decoration:none;}
+.wrap .timer{color:#666666;}
+.wrap .bton {width:70px;}

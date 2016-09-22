@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://ask.9939.com/"/>
+<title>聚医堂_健康问答_久久健康网</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/templates/9939/skins/default/doctor_global.css" rel="stylesheet" type="text/css" />
+<link href="/templates/9939/skins/default/doctor.css" rel="stylesheet" type="text/css" />
+<script src="http://ask.9939.com/data/config.js"></script>
+<script language="javascript" src="http://ask.9939.com/images/js/common.js"></script>
+<!--<script src="http://ask.9939.com/images/js/login_me.js"></script>-->
+<script src="http://ask.9939.com/images/js/jquery.min.js"></script>
+
+<script>
+function setTab(m,n){
+ var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+ var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+ for(i=0;i<tli.length;i++){
+  tli[i].className=i==n?"hover":"";
+  mli[i].style.display=i==n?"block":"none";
+ }
+}
+</script>
+
+</head>
+
+<body>
+	<div id="wrapper" class="doctor_9939">
+			<!--#include virtual="/header.html"-->
+			<div class="clear"></div>
+			<div class="nav">
+				<ul>					
+					<li class="on"><a href="http://doctor.9939.com/">聚医堂首页</a></li>
+					<li ><a href="http://doctor.9939.com/rank.php?f=0">博文排行</a></li>
+					<li ><a href="http://doctor.9939.com/rank.php?f=1">找专家</a></li>
+					<li ><a href="http://doctor.9939.com/rank.php?f=2">医学资源</a></li>
+					<li ><a href="http://doctor.9939.com/rank.php?f=3">鲜花排行</a></li>
+					<li ><a href="http://doctor.9939.com/rank.php?f=4">经验值排行</a></li>
+					<li ><a href="http://doctor.9939.com/rank.php?f=5">访问量排行</a></li>
+					<li ><a href="http://doctor.9939.com/rank.php?f=6">问题回复排行</a></li>
+				</ul>
+			</div>
+		</div><!-- header end -->		<div id="mainbody" class="clfix">
+			<div class="w185 left menu">
+						<div class="t01 mt5"><h3>学习交流区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=220">友情链接</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=223">医生爱好</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=224">链接</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=229">企业网站</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=235">麻醉</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=236">龙卷风</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=237">测试群组</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=199">手术器械</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=49">执业医学考试</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=50">专业论文讨论</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>临床一区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=59">呼吸胸外</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=81">神经内外</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=61">精神心理</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>临床二区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=195">中医骨伤</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=201">神经外科</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=196">外科手术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=64">普通外科</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>临床三区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=203">育儿</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=68">妇产</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=198">宫颈糜烂</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=204">避孕措施</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=197">炎症快诊</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>临床四区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=70">影像核医学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=71">超声医学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=69">临床病理</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=51">临床检验</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>临床五区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=45">护理</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=46">康复</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=47">特种医学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=48">法医 卫生法律人文</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=2">传统医学</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>基础医学区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=37">形态学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=38">生理病生</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=39">分子生物</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=40">免疫微生物</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=41">神经生物</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=42">干细胞</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=43">生物医学工程</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=44">信号转导</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>药学区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=26">新药信息</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=27">药物化学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=28">制剂技术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=29">分析技术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=30">药理及临床试验</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=31">原辅料</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=32">合理用药</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=33">资源</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=34">知识产权</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=35">中药与保健品</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=36">医药产品经理</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>生命科学区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=18">生物信息</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=19">动物科学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=20">植物科学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=21">水生生物学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=24">环境生态</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=22">农业科学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=25">昆虫学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=23">遗传发育</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>实验技术区</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=15">其他技术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=16">实验室采购</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=17">微生物技术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=9">核酸技术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=12">PCR技术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=13">免疫技术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=14">动物技术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=8">虚拟实验室</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=10">蛋白质技术</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=11">细胞技术</a></li>
+					  					</ul>
+				</div>
+						<div class="t01 mt5"><h3>预防医学与卫生学</h3></div>
+				<div class="l03 clfix">
+					<ul>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=227">我爱医院</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=5">循证医学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=6">卫生经济管理</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=4">医学统计</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=3">预防医学</a></li>
+					  						<li><a href="http://home.9939.com/space.php?do=mtag&tagid=7">营养学</a></li>
+					  					</ul>
+				</div>
+						</div><!-- w185 end -->
+			<div class="w755 right">
+				<div class="w530 left">
+					<h3>今日热点</h3>
+					
+					
+					<div class="p02">
+												<dl>							<dt><a href="http://home.9939.com/space.php?do=thread&id=870" class="white" target="_blank"><img src="http://ask.9939.com/uploadPic/2009/0807/071501310.jpg" /></a><p><a href="http://home.9939.com/space.php?do=thread&id=870" class="white" target="_blank">巧治上火养生的妙方</a></p>
+							</dt>
+							<dd>中医专业人士提醒：春季人体内热较旺，如不注意饮食清淡和规律生活，极易“引火上身”</dd>
+							</dl>
+												<dl style="margin-left:18px">							<dt><a href="http://home.9939.com/space.php?do=thread&id=863" class="white" target="_blank"><img src="http://ask.9939.com/uploadPic/2009/0807/071505060.jpg" /></a><p><a href="http://home.9939.com/space.php?do=thread&id=863" class="white" target="_blank">百合可以养胃抗癌</a></p>
+							</dt>
+							<dd>百合有较高的药用价值，具有润肺止咳、补脾健胃、滋阴养肾、清心安神。</dd>
+							</dl>
+											</div>
+					<div class="l01">
+						<ul>
+														<li><a href="http://home.9939.com/space.php?uid=5698&do=blog&id=981" target="_blank">Aimeili-“道听途说”吃出美丽</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=5699&do=blog&id=982" target="_blank">yuxinxin-游泳 减肥美容双丰收</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1553&do=blog&id=246" target="_blank">宝宝常看动画片有助智力开发</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1761&do=blog&id=284" target="_blank">锻炼有助于治疗腰部疼痛</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=4472&do=blog&id=751" target="_blank">悠悠---美丽的梦想值得拥有</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1553&do=blog&id=227" target="_blank">宽恕待人更宜心理健康</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1752&do=blog&id=307" target="_blank">如何应对男性夏季四大高发疾病</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1757&do=blog&id=164" target="_blank">多吃樱桃是否预防妇科疾病</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1914&do=blog&id=340" target="_blank">兰兰—水果美容法</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1906&do=blog&id=343" target="_blank">donna—快速美白秘方</a></li>
+													</ul>
+					</div>
+					
+					
+				</div>
+				<div class="w220 right">
+										<div class="hotimg" style="display:none" id="hotimg0">	
+						<a href="http://home.9939.com/network.php?ac=mtag" target="_blank"><img src="http://ask.9939.com/uploadPic/2009/0807/071736130.jpg" /></a>
+						<p><a href="http://home.9939.com/network.php?ac=mtag" target="_blank">久久社区最热群组邀请你</a></p>
+					</div>
+										<div class="hotimg" style="display:none" id="hotimg1">	
+						<a href="http://home.9939.com/network.php" target="_blank"><img src="http://ask.9939.com/uploadPic/2009/0807/071632110.jpg" /></a>
+						<p><a href="http://home.9939.com/network.php" target="_blank">有时间了？去随便看看</a></p>
+					</div>
+										<div class="hotimg" style="display:none" id="hotimg2">	
+						<a href="http://home.9939.com/index.php" target="_blank"><img src="http://ask.9939.com/uploadPic/2009/0807/071527230.jpg" /></a>
+						<p><a href="http://home.9939.com/index.php" target="_blank">开通医生空间，书写医路心情</a></p>
+					</div>
+											<div class="extra mt5">
+						<div class="w218 bd01">
+							<div class="t01"><h3>互助公告</h3></div>
+							<div class="l02">
+								<ul>
+																		<li><a href="http://ask.9939.com/ask/question.php?newTitle=" target="_blank">名医全天在线为你解答健康问题</a></li>
+																		<li><a href="http://doctor.9939.com/" target="_blank">笼络名医聚焦医疗，聚医堂上线啦</a></li>
+																		<li><a href="http://home.9939.com/network.php?ac=mtag" target="_blank">加入健康群组，做最好的健康互动</a></li>
+																		<li><a href="http://home.9939.com/" target="_blank">传照片写博客，个人空间开通了</a></li>
+																		<li><a href="http://home.9939.com/do.php?ac=c20eccd4c4d1ca14153" target="_blank">医生会员快速注册通道开通了</a></li>
+																		<li><a href="http://ask.9939.com/ask/search.php?keywords=" target="_blank">健康全搜，搜索你需要的健康答案</a></li>
+																	</ul>
+							</div>
+						</div>
+					</div><!-- extra end -->
+				</div><!-- w220 end -->
+				<div class="clear"></div>
+				<div class="p01 mt5">
+					<div class="t02"><h3>聚医堂名医推荐</h3></div>
+					<ul>
+													<li><a href="http://home.9939.com/space.php?uid=1523"><img src="http://ucenter.9939.com/avatar.php?uid=1523&size=big&type=virtual" target="_blank"/></a><p><a href="http://home.9939.com/space.php?uid=1523" target="_blank"  class="white">徐策</a></p><span>
+							<input type="image" src="/templates/9939/skins/default/images_doctor/btn003.jpg" onclick="location.href='http://ask.9939.com/ask/question.php?toUID=1523'" /></span></li>	
+													<li><a href="http://home.9939.com/space.php?uid=1525"><img src="http://ucenter.9939.com/avatar.php?uid=1525&size=big&type=virtual" target="_blank"/></a><p><a href="http://home.9939.com/space.php?uid=1525" target="_blank"  class="white">李旭</a></p><span>
+							<input type="image" src="/templates/9939/skins/default/images_doctor/btn003.jpg" onclick="location.href='http://ask.9939.com/ask/question.php?toUID=1525'" /></span></li>	
+													<li><a href="http://home.9939.com/space.php?uid=1526"><img src="http://ucenter.9939.com/avatar.php?uid=1526&size=big&type=virtual" target="_blank"/></a><p><a href="http://home.9939.com/space.php?uid=1526" target="_blank"  class="white">梁周宇</a></p><span>
+							<input type="image" src="/templates/9939/skins/default/images_doctor/btn003.jpg" onclick="location.href='http://ask.9939.com/ask/question.php?toUID=1526'" /></span></li>	
+													<li><a href="http://home.9939.com/space.php?uid=1527"><img src="http://ucenter.9939.com/avatar.php?uid=1527&size=big&type=virtual" target="_blank"/></a><p><a href="http://home.9939.com/space.php?uid=1527" target="_blank"  class="white">周纯智</a></p><span>
+							<input type="image" src="/templates/9939/skins/default/images_doctor/btn003.jpg" onclick="location.href='http://ask.9939.com/ask/question.php?toUID=1527'" /></span></li>	
+													<li><a href="http://home.9939.com/space.php?uid=1528"><img src="http://ucenter.9939.com/avatar.php?uid=1528&size=big&type=virtual" target="_blank"/></a><p><a href="http://home.9939.com/space.php?uid=1528" target="_blank"  class="white">刘旺哲</a></p><span>
+							<input type="image" src="/templates/9939/skins/default/images_doctor/btn003.jpg" onclick="location.href='http://ask.9939.com/ask/question.php?toUID=1528'" /></span></li>	
+													<li><a href="http://home.9939.com/space.php?uid=1529"><img src="http://ucenter.9939.com/avatar.php?uid=1529&size=big&type=virtual" target="_blank"/></a><p><a href="http://home.9939.com/space.php?uid=1529" target="_blank"  class="white">绝妙之秋</a></p><span>
+							<input type="image" src="/templates/9939/skins/default/images_doctor/btn003.jpg" onclick="location.href='http://ask.9939.com/ask/question.php?toUID=1529'" /></span></li>	
+													<li><a href="http://home.9939.com/space.php?uid=1531"><img src="http://ucenter.9939.com/avatar.php?uid=1531&size=big&type=virtual" target="_blank"/></a><p><a href="http://home.9939.com/space.php?uid=1531" target="_blank"  class="white">杨志新</a></p><span>
+							<input type="image" src="/templates/9939/skins/default/images_doctor/btn003.jpg" onclick="location.href='http://ask.9939.com/ask/question.php?toUID=1531'" /></span></li>	
+												
+					</ul>
+				</div>
+				<div class="w530 left mt10">
+					<div class="l05">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t02.jpg" /></div>
+						<ul>
+														<li><a href="http://home.9939.com/space.php?uid=1566&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=1566&do=blog&id=49" target="_blank">晚上几点睡觉最有利身体健康？</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1565&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=1565&do=blog&id=48" target="_blank">提倡科学严谨、负责的办事态度</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1564&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=1564&do=blog&id=47" target="_blank">总有一款养生方案适合你</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1563&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=1563&do=blog&id=46" target="_blank">中医的“夏季预告”</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1561&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=1561&do=blog&id=45" target="_blank">高考期间考生吃喝很有讲究！</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1559&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=1559&do=blog&id=43" target="_blank">性病为何越来越多？</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1558&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=1558&do=blog&id=42" target="_blank">方舟子，您得反思！</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1481&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=1481&do=blog&id=34" target="_blank">她该离婚吗？面对有爱无性的丈夫</a></li>
+													</ul>
+					</div>
+					<div class="l05" style="margin-left:10px; display:inline;">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t03.jpg" /></div>
+						<ul>
+														<li><a href="http://home.9939.com/space.php?uid=6460&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6460&do=blog&id=1384" target="_blank">为什么要用苏打水洗阴</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6460&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6460&do=blog&id=1383" target="_blank">最简单有效的止痛药：</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6460&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6460&do=blog&id=1382" target="_blank">对“避孕套致阴道炎”</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6460&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6460&do=blog&id=1381" target="_blank">女人小便这样蹲补肾利</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6460&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6460&do=blog&id=1380" target="_blank">手淫可以增大阴茎？</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6460&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6460&do=blog&id=1379" target="_blank">女人们，从此告别痛经</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6460&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6460&do=blog&id=1378" target="_blank">前列腺“病了”，性生</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6257&do=blog&classid=0" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6257&do=blog&id=1377" target="_blank">男友竟然接受“根浴服</a></li>
+													
+						</ul>
+					</div>
+					<div class="l05 mt10">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t04.jpg" /></div>
+						<ul>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=218" class="lblue" target="_blank">[久久健康]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=850" target="_blank">艳遇在北京的10大名</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=215" class="lblue" target="_blank">[药补不如食补]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=719" target="_blank">《本杰明巴顿记事》-</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=218" class="lblue" target="_blank">[久久健康]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=674" target="_blank">英国萨里郡的薰衣草（</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=215" class="lblue" target="_blank">[药补不如食补]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=622" target="_blank">“金不换”苋菜 并非</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=218" class="lblue" target="_blank">[久久健康]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=584" target="_blank">搞笑，精子30种死法</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=215" class="lblue" target="_blank">[药补不如食补]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=548" target="_blank">看校医不如看兽医！</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=215" class="lblue" target="_blank">[药补不如食补]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=547" target="_blank">中国人存在九种体质类</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=190" class="lblue" target="_blank">[骨科]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=305" target="_blank">锻炼有助于治疗腰部疼</a></li>
+													</ul>
+					</div>
+					<div class="l05 mt10" style="margin-left:10px;">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t05.jpg" /></div>
+						<ul>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=228" class="lblue" target="_blank">[百姓健康]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=938" target="_blank">为什么要用苏打水洗阴</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=185" class="lblue" target="_blank">[单身联盟]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=937" target="_blank">最简单有效的止痛药：</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=133" class="lblue" target="_blank">[健康生活]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=936" target="_blank">对“避孕套致阴道炎”</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=208" class="lblue" target="_blank">[两性文化]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=935" target="_blank">女人小便这样蹲补肾利</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=153" class="lblue" target="_blank">[私密情感]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=934" target="_blank">手淫可以增大阴茎？</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=86" class="lblue" target="_blank">[性爱技巧]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=933" target="_blank">女人们，从此告别痛经</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=208" class="lblue" target="_blank">[两性文化]</a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=932" target="_blank">前列腺“病了”，性生</a></li>
+														<li><a href="http://home.9939.com/space.php?do=mtag&tagid=" class="lblue" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=&do=thread&id=" target="_blank"></a></li>
+															
+						</ul>
+					</div>
+                    <div class="clear"></div>
+					<div class="p03 mt10">
+						<ul>
+														<li><a href="http://home.9939.com/space.php?uid=1524&do=album&id=60" target="_blank"><img src="http://home.9939.com/attachment/200906/18/1524_124535839890RZ.jpg.thumb.jpg" width="210" height="135"/></a><p><a href="http://home.9939.com/space.php?uid=1524&do=album&id=60" target="_blank">病理图谱</a></p></li>
+														<li><a href="http://home.9939.com/space.php?uid=1524&do=album&id=59" target="_blank"><img src="http://home.9939.com/attachment/200906/18/1524_1245357843n22E.jpg.thumb.jpg" width="210" height="135"/></a><p><a href="http://home.9939.com/space.php?uid=1524&do=album&id=59" target="_blank">解剖模型</a></p></li>
+														<li><a href="http://home.9939.com/space.php?uid=1525&do=album&id=61" target="_blank"><img src="http://home.9939.com/attachment/200906/18/1525_1245359214DVEU.jpg.thumb.jpg" width="210" height="135"/></a><p><a href="http://home.9939.com/space.php?uid=1525&do=album&id=61" target="_blank">健美</a></p></li>
+														<li><a href="http://home.9939.com/space.php?uid=1525&do=album&id=63" target="_blank"><img src="http://home.9939.com/attachment/200906/18/1525_12453608727uOJ.jpg.thumb.jpg" width="210" height="135"/></a><p><a href="http://home.9939.com/space.php?uid=1525&do=album&id=63" target="_blank">饮食</a></p></li>
+														<li><a href="http://home.9939.com/space.php?uid=1525&do=album&id=62" target="_blank"><img src="http://home.9939.com/attachment/200906/18/1525_1245359613M3T2.jpg.thumb.jpg" width="210" height="135"/></a><p><a href="http://home.9939.com/space.php?uid=1525&do=album&id=62" target="_blank">宝宝</a></p></li>
+													</ul>
+					</div>
+					<div class="l06 mt10">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t06.jpg" /></div>
+						<ul>
+							<div class="title"><span class="r">上传者</span><span class="l">文件名称</span></div>
+
+	<li><span>y020</span><a href="http://home.9939.com/space.php?uid=1549&do=resource&act=download&id=53">中医诊断歌诀.txt</a></li>
+
+
+	<li><span>y020</span><a href="http://home.9939.com/space.php?uid=1549&do=resource&act=download&id=52">中药歌诀.txt</a></li>
+
+
+	<li><span>y020</span><a href="http://home.9939.com/space.php?uid=1549&do=resource&act=download&id=51">化验单学习.txt</a></li>
+
+
+	<li><span>y020</span><a href="http://home.9939.com/space.php?uid=1549&do=resource&act=download&id=50">神经调节.txt</a></li>
+
+
+	<li><span>y020</span><a href="http://home.9939.com/space.php?uid=1549&do=resource&act=download&id=49">药物依赖性词汇.txt</a></li>
+
+
+	<li><span>y020</span><a href="http://home.9939.com/space.php?uid=1549&do=resource&act=download&id=48">中医内科歌诀.txt</a></li>
+
+
+	<li><span>爱丽叶医生</span><a href="http://home.9939.com/space.php?uid=1797&do=resource&act=download&id=47">顽固性打嗝的验方.txt</a></li>
+
+
+
+
+							
+						</ul>
+					</div>
+					<div class="l05 mt10" style="margin-left:10px;">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t07.jpg" /></div>
+						<ul>
+														<li><a href="http://home.9939.com/space.php?uid=2482&do=blog&classid=0" class="lgreen" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=2482&do=blog&id=1090" target="_blank">揭开高考状元的家教秘</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6255&do=blog&classid=0" class="lgreen" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6255&do=blog&id=1160" target="_blank">关于“月经量多量少推</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6255&do=blog&classid=0" class="lgreen" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6255&do=blog&id=1161" target="_blank">四大指标看你月经是否</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6257&do=blog&classid=0" class="lgreen" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6257&do=blog&id=1162" target="_blank">28种方法让孩子从小</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6257&do=blog&classid=0" class="lgreen" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6257&do=blog&id=1163" target="_blank">晒晒我在医院生宝宝的</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=2831&do=blog&classid=0" class="lgreen" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=2831&do=blog&id=1164" target="_blank">女人如何“挑食”能挑</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6257&do=blog&classid=0" class="lgreen" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=6257&do=blog&id=1165" target="_blank">20天减肥20斤肥肉</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=2482&do=blog&classid=0" class="lgreen" target="_blank"></a> <a href="http://home.9939.com/space.php?uid=2482&do=blog&id=1099" target="_blank">食物杀人法,想杀人又</a></li>
+													
+						</ul>
+					</div>
+				</div>
+				<div class="w220 right">
+					<div class="mt10">
+						<div class="t02"><img src="/templates/9939/skins/default/images_doctor/t01_t.jpg" /></div>
+							<div id="tabs0" class="clfix">
+								 <ul class="menu0 clfix" id="menu0">
+									  <li onmouseover="setTab(0,0)" class="hover">回答</li>
+									  <li onmouseover="setTab(0,1)">经验值</li>
+									  <li onmouseover="setTab(0,2)">博文</li>
+								 </ul>
+							 <div class="main0" id="main0">
+							 	<ul class="block">
+								  									<li><a href="http://home.9939.com/space.php?uid=1797" target="_blank">爱丽叶医生&nbsp;&nbsp;回复数:644</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=2845" target="_blank">爱心医师李&nbsp;&nbsp;回复数:624</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=2836" target="_blank">赛扁鹊&nbsp;&nbsp;回复数:593</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=2333" target="_blank">Meing111&nbsp;&nbsp;回复数:282</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=864" target="_blank">beijing007&nbsp;&nbsp;回复数:270</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=1155" target="_blank">woaiqly004&nbsp;&nbsp;回复数:112</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=98" target="_blank">良相良医&nbsp;&nbsp;回复数:106</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=1151" target="_blank">woaiqly001&nbsp;&nbsp;回复数:92</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=145" target="_blank">济世救贫&nbsp;&nbsp;回复数:81</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=139" target="_blank">白医飞刀&nbsp;&nbsp;回复数:57</a></li>
+								  								</ul>
+								<ul>
+								  									<li><a href="http://home.9939.com/space.php?uid=1797" target="_blank">爱丽叶医生&nbsp;&nbsp;&nbsp;&nbsp;积分:6659</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=2845" target="_blank">爱心医师李&nbsp;&nbsp;&nbsp;&nbsp;积分:6410</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=2836" target="_blank">赛扁鹊&nbsp;&nbsp;&nbsp;&nbsp;积分:6183</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=145" target="_blank">济世救贫&nbsp;&nbsp;&nbsp;&nbsp;积分:4525</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=864" target="_blank">beijing007&nbsp;&nbsp;&nbsp;&nbsp;积分:3950</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=144" target="_blank">彩虹在线&nbsp;&nbsp;&nbsp;&nbsp;积分:3150</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=2333" target="_blank">Meing111&nbsp;&nbsp;&nbsp;&nbsp;积分:2930</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=139" target="_blank">白医飞刀&nbsp;&nbsp;&nbsp;&nbsp;积分:2925</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=147" target="_blank">医路行者&nbsp;&nbsp;&nbsp;&nbsp;积分:2465</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=141" target="_blank">爱心使者&nbsp;&nbsp;&nbsp;&nbsp;积分:2365</a></li>
+								  								</ul>
+								<ul>
+								  									<li><a href="http://home.9939.com/space.php?uid=2482&do=blog" target="_blank">Lp_dana&nbsp;&nbsp;&nbsp;&nbsp;41篇</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=1756&do=blog" target="_blank">ebhi_7174&nbsp;&nbsp;&nbsp;&nbsp;30篇</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=1555&do=blog" target="_blank">hanxiao&nbsp;&nbsp;&nbsp;&nbsp;29篇</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=1482&do=blog" target="_blank">diaomingcha&nbsp;&nbsp;&nbsp;&nbsp;27篇</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=4472&do=blog" target="_blank">mydaisy&nbsp;&nbsp;&nbsp;&nbsp;23篇</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=1757&do=blog" target="_blank">ct123456&nbsp;&nbsp;&nbsp;&nbsp;21篇</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=1762&do=blog" target="_blank">wanganran&nbsp;&nbsp;&nbsp;&nbsp;21篇</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=6255&do=blog" target="_blank">猪小小&nbsp;&nbsp;&nbsp;&nbsp;21篇</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=1553&do=blog" target="_blank">新宇&nbsp;&nbsp;&nbsp;&nbsp;21篇</a></li>
+								  									<li><a href="http://home.9939.com/space.php?uid=1761&do=blog" target="_blank">kongfei&nbsp;&nbsp;&nbsp;&nbsp;18篇</a></li>
+								  									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="l04 mt5 pb10">
+						<span>热门博客</span>
+						<div id="MarqueePro6">
+						<div id="MarqueePro7"><div class="LinkTable" >
+						<ul class="clfix">
+														<li><a href="http://home.9939.com/space.php?uid=3433">wxmeing</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=999">zbflmy</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=5698">Aimeili</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=5699">yuxinxin</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1553">新宇</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1481">张悦</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1494">d001</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=2482">有事您说话</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1512">snoopy</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1761">kongfei</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1482">diaomingcha</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1756">ebhi_7174</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1803">omyshall</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1757">ct123456</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1749">sandyna</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=2227">爱来的太晚</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1">很多很多</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1752">Burton</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=4472">mydaisy</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=2493">yj_629</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1789">hz0002</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1555">hanxiao</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=1632">MAGICAL</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6255">猪小小</a></li>
+													</ul>
+						</div>
+						</div>
+						<div id="MarqueePro8"></div>
+						</div>
+					</div>
+					<div class="l04 mt5 pb10">
+						<span>最新加入的医师</span>
+						<div id="MarqueePro3">
+						<div id="MarqueePro4"><div class="LinkTable" >
+						<ul class="clfix">
+														<li><a href="http://home.9939.com/space.php?uid=6839" target="_blank">xly2009</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6838" target="_blank">likunyang82</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6837" target="_blank">ba76f678</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6836" target="_blank">f9d879dc</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6835" target="_blank">7a6709ad</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6834" target="_blank">2561f678</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6833" target="_blank">fa5c578e</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6832" target="_blank">572faf8b</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6831" target="_blank">ripple</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6830" target="_blank">sun88688</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6829" target="_blank">edc1e270</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6828" target="_blank">ksdl999</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6827" target="_blank">张红红</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6826" target="_blank">7bf099ac</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6825" target="_blank">53165286</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6824" target="_blank">c6eff62f</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6823" target="_blank">d7bcd4e2</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6822" target="_blank">a1bd3832</a></li>
+														<li><a href="http://home.9939.com/space.php?uid=6821" target="_blank">久久</a></li>
+														<li><a href="" target="_blank"></a></li>
+													</ul>
+						</div>
+						</div>
+						</div>
+					</div>
+					<div  class="l04 mt5 pb10" >
+						<span>最近浏览过的医生群</span>
+							<div id="MarqueePro">
+							<div id="MarqueePro1"><div class="LinkTable" >
+							<ul class="clfix">
+							<!--<script src="http://doctor.9939.com/get_history_qz.php"></script>-->
+							<!--#include virtual="/get_history_qz.php" -->
+							</ul>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- w755 end -->
+		</div><!-- mainbody end -->
+		
+		<script>
+		var speed=50;
+		var MarqueePro=document.getElementById("MarqueePro");
+		var MarqueePro2=document.getElementById("MarqueePro2");
+		var MarqueePro1=document.getElementById("MarqueePro1");
+		MarqueePro2.innerHTML=MarqueePro1.innerHTML
+		function Marquee(){
+		if(MarqueePro2.offsetTop-MarqueePro.scrollTop<=0){
+		  MarqueePro.scrollTop-=MarqueePro1.offsetHeight;
+		}
+		else{
+		  MarqueePro.scrollTop++;
+		}
+		}
+		var MyMar=setInterval(Marquee,speed);
+		//MarqueePro.onmouseover=function() {clearInterval(MyMar)}
+		//MarqueePro.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+		</script>
+		<script>
+		var speed=50;
+		var MarqueePro3=document.getElementById("MarqueePro3");
+		var MarqueePro5=document.getElementById("MarqueePro5");
+		var MarqueePro4=document.getElementById("MarqueePro4");
+		MarqueePro5.innerHTML=MarqueePro4.innerHTML
+		function Marquee(){
+		if(MarqueePro5.offsetTop-MarqueePro3.scrollTop<=0){
+		  MarqueePro3.scrollTop-=MarqueePro4.offsetHeight;
+		}
+		else{
+		  MarqueePro3.scrollTop++;
+		}
+		}
+		var MyMar=setInterval(Marquee,speed);
+		//MarqueePro3.onmouseover=function() {clearInterval(MyMar)}
+		//MarqueePro3.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+		</script>
+		<script>
+		var speed=50;
+		var MarqueePro6=document.getElementById("MarqueePro6");
+		var MarqueePro8=document.getElementById("MarqueePro8");
+		var MarqueePro7=document.getElementById("MarqueePro7");
+		MarqueePro8.innerHTML=MarqueePro7.innerHTML
+		function Marquee(){
+		if(MarqueePro8.offsetTop-MarqueePro6.scrollTop<=0){
+		  MarqueePro6.scrollTop-=MarqueePro7.offsetHeight;
+		}
+		else{
+		  MarqueePro6.scrollTop++;
+		}
+		}
+		var MyMar=setInterval(Marquee,speed);
+		//MarqueePro6.onmouseover=function() {clearInterval(MyMar)}
+		//MarqueePro6.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+
+
+		counter = 0;
+		function show()
+		{
+			for(i=0; i<3; i++)
+			{
+				document.getElementById('hotimg'+i).style.display="none";
+			}
+			document.getElementById('hotimg'+counter).style.display="";
+			counter++;
+			if(counter == 3) counter = 0;
+			window.setTimeout("show('hotimg'+counter)",1500);
+		}
+		show();
+
+		</script>
+		
+<!--#include virtual="/link.html"-->
+<div><script src="http://s137.cnzz.com/stat.php?id=1383836&web_id=1383836" language="JavaScript" charset="gb2312"></script></div>
+<!--#include virtual="/footer.html"-->

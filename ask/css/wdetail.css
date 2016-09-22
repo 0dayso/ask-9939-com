@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* CSS Document */
+h1,h2,h3,h4,h5,b{font-weight:normal;}
+/*用户提问区*/
+.queser2015{ border:1px solid #00d4dd; padding:22px 34px 26px 34px; width:610px; position:relative;}
+.queser2015 .mebtit { position:relative;}
+.queser2015 .mebtit h3{color:#000;font-size:22px;font-family:"microsoft YaHei"; }
+.queser2015 .mebtit span{ position:absolute; top:7px; right:0; display:block;background: url(../images/mebh.jpg) no-repeat; width:45px; height:16px; text-align:cenetr; color:#fff; fonts-size:12px; line-height:16px; padding-left:7px;}
+.mT12{ margin-top:16px;}
+.mT27{ margin-top:27px;}
+.md7{ margin-bottom:7px;}
+.mT18{ margin-top:18px;}
+.mT10{ margin-top:10px;}
+.pT10{ padding-top:10px;  overflow: hidden;}
+.cor999{color:#999;}
+.member{ background:url(../images/mebjt.jpg) no-repeat 0 10px; position:relative;}
+.meb_absu{ position:absolute; top:18px; left:-19px;background:url(../images/mebqus.png) no-repeat; width:43px; height:59px;}
+.member .mebnews li.mt10{margin-top:-6px;  padding-left: 8px;}
+.member .mebnews li.mt10 i{ font-style:normal;}
+.member .mebnews li{ float:left; line-height:14px;  font-size: 12px; }
+.member .mebnews span{ float:left; margin:0 12px; color:#ccc; font-size:12px;}
+.member .mebtime{background: url(../images/mezb.jpg) no-repeat 0 0;  padding-left:20px;}
+.mT20{margin-top:20px;}
+.clta{ background: url(../images/mebjt.jpg) no-repeat 0 0; width:13px; height:10px; margin-left:34px; z-index:888;position:absolute; top:103px;left:18px;}
+.ldesc{padding-top:28px; border-top:1px solid #e5e5e5;  }
+.ldesc .lin26{line-height:27px;}
+.cor000{font-size:14px; color:#000;letter-spacing:1px;}
+.ldesc .quebox .xgtag{background: url(../images/metag.png) no-repeat 0 2px; padding-left:23px;}
+.ldesc .quebox .xgtag a{ margin-right:9px;}
+.ldesc .quebox .xgtag a:hover{color:#ff660; text-decoration:underline;}
+.ldesc .quebox .inter p{display:inline;}
+.ldesc .quebox .w120{width:120px;height:34px;line-height:34px;font-family:"microsoft YaHei";}
+.freeque{background:#ee9d05; margin-right:10px;}
+.freeque a{background: url(../images/mefre.png) no-repeat  8px 10px;padding-left: 32px;}
+.letmean a{background: url(../images/mehd.png) no-repeat 8px 10px;padding-left: 32px; text-decoration:none;}
+.letmean{background:#ff6600;}
+.w120 a{font-size:18px; color:#fff; display:block;}
+.pT15{padding-top:15px;}
+.mT18{margin-top:18px;}
+.mT13{margin-top:13px;}
+.netnews{ border-top:1px dashed #e4e4e4;}
+.netit{background:url(../images/meb_tj.png) no-repeat 0 0; padding-left:30px; height:27px;}
+.netit img{margin-top:2px;}
+/*我来回答弹框*/
+.capain{width:608px;overflow:hidden; display:none;}
+.inputo{border:1px solid #e5e5e5;padding-left:14px;  }
+.txa{ overflow:hidden;  padding-top: 22px;}
+.txam0{overflow:hidden;  padding-top:10px;}
+.cor999 { color:#999;}
+.cor333{ color:#333;}
+.mT4{margin:26px 10px 0 0;}
+.txa b,.txam0 b{ float:left;font-size:12px;}
+.txa .oneclo,.txam0 .oneclo{ color:#999;}
+.inputo .txa .oneclo1,.txam0 .oneclo1{ color:#333;  font-weight:bold;}
+.capain .asktex_d{font-size:12px; border:0; width:480px;  float:left;}
+.h38{ height:38px;}
+.h52{height:52px;}
+.capain .asknum {text-align:right; color:#999; font-size:12px;  }
+.web_btn button{width:97px;height:34px; background:#00d5dd; border:0; color:#fff; font-size:18px;font-family:"microsoft YaHei";}
+/*医生回答区*/
+.awer2015 {border:1px solid #e4e4e4; border-top:1px solid #ff881d; position:relative; }
+.awe_absu{ position:absolute; top:18px; left:-19px;background:url(../images/mebda.png) no-repeat; width:43px; height:59px;}
+.awer2015 .awetit{padding:22px 22px 20px 36px; overflow:hidden;}
+.awer2015 .awetit h3{color:#333;font-size:20px;font-family:"microsoft YaHei";}
+.cor666{ color:#666;}
+.mr14{ margin-right:14px;}
+.fiz12{font-size:12px;}
+.corc{ color:#ccc;  margin:0 11px;}
+.awer2015 .dzone{border-top:1px solid #e4e4e4; padding:22px  28px 30px 28px; position:relative;}
+.dzone .adopt{background: url(../images/mebcn.jpg) no-repeat 0 3px; position:absolute;top:-3px; right:30px; width:45px; height:62px;}
+.awer2015 .dzone .xport{ width:80px; height:80px; border:1px solid #e5e5e5;}
+.awer2015 .dzone  .exinfor .pername{font-size:16px; color:#000; font-weight:bold; margin-right:12px;}
+.awer2015 .dzone  .exinfor .askhim{ width:75px; height:28px; background: url(../images/meby.jpg) no-repeat 0 0;  text-align:center; line-height:28px;}
+.exinfor .askhim a{color:#ff6600;font-family:"microsoft YaHei";}
+.exinfor .hepnums{ margin:7px 0 0 13px;}
+.mT22{ margin-top:22px;}
+.mT15{ margin-top:15px;}
+.clt{ background: url(../images/doctu.png) no-repeat 0 0; width:15px; height:7px; margin-left:34px;}
+.bacore{ background:#eee; padding:18px;}
+.bacore p b{ font-weight:bold;}
+.bacore p{ line-height:28px;color:#000;}
+.resptime{background: url(../images/mezb.jpg) no-repeat 0 3px;  padding-left:20px;}
+.useful {background: url(../images/mebdz.jpg) no-repeat 0 2px; padding-left:18px; cursor:pointer;}
+.useful i{ font-style:normal; color:#ff881d; padding:0 3px;}
+.corc16{ color:#ccc;  margin:0 12px;}
+.compl a,.akta a{color:#999;}
+.disbl span{ display:block; float:left;}
+/*投诉弹框*/
+.bounce{ background: #fff;z-index:999; position: absolute; width:412px; left: 132px; top: 79px;border:1px solid  #00d4dd; color:#333; font-family:"宋体"; font-size:12px;  padding-bottom:13px; display:none;}
+.bounce .xlerr{ position:absolute; right:-9px; top:-11px;cursor:pointer;}
+.bounce .ts_compl { padding-left:45px;  height:27px; background:#f5fcfd url(../images/ts_comp.png)  no-repeat 19px 14px; line-height:41px; padding-top:14px;}
+.boun1{padding:5px 0 0 0;}
+.bounce span{display:block; }
+.bounce .r_lable{display:block;  width:350px;}
+.bounce .typen{ display:block; white-space:350px;}
+.bounce .ts_sub{text-align:center;}
+.bounce .ts_sub button{height:24px; width:71px; background:#00d4dd; border:0;  color:#fff; font-size:14px; border:1px solid #60dadf;font-family:"microsoft YaHei";}
+.typen label{ width:73px; display:block; float:left; margin-right:4px;}
+.typen label  input{padding-top:3px; display:block; float:left; margin-right:3px; border:1px solid #f1f1f1;}
+.typen .w87{ width:87px;}
+.typen .w140{ width:140px;}
+.bounce .tousuContent{width:300px; height:70px;  }
+.bounce .comthat {border:1px solid #e5e5e5;}
+.bounce .r_lable a{ color:#333; text-decoration:none; font-weight:bold;}
+.wrap .timer{color:#666666;}
+.wrap .bton {width:70px;}
+.tstim{ overflow:hidden;}
+.tslx{ overflow:hidden;}
+.pr18{ padding:13px 0 0 18px; }
+.mT16{ margin-top:16px;}
+.mT10{ margin-top:10px;}
+.mT13{ margin-top:13px;}
+.mT17{ margin-top:17px;}
+/*相关问题*/
+.issues{border: 1px solid #e5e5e5; padding:16px 15px 0 15px;}
+.issues .t_newtit{ position:relative;}
+.mT23{ margin-top:23px;}
+.issues .t_newtit i{ position:absolute; right:5px; top:3px;color:#666;font-size:12px; font-style:normal;}  
+.t_newtit .lw5{background:url(../images/asico.png) no-repeat 0 1px; padding-left:15px;}
+.relat{ padding-bottom:4px;}
+.relat li{font-size:14px;font-family:"宋体";  /* padding-bottom:11px; */margin-bottom: 14px; position:relative; background:url(../images/asico.png) no-repeat  6px -162px; padding-left:17px; float:left; width: 306px;}
+/*咨询专家*/
+.mT18{ margin-top:18px;}
+.issues .meb_lie{ overflow:hidden;font-family:"宋体"; float:left;}
+.mr26{ margin-right:26px;}
+.mr13{ margin-right:11px;}
+.pt20{ padding-bottom:20px;}
+.pt22{ padding-bottom:22px;}
+.issues .mebdoc_pic{width:80px; height:80px; border:1px solid #e5e5e5;}
+.issues .mebdoc_pic a img{ width:80px; height:80px;}
+.issues .page_mname{ margin-bottom:18px; font-size:12px; margin-top:10px;}
+.w678 .issues .page_mname  b{margin-right:2px;  color:#000; font-weight:bold;font-size:14px;}
+.issues .ruser_mques{background:url(../images/asyua.jpg) no-repeat; width:97px; height:28px; text-align:center; line-height:28px;}
+.issues .ruser_mques a{background:url(../images/asico.png) no-repeat -249px -402px; display:block; color:#ff6600;font-family:"microsoft YaHei";  padding-left: 22px;}
+/**/
+.phopr13{ padding:16px  0 0 15px;}
+.mepho li{ float:left; margin-right:15px; margin-bottom:16px;}
+.mepho li div{ border:1p solid #e4e4e4;}
+.mepho li span{ display:block;margin-top:10px;}
+/*快速提问*/
+.l-mod{ width:226px; position:fixed; background:#fff;right:10px; bottom:0; _position:absolute;  _bottom:auto;  _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));  
+z-index:9999; text-align:left;}
+.modlibn{border-left:1px solid #ff881d; border-right:1px solid #ff881d; }
+.l-mod .mebtop{background: url(../images/mod_t.jpg) no-repeat -1px 0px;  height:5px; width: 226px;}
+.l-mod .hd{ height:24px; background:#ff881d;position:relative; padding-left:10px;color:#000; position:relative; padding-top:6px;}
+.l-mod .hd .mebxle{ position:absolute; right:-9px; top:-11px;cursor:pointer;}
+.l-mod .hd span{width:30px;height:24px;cursor:pointer;text-align:center;display:block;position:absolute;top:3px;right:5px;color:#fff;}
+.l-mod .hd span b{display: none;}
+.l-mod .hd2 em{display: none;}
+.l-mod .hd2 span b{display: block;}
+.l-mod .hd h2{ font-size:14px; font-weight:bold; line-height:32px; color:#fff;text-align:left;}
+.formd{overflow: hidden;}
+.l-modt10{padding:10px;}
+.l-mod .inp{width:201px; height:58px; border:1px solid #e4e4e4; padding:10px 0 0 5px;}
+.l-mod .immed{ background:url(../images/kstw.jpg) no-repeat; width:90px; height:28px; text-align:center; line-height:28px; font-size:14px; font-family:"microsoft YaHei"; margin:10px 56px 0 56px;}
+.l-mod .immed a{color:#fff;}
+.l-mod  .mobdown{height:18px; font-size:14px;background:#f2f2f2 url(../images/meb_mj.png) no-repeat 11px 6px;  padding:4px 10px 4px 31px; }
+.l-mod  .mobdown p{font-size:12px; display:inline;}
+.l-mod  .mebbot{background: url(../images/mod_b.jpg) no-repeat -1px -2px;  height:5px; width: 226px;}

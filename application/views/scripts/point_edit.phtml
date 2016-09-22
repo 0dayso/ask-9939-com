@@ -1,0 +1,24 @@
+		<div class="t-innerWrap">
+			<form action="/ask/do/do/edit" method="POST" accept-charset="utf-8" >
+				<table>
+					<tr>
+						<td>
+							<label for="l-username">追加悬赏:</label>
+						</td>
+						<td>
+							<select name="info[point]" >
+								<?=$this->point_option?>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>
+							<input type="hidden" value="<?=$this->aid?>" name="info[id]" >
+							<span><input type="submit" value="提交" class="t-submit"/></span>
+							<span><input type="button" value="取消" class="t-submit" onclick="cannelShow()"/></span>
+						</td>
+					</tr>
+				</table>
+			</form>
+	</div>		

@@ -1,0 +1,41 @@
+﻿*{ margin:0; padding:0;}
+img{ border:0;}
+body{ font:normal 12px "宋体";}
+ul,ol{ list-style:none;}
+a:hover{ color:#FF0000; text-decoration:underline;}
+a{ color:#666666; text-decoration:none;}
+h1,h2,h3{ font:normal 12px "宋体";}
+
+#box{ margin:0 auto; width:950px;}
+#header{ float:left; width:950px;}
+#logo{ float:left;}
+#banner{ float:left; background:url(../images/bei.jpg) repeat-x; width:950px; height:254px;}
+#banner ul{ margin:5px 0 0 0px; float:left; width:950px; height:234px; background:url(../images/banner.jpg) no-repeat; display:inline;}
+#banner ul li{ float:right; color:#FFFFFF; font-size:80px; font-weight:bold; margin:128px 89px 0 0; display:inline;}
+
+
+#mainbody{ float:left; width:950px; margin:10px 0 0 0px; display:inline;}
+.left{ float:left; width:550px;}
+.left h1{ float:left; margin:5px 0 0 2px; display:inline;}
+.left h2{ float:left; margin-top:5px;}
+.left p{ float:left; margin-top:10px;}
+.left ul{ float:left; width:540px; height:258px; background:url(../images/right_4.jpg) repeat-x; margin-top:10px;}
+.left ul li{ float:left; width:520px; margin-left:10px; display:inline; line-height:27px; color:#666666;}
+.left ul .a1{ font-size:14px; margin-top:5px;}
+
+.right{ float:left; width:390px; margin-left:10px; display:inline;}
+.right h1{ float:left;}
+.right h2{ float:left;}
+.right_1{ float:left; width:388px; height:268px; border:1px solid #e6e6e6; background:#f6f6f6;}
+.right_1 ol{ float:left; width:388px; margin-top:5px;}
+.right_1 ol li{ float:left; width:360px; line-height:24px; height:24px; color:#666666; margin-left:15px; display:inline;}
+.right_1 ol li a{ color:#1588d5;}
+.right_1 ol .a3{ margin-top:12px;}
+.right_1 ol .a4{ margin-left:75px; width:300px;}
+.right_1 ol .a4 a{ color:#666666;}
+#a1{ width:120px; height:16px;}
+.right_1 ol .a5{ margin-left:75px; width:280px;}
+.right_1 ol .a6{ width:130px; margin:15px 0 0 140px;}
+
+
+#footer{ float:left;height:0; line-height:0; width:950px;}

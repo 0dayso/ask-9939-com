@@ -1,0 +1,23 @@
+<?php
+$KESHINUM=array(
+    'key'=>array(
+        0=>array("0","10"),
+        1=>array("10","18"),
+        2=>array("18","20"),
+        3=>array("20","12"),
+    ),
+    'value'=>array(
+        0=>array(
+            0=>array(100,200),
+        ),
+        1=>array(
+            0=>array(1000,5000),
+        ),
+        2=>array(
+            0=>array(100,200),
+        ),
+        3=>array(
+            0=>array(6000,10000),
+        ),
+    ),
+);

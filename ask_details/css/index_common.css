@@ -1,0 +1,43 @@
+.strong{font-weight: bold;}
+a:link,a:visited{text-decoration:none;}
+.display-none {position: absolute;visibility: hidden;*display: none;}
+.inline-block {display: inline-block;*display: inline;zoom: 1;vertical-align: middle;position: relative;*position: static;}
+.word-break-all,.break-word {word-wrap: break-word;overflow: hidden;}
+.clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+.clearfix{zoom:1;}
+.fl{float:left}
+.fr{float:right}
+.rLg{float:right;}
+.dlQ{overflow: hidden;}
+.dlQ span{margin-right:13px;float: left;}
+.dlQ a{color:#585858; font-size:14px; cursor:pointer;}
+.dlQ a:hover,.tDtxt  a:hover{color:#ff6600;}
+.dlQ span i{width:15px;height:20px;display:block;float:left;margin:9px 3px 0 0;}
+.rIcon1 i{background: url(../images/wd_user.png) no-repeat right 0;}
+.dlQ .rIcon2 i{background: url(../images/wd_rester.png) no-repeat;margin-top:10px;}
+.rIcon2 a{padding-top:2px;}
+.dlH{overflow:hidden;color:#fff;font-size:14px;}
+.dlH span{margin-right:10px;}
+.dlH a{color:#fff;}
+.dlH a:hover{color:#ff6600;}
+.dlH .gren a{color:#fff;}
+.dlH .gren a:hover{color:#ff6600;}
+.psIo{position:relative;z-index:100}
+.login{width:242px;height:230px;z-index:100;font-size:12px;color:#666;padding:14px 0 0 24px;background:#fff;zoom:1;position:absolute;right:78px;top:43px;}
+.sJo{width:20px;height:11px;background:url(../images/sjIcon.png) no-repeat;display:block;position:absolute;left:45px;top:-11px;}
+.sClose{width:18px;height:18px; cursor:pointer;display:block;position:absolute;top:10px;right:24px;background: url(../images/close.png);}
+.ubD{border: 1px solid #61affd;}
+.uInput{width:217px;height:35px;border: 1px solid #61affd;margin-top:12px;}
+.uInput span{width:40px;height:35px;float:left;}
+.uInput input{width:177px;height:35px;float:left;color:#666;line-height:35px;padding:0;margin:0;border:0;}
+.yh{background: url(../images/yhIcon.png) no-repeat center center;}
+.mm{background: url(../images/mIcon.png) no-repeat center center;}
+.reBd{border:1px solid #c7c6c6;}
+.foget{line-height:26px;margin-top: 6px;}
+.foget a{color: #0066cc;overflow: hidden;}
+.foRa{float: right;margin-right: 24px;}
+.qqP{line-height: 26px;margin-top:10px;}
+.qqP a{float:right;margin-right: 24px;}
+.qqP img{margin-left: 10px;}
+.dvBtn{width: 215px;height: 37px;line-height: 37px;text-align: center;margin-top:5px }
+.dvBtn input{width: 215px;height: 37px;color:#fff;font-weight: bold;background: url(../images/lDv.png) no-repeat;cursor:pointer;border: none;}

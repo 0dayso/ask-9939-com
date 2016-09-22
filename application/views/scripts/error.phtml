@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>_健康问答_久久健康网</title>
+<link href="/images_ask/css/r.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/b.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/g.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/m.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/ask_index.css" type="text/css" rel="stylesheet" />
+<link href="/images_ask/css/error.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images_ask/js/jquery.js"></script>
+<script src="/images_ask/js/jquery.textSlider.js" type="text/javascript"/></script>
+<script type="text/javascript" src="/images_ask/js/jquery.tab.js"></script>
+<script type="text/javascript">
+$(function(){
+$(document).jTab({
+  menutag:".hd li",
+  action:"mouseover",
+  activeClassName:"on"
+  });
+
+$(".zhtag-more").bind("mouseover", function(){
+  $(this).children(":last-child").show();
+});
+$(".zhtag-more").bind("mouseout", function(){
+  $(this).children(":last-child").hide();
+});
+$(".ques-broad .bd").textSlider({
+ line:8,
+ speed:500,
+ timer:3000
+ });
+ 
+});
+
+</script>
+</head>
+
+<body>
+<?php include(APP_ROOT."/header.shtml"); ?>  
+  <div id="bd" style="width: 950px;">
+    <div class="g-m0s6 l-fix tMarginLg">
+      <div class="col-m">
+        <div class="m-wrap">
+          <div class="zhmod07">
+            <div class="hd">
+              <h3><span>访问</span>久久健康问答</h3>
+            </div>
+            <div class="bd">
+              <p class="zherror">您访问的页面不存在,界面5秒钟后将自动跳转到问答首页</p>
+              <p><a class="zhdask" href="###"></a>久久健康问答网聚千名医科专家,竭诚为您解答健康疑问</p>
+              <p>您还可以  <a href="javascript:history.go(-1)">返回上一页》</a>  <a href="/">返回问答首页》</a></p>
+            </div>
+          </div>
+          <div class="zhmod02 tMarginLg">
+            <div class="hd">
+              <h3>最新问答</h3>
+            </div>
+            <div class="bd zhnew-ask">
+              <div class="g-u s1of3">                
+                <ul class="zhtext-list">                  
+                  <?php require(APP_PUBLIC_PATH.'/newd1.shtml');?>
+                </ul>
+              </div>
+              <div class="g-u s1of3">
+                
+                <ul class="zhtext-list">
+                  <?php require(APP_PUBLIC_PATH.'/newd2.shtml');?>
+                </ul>
+              </div>
+              <div class="g-u s1of3 g-lastu">
+                
+                <ul class="zhtext-list">
+                  <?php require(APP_PUBLIC_PATH.'/newd3.shtml');?>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-s">
+        <div class="zhtag-block">
+              <div class="hd">
+                <ul>
+                  <li class="on">常见病</li>
+                  <li>亚健康</li>
+                  <li>生活类</li>
+                </ul>
+              </div>
+              <div class="bd">
+                <div class="zhtag-block-show">
+                  <ul class="zhtag-list">
+                    <?php foreach ($this->li_2 as $k=>$v){
+                  	echo '<li><a href="'.$v[linkurl].'">'.$v[adsname].'</a></li>';
+                  }
+                  ?>
+                  </ul>
+                </div>
+                <div class="zhtag-block-show">
+                  <ul class="zhtag-list">
+                    <?php foreach ($this->li_3 as $k=>$v){
+                  	echo '<li><a href="'.$v[linkurl].'">'.$v[adsname].'</a></li>';
+                  }
+                  ?>
+                  </ul>
+                </div>
+                <div class="zhtag-block-show">
+                  <ul class="zhtag-list">
+                    <?php foreach ($this->li_4 as $k=>$v){
+                  	echo '<li><a href="'.$v[linkurl].'">'.$v[adsname].'</a></li>';
+                  }
+                  ?>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="zhmod02 ques-broad tMarginLg">
+              <div class="hd">
+                <h3>问题广播</h3>
+              </div>
+              <div class="bd">
+                <ul class="zhtext-list">
+                 <?php require(APP_PUBLIC_PATH.'/broadcast.shtml');?>
+                </ul>
+              </div>
+            </div>
+            
+            
+            <div class="zhmod02 tMarginLg">
+              <div class="hd">
+                <h3>公告</h3>
+              </div>
+              <div class="bd zhboard">
+                <ul class="zhtext-list">
+                  <?php foreach ($this->li_1 as $k=>$v){
+                  	echo '<li><a href="'.$v[linkurl].'">'.$v[adsname].'</a></li>';
+                  }
+                  ?>
+                </ul>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  
+  <?php include(APP_ROOT."/footer.html"); ?>
+</div>
+</body>
+</html>
+<script>
+setTimeout(function(){window.location.href="/"},'5000');
+</script>

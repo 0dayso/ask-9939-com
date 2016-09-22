@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>全部科室_久久问医</title>
+        <!--头部-->
+        <meta name="Keywords" content="全部科室,科室简介,科室分类" />
+        <meta name="description" content="根据科室找医生,全部科室_久久问医" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/main.css?v=20160810" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/all.css?v=20151203_07" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/rclumn.css?v=20151203_07" />
+        <link rel="stylesheet" type="text/css" href="/ask/v1/css/bd_search.css?v=20151203_07" />
+        <script type="text/javascript" src="/ask/v1/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/ask/v1/js/jquery.placeholder.min.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/page.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/onclic.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/scrollbar.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/user_login.js?v=20151203_07"></script>
+        <!--ends-->
+        <script type="text/javascript" src="/ask/v1/js/smartFloat.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/gundong.js?v=20151203_07"></script>
+        <script type="text/javascript" src="/ask/v1/js/DD_belatedPNG.js?v=20151203_07"></script>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script> 
+    </head>
+    <body>
+
+        <!-- 头部开始 -->   
+        <!--#include virtual="/headers_new.shtml"-->  
+        <!-- 头部结束 -->
+        <div class="wd_zj">
+            <div class="wd_flz font">
+                <ul>
+                    <li><a href="http://ask.9939.com/" title="首页">首页</a></li>
+                    <li class="wd-ts"><a href="http://ask.9939.com/cat.shtml" title=" 科室分类">科室分类</a></li>
+                    <li><a href="http://ask.9939.com/classid/0" title="问题大全">问题大全</a></li>
+                    <li><a href="http://ask.9939.com/doctorTeam.shtml" title="医生团队">医生团队</a></li>
+                    <li><a href="http://ask.9939.com/rank.shtml" title="问答排行">问答排行</a></li>
+                </ul>
+            </div>
+        </div>        
+
+        <div class="mokd" id="mokd">
+            <div class="bann"><a href="">
+                    <script type="text/javascript">
+                        var cpro_id = "u2315856";
+                        (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {at: "3", rsi0: "960", rsi1: "120", pat: "6", tn: "baiduCustNativeAD", rss1: "#FFFFFF", conBW: "1", adp: "1", ptt: "0", titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS: "14", rss2: "#000000", titSU: "0", ptbg: "90", piw: "0", pih: "0", ptp: "0"}
+                    </script>
+                    <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                </a></div>
+            <div class="wd_mian font">
+                <a href="www.9939.com" title="久久健康">久久健康网</a>><a href="<?= ASK_URL ?>" title="久久问医">久久问医</a>><a title="科室分类">科室分类</a></div>
+            <div class="container  font">
+                <!--右侧开始 -->
+
+                <div class="w678  mr20 fl">
+                    <div class="hr_rig01" id="ksall" style="z-index:300;background:#fff;">
+                        <ul class="ksul qskul"><li><a name="nk">内科</a></li><li><a name="wk">外科</a></li><li class=""><a name="nak">男科</a></li>
+                            <li><a name="fck">妇产科</a></li><li  class="dj"><a name="pf">皮肤性病科</a></li><li  class="dj"><a name="ek">儿科</a></li><li  class="dj"><a name="wgk">五官科</a></li><li  class="dj"><a name="zyk">中医科</a></li><li class="dj"><a name="cyb">传染病科</a></li><li  class="dj"><a name="zlk">肿瘤科</a></li><li class="dj"><a name="zyks">整形美容</a></li><li class="dj"><a name="xlk">心理科</a></li><li class="dj"><a name="qtk" style="padding:0 12px;">其他</a></li></ul>
+                    </div>
+
+                    <?php
+                    $top_dis = array(
+                        0 => 1123822,
+                        1 => 1123824,
+                        2 => 1123831,
+                        3 => 1123832,
+                        4 => 1123833,
+                        5 => 1123834,
+                        6 => 1123838,
+                        7 => 1123839,
+                        8 => 1123849,
+                        9 => 1123853,
+                        10 => 1123854,
+                        11 => 1123855,
+                        12 => 1123856
+                    );
+                    $departments_id = array(
+                        0 => 'nk',
+                        1 => 'wk',
+                        2 => 'nak',
+                        3 => 'fck',
+                        4 => 'pf',
+                        5 => 'ek',
+                        6 => 'wgk',
+                        7 => 'zyk',
+                        8 => 'cyb',
+                        9 => 'zlk',
+                        10 => 'zyks',
+                        11 => 'xlk',
+                        12 => 'qtk'
+                    );
+                    $kk = 0;
+                    foreach ($this->departments as $k => $v) {
+                        $p = $kk + 1;
+                        $pic = ($p < 10) ? '0' . $p : $p;
+                        $m = $kk + 2;
+                        $tag_name = 'n' . $m . 'Tab' . $m . $m;
+                        $tag_name_2 = $tag_name . 'Content';
+                        ?>
+                        <div class="medical mTop24 pbt24" id="<?php echo $departments_id[$kk]; ?>"  data-parent-id="<?php echo $v['pID']; ?>"  data-id="<?php echo $v['id']; ?>">
+                            <div class="qlatb">
+                                <img src="http://ask.9939.com/ask/v1/images/qblue.png?v=20151203_07"/>
+                            </div>
+                            <div class="med_tit">
+                                <h2><a><img src="http://ask.9939.com/ask/v1/images/med_pic<?php echo $pic; ?>.png?v=20151203_07"/></a></h2>
+                            </div>
+                            <div class="general">
+                                <div class="qtwo_sector mTop24 qsline">
+                                    <h3>二级科室</h3>
+                                    <div class="nlwo">
+                                        <div class="secname mTop18 clearfix">
+                                            <ul class="qmore_name">
+                                                <?php if ($v['child']) { ?>
+                                                    <?php $k2 = 0;
+                                                        foreach ($v['child'] as $ke => $va) {
+                                                            $select = ($k2 == 0) ? "selected" : "";
+                                                            $ks_url = '/classid/' . $va['id'];
+                                                    ?>
+                                                        <li class="<?php echo $select; ?>" data-parent-id="<?php echo $va['pID']; ?>" data-id="<?php echo $va['id']; ?>" data-child="<?php echo $va['child']; ?>">
+                                                            <?php if ($va['child']) { ?>
+                                                                <a>
+                                                                    <?php echo $va['name']; ?>
+                                                                </a>
+                                                            <?php } else { ?>
+                                                                <a href="<?php echo $ks_url; ?>" target="_blank">
+                                                                    <?php echo $va['name']; ?>
+                                                                </a>
+                                                            <?php } ?>
+                                                        </li>
+                                                    <?php $k2++;} ?>
+                                                <?php } ?>
+                                            </ul>
+                                        </div>
+                                        <?php if ($v['child']) { ?>
+                                            <div class="qdisea mTop24  qsline clearfix">
+                                                <h3>相关疾病</h3>
+                                                <div class="lkod">
+                                                    <?php $dis = 0;foreach ($v['child'] as $key => $va) {
+                                                                $display = ($dis == 0) ? "" : "display:none;"; ?>
+                                                     <div class="mTop18" name="<?php echo  $tag_name_2; ?>" id="<?php echo  $tag_name_2; ?>" style="<?php echo  $display; ?>"   data-parent-id="<?php echo $va['pID']; ?>" data-id="<?php echo $va['id']; ?>">
+                                                        <div class="cj_secname clearfix">
+                                                            <?php 
+                                                            if ($va['child']) {
+                                                                foreach ($this->category as $key => $val) {
+                                                                    if ($va['id'] == $val['pID']) {
+                                                                        echo '<a href="/disease/' . $val["id"] . '" title="' . $val["name"] . '">' . $val["name"] . '</a>';
+                                                                    }
+                                                                }
+                                                            } ?>
+                                                        </div>
+                                                    </div>
+                                                    <?php $dis++; } ?>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+                                </div>
+                            </div>				
+                            <div class="qhot_bq  clearfix">
+                                <div class="qhot_lab"><h2>热门疾病</h2>
+                                </div>
+                                <div class="cj_secname clearfix">
+                                    <script type="text/javascript">BAIDU_CLB_fillSlot("<?php echo $top_dis[$kk]; ?>");</script>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <?php $kk++;} ?>
+                <div class="clear"></div>
+            </div>   
+                    <!--左侧开始-->   
+                    <!--右侧开始-->              
+                    <div class="w300 fl">
+                        <div class="clumn mTop">
+                            <script type="text/javascript">
+                                var cpro_id = "u2315859";
+                                (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {at: "3", rsi0: "300", rsi1: "250", pat: "17", tn: "baiduCustNativeAD", rss1: "#FFFFFF", conBW: "1", adp: "1", ptt: "0", titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS: "14", rss2: "#000000", titSU: "0"}
+                            </script>
+                            <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                        </div>
+                        <!--常见用药 开始 -->
+                        <div class="r_doctor quitr_doctor mTop">
+                            <div class="rquit_line"><h4><img src="/ask/v1/images/ltitm1.jpg?v=20151203_07" alt="常见用药" title="常见用药"></h4></div>
+                            <div class="drehos">
+
+                                <script type="text/javascript">BAIDU_CLB_fillSlot("1123859");</script>
+                            </div>
+                        </div>
+                        <!--常见用药 结束 -->
+                        <!--推荐医院 开始 -->
+                        <div class="r_doctor quitr_doctor  mTop"><div class="rquit_line"><h4><img src="/ask/v1/images/ltitm7.jpg?v=20151203_07" alt="推荐医院" title="推荐医院"/></h4></div>
+                            <div class="drehos">
+                                <script type="text/javascript">BAIDU_CLB_fillSlot("1123860");</script>
+
+
+                            </div>
+                        </div>
+                        <!--推荐医院 结束-->
+                        <!--精彩问答 开始 -->
+                        <div class="r_doctor quitr_doctor  mTop"><div class="rquit_line"><h4><img src="/ask/v1/images/ltitm8.jpg?v=20151203_07" alt="精彩问答" title="精彩问答"/></h4></div>
+                            <ul class="pl6 er_news">
+                                <?php
+                                foreach ($this->answers as $k => $v) {
+                                    foreach ($this->category as $key => $val) {
+                                        if ($v['classid'] == $val['id']) {
+                                            echo '<li><span>[<a href="/classid/' . $val["id"] . '">' . $val["name"] . '</a>]</span><span><a href="/id/' . $v["id"] . '" title="' . $v["title"] . '">' . mb_substr($v["title"], 0, 33) . '</a></span></li>';
+                                        }
+                                    }
+                                }
+                                ?>
+
+                            </ul>
+                        </div>
+                        <!--精彩问答 结束 -->
+                        <!--热门文章 开始 -->
+                        <!--div class="r_doctor quitr_doctor mTop"><div class="rquit_line clearfix"><h4 class="rquit_line_h4 fl"><img src="http://ask.9939.com/ask/v1/images/ltitm5.jpg" alt="热门文章" title="热门文章"/></h4>
+                                <div class="hottab fl">
+
+                                    <a href="http://js.9939.com" target="_blank">健身</a>|<a href="http://food.9939.com" target="_blank">饮食</a>|<a href="http://xinli.9939.com">心理</a>|<a href="http://drug.9939.com" target="_blank">药品</a>|<a href="http://tijian.9939.com" target="_blank">体检</a>
+                                </div>
+                            </div>
+                            <div class="plr10">
+                                <ul class="r_hot clearfix">
+                                    
+                                    <script type="text/javascript">BAIDU_CLB_fillSlot("1123862");</script>
+                                </ul>
+                                <ul class="er_news er_line">
+
+                                    <?php
+                                    foreach ($this->art as $k => $v) {
+                                        echo '<li><span><a href="' . $v["curl"] . '" title="' . $v["channel"] . '">[' . $v["channel"] . ']</a></span><span><a href="' . $v["aurl"] . '" title="' . $v["title"] . '">' . mb_substr($v["title"], 0, 12, 'UTF-8') . '</a></span></li>';
+                                    }
+                                    ?> 
+                                </ul>
+                            </div>
+                        </div-->
+                        
+                        <!--热门文章 结束 -->
+                        
+                        <!--根据热词获取文章 开始-->
+                        <div class="r_doctor quitr_doctor mTop">
+                            <div class="rquit_line cuols"><h4><span><?=$this->jb_title;?></span>文章</h4></div>
+                            <ul class="addrel">
+                                <?php foreach ($this->rel_article as $key => $value) {?>
+                                <?php $shorttitle = QLib_Utils_String::cutString($value['title'], 16, '...');?>
+                                <li><a href="<?=$value['url']?>" title="<?=$value['title']?>" target="_blank"><?=$shorttitle?></a></li>
+                                <?php }?>
+                            </ul>
+                        </div>
+                        <!--根据热词获取文章 结束-->
+                        
+                        <!--推荐专家 开始 -->
+                        <div id="a_floa" style="z-index:999;">
+                            <div class="r_doctor quitr_doctor bgwr  mTop">
+                                <div class="rquit_line"><h4><img src="/ask/v1/images/ltitm0.jpg?v=20151203_07"></h4></div>
+                                <div class="expert">
+
+                                    <script type="text/javascript">BAIDU_CLB_fillSlot("1123858");</script>
+
+                                </div>
+                            </div>
+                            <div class="clumn">
+                                <script type="text/javascript">
+                                    var cpro_id = "u2315866";
+                                    (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {at: "3", rsi0: "300", rsi1: "250", pat: "17", tn: "baiduCustNativeAD", rss1: "#FFFFFF", conBW: "1", adp: "1", ptt: "0", titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91", titFS: "14", rss2: "#000000", titSU: "0"}
+                                </script>
+                                <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                            </div>
+                        </div>
+                        <!--推荐专家 结束-->
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- 底部常见疾病、热门科室 -->   
+                <!--#include virtual="/ask/footer_jb_ks2.php"-->  
+            </div>
+
+            <!-- 页面底部 -->   
+            <!--#include virtual="/ask/ask_footer/ask_footer_new.html"-->
+            <div id="tbox">
+                <a id="gotop"></a>
+            </div>
+            <script type="text/javascript">
+                $(".qmore_name li[data-type]").click(function (evt) {
+                    alert(111)
+                    // evt.preventDefault();
+                    var currEle = $(this),
+                            dataType = currEle.attr("data-type");
+                    currEle.addClass("curr").siblings().removeClass("curr")
+                    $(".qdisea").find(".mTop18").end().children().siblings("[data-block]").hide()
+                            .filter("[data-block='" + dataType + "']").show();
+                });
+            </script>
+            <script type="text/javascript">
+                $('.qskul a').click(function () {
+                    name = $(this).attr("name");
+                    var this_pos = $('.qskul').position();
+                    var pos = $("#" + name).position();
+                    _height = parseInt(pos.top);
+                    var _body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+                    var scrollheight = parseInt(this_pos.top) == 0 ? _height - 118 + 48 : _height - 122;
+                    $(_body).scrollTop(scrollheight);
+                })
+                $("#ksall").smartFloat({
+                    height: 'auto',
+                    width: '678px',
+                    top: '36px',
+                    margin: 'auto',
+                });
+            </script>
+            <script type="text/javascript">
+                $("#a_floa").smartFloat({
+                    height: "auto",
+                    width: "300px",
+                    position: "fixed",
+                    top: "36px",
+                    bottom: "800px"});
+            </script>
+            </script>
+            <script type="text/javascript">
+                function a(x, y) {
+                    l = $('#mokd').offset().left;
+                    w = $('#mokd').width();
+                    $('#tbox').css('left', (l + w + x) + 'px');
+                    $('#tbox').css('bottom', y + 'px');
+                }
+                function b() {
+                    h = $(window).height();
+                    t = $(document).scrollTop();
+                    if (t > h) {
+                        $('#gotop').fadeIn('slow');
+                    } else {
+                        $('#gotop').fadeOut('slow');
+                    }
+                }
+                $(document).ready(function (e) {
+                    a(100, 80);
+                    b();
+                    $('#gotop').click(function () {
+                        $(document).scrollTop(0);
+                    });
+                    $(".lkod").each(function () {
+                        var dise = $(this).find(".mTop18 .cj_secname:has(a)").length;
+                        if (dise == 0) {
+                            $(this).parent().attr("style", "display:none;");
+                        }
+                    });
+
+                });
+                $(window).resize(function () {
+                    a(100, 80);
+                });
+
+                $(window).scroll(function (e) {
+                    b();
+                });
+                $(".qmore_name li a").click(function () {
+                    var par = $(this).parent().index();
+                    var next = $(this).parent().parent().parent().next();
+                    var isdis = next.find(".lkod .mTop18:eq(" + par + ") .cj_secname:has(a)").length;
+                    if (isdis == 0) {
+                        next.attr("style", "display:none;");
+                    } else {
+                        next.attr("style", "display:block;");
+                    }
+                });
+            </script>
+    </body>   
+</html>
+

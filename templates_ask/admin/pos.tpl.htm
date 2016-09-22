@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+{literal}
+<link rel="stylesheet" type="text/css" id="css" href="images/admincp.css">
+<script src="../js/common.js" type="text/javascript"></script>
+<script src="../js/iframe.js" type="text/javascript"></script>
+
+<script>
+var collapsed = getcookie('cdb_collapse');
+function collapse_change(menucount) {
+	if($('menu_' + menucount).style.display == 'none') {
+		$('menu_' + menucount).style.display = '';collapsed = collapsed.replace('[' + menucount + ']' , '');
+		$('menuimg_' + menucount).src = 'images/menu_reduce.gif';
+	} else {
+		$('menu_' + menucount).style.display = 'none';collapsed += '[' + menucount + ']';
+		$('menuimg_' + menucount).src = 'images/menu_add.gif';
+	}
+	//setcookie('cdb_collapse', collapsed, 2592000);
+}
+
+function showOrHiddenAllMenu(iType,iBig)
+{
+	
+	var bigMenuNum = iBig;
+	
+	if(iType == 1)
+	{
+		//show all
+		for(var i=0; i < bigMenuNum; i++)
+		{
+			$("menu_" + i).style.display = "";	
+			$('menuimg_' + i).src = 'images/menu_reduce.gif';		
+		}
+		$("menu_face").style.display = "";
+		$('menuimg_face').src = 'images/menu_reduce.gif';	
+	} else
+	{
+		//hidden all
+		for(var i=0; i < bigMenuNum; i++)
+		{
+			$("menu_" + i).style.display = "none";
+			$('menuimg_' + i).src = 'images/menu_add.gif';
+		}
+		$("menu_face").style.display = "none";
+		$('menuimg_face').src = 'images/menu_add.gif';
+	}
+}
+</script>
+{/literal}
+
+</head>
+
+<body style="margin:5px!important;margin:3px;">
+<table width="146" border="0" cellspacing="0" align="center" cellpadding="0" class="leftmenulist" style="margin-bottom: 5px;">
+<tr class="leftmenutext">
+	<td bgcolor="#F8F8F8" align="center" height="18">
+	<span onclick="showOrHiddenAllMenu(1,{$iBigCatNum});" style="cursor:hand;" title="展开所有菜单">&nbsp&nbsp&nbsp&nbsp&nbsp[ 展开]</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	<span onclick="showOrHiddenAllMenu(0,{$iBigCatNum});" style="cursor:hand;" title="关闭所有菜单">[ 关闭]</span>
+	</td>
+</tr>
+</table>
+
+<table width="146" border="0" cellspacing="0" align="center" cellpadding="0" class="leftmenulist" style="margin-bottom: 5px;">
+
+	<tr class="leftmenutext">
+		<td>
+			<div align="center">
+				<a href="/" target="_blank">网站首页</a>&nbsp;&nbsp;				
+				<a href="home.php" target="main">后台首页</a>
+			</div>
+		</td>
+	</tr>
+</table>
+
+<div id="home">
+
+{* 界面管理 begin *}
+{if $isRootLogin}
+<table width="146" border="0" cellspacing="0" align="center" cellpadding="0" class="leftmenulist" style="margin-bottom: 5px;">
+	<tr class="leftmenutext">
+		<td>
+			<a href="###" onclick="collapse_change('face')"><img id="menuimg_face" src="images/menu_reduce.gif" border="0"/></a>&nbsp;
+			<a href="###" onclick="collapse_change('face')">系统设置</a>
+		</td>
+	</tr>
+	<tbody id="menu_face" style="display:">
+	<tr class="leftmenutd">
+		<td>
+			<table border="0" cellspacing="0" cellpadding="0" class="leftmenuinfo">
+				<tr><td><a href="menu.php?act=add" target="main">添加左边菜单</a></td></tr>
+				<tr><td><a href="menu.php" target="main">左边菜单列表</a></td></tr>				
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+{/if}
+{* 界面管理 end *}
+
+{* 循环开始 *}		  
+{section name="list" loop=$aBigList} {* 大类 *}
+
+<table width="146" border="0" cellspacing="0" align="center" cellpadding="0" class="leftmenulist" style="margin-bottom: 5px;">
+	<tr class="leftmenutext">
+		<td>
+			<a href="###" onclick="collapse_change({$smarty.section.list.index})">
+				<img id="menuimg_{$smarty.section.list.index}" src="images/menu_reduce.gif" border="0">
+			</a>&nbsp;
+			<a href="###" onclick="collapse_change({$smarty.section.list.index})">{$aBigList[list].name}</a>
+		</td>
+	</tr>
+	<tbody id="menu_{$smarty.section.list.index}" style="display:">
+	<tr class="leftmenutd">
+		<td>
+			<table border="0" cellspacing="0" cellpadding="0" class="leftmenuinfo">
+			{section name="smallList" loop=$aSmallAllList} {* 单个大类中的小类 *}
+				{if $aSmallAllList[smallList].pID == $aBigList[list].id}
+					<tr><td><a href="{$aSmallAllList[smallList].url}" target="main">{$aSmallAllList[smallList].name}</a></td></tr>
+				{/if}
+			{/section}	
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+{/section}
+</div>
+
+<table width="146" border="0" cellspacing="0" align="center" cellpadding="0" class="leftmenulist">
+	<tr class="leftmenutext">
+		<td><div style="margin-left:48px;"><a href="login.php?act=logout" target="_top">退出</a></td>
+	</tr>
+</table>
+</body>
+</html>                                                                                              
+  

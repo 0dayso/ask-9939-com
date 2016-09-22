@@ -1,0 +1,33 @@
+{include file=admin/header.tpl.htm}
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+	<tr  class="header">
+		<td width="5%">选中</td>			
+		<td>ID</td>	
+		<td>公告名称</td>												
+		<td>链接地址</td>												
+		<td>管理操作</td>		
+	</tr>	
+		
+		{section name=list loop=$aList}
+		<tr bgcolor="#FFFFFF">
+		    <td width="5%"><input type="checkbox"  name="id[]" value='{$aList[list].id}'></td>
+			<td>{$aList[list].id}</td>		
+			<td>{$aList[list].name}</td>
+			<td>{$aList[list].url}</td>	
+			<td><a href="?act=del&id={$aList[list].id}">删除</a> | <a href="?act=edit&id={$aList[list].id}">修改</a></td>		
+   	 	</tr>
+  		{/section}
+		<tr bgcolor="#FFFFFF">
+			<td colspan="5">
+				<input type='button' onClick="javascript:$('input[type=checkbox]').attr('checked', true)" value="全选">	
+				<input type='button' onclick="javascript:$('input[type=checkbox]').attr('checked', false)" value="取消">
+				<input type="button" value="删 除" onclick="SubmitForm1(listFrm,'del');">
+			</td>
+		</tr>
+</form>
+</table>
+<br>
+{include file=admin/pager_bar.tpl.htm}
+
+{include file=admin/footer.tpl.htm}
